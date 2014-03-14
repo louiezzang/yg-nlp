@@ -1,0 +1,1 @@
+<START:person> 홍길동 <END> 은 <START:organ> 진주중앙중학교 <END> 교사 , <START:person> 오정석 <END> 은 경북 상주 <START:organ> 성신여자중학교 <END> 교사는 각각 중등교육부문에서 수상하게 됐다 .

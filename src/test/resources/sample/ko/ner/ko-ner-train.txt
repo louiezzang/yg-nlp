@@ -1,0 +1,6 @@
+<START:person> 우상복 <END> 은 <START:organ> 포항제철중학교 <END> 교사 , <START:person> 오정석 <END> 은 경북 상주 <START:organ> 성신여자중학교 <END> 교사는 각각 중등교육부문에서 수상하게 됐다 .
+
+초등교육부문에서는 <START:person> 김윤식 <END> 은 화성 <START:organ> 동양초등학교 <END> 교장이 , 특수교육부문에는 <START:person> 장병윤 <END> 은 포항명도학교 교장이 각각 수상의 영예를 안게 됐다 .
+
+이 외에도 유아교육부문에서는 <START:person> 임미경 <END> 은 <START:organ> 서울 구립 강남어린이집 <END> 원장이 , 재외동포교육부문은 <START:person> 류승완 <END> 은 말레이시아 한국인학교 교장이 수상자로 선정됐다 .
+

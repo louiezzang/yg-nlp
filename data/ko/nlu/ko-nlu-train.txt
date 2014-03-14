@@ -1,0 +1,11 @@
+<START:object_receiver> 홍길동 <END> 한테 <START:object_content> 잘가 <END> 라고 <START:action_sendmsg> 문자보내 <END>
+
+<START:object_receiver> 홍길동 <END> 한테 <START:action_phoneCall> 전화걸어 <END>
+
+<START:object_receiver> 홍길동 <END> 한테 <START:action_phoneCall> 전화걸어줘 <END>
+
+<START:object_receiver> 홍길동 <END> 하고 <START:action_phoneCall> 통화하고 <END> 싶어
+
+<START:object_singer> 싸이 <END> 의 <START:object_title> 강남스타일 <END> 노래 <START:action_musicPlay> 플레이 <END> 해줘
+
+<START:object_singer> 투애니원 <END> 의 <START:object_title> 내 가 제일 잘나가 <END> 노래 <START:action_musicPlay> 틀어줘 <END>

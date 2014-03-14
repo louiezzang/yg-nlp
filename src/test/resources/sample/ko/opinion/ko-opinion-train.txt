@@ -1,0 +1,25 @@
+<START:aspect> 정치도 <END> <START:opinion> 간보고 하네 <END> . 
+
+<START:opinion> 웃긴다 <END> 진짜
+
+<START:entity> 간잽아 <END> 두번다시 니 입으로 <START:aspect> 새정치란 말은 <END> <START:opinion> 꺼내지도 말아라 <END> ... 
+
+정말로 <START:opinion> 똥냄새난다 <END> .
+
+<START:aspect> 2017 대선은 <END> <START:opinion> 물건너 간줄 알거라 <END> . 
+
+<START:opinion> 꿈도 꾸지 말거라 <END> .
+
+<START:aspect> 정치철학이라는 <END> 것도 <START:opinion> 없고 <END> <START:aspect> 소신도 <END> <START:opinion> 없고 <END> <START:aspect> 정책도 <END> <START:opinion> 없고 <END> 이름만 있는 <START:entity> 간철수 <END>
+
+새 정치인줄 알았더니 <START:opinion> 구태정치였네 <END> , 또 <START:opinion> 야합이여 <END> ?
+
+태어나 처음 맛 본 <START:aspect> 새정치는 <END> 참 <START:opinion> 구린 맛이네요 <END> .
+
+<START:entity> 안철수가 <END> <START:aspect> 새정치를 <END> <START:opinion> 보여준적이 있던가 <END> ?
+
+ㅋㅋ <START:opinion> 지지자들의 환상이었지 <END> .
+
+<START:entity> 새누리 <END> <START:opinion> 잘하고 있는거 맞다 <END> <START:aspect> 그린벨트는 <END> <START:opinion> 빨갱이 정책이야 <END> <START:aspect> 규제는 <END> 당연히 <START:opinion> 풀어야 하는거 맞어 <END>
+
+설마 <START:entity> 국정원이 <END> 비방 댓글로 <START:opinion> 여론조작 <END> 중인건 아니죠 ?
