@@ -7,7 +7,7 @@
 	<version>0.1.0</version>
 	<packaging>jar</packaging>
 
-	<name>sqnlp</name>
+	<name>yg-nlp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
