@@ -76,10 +76,19 @@ public class RegexFeatureDictionary {
 		String catRegex = "";
 		int wordCount = 0;
 
+		boolean embraceWordBoundary = false;
 		String line;
 		while ((line = in.readLine()) != null) {
 			if (line.startsWith("#")) {
 				continue;
+			}
+			// parse parameters
+			if (line.startsWith("@")) {
+				String param = line.split("=")[0].trim().replaceAll("@", "");
+				String value = line.split("=")[1].trim();
+				if (param.equalsIgnoreCase("EMBRACE_WORD_BOUNDARY")) {
+					embraceWordBoundary = Boolean.parseBoolean(value);
+				}
 			}
 			// right trim
 			line = line.replaceAll("\\s+$", "");
@@ -118,8 +127,12 @@ public class RegexFeatureDictionary {
 				wordCount++;
 				String newPattern = line.split("\\s+")[1];
 	
-				//catRegex += "\\b" + newPattern + "\\b|";
-				catRegex += newPattern + "|";
+				if (embraceWordBoundary) {
+					catRegex += "\\b" + newPattern + "\\b|";
+				}
+				else {
+					catRegex += newPattern + "|";
+				}
 			}
 		}
 
