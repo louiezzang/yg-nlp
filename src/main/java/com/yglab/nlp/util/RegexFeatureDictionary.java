@@ -78,6 +78,9 @@ public class RegexFeatureDictionary {
 
 		String line;
 		while ((line = in.readLine()) != null) {
+			if (line.startsWith("#")) {
+				continue;
+			}
 			// right trim
 			line = line.replaceAll("\\s+$", "");
 
@@ -101,6 +104,7 @@ public class RegexFeatureDictionary {
 				// add full regex to database
 				if (!catRegex.equals("")) {
 					catRegex = catRegex.substring(0, catRegex.length() - 1);
+					//catRegex = catRegex.replaceAll("\\*", "[.]*");
 					catRegex = "(" + catRegex + ")";
 					wordLists.put(category + "\t" + currentVariable, Pattern.compile(catRegex));
 				}
@@ -113,7 +117,8 @@ public class RegexFeatureDictionary {
 			else if (line.matches("\\t\\t.+")) {
 				wordCount++;
 				String newPattern = line.split("\\s+")[1];
-				// catRegex += "\\b" + newPattern + "\\b|";
+	
+				//catRegex += "\\b" + newPattern + "\\b|";
 				catRegex += newPattern + "|";
 			}
 		}

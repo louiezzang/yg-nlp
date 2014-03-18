@@ -1,34 +1,39 @@
+##################################################################################
+# This regular expression does not contains "\b" boundary in head and tail.
+# Therefore, you should define the boundary explicitly when boundary is needed.
+##################################################################################
+
 OBJECT
 	sms
-		문자.*
-		메시지.*
-		sms.*
+		문자
+		메시지
+		sms
 	call
-		전화.*
-		통화.*
+		전화
+		통화
 	phonenumber
-		전화번호.*
-		연락처.*
+		전화번호
+		연락처
 	email
-		이메일.*
-		메일.*
+		이메일
+		메일
 	to
-		.*에게
-		.*한테
+		에게
+		한테
 	with
-		.*하고
-		.*과
+		하고
+		과
 	music
-		뮤직.*
-		음악.*
-		노래.*
+		뮤직
+		음악
+		노래
 	singer
-		가수.*
+		가수
 ACTION
 	sendMsg
-		(문자|메시지).*(보내|보낼).*
+		(문자|메시지).*(보내|보낼)
 	phoneCall
-		(전화|통화).*(걸어|해)*
+		(전화|통화).*(걸어|해)
 	musicPlay
-		(노래|음악).*(틀어|플레이|들려).*
+		(노래|음악).*(틀어|플레이|들려)
 	

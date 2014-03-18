@@ -42,7 +42,7 @@ public class DefaultOpinionFeatureGenerator implements NameFeatureGenerator {
 		String currentPattern = currentToken[1];
 		
 		// baseline features
-		//features.add("word=" + currentWord);
+		features.add("word=" + currentWord);
 		features.add("pattern=" + currentPattern);
 		features.add("prevLabel=" + previousLabelSequence[1]);
 		features.add("pattern=" + currentPattern + ", prevLabel=" + previousLabelSequence[prevLabelLength - 1]);		
@@ -58,10 +58,11 @@ public class DefaultOpinionFeatureGenerator implements NameFeatureGenerator {
 		}
 
 		// bigram feature
-		//features.add("prevWord=" + prevWord);
+		features.add("prevWord=" + prevWord);
 		features.add("prevPattern=" + prevPattern);
 	}
 	
+	@SuppressWarnings("unused")
 	protected void addTrigramFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
 		int prevLabelLength = previousLabelSequence.length;
 
@@ -90,7 +91,7 @@ public class DefaultOpinionFeatureGenerator implements NameFeatureGenerator {
 		}
 
 		// additional features
-		//features.add("nextWord=" + nextWord);
+		features.add("nextWord=" + nextWord);
 		features.add("nextPattern=" + nextPattern);
 	}
 	

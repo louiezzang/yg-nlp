@@ -2,7 +2,7 @@
 
 <START:opinion> 웃긴다 <END> 진짜
 
-<START:entity> 간잽아 <END> 두번다시 니 입으로 <START:aspect> 새정치란 말은 <END> <START:opinion> 꺼내지도 말아라 <END> ... 
+<START:entity> 간잽아 <END> 두번다시 니 입으로 <START:aspect> 새정치란 <END> 말은 <START:opinion> 꺼내지도 말아라 <END> ... 
 
 정말로 <START:opinion> 똥냄새난다 <END> .
 
@@ -23,3 +23,7 @@
 <START:entity> 새누리 <END> <START:opinion> 잘하고 있는거 맞다 <END> <START:aspect> 그린벨트는 <END> <START:opinion> 빨갱이 정책이야 <END> <START:aspect> 규제는 <END> 당연히 <START:opinion> 풀어야 하는거 맞어 <END>
 
 설마 <START:entity> 국정원이 <END> 비방 댓글로 <START:opinion> 여론조작 <END> 중인건 아니죠 ?
+
+이 <START:entity> 스마트폰은 <END> <START:aspect> 디자인이 <END> <START:opinion> 개판이다. <END>
+
+이 <START:entity> 스마트폰은 <END> <START:aspect> 품질은 <END> 아주 <START:opinion> 좋은데 <END> <START:aspect> 디자인이 <END> <START:opinion> 개판이다. <END>

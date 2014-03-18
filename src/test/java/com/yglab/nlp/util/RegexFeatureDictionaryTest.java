@@ -19,7 +19,7 @@ public class RegexFeatureDictionaryTest {
 	public void testDictionary() throws Exception {
 		RegexFeatureDictionary featureDic = new RegexFeatureDictionary(
 				"/lang/ko/ko-regex-feature.dic");
-		String text = "동생";
+		String text = "!!!!";
 		String[] features = featureDic.getFeatures(text);
 
 		for (String feature : features) {
