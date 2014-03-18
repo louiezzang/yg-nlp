@@ -38,6 +38,10 @@ public class SimpleSentenceDetector implements SentenceDetector {
   	List<String> sentences = new ArrayList<String>();
   	List<Integer> positions = eosFinder.getPositions(s);
   	
+  	if (positions.size() == 0) {
+  		return new String[] { s };
+  	}
+  	
   	int prevPosition = 0;
   	for (int split = 0; split < positions.size(); split++) {
   		int position = positions.get(split);
@@ -61,12 +65,7 @@ public class SimpleSentenceDetector implements SentenceDetector {
   		sentences.add(sentence);
   	}
   	
-  	if (sentences.size() == 0) {
-  		return new String[] { s };
-  	}
-  	else {
-  		return sentences.toArray(new String[sentences.size()]);
-  	}
+  	return sentences.toArray(new String[sentences.size()]);
 	}
 
 }

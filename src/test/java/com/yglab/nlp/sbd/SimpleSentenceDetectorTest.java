@@ -18,6 +18,7 @@ public class SimpleSentenceDetectorTest {
 	@Test
 	public void testSentenceDetector() throws Exception {
 		String text = "나는 학교에... 갑니다. 너는 도서관에 가니? M.C.M 가방이 아주 이쁘네요! 얼마 주고 사셨나요? 좋다";
+
 		SentenceDetector sentDetector = new SimpleSentenceDetector();
 		String[] sentences = sentDetector.detect(text);
 

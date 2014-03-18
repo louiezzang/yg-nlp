@@ -106,6 +106,10 @@ public class MaxentSentenceDetector implements SentenceDetector {
 			}
 		}
 		
+		if (!sbSentence.toString().trim().equals("")) {
+			sentences.add(sbSentence.toString());
+		}
+		
 		return sentences.toArray(new String[sentences.size()]);
 	}
 	
