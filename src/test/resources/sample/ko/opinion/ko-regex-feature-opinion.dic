@@ -1,7 +1,10 @@
 ##################################################################################
 # This regular expression does not contains "\b" boundary in head and tail.
 # Therefore, you should define the boundary explicitly when boundary is needed.
+# 특수문자, 기호의 경우 "\b"로 감싸게 되면 찾지 못하는 이슈가 있기 때문에 필요시 "\b"를 명시적으로
+# 정의하도록 함.
 ##################################################################################
+@EMBRACE_WORD_BOUNDARY=false
 
 OPINION_MODIFIER
 	adverb
