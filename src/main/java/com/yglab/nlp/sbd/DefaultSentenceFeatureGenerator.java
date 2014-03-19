@@ -29,14 +29,11 @@ public class DefaultSentenceFeatureGenerator implements SentenceFeatureGenerator
 
 		this.addPrefixFeatures(features, position, tokens, previousLabelSequence);
 		this.addSuffixFeatures(features, position, tokens, previousLabelSequence);
+		this.addRegexPatternFeatures(features, position, tokens, previousLabelSequence);
+		this.addSuffixWithPunctuationFeatures(features, position, tokens, previousLabelSequence);
 		
-		// TODO features to add
-		// addRegexMatchPatterns
+		// TODO: features to add
 		// endsWithEomi?
-		// endsWithPunctuation
-		// endsWithEmoticon
-		// endsWithBrace
-		// startsWithBrace
 
 		return features.toArray(new String[features.size()]);
 	}
@@ -116,7 +113,7 @@ public class DefaultSentenceFeatureGenerator implements SentenceFeatureGenerator
 		return suffix;
 	}
 
-	protected void addDictionaryPatternFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
+	protected void addRegexPatternFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
 		int prevLabelLength = previousLabelSequence.length;
 		String currentWord = tokens[position];
 		
@@ -126,17 +123,28 @@ public class DefaultSentenceFeatureGenerator implements SentenceFeatureGenerator
 		}
 		
 		// features from dictionary
-		String[] dicPatterns = featureDic.getFeatures(currentWord);
-		for (String dicPattern : dicPatterns) {
-			features.add("wordPattern=" + dicPattern);
-			features.add("prevLabel=" + previousLabelSequence[prevLabelLength - 1] + ", wordPattern=" + dicPattern);
+		String[] patternFeatures = featureDic.getFeatures(currentWord);
+		for (String patternFeature : patternFeatures) {
+			features.add("wordPattern=" + patternFeature);
+			features.add("prevLabel=" + previousLabelSequence[prevLabelLength - 1] + ", wordPattern=" + patternFeature);
 		}
 		
-		dicPatterns = featureDic.getFeatures(prevWord);
-		for (String dicPattern : dicPatterns) {
-			features.add("prevWordPattern=" + dicPattern);
-			features.add("prevLabel=" + previousLabelSequence[prevLabelLength - 1] + ", prevWordPattern=" + dicPattern);
-			features.add("prevPrevLabel=" + previousLabelSequence[prevLabelLength - 2] + ", prevWordPattern=" + dicPattern);
+		patternFeatures = featureDic.getFeatures(prevWord);
+		for (String patternFeature : patternFeatures) {
+			features.add("prevWordPattern=" + patternFeature);
+			features.add("prevLabel=" + previousLabelSequence[prevLabelLength - 1] + ", prevWordPattern=" + patternFeature);
+			features.add("prevPrevLabel=" + previousLabelSequence[prevLabelLength - 2] + ", prevWordPattern=" + patternFeature);
+		}
+	}
+	
+	protected void addSuffixWithPunctuationFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
+		String currentWord = tokens[position];
+		
+		if (currentWord.matches("([^\\.]+\\.{2,}$)|([^\\?]+\\?{2,}$)|([^!]+!{2,}$)|(.*[\\?!][\\?!]$)")) {
+			String pureWord = currentWord.replaceAll("\\.+|\\?+|!+", "");
+			if (pureWord.length() > 0) {
+				features.add("suffix=" + this.getSuffix(pureWord, 2));
+			}
 		}
 	}
 

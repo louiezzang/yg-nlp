@@ -8,6 +8,7 @@ import org.junit.Test;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Options;
 import com.yglab.nlp.tokenizer.WhitespaceTokenizer;
+import com.yglab.nlp.util.RegexFeatureDictionary;
 import com.yglab.nlp.util.Span;
 
 /**
@@ -21,7 +22,8 @@ public class MaxentSentenceDetectorTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		featureGenerator = new DefaultSentenceFeatureGenerator(null);
+		RegexFeatureDictionary featureDic = new RegexFeatureDictionary("/lang/common/regex-feature-symbol.dic");
+		featureGenerator = new DefaultSentenceFeatureGenerator(featureDic);
 		
 		train();
 	}
