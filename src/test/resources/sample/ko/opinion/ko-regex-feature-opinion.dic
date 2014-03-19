@@ -20,6 +20,7 @@ OPINION_MODIFIER
 		\b당연[히이]\b
 		\b글[고쿠]\b
 		\b설마\b
+		\b아주\b
 	comparison
 		보다
 		비해서
