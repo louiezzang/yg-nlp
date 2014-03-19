@@ -54,3 +54,5 @@
 여야<NN> 정치권과<NN,JC_과> 철도노조<NN> 지도부가<NN,JKS_가> 국회<NN> 내<NN> 협의를<NN,JKO_를> 전제로<NN,JKB_로> 파업<NN> 철회에<NN,JKB_에> 극적으로<NN,JKB_으로> 합의했지만<VV-해+하,EPT_ㅆ,ECE_지만> 넘어야<VV,ECS_어야> 할<VV,EC_ㄹ> 산이<NN,JKS_이> 많다<VV,EFN_다> .<.>
 
 이<MM> 옷은<NN,JKC_은> 2만원<NN> 짜리인가요<NN,EFQ_인가요> ?<?>
+
+새정치란<NN,JKG_란> 말은<NN,JKC_은> 꺼내지도<VV,EC_지도> 말아라<VV,EFO_아라> .<.>
