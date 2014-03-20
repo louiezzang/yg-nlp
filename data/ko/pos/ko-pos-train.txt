@@ -49,7 +49,7 @@
 
 사람은<NN,JKC_은> 지능을<NN,JKO_을> 가진<VV,EC_ㄴ> 동물입니다<NN,EFN_입니다> .<.>
 
-싸이의<NNP,JKG_의> 강남스타일<NN> 노래<NN> 틀어줘<VV,EFO_어줘>
+싸이의<NN,JKG_의> 강남스타일<NN> 노래<NN> 틀어줘<VV,EFO_어줘>
 
 여야<NN> 정치권과<NN,JC_과> 철도노조<NN> 지도부가<NN,JKS_가> 국회<NN> 내<NN> 협의를<NN,JKO_를> 전제로<NN,JKB_로> 파업<NN> 철회에<NN,JKB_에> 극적으로<NN,JKB_으로> 합의했지만<VV-해+하,EPT_ㅆ,ECE_지만> 넘어야<VV,ECS_어야> 할<VV,EC_ㄹ> 산이<NN,JKS_이> 많다<VV,EFN_다> .<.>
 

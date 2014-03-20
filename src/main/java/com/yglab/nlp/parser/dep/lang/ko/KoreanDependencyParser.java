@@ -1,5 +1,6 @@
 package com.yglab.nlp.parser.dep.lang.ko;
 
+import java.util.Collections;
 import java.util.List;
 
 import com.yglab.nlp.model.AbstractModel;
@@ -11,6 +12,7 @@ import com.yglab.nlp.postag.POSTagger;
 import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
 import com.yglab.nlp.postag.lang.ko.Morpheme;
+import com.yglab.nlp.tokenizer.Tokenizer;
 
 /**
  * The dependency parser for Korean.
@@ -18,6 +20,8 @@ import com.yglab.nlp.postag.lang.ko.Morpheme;
  * @author Younggue Bae
  */
 public class KoreanDependencyParser extends DependencyParser {
+	
+	private Tokenizer tokenizer;
 	
 	/**
 	 * Initializes the dependency parser with the specified model.
@@ -27,8 +31,9 @@ public class KoreanDependencyParser extends DependencyParser {
 	 * @param posTagger
 	 */
 	public KoreanDependencyParser(AbstractModel model,
-			DependencyFeatureGenerator<ParseSample> featureGenerator, POSTagger posTagger) {
+			DependencyFeatureGenerator<ParseSample> featureGenerator, Tokenizer tokenizer, POSTagger posTagger) {
 		super(model, featureGenerator, posTagger);
+		this.tokenizer = tokenizer;
 	}
 	
 	@Override
@@ -84,7 +89,23 @@ public class KoreanDependencyParser extends DependencyParser {
 		}
 		
 		ParseSample instance = new ParseSample(atokens, lemmas, cpostags, postags, null);
-		return super.parse(instance, 1).get(0);
+		List<Parse> parses = super.parse(instance, 1).get(0);
+		for (int i = 0; i < parses.size(); i++) {
+			Parse parse = parses.get(i);
+			int index = parse.getIndex() - 1;	// because index 0 is "root" node
+			Eojeol eojeol = eojeols.get(index);
+			parse.setAttribute("eojeol", eojeol);
+		}
+		// sort by index
+		Collections.sort(parses);
+		
+		return parses;
+	}
+	
+	public List<Parse> parse(String s) {
+		String[] tokens = tokenizer.tokenize(s);
+		
+		return this.parse(tokens);
 	}
 
 }

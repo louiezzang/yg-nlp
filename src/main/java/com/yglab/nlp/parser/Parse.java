@@ -1,5 +1,8 @@
 package com.yglab.nlp.parser;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.yglab.nlp.model.Datum;
 
 /**
@@ -7,12 +10,13 @@ import com.yglab.nlp.model.Datum;
  * 
  * @author Younggue Bae
  */
-public class Parse extends Datum {
+public class Parse extends Datum implements Comparable<Parse> {
 
 	private int head;
 	private String cpostag;
 	private String postag;
 	private double score;
+	private Map<String, Object> attributes = new HashMap<String, Object>();
 	
 	private int goldenHead;
 	private String goldenLabel;
@@ -84,6 +88,14 @@ public class Parse extends Datum {
 	public void setGoldenLabel(String goldenLabel) {
 		this.goldenLabel = goldenLabel;
 	}
+	
+	public void setAttribute(String name, Object value) {
+		this.attributes.put(name, value);
+	}
+	
+	public Object getAttribute(String name) {
+		return this.attributes.get(name);
+	}
 
 	@Override
 	public String toString() {
@@ -100,6 +112,11 @@ public class Parse extends Datum {
 			.append(gold).append("\t");
 		
 		return sb.toString();
+	}
+
+	@Override
+	public int compareTo(Parse o) {
+		return new Integer(this.index).compareTo(new Integer(o.getIndex()));
 	}
 
 }

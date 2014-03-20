@@ -32,14 +32,13 @@ import com.yglab.nlp.util.Span;
 public class KoreanNamedEntityRecognizerTest {
 	
 	private static NameFeatureGenerator featureGenerator;
-	private static KoreanPOSTagger posTagger;
 	private static Tokenizer tokenizer;
+	private static KoreanPOSTagger posTagger;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		RegexFeatureDictionary featureDic = new RegexFeatureDictionary("/lang/ko/ko-regex-feature.dic");
 		featureGenerator = new DefaultNameFeatureGenerator(featureDic);
-		
 		tokenizer = initTokenizer();
 		posTagger = initPOSTagger();
 		
@@ -124,7 +123,7 @@ public class KoreanNamedEntityRecognizerTest {
 		AbstractModel trainModel = NamedEntityRecognizer.loadModel("./target/test-data/ko/ner/ko-ner-model.bin");
 		KoreanNamedEntityRecognizer ner = new KoreanNamedEntityRecognizer(trainModel, featureGenerator, tokenizer, posTagger);
 
-		Span[] spans = ner.findName(tokens);
+		Span[] spans = ner.find(tokens);
 		
 		for (int i = 0; i < tokens.length; i++) {
 			System.out.println(i + " : " + tokens[i]);
@@ -137,7 +136,7 @@ public class KoreanNamedEntityRecognizerTest {
 		System.out.println("");
 		
 		String s = "우상복은 포항제철중학교 교사, 오정남은 포철제철중학교 경북 상주 성신여자중학교 교사는 각각 중등교육부문에서 수상하게 됐다.";
-		Span[] nameSpans = ner.findName(s);
+		Span[] nameSpans = ner.find(s);
 		
 		for (Span span : nameSpans) {
 			System.out.println(span + " : " + s.substring(span.getStart(), span.getEnd()));

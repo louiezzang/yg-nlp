@@ -3,6 +3,7 @@ package com.yglab.nlp.parser.dep;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.yglab.nlp.io.AbstractModelReader;
@@ -127,8 +128,11 @@ public class DependencyParser implements Parser {
 		}
 		
 		ParseSample instance = new ParseSample(atokens, lemmas, cpostags, postags, null);
+		List<Parse> parses = this.parse(instance, 1).get(0);
+		// sort by index
+		Collections.sort(parses);
 		
-		return this.parse(instance, 1).get(0);
+		return parses;
 	}
 	
 	/**

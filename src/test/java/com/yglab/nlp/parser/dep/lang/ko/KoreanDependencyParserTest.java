@@ -13,9 +13,15 @@ import com.yglab.nlp.parser.dep.DefaultDependencyFeatureGenerator;
 import com.yglab.nlp.parser.dep.DependencyParser;
 import com.yglab.nlp.parser.io.CONLLReader;
 import com.yglab.nlp.postag.POSSample;
+import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSFeatureGenerator;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
 import com.yglab.nlp.postag.lang.ko.MorphemeDictionary;
+import com.yglab.nlp.tokenizer.DefaultTokenFeatureGenerator;
+import com.yglab.nlp.tokenizer.MaxentTokenizer;
+import com.yglab.nlp.tokenizer.TokenFeatureGenerator;
+import com.yglab.nlp.tokenizer.TokenSample;
+import com.yglab.nlp.tokenizer.Tokenizer;
 
 /**
  * Test case.
@@ -25,12 +31,15 @@ import com.yglab.nlp.postag.lang.ko.MorphemeDictionary;
 public class KoreanDependencyParserTest {
 	
 	private static DefaultDependencyFeatureGenerator featureGenerator;
+	private static Tokenizer tokenizer;
 	private static KoreanPOSTagger posTagger;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		featureGenerator = new DefaultDependencyFeatureGenerator();
+		tokenizer = initTokenizer();
 		posTagger = initPOSTagger();
+		
 		train();
 	}
 	
@@ -46,6 +55,25 @@ public class KoreanDependencyParserTest {
 		
 		AbstractModel model = DependencyParser.train(trainSamples, labels, featureGenerator, options);
 		DependencyParser.saveModel(model, "./target/test-data/ko/parser/ko-parser-model.bin", "./target/test-data/ko/parser/ko-parser-model.txt");
+	}
+	
+	/**
+	 * Instantiates Tokenizer.
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	private static Tokenizer initTokenizer() throws Exception {
+		List<TokenSample> trainSamples = MaxentTokenizer.loadSamples("/sample/ko/tokenizer/ko-tokenizer-train.txt");
+		TokenFeatureGenerator featureGenerator = new DefaultTokenFeatureGenerator();
+		Options options = new Options();
+		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
+		options.put("useSkipPattern", "true");
+		AbstractModel trainModel = MaxentTokenizer.train(trainSamples, featureGenerator, options);
+
+		Tokenizer tokenizer = new MaxentTokenizer(trainModel, new DefaultTokenFeatureGenerator());
+
+		return tokenizer;
 	}
 	
 	/**
@@ -72,18 +100,24 @@ public class KoreanDependencyParserTest {
 
 	@Test
 	public void testParser() throws Exception {
-		System.out.println("===============================================");
+		System.out.println("====================================================");
 
-		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/ko/parser/ko-parser-model.bin");
-		KoreanDependencyParser parser = new KoreanDependencyParser(trainedModel, featureGenerator, posTagger);
+		AbstractModel trainedModel = KoreanDependencyParser.loadModel("./target/test-data/ko/parser/ko-parser-model.bin");
+		KoreanDependencyParser parser = new KoreanDependencyParser(trainedModel, featureGenerator, tokenizer, posTagger);
 		
-		//String[] tokens = { "나는", "도서관에", "열심히", "다닙니다", "." };
-		String[] tokens = { "이", "물건의", "품질은", "어떻습니까", "?" };
+		String s = "나는 도서관에 열심히 다닙니다.";
+		s = "이 자동차의 디자인은 어떻습니까?";
 	
-		List<Parse> parses = parser.parse(tokens);
+		List<Parse> parses = parser.parse(s);
+		
+		System.out.println("====================================================");
+		System.out.println("Index\tHead\tDeprel\tScore\tWord\tMorpheme");
+		System.out.println("====================================================");
 		
 		for (Parse parse : parses) {
-			System.out.println(parse);
+			Eojeol eojeol = (Eojeol) parse.getAttribute("eojeol");
+			System.out.println(parse.getIndex() + "\t" + parse.getHead() + "\t" + parse.getLabel() + 
+					"\t" + parse.getScore() + "\t" + parse.getWord() + "\t" + eojeol);
 		}
 	}
 

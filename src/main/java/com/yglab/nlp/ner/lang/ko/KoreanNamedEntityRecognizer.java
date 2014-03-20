@@ -98,18 +98,6 @@ public class KoreanNamedEntityRecognizer extends NamedEntityRecognizer {
 	}
 
 	/**
-	 * Finds the named entities for the given token array.
-	 * 
-	 * @param tokens
-	 *          the input token array
-	 * @return the array of span with start and end position of the named entities which were found in
-	 *         the given token array
-	 */
-	public Span[] findName(String[] tokens) {
-		return super.find(tokens);
-	}
-
-	/**
 	 * Finds the named entities for the given input string.
 	 * 
 	 * @param s
@@ -117,7 +105,7 @@ public class KoreanNamedEntityRecognizer extends NamedEntityRecognizer {
 	 * @return the array of span with start and end position of the named entities which were found in
 	 *         the given input string
 	 */
-	public Span[] findName(String s) {
+	public Span[] find(String s) {
 		Span[] tokenSpans = this.tokenize(s);
 
 		return super.find(s, tokenSpans);
