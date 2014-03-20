@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.ner.NameFeatureGenerator;
-import com.yglab.nlp.opinion.OpinionFinder;
+import com.yglab.nlp.opinion.OpinionNameFinder;
 import com.yglab.nlp.opinion.TokenPostagPairGenerator;
 import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.lang.ko.Morpheme;
@@ -17,7 +17,7 @@ import com.yglab.nlp.util.Span;
  * 
  * @author Younggue Bae
  */
-public class KoreanOpinionFinder extends OpinionFinder {
+public class KoreanOpinionNameFinder extends OpinionNameFinder {
 
 	/**
 	 * Initializes the opinion finder with the specified model.
@@ -27,7 +27,7 @@ public class KoreanOpinionFinder extends OpinionFinder {
 	 * @param tokenizer
 	 * @param tokenGenerator
 	 */
-	public KoreanOpinionFinder(AbstractModel model, NameFeatureGenerator featureGenerator,
+	public KoreanOpinionNameFinder(AbstractModel model, NameFeatureGenerator featureGenerator,
 			Tokenizer tokenizer, TokenPostagPairGenerator tokenPairGenerator) {
 		super(model, featureGenerator, tokenizer, tokenPairGenerator);
 	}

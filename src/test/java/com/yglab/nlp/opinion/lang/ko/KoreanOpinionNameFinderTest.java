@@ -9,8 +9,8 @@ import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Options;
 import com.yglab.nlp.ner.NameFeatureGenerator;
 import com.yglab.nlp.ner.NameSample;
-import com.yglab.nlp.opinion.DefaultOpinionFeatureGenerator;
-import com.yglab.nlp.opinion.OpinionFinder;
+import com.yglab.nlp.opinion.DefaultOpinionNameFeatureGenerator;
+import com.yglab.nlp.opinion.OpinionNameFinder;
 import com.yglab.nlp.opinion.TokenPostagPairGenerator;
 import com.yglab.nlp.postag.POSSample;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSFeatureGenerator;
@@ -29,7 +29,7 @@ import com.yglab.nlp.util.Span;
  * 
  * @author Younggue Bae
  */
-public class KoreanOpinionFinderTest {
+public class KoreanOpinionNameFinderTest {
 	
 	private static NameFeatureGenerator featureGenerator;
 	private static Tokenizer tokenizer;
@@ -40,7 +40,7 @@ public class KoreanOpinionFinderTest {
 		RegexFeatureDictionary featureDic = new RegexFeatureDictionary(
 				"/sample/ko/opinion/ko-regex-feature-opinion.dic");
 
-		featureGenerator = new DefaultOpinionFeatureGenerator(featureDic);
+		featureGenerator = new DefaultOpinionNameFeatureGenerator(featureDic);
 		
 		tokenizer = initTokenizer();
 		
@@ -92,19 +92,19 @@ public class KoreanOpinionFinderTest {
 	}
 	
 	private static void train() throws Exception {
-		List<NameSample> trainSamples = KoreanOpinionFinder.loadSamples("/sample/ko/opinion/ko-opinion-train.txt", tokenPairGenerator);
+		List<NameSample> trainSamples = KoreanOpinionNameFinder.loadSamples("/sample/ko/opinion/ko-opinion-train.txt", tokenPairGenerator);
 		
 		Options options = new Options();
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
-		AbstractModel model = OpinionFinder.train(trainSamples, featureGenerator, options);
+		AbstractModel model = OpinionNameFinder.train(trainSamples, featureGenerator, options);
 
-		OpinionFinder.saveModel(model, "./target/test-data/ko/opinion/ko-opinion-model.bin", "./target/test-data/ko/opinion/ko-opinion-model.txt");
+		OpinionNameFinder.saveModel(model, "./target/test-data/ko/opinion/ko-opinion-model.bin", "./target/test-data/ko/opinion/ko-opinion-model.txt");
 	}
 	
 	@Test
 	public void testFinder() throws Exception {
-		AbstractModel trainModel = KoreanOpinionFinder.loadModel("./target/test-data/ko/opinion/ko-opinion-model.bin");
-		OpinionFinder opinionFinder = new KoreanOpinionFinder(trainModel, featureGenerator, tokenizer, tokenPairGenerator);
+		AbstractModel trainModel = KoreanOpinionNameFinder.loadModel("./target/test-data/ko/opinion/ko-opinion-model.bin");
+		OpinionNameFinder opinionFinder = new KoreanOpinionNameFinder(trainModel, featureGenerator, tokenizer, tokenPairGenerator);
 
 		String s = "안철수가 새정치를 보여준적이 있던가?";
 

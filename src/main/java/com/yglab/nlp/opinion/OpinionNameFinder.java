@@ -21,7 +21,7 @@ import com.yglab.nlp.util.Span;
  * 
  * @author Younggue Bae
  */
-public class OpinionFinder extends NamedEntityRecognizer {
+public class OpinionNameFinder extends NamedEntityRecognizer {
 
 	protected Tokenizer tokenizer;
 	protected TokenPostagPairGenerator tokenPairGenerator;
@@ -34,7 +34,7 @@ public class OpinionFinder extends NamedEntityRecognizer {
 	 * @param tokenizer
 	 * @param tokenPairGenerator
 	 */
-	public OpinionFinder(AbstractModel model, NameFeatureGenerator featureGenerator,
+	public OpinionNameFinder(AbstractModel model, NameFeatureGenerator featureGenerator,
 			Tokenizer tokenizer, TokenPostagPairGenerator tokenPairGenerator) {
 		super(model, featureGenerator);
 
@@ -97,7 +97,7 @@ public class OpinionFinder extends NamedEntityRecognizer {
 		List<NameSample> samples = new ArrayList<NameSample>();
 		NameSampleParser parser = new NameSampleParser();
 		BufferedReader in = null;
-		InputStream is = OpinionFinder.class.getResourceAsStream(filename);
+		InputStream is = OpinionNameFinder.class.getResourceAsStream(filename);
 
 		if (is != null) {
 			in = new BufferedReader(new InputStreamReader(is, "utf-8"));

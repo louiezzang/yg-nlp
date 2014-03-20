@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.model.AbstractModel;
@@ -18,7 +17,7 @@ import com.yglab.nlp.parser.io.CONLLReader;
  * 
  * @author Younggue Bae
  */
-@Ignore
+//@Ignore
 public class DependencyParserTest {
 	
 	private static DefaultDependencyFeatureGenerator featureGenerator;
@@ -27,7 +26,7 @@ public class DependencyParserTest {
 	public static void setUpBeforeClass() throws Exception {
 		featureGenerator = new DefaultDependencyFeatureGenerator();
 		
-		train();
+		//train();
 	}
 	
 	@SuppressWarnings("unused")

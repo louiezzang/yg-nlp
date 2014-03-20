@@ -23,6 +23,7 @@ import com.yglab.nlp.perceptron.PerceptronModelPlainTextWriter;
 import com.yglab.nlp.perceptron.PerceptronModelReader;
 import com.yglab.nlp.perceptron.PerceptronModelWriter;
 import com.yglab.nlp.perceptron.PerceptronTrainer;
+import com.yglab.nlp.postag.POSTagger;
 
 
 /**
@@ -37,8 +38,9 @@ import com.yglab.nlp.perceptron.PerceptronTrainer;
  */
 public class DependencyParser implements Parser {
 
-	private PerceptronModel model;
-	private DependencyFeatureGenerator<ParseSample> featureGenerator;
+	protected PerceptronModel model;
+	protected DependencyFeatureGenerator<ParseSample> featureGenerator;
+	protected POSTagger posTagger;
 
 	/**
 	 * Initializes the dependency parser with the specified model.
@@ -47,8 +49,20 @@ public class DependencyParser implements Parser {
 	 * @param featureGenerator
 	 */
 	public DependencyParser(AbstractModel model, DependencyFeatureGenerator<ParseSample> featureGenerator) {
+		this(model, featureGenerator, null);
+	}
+	
+	/**
+	 * Initializes the dependency parser with the specified model.
+	 * 
+	 * @param model
+	 * @param featureGenerator
+	 * @param tagger
+	 */
+	public DependencyParser(AbstractModel model, DependencyFeatureGenerator<ParseSample> featureGenerator, POSTagger posTagger) {
 		this.model = new PerceptronModel(model.getLabelIndex(), model.getFeatureIndex(), model.getWeights());
 		this.featureGenerator = featureGenerator;
+		this.posTagger = posTagger;
 	}
 
 	/**
@@ -87,7 +101,34 @@ public class DependencyParser implements Parser {
 	 * @return
 	 */
 	public List<Parse> parse(String[] tokens) {
-		return null;
+		String[] atokens = new String[tokens.length + 1];
+		String[] cpostags = new String[tokens.length + 1];
+		String[] postags = new String[tokens.length + 1];
+		String[] lemmas = new String[tokens.length + 1];
+		
+		// add dummy ROOT
+		atokens[0] = "<root>";
+		cpostags[0] = "<root-CPOS>";
+		postags[0] = "<root-POS>";
+		lemmas[0] = "<root-LEMMA>";
+		
+		// rearrange tokens and lemmas
+		for (int i = 0; i < tokens.length; i++) {
+			atokens[i + 1] = tokens[i];
+			lemmas[i + 1] = tokens[i];
+		}
+		
+		String[] tags = posTagger.tag(tokens);
+		
+		// rearrange postags and cpostags
+		for (int i = 0; i < tags.length; i++) {
+			cpostags[i + 1] = tags[i];
+			postags[i + 1] = tags[i];
+		}
+		
+		ParseSample instance = new ParseSample(atokens, lemmas, cpostags, postags, null);
+		
+		return this.parse(instance, 1).get(0);
 	}
 	
 	/**

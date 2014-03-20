@@ -11,11 +11,11 @@ import com.yglab.nlp.util.RegexFeatureDictionary;
  * 
  * @author Younggue Bae
  */
-public class DefaultOpinionFeatureGenerator implements NameFeatureGenerator {
+public class DefaultOpinionNameFeatureGenerator implements NameFeatureGenerator {
 	
 	protected RegexFeatureDictionary featureDic;
 	
-	public DefaultOpinionFeatureGenerator(RegexFeatureDictionary featureDic) {
+	public DefaultOpinionNameFeatureGenerator(RegexFeatureDictionary featureDic) {
 		this.featureDic = featureDic;
 	}
 	
