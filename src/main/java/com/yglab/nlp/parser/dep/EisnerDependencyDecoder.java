@@ -103,7 +103,7 @@ public class EisnerDependencyDecoder implements PerceptronDecoder<ParseSample, P
 		
 		int length = instance.length();	// ROOT is in an index 0
 		
-		// esiner's algorithm
+		// eisner's algorithm
 		KBestParseForest forest = new KBestParseForest(K, length);
 		
 		for (int s = 0; s < length; s++) {

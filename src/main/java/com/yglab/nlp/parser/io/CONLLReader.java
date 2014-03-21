@@ -78,7 +78,7 @@ public class CONLLReader {
 		ArrayList<String[]> lineList = new ArrayList<String[]>();
 
 		String line = inputReader.readLine();
-		while (line != null && !line.equals("") && !line.startsWith("*")) {
+		while (line != null && !line.trim().equals("") && !line.startsWith("*")) {
 			lineList.add(line.split("\t"));
 			line = inputReader.readLine();
 		}
