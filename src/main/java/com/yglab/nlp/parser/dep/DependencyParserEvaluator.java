@@ -1,5 +1,6 @@
 package com.yglab.nlp.parser.dep;
 
+import java.util.Collections;
 import java.util.List;
 
 import com.yglab.nlp.parser.Parse;
@@ -26,6 +27,7 @@ public class DependencyParserEvaluator extends AbstractEvaluator<ParseSample> {
 		int[] actualHeads = sample.getHeads();
 		List<List<Parse>> kBestParses = parser.parse(sample, 1);
 		List<Parse> bestParses = kBestParses.get(0);
+		Collections.sort(bestParses);
 		
 		addPredictedSize(bestParses.size());
 		addActualTrueSize(actualHeads.length - 1);

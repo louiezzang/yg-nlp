@@ -1,5 +1,6 @@
 package com.yglab.nlp.parser.dep.lang.ko;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.junit.BeforeClass;
@@ -109,6 +110,7 @@ public class KoreanDependencyParserTest {
 		s = "이 자동차의 디자인은 어떻습니까?";
 	
 		List<Parse> parses = parser.parse(s);
+		Collections.sort(parses);
 		
 		System.out.println("====================================================");
 		System.out.println("Index\tHead\tDeprel\tScore\tWord\tMorpheme");

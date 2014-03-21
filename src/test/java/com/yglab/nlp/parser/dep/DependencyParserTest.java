@@ -1,6 +1,7 @@
 package com.yglab.nlp.parser.dep;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.junit.BeforeClass;
@@ -81,6 +82,7 @@ public class DependencyParserTest {
 		for (ParseSample testSample : testSamples) {
 			List<List<Parse>> kBestParses = parser.parse(testSample, 1);
 			List<Parse> bestParse = kBestParses.get(0);
+			Collections.sort(bestParse);
 			
 			for (Parse parse : bestParse) {
 				System.out.println(parse);

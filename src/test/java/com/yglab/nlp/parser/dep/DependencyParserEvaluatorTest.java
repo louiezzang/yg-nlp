@@ -47,7 +47,7 @@ public class DependencyParserEvaluatorTest {
 	public void testEvaluator() throws Exception {
 		CONLLReader reader = new CONLLReader();
 
-		AbstractModel trainedModel = DependencyParser.loadModel("./target/test/data/en/parser/en-parser-model.bin");
+		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/en/parser/en-parser-model.bin");
 		DependencyParser parser = new DependencyParser(trainedModel, featureGenerator);
 		
 		reader.startReading("/sample/en/parser/en-parser-test.conll");
