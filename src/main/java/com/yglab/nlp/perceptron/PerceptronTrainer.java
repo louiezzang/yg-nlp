@@ -6,6 +6,9 @@ import com.yglab.nlp.model.EventStream;
 
 /**
  * Perceptron trainer.
+ * The averaged weight parameters perform significantly better than the simple summarized weight parameters
+ * by "Discriminative Training Methods for Hidden Markov Models: Theory and Experiments with Perceptron Algorithms", 
+ * Michael Collins, 2002.
  * 
  * @author Younggue Bae
  */
@@ -43,7 +46,12 @@ public class PerceptronTrainer<I, O extends Datum> {
 			System.out.println("Time:" + (end - start));
 		}
 		
-		double[][] weights = model.to2D();
+		/*
+		 * The averaged weight parameters perform significantly better 
+		 * than the simple summarized weight parameters.
+		 */
+		//double[][] weights = model.to2D();
+		double[][] weights = model.toAveraged2D(is.getInputStream().size(), iterations);
 			
 		return new PerceptronModel(model.getLabelIndex(), model.getFeatureIndex(), weights, decoder.isLabeled());
 	}

@@ -90,6 +90,23 @@ public class MutablePerceptronModel extends PerceptronModel {
 
 		return x2D;
 	}
+	
+	public double[][] toAveraged2D(int numSample, int numIteration) {
+		double[][] x2D = new double[labelIndex.size()][featureIndex.size()];
+
+		for (int label = 0; label < x2D.length; label++) {
+			for (int feature = 0; feature < x2D[label].length; feature++) {
+				WeightIndex index = new WeightIndex(label, feature);
+				if (mapWeights.containsKey(index)) {
+					x2D[label][feature] = (double) mapWeights.get(index) / (double) (numSample * numIteration);
+				} else {
+					// x2D[label][feature] = 0;
+				}
+			}
+		}
+
+		return x2D;
+	}
 
 	public double[] to1D() {
 		double[] x1D = new double[labelIndex.size() * featureIndex.size()];
