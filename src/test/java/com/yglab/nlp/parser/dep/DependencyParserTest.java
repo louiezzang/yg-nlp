@@ -28,7 +28,7 @@ public class DependencyParserTest {
 	public static void setUpBeforeClass() throws Exception {
 		featureGenerator = new DefaultDependencyFeatureGenerator();
 		
-		//train();
+		train();
 	}
 	
 	@SuppressWarnings("unused")

@@ -13,3 +13,14 @@
 3	품질은	품질은	NN,JKC	NN,JKC_은	_	4	NP-SBJ
 4	어떻습니까	어떻	VV,EFQ	VV,EFQ_습니까	_	0	ROOT
 5	?	?	?	?	_	4	DEP
+							
+1	넷째	넷째	IC	IC	_	0	IP
+2	,	,	,	,	_	0	DEP
+3	채택된	채택되	VV,ETM	VV,ETM_ㄴ	_	3	NP-MOD
+4	전략을	전략을	NN,JKO	NN,JKO_을	_	8	NP-OBJ
+5	끈기를	끈기를	NN,JKO	NN,JKO_을	_	6	NP-OBJ
+6	가지고	가지	VV,EC	VV,EC_고	_	8	VP
+7	강력히	강력히	MA	MA	_	8	ADVP
+8	실천하는	실천하	VV,ETM	VV,ETM_는	_	0	VP
+9	것	것	NNB	NNB	_	8	NP
+10	.	.	.	.	_	8	DEP
