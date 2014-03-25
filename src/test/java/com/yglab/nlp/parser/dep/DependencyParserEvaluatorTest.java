@@ -17,7 +17,7 @@ import com.yglab.nlp.perceptron.PerceptronModel;
  * 
  * @author Younggue Bae
  */
-@Ignore
+//@Ignore
 public class DependencyParserEvaluatorTest {
 	
 	private static DependencyFeatureGenerator<ParseSample> featureGenerator;
@@ -26,7 +26,7 @@ public class DependencyParserEvaluatorTest {
 	public static void setUpBeforeClass() throws Exception {
 		featureGenerator = new DefaultDependencyFeatureGenerator();
 		
-		train();
+		//train();
 	}
 	
 	private static void train() throws Exception {
@@ -59,6 +59,9 @@ public class DependencyParserEvaluatorTest {
 		evaluator.evaluate(testSamples);
 		
 		evaluator.print();
+		System.out.println("LAS(Labeled Attachment Score) = " + evaluator.getLAS());
+		System.out.println("UAS(Unlabeled Attachment Score) = " + evaluator.getUAS());
+		System.out.println("LA(Label Accuracy) = " + evaluator.getLA());
 	}
 
 }
