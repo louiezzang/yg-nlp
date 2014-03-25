@@ -17,7 +17,7 @@ import com.yglab.nlp.perceptron.PerceptronModel;
  * 
  * @author Younggue Bae
  */
-//@Ignore
+@Ignore
 public class DependencyParserEvaluatorTest {
 	
 	private static DependencyFeatureGenerator<ParseSample> featureGenerator;
@@ -26,7 +26,7 @@ public class DependencyParserEvaluatorTest {
 	public static void setUpBeforeClass() throws Exception {
 		featureGenerator = new DefaultDependencyFeatureGenerator();
 		
-		//train();
+		train();
 	}
 	
 	private static void train() throws Exception {
