@@ -10,16 +10,16 @@ import com.yglab.nlp.util.eval.AbstractEvaluator;
  */
 public class NameFinderEvaluator extends AbstractEvaluator<NameSample> {
 	
-	private NameFinder ner;
+	private NameFinder nameFinder;
 	
-	public NameFinderEvaluator(NameFinder ner) {
-		this.ner = ner;
+	public NameFinderEvaluator(NameFinder nameFinder) {
+		this.nameFinder = nameFinder;
 	}
 
 	@Override
 	public void evaluateSample(NameSample sample) {
 		Span[] actualSpans = sample.getLabels();
-		Span[] predictedSpans = ner.find(sample);
+		Span[] predictedSpans = nameFinder.find(sample);
 		
 		addPredictedSize(predictedSpans.length);
 		addActualTrueSize(actualSpans.length);
