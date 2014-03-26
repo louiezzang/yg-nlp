@@ -17,11 +17,13 @@ import com.yglab.nlp.perceptron.PerceptronModel;
  * 
  * The reference papers for this implementation are as belows:
  * "Bilexical grammars and their cubic-time parsing algorithms."
- *	Jason Eisner, In Advances in Probabilistic and Other Parsing Technologies, 2000
+ *	- Jason Eisner, In Advances in Probabilistic and Other Parsing Technologies, 2000
  * "Three new probabilistic models for dependency parsing: An exploration."
- * 	Jason Eisner, COLING, 1996  
+ * 	- Jason Eisner, COLING, 1996  
  * "Discriminative learning and spanning tree algorithms for dependency parsing."
- *	Ryan McDonald, 2006
+ *	- Ryan McDonald, 2006
+ * "Global inference and learning algorithms for multi-lingual dependency parsing."
+ *  - Ryan McDonald, Koby Crammer, Fernando Pereira, Kevin Lerman, 2008
  *
  * @author Younggue Bae
  */
@@ -106,6 +108,7 @@ public class EisnerDependencyDecoder implements PerceptronDecoder<ParseSample, P
 		// eisner's algorithm
 		KBestParseForest forest = new KBestParseForest(K, length);
 		
+		// initialize score 0.0 for all s, d, c
 		for (int s = 0; s < length; s++) {
 			forest.add(s, s, 0, 0.0);
 			forest.add(s, s, 1, 0.0);
@@ -114,11 +117,8 @@ public class EisnerDependencyDecoder implements PerceptronDecoder<ParseSample, P
 		//int shift = 0;
 		for (int k = 1; k < length; k++) {
 			//System.out.println("shift = " + shift);
-			for (int s = 0; s < length - 1; s++) {
+			for (int s = 0; s < length && s + k < length; s++) {
 				int t = s + k;
-				if (t > length - 1) {
-					break;
-				}
 				
 				/*
 				 * 1. create incomplete items:
@@ -143,24 +143,12 @@ public class EisnerDependencyDecoder implements PerceptronDecoder<ParseSample, P
 							int comp1 = pairs[pi][0];
 							int comp2 = pairs[pi][1];
 
-							double score = pfi_11[comp1].getScore() + pfi_01[comp2].getScore();
+							double score = pfi_11[comp1].getScore() + pfi_01[comp2].getScore();							
 							
-							double score_00 = score;
-							if (s == 0) { // root
-								score_00 += Double.NEGATIVE_INFINITY;
-							}
-							else {
-								score_00 += parse_00.getScore();
-							}
+							double score_00 = score + parse_00.getScore();
 							forest.add(s, t, 0, 0, score_00, parse_00, pfi_11[comp1], pfi_01[comp2]);
 							
-							double score_10 = score;
-							if (t == 0) { // root
-								score_10 += Double.NEGATIVE_INFINITY;
-							}
-							else {
-								score_10 += parse_10.getScore();
-							}
+							double score_10 = score + parse_10.getScore();
 							forest.add(s, t, 1, 0, score_10, parse_10, pfi_11[comp1], pfi_01[comp2]);
 						}
 					}

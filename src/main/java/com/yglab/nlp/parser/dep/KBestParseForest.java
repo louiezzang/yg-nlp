@@ -9,6 +9,8 @@ import com.yglab.nlp.parser.Parse;
 
 /**
  * This class stores parse forest items and find the K-best parse trees.
+ * C[s][t][d][c] is a dynamic programming table that stores the score of the best subtree 
+ * from position 's' to position 't', s <= t, with direction '￼d' and complete value 'c'.
  * 
  * @author Younggue Bae
  */
@@ -43,16 +45,19 @@ public class KBestParseForest {
 
 		boolean added = false;
 
+		// if the top-K chart item of C[s, t, d, c] doesn't exist, create the top-K chart item of C[s, t, d, c].
 		if (chart[s][t][direction][1][0] == null) {
 			for (int i = 0; i < K; i++) {
 				chart[s][t][direction][1][i] = new ParseForestItem(s, t, direction, 1, Double.NEGATIVE_INFINITY, null);
 			}
 		}
 
+		// if new score is less than the score of the exist top, skip and return false.
 		if (chart[s][t][direction][1][K - 1].getScore() > score) {
 			return false;
 		}
 
+		// move the max score to the top
 		for (int i = 0; i < K; i++) {
 			if (chart[s][t][direction][1][i].getScore() < score) {
 				ParseForestItem tmp = chart[s][t][direction][1][i];
@@ -88,6 +93,7 @@ public class KBestParseForest {
 
 		boolean added = false;
 
+		// if the top-K chart item of C[s, t, d, c] doesn't exist, create the top-K chart item of C[s, t, d, c].
 		if (chart[s][t][direction][completeness][0] == null) {
 			for (int i = 0; i < K; i++) {
 				chart[s][t][direction][completeness][i] = new ParseForestItem(s, t, direction,
@@ -95,10 +101,12 @@ public class KBestParseForest {
 			}
 		}
 
+		// if new score is less than the score of the exist top, skip and return false.
 		if (chart[s][t][direction][completeness][K - 1].getScore() > score) {
 			return false;
 		}
 
+		// move the max score to the top
 		for (int i = 0; i < K; i++) {
 			if (chart[s][t][direction][completeness][i].getScore() < score) {
 				ParseForestItem tmp = chart[s][t][direction][completeness][i];

@@ -3,7 +3,6 @@ package com.yglab.nlp.parser.dep;
 import java.util.List;
 
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.model.AbstractModel;
@@ -17,7 +16,7 @@ import com.yglab.nlp.perceptron.PerceptronModel;
  * 
  * @author Younggue Bae
  */
-@Ignore
+//@Ignore
 public class DependencyParserEvaluatorTest {
 	
 	private static DependencyFeatureGenerator<ParseSample> featureGenerator;
@@ -37,7 +36,7 @@ public class DependencyParserEvaluatorTest {
 		
 		Options options = new Options();
 		options.put(Options.ALGORITHM, Options.PERCEPTRON_ALGORITHM);
-		options.put(Options.ITERATIONS, "5");
+		options.put(Options.ITERATIONS, "6");
 		
 		AbstractModel model = DependencyParser.train(trainSamples, labels, featureGenerator, options);
 		DependencyParser.saveModel(model, "./target/test-data/en/parser/en-parser-model.bin", "./target/test-data/en/parser/en-parser-model.txt");	
