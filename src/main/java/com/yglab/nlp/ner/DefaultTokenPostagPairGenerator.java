@@ -1,10 +1,10 @@
-package com.yglab.nlp.opinion;
+package com.yglab.nlp.ner;
 
 import com.yglab.nlp.postag.POSTagger;
 
 
 /**
- * This class generations tokens with its postags.
+ * This class generates the pairs of token with its postag.
  * 
  * @author Younggue Bae
  */

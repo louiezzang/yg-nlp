@@ -1,33 +1,33 @@
-package com.yglab.nlp.opinion.lang.ko;
+package com.yglab.nlp.ner.lang.ko;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.yglab.nlp.model.AbstractModel;
-import com.yglab.nlp.ner.NameFeatureGenerator;
-import com.yglab.nlp.opinion.OpinionNameFinder;
-import com.yglab.nlp.opinion.TokenPostagPairGenerator;
+import com.yglab.nlp.ner.PatternBasedNameFeatureGenerator;
+import com.yglab.nlp.ner.PatternBasedNameFinder;
+import com.yglab.nlp.ner.TokenPostagPairGenerator;
 import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.lang.ko.Morpheme;
 import com.yglab.nlp.tokenizer.Tokenizer;
 import com.yglab.nlp.util.Span;
 
 /**
- * The class trains the opinion finder and extracts the opinions from the sentence.
+ * This class trains the pattern based name finder and finds the named entity.
  * 
  * @author Younggue Bae
  */
-public class KoreanOpinionNameFinder extends OpinionNameFinder {
+public class KoreanPatternBasedNameFinder extends PatternBasedNameFinder {
 
 	/**
-	 * Initializes the opinion finder with the specified model.
+	 * Initializes the name finder with the specified model.
 	 * 
 	 * @param model
 	 * @param featureGenerator
 	 * @param tokenizer
-	 * @param tokenGenerator
+	 * @param tokenPairGenerator
 	 */
-	public KoreanOpinionNameFinder(AbstractModel model, NameFeatureGenerator featureGenerator,
+	public KoreanPatternBasedNameFinder(AbstractModel model, PatternBasedNameFeatureGenerator featureGenerator,
 			Tokenizer tokenizer, TokenPostagPairGenerator tokenPairGenerator) {
 		super(model, featureGenerator, tokenizer, tokenPairGenerator);
 	}

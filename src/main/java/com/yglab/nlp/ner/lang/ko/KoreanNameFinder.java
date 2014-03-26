@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.ner.NameFeatureGenerator;
-import com.yglab.nlp.ner.NamedEntityRecognizer;
+import com.yglab.nlp.ner.NameFinder;
 import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
 import com.yglab.nlp.postag.lang.ko.Morpheme;
@@ -17,7 +17,7 @@ import com.yglab.nlp.util.Span;
  * 
  * @author Younggue Bae
  */
-public class KoreanNamedEntityRecognizer extends NamedEntityRecognizer {
+public class KoreanNameFinder extends NameFinder {
 
 	private KoreanPOSTagger posTagger;
 	private Tokenizer tokenizer;
@@ -30,7 +30,7 @@ public class KoreanNamedEntityRecognizer extends NamedEntityRecognizer {
 	 * @param tokenizer
 	 * @param posTagger
 	 */
-	public KoreanNamedEntityRecognizer(AbstractModel model, NameFeatureGenerator featureGenerator,
+	public KoreanNameFinder(AbstractModel model, NameFeatureGenerator featureGenerator,
 			Tokenizer tokenizer, KoreanPOSTagger posTagger) {
 		super(model, featureGenerator);
 

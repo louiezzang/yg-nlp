@@ -1,16 +1,16 @@
-package com.yglab.nlp.opinion.lang.ko;
+package com.yglab.nlp.ner.lang.ko;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.yglab.nlp.opinion.TokenPostagPairGenerator;
+import com.yglab.nlp.ner.TokenPostagPairGenerator;
 import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
 import com.yglab.nlp.postag.lang.ko.Morpheme;
 
 
 /**
- * This class generations tokens with its postags.
+ * This class generations the pairs of token with its postag.
  * 
  * @author Younggue Bae
  */

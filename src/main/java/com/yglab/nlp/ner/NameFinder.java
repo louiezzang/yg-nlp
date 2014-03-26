@@ -31,7 +31,7 @@ import com.yglab.nlp.util.Span;
  * 
  * @author Younggue Bae
  */
-public class NamedEntityRecognizer {
+public class NameFinder {
 
 	public static final String LABEL_START = "start";
 	public static final String LABEL_CONTINUE = "cont";
@@ -47,7 +47,7 @@ public class NamedEntityRecognizer {
 	 * @param model
 	 * @param featureGenerator
 	 */
-	public NamedEntityRecognizer(AbstractModel model, NameFeatureGenerator featureGenerator) {
+	public NameFinder(AbstractModel model, NameFeatureGenerator featureGenerator) {
 		this.model = model;
 		this.featureGenerator = featureGenerator;
 	}
@@ -207,7 +207,7 @@ public class NamedEntityRecognizer {
 		List<NameSample> samples = new ArrayList<NameSample>();
 		NameSampleParser parser = new NameSampleParser();
 		BufferedReader in = null;
-		InputStream is = NamedEntityRecognizer.class.getResourceAsStream(filename);
+		InputStream is = NameFinder.class.getResourceAsStream(filename);
 
 		if (is != null) {
 			in = new BufferedReader(new InputStreamReader(is, "utf-8"));

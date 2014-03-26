@@ -80,11 +80,13 @@ public class NameSampleParser implements SampleParser<NameSample> {
     StringBuilder errorString = new StringBuilder();
     
     // two token before
-    if (index > 1)
+    if (index > 1) {
       errorString.append(sentence[index -2]).append(" ");
+    }
     
-    if (index > 0)
+    if (index > 0) {
       errorString.append(sentence[index -1]).append(" ");
+    }
     
     // token itself
     errorString.append("###");
@@ -92,11 +94,13 @@ public class NameSampleParser implements SampleParser<NameSample> {
     errorString.append("###").append(" ");
     
     // two token after
-    if (index + 1 < sentence.length)
+    if (index + 1 < sentence.length) {
       errorString.append(sentence[index + 1]).append(" ");
+    }
 
-    if (index + 2 < sentence.length)
+    if (index + 2 < sentence.length) {
       errorString.append(sentence[index + 2]);
+    }
     
     return errorString.toString();
   }

@@ -1,4 +1,4 @@
-package com.yglab.nlp.opinion.lang.ko;
+package com.yglab.nlp.ner.lang.ko;
 
 import java.util.List;
 
@@ -7,11 +7,11 @@ import org.junit.Test;
 
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Options;
+import com.yglab.nlp.ner.DefaultNameFeatureGenerator;
 import com.yglab.nlp.ner.NameFeatureGenerator;
 import com.yglab.nlp.ner.NameSample;
-import com.yglab.nlp.opinion.DefaultOpinionNameFeatureGenerator;
-import com.yglab.nlp.opinion.OpinionNameFinder;
-import com.yglab.nlp.opinion.TokenPostagPairGenerator;
+import com.yglab.nlp.ner.NameFinder;
+import com.yglab.nlp.ner.lang.ko.KoreanNameFinder;
 import com.yglab.nlp.postag.POSSample;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSFeatureGenerator;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
@@ -29,23 +29,18 @@ import com.yglab.nlp.util.Span;
  * 
  * @author Younggue Bae
  */
-public class KoreanOpinionNameFinderTest {
+public class KoreanNameFinderTest {
 	
 	private static NameFeatureGenerator featureGenerator;
 	private static Tokenizer tokenizer;
-	private static TokenPostagPairGenerator tokenPairGenerator;
-	
+	private static KoreanPOSTagger posTagger;
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		RegexFeatureDictionary featureDic = new RegexFeatureDictionary(
-				"/sample/ko/opinion/ko-regex-feature-opinion.dic");
-
-		featureGenerator = new DefaultOpinionNameFeatureGenerator(featureDic);
-		
+		RegexFeatureDictionary featureDic = new RegexFeatureDictionary("/lang/ko/ko-regex-feature.dic");
+		featureGenerator = new DefaultNameFeatureGenerator(featureDic);
 		tokenizer = initTokenizer();
-		
-		KoreanPOSTagger posTagger = initPOSTagger();
-		tokenPairGenerator = new KoreanTokenPostagPairGenerator(posTagger, "\t");
+		posTagger = initPOSTagger();
 		
 		train();
 	}
@@ -92,26 +87,60 @@ public class KoreanOpinionNameFinderTest {
 	}
 	
 	private static void train() throws Exception {
-		List<NameSample> trainSamples = KoreanOpinionNameFinder.loadSamples("/sample/ko/opinion/ko-opinion-train.txt", tokenPairGenerator);
+		List<NameSample> trainSamples = NameFinder.loadSamples("/sample/ko/ner/ko-ner-train.txt");
 		
 		Options options = new Options();
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
-		AbstractModel model = OpinionNameFinder.train(trainSamples, featureGenerator, options);
+		AbstractModel model = NameFinder.train(trainSamples, featureGenerator, options);
 
-		OpinionNameFinder.saveModel(model, "./target/test-data/ko/opinion/ko-opinion-model.bin", "./target/test-data/ko/opinion/ko-opinion-model.txt");
+		NameFinder.saveModel(model, "./target/test-data/ko/ner/ko-ner-model.bin", "./target/test-data/ko/ner/ko-ner-model.txt");
 	}
 	
 	@Test
-	public void testFinder() throws Exception {
-		AbstractModel trainModel = KoreanOpinionNameFinder.loadModel("./target/test-data/ko/opinion/ko-opinion-model.bin");
-		OpinionNameFinder opinionFinder = new KoreanOpinionNameFinder(trainModel, featureGenerator, tokenizer, tokenPairGenerator);
+	public void testNameFinder() throws Exception {
 
-		String s = "안철수가 새정치를 보여준적이 있던가?";
+		String[] tokens = { 
+				"우상복",
+				"은",
+				"포항제철중학교", 
+				"교사", 
+				",", 
+				"오정남", 
+				"은",
+				"포철제철중학교", 
+				"경북", 
+				"상주", 
+				"성신여자중학교", 
+				"교사", 
+				"는",
+				"각각",
+				"중등교육부문", 
+				"에서",
+				"수상하게", 
+				"됐다", 
+				"." };
+		
+		AbstractModel trainModel = NameFinder.loadModel("./target/test-data/ko/ner/ko-ner-model.bin");
+		KoreanNameFinder finder = new KoreanNameFinder(trainModel, featureGenerator, tokenizer, posTagger);
 
-		Span[] nameSpans = opinionFinder.find(s);
+		Span[] spans = finder.find(tokens);
+		
+		for (int i = 0; i < tokens.length; i++) {
+			System.out.println(i + " : " + tokens[i]);
+		}
+
+		for (Span span : spans) {
+			System.out.println(span);
+		}
+		
+		System.out.println("");
+		
+		String s = "우상복은 포항제철중학교 교사, 오정남은 포철제철중학교 경북 상주 성신여자중학교 교사는 각각 중등교육부문에서 수상하게 됐다.";
+		Span[] nameSpans = finder.find(s);
 		
 		for (Span span : nameSpans) {
-			System.out.println(span + " : " + s.substring(span.getStart(), span.getEnd()) + " -> " + span.getAttribute("stemWords"));
+			System.out.println(span + " : " + s.substring(span.getStart(), span.getEnd()));
 		}
 	}
+	
 }

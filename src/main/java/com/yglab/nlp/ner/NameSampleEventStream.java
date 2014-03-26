@@ -68,20 +68,20 @@ public class NameSampleEventStream implements EventStream<NameSample, Datum> {
 	protected static String[] generateOutcomes(Span[] names, String type, int length) {
 		String[] outcomes = new String[length];
 		for (int i = 0; i < outcomes.length; i++) {
-			outcomes[i] = NamedEntityRecognizer.LABEL_OTHER;
+			outcomes[i] = NameFinder.LABEL_OTHER;
 		}
 		for (Span name : names) {
 			if (name.getType() == null) {
-				outcomes[name.getStart()] = type + "-" + NamedEntityRecognizer.LABEL_START;
+				outcomes[name.getStart()] = type + "-" + NameFinder.LABEL_START;
 			} else {
-				outcomes[name.getStart()] = name.getType() + "-" + NamedEntityRecognizer.LABEL_START;
+				outcomes[name.getStart()] = name.getType() + "-" + NameFinder.LABEL_START;
 			}
 			// now iterate from begin + 1 till end
 			for (int i = name.getStart() + 1; i < name.getEnd(); i++) {
 				if (name.getType() == null) {
-					outcomes[i] = type + "-" + NamedEntityRecognizer.LABEL_CONTINUE;
+					outcomes[i] = type + "-" + NameFinder.LABEL_CONTINUE;
 				} else {
-					outcomes[i] = name.getType() + "-" + NamedEntityRecognizer.LABEL_CONTINUE;
+					outcomes[i] = name.getType() + "-" + NameFinder.LABEL_CONTINUE;
 				}
 			}
 		}

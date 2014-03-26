@@ -1,4 +1,4 @@
-package com.yglab.nlp.opinion;
+package com.yglab.nlp.ner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,15 +7,15 @@ import com.yglab.nlp.ner.NameFeatureGenerator;
 import com.yglab.nlp.util.RegexFeatureDictionary;
 
 /**
- * This class generates the contextual features for extracting opinion.
+ * This class generates the contextual features based on pattern by using postags.
  * 
  * @author Younggue Bae
  */
-public class DefaultOpinionNameFeatureGenerator implements NameFeatureGenerator {
+public class PatternBasedNameFeatureGenerator implements NameFeatureGenerator {
 	
 	protected RegexFeatureDictionary featureDic;
 	
-	public DefaultOpinionNameFeatureGenerator(RegexFeatureDictionary featureDic) {
+	public PatternBasedNameFeatureGenerator(RegexFeatureDictionary featureDic) {
 		this.featureDic = featureDic;
 	}
 	
@@ -113,7 +113,7 @@ public class DefaultOpinionNameFeatureGenerator implements NameFeatureGenerator 
 		// features from dictionary
 		String[] patternFeatures = featureDic.getFeatures(currentWord);
 		for (String patternFeature : patternFeatures) {
-			if (patternFeature.equalsIgnoreCase("OPINION_MODIFIER[adverb]")) {
+			if (patternFeature.equalsIgnoreCase("MODIFIER[adverb]")) {
 				features.add("word=" + currentWord);
 				//patternFeature = patternFeature + ":" + currentWord;
 			}
@@ -123,7 +123,7 @@ public class DefaultOpinionNameFeatureGenerator implements NameFeatureGenerator 
 		
 		patternFeatures = featureDic.getFeatures(prevWord);
 		for (String patternFeature : patternFeatures) {
-			if (patternFeature.equalsIgnoreCase("OPINION_MODIFIER[adverb]")) {
+			if (patternFeature.equalsIgnoreCase("MODIFIER[adverb]")) {
 				//patternFeature = patternFeature + ":" + prevWord;
 			}
 			

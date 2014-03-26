@@ -4,15 +4,15 @@ import com.yglab.nlp.util.Span;
 import com.yglab.nlp.util.eval.AbstractEvaluator;
 
 /**
- * The evaluator for NamedEntityRecognizer.
+ * The evaluator for NameFinder.
  * 
  * @author Younggue Bae
  */
-public class NamedEntityRecognizerEvaluator extends AbstractEvaluator<NameSample> {
+public class NameFinderEvaluator extends AbstractEvaluator<NameSample> {
 	
-	private NamedEntityRecognizer ner;
+	private NameFinder ner;
 	
-	public NamedEntityRecognizerEvaluator(NamedEntityRecognizer ner) {
+	public NameFinderEvaluator(NameFinder ner) {
 		this.ner = ner;
 	}
 

@@ -15,7 +15,7 @@ import com.yglab.nlp.util.Span;
  * 
  * @author Younggue Bae
  */
-public class NamedEntityRecognizerTest {
+public class NameFinderTest {
 	
 	private static NameFeatureGenerator featureGenerator;
 
@@ -28,17 +28,17 @@ public class NamedEntityRecognizerTest {
 	}
 	
 	private static void train() throws Exception {
-		List<NameSample> trainSamples = NamedEntityRecognizer.loadSamples("/sample/ko/ner/ko-ner-train.txt");
+		List<NameSample> trainSamples = NameFinder.loadSamples("/sample/ko/ner/ko-ner-train.txt");
 		
 		Options options = new Options();
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
-		AbstractModel model = NamedEntityRecognizer.train(trainSamples, featureGenerator, options);
+		AbstractModel model = NameFinder.train(trainSamples, featureGenerator, options);
 
-		NamedEntityRecognizer.saveModel(model, "./target/test-data/ko/ner/ko-ner-default-model.bin", "./target/test-data/ko/ner/ko-ner-default-model.txt");
+		NameFinder.saveModel(model, "./target/test-data/ko/ner/ko-ner-default-model.bin", "./target/test-data/ko/ner/ko-ner-default-model.txt");
 	}
 	
 	@Test
-	public void testRecognizer() throws Exception {
+	public void testNameFinder() throws Exception {
 		System.out.println("==================================================");
 
 		String[] tokens = { 
@@ -64,9 +64,9 @@ public class NamedEntityRecognizerTest {
 			System.out.println(i + ": " + tokens[i]);
 		}
 
-		AbstractModel trainModel = NamedEntityRecognizer.loadModel("./target/test-data/ko/ner/ko-ner-default-model.bin");
-		NamedEntityRecognizer ner = new NamedEntityRecognizer(trainModel, featureGenerator);
-		Span[] result = ner.find(tokens);
+		AbstractModel trainModel = NameFinder.loadModel("./target/test-data/ko/ner/ko-ner-default-model.bin");
+		NameFinder finder = new NameFinder(trainModel, featureGenerator);
+		Span[] result = finder.find(tokens);
 
 		System.out.println("-----------------------------------------------");
 		for (Span span : result) {
@@ -76,16 +76,16 @@ public class NamedEntityRecognizerTest {
 	
 	@Test
 	public void testEvaluator() throws Exception {
-		//List<NameSample> trainSamples = NamedEntityRecognizer.loadSamples("/sample/ko/ner/ko-ner-train.txt");
+		//List<NameSample> trainSamples = NameFinder.loadSamples("/sample/ko/ner/ko-ner-train.txt");
 		//Options options = new Options();
 		//options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
-		//AbstractModel trainModel = NamedEntityRecognizer.train(trainSamples, featureGenerator, options);
+		//AbstractModel trainModel = NameFinder.train(trainSamples, featureGenerator, options);
 		
-		AbstractModel trainModel = NamedEntityRecognizer.loadModel("./target/test-data/ko/ner/ko-ner-default-model.bin");
-		NamedEntityRecognizer ner = new NamedEntityRecognizer(trainModel, featureGenerator);
+		AbstractModel trainModel = NameFinder.loadModel("./target/test-data/ko/ner/ko-ner-default-model.bin");
+		NameFinder ner = new NameFinder(trainModel, featureGenerator);
 		
-		List<NameSample> testSamples = NamedEntityRecognizer.loadSamples("/sample/ko/ner/ko-ner-test.txt");
-		NamedEntityRecognizerEvaluator evaluator = new NamedEntityRecognizerEvaluator(ner);
+		List<NameSample> testSamples = NameFinder.loadSamples("/sample/ko/ner/ko-ner-test.txt");
+		NameFinderEvaluator evaluator = new NameFinderEvaluator(ner);
 		evaluator.evaluate(testSamples);
 		
 		evaluator.print();

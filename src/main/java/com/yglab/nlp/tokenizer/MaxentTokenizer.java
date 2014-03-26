@@ -22,7 +22,7 @@ import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Datum;
 import com.yglab.nlp.model.EventStream;
 import com.yglab.nlp.model.Options;
-import com.yglab.nlp.ner.NamedEntityRecognizer;
+import com.yglab.nlp.ner.NameFinder;
 import com.yglab.nlp.util.Span;
 
 /**
@@ -183,7 +183,7 @@ public class MaxentTokenizer extends AbstractTokenizer {
 		List<TokenSample> samples = new ArrayList<TokenSample>();
 		TokenSampleParser parser = new TokenSampleParser();
 		BufferedReader in = null;
-		InputStream is = NamedEntityRecognizer.class.getResourceAsStream(filename);
+		InputStream is = NameFinder.class.getResourceAsStream(filename);
 
 		if (is != null) {
 			in = new BufferedReader(new InputStreamReader(is, "utf-8"));

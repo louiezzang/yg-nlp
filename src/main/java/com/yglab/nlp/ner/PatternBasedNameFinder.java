@@ -1,4 +1,4 @@
-package com.yglab.nlp.opinion;
+package com.yglab.nlp.ner;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -9,32 +9,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yglab.nlp.model.AbstractModel;
-import com.yglab.nlp.ner.NameFeatureGenerator;
-import com.yglab.nlp.ner.NameSample;
-import com.yglab.nlp.ner.NameSampleParser;
-import com.yglab.nlp.ner.NamedEntityRecognizer;
 import com.yglab.nlp.tokenizer.Tokenizer;
 import com.yglab.nlp.util.Span;
 
 /**
- * The class trains the opinion finder and extracts the opinions from the sentence.
+ * This class trains the pattern based name finder and finds the named entity.
  * 
  * @author Younggue Bae
  */
-public class OpinionNameFinder extends NamedEntityRecognizer {
+public class PatternBasedNameFinder extends NameFinder {
 
 	protected Tokenizer tokenizer;
 	protected TokenPostagPairGenerator tokenPairGenerator;
 
 	/**
-	 * Initializes the opinion finder with the specified model.
+	 * Initializes the name finder with the specified model.
 	 * 
 	 * @param model
 	 * @param featureGenerator
 	 * @param tokenizer
 	 * @param tokenPairGenerator
 	 */
-	public OpinionNameFinder(AbstractModel model, NameFeatureGenerator featureGenerator,
+	public PatternBasedNameFinder(AbstractModel model, PatternBasedNameFeatureGenerator featureGenerator,
 			Tokenizer tokenizer, TokenPostagPairGenerator tokenPairGenerator) {
 		super(model, featureGenerator);
 
@@ -97,7 +93,7 @@ public class OpinionNameFinder extends NamedEntityRecognizer {
 		List<NameSample> samples = new ArrayList<NameSample>();
 		NameSampleParser parser = new NameSampleParser();
 		BufferedReader in = null;
-		InputStream is = OpinionNameFinder.class.getResourceAsStream(filename);
+		InputStream is = PatternBasedNameFinder.class.getResourceAsStream(filename);
 
 		if (is != null) {
 			in = new BufferedReader(new InputStreamReader(is, "utf-8"));

@@ -9,7 +9,7 @@ import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Options;
 import com.yglab.nlp.ner.NameFeatureGenerator;
 import com.yglab.nlp.ner.NameSample;
-import com.yglab.nlp.ner.NamedEntityRecognizer;
+import com.yglab.nlp.ner.NameFinder;
 import com.yglab.nlp.util.RegexFeatureDictionary;
 import com.yglab.nlp.util.Span;
 
@@ -34,13 +34,13 @@ public class NLUTest {
 	}
 	
 	private static void train() throws Exception {
-		List<NameSample> trainSamples = NamedEntityRecognizer.loadSamples("/sample/ko/nlu/ko-nlu-train.txt");
+		List<NameSample> trainSamples = NameFinder.loadSamples("/sample/ko/nlu/ko-nlu-train.txt");
 		
 		Options options = new Options();
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
-		AbstractModel model = NamedEntityRecognizer.train(trainSamples, featureGenerator, options);
+		AbstractModel model = NameFinder.train(trainSamples, featureGenerator, options);
 
-		NamedEntityRecognizer.saveModel(model, "./target/test-data/ko/nlu/ko-nlu-model.bin", "./target/test-data/ko/nlu/ko-nlu-model.txt");
+		NameFinder.saveModel(model, "./target/test-data/ko/nlu/ko-nlu-model.bin", "./target/test-data/ko/nlu/ko-nlu-model.txt");
 	}
 	
 	@Test
@@ -61,10 +61,10 @@ public class NLUTest {
 			System.out.println(i + ": " + tokens[i]);
 		}
 		
-		AbstractModel trainModel = NamedEntityRecognizer.loadModel("./target/test-data/ko/nlu/ko-nlu-model.bin");
-		NamedEntityRecognizer ner = new NamedEntityRecognizer(trainModel, featureGenerator);
+		AbstractModel trainModel = NameFinder.loadModel("./target/test-data/ko/nlu/ko-nlu-model.bin");
+		NameFinder finder = new NameFinder(trainModel, featureGenerator);
 
-		Span[] result = ner.find(tokens);
+		Span[] result = finder.find(tokens);
 
 		System.out.println("-----------------------------------------------");
 		for (Span span : result) {
@@ -83,7 +83,7 @@ public class NLUTest {
 			System.out.println(i + ": " + tokens1[i]);
 		}
 
-		Span[] result1 = ner.find(tokens1);
+		Span[] result1 = finder.find(tokens1);
 
 		System.out.println("-----------------------------------------------");
 		for (Span span : result1) {
@@ -104,7 +104,7 @@ public class NLUTest {
 			System.out.println(i + ": " + tokens2[i]);
 		}
 
-		Span[] result2 = ner.find(tokens2);
+		Span[] result2 = finder.find(tokens2);
 
 		System.out.println("-----------------------------------------------");
 		for (Span span : result2) {

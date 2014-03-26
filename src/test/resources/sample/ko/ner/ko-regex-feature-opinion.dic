@@ -6,7 +6,7 @@
 ##################################################################################
 @EMBRACE_WORD_BOUNDARY=false
 
-OPINION_MODIFIER
+MODIFIER
 	adverb
 		\b매우\b
 		\b진짜[로루]\b

@@ -1,8 +1,8 @@
-package com.yglab.nlp.opinion;
+package com.yglab.nlp.ner;
 
 
 /**
- * The interface for generations tokens with its postags.
+ * The interface for generating the pairs of token with its postag.
  * 
  * @author Younggue Bae
  */
