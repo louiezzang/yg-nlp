@@ -36,7 +36,7 @@ public class DependencyParserEvaluatorTest {
 		
 		Options options = new Options();
 		options.put(Options.ALGORITHM, Options.PERCEPTRON_ALGORITHM);
-		options.put(Options.ITERATIONS, "6");
+		options.put(Options.ITERATIONS, "10");
 		
 		AbstractModel model = DependencyParser.train(trainSamples, labels, featureGenerator, options);
 		DependencyParser.saveModel(model, "./target/test-data/en/parser/en-parser-model.bin", "./target/test-data/en/parser/en-parser-model.txt");	

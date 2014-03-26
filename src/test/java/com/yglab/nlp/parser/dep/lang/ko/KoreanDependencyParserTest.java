@@ -52,7 +52,7 @@ public class KoreanDependencyParserTest {
 		
 		Options options = new Options();
 		options.put(Options.ALGORITHM, Options.PERCEPTRON_ALGORITHM);
-		options.put(Options.ITERATIONS, "6");
+		options.put(Options.ITERATIONS, "10");
 		
 		AbstractModel model = DependencyParser.train(trainSamples, labels, featureGenerator, options);
 		DependencyParser.saveModel(model, "./target/test-data/ko/parser/ko-parser-model.bin", "./target/test-data/ko/parser/ko-parser-model.txt");
