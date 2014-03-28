@@ -139,11 +139,6 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 	
 
 	protected void addDistanceFeatures(List<String> features, ParseSample instance, int head, int modifier) {
-		String headPOS = instance.postags[head];
-		String headCPOS = instance.cpostags[head];
-		String modifierPOS = instance.postags[modifier];
-		String modifierCPOS = instance.cpostags[modifier];
-		
 		int distance = Math.abs(head - modifier);
 		String direction = "lefthand";
 		if (head > modifier) {
@@ -167,6 +162,10 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 		features.add("distance=" + distanceFeature);
 		
 		// added 2014-03-29
+		String headPOS = instance.postags[head];
+		String headCPOS = instance.cpostags[head];
+		String modifierPOS = instance.postags[modifier];
+		String modifierCPOS = instance.cpostags[modifier];
 		features.add("distance=" + headPOS + " " + modifierPOS + " " + distanceFeature);
 		features.add("distance=" + headCPOS + " " + modifierCPOS + " " + distanceFeature);
 	}
