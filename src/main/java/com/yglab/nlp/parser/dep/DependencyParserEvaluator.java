@@ -44,6 +44,8 @@ public class DependencyParserEvaluator extends AbstractEvaluator<ParseSample> {
 		
 		for (int i = 0; i < bestParses.size(); i++) {
 			Parse predictedParse = bestParses.get(i);
+			System.out.println(predictedParse);
+			
 			if (correctlyPredicted(predictedParse, labeled)) {
 				addTruePositiveSize(1);
 				labeledAttachmentTrueSize++;
@@ -101,9 +103,7 @@ public class DependencyParserEvaluator extends AbstractEvaluator<ParseSample> {
 		return la;
 	}
 	
-	private boolean correctlyPredicted(Parse predictedParse, boolean labeled){
-		System.out.println(predictedParse);
-		
+	private boolean correctlyPredicted(Parse predictedParse, boolean labeled){	
 		if (labeled) {
 			if (predictedParse.getHead() == predictedParse.getGoldenHead() && 
 					predictedParse.getLabel().equals(predictedParse.getGoldenLabel())) {

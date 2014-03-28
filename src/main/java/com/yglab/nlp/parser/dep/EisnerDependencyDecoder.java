@@ -19,9 +19,9 @@ import com.yglab.nlp.perceptron.PerceptronModel;
  * "Bilexical grammars and their cubic-time parsing algorithms."
  *	- Jason Eisner, In Advances in Probabilistic and Other Parsing Technologies, 2000
  * "Three new probabilistic models for dependency parsing: An exploration."
- * 	- Jason Eisner, COLING, 1996  
+ *  - Jason Eisner, COLING, 1996  
  * "Discriminative learning and spanning tree algorithms for dependency parsing."
- *	- Ryan McDonald, 2006
+ *  - Ryan McDonald, 2006
  * "Global inference and learning algorithms for multi-lingual dependency parsing."
  *  - Ryan McDonald, Koby Crammer, Fernando Pereira, Kevin Lerman, 2008
  *

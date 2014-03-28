@@ -36,7 +36,7 @@ public class DependencyParserEvaluatorTest {
 		
 		Options options = new Options();
 		options.put(Options.ALGORITHM, Options.PERCEPTRON_ALGORITHM);
-		options.put(Options.ITERATIONS, "10");
+		options.put(Options.ITERATIONS, "5");
 		
 		AbstractModel model = DependencyParser.train(trainSamples, labels, featureGenerator, options);
 		DependencyParser.saveModel(model, "./target/test-data/en/parser/en-parser-model.bin", "./target/test-data/en/parser/en-parser-model.txt");	
@@ -49,7 +49,7 @@ public class DependencyParserEvaluatorTest {
 		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/en/parser/en-parser-model.bin");
 		DependencyParser parser = new DependencyParser(trainedModel, featureGenerator);
 		
-		reader.startReading("/sample/en/parser/en-parser-test.conll");
+		reader.startReading("./data/en/parser/en-parser-test.conll");
 		List<ParseSample> testSamples = DependencyParser.loadSamples(reader);
 		
 		boolean labeled = ((PerceptronModel) trainedModel).isLabeled();

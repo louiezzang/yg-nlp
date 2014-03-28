@@ -37,6 +37,10 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 		features.add("modifierPOS=" + instance.postags[modifier]);
 		features.add("headCPOS=" + instance.cpostags[head]);
 		features.add("modifierCPOS=" + instance.cpostags[modifier]);
+		
+		// added 2014-03-29
+		features.add("headerWordCPOS=" + instance.forms[head] + " " + instance.cpostags[head]);
+		features.add("modfierWordCPOS=" + instance.forms[modifier] + " " + instance.cpostags[modifier]);
 	}
 	
 	protected void addBigramFeatures(List<String> features, ParseSample instance, int head, int modifier) {	
@@ -49,6 +53,19 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 		features.add("headModifierWord=" + instance.forms[head] + " " + instance.forms[modifier]);
 		features.add("headModifierPOS=" + instance.postags[head] + " " + instance.postags[modifier]);
 		features.add("headModifierCPOS=" + instance.cpostags[head] + " " + instance.cpostags[modifier]);
+		
+		// added 2014-03-29
+		features.add("headCPOSModifierWordCPOS=" + instance.cpostags[head] + " " + instance.forms[modifier] + 
+				" " + instance.cpostags[modifier]);
+		
+		features.add("headWordModifierWordCPOS=" + instance.forms[head] + " " + instance.forms[modifier] + 
+				" " + instance.cpostags[modifier]);
+		
+		features.add("headWordCPOSModifierCPOS=" + instance.forms[head] + " " + instance.cpostags[head] + 
+				" " + instance.cpostags[modifier]);
+		
+		features.add("headWordCPOSModifierWord=" + instance.forms[head] + " " + instance.cpostags[head] + 
+				" " + instance.forms[modifier]);
 	}
 	
 	protected void addContextualFeatures(List<String> features, ParseSample instance, int head, int modifier) {
@@ -112,7 +129,7 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 			end = modifier;
 		}
 		
-		for (int i = start; i < end; i++) {
+		for (int i = start + 1; i < end; i++) {
 			String inbetweenPOS = instance.postags[i];
 			String inbetweenCPOS = instance.cpostags[i];
 			features.add("inbetweenPOS=" + headPOS + " " + inbetweenPOS + " " + modifierPOS);
@@ -122,10 +139,10 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 	
 
 	protected void addDistanceFeatures(List<String> features, ParseSample instance, int head, int modifier) {
-		//String headPOS = instance.postags[head];
-		//String headCPOS = instance.cpostags[head];
-		//String modifierPOS = instance.postags[modifier];
-		//String modifierCPOS = instance.cpostags[modifier];
+		String headPOS = instance.postags[head];
+		String headCPOS = instance.cpostags[head];
+		String modifierPOS = instance.postags[modifier];
+		String modifierCPOS = instance.cpostags[modifier];
 		
 		int distance = Math.abs(head - modifier);
 		String direction = "lefthand";
@@ -147,10 +164,11 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 			distanceFeature = direction + (distance - 1);
 		}
 		
-		//features.add("distance=" + headPOS + " " + modifierPOS + " " + distanceFeature);
-		//features.add("distance=" + headCPOS + " " + modifierCPOS + " " + distanceFeature);
-		
 		features.add("distance=" + distanceFeature);
+		
+		// added 2014-03-29
+		features.add("distance=" + headPOS + " " + modifierPOS + " " + distanceFeature);
+		features.add("distance=" + headCPOS + " " + modifierCPOS + " " + distanceFeature);
 	}
 
 }
