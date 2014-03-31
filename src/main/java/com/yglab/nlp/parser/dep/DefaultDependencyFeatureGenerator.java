@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yglab.nlp.parser.ParseSample;
+import com.yglab.nlp.util.StringPattern;
 
 
 
@@ -30,42 +31,59 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 		return features.toArray(new String[features.size()]);
 	}
 	
-	protected void addUnigramFeatures(List<String> features, ParseSample instance, int head, int modifier) {	
-		features.add("headWord=" + instance.forms[head]);
-		features.add("modifierWord=" + instance.forms[modifier]);
+	protected String normalizeWord(String word) {
+		StringPattern pattern = StringPattern.recognize(word);
+		
+		if (pattern.isAllDigit()) {
+			word = "allNum";
+		}
+		else if (pattern.containsDigit() && pattern.containsComma()) {
+			word = "commaNum";
+		}
+		else if (pattern.containsDigit() && pattern.containsPeriod()) {
+			word = "dotNum";
+		}
+		return word;
+	}
+	
+	protected void addUnigramFeatures(List<String> features, ParseSample instance, int head, int modifier) {
+		String headWord = normalizeWord(instance.forms[head]);
+		String modifierWord = normalizeWord(instance.forms[modifier]);
+		
+		features.add("headWord=" + headWord);
+		features.add("modifierWord=" + modifierWord);
 		features.add("headPOS=" + instance.postags[head]);
 		features.add("modifierPOS=" + instance.postags[modifier]);
 		features.add("headCPOS=" + instance.cpostags[head]);
 		features.add("modifierCPOS=" + instance.cpostags[modifier]);
-		
-		// added 2014-03-29
-		features.add("headerWordCPOS=" + instance.forms[head] + " " + instance.cpostags[head]);
-		features.add("modfierWordCPOS=" + instance.forms[modifier] + " " + instance.cpostags[modifier]);
 	}
 	
 	protected void addBigramFeatures(List<String> features, ParseSample instance, int head, int modifier) {	
-		features.add("headModifierWordPOS=" + instance.forms[head] + " " + instance.forms[modifier] + 
+		String headWord = normalizeWord(instance.forms[head]);
+		String modifierWord = normalizeWord(instance.forms[modifier]);
+		
+		features.add("headModifierWordPOS=" + headWord + " " + modifierWord + 
 				" " + instance.postags[head] + " " + instance.postags[modifier]);
 		
-		features.add("headModifierWordCPOS=" + instance.forms[head] + " " + instance.forms[modifier] + 
+		features.add("headModifierWordCPOS=" + headWord + " " + modifierWord + 
 				" " + instance.cpostags[head] + " " + instance.cpostags[modifier]);
 		
-		features.add("headModifierWord=" + instance.forms[head] + " " + instance.forms[modifier]);
+		features.add("headModifierWord=" + headWord + " " + modifierWord);
 		features.add("headModifierPOS=" + instance.postags[head] + " " + instance.postags[modifier]);
 		features.add("headModifierCPOS=" + instance.cpostags[head] + " " + instance.cpostags[modifier]);
 		
 		// added 2014-03-29
-		features.add("headCPOSModifierWordCPOS=" + instance.cpostags[head] + " " + instance.forms[modifier] + 
+		features.add("headCPOSModifierWordCPOS=" + instance.cpostags[head] + " " + modifierWord + 
 				" " + instance.cpostags[modifier]);
 		
-		features.add("headWordModifierWordCPOS=" + instance.forms[head] + " " + instance.forms[modifier] + 
+		features.add("headWordModifierWordCPOS=" + headWord + " " + modifierWord + 
 				" " + instance.cpostags[modifier]);
 		
-		features.add("headWordCPOSModifierCPOS=" + instance.forms[head] + " " + instance.cpostags[head] + 
+		features.add("headWordCPOSModifierCPOS=" + headWord + " " + instance.cpostags[head] + 
 				" " + instance.cpostags[modifier]);
 		
-		features.add("headWordCPOSModifierWord=" + instance.forms[head] + " " + instance.cpostags[head] + 
-				" " + instance.forms[modifier]);
+		features.add("headWordCPOSModifierWord=" + headWord + " " + instance.cpostags[head] + 
+				" " + modifierWord);
 	}
 	
 	protected void addContextualFeatures(List<String> features, ParseSample instance, int head, int modifier) {
@@ -140,7 +158,7 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 
 	protected void addDistanceFeatures(List<String> features, ParseSample instance, int head, int modifier) {
 		int distance = Math.abs(head - modifier);
-		String direction = "lefthand";
+		String direction = "left";
 		if (head > modifier) {
 			direction = "left";
 		}
