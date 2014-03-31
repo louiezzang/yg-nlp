@@ -116,17 +116,30 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 			headPrevCPOS = instance.cpostags[head - 1];
 		}
 		
-		features.add("headNextmodifierPrevPOS=" + instance.postags[head] + " " + headNextPOS + 
+		features.add("headNextModifierPrevPOS=" + instance.postags[head] + " " + headNextPOS + 
 				" " + instance.postags[modifier] + " " + modifierPrevPOS);
 		
-		features.add("headNextmodifierPrevCPOS=" + instance.cpostags[head] + " " + headNextCPOS + 
+		features.add("headNextModifierPrevCPOS=" + instance.cpostags[head] + " " + headNextCPOS + 
 				" " + instance.cpostags[modifier] + " " + modifierPrevCPOS);
 		
-		features.add("headPrevmodifierNextPOS=" + instance.postags[head] + " " + headPrevPOS + 
+		features.add("headPrevModifierNextPOS=" + instance.postags[head] + " " + headPrevPOS + 
 				" " + instance.postags[modifier] + " " + modifierNextPOS);
 		
-		features.add("headPrevmodifierNextCPOS=" + instance.cpostags[head] + " " + headPrevCPOS + 
+		features.add("headPrevModifierNextCPOS=" + instance.cpostags[head] + " " + headPrevCPOS + 
 				" " + instance.cpostags[modifier] + " " + modifierNextCPOS);
+		
+		// added 2014-03-31
+		features.add("headNextModifierNextPOS=" + instance.postags[head] + " " + headNextPOS + 
+				" " + instance.postags[modifier] + " " + modifierNextPOS);
+		
+		features.add("headNextModifierNextCPOS=" + instance.cpostags[head] + " " + headNextCPOS + 
+				" " + instance.cpostags[modifier] + " " + modifierNextCPOS);
+		
+		features.add("headPrevModifierPrevPOS=" + instance.postags[head] + " " + headPrevPOS + 
+				" " + instance.postags[modifier] + " " + modifierPrevPOS);
+		
+		features.add("headPrevModifierPrevCPOS=" + instance.cpostags[head] + " " + headPrevCPOS + 
+				" " + instance.cpostags[modifier] + " " + modifierPrevCPOS);
 	}
 	
 
