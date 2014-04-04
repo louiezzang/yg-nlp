@@ -16,7 +16,7 @@ import com.yglab.nlp.parser.Parse;
 import com.yglab.nlp.parser.ParseSample;
 import com.yglab.nlp.parser.ParseSampleEventStream;
 import com.yglab.nlp.parser.Parser;
-import com.yglab.nlp.parser.io.CONLLReader;
+import com.yglab.nlp.parser.io.CoNLLReader;
 import com.yglab.nlp.perceptron.MutablePerceptronModel;
 import com.yglab.nlp.perceptron.PerceptronDecoder;
 import com.yglab.nlp.perceptron.PerceptronModel;
@@ -163,7 +163,7 @@ public class DependencyParser implements Parser {
 	 * @return
 	 * @throws IOException
 	 */
-	public static final List<ParseSample> loadSamples(CONLLReader reader) throws IOException {
+	public static final List<ParseSample> loadSamples(CoNLLReader reader) throws IOException {
 		List<ParseSample> samples = new ArrayList<ParseSample>();
 		
 		ParseSample instance = reader.getNext();

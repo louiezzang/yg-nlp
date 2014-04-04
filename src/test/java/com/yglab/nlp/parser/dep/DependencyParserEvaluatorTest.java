@@ -8,7 +8,7 @@ import org.junit.Test;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Options;
 import com.yglab.nlp.parser.ParseSample;
-import com.yglab.nlp.parser.io.CONLLReader;
+import com.yglab.nlp.parser.io.CoNLLReader;
 import com.yglab.nlp.perceptron.PerceptronModel;
 
 /**
@@ -25,12 +25,12 @@ public class DependencyParserEvaluatorTest {
 	public static void setUpBeforeClass() throws Exception {
 		featureGenerator = new DefaultDependencyFeatureGenerator();
 		
-		train();
+		//train();
 	}
 	
 	private static void train() throws Exception {
-		CONLLReader reader = new CONLLReader();
-		reader.startReading("./data/en/parser/en-parser-train.conll");
+		CoNLLReader reader = new CoNLLReader();
+		reader.startReading("./data/en/parser/en-parser-1-train.conll");
 		List<ParseSample> trainSamples = DependencyParser.loadSamples(reader);
 		String[] labels = reader.getLabels();
 		
@@ -39,17 +39,17 @@ public class DependencyParserEvaluatorTest {
 		options.put(Options.ITERATIONS, "5");
 		
 		AbstractModel model = DependencyParser.train(trainSamples, labels, featureGenerator, options);
-		DependencyParser.saveModel(model, "./target/test-data/en/parser/en-parser-model.bin", "./target/test-data/en/parser/en-parser-model.txt");	
+		DependencyParser.saveModel(model, "./target/test-data/en/parser/en-parser-model-1.bin", "./target/test-data/en/parser/en-parser-model-1.txt");	
 	}
 	
 	@Test
 	public void testEvaluator() throws Exception {
-		CONLLReader reader = new CONLLReader();
+		CoNLLReader reader = new CoNLLReader();
 
-		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/en/parser/en-parser-model.bin");
+		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/en/parser/en-parser-model-1.bin");
 		DependencyParser parser = new DependencyParser(trainedModel, featureGenerator);
 		
-		reader.startReading("./data/en/parser/en-parser-test.conll");
+		reader.startReading("./data/en/parser/en-parser-1-test.conll");
 		List<ParseSample> testSamples = DependencyParser.loadSamples(reader);
 		
 		boolean labeled = ((PerceptronModel) trainedModel).isLabeled();

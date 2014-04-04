@@ -12,7 +12,7 @@ import com.yglab.nlp.parser.Parse;
 import com.yglab.nlp.parser.ParseSample;
 import com.yglab.nlp.parser.dep.DefaultDependencyFeatureGenerator;
 import com.yglab.nlp.parser.dep.DependencyParser;
-import com.yglab.nlp.parser.io.CONLLReader;
+import com.yglab.nlp.parser.io.CoNLLReader;
 import com.yglab.nlp.postag.POSSample;
 import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSFeatureGenerator;
@@ -45,7 +45,7 @@ public class KoreanDependencyParserTest {
 	}
 	
 	private static void train() throws Exception {
-		CONLLReader reader = new CONLLReader();
+		CoNLLReader reader = new CoNLLReader();
 		reader.startReading("/sample/ko/parser/ko-parser-train.conll");
 		List<ParseSample> trainSamples = DependencyParser.loadSamples(reader);
 		String[] labels = reader.getLabels();

@@ -11,7 +11,7 @@ import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Options;
 import com.yglab.nlp.parser.Parse;
 import com.yglab.nlp.parser.ParseSample;
-import com.yglab.nlp.parser.io.CONLLReader;
+import com.yglab.nlp.parser.io.CoNLLReader;
 
 /**
  * Test case.
@@ -53,7 +53,7 @@ public class DependencyParserTest {
 		ParseSample sample2 = new ParseSample(forms2, lemmas2, cpostags2, postags2, deprels2, heads2);
 		trainSamples1.add(sample2);
 		
-		CONLLReader reader = new CONLLReader();
+		CoNLLReader reader = new CoNLLReader();
 		reader.startReading("/sample/en/parser/en-parser-train.conll");
 		List<ParseSample> trainSamples2 = DependencyParser.loadSamples(reader);
 		String[] labels2 = reader.getLabels();
@@ -74,7 +74,7 @@ public class DependencyParserTest {
 		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/en/parser/en-parser-test-model.bin");
 		DependencyParser parser = new DependencyParser(trainedModel, featureGenerator);
 		
-		CONLLReader reader = new CONLLReader();
+		CoNLLReader reader = new CoNLLReader();
 		reader.startReading("/sample/en/parser/en-parser-test.conll");
 		List<ParseSample> testSamples = DependencyParser.loadSamples(reader);
 
