@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -38,34 +40,11 @@ public class TreebankReader {
    * The pattern used to identify tokens in Penn Treebank labeled constituents.
    */
 	protected static Pattern tokenPattern = Pattern.compile("^[^ ()]+ ([^()]+)\\s*\\)");
+	
+	
+	protected static List<String> punctuations = Arrays.asList(new String[] { ".", "!", "?", "," });
   
 	protected BufferedReader inputReader;
-	
-	/**
-	 * Class used to hold constituents when reading parses.
-	 */
-	class Constituent {
-
-	  private String label;
-	  private Span span;
-
-	  public Constituent(String label, Span span) {
-	    this.label = label;
-	    this.span = span;
-	  }
-
-	  public String getLabel() {
-	    return label;
-	  }
-
-	  public void setLabel(String label) {
-	    this.label = label;
-	  }
-
-	  public Span getSpan() {
-	    return span;
-	  }
-	}
 
 	/**
 	 * Constructor.
@@ -180,13 +159,15 @@ public class TreebankReader {
     instance.setDependencyRelations(new String[tokens.size()]);
     instance.setHeads(new int[tokens.size()]);
     
-    updateParseSample(txt, instance, p);
+    makeParseSample(txt, instance, p);
+    
+    retokenizeParseSample(instance);
 		
 		return instance;
 	}
 	
 	@SuppressWarnings({ "unchecked", "unused" })
-	private void updateParseSample(String text, ParseSample instance, Parse parse) {
+	private static void makeParseSample(String text, ParseSample instance, Parse parse) {
 		Span span = (Span) parse.getAttribute("span");
 		String token = text.substring(span.getStart(), span.getEnd());
 		List<Parse> parts = (LinkedList<Parse>) parse.getAttribute("parts");
@@ -205,7 +186,7 @@ public class TreebankReader {
 						part.getIndex() + ": " + instance.forms[part.getIndex()] + ": " + instance.deprels[part.getIndex()]);
 				
 			}
-			updateParseSample(text, instance, part);
+			makeParseSample(text, instance, part);
 		}		
 	}
 	
@@ -262,7 +243,12 @@ public class TreebankReader {
     String token = null;
     if (tokenMatcher.find()) {
       token = tokenMatcher.group(1);
-      //token = token.replaceAll(" ", "");
+ 
+      // correct the wrong hand-tagged token
+      if (token.matches("^[\\s]*[\\+][\\s]+.*")) {
+      	token = token.replaceAll("^[\\s]*[\\+][\\s]+", "");	
+      }
+      
       if (!token.trim().equals("")) {
       	return token;
       }
@@ -297,7 +283,14 @@ public class TreebankReader {
     return token;
   }
   
-  private static ParseSample decodeToken(ParseSample instance, int index) {
+  /**
+   * You should override this method for your language.
+   * 
+   * @param instance
+   * @param index
+   * @return
+   */
+  protected static ParseSample decodeToken(ParseSample instance, int index) {
 		String token = instance.forms[index];
 		
 		StringBuilder form = new StringBuilder();
@@ -310,7 +303,9 @@ public class TreebankReader {
 			while (morphMatcher.find()) {
 				//String morph = morphMatcher.group(1);
 				String morph = decodeToken(morphMatcher.group(1));
+				morph = morph.replaceAll("\t", "");
 				String tag = morphMatcher.group(2);
+				tag = tag.replaceAll("\t", "");
 			
 				form.append(morph);
 				if (!cpostag.toString().equals("")) {
@@ -327,7 +322,6 @@ public class TreebankReader {
 				else {
 					postag.append(tag);
 				}
-				
 				//System.out.println(morph + ": " + postag);
 			}
 		}
@@ -339,6 +333,116 @@ public class TreebankReader {
 		
     return instance;
   }
+  
+  protected static ParseSample retokenizeParseSample(ParseSample instance) {
+  	//queue
+  	List<String> forms = new ArrayList<String>();
+  	List<String> lemmas = new ArrayList<String>();
+  	List<String> cpostags = new ArrayList<String>();
+  	List<String> postags = new ArrayList<String>();
+  	List<Integer> heads = new ArrayList<Integer>();
+  	List<String> deprels = new ArrayList<String>();
+  	List<String[]> feats = new ArrayList<String[]>();
+  	//List<Double> scores = new ArrayList<Double>();
+  	
+  	for (int i = 0; i < instance.length(); i++) {
+  		String form = instance.forms[i];
+  		String lemma = instance.lemmas[i];
+  		String cpostag = instance.cpostags[i];
+  		String postag = instance.postags[i];
+  		int head = instance.heads[i];
+  		String deprel = instance.deprels[i];
+  		String[] feat = (instance.feats == null || instance.feats[i] == null) ? null : instance.feats[i];
+  		//double score = (instance.confidenceScores == null) ? 0 : instance.confidenceScores[i];
+  		
+  		forms.add(i, form);
+  		lemmas.add(i, lemma);
+  		cpostags.add(i, cpostag);
+  		postags.add(i, postag);
+  		heads.add(i, head);
+  		deprels.add(i, deprel);
+  		feats.add(i, feat);
+  		//scores.add(i, score);
+  	}
+  	
+  	for (int i = 0; i < forms.size(); i++) {
+  		String form = forms.get(i);
+  		String lemma = lemmas.get(i);
+  		String cpostag = cpostags.get(i);
+  		
+  		String lastChar = form.substring(form.length() - 1);
+  		if (punctuations.contains(lastChar) && (cpostag.endsWith("SF") || cpostag.endsWith("SP"))) {
+  			shiftHead(heads, i+1);
+  			
+  			forms.set(i, form.substring(0, form.length() - 1));
+  			lemmas.set(i, lemma.substring(0, lemma.length() - 1));
+  			
+    		forms.add(i+1, lastChar);
+    		lemmas.add(i+1, lastChar);
+    		cpostags.add(i+1, lastChar);
+    		postags.add(i+1, lastChar);
+    		heads.add(i+1, i);
+    		deprels.add(i+1, "X");
+    		feats.add(i+1, null);
+    		//scores.add(i+1, null);
+  			
+  			i++;
+  		}
+  		
+  	}
+  	
+  	int[] arrHeads = new int[forms.size()];
+  	//double[] arrScores = new double[forms.size()];
+  	for (int i = 0; i < forms.size(); i++) {
+  		arrHeads[i] = heads.get(i);
+  		//arrScores[i] = scores.get(i);
+  	}
+  	
+  	instance.setForms(forms.toArray(new String[forms.size()]));
+  	instance.setLemmas(lemmas.toArray(new String[forms.size()]));
+  	instance.setCpostags(cpostags.toArray(new String[forms.size()]));
+  	instance.setPostags(postags.toArray(new String[forms.size()]));
+  	instance.setHeads(arrHeads);
+  	instance.setDependencyRelations(deprels.toArray(new String[forms.size()]));
+  	instance.setFeatures(feats.toArray(new String[forms.size()][]));
+  	//instance.setConfidenceScores(arrScores);
+  	
+  	return instance;
+  }
+  
+  private static void shiftHead(List<Integer> heads, int split) {
+  	for (int i = 0; i < heads.size(); i++) {
+  		int head = heads.get(i);
+  		if (head >= split) {
+  			heads.set(i, head+1);
+  		}
+  	}
+  }
+  
+	/**
+	 * Class used to hold constituents when reading parses.
+	 */
+	class Constituent {
 
+	  private String label;
+	  private Span span;
+
+	  public Constituent(String label, Span span) {
+	    this.label = label;
+	    this.span = span;
+	  }
+
+	  public String getLabel() {
+	    return label;
+	  }
+
+	  public void setLabel(String label) {
+	    this.label = label;
+	  }
+
+	  public Span getSpan() {
+	    return span;
+	  }
+	}
 
 }

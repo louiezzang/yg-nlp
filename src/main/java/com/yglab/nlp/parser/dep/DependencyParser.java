@@ -172,6 +172,8 @@ public class DependencyParser implements Parser {
 			samples.add(instance);
 			instance = reader.getNext();
 		}
+		
+		reader.close();
 
 		return samples;
 	}

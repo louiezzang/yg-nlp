@@ -23,6 +23,7 @@ public class TreebankToCoNLLConverter {
 		TreebankReader treebankReader = new TreebankReader();
 		treebankReader.startReading(filePenn);
 		
+		int cnt = 0;
 		ParseSample instance = null;
 		while ((instance = treebankReader.getNext()) != null) {
 			for (int index = 1; index < instance.length(); index++) {
@@ -37,8 +38,11 @@ public class TreebankToCoNLLConverter {
 					.append(instance.heads[index] == 0 ? "ROOT" : instance.deprels[index]);
 				writer.write(sb.toString());
 				writer.newLine();
+				cnt++;
 			}
-			writer.newLine();
+			if (cnt > 0) {
+				writer.newLine();
+			}
 		}
 		
 		writer.close();
@@ -54,7 +58,7 @@ public class TreebankToCoNLLConverter {
 	}
 
 	public static void main(String[] args) throws Exception {
-		TreebankToCoNLLConverter.convert("./data/ko/parser/ko-parser.sejong", "./target/test-data/ko/parser/ko-parser-train-from-sejong.txt");
+		TreebankToCoNLLConverter.convert("./data/ko/parser/ko-sejong.tree", "./target/test-data/ko/parser/ko-parser-from-sejong.conll");
 	}
 
 }

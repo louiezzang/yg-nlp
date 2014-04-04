@@ -26,6 +26,10 @@ public class CoNLLReader {
 	public CoNLLReader() {
 
 	}
+	
+	public void close() throws IOException {
+		inputReader.close();
+	}
 
 	public boolean startReading(String file) throws IOException {
 		labeled = fileContainsLabels(file);
@@ -63,7 +67,12 @@ public class CoNLLReader {
 			in = new BufferedReader(new InputStreamReader(new FileInputStream(file), "utf-8"));
 		}
 		
-		String line = in.readLine();
+		String line;
+		while ((line = in.readLine()) != null) {
+			if (!line.trim().equals("")) {
+				break;
+			}
+		}
 		in.close();
 
 		if (line.split("\t").length == 8) {
@@ -84,9 +93,8 @@ public class CoNLLReader {
 		}
 
 		int length = lineList.size();
-
-		if (length == 0) {
-			inputReader.close();
+		if (lineList.size() == 0) {
+			//close();
 			return null;
 		}
 
@@ -107,6 +115,7 @@ public class CoNLLReader {
 
 		for (int i = 0; i < length; i++) {
 			String[] field = lineList.get(i);
+			
 			forms[i + 1] = field[1];
 			lemmas[i + 1] = field[2];
 			cpos[i + 1] = field[3];
