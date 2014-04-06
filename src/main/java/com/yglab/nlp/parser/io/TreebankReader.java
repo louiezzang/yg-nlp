@@ -369,13 +369,16 @@ public class TreebankReader {
   		String form = forms.get(i);
   		String lemma = lemmas.get(i);
   		String cpostag = cpostags.get(i);
+  		String postag = postags.get(i);
   		
   		String lastChar = form.substring(form.length() - 1);
-  		if (punctuations.contains(lastChar) && (cpostag.endsWith("SF") || cpostag.endsWith("SP"))) {
+  		if (punctuations.contains(lastChar) && (cpostag.endsWith(",SF") || cpostag.endsWith(",SP"))) {
   			shiftHead(heads, i+1);
   			
   			forms.set(i, form.substring(0, form.length() - 1));
   			lemmas.set(i, lemma.substring(0, lemma.length() - 1));
+  			cpostags.set(i, cpostag.substring(0, cpostag.length() - 3));
+  			postags.set(i, postag.substring(0, postag.length() - 3));
   			
     		forms.add(i+1, lastChar);
     		lemmas.add(i+1, lastChar);

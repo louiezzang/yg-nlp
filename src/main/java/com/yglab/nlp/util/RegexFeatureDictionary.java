@@ -272,6 +272,23 @@ public class RegexFeatureDictionary {
 		}
 		return sortedMap;
 	}
+	
+	public String normalizeWord(String text) {
+		for (String cat : map.keySet()) {
+			Pattern catRegex = map.get(cat);
+			Matcher m = catRegex.matcher(text);
+
+			while (m.find()) {
+			// if (m.find()) {
+				//System.out.println(catRegex.pattern());
+				String normalizedWord = cat.split("\t")[1];
+				//text = text.replaceAll(catRegex.pattern(), normalizedWord);
+				text = m.replaceAll(normalizedWord);
+			}
+		}
+
+		return text;
+	}
 
 	class CountComparator implements Comparator<Double> {
 		private boolean ascending = true;

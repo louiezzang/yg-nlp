@@ -25,7 +25,7 @@ public class DependencyParserEvaluatorTest {
 	public static void setUpBeforeClass() throws Exception {
 		featureGenerator = new DefaultDependencyFeatureGenerator();
 		
-		//train();
+		train();
 	}
 	
 	private static void train() throws Exception {

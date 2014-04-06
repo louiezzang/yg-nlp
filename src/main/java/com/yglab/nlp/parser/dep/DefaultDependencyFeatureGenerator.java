@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yglab.nlp.parser.ParseSample;
+import com.yglab.nlp.util.RegexFeatureDictionary;
 import com.yglab.nlp.util.StringPattern;
 
 
@@ -15,7 +16,14 @@ import com.yglab.nlp.util.StringPattern;
  */
 public class DefaultDependencyFeatureGenerator implements DependencyFeatureGenerator<ParseSample> {
 
+	protected RegexFeatureDictionary featureDic;
+	
 	public DefaultDependencyFeatureGenerator() {
+		this(null);
+	}
+	
+	public DefaultDependencyFeatureGenerator(RegexFeatureDictionary featureDic) {
+		this.featureDic = featureDic;
 	}
 	
 	@Override
@@ -43,6 +51,11 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 		else if (pattern.containsDigit() && pattern.containsPeriod()) {
 			word = "dotNum";
 		}
+		else if (featureDic != null) {
+			// normalize word by feature dictionary
+			word = featureDic.normalizeWord(word);
+		}
+		
 		return word;
 	}
 	
@@ -143,6 +156,7 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 	}
 	
 
+	@SuppressWarnings("unused")
 	protected void addInBetweenFeatures(List<String> features, ParseSample instance, int head, int modifier) {
 		String headPOS = instance.postags[head];
 		String headCPOS = instance.cpostags[head];
@@ -151,13 +165,16 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 		
 		int start = -1;
 		int end = -1;
+		String direction = "left";
 		if (head > modifier) {
 			start = modifier;
 			end = head;
+			direction = "left";
 		}
 		else {
 			start = head;
 			end = modifier;
+			direction = "right";
 		}
 		
 		for (int i = start + 1; i < end; i++) {
@@ -165,6 +182,24 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 			String inbetweenCPOS = instance.cpostags[i];
 			features.add("inbetweenPOS=" + headPOS + " " + inbetweenPOS + " " + modifierPOS);
 			features.add("inbetweenCPOS=" + headCPOS + " " + inbetweenCPOS + " " + modifierCPOS);
+			
+			// added 2014-04-04
+			/*
+			String distanceFeature = "";
+			int distance = Math.abs(end - i);
+			if (distance > 10) {
+				distanceFeature = direction + 10;
+			}
+			else if (distance > 5) {
+				distanceFeature = direction + 5;
+			}
+			else {
+				distanceFeature = direction + (distance - 1);
+			}
+			
+			features.add("inbetweenPOS=" + headPOS + " " + distanceFeature + inbetweenPOS + " " + modifierPOS);
+			features.add("inbetweenCPOS=" + headCPOS + " " + distanceFeature + inbetweenCPOS + " " + modifierCPOS);
+			*/
 		}
 	}
 	
@@ -191,6 +226,9 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 		}
 		
 		features.add("distance=" + distanceFeature);
+		
+		//String headWord = normalizeWord(instance.forms[head]);
+		//String modifierWord = normalizeWord(instance.forms[modifier]);
 		
 		// added 2014-03-29
 		String headPOS = instance.postags[head];

@@ -14,6 +14,7 @@ import com.yglab.nlp.parser.dep.DependencyParser;
 import com.yglab.nlp.parser.dep.DependencyParserEvaluator;
 import com.yglab.nlp.parser.io.CoNLLReader;
 import com.yglab.nlp.perceptron.PerceptronModel;
+import com.yglab.nlp.util.RegexFeatureDictionary;
 
 /**
  * Test case.
@@ -23,17 +24,21 @@ import com.yglab.nlp.perceptron.PerceptronModel;
 //@Ignore
 public class KoreanDependencyParserEvaluatorTest {
 	
+	private static RegexFeatureDictionary featureDic;
 	private static DependencyFeatureGenerator<ParseSample> featureGenerator;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		featureDic = new RegexFeatureDictionary(
+			"/lang/ko/ko-regex-feature-unit.dic");
+		
 		featureGenerator = new DefaultDependencyFeatureGenerator();
 		
-		//train();
+		train();
 	}
 	
 	private static void train() throws Exception {
-		CoNLLReader reader = new CoNLLReader();
+		CoNLLReader reader = new CoNLLReader(featureDic);
 		reader.startReading("./data/ko/parser/ko-parser-train-from-sejong.conll");
 		List<ParseSample> trainSamples = DependencyParser.loadSamples(reader);
 		String[] labels = reader.getLabels();
@@ -48,7 +53,7 @@ public class KoreanDependencyParserEvaluatorTest {
 	
 	@Test
 	public void testEvaluator() throws Exception {
-		CoNLLReader reader = new CoNLLReader();
+		CoNLLReader reader = new CoNLLReader(featureDic);
 
 		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/ko/parser/ko-parser-model-from-sejong.bin");
 		DependencyParser parser = new DependencyParser(trainedModel, featureGenerator);

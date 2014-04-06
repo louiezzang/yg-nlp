@@ -21,7 +21,7 @@ public class NameFinderTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		RegexFeatureDictionary featureDic = new RegexFeatureDictionary("/lang/ko/ko-regex-feature.dic");
+		RegexFeatureDictionary featureDic = new RegexFeatureDictionary("/lang/ko/ko-regex-feature.dic", "/lang/ko/ko-regex-feature-unit.dic");
 		featureGenerator = new DefaultNameFeatureGenerator(featureDic);
 		
 		train();

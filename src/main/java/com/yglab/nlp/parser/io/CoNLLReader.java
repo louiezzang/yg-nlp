@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yglab.nlp.parser.ParseSample;
+import com.yglab.nlp.util.RegexFeatureDictionary;
 
 
 
@@ -22,9 +23,15 @@ public class CoNLLReader {
 	protected BufferedReader inputReader;
 	protected boolean labeled = true;
 	protected List<String> labels = new ArrayList<String>();
+	
+	protected RegexFeatureDictionary featureDic;
 
 	public CoNLLReader() {
-
+		this(null);
+	}
+	
+	public CoNLLReader(RegexFeatureDictionary featureDic) {
+		this.featureDic = featureDic;
 	}
 	
 	public void close() throws IOException {
@@ -116,8 +123,8 @@ public class CoNLLReader {
 		for (int i = 0; i < length; i++) {
 			String[] field = lineList.get(i);
 			
-			forms[i + 1] = field[1];
-			lemmas[i + 1] = field[2];
+			forms[i + 1] = normalizeWord(field[1]);
+			lemmas[i + 1] = normalizeWord(field[2]);
 			cpos[i + 1] = field[3];
 			pos[i + 1] = field[4];
 			feats[i + 1] = field[5].split("\\|");
@@ -137,6 +144,15 @@ public class CoNLLReader {
 		}
 
 		return new ParseSample(forms, lemmas, cpos, pos, feats, deprels, heads);
+	}
+	
+	private String normalizeWord(String word) {
+		if (featureDic != null) {
+			// normalize word by feature dictionary
+			word = featureDic.normalizeWord(word);
+		}
+		
+		return word;
 	}
 
 }

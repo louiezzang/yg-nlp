@@ -23,6 +23,7 @@ import com.yglab.nlp.tokenizer.MaxentTokenizer;
 import com.yglab.nlp.tokenizer.TokenFeatureGenerator;
 import com.yglab.nlp.tokenizer.TokenSample;
 import com.yglab.nlp.tokenizer.Tokenizer;
+import com.yglab.nlp.util.RegexFeatureDictionary;
 
 /**
  * Test case.
@@ -37,7 +38,10 @@ public class KoreanDependencyParserTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		featureGenerator = new DefaultDependencyFeatureGenerator();
+		RegexFeatureDictionary featureDic = new RegexFeatureDictionary(
+				"/lang/ko/ko-regex-feature-unit.dic");
+		
+		featureGenerator = new DefaultDependencyFeatureGenerator(featureDic);
 		tokenizer = initTokenizer();
 		posTagger = initPOSTagger();
 		
