@@ -91,14 +91,14 @@ public class MorphemeDicGenerator {
 			String[] tokens = sample.getSentence();
 			String[] tags = sample.getLabels();
 
-			for (int i = 0; i < tokens.length; i++) {
-				String token = tokens[i];
-				String tag = tags[i];
+			for (int ti = 0; ti < tokens.length; ti++) {
+				String token = tokens[ti];
+				String tag = tags[ti];
 
 				String rootWordPos = null;
 				String[] morphTags = tag.split(",");
-				for (int j = morphTags.length - 1; j >= 0; j--) {
-					String morphTag = morphTags[j];
+				for (int mi = morphTags.length - 1; mi >= 0; mi--) {
+					String morphTag = morphTags[mi];
 					String morphPos = POSSampleParser.parsePos(morphTag);
 					// only if tags contains "_" operator
 					String morphWord = POSSampleParser.parseMorpheme(morphTag);
@@ -111,7 +111,7 @@ public class MorphemeDicGenerator {
 							}
 						}
 
-						if (j > 0) {
+						if (mi > 0) {
 							token = MorphemeUtil.truncateRight(token, morphWord);
 						} else {
 							token = morphWord;
