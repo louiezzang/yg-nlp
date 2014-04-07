@@ -34,7 +34,7 @@ public class KoreanStemmer implements Stemmer {
 					word = truncatedWord;
 				}
 				else {
-					return word;
+					//return word;
 				}
 			}
 			// append
