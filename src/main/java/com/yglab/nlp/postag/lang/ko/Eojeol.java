@@ -26,6 +26,7 @@ public class Eojeol {
 	public void setAnalyzed(boolean analyzed) {
 		this.analyzed = analyzed;
 		
+		// if failed in analyzing the full morphemes, clears the morphemes.
 		if (analyzed == false) {
 			morphemes.clear();
 		}
