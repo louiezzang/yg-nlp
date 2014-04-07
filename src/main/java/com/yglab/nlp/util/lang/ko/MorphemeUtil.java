@@ -142,7 +142,8 @@ public class MorphemeUtil {
 	 */
 	public static String appendRight(String source, String right) {
 		if (source == null || source.length() == 0) {
-			return source;
+			//return source;
+			return right;
 		}
 		// decompose the last character of source string into triple jaso 
 		char[] lastTripleJaso = KoreanUnicode.decomposeTriple(source.charAt(source.length() - 1));
