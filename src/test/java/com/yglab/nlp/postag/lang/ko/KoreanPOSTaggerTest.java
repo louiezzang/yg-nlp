@@ -47,29 +47,26 @@ public class KoreanPOSTaggerTest {
 	
 	@Test
 	public void testTagger() throws Exception {
-		/*
-		String[] tokens = {
-				"당신은",
-				"학교를",
-				"열심히",
-				"다닙니까",
-				"?"
-		};
-		*/
+
+//		String[] tokens = {
+//				"당신은",
+//				"학교를",
+//				"열심히",
+//				"다닙니까",
+//				"?"
+//		};
 		
-		/*
-		String[] tokens = {
-				"이",
-				"옷은",
-				"2만원",
-				"짜리인가요",
-				"?"
-		};
-		*/
+//		String[] tokens = {
+//				"이",
+//				"옷은",
+//				"2만원",
+//				"짜리인가요",
+//				"?"
+//		};
 		
 		String[] tokens = {
-				//"지어야했다"
-				"선물보내줘"
+				"지어야했다"
+				//"선물보내줘"
 		};		
 
 		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model.bin"); 

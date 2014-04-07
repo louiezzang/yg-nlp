@@ -27,5 +27,6 @@ public class POSSampleParserTest {
 		
 		System.out.println("parsePos = " + POSSampleParser.parsePos("VV-ㅂ"));
 		System.out.println("parseMorpheme = " + POSSampleParser.parseMorpheme("VV_니다"));
+		System.out.println("parseMorpheme = " + POSSampleParser.parseMorpheme("VX-해+하"));
 	}
 }

@@ -41,5 +41,17 @@ public class KoreanStemmerTest {
 		word = "했다";
 		stem = stemmer.stem(word, "-다-ㅆ_하");
 		System.out.println("stem == " + stem);
+		
+		word = "해";
+		stem = stemmer.stem(word, "-해+하");
+		System.out.println("stem == " + stem);
+		
+		word = "했";
+		stem = stemmer.stem(word, "-았");
+		System.out.println("stem == " + stem);
+		
+		word = "하셨";
+		stem = stemmer.stem(word, "-시-었");
+		System.out.println("stem == " + stem);
 	}
 }
