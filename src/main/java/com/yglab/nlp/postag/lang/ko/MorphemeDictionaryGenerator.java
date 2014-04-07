@@ -28,7 +28,7 @@ import com.yglab.nlp.util.lang.ko.MorphemeUtil;
  * @author Younggue Bae
  * 
  */
-public class MorphemeDicGenerator {
+public class MorphemeDictionaryGenerator {
 
 	/**
 	 * Extracts dictionary from train sample file and appends them into dictionary file by the specified pos tags.
