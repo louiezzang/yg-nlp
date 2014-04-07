@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.yglab.nlp.parser.ParseSample;
 import com.yglab.nlp.util.RegexFeatureDictionary;
+import com.yglab.nlp.util.StringPattern;
 
 
 
@@ -148,6 +149,17 @@ public class CoNLLReader {
 	
 	private String normalizeWord(String word) {
 		if (featureDic != null) {
+			StringPattern pattern = StringPattern.recognize(word);
+			
+			if (pattern.isAllDigit()) {
+				word = "00";
+			}
+			else if (pattern.containsDigit() && pattern.containsComma()) {
+				word = "0,000";
+			}
+			else if (pattern.containsDigit() && pattern.containsPeriod()) {
+				word = "0.0";
+			}
 			// normalize word by feature dictionary
 			word = featureDic.normalizeWord(word);
 		}

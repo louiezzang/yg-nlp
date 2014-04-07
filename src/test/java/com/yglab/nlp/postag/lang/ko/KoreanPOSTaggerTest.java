@@ -57,6 +57,7 @@ public class KoreanPOSTaggerTest {
 		};
 		*/
 		
+		/*
 		String[] tokens = {
 				"이",
 				"옷은",
@@ -64,6 +65,12 @@ public class KoreanPOSTaggerTest {
 				"짜리인가요",
 				"?"
 		};
+		*/
+		
+		String[] tokens = {
+				//"지어야했다"
+				"선물보내줘"
+		};		
 
 		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model.bin"); 
 		KoreanPOSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator, dicJosa, dicEomi);

@@ -155,8 +155,6 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 				" " + instance.cpostags[modifier] + " " + modifierPrevCPOS);
 	}
 	
-
-	@SuppressWarnings("unused")
 	protected void addInBetweenFeatures(List<String> features, ParseSample instance, int head, int modifier) {
 		String headPOS = instance.postags[head];
 		String headCPOS = instance.cpostags[head];
@@ -184,7 +182,6 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 			features.add("inbetweenCPOS=" + headCPOS + " " + inbetweenCPOS + " " + modifierCPOS);
 			
 			// added 2014-04-04
-			/*
 			String distanceFeature = "";
 			int distance = Math.abs(end - i);
 			if (distance > 10) {
@@ -199,7 +196,6 @@ public class DefaultDependencyFeatureGenerator implements DependencyFeatureGener
 			
 			features.add("inbetweenPOS=" + headPOS + " " + distanceFeature + inbetweenPOS + " " + modifierPOS);
 			features.add("inbetweenCPOS=" + headCPOS + " " + distanceFeature + inbetweenCPOS + " " + modifierCPOS);
-			*/
 		}
 	}
 	
