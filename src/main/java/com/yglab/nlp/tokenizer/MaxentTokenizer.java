@@ -33,6 +33,13 @@ public class MaxentTokenizer extends AbstractTokenizer {
 
   public static final String SPLIT ="S";
   public static final String NO_SPLIT ="O";
+  
+  /**
+   * If you use the skip pattern, the token matched with skip pattern 
+   * will be excluded in the features when training.
+   * Therefore, you can save the volume of features 
+   * because these tokens matched with skip pattern would be unimportant features.
+   */
   public static final Pattern skipPattern = Pattern.compile("^[A-Za-z0-9가-힣]+$");
   
   private AbstractModel model;
