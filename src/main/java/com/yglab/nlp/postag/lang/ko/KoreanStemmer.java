@@ -29,10 +29,10 @@ public class KoreanStemmer implements Stemmer {
 			// remove
 			if (operator.equals("-")) {
 				CharSequence truncatedWord = MorphemeUtil.truncateRight(word.toString(), value);
-				// if nothing is truncated
 				if (!truncatedWord.toString().equals(word.toString())) {
 					word = truncatedWord;
 				}
+				// if nothing is truncated
 				else {
 					//return word;
 				}
