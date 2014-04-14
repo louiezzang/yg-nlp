@@ -50,8 +50,16 @@ public class MorphemeDictionary {
 			String morph = field[0].trim();
 			//String postag = field[1].trim();
 			char[] ch = KoreanUnicode.decompose(morph);
-			//trie.add(String.valueOf(ch), postag + "_" + morph);
-			trie.add(String.valueOf(ch), line);
+			String strCh = String.valueOf(ch);
+			//trie.add(strCh, postag + "_" + morph);
+			
+			String match = trie.longestMatch(strCh);
+			if (match == null) {
+				trie.add(strCh, line);
+			}
+			else {
+				trie.add(strCh, match + "," + line);
+			}
 		}
 
 		in.close();
