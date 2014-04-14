@@ -41,13 +41,17 @@ public class MorphemeDictionary {
 		}
 
 		String line;
-		while ((line = in.readLine()) != null && 
-				!line.startsWith("#") && !line.startsWith("//") && !line.equals("")) {
+		while ((line = in.readLine()) != null) {
+			if (line.startsWith("#") || line.startsWith("//") || line.trim().equals("")) {
+				continue;
+			}
+			
 			String[] field = line.split("\t");
 			String morph = field[0].trim();
-			String postag = field[1].trim();
+			//String postag = field[1].trim();
 			char[] ch = KoreanUnicode.decompose(morph);
-			trie.add(String.valueOf(ch), postag + "_" + morph);
+			//trie.add(String.valueOf(ch), postag + "_" + morph);
+			trie.add(String.valueOf(ch), line);
 		}
 
 		in.close();
