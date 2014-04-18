@@ -20,8 +20,14 @@ import com.yglab.nlp.util.trie.TrieSuffixMatcher;
 public class MorphemeDictionary {
 	
 	private TrieSuffixMatcher<String> trie;
+	private int keyColumnIndex = 0;
 	
 	public MorphemeDictionary(String... files) throws IOException {
+		this(0, files);
+	}
+	
+	public MorphemeDictionary(int keyColumnIndex, String... files) throws IOException {
+		this.keyColumnIndex = keyColumnIndex;
 		this.trie = new TrieSuffixMatcher<String>();
 		
 		for (String file : files) {
@@ -47,18 +53,25 @@ public class MorphemeDictionary {
 			}
 			
 			String[] field = line.split("\t");
-			String morph = field[0].trim();
+			String morph = field[keyColumnIndex].trim();
 			//String postag = field[1].trim();
 			char[] ch = KoreanUnicode.decompose(morph);
 			String strCh = String.valueOf(ch);
 			//trie.add(strCh, postag + "_" + morph);
 			
 			String match = trie.longestMatch(strCh);
-			if (match == null) {
-				trie.add(strCh, line);
+			if (match != null) {
+				String existMorph = match.split("\t")[keyColumnIndex].trim();
+				// if duplicate morpheme, concatenate new one to the exist dictionary
+				if (existMorph.equals(morph)) {
+					trie.add(strCh, match + "|" + line);	// "|" == "OR"
+				}
+				else {
+					trie.add(strCh, line);
+				}
 			}
 			else {
-				trie.add(strCh, match + "," + line);
+				trie.add(strCh, line);
 			}
 		}
 
