@@ -12,11 +12,12 @@ import java.util.List;
 import com.yglab.nlp.io.AbstractModelReader;
 import com.yglab.nlp.io.AbstractModelWriter;
 import com.yglab.nlp.io.AbstractPlainTextWriter;
-import com.yglab.nlp.maxent.LabelSequenceGEN;
+import com.yglab.nlp.maxent.DefaultTagSequenceGenerator;
 import com.yglab.nlp.maxent.MEMM;
 import com.yglab.nlp.maxent.MaxentModelPlainTextWriter;
 import com.yglab.nlp.maxent.MaxentModelReader;
 import com.yglab.nlp.maxent.MaxentModelWriter;
+import com.yglab.nlp.maxent.TagSequenceGenerator;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Datum;
 import com.yglab.nlp.model.EventStream;
@@ -34,7 +35,8 @@ public class POSTagger {
 	
 	protected AbstractModel model;
 	protected POSFeatureGenerator featureGenerator;
-
+	protected TagSequenceGenerator gen;
+	
 	/**
 	 * Initializes the pos tagger with the specified model.
 	 * 
@@ -44,6 +46,32 @@ public class POSTagger {
 	public POSTagger(AbstractModel model, POSFeatureGenerator featureGenerator) {
 		this.model = model;
 		this.featureGenerator = featureGenerator;
+		
+		Index labelIndex = model.getLabelIndex();
+		String[] labels = new String[labelIndex.size()];
+		for (int i = 0; i < labelIndex.size(); i++) {
+			labels[i] = labelIndex.get(i).toString();
+		}
+		this.gen = new DefaultTagSequenceGenerator(featureGenerator, labels, 2);
+	}
+	
+	/**
+	 * Initializes the pos tagger with the specified model.
+	 * 
+	 * @param model	The trained model
+	 * @param featureGenerator	The context feature generator
+	 * @param gen	The generator of possible tag sequence candidate
+	 */
+	public POSTagger(AbstractModel model, POSFeatureGenerator featureGenerator, TagSequenceGenerator gen) {
+		this.model = model;
+		this.featureGenerator = featureGenerator;
+		
+		Index labelIndex = model.getLabelIndex();
+		String[] labels = new String[labelIndex.size()];
+		for (int i = 0; i < labelIndex.size(); i++) {
+			labels[i] = labelIndex.get(i).toString();
+		}
+		this.gen = gen;
 	}
 
 	/**
@@ -101,13 +129,7 @@ public class POSTagger {
 
 
 	public String[] tagMaxent(String[] tokens) {
-		Index labelIndex = model.getLabelIndex();
-		String[] labels = new String[labelIndex.size()];
-		for (int i = 0; i < labelIndex.size(); i++) {
-			labels[i] = labelIndex.get(i).toString();
-		}
-		LabelSequenceGEN gen = new LabelSequenceGEN(featureGenerator, labels);
-		List<List<Datum>> candidates = gen.getCandidates(tokens, 2);
+		List<List<Datum>> candidates = gen.getCandidates(tokens);
 		List<Datum> bestSequence = MEMM.decode(model, candidates);
 
 		List<String> guessTags = new ArrayList<String>();

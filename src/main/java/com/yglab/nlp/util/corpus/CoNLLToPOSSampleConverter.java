@@ -60,11 +60,11 @@ public class CoNLLToPOSSampleConverter {
 	}
 
 	public static void main(String[] args) throws Exception {
-		CoNLLToPOSSampleConverter.convert("./data/ko/parser/ko-parser-train.conll", "./target/test-data/ko/pos/ko-pos-train-from-conll.txt");
+		CoNLLToPOSSampleConverter.convert("./data/ko/parser/ko-parser-train-from-sejong.conll", "./target/test-data/ko/pos/ko-pos-train-from-conll.txt");
 		
 		System.out.println();
 		
-		CoNLLToPOSSampleConverter.convert("./data/en/parser/en-parser-train.conll", "./target/test-data/en/pos/en-pos-train-from-conll.txt");
+		//CoNLLToPOSSampleConverter.convert("./data/en/parser/en-parser-train.conll", "./target/test-data/en/pos/en-pos-train-from-conll.txt");
 	}
 
 }

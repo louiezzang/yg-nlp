@@ -53,5 +53,9 @@ public class KoreanStemmerTest {
 		word = "하셨";
 		stem = stemmer.stem(word, "-시-었");
 		System.out.println("stem == " + stem);
+		
+		word = "막혀";
+		stem = stemmer.stem(word, "-여+이");
+		System.out.println("stem == " + stem);
 	}
 }

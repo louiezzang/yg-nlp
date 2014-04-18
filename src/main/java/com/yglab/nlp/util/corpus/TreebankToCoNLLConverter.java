@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 import com.yglab.nlp.parser.ParseSample;
-import com.yglab.nlp.parser.io.TreebankReader;
 
 /**
  * This class converts the Penn Treebank format file to the CoNLL format file for DependencyParser. 
@@ -16,12 +15,11 @@ import com.yglab.nlp.parser.io.TreebankReader;
  */
 public class TreebankToCoNLLConverter {
 	
-	public static void convert(String filePenn, String fileCoNLL) throws IOException {
+	public static void convert(TreebankReader treebankReader, String fileTree, String fileCoNLL) throws IOException {
 		mkdirs(fileCoNLL);
 		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileCoNLL, false), "UTF-8"));
 
-		TreebankReader treebankReader = new TreebankReader();
-		treebankReader.startReading(filePenn);
+		treebankReader.startReading(fileTree);
 		
 		int cnt = 0;
 		ParseSample instance = null;
@@ -58,7 +56,9 @@ public class TreebankToCoNLLConverter {
 	}
 
 	public static void main(String[] args) throws Exception {
-		TreebankToCoNLLConverter.convert("./data/ko/parser/ko-sejong.tree", "./target/test-data/ko/parser/ko-parser-from-sejong.conll");
+		TreebankReader treebankReader = new SejongTreebankReader();
+		TreebankToCoNLLConverter.convert(treebankReader, "./data/ko/parser/ko-sejong.tree", 
+				"./target/test-data/ko/parser/ko-parser-from-sejong.conll");
 	}
 
 }

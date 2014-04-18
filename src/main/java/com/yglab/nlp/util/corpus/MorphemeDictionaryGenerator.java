@@ -1,4 +1,4 @@
-package com.yglab.nlp.postag.lang.ko;
+package com.yglab.nlp.util.corpus;
 
 
 import java.io.BufferedReader;
@@ -18,6 +18,7 @@ import java.util.regex.Pattern;
 
 import com.yglab.nlp.postag.POSSample;
 import com.yglab.nlp.postag.POSSampleParser;
+import com.yglab.nlp.postag.lang.ko.KoreanStemmer;
 import com.yglab.nlp.util.lang.ko.MorphemeUtil;
 
 

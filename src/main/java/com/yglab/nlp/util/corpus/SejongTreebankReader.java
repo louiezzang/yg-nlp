@@ -1,4 +1,4 @@
-package com.yglab.nlp.parser.io;
+package com.yglab.nlp.util.corpus;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -19,11 +19,11 @@ import com.yglab.nlp.util.Span;
 
 
 /**
- * A reader for the Penn Treebank file format.
+ * A reader for the Sejong treebank file format.
  * 
  * @author Younggue Bae
  */
-public class TreebankReader {
+public class SejongTreebankReader implements TreebankReader {
 	
   public static final String BRACKET_LRB = "(";
   public static final String BRACKET_RRB = ")";
@@ -41,17 +41,19 @@ public class TreebankReader {
    */
 	protected static Pattern tokenPattern = Pattern.compile("^[^ ()]+ ([^()]+)\\s*\\)");
 	
-	
 	protected static List<String> punctuations = Arrays.asList(new String[] { ".", "!", "?", "," });
   
 	protected BufferedReader inputReader;
+	
+	private String strSentence;
 
 	/**
 	 * Constructor.
 	 */
-	public TreebankReader() {
+	public SejongTreebankReader() {
 	}
 
+	@Override
 	public boolean startReading(String file) throws IOException {
 
 		InputStream is = getClass().getResourceAsStream(file);
@@ -65,24 +67,31 @@ public class TreebankReader {
 		return true;
 	}
 	
-	@SuppressWarnings({ "unused" })
+	@Override
 	public ParseSample getNext() throws IOException {
-		String source = null;
-		StringBuilder text = new StringBuilder();
 		int offset = 0;
 		Stack<Constituent> stack = new Stack<Constituent>();
 		List<Constituent> constituents = new LinkedList<Constituent>();
-	   
+
 		String line = inputReader.readLine();
 		if (line == null) {
 			inputReader.close();
 			return null;
 		}
 		
-		if (line != null && line.startsWith(";")) {
-			source = line;
+		String currentSentence = null;
+		while (line.trim().equals("") || line.startsWith(";")) {
+			if (line.startsWith(";")) {
+				currentSentence = line.substring(1).trim();
+			}
+			line = inputReader.readLine();
 		}
 		
+		if (currentSentence == null) {
+			currentSentence = strSentence;
+		}
+		
+		StringBuilder text = new StringBuilder();
 		while (line != null && !line.trim().equals("") && !line.startsWith(";")) {
 			line = encodeString(line);
 			for (int ci = 0; ci < line.length(); ci++) {
@@ -95,6 +104,7 @@ public class TreebankReader {
 	          System.err.println("null type for: " + rest);
 	        }
 	        String token = getToken(rest);
+	        
 	        stack.push(new Constituent(type, new Span(offset, offset)));
 	        
 	        if (token != null) {
@@ -112,6 +122,9 @@ public class TreebankReader {
 	      }
 			}
 			line = inputReader.readLine();
+			if (line != null && line.startsWith(";")) {
+				strSentence = line.substring(1).trim();
+			}
 		}
 		
 		String txt = text.toString();
@@ -134,11 +147,11 @@ public class TreebankReader {
       
       String token = txt.substring(constituent.getSpan().getStart(), constituent.getSpan().getEnd());
       //System.out.println(tokenIndex + ": " + type + "\t" + token);
-      
-      if (type.equals("TOKEN")) {
-        tokenIndex++;
-        tokens.add(token);
-      }
+
+			if (type.equals("TOKEN")) {
+				tokens.add(token);
+				tokenIndex++;
+			}
       
       Parse c = new Parse();
       c.setIndex(tokenIndex);
@@ -162,7 +175,7 @@ public class TreebankReader {
     makeParseSample(txt, instance, p);
     
     retokenizeParseSample(instance);
-		
+    
 		return instance;
 	}
 	
@@ -309,31 +322,42 @@ public class TreebankReader {
 			
 				form.append(morph);
 				if (!cpostag.toString().equals("")) {
-					cpostag.append(",");
+					cpostag.append("+");
 				}
 				cpostag.append(tag);
 				
 				if (!postag.toString().equals("")) {
-					postag.append(",");
+					postag.append("+");
 				}
-				if (tag.startsWith("J") || tag.startsWith("E")) {
-					postag.append(morph).append("_").append(tag);
+				
+				if (tag.startsWith("J") || tag.startsWith("E") || 
+						tag.equals("XSV") || tag.startsWith("XSA") ||
+						tag.startsWith("VCP") || tag.startsWith("VX")) {
+					postag.append(morph).append("/").append(tag);
 				}
 				else {
 					postag.append(tag);
 				}
-				//System.out.println(morph + ": " + postag);
 			}
 		}
 		
+		String strPostag = simplifyPostag(postag.toString());
+		String strCpostag = simplifyPostag(cpostag.toString());
+		
 		instance.forms[index] = form.toString();
 		instance.lemmas[index] = form.toString();
-		instance.cpostags[index] = cpostag.toString();
-		instance.postags[index] = postag.toString();
+		instance.cpostags[index] = strCpostag;
+		instance.postags[index] = strPostag;
 		
     return instance;
   }
   
+  /**
+   * Retokenize the tokens for the untokenized punctuation marks.
+   * 
+   * @param instance
+   * @return
+   */
   protected static ParseSample retokenizeParseSample(ParseSample instance) {
   	//queue
   	List<String> forms = new ArrayList<String>();
@@ -372,7 +396,7 @@ public class TreebankReader {
   		String postag = postags.get(i);
   		
   		String lastChar = form.substring(form.length() - 1);
-  		if (punctuations.contains(lastChar) && (cpostag.endsWith(",SF") || cpostag.endsWith(",SP"))) {
+  		if (punctuations.contains(lastChar) && (cpostag.endsWith("+SF") || cpostag.endsWith("+SP"))) {
   			shiftHead(heads, i+1);
   			
   			forms.set(i, form.substring(0, form.length() - 1));
@@ -390,8 +414,7 @@ public class TreebankReader {
     		//scores.add(i+1, null);
   			
   			i++;
-  		}
-  		
+  		}	
   	}
   	
   	int[] arrHeads = new int[forms.size()];
@@ -421,31 +444,15 @@ public class TreebankReader {
   		}
   	}
   }
+
+  private static String simplifyPostag(String postag) {
+  	postag = postag.replaceAll("(NNG|NNP|XPN|SN|SL).*(NNG|XSN|NNB)", "NNG");
+  	postag = postag.replaceAll("(NNP).*NP", "NP");
+  	postag = postag.replaceAll("(SN).*NNB", "NNB");
+  	postag = postag.replaceAll("(SN).*NR", "NR");
+  	
+  	return postag;
+  }
   
-	/**
-	 * Class used to hold constituents when reading parses.
-	 */
-	class Constituent {
-
-	  private String label;
-	  private Span span;
-
-	  public Constituent(String label, Span span) {
-	    this.label = label;
-	    this.span = span;
-	  }
-
-	  public String getLabel() {
-	    return label;
-	  }
-
-	  public void setLabel(String label) {
-	    this.label = label;
-	  }
-
-	  public Span getSpan() {
-	    return span;
-	  }
-	}
 
 }

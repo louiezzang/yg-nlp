@@ -17,8 +17,9 @@ import com.yglab.nlp.util.InvalidFormatException;
 public class POSSampleParser implements SampleParser<POSSample> {
 
 	private static final Pattern TAG_PATTERN = Pattern.compile("<([^<>\\s]*)?>");
-	private static final Pattern POS_PATTERN = Pattern.compile("([^,_\\-\\+]*)?");
-	private static final Pattern MORPH_PATTERN = Pattern.compile("([_])([^,_\\-\\+]*)?");
+	private static final Pattern POS_PATTERN = Pattern.compile("([^/\\+\\(\\)]*)?");
+	private static final Pattern MORPH_POS_PATTERN = Pattern.compile("([^/\\+\\(\\)]*)/([^/\\+\\(\\)]*)?");
+	private static final Pattern RULE_PATTERN = Pattern.compile("([\\(])([^/\\(\\)]*)([\\)])?");
 
 	private WhitespaceTokenizer tokenizer;
 
@@ -59,22 +60,47 @@ public class POSSampleParser implements SampleParser<POSSample> {
 		return new POSSample(tokens.toArray(new String[tokens.size()]), labels.toArray(new String[labels.size()]));
 	}
 	
+	/**
+	 * Parses postype from a single tag(eg. "을/JKO" -> "JKO").
+	 * 
+	 * @param tag
+	 * @return
+	 */
 	public static final String parsePos(String tag) {
-		Matcher matcher = POS_PATTERN.matcher(tag);
+		Matcher matcher = MORPH_POS_PATTERN.matcher(tag);
 		if (matcher.find()) {
-			return matcher.group(0);
+			return matcher.group(2);
+		}
+		
+		matcher = POS_PATTERN.matcher(tag);
+		if (matcher.find()) {
+			return matcher.group(1);
 		}
 		return null;
 	}
 	
 	/**
-	 * Parses morpheme only if tags contains "_" operator.
+	 * Parses morpheme from a single tag(eg. "을/JKO" -> "을").
 	 * 
 	 * @param tag
 	 * @return
 	 */
 	public static final String parseMorpheme(String tag) {
-		Matcher matcher = MORPH_PATTERN.matcher(tag);
+		Matcher matcher = MORPH_POS_PATTERN.matcher(tag);
+		if (matcher.find()) {
+			return matcher.group(1);
+		}
+		return null;
+	}
+	
+	/**
+	 * Parses rule from a single tag(eg. "VV(+ㅂ)" -> "+ㅂ").
+	 * 
+	 * @param tag
+	 * @return
+	 */
+	public static final String parseRule(String tag) {
+		Matcher matcher = RULE_PATTERN.matcher(tag);
 		if (matcher.find()) {
 			return matcher.group(2);
 		}

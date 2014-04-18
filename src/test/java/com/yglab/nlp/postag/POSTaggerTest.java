@@ -3,6 +3,7 @@ package com.yglab.nlp.postag;
 import java.util.List;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.model.AbstractModel;
@@ -21,11 +22,11 @@ public class POSTaggerTest {
 	public static void setUpBeforeClass() throws Exception {
 		featureGenerator = new DefaultPOSFeatureGenerator();
 		
-		train();
+		//train();
 	}
 
 	private static void train() throws Exception {
-		List<POSSample> trainSamples = POSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt");
+		List<POSSample> trainSamples = POSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt", "[^\\+/\\(\\)]*/", "");
 		
 		Options options = new Options();
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
@@ -35,6 +36,7 @@ public class POSTaggerTest {
 	}
 	
 	@Test
+	@Ignore
 	public void testTagger() throws Exception {
 		String[] tokens = {
 				"학교에",
@@ -59,6 +61,7 @@ public class POSTaggerTest {
 	}
 	
 	@Test
+	//@Ignore
 	public void testEvaluator() throws Exception {
 		/*
 		List<POSSample> trainSamples = POSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt");
@@ -71,7 +74,7 @@ public class POSTaggerTest {
 		
 		POSTagger tagger = new POSTagger(trainModel, featureGenerator);
 		
-		List<POSSample> testSamples = POSTagger.loadSamples("/sample/ko/pos/ko-pos-test.txt");
+		List<POSSample> testSamples = POSTagger.loadSamples("/sample/ko/pos/ko-pos-test.txt", "[^\\+/\\(\\)]*/", "");
 		POSTaggerEvaluator evaluator = new POSTaggerEvaluator(tagger);
 		evaluator.evaluate(testSamples);
 		
