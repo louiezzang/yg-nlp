@@ -1,18 +1,58 @@
-
-영희는<NP,JKC_는> 학교에<NN,JKB_에> 갑니다<VV-ㅂ,EFN_니다> .<.>
-
-어느<NP> 학교에<NN,JKB_에> 다니세요<VV,EFQ_세요> ?<?>
-
-학교를<NN,JKO_를> 열심히<MA> 다닙니까<VV,EFQ_ㅂ니까> ?<?>
-
-학교에서<NN,JKB_에서> 놉니다<VV-ㅂ+ㄹ,EFN_니다> .<.>
-
-황소가<NN,JKS_가> 길을<NN,JKO_을> 열심히<MA> 갑니다<VV-ㅂ,EFN_니다> .<.>
-
-회사를<NN,JKO_를> 열심히<MA> 갑니다<VV-ㅂ,EFN_니다> .<.>
-
-우리는<NN,JKC_는> 지능을<NN,JKO_을> 가진<VV,EC_ㄴ> 동물입니다<NN,EFN_입니다> .<.>
-
-강남스타일<NN> 노래<NN> 틀어줘<VV,EFO_어줘>
-
-
+1991/09/05<SN+SP+SN+SP+SN>
+23<SN>
+아내가<NNG+가/JKS> 받은<VV+은/ETM> 신장<NNG> 남편이<NNG+이/JKS> "보은"<SS+NNG+SS> /<SP>
+콩팥<NNG> 연쇄<NNG> 기증<NNG> "<SS> 사랑의<NNG+의/JKG> 고리<NNG> "<SS>
+6<SN> 명<NNB> 서로<MAG> 이식<NNG> 3<SN> 명<NNB> 새<MM> 삶/<NNG+SP>
+40대<NNG> 주부가<NNG+가/JKS> "<SS> 첫<MM> 헌신<NNG> "<SS> /<SP>
+오늘부터<NNG+부터/JX> 12일까지<NNG+까지/JX> 잇달아<VV+아/EC> 수술<NNG>
+한<MM> 가정주부가<NNG+가/JKS> 오랫<MM> 동안<NNG> 신장병을<NNG+을/JKO> 앓아<VV+아/EC> 온<VX+ᆫ/ETM> 사람에게<NNG+에게/JKB> 신장<NNG> 한<MM> 쪽을<NNG+을/JKO> 기증하기로<NNG+하/XSV+기/ETN+로/JKB> 하았다<VV+았/EP+다/EF> .<.>
+그러자<VV+자/EC> 새<MM> 생명을<NNG+을/JKO> 찾게<VV+게/EC> 된<VV+ᆫ/ETM> 환자의<NNG+의/JKG> 남편이<NNG+이/JKS> 자신의<NNG+의/JKG> 신장을<NNG+을/JKO> 남자<NNG> 신장병<NNG> 환자에게<NNG+에게/JKB> 주기로<VV+기/ETN+로/JKB> 하았고<VV+았/EP+고/EC> ,<,> 이번에는<MM+NNB+에/JKB+는/JX> 이<MM> 환자의<NNG+의/JKG> 아내가<NNG+가/JKS> 장기를<NNG+를/JKO> 다른<MM> 사람에게<NNG+에게/JKB> 주겠다고<VV+겠/EP+다고/EC> 나서었다<VV+었/EP+다/EF> .<.>
+이렇게<VA+게/EC> 하아서<VV+아서/EC> 3<SN> 명이<NNB+이/JKS> 새<MM> 삶을<NNG+을/JKO> 찾는<VV+는/ETM> 모두<MAG> 6<SN> 개의<NNB+의/JKG> `<SS> 사랑의<NNG+의/JKG> 고리<NNG> '<SS> 가<가/JKS> 엮어지었고<VV+어/EC+VX+었/EP+고/EC> ,<,> 그<MM> 중<NNG> 5<SN> 명이<NNB+이/JKS> 첫<MM> 환자인<NNG+이/VCP+ᆫ/ETM> 안현숙<NNP> 씨<NNB> (<SS> 38<SN> ·<SP> 여<NNG> )<SS> 의<의/JKG> 수술을<NNG+을/JKO> 하루<NNG> 앞둔<VV+ᆫ/ETM> 4일<NNG> 오전<NNG> 11시<NNG> 한양대병원에서<NNP+에서/JKB> 처음으로<NNG+으로/JKB> 한<MM> 자리에<NNG+에/JKB> 모이었다<VV+었/EP+다/EF> .<.>
+이날<MM+NNG> 생명<NNG> 사슬의<NNG+의/JKG> 첫<MM> 고리를<NNG+를/JKO> 만들어<VV+어/EC> 낸<VX+ᆫ/ETM> 허정자<NNP> 씨<NNB> (<SS> 49<SN> ·<SP> 여<NNG> )<SS> 가<가/JKS> 기증한<NNG+하/XSV+ᆫ/ETM> 신장을<NNG+을/JKO> 떼어내기<VV+어/EC+VX+기/ETN> 위하아<VV+아/EC> 입원하아<NNG+하/XSV+아/EC> 있는<VX+는/ETM> 한양대병원<NNP> 2105호실을<NNG+을/JKO> 찾은<VV+은/ETM> 안씨와<NNG+와/JC> 안씨의<NNG+의/JKG> 남편<NNG> 김정회<NNP> 씨(42)<NNB+SS+SN+SS> ,<,> 김씨로부터<NNG+로부터/JKB> 신장을<NNG+을/JKO> 받게<VV+게/EC> 된<VV+ᆫ/ETM> 이현태<NNP> 씨(53)와<NNB+SS+SN+SS+와/JC> 부인<NNG> 임양임<NNP> 씨(52)는<NNB+SS+SN+SS+는/JX> 허씨의<NNG+의/JKG> 이웃<NNG> 사랑에<NNG+에/JKB> 고마움을<NNG+을/JKO> 전하았다<VV+았/EP+다/EF> .<.>
+"<SS> 별로<MAG> 대단한<XR+하/XSA+ᆫ/ETM> 일도<NNG+도/JX> 아닌데<VCN+ᆫ데/EC> 이렇게<VA+게/EC> 찾아오시면<VV+시/EP+면/EC> 제가<NP+가/JKS> 오히려<MAG> 부끄럽어<VA+어/EC> 지ᄇ니다<VX+ᄇ니다/EF> .<.> "<SS>
+ "Q="3"<SS+Q"+SS>
+아니ᄇ니다<VCN+ᄇ니다/EF> .<.>
+아주머니<NNG> 덕분에<NNG+에/JKB> 저희들이<NP+XSN+이/JKS> 새롭은<VA+은/ETM> 삶을<NNG+을/JKO> 살ᆯ<VV+ᆯ/ETM> 수<NNB> 있게<VV+게/EC> 되었습니다<VV+었/EP+습니다/EF> .<.>
+정말<MAG> 감사하ᄇ니다<NNG+하/XSV+ᄇ니다/EF> .<.>
+서로의<NNG+의/JKG> 안부를<NNG+를/JKO> 묻고<VV+고/EC> 난<VX+ᆫ/ETM> 뒤<NNG> 이들은<NP+XSN+은/JX> 손을<NNG+을/JKO> 맞잡고<VV+고/EC> 안씨의<NNG+의/JKG> 신장<NNG> 이식<NNG> 수술이<NNG+이/JKS> 성공적으로<NNG+으로/JKB> 끝날<VV+ᆯ/ETM> 수<NNB> 있도록<VA+도록/EC> 기도하았다<NNG+하/XSV+았/EP+다/EF> .<.>
+오랜<MM> 투병<NNG> 생활로<NNG+로/JKB> 혈액<NNG> 투석을<NNG+을/JKO> 받아<VV+아/EC> 온<VX+ᆫ/ETM> 안씨와<NNG+와/JC> 이씨의<NNG+의/JKG> 손목에는<NNG+에/JKB+는/JX> 10㎝<SN+SW> 가량의<NNG+의/JKG> 수술자국이<NNG+이/JKS> 나아<VV+아/EC> 있어<VX+어/EC> 그<MM> 동안의<NNG+의/JKG> 고통을<NNG+을/JKO> 말하아<NNG+하/XSV+아/EC> 주고<VX+고/EC> 있었다<VX+었/EP+다/EF> .<.>
+이들<NP+XSN> 중<NNB+> 맨<MM> 처음으로<NNG+으로/JKB> 신장을<NNG+을/JKO> 받게<VV+게/EC> 된<VV+ᆫ/ETM> 안씨가<NNG+가/JKS> 만성신부전증에<NNG+에/JKB> 걸린<VV+ᆫ/ETM> 사실을<NNG+을/JKO> 알ᆫ<VV+ᆫ/ETM> 것은<NNB+은/JX> 작년<NNG> 6월<NNG> .<.>
+5년전부터<NNG+부터/JX> 앓아오던<VV+아/EC+VX+던/ETM> 갑상선<NNG> 기능<NNG> 항진이라는<NNG+이/VCP+라/EC+는/ETM> 병의<NNG+의/JKG> 원인이<NNG+이/JKS> 신장의<NNG+의/JKG> 이상<NNG> 때문이라는<NNB+이/VCP+라/EC+는/ETM> 사실도<NNG+도/JX> 이<MM> 때<NNG> 알았다<VV+았/EP+다/EF> .<.>
+한<MM> 달에<NNB+에/JKB> 60여만원이나<NNG+이나/JX> 되는<VV+는/ETM> 치료비도<NNG+도/JX> 문제이었지만<NNG+이/VCP+었/EP+지만/EC> 5시간<NNG> 동안<NNG> 이어지는<VV+는/ETM> 혈액<NNG> 투석의<NNG+의/JKG> 고통은<NNG+은/JX> 이루<MAG> 말할<NNG+하/XSV+ᆯ/ETM> 수가<NNB+가/JKS> 없었다<VA+었/EP+다/EF> .<.>
+보다<VV+다/EC> 못한<VX+ᆫ/ETM> 남편<NNG> 김씨가<NNG+가/JKS> 콩팥을<NNG+을/JKO> 떼어<VV+어/EC> 주겠다고<VX+겠/EP+다고/EC> 나서었지만<VV+었/EP+지만/EC> 남편은<NNG+은/JX> 조직형이<NNG+이/JKS> 다르아<VA+아/EC> 신장<NNG> 이식이<NNG+이/JKS> 불가능하았다<NNG+하/XSA+았/EP+다/EF> .<.>
+이들<NP+XSN> 부부는<NNG+는/JX> 지난<VV+ᆫ/ETM> 6월<NNG> 사랑의<NNG+의/JKG> 장기기증<NNG> 운동본부<NNG> (<SS> 본부장<NNG> 박진탁<NNP> 목사<NNG> )<SS> 를<를/JKO> 찾아<VV+아/EC> 안씨에게<NNG+에게/JKB> 신장을<NNG+을/JKO> 기증하아줄<NNG+하/XSV+아/EC+VX+ᆯ/ETM> 허씨를<NNG+를/JKO> 소개받았다<NNG+VV+았/EP+다/EF> .<.>
+허씨는<NNG+는/JX> "<SS> 그저<MAG> 남을<NNG+을/JKO> 돕고<VV+고/EC> 싶었을<VX+었/EP+을/ETM> 뿐<NNB> "<SS> 이라고<이라고/JKQ> 말하아<NNG+하/XSV+아/EC> 안씨<NNG> 부부를<NNG+를/JKO> 감동시키었다<NNG+시키/XSV+었/EP+다/EF> .<.>
+안씨의<NNG+의/JKG> 남편<NNG> 김정회<NNP> 씨는<NNB+는/JX> 아내의<NNG+의/JKG> 생명을<NNG+을/JKO> 되찾을<VV+을/ETM> 수<NNB> 있게<VV+게/EC> 하아<VX+아/EC> 준<VX+ᆫ/ETM> 고마움을<NNG+을/JKO> 갚기<VV+기/ETN> 위하아<VV+아/EC> 자신의<NNG+의/JKG> 신장을<NNG+을/JKO> 다른<MM> 환자에게<NNG+에게/JKB> 주기로<VV+기/ETN+로/JKB> 하았다<VV+았/EP+다/EF> .<.>
+조직검사<NNG> 결과<NNG> ,<,> 김씨의<NNG+의/JKG> 신장은<NNG+은/JX> 신장<NNG> 이식을<NNG+을/JKO> 바라는<VV+는/ETM> 사람들<NNG> 가운데<NNG> 10년째<NNG> 신장병을<NNG+을/JKO> 앓고<VV+고/EC> 있는<VX+는/ETM> 이현태<NNP> 씨에게<NNB+에게/JKB> 이식하기<NNG+하/XSV+기/ETN> 적합한<NNG+하/XSA+ᆫ/ETM> 것으로<NNB+으로/JKB> 판명되었다<NNG+되/XSV+었/EP+다/EF> .<.>
+혈압<NNG> 강하제와<NNG+와/JC> 이뇨제<NNG> 등의<NNB+의/JKG> 약물<NNG> 치료를<NNG+를/JKO> 하아오면서<VV+아/EC+VX+면서/EC> 고통을<NNG+을/JKO> 받아오던<VV+아/EC+VX+던/ETM> 이씨에게<NNG+에게/JKB> 김씨는<NNG+는/JX> "<SS> 나도<NP+도/JX> 신장을<NNG+을/JKO> 떼어준<VV+어/EC+VX+ᆫ/ETM> 고맙은<VA+은/ETM> 사람을<NNG+을/JKO> 만나아<VV+아/EC> 아내의<NNG+의/JKG> 목숨을<NNG+을/JKO> 건지게<VV+게/EC> 되었다<VV+었/EP+다/EC> "<SS> 고<고/JKQ> 말하았다<NNG+하/XSV+았/EP+다/EF> .<.>
+이번에는<MM+NNB+에/JKB+는/JX> 이씨의<NNG+의/JKG> 부인<NNG> 임양임<NNP> 씨가<NNB+가/JKS> 자신의<NNG+의/JKG> 신장을<NNG+을/JKO> 기증하겠다고<NNG+하/XSV+겠/EP+다고/EC> 나서었고<VV+었/EP+고/EC> ,<,> 장기기증<NNG> 운동본부는<NNG+는/JX> 수소문<NNG> 끝에<NNG+에/JKB> 경북<NNP> 영천에<NNP+에/JKB> 살는<VV+는/ETM> 이재화<NNP> 양(20)에게<NNB+SS+SN+SS+에게/JKB> 수술하아<NNG+하/XSV+아/EC> 주기로<VX+기/ETN+로/JKB> 하았다<VV+았/EP+다/EF> .<.>
+국민학교<NNG> 4학년때부터<NNG+부터/JX> 신장병을<NNG+을/JKO> 앓아<VV+아/EC> 온<VX+ᆫ/ETM> 이양은<NNG+은/JX> 날품팔는<NNG+VV+는/ETM> 어머니의<NNG+의/JKG> 수입에<NNG+에/JKB> 의존<NNG> ,<,> 근근이<MAG> 생활을<NNG+을/JKO> 하아오다<VV+아/EC+VX+다/EC> 작년<NNG> 12월<NNG> ,<,> 새롭은<VA+은/ETM> 콩팥을<NNG+을/JKO> 받지<VV+지/EC> 않으면<VX+으면/EC> 생명을<NNG+을/JKO> 부지하기<NNG+하/XSV+기/ETN> 힘들다는<VA+다/EC+는/ETM> 진단을<NNG+을/JKO> 받았었다<VV+았었/EP+다/EF> .<.>
+이양은<NNG+은/JX> 영천<NNG> 지역의<NNG+의/JKG> 사회단체들과<NNG+과/JC> 군청이<NNG+이/JKS> 1천<NR> 4백여만원의<NNG+의/JKG> 성금을<NNG+을/JKO> 모으아<VV+아/EC> 수술비를<NNG+를/JKO> 마련하았지만<NNG+하/XSV+았/EP+지만/EC> 신장을<NNG+을/JKO> 기증할<NNG+하/XSV+ᆯ/ETM> 사람이<NNG+이/JKS> 없어<VA+어/EC> 수술을<NNG+을/JKO> 못<MAG> 받고<VV+고/EC> 있던<VX+던/ETM> 처지이었다<NNG+이/VCP+었/EP+다/EF> .<.>
+5일<NNG> 안씨의<NNG+의/JKG> 신장<NNG> 이식<NNG> 수술이<NNG+이/JKS> 끝나고<VV+고/EC> 나면<VX+면/EC> 이현태<NNP> 씨와<NNB+와/JC> 이재화<NNP> 양의<NNB+의/JKG> 수술은<NNG+은/JX> 10일과<NNG+과/JC> 12일에<NNG+에/JKB> 각각<MAG> 있을<VA+을/ETM> 예정이다<NNG+이/VCP+다/EF> .<.>
+자신의<NNG+의/JKG> 몸을<NNG+을/JKO> 남에게<NNG+에게/JKB> 내어주는<VV+어/EC+VX+는/ETM> `<SS> 큰<VA+ᆫ/ETM> 사랑<NNG> '<SS> 으로<으로/JKB> 이어진<VV+ᆫ/ETM> 이들<NP+XSN> 부부들은<NNG+은/JX> "<SS> 아직도<MAG+도/JX> 고통받는<NNG+VV+는/ETM> 신장병<NNG> 환자들이<NNG+이/JKS> 많다<VA+다/EC> "<SS> 며<며/EC> "<SS> 사랑의<NNG+의/JKG> 장기기증운동이<NNG+이/JKS> 확산되어<NNG+되/XSV+어/EC> 건강한<NNG+하/XSA+ᆫ/ETM> 삶을<NNG+을/JKO> 되찾는<VV+는/ETM> 사람들이<NNG+이/JKS> 더<MAG> 늘어나길<VV+어/EC+VX+기/ETN+ᆯ/JKO> 바란다<VV+ᆫ다/EF> "<SS> 고<고/JKQ> 입을<NNG+을/JKO> 모으았다<VV+았/EP+다/EF> .<.>
+1991/09/15<SN+SP+SN+SP+SN>
+22<SN>
+"<SS> 학사<NNG> 징계<NNG> 강화<NNG> "<SS> 한<MM> 목소리/<NNG+SP>
+서강대<NNP> 학생<NNG> 지도<NNG> 교수<NNG> 세미나<NNG>
+"Q="2"<SS+Q"+SS>
+공부<NNG> 싫은<VA+은/ETM> 학생<NNG> 필요없다<NNG+VA+다/EC> /<SP>
+학생회<NNG> 간부<NNG> 일정<NNG> 학점<NNG> 이상<NNG> 되어야<되/XSV+어야/EC>
+정원식<NNP> 총리<NNG> 폭행<NNG> 사건<NNG> 이후<NNG> 각<MM> 대학이<NNG+이/JKS> 학사<NNG> 관리<NNG> 제도를<NNG+를/JKO> 강화하고<NNG+하/XSV+고/EC> 있는<VX+는/ETM> 가운데<NNG> 박홍<NNP> 총장을<NNG+을/JKO> 비롯한<XR+하/XSV+ᆫ/ETM> 서강대<NNP> 교수<NNG> 1백<NR> 40여<NNG> 명은<NNB+은/JX> 14일<NNG> 서울<NNG> 서초구<NNP> 양재동<NNP> 서울<NNG> 교육<NNG> 문화<NNG> 회관<NNG> 가야금홀에서<NNP+에서/JKB> 학사<NNG> 관리<NNG> 및<MAJ> 학생<NNG> 지도<NNG> 강화에<NNG+에/JKB> 관한<VV+ᆫ/ETM> 세미나를<NNG+를/JKO> 가지었다<VV+었/EP+다/EF> .<.>
+오전<NNG> 10시부터<NNG+부터/JX> 오후<NNG> 4시<NNG> 30분까지<NNG+까지/JX> 계속된<NNG+되/XSV+ᆫ/ETM> 세미나에서<NNG+에서/JKB> 대부분의<NNG+의/JKG> 교수들은<NNG+은/JX> 88년<NNG> 이후<NNG> 대학<NNG> 자율화의<NNG+의/JKG> 바람<NNG> 속에<NNG+에/JKB> 학사<NNG> 관리가<NNG+가/JKS> 상대적으로<NNG+으로/JKB> 느슨하아지어<XR+하/XSA+아/EC+VX+어/EC> 학내<NNG> 혼란을<NNG+을/JKO> 초래한다는<NNG+하/XSV+ᆫ다/EC+는/ETM> 데<NNB> 인식을<NNG+을/JKO> 같이<MAG> 하고<VV+고/EC> 학사<NNG> 징계<NNG> 제도를<NNG+를/JKO> 엄격히<MAG> 적용<NNG> ,<,> 면학<NNG> 분위기를<NNG+를/JKO> 되찾아야<VV+아야/EC> 한다고<VX+ᆫ다고/EC> 의견을<NNG+을/JKO> 모으았다<VV+았/EP+다/EF> .<.>
+조태근<NNP> 교무처장은<NNG+은/JX> 주제<NNG> 발표를<NNG+를/JKO> 통하아<VV+아/EC> "<SS> 80년대초<NNG> 대학<NNG> 정원의<NNG+의/JKG> 대폭<MAG> 증원과<NNG+과/JC> 80년대<NNG> 후반<NNG> 학생<NNG> 운동의<NNG+의/JKG> 격화로<NNG+로/JKB> 야기된<NNG+되/XSV+ᆫ/ETM> 혼란<NNG> 속에서<NNG+에서/JKB> 학사<NNG> 관리가<NNG+가/JKS> 해이하아지었다<NNG+하/XSA+아/EC+VX+었/EP+다/EC> "<SS> 고<고/JKQ> 평가하고<NNG+하/XSV+고/EC> "<SS> 학사<NNG> 징계<NNG> 제도를<NNG+를/JKO> 엄격히<MAG> 적용하ᄆ으로써<NNG+하/XSV+ᄆ/ETN+으로써/JKB> 교육적<NNG> 차원에서<NNG+에서/JKB> 성적<NNG> 불량<NNG> 학생들에게<NNG+에게/JKB> 경각심을<NNG+을/JKO> 주어야<VV+어야/EC> 할<VX+ᆯ/ETM> 것<NNB> "<SS> 이라고<이라고/JKQ> 말하았다<NNG+하/XSV+았/EP+다/EF> .<.>
+조<NNP> 처장은<NNG+은/JX> 따라서<MAJ> 학점<NNG> (<SS> 4.3점<NNG> 만점<NNG> )<SS> 이<이/JKS> 두<MM> 학기에<NNG+에/JKB> 걸치어<VV+어/EC> 계속<MAG> 2.0<SN+SF+SN> 미만일<NNG+이/VCP+ᆯ/ETM> 경우<NNG> 제적시킬<NNG+시키/XSV+ᆯ/ETM> 수<NNB> 있도록<VV+도록/EC> 학칙을<NNG+을/JKO> 개정하고<NNG+하/XSV+고/EC> 철저한<NNG+하/XSA+ᆫ/ETM> 출석<NNG> 점검과<NNG+과/JC> 면담을<NNG+을/JKO> 통한<VV+ᆫ/ETM> 학생<NNG> 지도에<NNG+에/JKB> 교수들이<NNG+이/JKS> 앞장<NNG> 서어야<VV+어야/EC> 할<VX+ᆯ/ETM> 것이라고<NNB+이/VCP+라고/EC> 말하았다<NNG+하/XSV+았/EP+다/EF> .<.>
+전준수<NNP> 학생처장도<NNG+도/JX> "<SS> 학생<NNG> 활동에<NNG+에/JKB> 관한<VV+ᆫ/ETM> 규제는<NNG+는/JX> 현<MM> 학칙으로<NNG+으로/JKB> 충분하다고<XR+하/XSA+다고/EC> 생각하나<NNG+하/XSV+나/EC> 88년<NNG> 이후<NNG> 실제<NNG> 적용은<NNG+은/JX> 거의<MAG> 되지<VV+지/EC> 않았다<VX+았/EP+다/EF> "<SS> 며<며/EC> "<SS> 앞으로는<NNG+으로/JKB+는/JX> 학점이<NNG+이/JKS> 일정<NNG> 수준<NNG> 이상이어야<NNG+이/VCP+어야/EC> 학생회<NNG> 간부가<NNG+가/JKC> 될<VV+ᆯ/ETM> 수<NNB> 있도록<VV+도록/EC> 하고<VX+고/EC> 그동안<NNG> 학생회<NNG> 간부들에게<NNG+에게/JKB> 지급하던<NNG+하/XSV+던/ETM> 봉사<NNG> 장학금도<NNG+도/JX> 내년부터<NNG+부터/JX> 성적이<NNG+이/JKS> 우수한<NNG+하/XSA+ᆫ/ETM> 학생에게<NNG+에게/JKB> 주도록<VV+도록/EC> 하자<VX+자/EF> "<SS> 고<고/JKQ> 말하았다<NNG+하/XSV+았/EP+다/EF> .<.>
+전<NNP> 학생처장은<NNG+은/JX> 또<MAG> 88년부터<NNG+부터/JX> 학생들이<NNG+이/JKS> 운영하아오던<NNG+하/XSV+아/EC+VX+던/ETM> 교내<NNG> 매점<NNG> ,<,> 자판기<NNG> 운영<NNG> 등<NNB> 수익<NNG> 사업을<NNG+을/JKO> 다음달부터<NNG+부터/JX> 교수<NNG> -<SS> 직원<NNG> -<SS> 학생<NNG> 대표가<NNG+가/JKS> 참여하는<NNG+하/XSV+는/ETM> 후생복지위원회에서<NNP+에서/JKB> 관장하도록<NNG+하/XSV+도록/EC> 조치를<NNG+를/JKO> 취하았다고<VV+았/EP+다고/EC> 밝히었다<VV+었/EP+다/EF> .<.>
+주제<NNG> 발표에<NNG+에/JKB> 잇어<VV+어/EC> 있은<VX+은/ETM> 토론에서<NNG+에서/JKB> 일부<NNG> 교수들은<NNG+은/JX> 기존<NNG> 학칙의<NNG+의/JKG> 개정<NNG> 없이도<MAG+도/JX> 학사<NNG> 관리<NNG> 및<MAJ> 학생<NNG> 지도를<NNG+를/JKO> 개선할<NNG+하/XSV+ᆯ/ETM> 수<NNB> 있다며<VV+다며/EC> 학생들을<NNG+을/JKO> 자극할<NNG+하/XSV+ᆯ/ETM> 소지가<NNG+가/JKS> 있는<VV+는/ETM> 학칙<NNG> 개정은<NNG+은/JX> 필요가<NNG+가/JKS> 없다는<VA+다/EC+는/ETM> 의견을<NNG+을/JKO> 제시하기도<NNG+하/XSV+기/ETN+도/JX> 하았다<VX+았/EP+다/EF> .<.>
+그러나<MAJ> 대부분의<NNG+의/JKG> 교수들은<NNG+은/JX> 공부를<NNG+를/JKO> 하지<VV+지/EC> 않은<VX+은/ETM> 학생이<NNG+이/JKS> 학교에<NNG+에/JKB> 남아<VV+아/EC> 있을<VX+을/ETM> 수는<NNB+는/JX> 없다며<VA+다며/EC> 보다<MAG> 강화된<NNG+되/XSV+ᆫ/ETM> 학생<NNG> 징계<NNG> 제도의<NNG+의/JKG> 실시에<NNG+에/JKB> 찬성하았다<NNG+하/XSV+았/EP+다/EF> .<.>
+한<MM> 교수는<NNG+는/JX> "<SS> 최근의<NNG+의/JKG> 학생<NNG> 지도<NNG> 문제는<NNG+는/JX> 우리<NP> 학교만의<NNG+만/JX+의/JKG> 고민이<NNG+이/JKC> 아니라<VCN+라/EC> 사회<NNG> 전체의<NNG+의/JKG> 고민<NNG> "<SS> 이라며<이/VCP+라며/EC> "<SS> 사회<NNG> 정치적<NNG> 상황이<NNG+이/JKS> 변한<VV+ᆫ/ETM> 만큼<NNB> 변질된<NNG+되/XSV+ᆫ/ETM> 학생회<NNG> 활동을<NNG+을/JKO> 지적하고<NNG+하/XSV+고/EC> 바람직한<XR+하/XSA+ᆫ/ETM> 방향으로<NNG+으로/JKB> 이끌어<VV+어/EC> 줄<VX+ᆯ/ETM> 필요가<NNG+가/JKS> 있다<VV+다/EC> "<SS> 고<고/JKQ> 말하았다<NNG+하/XSV+았/EP+다/EF> .<.>
+작년<NNG> 9월부터<NNG+부터/JX> 서강대<NNP> 교환<NNG> 교수로<NNG+로/JKB> 오아<VV+아/EC> 있는<VX+는/ETM> 중국<NNP> 하얼빈<NNP> 과학기술대<NNP> 이장섭<NNP> 교수는<NNG+는/JX> 한국운동권<NNG> 대학생에<NNG+에/JKB> 대한<VV+ᆫ/ETM> 개인적<NNG> 견해를<NNG+를/JKO> 밝히면서<VV+면서/EC> "<SS> 최근<NNG> 소련<NNP> ,<,> 동구<NNP> 사태에서<NNG+에서/JKB> 보이어<VV+어/EC> 주는<VX+는/ETM> 것처럼<NNB+처럼/JKB> 사회주의가<NNG+가/JKS> 무너지어<VV+어/EC> 가고<VX+고/EC> 있는데도<VX+는데/EC+도/JX> 한국<NNP> 대학생들은<NNG+은/JX> 아직도<MAG+도/JX> 사회주의<NNG> 이상에<NNG+에/JKB> 집착하고<NNG+하/XSV+고/EC> 있는<VX+는/ETM> 것<NNB> 같아<VA+아/EC> 안타깝다<VA+다/EC> "<SS> 며<며/EC> "<SS> 대학생이라면<NNG+이/VCP+라면/EC> 자본주의의<NNG+의/JKG> 단점만<NNG+만/JX> 지적할<NNG+하/XSV+ᆯ/ETM> 것이<NNB+이/JKC> 아니라<VCN+라/EC> 장점도<NNG+도/JX> 동시에<NNG+에/JKB> 파악할<NNG+하/XSV+ᆯ/ETM> 수<NNB> 있어야<VV+어야/EC> 할<VX+ᆯ/ETM> 것<NNB> "<SS> 이라고<이라고/JKQ> 말하기도<NNG+하/XSV+기/ETN+도/JX> 하았다<VX+았/EP+다/EF> .<.>
+1991/09/15<SN+SP+SN+SP+SN>
+23<SN>
+서강대학생회장<NNG> 표홍철<NNP> 군<NNB> 검거<NNG>
+"<SS> 형기<NNG> 마치면<VV+면/EC> 억척같이<NNG+같이/JKB> 돈벌어<NNG+VV+어/EC> 효도할래요<NNG+하/XSV+ᆯ래요/EF> "<SS> /<SP>
+병들ᆫ<VV+ᆫ/ETM> 몸으로<NNG+으로/JKB> 숨어<VV+어/EC> 살는<VV+는/ETM> 운동권<NNG> 자식<NNG> 더<MAG> 볼<VV+ᆯ/ETM> 수<NNB> 없어…<VA+어/EC+SE> /<SP>
+눈물의<NNG+의/JKG> 모정…<NNG+SE> 애끊는<VV+는/ETM> "신고"<SS+NNG+SS> /<SP>
+"<SS> 만나러<VV+러/EC> 간다<VV+ᆫ다/EF> "<SS> 경찰에<NNG+에/JKB> 알리어<VV+어/EC> /<SP>
+"<SS> 엄마<NNG> 보고<VV+고/EC> 싶어<VX+어/EF> "<SS> 전화받고<NNG+VV+고/EC> 밤샘끝에<NNG+에/JKB> 결심<NNG> /<SP>
+청소원<NNG> 등<NNB> 막일하며<NNG+하/XSV+며/EC> 수배<NNG> 3<SN> 개월<NNB> 뒷바라지<NNG>

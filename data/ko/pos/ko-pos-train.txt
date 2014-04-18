@@ -1,6 +1,10 @@
 
 나는<NP,JKC_는> 학교에<NN,JKB_에> 갑니다<VV,EFN_ㅂ니다> .<.>
 
+나는<NP+JKC> 학교에<NN+JKB> 갑니다<VV+EFN> .<.>
+
+소가<NN+JKS> 밭을<NN+JKO> 열심히<MA> 갑니다<ㄹ/VV+EFN> .<.>
+
 어느<NP> 학교에<NN,JKB_에> 다니세요<VV,EFQ_세요> ?<?>
 
 학교를<NN,JKO_를> 열심히<MA> 다닙니까<VV,EFQ_ㅂ니까> ?<?>
