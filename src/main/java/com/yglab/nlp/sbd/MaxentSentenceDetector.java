@@ -12,11 +12,12 @@ import java.util.List;
 import com.yglab.nlp.io.AbstractModelReader;
 import com.yglab.nlp.io.AbstractModelWriter;
 import com.yglab.nlp.io.AbstractPlainTextWriter;
-import com.yglab.nlp.maxent.LabelSequenceGEN;
+import com.yglab.nlp.maxent.DefaultTagSequenceGenerator;
 import com.yglab.nlp.maxent.MEMM;
 import com.yglab.nlp.maxent.MaxentModelPlainTextWriter;
 import com.yglab.nlp.maxent.MaxentModelReader;
 import com.yglab.nlp.maxent.MaxentModelWriter;
+import com.yglab.nlp.maxent.TagSequenceGenerator;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Datum;
 import com.yglab.nlp.model.EventStream;
@@ -36,8 +37,9 @@ public class MaxentSentenceDetector implements SentenceDetector {
 	public static final String LABEL_OTHER = "O";
 	
 	private AbstractModel model;
-	private SentenceFeatureGenerator featureGenerator;
+	//private SentenceFeatureGenerator featureGenerator;
 	private WhitespaceTokenizer whitespaceTokenizer;
+	private TagSequenceGenerator gen;
   
 	/**
 	 * Initializes the sentence detector with the specified model.
@@ -47,8 +49,15 @@ public class MaxentSentenceDetector implements SentenceDetector {
 	 */
 	public MaxentSentenceDetector(AbstractModel model, SentenceFeatureGenerator featureGenerator) {
 		this.model = model;
-		this.featureGenerator = featureGenerator;
+		//this.featureGenerator = featureGenerator;
 		this.whitespaceTokenizer = new WhitespaceTokenizer();
+		
+		Index labelIndex = model.getLabelIndex();
+		String[] labels = new String[labelIndex.size()];
+		for (int i = 0; i < labelIndex.size(); i++) {
+			labels[i] = labelIndex.get(i).toString();
+		}
+		this.gen = new DefaultTagSequenceGenerator(featureGenerator, labels, 2);
 	}
 	
 	/**
@@ -126,13 +135,7 @@ public class MaxentSentenceDetector implements SentenceDetector {
 	}
 	
 	private Span[] detectMaxent(String[] tokens) {
-		Index labelIndex = model.getLabelIndex();
-		String[] labels = new String[labelIndex.size()];
-		for (int i = 0; i < labelIndex.size(); i++) {
-			labels[i] = labelIndex.get(i).toString();
-		}
-		LabelSequenceGEN gen = new LabelSequenceGEN(featureGenerator, labels);
-		List<List<Datum>> candidates = gen.getCandidates(tokens, 2);
+		List<List<Datum>> candidates = gen.getCandidates(tokens);
 		List<Datum> bestSequence = MEMM.decode(model, candidates);
 
 		List<Span> spans = new ArrayList<Span>(tokens.length);
