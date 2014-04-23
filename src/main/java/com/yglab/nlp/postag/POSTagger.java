@@ -65,12 +65,6 @@ public class POSTagger {
 	public POSTagger(AbstractModel model, POSFeatureGenerator featureGenerator, TagSequenceGenerator gen) {
 		this.model = model;
 		this.featureGenerator = featureGenerator;
-		
-		Index labelIndex = model.getLabelIndex();
-		String[] labels = new String[labelIndex.size()];
-		for (int i = 0; i < labelIndex.size(); i++) {
-			labels[i] = labelIndex.get(i).toString();
-		}
 		this.gen = gen;
 	}
 

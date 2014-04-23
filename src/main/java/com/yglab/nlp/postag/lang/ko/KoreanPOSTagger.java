@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Properties;
 
 import com.yglab.nlp.model.AbstractModel;
+import com.yglab.nlp.model.Index;
 import com.yglab.nlp.postag.POSFeatureGenerator;
 import com.yglab.nlp.postag.POSSampleParser;
 import com.yglab.nlp.postag.POSTagger;
@@ -20,7 +21,7 @@ import com.yglab.nlp.util.lang.ko.MorphemeUtil;
  */
 public class KoreanPOSTagger extends POSTagger {
 
-	private MorphemeDictionary dicJosa, dicEomi;
+	private MorphemeDictionary dic;
 	private KoreanStemmer stemmer;
 	private Properties posDescriptions;
 	
@@ -29,16 +30,21 @@ public class KoreanPOSTagger extends POSTagger {
 	 * 
 	 * @param model The trained model
 	 * @param featureGenerator The context feature generator
-	 * @param dicJosa The josa dictionary
-	 * @param dicEomi The eomi dictionary
+	 * @param dic The dictionary of josa and eomi
 	 * @throws IOException
 	 */
 	public KoreanPOSTagger(AbstractModel model, POSFeatureGenerator featureGenerator, 
-			MorphemeDictionary dicJosa, MorphemeDictionary dicEomi) throws IOException {
-		super(model, featureGenerator);
-		this.dicJosa = dicJosa;
-		this.dicEomi = dicEomi;
+			MorphemeDictionary dic) throws IOException {
+		super(model, featureGenerator, new KoreanTagSequenceGenerator(featureGenerator));
+		this.dic = dic;
 		this.stemmer = new KoreanStemmer();
+		
+		Index labelIndex = model.getLabelIndex();
+		String[] labels = new String[labelIndex.size()];
+		for (int i = 0; i < labelIndex.size(); i++) {
+			labels[i] = labelIndex.get(i).toString();
+		}
+		((KoreanTagSequenceGenerator) super.gen).setTags(labels);
 		
 		InputStream is = getClass().getResourceAsStream("/lang/ko/postag_ko.properties");
 		this.posDescriptions = new Properties();
@@ -94,8 +100,10 @@ public class KoreanPOSTagger extends POSTagger {
 					morpheme.setStem(stem);
 				}
 
-				String matchJosa = dicJosa.findSuffix(left);
-				String matchEomi = dicEomi.findSuffix(left);
+				//String matchJosa = dicJosa.findSuffix(left);
+				//String matchEomi = dicEomi.findSuffix(left);
+				String matchJosa = "";
+				String matchEomi = "";
 				
 				/* 남아 있는 단어의 오른쪽 부분이 조사와 매칭되는 부분이 있는 경우 */
 				if (matchJosa != null) {

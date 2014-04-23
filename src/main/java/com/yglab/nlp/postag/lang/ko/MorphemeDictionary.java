@@ -92,7 +92,7 @@ public class MorphemeDictionary {
 	
 	
 	/**
-	 * Returns the longest suffix which ends with input.
+	 * Finds the longest suffix in the input string.
 	 */
 	public String findSuffix(String str) {
 		/*

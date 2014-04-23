@@ -3,6 +3,7 @@ package com.yglab.nlp.postag.lang.ko;
 import java.util.List;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.model.AbstractModel;
@@ -18,25 +19,20 @@ import com.yglab.nlp.postag.POSTaggerEvaluator;
  */
 public class KoreanPOSTaggerTest {
 	
-	private static MorphemeDictionary dicJosa, dicEomi;
+	private static MorphemeDictionary dic;
 	private static KoreanPOSFeatureGenerator featureGenerator;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		// update dictionaries
-		//MorphemeDicGenerator.generate("./data/ko/pos/ko-pos-train.txt", "./src/main/resources/lang/ko/ko-pos-eomi.dic", "^[E]+");
-		//MorphemeDicGenerator.generate("./data/ko/pos/ko-pos-train.txt", "./src/main/resources/lang/ko/ko-pos-josa.dic", "^[J]+");
-		//MorphemeDicGenerator.generate("./data/ko/pos/ko-pos-train.txt", "./src/main/resources/lang/ko/ko-pos-etc.dic", "^[NMVXS]+");
+		// TODO
+		dic = new MorphemeDictionary("/lang/ko/ko-pos-josa.dic", "/lang/ko/ko-pos-eomi.dic");
+		featureGenerator = new KoreanPOSFeatureGenerator(dic);
 		
-		dicJosa = new MorphemeDictionary("/lang/ko/ko-pos-josa.dic");
-		dicEomi = new MorphemeDictionary("/lang/ko/ko-pos-eomi.dic");
-		featureGenerator = new KoreanPOSFeatureGenerator(dicJosa, dicEomi);
-		
-		train();
+		//train();
 	}
 
 	private static void train() throws Exception {
-		List<POSSample> trainSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt", "_[^,]+", "");
+		List<POSSample> trainSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt", "[^\\+/\\(\\)]*/", "");
 		
 		Options options = new Options();
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
@@ -48,13 +44,13 @@ public class KoreanPOSTaggerTest {
 	@Test
 	public void testTagger() throws Exception {
 
-//		String[] tokens = {
-//				"당신은",
-//				"학교를",
-//				"열심히",
-//				"다닙니까",
-//				"?"
-//		};
+		String[] tokens = {
+				"당신은",
+				"학교를",
+				"열심히",
+				"다닙니다",
+				"."
+		};
 		
 //		String[] tokens = {
 //				"이",
@@ -63,14 +59,10 @@ public class KoreanPOSTaggerTest {
 //				"짜리인가요",
 //				"?"
 //		};
-		
-		String[] tokens = {
-				"지어야했다"
-				//"선물보내줘"
-		};		
 
 		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model.bin"); 
-		KoreanPOSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator, dicJosa, dicEomi);
+
+		KoreanPOSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator, dic);
 		
 		System.out.println("==================================================");
 		
@@ -82,28 +74,22 @@ public class KoreanPOSTaggerTest {
 		}
 		
 		System.out.println("==================================================");
-		
-		List<Eojeol> eojeols = tagger.analyze(tokens);
-		
-		for (int i = 0; i < eojeols.size(); i++) {
-			System.out.println(i + ": " + eojeols.get(i).toString());
-		}
+
+		// TODO
+//		List<Eojeol> eojeols = tagger.analyze(tokens);
+//		
+//		for (int i = 0; i < eojeols.size(); i++) {
+//			System.out.println(i + ": " + eojeols.get(i).toString());
+//		}
 	}
 	
 	@Test
 	public void testEvaluator() throws Exception {
-		/*
-		List<POSSample> trainSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt", "_[^,]+", "");
-		Options options = new Options();
-		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
-		AbstractModel trainModel = KoreanPOSTagger.train(trainSamples, featureGenerator, options);
-		*/
-		
 		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model.bin");
-				
-		POSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator, dicJosa, dicEomi);
 		
-		List<POSSample> testSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-test.txt", "_[^,]+", "");
+		POSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator, dic);
+		
+		List<POSSample> testSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-test.txt", "[^\\+/\\(\\)]*/", "");
 		POSTaggerEvaluator evaluator = new POSTaggerEvaluator(tagger);
 		evaluator.evaluate(testSamples);
 		

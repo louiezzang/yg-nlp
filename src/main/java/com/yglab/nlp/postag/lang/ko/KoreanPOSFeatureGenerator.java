@@ -16,12 +16,11 @@ import com.yglab.nlp.util.lang.ko.MorphemeUtil;
  */
 public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 	
-	private MorphemeDictionary dicJosa, dicEomi;
-	
-	public KoreanPOSFeatureGenerator(MorphemeDictionary dicJosa, MorphemeDictionary dicEomi) {
+	private MorphemeDictionary dic;
+
+	public KoreanPOSFeatureGenerator(MorphemeDictionary dic) {
 		super();
-		this.dicJosa = dicJosa;
-		this.dicEomi = dicEomi;
+		this.dic = dic;
 	}
 	
 	@Override
@@ -32,103 +31,84 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 		this.addBigramFeatures(features, position, tokens, previousLabelSequence);
 		this.addTrigramFeatures(features, position, tokens, previousLabelSequence);
 		this.addContextualFeatures(features, position, tokens, previousLabelSequence);
-		this.addMorphoJosaFeatures(features, position, tokens, previousLabelSequence);
-		this.addMorphoEomiFeatures(features, position, tokens, previousLabelSequence);
+		this.addMorphoFeatures(features, position, tokens, previousLabelSequence);
+		this.addMorphoFeatures(features, position, tokens, previousLabelSequence);
 		
 		return features.toArray(new String[features.size()]);
 	}
 	
-	/**
-	 * Adds the feature which contains "josa", phonological type(positive or negative vowel) of jungseong
-	 * and consonant of jongseong in last header character in last header character.
-	 * 
-	 * @param features
-	 * @param word
-	 * @return
-	 */
-	protected void addMorphoJosaFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
-		String currentWord = tokens[position];
+	// TODO: 토큰 우측에서 좌측방향으로 탐색하면서 dic에서 매칭되는 음절(형태소)가 있을 때까지 찾도록 변경 필요.
+	public List<String> findTokenSuffix(String token) {
+		List<String> matchSuffixList = new ArrayList<String>();
 		
-		// add "josa" morphological feature
-		String tag = dicJosa.findSuffix(currentWord);
-		if (tag == null) {
-			return;
+		String morphDic = dic.findSuffix(token);
+		
+		if (morphDic == null) {
+			return matchSuffixList;
 		}
 		
-		String pos = tag.split("_")[0];
-		String tail = tag.split("_")[1];
+		//String tail = morphDic.split("\t")[0];
+		//if (tail.equals(token)) {
+		//	return matchSuffixList;
+		//}
 		
-		if (tail.equals(currentWord)) {
-			return;
+		String[] matchItems = morphDic.split("\\|");
+		for (String matchItem : matchItems) {
+			matchSuffixList.add(matchItem);
 		}
 		
-		features.add("josaTag=" + tag);
-		features.add("josaPos=" + pos);
-		features.add("josa=" + tail);
-		
-		// phonological type(positive or negative vowel) of jungseong in last header character.
-		String header = MorphemeUtil.truncateRight(currentWord, tail);
-		if (!header.equals("")) {
-			char lastHeaderChar = header.charAt(header.length() - 1);
-			boolean positiveVowel = MorphemeUtil.containsPositiveVowel(lastHeaderChar);
-			if (positiveVowel) {
-				features.add("headerLastJungseong=" + "positiveVowel");
-			}
-			else {
-				features.add("headerLastJungseong=" + "negativeVowel");
-			}
-			
-			// consonant of jongseong in last header character.
-			features.add("headerLastJongseong=" + MorphemeUtil.containsJongseongConsonant(lastHeaderChar));
-		}
+		return matchSuffixList;
 	}
 	
 	/**
-	 * Adds the feature which contains "eomi", phonological type(positive or negative vowel) of jungseong
-	 * and consonant of jongseong in last header character in last header character.
+	 * If the token contains the suffix of "josa" or "eomi", 
+	 * adds the features such as the phonological type(positive or negative vowel) of jungseong 
+	 * and the consonant of jongseong in last header character.
 	 * 
-	 * @param features
-	 * @param word
-	 * @return
 	 */
-	protected void addMorphoEomiFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
+	protected void addMorphoFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
 		String currentWord = tokens[position];
 		
-		// add "eomi" morphological feature
-		String tag = dicEomi.findSuffix(currentWord);
-		if (tag == null) {
-			return;
-		}
-		
-		String pos = tag.split("_")[0];
-		String tail = tag.split("_")[1];
-		
-		if (tail.equals(currentWord)) {
-			return;
-		}
-		
-		features.add("eomiTag=" + tag);
-		features.add("eomiPos=" + pos);
-		features.add("eomi=" + tail);
-		
-		// phonological type(positive or negative vowel) of jungseong in last header character.
-		String header = MorphemeUtil.truncateRight(currentWord, tail);
-		if (!header.equals("")) {
-			char lastHeaderChar = header.charAt(header.length() - 1);
-			boolean positiveVowel = MorphemeUtil.containsPositiveVowel(lastHeaderChar);
-			if (positiveVowel) {
-				features.add("headerLastJungseong=" + "positiveVowel");
-			}
-			else {
-				features.add("headerLastJungseong=" + "negativeVowel");
+		List<String> matchSuffixList = this.findTokenSuffix(currentWord);
+
+		for (String matchSuffix : matchSuffixList) {
+			String[] fields = matchSuffix.split("\t"); 
+			
+			String tail = fields[0];
+			String tag = fields[1];
+			
+			if (tail.equals(currentWord)) {
+				return;
 			}
 			
-			// consonant of jongseong eomi in last header character.
-			char jongseongEomi = MorphemeUtil.getJongseongEomiConsonant(lastHeaderChar);
-			features.add("headerLastJongseongEomi=" + jongseongEomi);
+			// TODO: 조사 또는 어미로 끝나는 경우에만 아래 피쳐 추가
+			features.add("tailTag=" + tag);
+			features.add("tail=" + tail);
 			
-			// consonant of jongseong in last header character.
-			features.add("headerLastJongseong=" + MorphemeUtil.containsJongseongConsonant(lastHeaderChar));
+			// phonological type(positive or negative vowel) of jungseong in last header character.
+			String header = MorphemeUtil.truncateRight(currentWord, tail);
+			if (!header.equals("")) {
+				char lastHeaderChar = header.charAt(header.length() - 1);
+				boolean positiveVowel = MorphemeUtil.containsPositiveVowel(lastHeaderChar);
+				if (positiveVowel) {
+					features.add("headerLastJungseong=" + "positiveVowel");
+				}
+				else {
+					features.add("headerLastJungseong=" + "negativeVowel");
+				}
+				
+				// consonant of jongseong in last header character.
+				features.add("headerLastJongseong=" + MorphemeUtil.containsJongseongConsonant(lastHeaderChar));
+				
+				// TODO: 어미로 끝나는 경우에만 아래 피쳐 추가
+				// consonant of jongseong eomi in last header character.
+				char jongseongEomi = MorphemeUtil.getJongseongEomiConsonant(lastHeaderChar);
+				features.add("headerLastJongseongEomi=" + jongseongEomi);
+				
+				// TODO: 어미로 끝나는 경우에만 아래 피쳐 추가
+				// consonant of jongseong in last header character.
+				features.add("headerLastJongseong=" + MorphemeUtil.containsJongseongConsonant(lastHeaderChar));
+			}
 		}
 	}
 

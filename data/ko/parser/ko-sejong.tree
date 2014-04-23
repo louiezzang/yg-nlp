@@ -9088,7 +9088,7 @@
 				(NP 한마음/NNG))
 			(R '/SS)))
 	(NP 	(NP 급료/NNG)
-		(NP 반납/NNG +//SP)))
+		(NP 반납/NNG + //SP)))
 ; 청주공단 영태전자(다시 뛴다) 
 (NP 	(NP 	(NP 청주/NNP + 공단/NNG)
 		(NP 영태전자/NNP))

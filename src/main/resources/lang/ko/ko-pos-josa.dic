@@ -1,17 +1,22 @@
-계	계/XSN			
-고	고/JKQ			
-는	는/JX	모음		
-도	도/JX			
-등	등/NNB			
-를	를/JKO			
-만	만/JX			
-씩	씩/XSN			
-에	에/JKB			
-으로	으로/JKB			
-은	은/JX	자음		
-을	을/JKO			
-의	의/JKG			
-이	이/JKS,이/JKC			
-이라고	이라고/JKQ			
-적	적/XSN			
-처럼	처럼/JKB			
+#음절	형태소/POS	음운제약조건	형태제약조건	품사제약조건	불규칙조건
+가	가/JKS				
+계	계/XSN				
+고	고/JKQ				
+는	는/JX	모음			
+다	다/JX				
+도	도/JX				
+등	등/NNB				
+를	를/JKO				
+만	만/JX				
+씩	씩/XSN				
+에	에/JKB				
+으로	으로/JKB				
+은	은/JX	자음			
+을	을/JKO				
+의	의/JKG				
+이	이/JKS				
+이	이/JKC				
+이라고	이라고/JKQ				
+이라고	이라고/JKQ				
+적	적/XSN				
+처럼	처럼/JKB				

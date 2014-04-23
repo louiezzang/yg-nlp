@@ -25,7 +25,7 @@
 1	일당	일당	NNG	NNG	-	2	NP
 2	7만원에도	7만원에도	NNG+JKB+JX	NNG+에/JKB+도/JX	-	4	NP_AJT
 3	못	못	MAG	MAG	-	4	AP
-4	구해	구하아	VV+EC	VV+아/EC	-	5	VP
+4	구하아	구하아	VV+EC	VV+아/EC	-	5	VP
 5	/	/	SP	SP	-	0	ROOT
 
 1	공사장엔	공사장엔	NNG+JKB+JX	NNG+에/JKB+ᆫ/JX	-	3	NP_AJT
@@ -60,7 +60,7 @@
 5	신축	신축	NNG	NNG	-	6	NP
 6	공사	공사	NNG	NNG	-	7	NP
 7	현장	현장	NNG	NNG	-	0	ROOT
-8	.	.	.	.	-	7	X
+8	.	.	SF	SF	-	7	X
 
 1	혹한의	혹한의	NNG+JKG	NNG+의/JKG	-	2	NP_MOD
 2	날씨에도	날씨에도	NNG+JKB+JX	NNG+에/JKB+도/JX	-	7	NP_AJT
@@ -73,23 +73,23 @@
 9	젊은	젊은	VA+ETM	VA+은/ETM	-	10	VP_MOD
 10	일꾼은	일꾼은	NNG+JX	NNG+은/JX	-	14	NP_OBJ
 11	찾아	찾아	VV+EC	VV+아/EC	-	12	VP
-12	볼	볼	VX+ETM	VX+ᆯ/ETM	-	13	VP_MOD
+12	볼	볼	VX+ETM	보/VX+ᆯ/ETM	-	13	VP_MOD
 13	수	수	NNB	NNB	-	14	NP_SBJ
 14	없었다	없었다	VA+EP+EF	VA+었/EP+다/EF	-	0	ROOT
-15	.	.	.	.	-	14	X
+15	.	.	SF	SF	-	14	X
 
 1	40∼50대가	40∼50대가	NNG+JKS	NNG+가/JKS	-	2	NP_SBJ
 2	대부분인	대부분인	NNG+VCP+ETM	NNG+이/VCP+ᆫ/ETM	-	3	S_MOD
 3	일꾼들은	일꾼들은	NNG+JX	NNG+은/JX	-	11	NP_SBJ
 4	하고	하고	VV+EC	VV+고/EC	-	5	VP
-5	있는	있는	VX+ETM	VX+는/ETM	-	6	VP_MOD
+5	있는	있는	VX+ETM	있/VX+는/ETM	-	6	VP_MOD
 6	일이	일이	NNG+JKS	NNG+이/JKS	-	8	NP_SBJ
 7	힘에	힘에	NNG+JKB	NNG+에/JKB	-	8	NP_AJT
 8	부친	부친	VV+ETM	VV+ᆫ/ETM	-	9	S_MOD
 9	듯	듯	NNB	NNB	-	11	NP_AJT
 10	지친	지친	VV+ETM	VV+ᆫ/ETM	-	11	VP_MOD
 11	표정들이었다	표정들이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
-12	.	.	.	.	-	11	X
+12	.	.	SF	SF	-	11	X
 
 1	공사장	공사장	NNG	NNG	-	2	NP
 2	한편에서는	한편에서는	NNG+JKB+JX	NNG+에서/JKB+는/JX	-	14	NP_AJT
@@ -101,26 +101,26 @@
 8	트럭에서	트럭에서	NNG+JKB	NNG+에서/JKB	-	11	NP_AJT
 9	벽돌을	벽돌을	NNG+JKO	NNG+을/JKO	-	11	NP_OBJ
 10	내리고	내리고	VV+EC	VV+고/EC	-	11	VP
-11	있는	있는	VX+ETM	VX+는/ETM	-	12	S_MOD
+11	있는	있는	VX+ETM	있/VX+는/ETM	-	12	S_MOD
 12	모습도	모습도	NNG+JX	NNG+도/JX	-	14	NP_SBJ
 13	눈에	눈에	NNG+JKB	NNG+에/JKB	-	14	NP_AJT
 14	띄었다	띄었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-15	.	.	.	.	-	14	X
+15	.	.	SF	SF	-	14	X
 
 1	나이가	나이가	NNG+JKS	NNG+가/JKS	-	2	NP_SBJ
 2	많은	많은	VA+ETM	VA+은/ETM	-	3	S_MOD
 3	탓에	탓에	NNG+JKB	NNG+에/JKB	-	6	NP_AJT
 4	작업	작업	NNG	NNG	-	5	NP
 5	속도도	속도도	NNG+JX	NNG+도/JX	-	6	NP_SBJ
-6	더뎌	더디어	VA+EC	VA+어/EC	-	14	S
+6	더디어	더디어	VA+EC	VA+어/EC	-	14	S
 7	공사	공사	NNG	NNG	-	8	NP
 8	일정이	일정이	NNG+JKS	NNG+이/JKS	-	14	NP_SBJ
 9	당초	당초	NNG	NNG	-	10	NP
 10	예정보다	예정보다	NNG+JKB	NNG+보다/JKB	-	14	NP_AJT
 11	20일	20일	NNG	NNG	-	12	NP
 12	이상	이상	NNG	NNG	-	14	NP_AJT
-13	늦어지고	늦어지고	VV+EC+VX+EC	VV+어/EC+VX+고/EC	-	14	VP
-14	있지만	있지만	VX+EC	VX+지만/EC	-	31	S
+13	늦어지고	늦어지고	VV+EC+VX+EC	VV+어/EC+지/VX+고/EC	-	14	VP
+14	있지만	있지만	VX+EC	있/VX+지만/EC	-	31	S
 15	"	"	SS	SS	-	25	L
 16	젊은	젊은	VA+ETM	VA+은/ETM	-	17	VP_MOD
 17	사람들을	사람들을	NNG+JKO	NNG+을/JKO	-	20	NP_OBJ
@@ -138,7 +138,7 @@
 29	사무소	사무소	NNG	NNG	-	30	NP
 30	측의	측의	NNB+JKG	NNB+의/JKG	-	31	NP_MOD
 31	설명이다	설명이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-32	.	.	.	.	-	31	X
+32	.	.	SF	SF	-	31	X
 
 1	가장	가장	MAG	MAG	-	2	AP
 2	젊은	젊은	VA+ETM	VA+은/ETM	-	4	VP_MOD
@@ -147,7 +147,7 @@
 5	"	"	SS	SS	-	16	L
 6	일	일	NNG	NNG	-	7	NP
 7	자체도	자체도	NNG+JX	NNG+도/JX	-	8	NP_SBJ
-8	힘든데다	힘들ᆫ데다	VA+EC	VA+ᆫ데다/EC	-	12	S
+8	힘들ᆫ데다	힘들ᆫ데다	VA+EC	VA+ᆫ데다/EC	-	12	S
 9	사회에서도	사회에서도	NNG+JKB+JX	NNG+에서/JKB+도/JX	-	12	NP_AJT
 10	꺼리는	꺼리는	VV+ETM	VV+는/ETM	-	11	VP_MOD
 11	직업으로	직업으로	NNG+JKB	NNG+으로/JKB	-	12	NP_AJT
@@ -157,8 +157,8 @@
 15	하겠느냐	하겠느냐	VV+EP+EC	VV+겠/EP+느냐/EC	-	16	S
 16	"	"	SS	SS	-	17	S
 17	고	고	JKQ	고/JKQ	-	18	S_CMP
-18	말했다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+18	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
+19	.	.	SF	SF	-	18	X
 
 1	자신도	자신도	NNG+JX	NNG+도/JX	-	14	NP_SBJ
 2	고교를	고교를	NNG+JKO	NNG+를/JKO	-	3	NP_OBJ
@@ -171,7 +171,7 @@
 9	돌아다니다	돌아다니다	VV+EC	VV+다/EC	-	12	VP
 10	배관	배관	NNG	NNG	-	11	NP
 11	기술을	기술을	NNG+JKO	NNG+을/JKO	-	12	NP_OBJ
-12	익혀	익히어	VV+EC	VV+어/EC	-	14	VP
+12	익히어	익히어	VV+EC	VV+어/EC	-	14	VP
 13	누르어	누르어	VV+EC	VV+어/EC	-	14	VP
 14	앉았다는	앉았다는	VV+EP+ETM	VV+았/EP+다는/ETM	-	15	S_MOD
 15	전씨의	전씨의	NNG+JKG	NNG+의/JKG	-	16	NP_MOD
@@ -179,18 +179,18 @@
 17	1백	1백	NR	NR	-	18	NP
 18	40여	40여	NNG	NNG	-	19	NP
 19	만원	만원	NR+NNG	NR+NNG	-	0	ROOT
-20	.	.	.	.	-	19	X
+20	.	.	SF	SF	-	19	X
 
 1	물론	물론	MAG	MAG	-	9	AP
 2	일요일은	일요일은	NNG+JX	NNG+은/JX	-	5	NP_AJT
 3	일을	일을	NNG+JKO	NNG+을/JKO	-	5	NP_OBJ
 4	하지	하지	VV+EC	VV+지/EC	-	5	VP
-5	않고	않고	VX+EC	VX+고/EC	-	7	VP
+5	않고	않고	VX+EC	않/VX+고/EC	-	7	VP
 6	손에	손에	NNG+JKB	NNG+에/JKB	-	7	NP_AJT
 7	쥐는	쥐는	VV+ETM	VV+는/ETM	-	9	VP_MOD
 8	순	순	MM	MM	-	9	DP
 9	수입이다	수입이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-10	.	.	.	.	-	9	X
+10	.	.	SF	SF	-	9	X
 
 1	전씨는	전씨는	NNG+JX	NNG+는/JX	-	24	NP_SBJ
 2	"	"	SS	SS	-	22	L
@@ -207,7 +207,7 @@
 13	이제는	이제는	NNG+JX	NNG+는/JX	-	21	NP_AJT
 14	어느	어느	MM	MM	-	15	DP
 15	공사장을	공사장을	NNG+JKO	NNG+을/JKO	-	16	NP_OBJ
-16	가도	가아도	VV+EC	VV+아도/EC	-	21	VP
+16	가아도	가아도	VV+EC	VV+아도/EC	-	21	VP
 17	우리	우리	NP	NP	-	18	NP
 18	또래는	또래는	NNG+JX	NNG+는/JX	-	21	NP_SBJ
 19	볼	볼	VV+ETM	VV+ᆯ/ETM	-	20	VP_MOD
@@ -215,8 +215,8 @@
 21	없다	없다	VA+EC	VA+다/EC	-	22	S
 22	"	"	SS	SS	-	23	S
 23	고	고	JKQ	고/JKQ	-	24	S_CMP
-24	말했다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-25	.	.	.	.	-	24	X
+24	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
+25	.	.	SF	SF	-	24	X
 
 1	인력	인력	NNG	NNG	-	2	NP
 2	부족	부족	NNG	NNG	-	3	NP
@@ -224,12 +224,12 @@
 4	대부분의	대부분의	NNG+JKG	NNG+의/JKG	-	6	NP_MOD
 5	건설	건설	NNG	NNG	-	6	NP
 6	현장이	현장이	NNG+JKS	NNG+이/JKS	-	7	NP_SBJ
-7	마찬가지여서	마찬가지이어서	NNG+VCP+EC	NNG+이/VCP+어서/EC	-	22	S
+7	마찬가지이어서	마찬가지이어서	NNG+VCP+EC	NNG+이/VCP+어서/EC	-	22	S
 8	노동	노동	NNG	NNG	-	9	NP
 9	강도가	강도가	NNG+JKS	NNG+가/JKS	-	10	NP_SBJ
 10	높은	높은	VA+ETM	VA+은/ETM	-	13	S_MOD
 11	벽돌공	벽돌공	NNG	NNG	-	13	NP_CNJ
-12	,	,	,	,	-	11	X
+12	,	,	SP	SP	-	11	X
 13	목수	목수	NNG	NNG	-	14	NP
 14	등의	등의	NNB+JKG	NNB+의/JKG	-	15	NP_MOD
 15	인력은	인력은	NNG+JX	NNG+은/JX	-	22	NP_SBJ
@@ -240,12 +240,12 @@
 20	수가	수가	NNB+JKS	NNB+가/JKS	-	21	NP_SBJ
 21	없는	없는	VA+ETM	VA+는/ETM	-	22	S_MOD
 22	실정이다	실정이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-23	.	.	.	.	-	22	X
+23	.	.	SF	SF	-	22	X
 
 1	특히	특히	MAG	MAG	-	19	AP
 2	공사장의	공사장의	NNG+JKG	NNG+의/JKG	-	6	NP_MOD
 3	청소	청소	NNG	NNG	-	6	NP_CNJ
-4	,	,	,	,	-	3	X
+4	,	,	SP	SP	-	3	X
 5	자재	자재	NNG	NNG	-	6	NP
 6	운반	운반	NNG	NNG	-	7	NP
 7	등	등	NNB	NNB	-	9	NP
@@ -254,21 +254,21 @@
 10	60대나	60대나	NNG+JC	NNG+나/JC	-	11	NP_CNJ
 11	부녀자들을	부녀자들을	NNG+JKO	NNG+을/JKO	-	13	NP_OBJ
 12	고용하고	고용하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	13	VP
-13	있지만	있지만	VX+EC	VX+지만/EC	-	19	VP
+13	있지만	있지만	VX+EC	있/VX+지만/EC	-	19	VP
 14	그마저	그마저	NP+JX	NP+마저/JX	-	19	NP_SBJ
 15	인력	인력	NNG	NNG	-	16	NP
 16	공급이	공급이	NNG+JKS	NNG+이/JKS	-	18	NP_SBJ
 17	원활하지	원활하지	NNG+XSA+EC	NNG+하/XSA+지/EC	-	18	VP
-18	못한	못한	VX+ETM	VX+ᆫ/ETM	-	19	S_MOD
+18	못한	못한	VX+ETM	못하/VX+ᆫ/ETM	-	19	S_MOD
 19	형편이다	형편이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-20	.	.	.	.	-	19	X
+20	.	.	SF	SF	-	19	X
 
 1	서울	서울	NNP	NNP	-	2	NP
 2	중구	중구	NNP	NNP	-	3	NP
 3	봉래동에	봉래동에	NNP+JKB	NNP+에/JKB	-	6	NP_AJT
 4	빌딩을	빌딩을	NNG+JKO	NNG+을/JKO	-	6	NP_OBJ
 5	건설하고	건설하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	6	VP
-6	있는	있는	VX+ETM	VX+는/ETM	-	7	VP_MOD
+6	있는	있는	VX+ETM	있/VX+는/ETM	-	7	VP_MOD
 7	S건설	S건설	NNG	NNG	-	8	NP
 8	현장관리과장	현장관리과장	NNG	NNG	-	10	NP
 9	이철희	이철희	NNP	NNP	-	10	NP
@@ -282,8 +282,8 @@
 17	다른	다른	MM	MM	-	18	DP
 18	곳보다	곳보다	NNG+JKB	NNG+보다/JKB	-	21	NP_AJT
 19	후하게	후하게	VA+EC	VA+게/EC	-	21	VP
-20	주고	주고	VX+EC	VX+고/EC	-	21	VP
-21	있지만	있지만	VX+EC	VX+지만/EC	-	31	VP
+20	주고	주고	VX+EC	주/VX+고/EC	-	21	VP
+21	있지만	있지만	VX+EC	있/VX+지만/EC	-	31	VP
 22	필요한	필요한	NNG+XSA+ETM	NNG+하/XSA+ᆫ/ETM	-	23	VP_MOD
 23	인원	인원	NNG	NNG	-	25	NP
 24	50	50	SN	SN	-	25	NP
@@ -292,12 +292,12 @@
 27	20	20	SN	SN	-	28	NP
 28	명밖에	명밖에	NNB+JX	NNB+밖에/JX	-	31	NP_OBJ
 29	구하지	구하지	VV+EC	VV+지/EC	-	30	VP
-30	못하고	못하고	VX+EC	VX+고/EC	-	31	VP
-31	있다	있다	VX+EC	VX+다/EC	-	32	VP
+30	못하고	못하고	VX+EC	못하/VX+고/EC	-	31	VP
+31	있다	있다	VX+EC	있/VX+다/EC	-	32	VP
 32	"	"	SS	SS	-	33	VP
 33	고	고	JKQ	고/JKQ	-	34	VP_CMP
-34	말했다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-35	.	.	.	.	-	34	X
+34	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
+35	.	.	SF	SF	-	34	X
 
 1	이	이	NP	NP	-	2	NP_AJT
 2	같은	같은	VA+ETM	VA+은/ETM	-	3	VP_MOD
@@ -312,8 +312,8 @@
 11	사람들은	사람들은	NNG+JX	NNG+은/JX	-	32	NP_SBJ
 12	"	"	SS	SS	-	28	L
 13	인력난을	인력난을	NNG+JKO	NNG+을/JKO	-	15	NP_OBJ
-14	메워야	메우어야	VV+EC	VV+어야/EC	-	15	VP
-15	할	할	VX+ETM	VX+ᆯ/ETM	-	17	VP_MOD
+14	메우어야	메우어야	VV+EC	VV+어야/EC	-	15	VP
+15	할	할	VX+ETM	하/VX+ᆯ/ETM	-	17	VP_MOD
 16	젊은	젊은	VA+ETM	VA+은/ETM	-	17	VP_MOD
 17	층이	층이	NNG+JKS	NNG+이/JKS	-	22	NP_SBJ
 18	임금과	임금과	NNG+JKB	NNG+과/JKB	-	20	NP_AJT
@@ -323,15 +323,15 @@
 22	기피하는	기피하는	NNG+XSV+ETM	NNG+하/XSV+는/ETM	-	23	S_MOD
 23	현상이	현상이	NNG+JKS	NNG+이/JKS	-	26	NP_SBJ
 24	갈수록	갈수록	MAG	MAG	-	26	AP
-25	심해지고	심하아지고	VA+EC+VX+EC	VA+아/EC+VX+고/EC	-	26	VP
-26	있기	있기	VX+ETN	VX+기/ETN	-	27	S
+25	심하아지고	심하아지고	VA+EC+VX+EC	VA+아/EC+지/VX+고/EC	-	26	VP
+26	있기	있기	VX+ETN	있/VX+기/ETN	-	27	S
 27	때문	때문	NNB	NNB	-	28	NP
 28	"	"	SS	SS	-	29	NP
 29	이라고	이라고	JKQ	이라고/JKQ	-	32	NP_CMP
 30	하소연	하소연	NNG	NNG	-	32	NP_OBJ
 31	하고	하고	VV+EC	VV+고/EC	-	32	VP
-32	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-33	.	.	.	.	-	32	X
+32	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+33	.	.	SF	SF	-	32	X
 
 1	인천시	인천시	NNP	NNP	-	2	NP
 2	남구	남구	NNP	NNP	-	3	NP
@@ -365,8 +365,8 @@
 30	상태	상태	NNG	NNG	-	31	S
 31	"	"	SS	SS	-	32	S
 32	라고	라고	JKQ	라고/JKQ	-	33	S_CMP
-33	말했다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-34	.	.	.	.	-	33	X
+33	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
+34	.	.	SF	SF	-	33	X
 
 1	건설업계	건설업계	NNG	NNG	-	2	NP
 2	관계자들은	관계자들은	NNG+JX	NNG+은/JX	-	36	NP_SBJ
@@ -374,11 +374,11 @@
 4	숙련공	숙련공	NNG	NNG	-	5	NP
 5	숫자가	숫자가	NNG+JKS	NNG+가/JKS	-	7	NP_SBJ
 6	절대적으로	절대적으로	NNG+JKB	NNG+으로/JKB	-	7	NP_AJT
-7	부족해	부족하아	NNG+XSA+EC	NNG+하/XSA+아/EC	-	14	S
+7	부족하아	부족하아	NNG+XSA+EC	NNG+하/XSA+아/EC	-	14	S
 8	요즘은	요즘은	NNG+JX	NNG+은/JX	-	14	NP_AJT
 9	약간의	약간의	NNG+JKG	NNG+의/JKG	-	10	NP_MOD
 10	기능만	기능만	NNG+JX	NNG+만/JX	-	11	NP_OBJ
-11	익혀도	익히어도	VV+EC	VV+어도/EC	-	14	VP
+11	익히어도	익히어도	VV+EC	VV+어도/EC	-	14	VP
 12	기능공	기능공	NNG	NNG	-	13	NP
 13	대우를	대우를	NNG+JKO	NNG+를/JKO	-	14	NP_OBJ
 14	바라는	바라는	VV+ETM	VV+는/ETM	-	15	VP_MOD
@@ -391,7 +391,7 @@
 21	'	'	SS	SS	-	22	S
 22	고	고	JKQ	고/JKQ	-	25	S_CMP
 23	나오지	나오지	VV+EC	VV+지/EC	-	24	VP
-24	않기	않기	VX+ETN	VX+기/ETN	-	25	VP
+24	않기	않기	VX+ETN	않/VX+기/ETN	-	25	VP
 25	일쑤	일쑤	NNG	NNG	-	26	VP
 26	"	"	SS	SS	-	27	VP
 27	이라며	이라며	VCP+EC	이/VCP+라며/EC	-	36	VNP
@@ -399,19 +399,19 @@
 29	이러다가는	이러다가는	VV+EC+JX	VV+다가/EC+는/JX	-	32	VP
 30	부실	부실	NNG	NNG	-	31	NP
 31	공사가	공사가	NNG+JKC	NNG+가/JKC	-	32	NP_CMP
-32	될까봐	될까보아	VV+EC+VX+EC	VV+ᆯ까/EC+VX+아/EC	-	33	VP
+32	될까보아	될까보아	VV+EC+VX+EC	VV+ᆯ까/EC+보/VX+아/EC	-	33	VP
 33	걱정	걱정	NNG	NNG	-	34	NP
 34	"	"	SS	SS	-	35	NP
 35	이라고	이라고	JKQ	이라고/JKQ	-	36	NP_CMP
-36	말했다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-37	.	.	.	.	-	36	X
+36	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
+37	.	.	SF	SF	-	36	X
 
 1	이처럼	이처럼	NP+JKB	NP+처럼/JKB	-	3	NP_AJT
 2	인력난이	인력난이	NNG+JKS	NNG+이/JKS	-	3	NP_SBJ
-3	심해지면서	심하아지면서	VA+EC+VX+EC	VA+아/EC+VX+면서/EC	-	6	S
+3	심하아지면서	심하아지면서	VA+EC+VX+EC	VA+아/EC+지/VX+면서/EC	-	6	S
 4	노임도	노임도	NNG+JX	NNG+도/JX	-	6	NP_SBJ
 5	크게	크게	VA+EC	VA+게/EC	-	6	VP
-6	올라	오르아	VV+EC	VV+아/EC	-	30	S
+6	오르아	오르아	VV+EC	VV+아/EC	-	30	S
 7	89년	89년	NNG	NNG	-	9	NP_AJT
 8	8천∼1만	8천∼1만	NR	NR	-	9	NP
 9	1천원이던	1천원이던	NNG+VCP+ETM	NNG+이/VCP+던/ETM	-	12	VNP_MOD
@@ -422,43 +422,43 @@
 14	5월에는	5월에는	NNG+JKB+JX	NNG+에/JKB+는/JX	-	16	NP_AJT
 15	1만	1만	NR	NR	-	16	NP
 16	5천원	5천원	NNG	NNG	-	22	NP
-17	,	,	,	,	-	16	X
+17	,	,	SP	SP	-	16	X
 18	10월	10월	NNG	NNG	-	19	NP_AJT
 19	들어서는	들어서는	VV+EC+JX	VV+어서/EC+는/JX	-	22	VP
 20	1만	1만	NR	NR	-	21	NP
 21	8천원으로	8천원으로	NNG+JKB	NNG+으로/JKB	-	22	NP_AJT
-22	올랐고	오르았고	VV+EP+EC	VV+았/EP+고/EC	-	30	VP
-23	,	,	,	,	-	22	X
+22	오르았고	오르았고	VV+EP+EC	VV+았/EP+고/EC	-	30	VP
+23	,	,	SP	SP	-	22	X
 24	요즘은	요즘은	NNG+JX	NNG+은/JX	-	30	NP_AJT
 25	하루	하루	NNG	NNG	-	26	NP
 26	8시간을	8시간을	NNG+JKO	NNG+을/JKO	-	27	NP_OBJ
 27	기준으로	기준으로	NNG+JKB	NNG+으로/JKB	-	30	VP
 28	2만∼2만	2만∼2만	NR	NR	-	29	NP
 29	5천원선이	5천원선이	NNG+JKC	NNG+이/JKC	-	30	NP_CMP
-30	됐다	되었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-31	.	.	.	.	-	30	X
+30	되었다	되었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
+31	.	.	SF	SF	-	30	X
 
 1	2년	2년	NNG	NNG	-	2	NP
 2	동안	동안	NNG	NNG	-	5	NP_AJT
 3	2∼3배가	2∼3배가	NNG+JKS	NNG+가/JKS	-	5	NP_SBJ
 4	오른	오른	VV+ETM	VV+ᆫ/ETM	-	5	VP_MOD
 5	것이다	것이다	NNB+VCP+EF	NNB+이/VCP+다/EF	-	0	ROOT
-6	.	.	.	.	-	5	X
+6	.	.	SF	SF	-	5	X
 
 1	목공	목공	NNG	NNG	-	5	NP_CNJ
-2	,	,	,	,	-	1	X
+2	,	,	SP	SP	-	1	X
 3	전기공	전기공	NNG	NNG	-	5	NP_CNJ
-4	,	,	,	,	-	3	X
+4	,	,	SP	SP	-	3	X
 5	배관공	배관공	NNG	NNG	-	6	NP
 6	등	등	NNB	NNB	-	8	NP
 7	기능	기능	NNG	NNG	-	8	NP
 8	인력은	인력은	NNG+JX	NNG+은/JX	-	13	NP_SBJ
 9	6만∼7만원을	6만∼7만원을	NNG+JKO	NNG+을/JKO	-	10	NP_OBJ
-10	줘도	주어도	VV+EC	VV+어도/EC	-	13	VP
+10	주어도	주어도	VV+EC	VV+어도/EC	-	13	VP
 11	구하기가	구하기가	VV+ETN+JKS	VV+기/ETN+가/JKS	-	13	VP_SBJ
 12	쉽지	쉽지	VA+EC	VA+지/EC	-	13	VP
-13	않다	않다	VX+EF	VX+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+13	않다	않다	VX+EF	않/VX+다/EF	-	0	ROOT
+14	.	.	SF	SF	-	13	X
 
 1	이들의	이들의	NP+XSN+JKG	NP+XSN+의/JKG	-	5	NP_MOD
 2	한달	한달	MM+NNB	MM+NNB	-	3	NP
@@ -474,7 +474,7 @@
 12	수	수	NNB	NNB	-	13	NP_SBJ
 13	있다는	있다는	VV+ETM	VV+다는/ETM	-	14	S_MOD
 14	계산이다	계산이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-15	.	.	.	.	-	14	X
+15	.	.	SF	SF	-	14	X
 
 1	실제로	실제로	MAG	MAG	-	17	AP
 2	S건설의	S건설의	NNG+JKG	NNG+의/JKG	-	5	NP_MOD
@@ -491,9 +491,9 @@
 13	받는	받는	VV+ETM	VV+는/ETM	-	14	VP_MOD
 14	기능공도	기능공도	NNG+JX	NNG+도/JX	-	17	NP_SBJ
 15	적지	적지	VA+EC	VA+지/EC	-	16	VP
-16	않게	않게	VX+EC	VX+게/EC	-	17	VP
+16	않게	않게	VX+EC	않/VX+게/EC	-	17	VP
 17	있다	있다	VV+EF	VV+다/EF	-	0	ROOT
-18	.	.	.	.	-	17	X
+18	.	.	SF	SF	-	17	X
 
 1	공사가	공사가	NNG+JKS	NNG+가/JKS	-	2	NP_SBJ
 2	바쁘아	바쁘아	VA+EC	VA+아/EC	-	9	S
@@ -509,10 +509,10 @@
 12	달에	달에	NNB+JKB	NNB+에/JKB	-	15	NP_AJT
 13	3백만원	3백만원	NNG	NNG	-	14	NP
 14	이상	이상	NNG	NNG	-	15	NP_OBJ
-15	받아가는	받아가는	VV+EC+VX+ETM	VV+아/EC+VX+는/ETM	-	16	VP_MOD
+15	받아가는	받아가는	VV+EC+VX+ETM	VV+아/EC+가/VX+는/ETM	-	16	VP_MOD
 16	일꾼도	일꾼도	NNG+JX	NNG+도/JX	-	17	NP_SBJ
 17	있다	있다	VV+EF	VV+다/EF	-	0	ROOT
-18	.	.	.	.	-	17	X
+18	.	.	SF	SF	-	17	X
 
 1	막일을	막일을	NNG+JKO	NNG+을/JKO	-	2	NP_OBJ
 2	기피하는	기피하는	NNG+XSV+ETM	NNG+하/XSV+는/ETM	-	3	VP_MOD
@@ -520,15 +520,15 @@
 4	건설	건설	NNG	NNG	-	5	NP
 5	공사장뿐만이	공사장뿐만이	NNG+JX+JX+JKC	NNG+뿐/JX+만/JX+이/JKC	-	6	NP_CMP
 6	아니다	아니다	VCN+EF	VCN+다/EF	-	0	ROOT
-7	.	.	.	.	-	6	X
+7	.	.	SF	SF	-	6	X
 
 1	다방	다방	NNG	NNG	-	3	NP_CNJ
-2	,	,	,	,	-	1	X
+2	,	,	SP	SP	-	1	X
 3	식당	식당	NNG	NNG	-	4	NP
 4	등	등	NNB	NNB	-	6	NP
 5	접객업소	접객업소	NNG	NNG	-	6	NP
 6	종업원	종업원	NNG	NNG	-	10	NP_CNJ
-7	,	,	,	,	-	6	X
+7	,	,	SP	SP	-	6	X
 8	LP	LP	SL	SL	-	9	NP
 9	가스	가스	NNG	NNG	-	10	NP
 10	배달원	배달원	NNG	NNG	-	11	NP
@@ -537,7 +537,7 @@
 13	인력도	인력도	NNG+JX	NNG+도/JX	-	15	NP_SBJ
 14	갈수록	갈수록	MAG	MAG	-	15	AP
 15	모자란다	모자란다	VV+EF	VV+ᆫ다/EF	-	0	ROOT
-16	.	.	.	.	-	15	X
+16	.	.	SF	SF	-	15	X
 
 1	여의도에서	여의도에서	NNP+JKB	NNP+에서/JKB	-	3	NP_AJT
 2	음식점을	음식점을	NNG+JKO	NNG+을/JKO	-	3	NP_OBJ
@@ -553,7 +553,7 @@
 12	10대	10대	NNG	NNG	-	13	NP
 13	소녀를	소녀를	NNG+JKO	NNG+를/JKO	-	14	NP_OBJ
 14	고용	고용	NNG	NNG	-	19	VP
-15	,	,	,	,	-	14	X
+15	,	,	SP	SP	-	14	X
 16	식탁	식탁	NNG	NNG	-	17	NP
 17	청소와	청소와	NNG+JC	NNG+와/JC	-	18	NP_CNJ
 18	심부름을	심부름을	NNG+JKO	NNG+을/JKO	-	19	NP_OBJ
@@ -564,7 +564,7 @@
 23	근처	근처	NNG	NNG	-	24	NP
 24	카페로	카페로	NNG+JKB	NNG+로/JKB	-	26	NP_AJT
 25	옮기어	옮기어	VV+EC	VV+어/EC	-	26	VP
-26	가았다	가았다	VX+EP+EC	VX+았/EP+다/EC	-	27	VP_CMP
+26	가았다	가았다	VX+EP+EC	가/VX+았/EP+다/EC	-	27	VP_CMP
 27	"	"	SS	SS	-	28	VP_CMP
 28	며	며	EC	며/EC	-	41	VP
 29	"	"	SS	SS	-	39	L
@@ -580,7 +580,7 @@
 39	"	"	SS	SS	-	40	S
 40	고	고	JKQ	고/JKQ	-	41	S_CMP
 41	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-42	.	.	.	.	-	41	X
+42	.	.	SF	SF	-	41	X
 
 1	이	이	NP	NP	-	2	NP_AJT
 2	같은	같은	VA+ETM	VA+은/ETM	-	3	VP_MOD
@@ -588,7 +588,7 @@
 4	때문에	때문에	NNB+JKB	NNB+에/JKB	-	7	NP_AJT
 5	일손을	일손을	NNG+JKO	NNG+을/JKO	-	7	NP_OBJ
 6	구하지	구하지	VV+EC	VV+지/EC	-	7	VP
-7	못한	못한	VX+ETM	VX+ᆫ/ETM	-	11	VP_MOD
+7	못한	못한	VX+ETM	못하/VX+ᆫ/ETM	-	11	VP_MOD
 8	일부	일부	NNG	NNG	-	11	NP
 9	아파트	아파트	NNG	NNG	-	10	NP
 10	단지내	단지내	NNG	NNG	-	11	NP
@@ -601,8 +601,8 @@
 17	배달하는	배달하는	NNG+XSV+ETM	NNG+하/XSV+는/ETM	-	18	S_MOD
 18	경우도	경우도	NNG+JX	NNG+도/JX	-	20	NP_SBJ
 19	생겨나고	생겨나고	VV+EC	VV+고/EC	-	20	VP
-20	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+20	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+21	.	.	SF	SF	-	20	X
 
 1	중소기업	중소기업	NNG	NNG	-	2	NP
 2	협동조합	협동조합	NNG	NNG	-	3	NP
@@ -615,18 +615,18 @@
 9	기능	기능	NNG	NNG	-	10	NP
 10	인력을	인력을	NNG+JKO	NNG+을/JKO	-	11	NP_OBJ
 11	수입	수입	NNG	NNG	-	17	VP
-12	,	,	,	,	-	11	X
+12	,	,	SP	SP	-	11	X
 13	국내	국내	NNG	NNG	-	14	NP
 14	중소기업이	중소기업이	NNG+JKS	NNG+이/JKS	-	17	NP_SBJ
 15	고용할	고용할	NNG+XSV+ETM	NNG+하/XSV+ᆯ/ETM	-	16	VP_MOD
 16	수	수	NNB	NNB	-	17	NP_SBJ
 17	있도록	있도록	VV+EC	VV+도록/EC	-	19	S
-18	하아	하아	VX+EC	VX+아/EC	-	19	VP
-19	달라는	달라는	VX+ETM	VX+라는/ETM	-	20	VP_MOD
+18	하아	하아	VX+EC	하/VX+아/EC	-	19	VP
+19	달라는	달라는	VX+ETM	달/VX+라는/ETM	-	20	VP_MOD
 20	건의문을	건의문을	NNG+JKO	NNG+을/JKO	-	22	NP_OBJ
 21	정부에	정부에	NNG+JKB	NNG+에/JKB	-	22	NP_AJT
 22	내었었다	내었었다	VV+EP+EF	VV+었었/EP+다/EF	-	0	ROOT
-23	.	.	.	.	-	22	X
+23	.	.	SF	SF	-	22	X
 
 1	중앙회는	중앙회는	NNG+JX	NNG+는/JX	-	20	NP_SBJ
 2	건의문에서	건의문에서	NNG+JKB	NNG+에서/JKB	-	20	NP_AJT
@@ -642,13 +642,13 @@
 12	공동화	공동화	NNG	NNG	-	13	NP
 13	현상을	현상을	NNG+JKO	NNG+을/JKO	-	17	NP_OBJ
 14	우려하지	우려하지	NNG+XSV+EC	NNG+하/XSV+지/EC	-	15	VP
-15	않을	않을	VX+ETM	VX+을/ETM	-	16	VP_MOD
+15	않을	않을	VX+ETM	않/VX+을/ETM	-	16	VP_MOD
 16	수	수	NNB	NNB	-	17	NP_SBJ
 17	없다	없다	VA+EC	VA+다/EC	-	18	S
 18	"	"	SS	SS	-	19	S
 19	고	고	JKQ	고/JKQ	-	20	S_CMP
 20	지적하았다	지적하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+21	.	.	SF	SF	-	20	X
 
 1	1991/01/15	1991/01/15	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	2	NP
 2	22	22	SN	SN	-	0	ROOT
@@ -704,14 +704,14 @@
 11	레저스포츠로	레저스포츠로	NNG+JKB	NNG+로/JKB	-	14	NP_AJT
 12	각광을	각광을	NNG+JKO	NNG+을/JKO	-	14	NP_OBJ
 13	받고	받고	VV+EC	VV+고/EC	-	14	VP
-14	있으나	있으나	VX+EC	VX+으나/EC	-	20	S
+14	있으나	있으나	VX+EC	있/VX+으나/EC	-	20	S
 15	위험성이	위험성이	NNG+JKS	NNG+이/JKS	-	16	NP_SBJ
 16	높아	높아	VA+EC	VA+아/EC	-	20	S
 17	안전	안전	NNG	NNG	-	18	NP
 18	대책	대책	NNG	NNG	-	19	NP
 19	마련이	마련이	NNG+JKS	NNG+이/JKS	-	20	NP_SBJ
 20	시급하다	시급하다	XR+XSA+EF	XR+하/XSA+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+21	.	.	SF	SF	-	20	X
 
 1	지난	지난	VV+ETM	VV+ᆫ/ETM	-	2	VP_MOD
 2	84년	84년	NNG	NNG	-	5	NP_AJT
@@ -730,11 +730,11 @@
 15	맞은	맞은	VV+ETM	VV+은/ETM	-	16	VP_MOD
 16	청소년층은	청소년층은	NNG+JX	NNG+은/JX	-	17	NP_SBJ
 17	물론	물론	MAG	MAG	-	22	S
-18	,	,	,	,	-	17	X
+18	,	,	SP	SP	-	17	X
 19	중-장년층에까지	중-장년층에까지	NNG+JKB+JX	NNG+에/JKB+까지/JX	-	22	NP_AJT
 20	급격히	급격히	MAG	MAG	-	22	AP
 21	확산되고	확산되고	NNG+XSV+EC	NNG+되/XSV+고/EC	-	22	VP
-22	있으나	있으나	VX+EC	VX+으나/EC	-	31	S
+22	있으나	있으나	VX+EC	있/VX+으나/EC	-	31	S
 23	판매와	판매와	NNG+JC	NNG+와/JC	-	25	NP_CNJ
 24	안전	안전	NNG	NNG	-	25	NP
 25	사고	사고	NNG	NNG	-	26	NP
@@ -744,7 +744,7 @@
 29	규제는	규제는	NNG+JX	NNG+는/JX	-	31	NP_SBJ
 30	전무한	전무한	NNG+XSA+ETM	NNG+하/XSA+ᆫ/ETM	-	31	VP_MOD
 31	실정이다	실정이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-32	.	.	.	.	-	31	X
+32	.	.	SF	SF	-	31	X
 
 1	석궁은	석궁은	NNG+JX	NNG+은/JX	-	18	NP_SBJ
 2	20m	20m	SN+SL	SN+SL	-	3	NP
@@ -756,7 +756,7 @@
 8	관통하는	관통하는	NNG+XSV+ETM	NNG+하/XSV+는/ETM	-	9	VP_MOD
 9	위력을	위력을	NNG+JKO	NNG+을/JKO	-	11	NP_OBJ
 10	갖고	갖고	VV+EC	VV+고/EC	-	11	VP
-11	있어	있어	VX+EC	VX+어/EC	-	18	VP
+11	있어	있어	VX+EC	있/VX+어/EC	-	18	VP
 12	인명	인명	NNG	NNG	-	13	NP
 13	살상을	살상을	NNG+JKO	NNG+을/JKO	-	14	NP_OBJ
 14	위한	위한	VV+ETM	VV+ᆫ/ETM	-	15	VP_MOD
@@ -770,7 +770,7 @@
 22	규제가	규제가	NNG+JKS	NNG+가/JKS	-	23	NP_SBJ
 23	필요하다는	필요하다는	NNG+XSA+ETM	NNG+하/XSA+다는/ETM	-	24	S_MOD
 24	지적이다	지적이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-25	.	.	.	.	-	24	X
+25	.	.	SF	SF	-	24	X
 
 1	석궁은	석궁은	NNG+JX	NNG+은/JX	-	35	NP_SBJ
 2	그동안	그동안	NNG	NNG	-	5	NP_AJT
@@ -780,7 +780,7 @@
 6	대부분	대부분	NNG	NNG	-	9	NP_OBJ
 7	수출을	수출을	NNG+JKO	NNG+을/JKO	-	9	NP_OBJ
 8	하아	하아	VV+EC	VV+아/EC	-	9	VP
-9	오았으나	오았으나	VX+EP+EC	VX+았/EP+으나/EC	-	35	VP
+9	오았으나	오았으나	VX+EP+EC	오/VX+았/EP+으나/EC	-	35	VP
 10	최근	최근	NNG	NNG	-	13	NP_AJT
 11	국내	국내	NNG	NNG	-	12	NP
 12	수요가	수요가	NNG+JKS	NNG+가/JKS	-	13	NP_SBJ
@@ -796,18 +796,18 @@
 22	개씩을	개씩을	NNB+XSN+JKO	NNB+XSN+을/JKO	-	25	NP_OBJ
 23	일반에	일반에	NNG+JKB	NNG+에/JKB	-	25	NP_AJT
 24	판매하고	판매하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	25	VP
-25	있으며	있으며	VX+EC	VX+으며/EC	-	35	S
-26	,	,	,	,	-	25	X
+25	있으며	있으며	VX+EC	있/VX+으며/EC	-	35	S
+26	,	,	SP	SP	-	25	X
 27	올	올	NNG	NNG	-	28	NP_AJT
 28	들어서는	들어서는	VV+EC+JX	VV+어서/EC+는/JX	-	30	VP
 29	수요가	수요가	NNG+JKS	NNG+가/JKS	-	30	NP_SBJ
 30	급증	급증	NNG	NNG	-	35	S
-31	,	,	,	,	-	30	X
+31	,	,	SP	SP	-	30	X
 32	시중에서	시중에서	NNG+JKB	NNG+에서/JKB	-	34	NP_AJT
 33	구하기조차	구하기조차	VV+ETN+JX	VV+기/ETN+조차/JX	-	34	VP_SBJ
 34	힘들ᆫ	힘들ᆫ	VA+ETM	VA+ᆫ/ETM	-	35	S_MOD
 35	형편이다	형편이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-36	.	.	.	.	-	35	X
+36	.	.	SF	SF	-	35	X
 
 1	본체와	본체와	NNG+JC	NNG+와/JC	-	2	NP_CNJ
 2	화살	화살	NNG	NNG	-	4	NP
@@ -836,7 +836,7 @@
 25	총에	총에	NNG+JKB	NNG+에/JKB	-	26	NP_AJT
 26	버금가는	버금가는	VV+ETM	VV+는/ETM	-	27	S_MOD
 27	매력때문이다	매력때문이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-28	.	.	.	.	-	27	X
+28	.	.	SF	SF	-	27	X
 
 1	특히	특히	MAG	MAG	-	6	AP
 2	TV	TV	SL	SL	-	3	NP
@@ -855,7 +855,7 @@
 15	레저용으로	레저용으로	NNG+JKB	NNG+으로/JKB	-	18	NP_AJT
 16	많이	많이	MAG	MAG	-	18	AP
 17	찾고	찾고	VV+EC	VV+고/EC	-	18	VP
-18	있고	있고	VX+EC	VX+고/EC	-	26	S
+18	있고	있고	VX+EC	있/VX+고/EC	-	26	S
 19	중-장년층에서는	중-장년층에서는	NNG+JKB+JX	NNG+에서/JKB+는/JX	-	26	NP_AJT
 20	엽총이나	엽총이나	NNG+JC	NNG+이나/JC	-	21	NP_CNJ
 21	공기총을	공기총을	NNG+JKO	NNG+을/JKO	-	22	NP_OBJ
@@ -864,7 +864,7 @@
 24	구입하는	구입하는	NNG+XSV+ETM	NNG+하/XSV+는/ETM	-	25	VP_MOD
 25	경우가	경우가	NNG+JKS	NNG+가/JKS	-	26	NP_SBJ
 26	많다	많다	VA+EF	VA+다/EF	-	0	ROOT
-27	.	.	.	.	-	26	X
+27	.	.	SF	SF	-	26	X
 
 1	이같이	이같이	NP+JKB	NP+같이/JKB	-	4	NP_AJT
 2	석궁의	석궁의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
@@ -874,8 +874,8 @@
 6	안전	안전	NNG	NNG	-	7	NP
 7	사고도	사고도	NNG+JX	NNG+도/JX	-	9	NP_SBJ
 8	빈발하고	빈발하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	9	VP
-9	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-10	.	.	.	.	-	9	X
+9	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+10	.	.	SF	SF	-	9	X
 
 1	안전	안전	NNG	NNG	-	2	NP
 2	사고의	사고의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
@@ -888,7 +888,7 @@
 9	전문가의	전문가의	NNG+JKG	NNG+의/JKG	-	10	NP_MOD
 10	지도를	지도를	NNG+JKO	NNG+를/JKO	-	12	NP_OBJ
 11	받지	받지	VV+EC	VV+지/EC	-	12	VP
-12	않은	않은	VX+ETM	VX+은/ETM	-	13	VP_MOD
+12	않은	않은	VX+ETM	않/VX+은/ETM	-	13	VP_MOD
 13	이용자들이	이용자들이	NNG+JKS	NNG+이/JKS	-	26	NP_SBJ
 14	무리하게	무리하게	NNG+XSA+EC	NNG+하/XSA+게/EC	-	16	VP
 15	화살을	화살을	NNG+JKO	NNG+을/JKO	-	16	NP_OBJ
@@ -896,14 +896,14 @@
 17	손톱이	손톱이	NNG+JKS	NNG+이/JKS	-	19	NP_SBJ
 18	빠지는가	빠지는가	VV+EC	VV+는가/EC	-	19	VP
 19	하면	하면	VV+EC	VV+면/EC	-	26	S
-20	,	,	,	,	-	19	X
+20	,	,	SP	SP	-	19	X
 21	손등에	손등에	NNG+JKB	NNG+에/JKB	-	24	NP_AJT
 22	심한	심한	VA+ETM	VA+ᆫ/ETM	-	23	VP_MOD
 23	상처를	상처를	NNG+JKO	NNG+를/JKO	-	24	NP_OBJ
 24	입는	입는	VV+ETM	VV+는/ETM	-	25	VP_MOD
 25	경우도	경우도	NNG+JX	NNG+도/JX	-	26	NP_SBJ
 26	있다	있다	VV+EF	VV+다/EF	-	0	ROOT
-27	.	.	.	.	-	26	X
+27	.	.	SF	SF	-	26	X
 
 1	아직	아직	MAG	MAG	-	7	AP
 2	오발에	오발에	NNG+JKB	NNG+에/JKB	-	3	NP_AJT
@@ -927,7 +927,7 @@
 20	있도록	있도록	VV+EC	VV+도록/EC	-	21	S
 21	방치할	방치할	NNG+XSV+ETM	NNG+하/XSV+ᆯ/ETM	-	22	VP_MOD
 22	경우	경우	NNG	NNG	-	32	NP_AJT
-23	,	,	,	,	-	22	X
+23	,	,	SP	SP	-	22	X
 24	앞으로	앞으로	NNG+JKB	NNG+으로/JKB	-	32	NP_AJT
 25	인명	인명	NNG	NNG	-	26	NP
 26	피해도	피해도	NNG+JX	NNG+도/JX	-	27	NP_SBJ
@@ -936,8 +936,8 @@
 29	높은	높은	VA+ETM	VA+은/ETM	-	30	S_MOD
 30	것으로	것으로	NNB+JKB	NNB+으로/JKB	-	32	NP_AJT
 31	우려되고	우려되고	NNG+XSV+EC	NNG+되/XSV+고/EC	-	32	VP
-32	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-33	.	.	.	.	-	32	X
+32	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+33	.	.	SF	SF	-	32	X
 
 1	최근에는	최근에는	NNG+JKB+JX	NNG+에/JKB+는/JX	-	14	NP_AJT
 2	폭력	폭력	NNG	NNG	-	3	NP
@@ -952,8 +952,8 @@
 11	수사	수사	NNG	NNG	-	12	NP
 12	당국을	당국을	NNG+JKO	NNG+을/JKO	-	14	NP_OBJ
 13	긴장시키고	긴장시키고	NNG+XSV+EC	NNG+시키/XSV+고/EC	-	14	VP
-14	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-15	.	.	.	.	-	14	X
+14	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+15	.	.	SF	SF	-	14	X
 
 1	현재	현재	MAG	MAG	-	8	AP
 2	국내에는	국내에는	NNG+JKB+JX	NNG+에/JKB+는/JX	-	8	NP_AJT
@@ -963,7 +963,7 @@
 6	독립한	독립한	NNG+XSV+ETM	NNG+하/XSV+ᆫ/ETM	-	7	VP_MOD
 7	대한석궁연맹이	대한석궁연맹이	NNP+JKS	NNP+이/JKS	-	8	NP_SBJ
 8	있으며	있으며	VV+EC	VV+으며/EC	-	18	S
-9	,	,	,	,	-	8	X
+9	,	,	SP	SP	-	8	X
 10	여기에는	여기에는	NP+JKB+JX	NP+에/JKB+는/JX	-	18	NP_AJT
 11	5명의	5명의	NNG+JKG	NNG+의/JKG	-	13	NP_MOD
 12	정규	정규	NNG	NNG	-	13	NP
@@ -972,8 +972,8 @@
 15	명의	명의	NNB+JKG	NNB+의/JKG	-	16	NP_MOD
 16	회원이	회원이	NNG+JKS	NNG+이/JKS	-	18	NP_SBJ
 17	등록되어	등록되어	NNG+XSV+EC	NNG+되/XSV+어/EC	-	18	VP
-18	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+18	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+19	.	.	SF	SF	-	18	X
 
 1	그러나	그러나	MAJ	MAJ	-	17	AP
 2	각	각	MM	MM	-	5	DP
@@ -992,7 +992,7 @@
 15	이를	이를	VV+ETM	VV+ᆯ/ETM	-	16	VP_MOD
 16	것으로	것으로	NNB+JKB	NNB+으로/JKB	-	17	NP_AJT
 17	추산된다	추산된다	NNG+XSV+EF	NNG+되/XSV+ᆫ다/EF	-	0	ROOT
-18	.	.	.	.	-	17	X
+18	.	.	SF	SF	-	17	X
 
 1	연맹	연맹	NNG	NNG	-	2	NP
 2	소속	소속	NNG	NNG	-	3	NP
@@ -1016,8 +1016,8 @@
 20	위한	위한	VV+ETM	VV+ᆫ/ETM	-	21	VP_MOD
 21	노력을	노력을	NNG+JKO	NNG+을/JKO	-	23	NP_OBJ
 22	하고	하고	VV+EC	VV+고/EC	-	23	VP
-23	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-24	.	.	.	.	-	23	X
+23	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+24	.	.	SF	SF	-	23	X
 
 1	연맹	연맹	NNG	NNG	-	2	NP
 2	소속	소속	NNG	NNG	-	3	NP
@@ -1061,12 +1061,12 @@
 40	석궁	석궁	NNG	NNG	-	41	NP
 41	인구를	인구를	NNG+JKO	NNG+를/JKO	-	44	NP_OBJ
 42	늘리어야	늘리어야	VV+EC	VV+어야/EC	-	43	VP
-43	할	할	VX+ETM	VX+ᆯ/ETM	-	44	VP_MOD
+43	할	할	VX+ETM	하/VX+ᆯ/ETM	-	44	VP_MOD
 44	것	것	NNB	NNB	-	45	VP
 45	"	"	SS	SS	-	46	VP
 46	이라고	이라고	JKQ	이라고/JKQ	-	47	VP_CMP
 47	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-48	.	.	.	.	-	47	X
+48	.	.	SF	SF	-	47	X
 
 1	그러나	그러나	MAJ	MAJ	-	29	AP
 2	올해	올해	MM+NNG	MM+NNG	-	7	NP_AJT
@@ -1077,7 +1077,7 @@
 7	계획될	계획될	NNG+XSV+ETM	NNG+되/XSV+ᆯ/ETM	-	8	S_MOD
 8	정도로	정도로	NNG+JKB	NNG+로/JKB	-	10	NP_AJT
 9	급성장하고	급성장하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	10	VP
-10	있는	있는	VX+ETM	VX+는/ETM	-	11	VP_MOD
+10	있는	있는	VX+ETM	있/VX+는/ETM	-	11	VP_MOD
 11	석궁이	석궁이	NNG+JKS	NNG+이/JKS	-	14	NP_SBJ
 12	저의	저의	NP+JKG	NP+의/JKG	-	13	NP_MOD
 13	자리를	자리를	NNG+JKO	NNG+를/JKO	-	14	NP_OBJ
@@ -1085,7 +1085,7 @@
 15	전문적	전문적	NNG	NNG	-	16	NP
 16	지도기관은	지도기관은	NNG+JX	NNG+은/JX	-	17	NP_SBJ
 17	물론	물론	MAG	MAG	-	29	S
-18	,	,	,	,	-	17	X
+18	,	,	SP	SP	-	17	X
 19	판매	판매	NNG	NNG	-	21	NP_CNJ
 20	및	및	MAJ	MAJ	-	21	AP
 21	안전사고	안전사고	NNG	NNG	-	22	NP
@@ -1096,11 +1096,11 @@
 26	장치가	장치가	NNG+JKS	NNG+가/JKS	-	29	NP_SBJ
 27	먼저	먼저	MAG	MAG	-	29	AP
 28	마련되어야	마련되어야	NNG+XSV+EC	NNG+되/XSV+어야/EC	-	29	VP
-29	한다는	한다는	VX+ETM	VX+ᆫ다는/ETM	-	30	S_MOD
+29	한다는	한다는	VX+ETM	하/VX+ᆫ다는/ETM	-	30	S_MOD
 30	것이	것이	NNB+JKS	NNB+이/JKS	-	32	NP_SBJ
 31	전문가들의	전문가들의	NNG+JKG	NNG+의/JKG	-	32	NP_MOD
 32	지적이다	지적이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-33	.	.	.	.	-	32	X
+33	.	.	SF	SF	-	32	X
 
 1	1991/01/15	1991/01/15	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	2	NP
 2	23	23	SN	SN	-	0	ROOT
@@ -1115,7 +1115,7 @@
 1	60세	60세	NNG	NNG	-	3	NP
 2	김철웅	김철웅	NNP	NNP	-	3	NP
 3	씨	씨	NNB	NNB	-	8	NP_SBJ
-4	,	,	,	,	-	3	X
+4	,	,	SP	SP	-	3	X
 5	중국서북고향	중국서북고향	NNG	NNG	-	6	NP
 6	혜산	혜산	NNP	NNP	-	7	NP_OBJ
 7	향하아	향하아	VV+EC	VV+아/EC	-	8	VP
@@ -1158,7 +1158,7 @@
 13	요즘	요즘	NNG	NNG	-	30	NP_AJT
 14	고향에	고향에	NNG+JKB	NNG+에/JKB	-	16	NP_AJT
 15	살아	살아	VV+EC	VV+아/EC	-	16	VP
-16	계신	계신	VX+ETM	VX+ᆫ/ETM	-	22	VP_MOD
+16	계신	계신	VX+ETM	계시/VX+ᆫ/ETM	-	22	VP_MOD
 17	어머니	어머니	NNG	NNG	-	21	NP
 18	(	(	SS	SS	-	21	L
 19	전희옥	전희옥	NNP	NNP	-	20	NP
@@ -1172,13 +1172,13 @@
 27	갈	갈	VV+ETM	VV+ᆯ/ETM	-	28	VP_MOD
 28	날을	날을	NNG+JKO	NNG+을/JKO	-	30	NP_OBJ
 29	고대하고	고대하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	30	VP
-30	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-31	.	.	.	.	-	30	X
+30	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+31	.	.	SF	SF	-	30	X
 
 1	어머니가	어머니가	NNG+JKS	NNG+가/JKS	-	4	NP_SBJ
 2	북녘땅에	북녘땅에	NNG+JKB	NNG+에/JKB	-	4	NP_AJT
 3	생존하아	생존하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	4	VP
-4	있다는	있다는	VX+ETM	VX+다는/ETM	-	5	S_MOD
+4	있다는	있다는	VX+ETM	있/VX+다는/ETM	-	5	S_MOD
 5	소식을	소식을	NNG+JKO	NNG+을/JKO	-	6	NP_OBJ
 6	듣은	듣은	VV+ETM	VV+은/ETM	-	7	VP_MOD
 7	김씨는	김씨는	NNG+JX	NNG+는/JX	-	22	NP_SBJ
@@ -1191,13 +1191,13 @@
 14	사이에	사이에	NNG+JKB	NNG+에/JKB	-	15	NP_AJT
 15	두고	두고	VV+EC	VV+고/EC	-	17	VP
 16	접하아	접하아	VV+EC	VV+아/EC	-	17	VP
-17	있는	있는	VX+ETM	VX+는/ETM	-	21	VP_MOD
+17	있는	있는	VX+ETM	있/VX+는/ETM	-	21	VP_MOD
 18	중국	중국	NNP	NNP	-	19	NP
 19	길림성	길림성	NNP	NNP	-	20	NP
 20	장백현의	장백현의	NNP+JKG	NNP+의/JKG	-	21	NP_MOD
 21	언덕바지를	언덕바지를	NNG+JKO	NNG+를/JKO	-	22	NP_OBJ
 22	찾았었다	찾았었다	VV+EP+EF	VV+았었/EP+다/EF	-	0	ROOT
-23	.	.	.	.	-	22	X
+23	.	.	SF	SF	-	22	X
 
 1	중국	중국	NNP	NNP	-	2	NP_AJT
 2	살는	살는	VV+ETM	VV+는/ETM	-	3	VP_MOD
@@ -1223,11 +1223,11 @@
 22	끝내	끝내	MAG	MAG	-	28	AP
 23	자식들에게	자식들에게	NNG+JKB	NNG+에게/JKB	-	25	NP_AJT
 24	누가	누가	NNG+JKS	NNG+가/JKS	-	25	NP_SBJ
-25	될까보아	될까보아	VV+EC+VX+EC	VV+ᆯ까/EC+VX+아/EC	-	28	S
+25	될까보아	될까보아	VV+EC+VX+EC	VV+ᆯ까/EC+보/VX+아/EC	-	28	S
 26	모습을	모습을	NNG+JKO	NNG+을/JKO	-	28	NP_OBJ
 27	나타내지	나타내지	VV+EC	VV+지/EC	-	28	VP
-28	않았다	않았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-29	.	.	.	.	-	28	X
+28	않았다	않았다	VX+EP+EF	않/VX+았/EP+다/EF	-	0	ROOT
+29	.	.	SF	SF	-	28	X
 
 1	그러나	그러나	MAJ	MAJ	-	16	AP
 2	김씨는	김씨는	NNG+JX	NNG+는/JX	-	16	NP_SBJ
@@ -1245,7 +1245,7 @@
 14	최근에야	최근에야	NNG+JKB+JX	NNG+에/JKB+야/JX	-	16	NP_AJT
 15	전하아	전하아	VV+EC	VV+아/EC	-	16	VP
 16	듣었다	듣었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-17	.	.	.	.	-	16	X
+17	.	.	SF	SF	-	16	X
 
 1	김씨가	김씨가	NNG+JKS	NNG+가/JKS	-	7	NP_SBJ
 2	북의	북의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
@@ -1256,7 +1256,7 @@
 7	된	된	VV+ETM	VV+ᆫ/ETM	-	8	S_MOD
 8	것은	것은	NNB+JX	NNB+은/JX	-	9	NP_SBJ
 9	84년	84년	NNG	NNG	-	0	ROOT
-10	.	.	.	.	-	9	X
+10	.	.	SF	SF	-	9	X
 
 1	KBS	KBS	SL	SL	-	2	NP
 2	사회교육방송을	사회교육방송을	NNG+JKO	NNG+을/JKO	-	3	NP_OBJ
@@ -1266,11 +1266,11 @@
 6	사촌누이(64)가	사촌누이(64)가	NNG+SS+SN+SS+JKS	NNG+SS+SN+SS+가/JKS	-	9	NP_SBJ
 7	자신을	자신을	NNG+JKO	NNG+을/JKO	-	9	NP_OBJ
 8	찾고	찾고	VV+EC	VV+고/EC	-	9	VP
-9	있다는	있다는	VX+ETM	VX+다는/ETM	-	10	S_MOD
+9	있다는	있다는	VX+ETM	있/VX+다는/ETM	-	10	S_MOD
 10	것을	것을	NNB+JKO	NNB+을/JKO	-	12	NP_OBJ
 11	혜산군민회로부터	혜산군민회로부터	NNP+JKB	NNP+로부터/JKB	-	12	NP_AJT
 12	전하아듣었다	전하아듣었다	VV+EC+VV+EP+EF	VV+아/EC+VV+었/EP+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	5	5	SN	SN	-	2	NP
 2	차례	차례	NNG	NNG	-	4	NP_AJT
@@ -1291,8 +1291,8 @@
 17	한	한	MM	MM	-	18	DP
 18	장도	장도	NNB+JX	NNB+도/JX	-	20	NP_SBJ
 19	김씨에게	김씨에게	NNG+JKB	NNG+에게/JKB	-	20	NP_AJT
-20	전하아지었다	전하아지었다	VV+EC+VX+EP+EF	VV+아/EC+VX+었/EP+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+20	전하아지었다	전하아지었다	VV+EC+VX+EP+EF	VV+아/EC+지/VX+었/EP+다/EF	-	0	ROOT
+21	.	.	SF	SF	-	20	X
 
 1	이때부터	이때부터	MM+NNG+JX	MM+NNG+부터/JX	-	10	NP_AJT
 2	김씨와	김씨와	NNG+JC	NNG+와/JC	-	4	NP_CNJ
@@ -1304,7 +1304,7 @@
 8	소식을	소식을	NNG+JKO	NNG+을/JKO	-	10	NP_OBJ
 9	주고	주고	VV+EC	VV+고/EC	-	10	VP
 10	받았다	받았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-11	.	.	.	.	-	10	X
+11	.	.	SF	SF	-	10	X
 
 1	김씨는	김씨는	NNG+JX	NNG+는/JX	-	12	NP_SBJ
 2	작년	작년	NNG	NNG	-	4	NP
@@ -1318,7 +1318,7 @@
 10	갈	갈	VV+ETM	VV+ᆯ/ETM	-	11	VP_MOD
 11	기회를	기회를	NNG+JKO	NNG+를/JKO	-	12	NP_OBJ
 12	얻었다	얻었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	어쩌면	어쩌면	MAG	MAG	-	6	AP
 2	어머니를	어머니를	NNG+JKO	NNG+를/JKO	-	4	NP_OBJ
@@ -1333,7 +1333,7 @@
 11	드릴	드릴	VV+ETM	VV+ᆯ/ETM	-	15	VP_MOD
 12	돋보기	돋보기	NNG	NNG	-	13	NP
 13	안경	안경	NNG	NNG	-	15	NP_CNJ
-14	,	,	,	,	-	13	X
+14	,	,	SP	SP	-	13	X
 15	수의	수의	NNG	NNG	-	16	NP
 16	등을	등을	NNB+JKO	NNB+을/JKO	-	17	NP_OBJ
 17	준비하았고	준비하았고	NNG+XSV+EP+EC	NNG+하/XSV+았/EP+고/EC	-	26	VP
@@ -1346,7 +1346,7 @@
 24	1	1	SN	SN	-	25	NP
 25	개도	개도	NNB+JX	NNB+도/JX	-	26	NP_OBJ
 26	챙기었다	챙기었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-27	.	.	.	.	-	26	X
+27	.	.	SF	SF	-	26	X
 
 1	귀국	귀국	NNG	NNG	-	2	NP
 2	직후	직후	NNG	NNG	-	4	NP_AJT
@@ -1366,7 +1366,7 @@
 11	당신을	당신을	NP+JKO	NP+을/JKO	-	12	NP_OBJ
 12	만나면	만나면	VV+EC	VV+면/EC	-	16	VP
 13	매일	매일	NNG	NNG	-	14	NP_AJT
-14	업어주고	업어주고	VV+EC+VX+EC	VV+어/EC+VX+고/EC	-	16	VP
+14	업어주고	업어주고	VV+EC+VX+EC	VV+어/EC+주/VX+고/EC	-	16	VP
 15	절을	절을	NNG+JKO	NNG+을/JKO	-	16	NP_OBJ
 16	하겠다	하겠다	VV+EP+EC	VV+겠/EP+다/EC	-	17	VP
 17	"	"	SS	SS	-	18	VP
@@ -1383,7 +1383,7 @@
 28	해	해	NNG	NNG	-	29	NP
 29	연말	연말	NNG	NNG	-	30	NP_AJT
 30	사망하았다	사망하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-31	.	.	.	.	-	30	X
+31	.	.	SF	SF	-	30	X
 
 1	김씨가	김씨가	NNG+JKS	NNG+가/JKS	-	3	NP_SBJ
 2	중국에	중국에	NNP+JKB	NNP+에/JKB	-	3	NP_AJT
@@ -1397,7 +1397,7 @@
 10	전하았다며	전하았다며	VV+EP+EC	VV+았/EP+다며/EC	-	13	VP
 11	압록강변	압록강변	NNG	NNG	-	12	NP
 12	기슭으로	기슭으로	NNG+JKB	NNG+으로/JKB	-	13	NP_AJT
-13	데리어가았고	데리어가았고	VV+EC+VX+EP+EC	VV+어/EC+VX+았/EP+고/EC	-	21	S
+13	데리어가았고	데리어가았고	VV+EC+VX+EP+EC	VV+어/EC+가/VX+았/EP+고/EC	-	21	S
 14	30여m	30여m	NNG+SL	NNG+SL	-	15	NP
 15	폭의	폭의	NNG+JKG	NNG+의/JKG	-	16	NP_MOD
 16	강	강	NNG	NNG	-	17	NP
@@ -1405,8 +1405,8 @@
 18	두	두	MM	MM	-	19	DP
 19	남녀가	남녀가	NNG+JKS	NNG+가/JKS	-	21	NP_SBJ
 20	기다리고	기다리고	VV+EC	VV+고/EC	-	21	VP
-21	있었다	있었다	VX+EP+EF	VX+었/EP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+21	있었다	있었다	VX+EP+EF	있/VX+었/EP+다/EF	-	0	ROOT
+22	.	.	SF	SF	-	21	X
 
 1	김씨와	김씨와	NNG+JKB	NNG+와/JKB	-	2	NP_AJT
 2	함께	함께	MAG	MAG	-	4	AP
@@ -1417,18 +1417,18 @@
 7	큰	큰	VA+ETM	VA+ᆫ/ETM	-	8	VP_MOD
 8	아들	아들	NNG	NNG	-	9	NP
 9	내외로	내외로	NNG+JKB	NNG+로/JKB	-	15	NP_AJT
-10	,	,	,	,	-	9	X
+10	,	,	SP	SP	-	9	X
 11	친부모대신	친부모대신	NNG	NNG	-	14	NP_AJT
 12	어머니를	어머니를	NNG+JKO	NNG+를/JKO	-	14	NP_OBJ
 13	모시고	모시고	VV+EC	VV+고/EC	-	14	VP
 14	살는	살는	VV+ETM	VV+는/ETM	-	15	VP_MOD
 15	사촌동생이었다	사촌동생이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
-16	.	.	.	.	-	15	X
+16	.	.	SF	SF	-	15	X
 
 1	"	"	SS	SS	-	3	L
 2	네가	네가	NP+JKS	NP+가/JKS	-	3	NP_SBJ
 3	태익이냐	태익이냐	NNP+VCP+EF	NNP+이/VCP+냐/EF	-	5	S
-4	.	.	.	.	-	3	X
+4	.	.	SF	SF	-	3	X
 5	"	"	SS	SS	-	0	ROOT
 
 1	김씨의	김씨의	NNG+JKG	NNG+의/JKG	-	2	NP_MOD
@@ -1440,7 +1440,7 @@
 7	끄덕이는	끄덕이는	VV+ETM	VV+는/ETM	-	8	VP_MOD
 8	모습이	모습이	NNG+JKS	NNG+이/JKS	-	9	NP_SBJ
 9	보이었다	보이었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-10	.	.	.	.	-	9	X
+10	.	.	SF	SF	-	9	X
 
 1	김씨는	김씨는	NNG+JX	NNG+는/JX	-	6	NP_SBJ
 2	순간	순간	NNG	NNG	-	6	NP_AJT
@@ -1448,7 +1448,7 @@
 4	속으로	속으로	NNG+JKB	NNG+으로/JKB	-	6	NP_AJT
 5	첨벙	첨벙	MAG	MAG	-	6	AP
 6	뛰어들었다	뛰어들었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-7	.	.	.	.	-	6	X
+7	.	.	SF	SF	-	6	X
 
 1	금세이라도	금세이라도	MAG+VCP+EC	MAG+이/VCP+라도/EC	-	4	VNP
 2	한	한	MM	MM	-	3	DP
@@ -1464,22 +1464,22 @@
 12	옮길	옮길	VV+ETM	VV+ᆯ/ETM	-	13	VP_MOD
 13	수가	수가	NNB+JKS	NNB+가/JKS	-	14	NP_SBJ
 14	없었다	없었다	VA+EP+EF	VA+었/EP+다/EF	-	0	ROOT
-15	.	.	.	.	-	14	X
+15	.	.	SF	SF	-	14	X
 
 1	국경을	국경을	NNG+JKO	NNG+을/JKO	-	4	NP_OBJ
 2	넘을	넘을	VV+ETM	VV+을/ETM	-	3	VP_MOD
 3	수가	수가	NNB+JKS	NNB+가/JKS	-	4	NP_SBJ
 4	없었던	없었던	VA+EP+ETM	VA+었/EP+던/ETM	-	5	S_MOD
 5	것이다	것이다	NNB+VCP+EF	NNB+이/VCP+다/EF	-	0	ROOT
-6	.	.	.	.	-	5	X
+6	.	.	SF	SF	-	5	X
 
 1	그러나	그러나	MAJ	MAJ	-	6	AP
 2	그	그	MM	MM	-	3	DP
 3	자리에	자리에	NNG+JKB	NNG+에/JKB	-	6	NP_AJT
 4	어머니는	어머니는	NNG+JX	NNG+는/JX	-	6	NP_SBJ
 5	나타나지	나타나지	VV+EC	VV+지/EC	-	6	VP
-6	않았다	않았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-7	.	.	.	.	-	6	X
+6	않았다	않았다	VX+EP+EF	않/VX+았/EP+다/EF	-	0	ROOT
+7	.	.	SF	SF	-	6	X
 
 1	김씨는	김씨는	NNG+JX	NNG+는/JX	-	18	NP_SBJ
 2	혹시나	혹시나	MAG+JX	MAG+나/JX	-	3	AP
@@ -1499,7 +1499,7 @@
 16	볼	볼	VV+ETM	VV+ᆯ/ETM	-	17	VP_MOD
 17	수가	수가	NNB+JKS	NNB+가/JKS	-	18	NP_SBJ
 18	없었다	없었다	VA+EP+EF	VA+었/EP+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 
 1	집안	집안	NNG	NNG	-	2	NP
 2	남자들이	남자들이	NNG+JKS	NNG+이/JKS	-	5	NP_SBJ
@@ -1516,7 +1516,7 @@
 13	자아	자아	NNG	NNG	-	14	NP
 14	비판을	비판을	NNG+JKO	NNG+을/JKO	-	16	NP_OBJ
 15	하아야	하아야	VV+EC	VV+아야/EC	-	16	VP
-16	하았던	하았던	VX+EP+ETM	VX+았/EP+던/ETM	-	17	VP_MOD
+16	하았던	하았던	VX+EP+ETM	하/VX+았/EP+던/ETM	-	17	VP_MOD
 17	어머니이기에	어머니이기에	NNG+VCP+ETN+JKB	NNG+이/VCP+기/ETN+에/JKB	-	22	VNP_AJT
 18	아들과	아들과	NNG+JKB	NNG+과/JKB	-	20	NP_AJT
 19	섣불리	섣불리	MAG	MAG	-	20	AP
@@ -1525,7 +1525,7 @@
 22	것이라고	것이라고	NNB+VCP+EC	NNB+이/VCP+라고/EC	-	24	S_CMP
 23	사촌누이가	사촌누이가	NNG+JKS	NNG+가/JKS	-	24	NP_SBJ
 24	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-25	.	.	.	.	-	24	X
+25	.	.	SF	SF	-	24	X
 
 1	자신의	자신의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
 2	환갑	환갑	NNG	NNG	-	3	NP
@@ -1537,10 +1537,10 @@
 3	사촌동생에게	사촌동생에게	NNG+JKB	NNG+에게/JKB	-	8	NP_AJT
 4	어머니를	어머니를	NNG+JKO	NNG+를/JKO	-	6	NP_OBJ
 5	편히	편히	MAG	MAG	-	6	AP
-6	모시어달라는	모시어달라는	VV+EC+VX+ETM	VV+어/EC+VX+라는/ETM	-	7	VP_MOD
+6	모시어달라는	모시어달라는	VV+EC+VX+ETM	VV+어/EC+달/VX+라는/ETM	-	7	VP_MOD
 7	당부만을	당부만을	NNG+JX+JKO	NNG+만/JX+을/JKO	-	8	NP_OBJ
 8	거듭하았다	거듭하았다	MAG+XSV+EP+EF	MAG+하/XSV+았/EP+다/EF	-	0	ROOT
-9	.	.	.	.	-	8	X
+9	.	.	SF	SF	-	8	X
 
 1	결국	결국	NNG	NNG	-	13	NP_AJT
 2	김씨는	김씨는	NNG+JX	NNG+는/JX	-	13	NP_SBJ
@@ -1554,8 +1554,8 @@
 10	허망한	허망한	NNG+XSA+ETM	NNG+하/XSA+ᆫ/ETM	-	11	VP_MOD
 11	심정으로	심정으로	NNG+JKB	NNG+으로/JKB	-	13	NP_AJT
 12	귀국하아야	귀국하아야	NNG+XSV+EC	NNG+하/XSV+아야/EC	-	13	VP
-13	하았다	하았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+13	하았다	하았다	VX+EP+EF	하/VX+았/EP+다/EF	-	0	ROOT
+14	.	.	SF	SF	-	13	X
 
 1	김씨는	김씨는	NNG+JX	NNG+는/JX	-	18	NP_SBJ
 2	오는	오는	VV+ETM	VV+는/ETM	-	3	VP_MOD
@@ -1564,7 +1564,7 @@
 5	환갑일이지만	환갑일이지만	NNG+VCP+EC	NNG+이/VCP+지만/EC	-	17	S
 6	40년간	40년간	NNG	NNG	-	8	NP_AJT
 7	떨어지어	떨어지어	VV+EC	VV+어/EC	-	8	VP
-8	있던	있던	VX+ETM	VX+던/ETM	-	9	VP_MOD
+8	있던	있던	VX+ETM	있/VX+던/ETM	-	9	VP_MOD
 9	어머니의	어머니의	NNG+JKG	NNG+의/JKG	-	10	NP_MOD
 10	얼굴을	얼굴을	NNG+JKO	NNG+을/JKO	-	13	NP_OBJ
 11	볼	볼	VV+ETM	VV+ᆯ/ETM	-	12	VP_MOD
@@ -1573,9 +1573,9 @@
 14	때까지는	때까지는	NNG+JX+JX	NNG+까지/JX+는/JX	-	17	NP_AJT
 15	잔치상을	잔치상을	NNG+JKO	NNG+을/JKO	-	17	NP_OBJ
 16	받지	받지	VV+EC	VV+지/EC	-	17	VP
-17	않겠다는	않겠다는	VX+EP+ETM	VX+겠/EP+다는/ETM	-	18	VP_MOD
+17	않겠다는	않겠다는	VX+EP+ETM	않/VX+겠/EP+다는/ETM	-	18	VP_MOD
 18	생각이다	생각이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 
 1	김씨는	김씨는	NNG+JX	NNG+는/JX	-	19	NP_SBJ
 2	"	"	SS	SS	-	17	L
@@ -1592,11 +1592,11 @@
 13	환상을	환상을	NNG+JKO	NNG+을/JKO	-	16	NP_OBJ
 14	자꾸만	자꾸만	MAG+JX	MAG+만/JX	-	16	AP
 15	떠올리고	떠올리고	VV+EC	VV+고/EC	-	16	VP
-16	있다	있다	VX+EC	VX+다/EC	-	17	VP
+16	있다	있다	VX+EC	있/VX+다/EC	-	17	VP
 17	"	"	SS	SS	-	18	VP
 18	고	고	JKQ	고/JKQ	-	19	VP_CMP
 19	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-20	.	.	.	.	-	19	X
+20	.	.	SF	SF	-	19	X
 
 1	1991/01/25	1991/01/25	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	2	NP
 2	22	22	SN	SN	-	0	ROOT
@@ -1658,10 +1658,10 @@
 8	설득시키어	설득시키어	NNG+XSV+EC	NNG+시키/XSV+어/EC	-	13	VP
 9	바이올린을	바이올린을	NNG+JKO	NNG+을/JKO	-	13	NP_OBJ
 10	포기하게	포기하게	NNG+XSV+EC	NNG+하/XSV+게/EC	-	11	VP
-11	할	할	VX+ETM	VX+ᆯ/ETM	-	12	VP_MOD
+11	할	할	VX+ETM	하/VX+ᆯ/ETM	-	12	VP_MOD
 12	수밖에	수밖에	NNB+JX	NNB+밖에/JX	-	13	NP_SBJ
 13	없었다	없었다	VA+EP+EF	VA+었/EP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	A대	A대	NNG	NNG	-	2	NP
 2	강사이며	강사이며	NNG+VCP+EC	NNG+이/VCP+며/EC	-	5	VNP
@@ -1680,7 +1680,7 @@
 15	터무니	터무니	NNG	NNG	-	16	NP_SBJ
 16	없었기	없었기	VA+EP+ETN	VA+었/EP+기/ETN	-	17	S
 17	때문이었다	때문이었다	NNB+VCP+EP+EF	NNB+이/VCP+었/EP+다/EF	-	0	ROOT
-18	.	.	.	.	-	17	X
+18	.	.	SF	SF	-	17	X
 
 1	99%	99%	SN+SW	SN+SW	-	4	NP_OBJ
 2	레슨	레슨	NNG	NNG	-	3	NP
@@ -1707,28 +1707,28 @@
 18	악기를	악기를	NNG+JKO	NNG+를/JKO	-	19	NP_OBJ
 19	사겠다고	사겠다고	VV+EP+EC	VV+겠/EP+다고/EC	-	20	VP_CMP
 20	하자	하자	VV+EC	VV+자/EC	-	26	S
-21	,	,	,	,	-	20	X
+21	,	,	SP	SP	-	20	X
 22	그	그	MM	MM	-	23	DP
 23	선생은	선생은	NNG+JX	NNG+은/JX	-	26	NP_SBJ
 24	금방	금방	MAG	MAG	-	26	AP
 25	얼굴빛이	얼굴빛이	NNG+JKS	NNG+이/JKS	-	26	NP_SBJ
 26	변하았다고	변하았다고	VV+EP+EC	VV+았/EP+다고/EC	-	27	S_CMP
 27	한다	한다	VV+EF	VV+ᆫ다/EF	-	0	ROOT
-28	.	.	.	.	-	27	X
+28	.	.	SF	SF	-	27	X
 
 1	악기를	악기를	NNG+JKO	NNG+를/JKO	-	2	NP_OBJ
-2	소개하아주고	소개하아주고	NNG+XSV+EC+VX+EC	NNG+하/XSV+아/EC+VX+고/EC	-	3	VP
+2	소개하아주고	소개하아주고	NNG+XSV+EC+VX+EC	NNG+하/XSV+아/EC+주/VX+고/EC	-	3	VP
 3	챙길	챙길	VV+ETM	VV+ᆯ/ETM	-	4	VP_MOD
 4	`사례비'가	`사례비'가	SS+NNG+SS+JKS	SS+NNG+SS+가/JKS	-	6	NP_SBJ
 5	날아가아	날아가아	VV+EC	VV+아/EC	-	6	VP
-6	버린	버린	VX+ETM	VX+ᆫ/ETM	-	7	S_MOD
+6	버린	버린	VX+ETM	버리/VX+ᆫ/ETM	-	7	S_MOD
 7	데	데	NNB	NNB	-	8	NP_AJT
 8	대한	대한	VV+ETM	VV+ᆫ/ETM	-	10	VP_MOD
 9	실망에서이었을	실망에서이었을	NNG+JKB+VCP+EP+ETM	NNG+에서/JKB+이/VCP+었/EP+을/ETM	-	10	VNP_MOD
 10	거이라고	거이라고	NNB+VCP+EC	NNB+이/VCP+라고/EC	-	12	VNP_CMP
 11	K씨는	K씨는	NNG+JX	NNG+는/JX	-	12	NP_SBJ
 12	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	엄청난	엄청난	VA+ETM	VA+ᆫ/ETM	-	2	VP_MOD
 2	레슨비를	레슨비를	NNG+JKO	NNG+를/JKO	-	3	NP_OBJ
@@ -1752,8 +1752,8 @@
 20	`작곡'으로	`작곡'으로	SS+NNG+SS+JKB	SS+NNG+SS+으로/JKB	-	23	NP_AJT
 21	전공을	전공을	NNG+JKO	NNG+을/JKO	-	23	NP_OBJ
 22	바꾸게	바꾸게	VV+EC	VV+게/EC	-	23	VP
-23	하았다	하았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-24	.	.	.	.	-	23	X
+23	하았다	하았다	VX+EP+EF	하/VX+았/EP+다/EF	-	0	ROOT
+24	.	.	SF	SF	-	23	X
 
 1	음악계에서	음악계에서	NNG+JKB	NNG+에서/JKB	-	11	NP_AJT
 2	일부	일부	NNG	NNG	-	3	NP
@@ -1766,7 +1766,7 @@
 9	'	'	SS	SS	-	10	NP
 10	으로	으로	JKB	으로/JKB	-	11	NP_AJT
 11	불린다	불린다	VV+EF	VV+ᆫ다/EF	-	0	ROOT
-12	.	.	.	.	-	11	X
+12	.	.	SF	SF	-	11	X
 
 1	대외적	대외적	NNG	NNG	-	2	NP
 2	본업인	본업인	NNG+VCP+ETM	NNG+이/VCP+ᆫ/ETM	-	3	VNP_MOD
@@ -1774,25 +1774,25 @@
 4	역할은	역할은	NNG+JX	NNG+은/JX	-	5	NP_SBJ
 5	물론이고	물론이고	NNG+VCP+EC	NNG+이/VCP+고/EC	-	11	S
 6	레슨선생	레슨선생	NNG	NNG	-	9	NP_CNJ
-7	,	,	,	,	-	6	X
+7	,	,	SP	SP	-	6	X
 8	악기	악기	NNG	NNG	-	9	NP
 9	중개상까지	중개상까지	NNG+JX	NNG+까지/JX	-	11	NP_OBJ
 10	훌륭히(?)	훌륭히(?)	MAG+SS+SF+SS	MAG+SS+SF+SS	-	11	AP
-11	하아내기	하아내기	VV+EC+VX+ETN	VV+아/EC+VX+기/ETN	-	12	VP
+11	하아내기	하아내기	VV+EC+VX+ETN	VV+아/EC+내/VX+기/ETN	-	12	VP
 12	때문이다	때문이다	NNB+VCP+EF	NNB+이/VCP+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	"	"	SS	SS	-	38	L
 2	입학할	입학할	NNG+XSV+ETM	NNG+하/XSV+ᆯ/ETM	-	3	VP_MOD
 3	때	때	NNG	NNG	-	6	NP_AJT
 4	선생에게	선생에게	NNG+JKB	NNG+에게/JKB	-	6	NP_AJT
 5	안기어	안기어	VV+EC	VV+어/EC	-	6	VP
-6	주는	주는	VX+ETM	VX+는/ETM	-	7	VP_MOD
+6	주는	주는	VX+ETM	주/VX+는/ETM	-	7	VP_MOD
 7	돈뭉치는	돈뭉치는	NNG+JX	NNG+는/JX	-	10	NP_SBJ
 8	그야말로	그야말로	MAG	MAG	-	10	AP
 9	새발의	새발의	NNG+JKG	NNG+의/JKG	-	10	NP_MOD
 10	피이ᄇ니다	피이ᄇ니다	NNG+VCP+EF	NNG+이/VCP+ᄇ니다/EF	-	36	S
-11	.	.	.	.	-	10	X
+11	.	.	SF	SF	-	10	X
 12	정작	정작	NNG	NNG	-	15	NP_AJT
 13	학부모들의	학부모들의	NNG+JKG	NNG+의/JKG	-	14	NP_MOD
 14	주머니를	주머니를	NNG+JKO	NNG+를/JKO	-	15	NP_OBJ
@@ -1800,7 +1800,7 @@
 16	것은	것은	NNB+JX	NNB+은/JX	-	18	NP_SBJ
 17	악기	악기	NNG	NNG	-	18	NP
 18	거래이에요	거래이에요	NNG+VCP+EF	NNG+이/VCP+에요/EF	-	36	S
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 20	악기에	악기에	NNG+JKB	NNG+에/JKB	-	21	NP_AJT
 21	대한	대한	VV+ETM	VV+ᆫ/ETM	-	22	VP_MOD
 22	눈이	눈이	NNG+JKS	NNG+이/JKS	-	23	NP_SBJ
@@ -1818,7 +1818,7 @@
 34	`봉'이	`봉'이	SS+NNG+SS+JKC	SS+NNG+SS+이/JKC	-	35	NP_CMP
 35	되기	되기	VV+ETN	VV+기/ETN	-	36	S
 36	때문이지요	때문이지요	NNB+VCP+EF	NNB+이/VCP+지요/EF	-	38	S
-37	.	.	.	.	-	36	X
+37	.	.	SF	SF	-	36	X
 38	"	"	SS	SS	-	0	ROOT
 
 1	`	`	SS	SS	-	4	L
@@ -1834,12 +1834,12 @@
 4	10여	10여	NNG	NNG	-	5	NP
 5	년간	년간	NNB+NNG	NNB+NNG	-	7	NP_AJT
 6	지키어	지키어	VV+EC	VV+어/EC	-	7	VP
-7	본	본	VX+ETM	VX+ᆫ/ETM	-	10	VP_MOD
+7	본	본	VX+ETM	보/VX+ᆫ/ETM	-	10	VP_MOD
 8	삼익악기	삼익악기	NNP	NNP	-	10	NP
 9	모	모	MM	MM	-	10	DP
 10	과장의	과장의	NNG+JKG	NNG+의/JKG	-	11	NP_MOD
 11	말이다	말이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-12	.	.	.	.	-	11	X
+12	.	.	SF	SF	-	11	X
 
 1	그에	그에	NP+JKB	NP+에/JKB	-	2	NP_AJT
 2	따르면	따르면	VV+EC	VV+면/EC	-	28	VP
@@ -1851,7 +1851,7 @@
 8	자문을	자문을	NNG+JKO	NNG+을/JKO	-	9	NP_OBJ
 9	거치어	거치어	VV+EC	VV+어/EC	-	10	VP
 10	구입하며	구입하며	NNG+XSV+EC	NNG+하/XSV+며/EC	-	27	S
-11	,	,	,	,	-	10	X
+11	,	,	SP	SP	-	10	X
 12	설령	설령	MAG	MAG	-	21	AP
 13	다른	다른	VA+ETM	VA+ᆫ/ETM	-	14	VP_MOD
 14	악기를	악기를	NNG+JKO	NNG+를/JKO	-	20	NP_OBJ
@@ -1867,9 +1867,9 @@
 24	추천한	추천한	NNG+XSV+ETM	NNG+하/XSV+ᆫ/ETM	-	25	S_MOD
 25	악기를	악기를	NNG+JKO	NNG+를/JKO	-	27	NP_OBJ
 26	사아야만	사아야만	VV+EC+JX	VV+아야/EC+만/JX	-	27	VP
-27	한다고	한다고	VX+EC	VX+ᆫ다고/EC	-	28	VP_CMP
+27	한다고	한다고	VX+EC	하/VX+ᆫ다고/EC	-	28	VP_CMP
 28	한다	한다	VV+EF	VV+ᆫ다/EF	-	0	ROOT
-29	.	.	.	.	-	28	X
+29	.	.	SF	SF	-	28	X
 
 1	그는	그는	NP+JX	NP+는/JX	-	38	NP_SBJ
 2	"	"	SS	SS	-	18	L
@@ -1887,14 +1887,14 @@
 14	1만	1만	NR	NR	-	15	NP
 15	달러로	달러로	NNG+JKB	NNG+로/JKB	-	17	NP_AJT
 16	둔갑하기도	둔갑하기도	NNG+XSV+ETN+JX	NNG+하/XSV+기/ETN+도/JX	-	17	VP
-17	한다	한다	VX+EC	VX+ᆫ다/EC	-	18	S
+17	한다	한다	VX+EC	하/VX+ᆫ다/EC	-	18	S
 18	"	"	SS	SS	-	19	S
 19	면서	면서	EC	면서/EC	-	38	VP
 20	"	"	SS	SS	-	36	L
 21	정식	정식	NNG	NNG	-	22	NP
 22	세관통관절차도	세관통관절차도	NNG+JX	NNG+도/JX	-	24	NP_OBJ
 23	거치지	거치지	VV+EC	VV+지/EC	-	24	VP
-24	않은	않은	VX+ETM	VX+은/ETM	-	25	VP_MOD
+24	않은	않은	VX+ETM	않/VX+은/ETM	-	25	VP_MOD
 25	악기들이	악기들이	NNG+JKS	NNG+이/JKS	-	27	NP_SBJ
 26	불법	불법	NNG	NNG	-	27	NP
 27	거래되는	거래되는	NNG+XSV+ETM	NNG+되/XSV+는/ETM	-	28	S_MOD
@@ -1909,7 +1909,7 @@
 36	"	"	SS	SS	-	37	S
 37	이라고	이라고	JKQ	이라고/JKQ	-	38	S_CMP
 38	개탄하았다	개탄하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-39	.	.	.	.	-	38	X
+39	.	.	SF	SF	-	38	X
 
 1	고질화된	고질화된	NNG+XSV+ETM	NNG+되/XSV+ᆫ/ETM	-	3	VP_MOD
 2	악기	악기	NNG	NNG	-	3	NP
@@ -1918,7 +1918,7 @@
 5	함수	함수	NNG	NNG	-	6	NP
 6	관계는	관계는	NNG+JX	NNG+는/JX	-	7	NP_SBJ
 7	이렇다	이렇다	VA+EF	VA+다/EF	-	0	ROOT
-8	.	.	.	.	-	7	X
+8	.	.	SF	SF	-	7	X
 
 1	만약	만약	NNG	NNG	-	8	NP_AJT
 2	A이라는	A이라는	SL+VCP+ETM	SL+이/VCP+라는/ETM	-	3	VNP_MOD
@@ -1928,7 +1928,7 @@
 6	B교수를	B교수를	NNG+JKO	NNG+를/JKO	-	7	NP_OBJ
 7	찾아간다고	찾아간다고	VV+EC	VV+ᆫ다고/EC	-	8	S_CMP
 8	하자	하자	VV+EF	VV+자/EF	-	0	ROOT
-9	.	.	.	.	-	8	X
+9	.	.	SF	SF	-	8	X
 
 1	물론	물론	MAG	MAG	-	13	AP
 2	그	그	MM	MM	-	3	DP
@@ -1937,13 +1937,13 @@
 5	수천만원짜리	수천만원짜리	MM+NR+NR+NNG	MM+NR+NR+NNG	-	6	DP
 6	악기를	악기를	NNG+JKO	NNG+를/JKO	-	8	NP_OBJ
 7	소화하아	소화하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	8	VP
-8	주는	주는	VX+ETM	VX+는/ETM	-	11	VP_MOD
+8	주는	주는	VX+ETM	주/VX+는/ETM	-	11	VP_MOD
 9	가장	가장	MAG	MAG	-	10	AP
 10	큰	큰	VA+ETM	VA+ᆫ/ETM	-	11	VP_MOD
 11	고객	고객	NNG	NNG	-	12	NP
 12	중의	중의	NNB+JKG	NNB+의/JKG	-	13	NP_MOD
 13	하나이다	하나이다	NR+VCP+EF	NR+이/VCP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	A학생은	A학생은	NNG+JX	NNG+은/JX	-	13	NP_SBJ
 2	`	`	SS	SS	-	5	L
@@ -1953,12 +1953,12 @@
 6	식으로	식으로	NNB+JKB	NNB+으로/JKB	-	13	NP_AJT
 7	선생이	선생이	NNG+JKS	NNG+이/JKS	-	9	NP_SBJ
 8	추천하아	추천하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	9	VP
-9	준	준	VX+ETM	VX+ᆫ/ETM	-	10	S_MOD
+9	준	준	VX+ETM	주/VX+ᆫ/ETM	-	10	S_MOD
 10	악기를	악기를	NNG+JKO	NNG+를/JKO	-	13	NP_OBJ
 11	살	살	VV+ETM	VV+ᆯ/ETM	-	12	VP_MOD
 12	수밖에	수밖에	NNB+JX	NNB+밖에/JX	-	13	NP_SBJ
 13	없다	없다	VA+EF	VA+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	앞으로	앞으로	NNG+JKB	NNG+으로/JKB	-	2	NP_AJT
 2	있을	있을	VV+ETM	VV+을/ETM	-	3	VP_MOD
@@ -1978,7 +1978,7 @@
 16	것이	것이	NNB+JKS	NNB+이/JKS	-	17	NP_SBJ
 17	없기	없기	VA+ETN	VA+기/ETN	-	18	S
 18	때문이다	때문이다	NNB+VCP+EF	NNB+이/VCP+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 
 1	몇	몇	MM	MM	-	2	DP
 2	년	년	NNB	NNB	-	3	NP
@@ -1989,7 +1989,7 @@
 7	좋아서	좋아서	VA+EC	VA+아서/EC	-	10	S
 8	악기를	악기를	NNG+JKO	NNG+를/JKO	-	10	NP_OBJ
 9	바꾸어야	바꾸어야	VV+EC	VV+어야/EC	-	10	VP
-10	할	할	VX+ETM	VX+ᆯ/ETM	-	11	VP_MOD
+10	할	할	VX+ETM	하/VX+ᆯ/ETM	-	11	VP_MOD
 11	때는	때는	NNG+JX	NNG+는/JX	-	20	NP_AJT
 12	다시	다시	MAG	MAG	-	20	AP
 13	선생이	선생이	NNG+JKS	NNG+이/JKS	-	20	NP_SBJ
@@ -2000,7 +2000,7 @@
 18	새롭ᆫ	새롭ᆫ	VA+ETM	VA+ᆫ/ETM	-	19	VP_MOD
 19	학생에게	학생에게	NNG+JKB	NNG+에게/JKB	-	20	NP_AJT
 20	팔ᆫ다	팔ᆫ다	VV+EF	VV+ᆫ다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+21	.	.	SF	SF	-	20	X
 
 1	그	그	MM	MM	-	2	DP
 2	가격이	가격이	NNG+JKS	NNG+이/JKS	-	9	NP_SBJ
@@ -2008,14 +2008,14 @@
 4	가격의	가격의	NNG+JKG	NNG+의/JKG	-	5	NP_MOD
 5	두배가	두배가	MM+NNG+JKC	MM+NNG+가/JKC	-	6	NP_CMP
 6	되는지	되는지	VV+EC	VV+는지/EC	-	9	VP
-7	,	,	,	,	-	6	X
+7	,	,	SP	SP	-	6	X
 8	10배가	10배가	NNG+JKC	NNG+가/JKC	-	9	NP_CMP
 9	되는지는	되는지는	VV+EC+JX	VV+는지/EC+는/JX	-	13	S_OBJ
 10	알ᆯ	알ᆯ	VV+ETM	VV+ᆯ/ETM	-	11	VP_MOD
 11	수	수	NNB	NNB	-	12	NP_SBJ
 12	없는	없는	VA+ETM	VA+는/ETM	-	13	VP_MOD
 13	일이다	일이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	다만	다만	MAG	MAG	-	12	AP
 2	분명한	분명한	NNG+XSA+ETM	NNG+하/XSA+ᆫ/ETM	-	3	VP_MOD
@@ -2025,11 +2025,11 @@
 6	악기상이나	악기상이나	NNG+JC	NNG+이나/JC	-	7	NP_CNJ
 7	교수가	교수가	NNG+JKS	NNG+가/JKS	-	11	NP_SBJ
 8	챙기었거나	챙기었거나	VV+EP+EC	VV+었/EP+거나/EC	-	11	VP
-9	,	,	,	,	-	8	X
+9	,	,	SP	SP	-	8	X
 10	나누어	나누어	VV+EC	VV+어/EC	-	11	VP
 11	가지었다는	가지었다는	VV+EP+ETM	VV+었/EP+다는/ETM	-	12	S_MOD
 12	점이다	점이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	차액은	차액은	NNG+JX	NNG+은/JX	-	6	NP_SBJ
 2	적게는	적게는	VA+EC+JX	VA+게/EC+는/JX	-	3	VP
@@ -2039,7 +2039,7 @@
 6	이른다는	이른다는	VV+ETM	VV+ᆫ다는/ETM	-	7	S_MOD
 7	것이	것이	NNB+JKS	NNB+이/JKS	-	8	NP_SBJ
 8	정설이다	정설이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-9	.	.	.	.	-	8	X
+9	.	.	SF	SF	-	8	X
 
 1	교수가	교수가	NNG+JKS	NNG+가/JKS	-	2	NP_SBJ
 2	사용하던	사용하던	NNG+XSV+ETM	NNG+하/XSV+던/ETM	-	3	S_MOD
@@ -2049,7 +2049,7 @@
 6	경우의	경우의	NNG+JKG	NNG+의/JKG	-	7	NP_MOD
 7	가격은	가격은	NNG+JX	NNG+은/JX	-	8	NP_SBJ
 8	천정부지이다	천정부지이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-9	.	.	.	.	-	8	X
+9	.	.	SF	SF	-	8	X
 
 1	모	모	MM	MM	-	2	DP
 2	교수는	교수는	NNG+JX	NNG+는/JX	-	12	NP_SBJ
@@ -2062,7 +2062,7 @@
 9	5천만원을	5천만원을	NNG+JKO	NNG+을/JKO	-	10	NP_OBJ
 10	받고	받고	VV+EC	VV+고/EC	-	12	VP
 11	팔기도	팔기도	VV+ETN+JX	VV+기/ETN+도/JX	-	12	VP
-12	하았다고	하았다고	VX+EP+EC	VX+았/EP+다고/EC	-	13	S_CMP
+12	하았다고	하았다고	VX+EP+EC	하/VX+았/EP+다고/EC	-	13	S_CMP
 13	한다	한다	VV+EF	VV+ᆫ다/EF	-	14	VP
 14	.	.	SF	SF	-	0	ROOT
 
@@ -2072,7 +2072,7 @@
 4	모	모	MM	MM	-	5	DP
 5	음대에	음대에	NNG+JKB	NNG+에/JKB	-	6	NP_AJT
 6	들어가았다	들어가았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-7	.	.	.	.	-	6	X
+7	.	.	SF	SF	-	6	X
 
 1	외제	외제	NNG	NNG	-	3	NP
 2	대부분	대부분	NNG	NNG	-	3	NP
@@ -2089,8 +2089,8 @@
 9	되팔는	되팔는	VV+ETM	VV+는/ETM	-	10	VP_MOD
 10	경우도	경우도	NNG+JX	NNG+도/JX	-	12	NP_SBJ
 11	적지	적지	VA+EC	VA+지/EC	-	12	VP
-12	않다	않다	VX+EF	VX+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+12	않다	않다	VX+EF	않/VX+다/EF	-	0	ROOT
+13	.	.	SF	SF	-	12	X
 
 1	그렇ᆫ가	그렇ᆫ가	VA+EC	VA+ᆫ가/EC	-	2	VP
 2	하면	하면	VV+EC	VV+면/EC	-	11	VP
@@ -2100,10 +2100,10 @@
 6	시키어	시키어	VV+EC	VV+어/EC	-	9	VP
 7	악기상을	악기상을	NNG+JKO	NNG+을/JKO	-	9	NP_OBJ
 8	차리게	차리게	VV+EC	VV+게/EC	-	9	VP
-9	한	한	VX+ETM	VX+ᆫ/ETM	-	10	S_MOD
+9	한	한	VX+ETM	하/VX+ᆫ/ETM	-	10	S_MOD
 10	경우도	경우도	NNG+JX	NNG+도/JX	-	11	NP_SBJ
 11	있다	있다	VV+EF	VV+다/EF	-	0	ROOT
-12	.	.	.	.	-	11	X
+12	.	.	SF	SF	-	11	X
 
 1	악기상	악기상	NNG	NNG	-	2	NP
 2	L씨에	L씨에	NNG+JKB	NNG+에/JKB	-	3	NP_AJT
@@ -2116,12 +2116,12 @@
 9	팔았는데	팔았는데	VV+EP+EC	VV+았/EP+는데/EC	-	16	VP
 10	후에	후에	NNG+JKB	NNG+에/JKB	-	12	NP_AJT
 11	알고	알고	VV+EC	VV+고/EC	-	12	VP
-12	보니	보니	VX+EC	VX+니/EC	-	16	VP
+12	보니	보니	VX+EC	보/VX+니/EC	-	16	VP
 13	제자에게	제자에게	NNG+JKB	NNG+에게/JKB	-	16	NP_AJT
 14	8천만원에	8천만원에	NNG+JKB	NNG+에/JKB	-	16	NP_AJT
 15	되팔았다는	되팔았다는	VV+EP+EC+JX	VV+았/EP+다/EC+는/JX	-	16	VP_MOD
 16	것이다	것이다	NNB+VCP+EF	NNB+이/VCP+다/EF	-	0	ROOT
-17	.	.	.	.	-	16	X
+17	.	.	SF	SF	-	16	X
 
 1	악기들이	악기들이	NNG+JKS	NNG+이/JKS	-	9	NP_SBJ
 2	원래	원래	NNG	NNG	-	3	NP
@@ -2131,7 +2131,7 @@
 6	없는	없는	VA+ETM	VA+는/ETM	-	7	S_MOD
 7	고가시장을	고가시장을	NNG+JKO	NNG+을/JKO	-	9	NP_OBJ
 8	형성하고	형성하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	9	VP
-9	있는	있는	VX+ETM	VX+는/ETM	-	10	S_MOD
+9	있는	있는	VX+ETM	있/VX+는/ETM	-	10	S_MOD
 10	이유는	이유는	NNG+JX	NNG+는/JX	-	24	NP_SBJ
 11	거의	거의	MAG	MAG	-	15	AP
 12	수입품에만	수입품에만	NNG+JKB+JX	NNG+에/JKB+만/JX	-	15	NP_AJT
@@ -2147,11 +2147,11 @@
 22	엉망인	엉망인	NNG+VCP+ETM	NNG+이/VCP+ᆫ/ETM	-	23	S_MOD
 23	것과	것과	NNB+JKB	NNB+과/JKB	-	24	NP_AJT
 24	직결된다	직결된다	NNG+XSV+EF	NNG+되/XSV+ᆫ다/EF	-	0	ROOT
-25	.	.	.	.	-	24	X
+25	.	.	SF	SF	-	24	X
 
 1	특히	특히	MAG	MAG	-	26	AP
 2	바이올린	바이올린	NNG	NNG	-	4	NP_CNJ
-3	,	,	,	,	-	2	X
+3	,	,	SP	SP	-	2	X
 4	첼로	첼로	NNG	NNG	-	5	NP
 5	등	등	NNB	NNB	-	7	NP
 6	고가	고가	NNG	NNG	-	7	NP
@@ -2178,7 +2178,7 @@
 27	것이	것이	NNB+JKS	NNB+이/JKS	-	29	NP_SBJ
 28	관계자의	관계자의	NNG+JKG	NNG+의/JKG	-	29	NP_MOD
 29	분석이다	분석이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-30	.	.	.	.	-	29	X
+30	.	.	SF	SF	-	29	X
 
 1	결국	결국	NNG	NNG	-	6	NP_AJT
 2	대부분의	대부분의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
@@ -2186,27 +2186,27 @@
 4	국내에	국내에	NNG+JKB	NNG+에/JKB	-	5	NP_AJT
 5	밀반입된다는	밀반입된다는	NNG+XSV+ETM	NNG+되/XSV+ᆫ다는/ETM	-	6	S_MOD
 6	결론이다	결론이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-7	.	.	.	.	-	6	X
+7	.	.	SF	SF	-	6	X
 
 1	세관을	세관을	NNG+JKO	NNG+을/JKO	-	2	NP_OBJ
 2	속이어	속이어	VV+EC	VV+어/EC	-	4	VP
 3	몰래	몰래	MAG	MAG	-	4	AP
 4	들여오거나	들여오거나	VV+EC	VV+거나/EC	-	11	VP
-5	,	,	,	,	-	4	X
+5	,	,	SP	SP	-	4	X
 6	상표를	상표를	NNG+JKO	NNG+를/JKO	-	7	NP_OBJ
-7	떼어내고	떼어내고	VV+EC+VX+EC	VV+어/EC+VX+고/EC	-	9	VP
+7	떼어내고	떼어내고	VV+EC+VX+EC	VV+어/EC+내/VX+고/EC	-	9	VP
 8	싸구려로	싸구려로	NNG+JKB	NNG+로/JKB	-	9	NP_AJT
 9	둔갑시키어	둔갑시키어	NNG+XSV+EC	NNG+시키/XSV+어/EC	-	11	VP
 10	들이어	들이어	VV+EC	VV+어/EC	-	11	VP
-11	오는	오는	VX+ETM	VX+는/ETM	-	12	VP_MOD
+11	오는	오는	VX+ETM	오/VX+는/ETM	-	12	VP_MOD
 12	경우도	경우도	NNG+JX	NNG+도/JX	-	13	NP_SBJ
 13	있고	있고	VV+EC	VV+고/EC	-	27	S
-14	,	,	,	,	-	13	X
+14	,	,	SP	SP	-	13	X
 15	때로는	때로는	MAG+JX	MAG+는/JX	-	25	AP
 16	싼	싼	VA+ETM	VA+ᆫ/ETM	-	18	VP_MOD
 17	국내	국내	NNG	NNG	-	18	NP
 18	악기를	악기를	NNG+JKO	NNG+를/JKO	-	20	NP_OBJ
-19	사아들고	사아들고	VV+EC+VX+EC	VV+아/EC+VX+고/EC	-	20	VP
+19	사아들고	사아들고	VV+EC+VX+EC	VV+아/EC+들/VX+고/EC	-	20	VP
 20	나가아	나가아	VV+EC	VV+아/EC	-	25	VP
 21	알맹이만	알맹이만	NNG+JX	NNG+만/JX	-	23	NP_OBJ
 22	고가품으로	고가품으로	NNG+JKB	NNG+으로/JKB	-	23	NP_AJT
@@ -2215,7 +2215,7 @@
 25	들어오는	들어오는	VV+ETM	VV+는/ETM	-	26	VP_MOD
 26	수법도	수법도	NNG+JX	NNG+도/JX	-	27	NP_SBJ
 27	있다	있다	VV+EF	VV+다/EF	-	0	ROOT
-28	.	.	.	.	-	27	X
+28	.	.	SF	SF	-	27	X
 
 1	초보가	초보가	NNG+JKS	NNG+가/JKS	-	2	NP_SBJ
 2	1억짜리	1억짜리	NNG	NNG	-	3	S
@@ -2224,11 +2224,11 @@
 1	현재	현재	MAG	MAG	-	4	AP
 2	시중에서	시중에서	NNG+JKB	NNG+에서/JKB	-	4	NP_AJT
 3	거래되고	거래되고	NNG+XSV+EC	NNG+되/XSV+고/EC	-	4	VP
-4	있는	있는	VX+ETM	VX+는/ETM	-	5	VP_MOD
+4	있는	있는	VX+ETM	있/VX+는/ETM	-	5	VP_MOD
 5	악기의	악기의	NNG+JKG	NNG+의/JKG	-	6	NP_MOD
 6	값은	값은	NNG+JX	NNG+은/JX	-	7	NP_SBJ
 7	천차만별	천차만별	NNG	NNG	-	0	ROOT
-8	.	.	.	.	-	7	X
+8	.	.	SF	SF	-	7	X
 
 1	7만∼8만원짜리의	7만∼8만원짜리의	NNG+JKG	NNG+의/JKG	-	2	NP_MOD
 2	연습용에서부터	연습용에서부터	NNG+JKB	NNG+에서부터/JKB	-	6	NP_AJT
@@ -2237,16 +2237,16 @@
 5	5천만∼7천만원짜리에	5천만∼7천만원짜리에	NNG+JKB	NNG+에/JKB	-	6	NP_AJT
 6	이르기까지	이르기까지	VV+ETN+JX	VV+기/ETN+까지/JX	-	7	VP_AJT
 7	다양하다	다양하다	NNG+XSA+EF	NNG+하/XSA+다/EF	-	0	ROOT
-8	.	.	.	.	-	7	X
+8	.	.	SF	SF	-	7	X
 
 1	그러나	그러나	MAJ	MAJ	-	21	AP
 2	음대	음대	NNG	NNG	-	3	NP
 3	지망생	지망생	NNG	NNG	-	4	NP
 4	정도이라면	정도이라면	NNG+VCP+EC	NNG+이/VCP+라면/EC	-	12	NP_SBJ
 5	바이올린	바이올린	NNG	NNG	-	9	NP_CNJ
-6	,	,	,	,	-	5	X
+6	,	,	SP	SP	-	5	X
 7	첼로	첼로	NNG	NNG	-	9	NP_CNJ
-8	,	,	,	,	-	7	X
+8	,	,	SP	SP	-	7	X
 9	비올라	비올라	NNG	NNG	-	10	NP
 10	등은	등은	NNB+JX	NNB+은/JX	-	12	NP_OBJ
 11	3천만∼4천만원짜리를	3천만∼4천만원짜리를	NNG+JKO	NNG+를/JKO	-	12	NP_OBJ
@@ -2258,9 +2258,9 @@
 17	쓰는	쓰는	VV+ETM	VV+는/ETM	-	18	S_MOD
 18	경우도	경우도	NNG+JX	NNG+도/JX	-	20	NP_SBJ
 19	적지	적지	VA+EC	VA+지/EC	-	20	VP
-20	않다는	않다는	VX+ETM	VX+다는/ETM	-	21	S_MOD
+20	않다는	않다는	VX+ETM	않/VX+다는/ETM	-	21	S_MOD
 21	얘기이다	얘기이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+22	.	.	SF	SF	-	21	X
 
 1	그	그	MM	MM	-	2	DP
 2	결과	결과	NNG	NNG	-	33	NP_AJT
@@ -2269,7 +2269,7 @@
 5	법도	법도	NNG+JX	NNG+도/JX	-	8	NP_OBJ
 6	다	다	MAG	MAG	-	8	AP
 7	익히지	익히지	VV+EC	VV+지/EC	-	8	VP
-8	못한	못한	VX+ETM	VX+ᆫ/ETM	-	9	VP_MOD
+8	못한	못한	VX+ETM	못하/VX+ᆫ/ETM	-	9	VP_MOD
 9	국민학생이	국민학생이	NNG+JKS	NNG+이/JKS	-	21	NP_SBJ
 10	1억원짜리	1억원짜리	NNG	NNG	-	11	NP
 11	바이올린	바이올린	NNG	NNG	-	12	NP
@@ -2281,21 +2281,21 @@
 17	)	)	SS	SS	-	18	NP
 18	를	를	JKO	를/JKO	-	21	NP_OBJ
 19	갖고	갖고	VV+EC	VV+고/EC	-	20	VP
-20	있는가	있는가	VX+EC	VX+는가/EC	-	21	VP
+20	있는가	있는가	VX+EC	있/VX+는가/EC	-	21	VP
 21	하면	하면	VV+EC	VV+면/EC	-	33	S
-22	,	,	,	,	-	21	X
+22	,	,	SP	SP	-	21	X
 23	몇천만	몇천만	MM+NR	MM+NR	-	24	NP
 24	원짜리	원짜리	NNG	NNG	-	25	NP
 25	악기를	악기를	NNG+JKO	NNG+를/JKO	-	27	NP_OBJ
 26	구입하지	구입하지	NNG+XSV+EC	NNG+하/XSV+지/EC	-	27	VP
-27	못하아	못하아	VX+EC	VX+아/EC	-	30	VP
+27	못하아	못하아	VX+EC	못하/VX+아/EC	-	30	VP
 28	연주가의	연주가의	NNG+JKG	NNG+의/JKG	-	29	NP_MOD
 29	길을	길을	NNG+JKO	NNG+을/JKO	-	30	NP_OBJ
 30	포기하는	포기하는	NNG+XSV+ETM	NNG+하/XSV+는/ETM	-	31	VP_MOD
 31	고등학생도	고등학생도	NNG+JX	NNG+도/JX	-	33	NP_SBJ
 32	나오는	나오는	VV+ETM	VV+는/ETM	-	33	VP_MOD
 33	것이다	것이다	NNB+VCP+EF	NNB+이/VCP+다/EF	-	0	ROOT
-34	.	.	.	.	-	33	X
+34	.	.	SF	SF	-	33	X
 
 1	1991/02/25	1991/02/25	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	2	NP
 2	14	14	SN	SN	-	0	ROOT
@@ -2345,7 +2345,7 @@
 5	신입생	신입생	NNG	NNG	-	6	NP
 6	교육이	교육이	NNG+JKS	NNG+이/JKS	-	7	NP_SBJ
 7	한창이다	한창이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-8	.	.	.	.	-	7	X
+8	.	.	SF	SF	-	7	X
 
 1	올	올	NNG	NNG	-	2	NP_AJT
 2	들어	들어	VV+EC	VV+어/EC	-	29	VP
@@ -2359,10 +2359,10 @@
 10	신입생들을	신입생들을	NNG+JKO	NNG+을/JKO	-	11	NP_OBJ
 11	합숙시키면서	합숙시키면서	NNG+XSV+EC	NNG+시키/XSV+면서/EC	-	19	VP
 12	강연	강연	NNG	NNG	-	18	NP_CNJ
-13	,	,	,	,	-	12	X
+13	,	,	SP	SP	-	12	X
 14	비디오	비디오	NNG	NNG	-	15	NP
 15	상영	상영	NNG	NNG	-	18	NP_CNJ
-16	,	,	,	,	-	15	X
+16	,	,	SP	SP	-	15	X
 17	노래	노래	NNG	NNG	-	18	NP
 18	공연을	공연을	NNG+JKO	NNG+을/JKO	-	19	NP_OBJ
 19	하는	하는	VV+ETM	VV+는/ETM	-	20	VP_MOD
@@ -2372,11 +2372,11 @@
 23	신입생	신입생	NNG	NNG	-	24	NP
 24	교육을	교육을	NNG+JKO	NNG+을/JKO	-	25	NP_OBJ
 25	실시	실시	NNG	NNG	-	29	VP
-26	,	,	,	,	-	25	X
+26	,	,	SP	SP	-	25	X
 27	주목을	주목을	NNG+JKO	NNG+을/JKO	-	29	NP_OBJ
 28	끌고	끌고	VV+EC	VV+고/EC	-	29	VP
-29	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-30	.	.	.	.	-	29	X
+29	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+30	.	.	SF	SF	-	29	X
 
 1	그러나	그러나	MAJ	MAJ	-	36	AP
 2	많은	많은	VA+ETM	VA+은/ETM	-	3	VP_MOD
@@ -2395,7 +2395,7 @@
 15	마찰을	마찰을	NNG+JKO	NNG+을/JKO	-	17	NP_OBJ
 16	빚는가	빚는가	VV+EC	VV+는가/EC	-	17	VP
 17	하면	하면	VV+EC	VV+면/EC	-	36	S
-18	,	,	,	,	-	17	X
+18	,	,	SP	SP	-	17	X
 19	총학생회가	총학생회가	NNG+JKS	NNG+가/JKS	-	33	NP_SBJ
 20	독자적으로	독자적으로	NNG+JKB	NNG+으로/JKB	-	23	NP_AJT
 21	신입생	신입생	NNG	NNG	-	22	NP
@@ -2410,11 +2410,11 @@
 30	교육의	교육의	NNG+JKG	NNG+의/JKG	-	31	NP_MOD
 31	기회로	기회로	NNG+JKB	NNG+로/JKB	-	33	NP_AJT
 32	활용하고	활용하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	33	VP
-33	있다는	있다는	VX+ETM	VX+다는/ETM	-	34	S_MOD
+33	있다는	있다는	VX+ETM	있/VX+다는/ETM	-	34	S_MOD
 34	우려도	우려도	NNG+JX	NNG+도/JX	-	36	NP_SBJ
 35	나오고	나오고	VV+EC	VV+고/EC	-	36	VP
-36	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-37	.	.	.	.	-	36	X
+36	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+37	.	.	SF	SF	-	36	X
 
 1	고려대	고려대	NNP	NNP	-	2	NP
 2	신입생	신입생	NNG	NNG	-	5	NP
@@ -2432,11 +2432,11 @@
 14	70여	70여	NNG	NNG	-	15	NP
 15	대를	대를	NNB+JKO	NNB+를/JKO	-	16	NP_OBJ
 16	이용	이용	NNG	NNG	-	29	NP
-17	,	,	,	,	-	16	X
+17	,	,	SP	SP	-	16	X
 18	설악산	설악산	NNP	NNP	-	22	NP_CNJ
-19	,	,	,	,	-	18	X
+19	,	,	SP	SP	-	18	X
 20	수안보	수안보	NNP	NNP	-	22	NP_CNJ
-21	,	,	,	,	-	20	X
+21	,	,	SP	SP	-	20	X
 22	경주	경주	NNG	NNG	-	23	NP
 23	등지로	등지로	NNB+JKB	NNB+로/JKB	-	29	NP_AJT
 24	2박	2박	NNG	NNG	-	25	NP
@@ -2445,7 +2445,7 @@
 27	신입생	신입생	NNG	NNG	-	28	NP
 28	오리엔테이션을	오리엔테이션을	NNG+JKO	NNG+을/JKO	-	29	NP_OBJ
 29	떠나았다	떠나았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-30	.	.	.	.	-	29	X
+30	.	.	SF	SF	-	29	X
 
 1	신입생들은	신입생들은	NNG+JX	NNG+은/JX	-	25	NP_SBJ
 2	연수회를	연수회를	NNG+JKO	NNG+를/JKO	-	3	NP_OBJ
@@ -2464,15 +2464,15 @@
 15	부르며	부르며	VV+EC	VV+며/EC	-	17	VP
 16	얼굴을	얼굴을	NNG+JKO	NNG+을/JKO	-	17	NP_OBJ
 17	익히었고	익히었고	VV+EP+EC	VV+었/EP+고/EC	-	25	VP
-18	,	,	,	,	-	17	X
+18	,	,	SP	SP	-	17	X
 19	`노동해방가'	`노동해방가'	SS+NNG+SS	SS+NNG+SS	-	21	NP_CNJ
-20	,	,	,	,	-	19	X
+20	,	,	SP	SP	-	19	X
 21	`농민가'	`농민가'	SS+NNG+SS	SS+NNG+SS	-	22	NP
 22	등의	등의	NNB+JKG	NNB+의/JKG	-	24	NP_MOD
 23	운동	운동	NNG	NNG	-	24	NP
 24	노래도	노래도	NNG+JX	NNG+도/JX	-	25	NP_OBJ
 25	배우었다	배우었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-26	.	.	.	.	-	25	X
+26	.	.	SF	SF	-	25	X
 
 1	추위	추위	NNG	NNG	-	2	NP
 2	속에서	속에서	NNG+JKB	NNG+에서/JKB	-	10	NP_AJT
@@ -2495,7 +2495,7 @@
 19	연수의	연수의	NNG+JKG	NNG+의/JKG	-	20	NP_MOD
 20	길을	길을	NNG+JKO	NNG+을/JKO	-	21	NP_OBJ
 21	떠나았다	떠나았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+22	.	.	SF	SF	-	21	X
 
 1	신입생들이	신입생들이	NNG+JKS	NNG+이/JKS	-	5	NP_SBJ
 2	버스	버스	NNG	NNG	-	3	NP
@@ -2515,7 +2515,7 @@
 16	대한	대한	VV+ETM	VV+ᆫ/ETM	-	18	VP_MOD
 17	전대협의	전대협의	NNP+JKG	NNP+의/JKG	-	18	NP_MOD
 18	입장	입장	NNG	NNG	-	25	NP_CNJ
-19	,	,	,	,	-	18	X
+19	,	,	SP	SP	-	18	X
 20	임수경	임수경	NNP	NNP	-	21	NP
 21	-	-	SS	SS	-	22	NP_CNJ
 22	황석영	황석영	NNP	NNP	-	23	NP
@@ -2529,7 +2529,7 @@
 30	자료가	자료가	NNG+JKS	NNG+가/JKS	-	32	NP_SBJ
 31	거의	거의	MAG	MAG	-	32	AP
 32	대부분이었다	대부분이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
-33	.	.	.	.	-	32	X
+33	.	.	SF	SF	-	32	X
 
 1	일부	일부	NNG	NNG	-	2	NP
 2	단과대학에서는	단과대학에서는	NNG+JKB+JX	NNG+에서/JKB+는/JX	-	13	NP_AJT
@@ -2542,9 +2542,9 @@
 9	시국	시국	NNG	NNG	-	10	NP
 10	강연도	강연도	NNG+JX	NNG+도/JX	-	13	NP_OBJ
 11	마련하아	마련하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	12	VP
-12	놓고	놓고	VX+EC	VX+고/EC	-	13	VP
-13	있었다	있었다	VX+EP+EF	VX+었/EP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+12	놓고	놓고	VX+EC	놓/VX+고/EC	-	13	VP
+13	있었다	있었다	VX+EP+EF	있/VX+었/EP+다/EF	-	0	ROOT
+14	.	.	SF	SF	-	13	X
 
 1	신입생	신입생	NNG	NNG	-	2	NP
 2	교육	교육	NNG	NNG	-	3	NP
@@ -2582,7 +2582,7 @@
 34	"	"	SS	SS	-	35	VP
 35	고	고	JKQ	고/JKQ	-	36	VP_CMP
 36	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-37	.	.	.	.	-	36	X
+37	.	.	SF	SF	-	36	X
 
 1	고려대	고려대	NNP	NNP	-	2	NP
 2	측은	측은	NNB+JX	NNB+은/JX	-	13	NP_SBJ
@@ -2597,7 +2597,7 @@
 11	오리엔테이션을	오리엔테이션을	NNG+JKO	NNG+을/JKO	-	12	NP_OBJ
 12	실시할	실시할	NNG+XSV+ETM	NNG+하/XSV+ᆯ/ETM	-	13	VP_MOD
 13	예정이다	예정이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	연세대는	연세대는	NNP+JX	NNP+는/JX	-	25	NP_SBJ
 2	지난	지난	VV+ETM	VV+ᆫ/ETM	-	4	VP_MOD
@@ -2614,7 +2614,7 @@
 13	-	-	SS	SS	-	14	NP_CNJ
 14	대동놀이를	대동놀이를	NNG+JKO	NNG+를/JKO	-	15	NP_OBJ
 15	실시하았고	실시하았고	NNG+XSV+EP+EC	NNG+하/XSV+았/EP+고/EC	-	25	VP
-16	,	,	,	,	-	15	X
+16	,	,	SP	SP	-	15	X
 17	23일부터	23일부터	NNG+JX	NNG+부터/JX	-	25	NP_AJT
 18	각	각	MM	MM	-	19	DP
 19	단과대학별로	단과대학별로	NNG+JKB	NNG+로/JKB	-	25	NP_AJT
@@ -2624,7 +2624,7 @@
 23	3일간의	3일간의	NNG+JKG	NNG+의/JKG	-	24	NP_MOD
 24	수련회에	수련회에	NNG+JKB	NNG+에/JKB	-	25	NP_AJT
 25	들어가았다	들어가았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-26	.	.	.	.	-	25	X
+26	.	.	SF	SF	-	25	X
 
 1	지난	지난	VV+ETM	VV+ᆫ/ETM	-	2	VP_MOD
 2	20일	20일	NNG	NNG	-	11	NP_AJT
@@ -2636,7 +2636,7 @@
 8	신입생	신입생	NNG	NNG	-	9	NP
 9	오리엔테이션을	오리엔테이션을	NNG+JKO	NNG+을/JKO	-	11	NP_OBJ
 10	실시하고	실시하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	11	VP
-11	있는	있는	VX+ETM	VX+는/ETM	-	13	VP_MOD
+11	있는	있는	VX+ETM	있/VX+는/ETM	-	13	VP_MOD
 12	서울대	서울대	NNP	NNP	-	13	NP
 13	총학생회는	총학생회는	MM+NNG+JX	MM+NNG+는/JX	-	24	NP_SBJ
 14	예년과	예년과	NNG+JKB	NNG+과/JKB	-	15	NP_AJT
@@ -2647,10 +2647,10 @@
 19	교수들의	교수들의	NNG+JKG	NNG+의/JKG	-	20	NP_MOD
 20	참가는	참가는	NNG+JX	NNG+는/JX	-	24	NP_SBJ
 21	거의	거의	MAG	MAG	-	24	AP
-22	이루어지지	이루어지지	VV+EC+VX+EC	VV+어/EC+VX+지/EC	-	23	VP
-23	못하고	못하고	VX+EC	VX+고/EC	-	24	VP
-24	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-25	.	.	.	.	-	24	X
+22	이루어지지	이루어지지	VV+EC+VX+EC	VV+어/EC+지/VX+지/EC	-	23	VP
+23	못하고	못하고	VX+EC	못하/VX+고/EC	-	24	VP
+24	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+25	.	.	SF	SF	-	24	X
 
 1	서울대	서울대	NNP	NNP	-	2	NP
 2	총학생회의	총학생회의	MM+NNG+JKG	MM+NNG+의/JKG	-	5	DP_MOD
@@ -2668,8 +2668,8 @@
 14	만들ᆫ	만들ᆫ	VV+ETM	VV+ᆫ/ETM	-	15	S_MOD
 15	자료집을	자료집을	NNG+JKO	NNG+을/JKO	-	17	NP_OBJ
 16	이용하고	이용하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	17	VP
-17	있으며	있으며	VX+EC	VX+으며/EC	-	30	S
-18	,	,	,	,	-	17	X
+17	있으며	있으며	VX+EC	있/VX+으며/EC	-	30	S
+18	,	,	SP	SP	-	17	X
 19	일부	일부	NNG	NNG	-	20	NP
 20	단과대에서는	단과대에서는	NNG+JKB+JX	NNG+에서/JKB+는/JX	-	30	NP_AJT
 21	민주화	민주화	NNG	NNG	-	22	NP
@@ -2682,7 +2682,7 @@
 28	신입생에게	신입생에게	NNG+JKB	NNG+에게/JKB	-	29	NP_AJT
 29	교육할	교육할	NNG+XSV+ETM	NNG+하/XSV+ᆯ/ETM	-	30	VP_MOD
 30	예정이다	예정이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-31	.	.	.	.	-	30	X
+31	.	.	SF	SF	-	30	X
 
 1	이에	이에	NP+JKB	NP+에/JKB	-	2	NP_AJT
 2	대하아	대하아	VV+EC	VV+아/EC	-	4	VP
@@ -2722,7 +2722,7 @@
 36	"	"	SS	SS	-	37	NP
 37	이라고	이라고	JKQ	이라고/JKQ	-	38	NP_CMP
 38	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-39	.	.	.	.	-	38	X
+39	.	.	SF	SF	-	38	X
 
 1	그러나	그러나	MAJ	MAJ	-	18	AP
 2	학교	학교	NNG	NNG	-	3	NP
@@ -2742,7 +2742,7 @@
 16	우려의	우려의	NNG+JKG	NNG+의/JKG	-	17	NP_MOD
 17	소리도	소리도	NNG+JX	NNG+도/JX	-	18	NP_SBJ
 18	있다	있다	VV+EF	VV+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 
 1	전대협은	전대협은	NNP+JX	NNP+은/JX	-	39	NP_SBJ
 2	최근	최근	NNG	NNG	-	39	NP_AJT
@@ -2760,7 +2760,7 @@
 14	`	`	SS	SS	-	18	L
 15	우리는	우리는	NP+JX	NP+는/JX	-	17	NP_SBJ
 16	만나아야	만나아야	VV+EC	VV+아야/EC	-	17	VP
-17	한다	한다	VX+EC	VX+ᆫ다/EC	-	18	S
+17	한다	한다	VX+EC	하/VX+ᆫ다/EC	-	18	S
 18	'	'	SS	SS	-	19	S
 19	와	와	JC	와/JC	-	28	S_CNJ
 20	영상	영상	NNG	NNG	-	21	NP
@@ -2778,12 +2778,12 @@
 32	각각	각각	MAG	MAG	-	33	AP_MOD
 33	2백벌을	2백벌을	NNG+JKO	NNG+을/JKO	-	39	NP_OBJ
 34	제작	제작	NNG	NNG	-	39	NP
-35	,	,	,	,	-	34	X
+35	,	,	SP	SP	-	34	X
 36	각	각	MM	MM	-	37	DP
 37	대학	대학	NNG	NNG	-	38	NP
 38	학생회에	학생회에	NNG+JKB	NNG+에/JKB	-	39	NP_AJT
-39	나누어주었다	나누어주었다	VV+EC+VX+EP+EF	VV+어/EC+VX+었/EP+다/EF	-	0	ROOT
-40	.	.	.	.	-	39	X
+39	나누어주었다	나누어주었다	VV+EC+VX+EP+EF	VV+어/EC+주/VX+었/EP+다/EF	-	0	ROOT
+40	.	.	SF	SF	-	39	X
 
 1	연세대	연세대	NNP	NNP	-	6	NP
 2	`	`	SS	SS	-	6	L
@@ -2793,7 +2793,7 @@
 6	'	'	SS	SS	-	7	NP
 7	에	에	JKB	에/JKB	-	8	NP_AJT
 8	참가	참가	NNG	NNG	-	11	NP
-9	,	,	,	,	-	8	X
+9	,	,	SP	SP	-	8	X
 10	만화영화를	만화영화를	NNG+JKO	NNG+를/JKO	-	11	NP_OBJ
 11	본	본	VV+ETM	VV+ᆫ/ETM	-	14	VP_MOD
 12	경제학과의	경제학과의	NNG+JKG	NNG+의/JKG	-	14	NP_MOD
@@ -2818,17 +2818,17 @@
 31	어떻게	어떻게	VA+EC	VA+게/EC	-	34	VP
 32	공부를	공부를	NNG+JKO	NNG+를/JKO	-	34	NP_OBJ
 33	하아야	하아야	VV+EC	VV+아야/EC	-	34	VP
-34	하는	하는	VX+ETM	VX+는/ETM	-	35	VP_MOD
+34	하는	하는	VX+ETM	하/VX+는/ETM	-	35	VP_MOD
 35	지에	지에	NNB+JKB	NNB+에/JKB	-	36	NP_AJT
 36	대하아	대하아	VV+EC	VV+아/EC	-	40	VP
 37	진지한	진지한	XR+XSA+ETM	XR+하/XSA+ᆫ/ETM	-	38	VP_MOD
 38	이야기를	이야기를	NNG+JKO	NNG+를/JKO	-	40	NP_OBJ
 39	나누지	나누지	VV+EC	VV+지/EC	-	40	VP
-40	못하았다	못하았다	VX+EP+EC	VX+았/EP+다/EC	-	41	VP
+40	못하았다	못하았다	VX+EP+EC	못하/VX+았/EP+다/EC	-	41	VP
 41	"	"	SS	SS	-	42	VP
 42	고	고	JKQ	고/JKQ	-	43	VP_CMP
 43	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-44	.	.	.	.	-	43	X
+44	.	.	SF	SF	-	43	X
 
 1	1991/02/25	1991/02/25	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	2	NP
 2	15	15	SN	SN	-	0	ROOT
@@ -2865,12 +2865,12 @@
 5	자랑스럽게	자랑스럽게	NNG+XSA+EC	NNG+스럽/XSA+게/EC	-	10	VP
 6	주례를	주례를	NNG+JKO	NNG+를/JKO	-	10	NP_OBJ
 7	서어	서어	VV+EC	VV+어/EC	-	8	VP
-8	줄	줄	VX+ETM	VX+ᆯ/ETM	-	9	VP_MOD
+8	줄	줄	VX+ETM	주/VX+ᆯ/ETM	-	9	VP_MOD
 9	수	수	NNB	NNB	-	10	NP_SBJ
 10	있는	있는	VV+ETM	VV+는/ETM	-	11	S_MOD
 11	미화원이	미화원이	NNG+JKC	NNG+이/JKC	-	12	NP_CMP
 12	되ᄇ시다	되ᄇ시다	VV+EF	VV+ᄇ시다/EF	-	14	VP
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 14	"	"	SS	SS	-	0	ROOT
 
 1	24일	24일	NNG	NNG	-	2	NP
@@ -2886,24 +2886,24 @@
 11	이색	이색	NNG	NNG	-	12	NP
 12	모임이	모임이	NNG+JKS	NNG+이/JKS	-	13	NP_SBJ
 13	있었다	있었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	`구두닦이'라고	`구두닦이'라고	SS+NNG+SS+JKQ	SS+NNG+SS+라고/JKQ	-	2	NP_CMP
 2	불리는	불리는	VV+ETM	VV+는/ETM	-	5	VP_MOD
 3	미화원	미화원	NNG	NNG	-	5	NP
 4	1천여	1천여	NNG	NNG	-	5	NP
 5	명이	명이	NNB+JKS	NNB+이/JKS	-	12	NP_SBJ
-6	,	,	,	,	-	5	X
+6	,	,	SP	SP	-	5	X
 7	일부는	일부는	NNG+JX	NNG+는/JX	-	12	NP_SBJ
 8	넥타이를	넥타이를	NNG+JKO	NNG+를/JKO	-	10	NP_OBJ
 9	매기도	매기도	VV+ETN+JX	VV+기/ETN+도/JX	-	10	VP
-10	한	한	VX+ETM	VX+ᆫ/ETM	-	11	VP_MOD
+10	한	한	VX+ETM	하/VX+ᆫ/ETM	-	11	VP_MOD
 11	차림으로	차림으로	NNG+JKB	NNG+으로/JKB	-	12	NP_AJT
 12	참석하아	참석하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	15	S
 13	2시간여	2시간여	NNG	NNG	-	14	NP
 14	동안	동안	NNG	NNG	-	15	NP_AJT
 15	진행되었다	진행되었다	NNG+XSV+EP+EF	NNG+되/XSV+었/EP+다/EF	-	0	ROOT
-16	.	.	.	.	-	15	X
+16	.	.	SF	SF	-	15	X
 
 1	이들	이들	NP+XSN	NP+XSN	-	2	NP
 2	중에는	중에는	NNB+JKB+JX	NNB+에/JKB+는/JX	-	5	NP_AJT
@@ -2917,7 +2917,7 @@
 10	이들도	이들도	NNB+XSN+JX	NNB+XSN+도/JX	-	12	NP_SBJ
 11	눈에	눈에	NNG+JKB	NNG+에/JKB	-	12	NP_AJT
 12	띄었다	띄었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	미화원협의회	미화원협의회	NNG	NNG	-	3	NP
 2	김경종	김경종	NNP	NNP	-	3	NP
@@ -2934,7 +2934,7 @@
 13	뒷골목	뒷골목	NNG	NNG	-	14	NP
 14	문화에서	문화에서	NNG+JKB	NNG+에서/JKB	-	16	NP_AJT
 15	벗어나아야	벗어나아야	VV+EC	VV+아야/EC	-	16	VP
-16	할	할	VX+ETM	VX+ᆯ/ETM	-	17	VP_MOD
+16	할	할	VX+ETM	하/VX+ᆯ/ETM	-	17	VP_MOD
 17	시점에	시점에	NNG+JKB	NNG+에/JKB	-	18	NP_AJT
 18	오았다	오았다	VV+EP+EC	VV+았/EP+다/EC	-	19	VP
 19	"	"	SS	SS	-	20	VP
@@ -2946,7 +2946,7 @@
 25	설	설	VV+ETM	VV+ᆯ/ETM	-	26	VP_MOD
 26	것을	것을	NNB+JKO	NNB+을/JKO	-	27	NP_OBJ
 27	다짐하았다	다짐하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-28	.	.	.	.	-	27	X
+28	.	.	SF	SF	-	27	X
 
 1	모임은	모임은	NNG+JX	NNG+은/JX	-	21	NP_SBJ
 2	정기	정기	NNG	NNG	-	3	NP
@@ -2962,14 +2962,14 @@
 12	퀴즈게임과	퀴즈게임과	NNG+JC	NNG+과/JC	-	13	NP_CNJ
 13	장기자랑으로	장기자랑으로	NNG+JKB	NNG+으로/JKB	-	14	NP_AJT
 14	어울리게	어울리게	VV+EC	VV+게/EC	-	15	VP
-15	하는	하는	VX+ETM	VX+는/ETM	-	16	VP_MOD
+15	하는	하는	VX+ETM	하/VX+는/ETM	-	16	VP_MOD
 16	등	등	NNB	NNB	-	21	NP_AJT
 17	시종	시종	MAG	MAG	-	21	AP
 18	잔치	잔치	NNG	NNG	-	19	NP
 19	분위기	분위기	NNG	NNG	-	20	NP
 20	속에서	속에서	NNG+JKB	NNG+에서/JKB	-	21	NP_AJT
 21	진행되었다	진행되었다	NNG+XSV+EP+EF	NNG+되/XSV+었/EP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+22	.	.	SF	SF	-	21	X
 
 1	5년	5년	NNG	NNG	-	2	NP
 2	전부터	전부터	NNG+JX	NNG+부터/JX	-	12	NP_AJT
@@ -2982,7 +2982,7 @@
 9	함께	함께	MAG	MAG	-	12	AP
 10	구두를	구두를	NNG+JKO	NNG+를/JKO	-	12	NP_OBJ
 11	닦아	닦아	VV+EC	VV+아/EC	-	12	VP
-12	오았다는	오았다는	VX+EP+ETM	VX+았/EP+다는/ETM	-	14	VP_MOD
+12	오았다는	오았다는	VX+EP+ETM	오/VX+았/EP+다는/ETM	-	14	VP_MOD
 13	심만순	심만순	NNP	NNP	-	14	NP
 14	씨(45·여)는	씨(45·여)는	NNB+SS+NNG+SS+JX	NNB+SS+NNG+SS+는/JX	-	32	NP_SBJ
 15	"	"	SS	SS	-	30	L
@@ -2993,7 +2993,7 @@
 20	자녀를	자녀를	NNG+JKO	NNG+를/JKO	-	23	NP_OBJ
 21	학교에	학교에	NNG+JKB	NNG+에/JKB	-	23	NP_AJT
 22	보내고	보내고	VV+EC	VV+고/EC	-	23	VP
-23	있어	있어	VX+EC	VX+어/EC	-	29	VP
+23	있어	있어	VX+EC	있/VX+어/EC	-	29	VP
 24	남들	남들	NNG	NNG	-	25	NP_OBJ
 25	보기	보기	VV+ETN	VV+기/ETN	-	26	VP_SBJ
 26	부끄럽다는	부끄럽다는	VA+ETM	VA+다는/ETM	-	27	S_MOD
@@ -3003,13 +3003,13 @@
 30	"	"	SS	SS	-	31	S
 31	고	고	JKQ	고/JKQ	-	32	S_CMP
 32	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-33	.	.	.	.	-	32	X
+33	.	.	SF	SF	-	32	X
 
 1	또	또	MAG	MAG	-	21	AP
 2	15년째	15년째	NNG	NNG	-	5	NP_AJT
 3	구두를	구두를	NNG+JKO	NNG+를/JKO	-	5	NP_OBJ
 4	닦아	닦아	VV+EC	VV+아/EC	-	5	VP
-5	오았다는	오았다는	VX+EP+ETM	VX+았/EP+다는/ETM	-	7	VP_MOD
+5	오았다는	오았다는	VX+EP+ETM	오/VX+았/EP+다는/ETM	-	7	VP_MOD
 6	문태식	문태식	NNP	NNP	-	7	NP
 7	씨(34)는	씨(34)는	NNB+SS+SN+SS+JX	NNB+SS+SN+SS+는/JX	-	21	NP_SBJ
 8	"	"	SS	SS	-	19	L
@@ -3026,7 +3026,7 @@
 19	"	"	SS	SS	-	20	VP
 20	고	고	JKQ	고/JKQ	-	21	VP_CMP
 21	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+22	.	.	SF	SF	-	21	X
 
 1	그는	그는	NP+JX	NP+는/JX	-	11	NP_SBJ
 2	요즘	요즘	NNG	NNG	-	11	NP_AJT
@@ -3037,16 +3037,16 @@
 7	구두	구두	NNG	NNG	-	8	NP
 8	수선	수선	NNG	NNG	-	9	NP
 9	일도	일도	NNG+JX	NNG+도/JX	-	11	NP_OBJ
-10	맡아하고	맡아하고	VV+EC+VX+EC	VV+아/EC+VX+고/EC	-	11	VP
-11	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-12	.	.	.	.	-	11	X
+10	맡아하고	맡아하고	VV+EC+VX+EC	VV+아/EC+하/VX+고/EC	-	11	VP
+11	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+12	.	.	SF	SF	-	11	X
 
 1	총회에는	총회에는	NNG+JKB+JX	NNG+에/JKB+는/JX	-	5	NP_AJT
 2	서정화-박찬종-유기수	서정화-박찬종-유기수	NP	NP	-	3	NP
 3	국회의원	국회의원	NNG	NNG	-	4	NP
 4	등도	등도	NNB+JX	NNB+도/JX	-	5	NP_SBJ
 5	참석하았으며	참석하았으며	NNG+XSV+EP+EC	NNG+하/XSV+았/EP+으며/EC	-	28	S
-6	,	,	,	,	-	5	X
+6	,	,	SP	SP	-	5	X
 7	그	그	MM	MM	-	8	DP
 8	중	중	NNB	NNB	-	10	NP
 9	서	서	NNP	NNP	-	10	NP
@@ -3069,7 +3069,7 @@
 26	살ᆯ	살ᆯ	VV+ETM	VV+ᆯ/ETM	-	27	VP_MOD
 27	것을	것을	NNB+JKO	NNB+을/JKO	-	28	NP_OBJ
 28	당부하았다	당부하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-29	.	.	.	.	-	28	X
+29	.	.	SF	SF	-	28	X
 
 1	미화원협의회는	미화원협의회는	NNG+JX	NNG+는/JX	-	13	NP_SBJ
 2	작년	작년	NNG	NNG	-	4	NP
@@ -3089,7 +3089,7 @@
 16	번째의	번째의	NNB+XSN+JKG	NNB+XSN+의/JKG	-	18	NP_MOD
 17	정기	정기	NNG	NNG	-	18	NP
 18	총회이었다	총회이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 
 1	협의회는	협의회는	NNG+JX	NNG+는/JX	-	14	NP_SBJ
 2	발족	발족	NNG	NNG	-	3	NP
@@ -3108,7 +3108,7 @@
 15	총회원은	총회원은	MM+NNG+JX	MM+NNG+은/JX	-	17	NP_SBJ
 16	3천여	3천여	NNG	NNG	-	17	NP
 17	명	명	NNB	NNB	-	0	ROOT
-18	.	.	.	.	-	17	X
+18	.	.	SF	SF	-	17	X
 
 1	협의회의	협의회의	NNG+JKG	NNG+의/JKG	-	2	NP_MOD
 2	관계자는	관계자는	NNG+JX	NNG+는/JX	-	27	NP_SBJ
@@ -3132,12 +3132,12 @@
 20	등	등	NNB	NNB	-	21	NP
 21	사업도	사업도	NNG+JX	NNG+도/JX	-	23	NP_OBJ
 22	벌이어	벌이어	VV+EC	VV+어/EC	-	23	VP
-23	오았다	오았다	VX+EP+EC	VX+았/EP+다/EC	-	24	VP_CMP
+23	오았다	오았다	VX+EP+EC	오/VX+았/EP+다/EC	-	24	VP_CMP
 24	"	"	SS	SS	-	25	VP
 25	며	며	EC	며/EC	-	27	VP
 26	자랑스럽ᆫ	자랑스럽ᆫ	NNG+XSA+ETM	NNG+스럽/XSA+ᆫ/ETM	-	27	VP_MOD
 27	표정이었다	표정이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
-28	.	.	.	.	-	27	X
+28	.	.	SF	SF	-	27	X
 
 1	행사가	행사가	NNG+JKS	NNG+가/JKS	-	2	NP_SBJ
 2	끝날	끝날	VV+ETM	VV+ᆯ/ETM	-	3	S_MOD
@@ -3146,7 +3146,7 @@
 5	미화원들은	미화원들은	NNG+JX	NNG+은/JX	-	17	NP_SBJ
 6	그동안	그동안	NNG	NNG	-	8	NP_AJT
 7	모으아	모으아	VV+EC	VV+아/EC	-	8	VP
-8	온	온	VX+ETM	VX+ᆫ/ETM	-	9	VP_MOD
+8	온	온	VX+ETM	오/VX+ᆫ/ETM	-	9	VP_MOD
 9	성금	성금	NNG	NNG	-	10	NP
 10	봉투를	봉투를	NNG+JKO	NNG+를/JKO	-	17	NP_OBJ
 11	소년	소년	NNG	NNG	-	12	NP
@@ -3156,13 +3156,13 @@
 15	돕기	돕기	VV+ETN	VV+기/ETN	-	16	VP_OBJ
 16	위하아	위하아	VV+EC	VV+아/EC	-	17	VP
 17	내놓았다	내놓았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-18	.	.	.	.	-	17	X
+18	.	.	SF	SF	-	17	X
 
 1	"	"	SS	SS	-	15	L
 2	밑바닥	밑바닥	NNG	NNG	-	3	NP
 3	세월을	세월을	NNG+JKO	NNG+을/JKO	-	5	NP_OBJ
 4	살아	살아	VV+EC	VV+아/EC	-	5	VP
-5	온	온	VX+ETM	VX+ᆫ/ETM	-	6	VP_MOD
+5	온	온	VX+ETM	오/VX+ᆫ/ETM	-	6	VP_MOD
 6	우리가	우리가	NP+JKS	NP+가/JKS	-	14	NP_SBJ
 7	이제	이제	MAG	MAG	-	14	AP
 8	남들을	남들을	NNG+JKO	NNG+을/JKO	-	9	NP_OBJ
@@ -3177,7 +3177,7 @@
 17	한	한	MM	MM	-	18	DP
 18	참석자는	참석자는	NNG+JX	NNG+는/JX	-	19	NP_SBJ
 19	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-20	.	.	.	.	-	19	X
+20	.	.	SF	SF	-	19	X
 
 1	1991/03/05	1991/03/05	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	2	NP
 2	22	22	SN	SN	-	0	ROOT
@@ -3222,12 +3222,12 @@
 13	것을	것을	NNB+JKO	NNB+을/JKO	-	16	NP_OBJ
 14	이라크군들에게	이라크군들에게	NNG+JKB	NNG+에게/JKB	-	16	NP_AJT
 15	약탈당하다시피	약탈당하다시피	NNG+XSV+EC	NNG+당하/XSV+다시피/EC	-	16	VP
-16	하았으나	하았으나	VX+EP+EC	VX+았/EP+으나/EC	-	20	VP
+16	하았으나	하았으나	VX+EP+EC	하/VX+았/EP+으나/EC	-	20	VP
 17	비교적	비교적	MAG	MAG	-	19	AP
 18	건강하고	건강하고	NNG+XSA+EC	NNG+하/XSA+고/EC	-	19	VP
 19	밝은	밝은	VA+ETM	VA+은/ETM	-	20	VP_MOD
 20	표정이었다	표정이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+21	.	.	SF	SF	-	20	X
 
 1	쿠웨이트대사관	쿠웨이트대사관	NNG	NNG	-	3	NP
 2	기능	기능	NNG	NNG	-	3	NP
@@ -3262,7 +3262,7 @@
 31	명이	명이	NNB+JKS	NNB+이/JKS	-	33	NP_SBJ
 32	우르르	우르르	MAG	MAG	-	33	AP
 33	몰려나오았다	몰려나오았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-34	.	.	.	.	-	33	X
+34	.	.	SF	SF	-	33	X
 
 1	대사관	대사관	NNG	NNG	-	2	NP
 2	옥상에는	옥상에는	NNG+JKB+JX	NNG+에/JKB+는/JX	-	7	NP_AJT
@@ -3270,8 +3270,8 @@
 4	게양한	게양한	NNG+XSV+ETM	NNG+하/XSV+ᆫ/ETM	-	5	S_MOD
 5	태극기가	태극기가	NNG+JKS	NNG+가/JKS	-	7	NP_SBJ
 6	휘날리고	휘날리고	VV+EC	VV+고/EC	-	7	VP
-7	있었다	있었다	VX+EP+EF	VX+었/EP+다/EF	-	0	ROOT
-8	.	.	.	.	-	7	X
+7	있었다	있었다	VX+EP+EF	있/VX+었/EP+다/EF	-	0	ROOT
+8	.	.	SF	SF	-	7	X
 
 1	이라크군	이라크군	NNG	NNG	-	2	NP
 2	침공	침공	NNG	NNG	-	3	NP
@@ -3294,9 +3294,9 @@
 19	대책	대책	NNG	NNG	-	20	NP
 20	등을	등을	NNB+JKO	NNB+을/JKO	-	23	NP_OBJ
 21	협의하고	협의하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	22	VP
-22	있었던	있었던	VX+EP+ETM	VX+었/EP+던/ETM	-	23	VP_MOD
+22	있었던	있었던	VX+EP+ETM	있/VX+었/EP+던/ETM	-	23	VP_MOD
 23	것이다	것이다	NNB+VCP+EF	NNB+이/VCP+다/EF	-	0	ROOT
-24	.	.	.	.	-	23	X
+24	.	.	SF	SF	-	23	X
 
 1	교민들은	교민들은	NNG+JX	NNG+은/JX	-	19	NP_SBJ
 2	취재진들을	취재진들을	NNG+JKO	NNG+을/JKO	-	4	NP_OBJ
@@ -3306,25 +3306,25 @@
 6	정말	정말	MAG	MAG	-	8	AP
 7	한국에서	한국에서	NNP+JKB	NNP+에서/JKB	-	8	NP_AJT
 8	오았느냐	오았느냐	VV+EP+EC	VV+았/EP+느냐/EC	-	13	VP
-9	,	,	,	,	-	8	X
+9	,	,	SP	SP	-	8	X
 10	왜	왜	MAG	MAG	-	11	AP
 11	이리	이리	MAG	MAG	-	13	AP
 12	늦게	늦게	VA+EC	VA+게/EC	-	13	VP
-13	오았느냐	오았느냐	VX+EP+EC	VX+았/EP+느냐/EC	-	14	VP
+13	오았느냐	오았느냐	VX+EP+EC	오/VX+았/EP+느냐/EC	-	14	VP
 14	"	"	SS	SS	-	15	VP
 15	고	고	JKQ	고/JKQ	-	16	VP_CMP
 16	통곡하며	통곡하며	NNG+XSV+EC	NNG+하/XSV+며/EC	-	19	VP
 17	악몽의	악몽의	NNG+JKG	NNG+의/JKG	-	18	NP_MOD
 18	순간들을	순간들을	NNG+JKO	NNG+을/JKO	-	19	NP_OBJ
 19	얘기하았다	얘기하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-20	.	.	.	.	-	19	X
+20	.	.	SF	SF	-	19	X
 
 1	교민	교민	NNG	NNG	-	2	NP
 2	중	중	NNB	NNB	-	13	NP
 3	6·25	6·25	NNP	NNP	-	8	NP_CNJ
-4	,	,	,	,	-	3	X
+4	,	,	SP	SP	-	3	X
 5	월남전	월남전	NNP	NNP	-	8	NP_CNJ
-6	,	,	,	,	-	5	X
+6	,	,	SP	SP	-	5	X
 7	캄보디아	캄보디아	NNP	NNP	-	8	NP
 8	내전	내전	NNG	NNG	-	9	NP
 9	등을	등을	NNB+JKO	NNB+을/JKO	-	11	NP_OBJ
@@ -3341,16 +3341,16 @@
 20	TV	TV	SL	SL	-	21	NP
 21	등	등	NNB	NNB	-	22	NP
 22	가전제품	가전제품	NNG	NNG	-	28	NP_CNJ
-23	,	,	,	,	-	22	X
+23	,	,	SP	SP	-	22	X
 24	금	금	NNG	NNG	-	28	NP_CNJ
-25	,	,	,	,	-	24	X
+25	,	,	SP	SP	-	24	X
 26	은	은	NNG	NNG	-	28	NP_CNJ
-27	,	,	,	,	-	26	X
+27	,	,	SP	SP	-	26	X
 28	보석은	보석은	NNG+JX	NNG+은/JX	-	29	NP_SBJ
 29	물론이고	물론이고	NNG+VCP+EC	NNG+이/VCP+고/EC	-	32	S
 30	상점의	상점의	NNG+JKG	NNG+의/JKG	-	31	NP_MOD
 31	물품을	물품을	NNG+JKO	NNG+을/JKO	-	32	NP_OBJ
-32	쓸어가았다	쓸어가았다	VV+EC+VX+EP+EC	VV+어/EC+VX+았/EP+다/EC	-	33	S
+32	쓸어가았다	쓸어가았다	VV+EC+VX+EP+EC	VV+어/EC+가/VX+았/EP+다/EC	-	33	S
 33	"	"	SS	SS	-	34	S
 34	며	며	EC	며/EC	-	43	VP
 35	"	"	SS	SS	-	41	L
@@ -3362,7 +3362,7 @@
 41	"	"	SS	SS	-	42	S
 42	고	고	JKQ	고/JKQ	-	43	S_CMP
 43	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-44	.	.	.	.	-	43	X
+44	.	.	SF	SF	-	43	X
 
 1	강씨	강씨	NNG	NNG	-	2	NP
 2	부인인	부인인	NNG+VCP+ETM	NNG+이/VCP+ᆫ/ETM	-	8	VNP_MOD
@@ -3382,7 +3382,7 @@
 16	터지는	터지는	VV+ETM	VV+는/ETM	-	17	S_MOD
 17	부상을	부상을	NNG+JKO	NNG+을/JKO	-	18	NP_OBJ
 18	당하았다	당하았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 
 1	강씨뿐	강씨뿐	NNG+JX	NNG+뿐/JX	-	2	NP_CMP
 2	아니라	아니라	VCN+EC	VCN+라/EC	-	6	VP
@@ -3411,7 +3411,7 @@
 25	"	"	SS	SS	-	26	VP_CMP
 26	며	며	EC	며/EC	-	27	VP_CMP
 27	몸서리치었다	몸서리치었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-28	.	.	.	.	-	27	X
+28	.	.	SF	SF	-	27	X
 
 1	또	또	MAG	MAG	-	19	AP
 2	무르깁도로	무르깁도로	NNP	NNP	-	3	NP
@@ -3429,10 +3429,10 @@
 14	물론이고	물론이고	NNG+VCP+EC	NNG+이/VCP+고/EC	-	17	S
 15	승용차	승용차	NNG	NNG	-	16	NP
 16	타이어까지	타이어까지	NNG+JX	NNG+까지/JX	-	17	NP_OBJ
-17	빼어가았지만	빼어가았지만	VV+EC+VX+EP+EC	VV+어/EC+VX+았/EP+지만/EC	-	18	S
+17	빼어가았지만	빼어가았지만	VV+EC+VX+EP+EC	VV+어/EC+가/VX+았/EP+지만/EC	-	18	S
 18	속수무책이었다고	속수무책이었다고	NNG+VCP+EP+EC	NNG+이/VCP+었/EP+다고/EC	-	19	VNP_CMP
 19	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-20	.	.	.	.	-	19	X
+20	.	.	SF	SF	-	19	X
 
 1	교민	교민	NNG	NNG	-	2	NP
 2	중	중	NNB	NNB	-	4	NP
@@ -3455,9 +3455,9 @@
 19	악몽의	악몽의	NNG+JKG	NNG+의/JKG	-	20	NP_MOD
 20	순간을	순간을	NNG+JKO	NNG+을/JKO	-	23	NP_OBJ
 21	되새기고	되새기고	VV+EC	VV+고/EC	-	22	VP
-22	싶어하지	싶어하지	VX+EC+VX+EC	VX+어/EC+VX+지/EC	-	23	VP
-23	않았다	않았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-24	.	.	.	.	-	23	X
+22	싶어하지	싶어하지	VX+EC+VX+EC	싶/VX+어/EC+하/VX+지/EC	-	23	VP
+23	않았다	않았다	VX+EP+EF	않/VX+았/EP+다/EF	-	0	ROOT
+24	.	.	SF	SF	-	23	X
 
 1	교민들은	교민들은	NNG+JX	NNG+은/JX	-	23	NP_SBJ
 2	그런	그런	MM	MM	-	3	DP
@@ -3465,24 +3465,24 @@
 4	"	"	SS	SS	-	21	L
 5	쌀을	쌀을	NNG+JKO	NNG+을/JKO	-	7	NP_OBJ
 6	몰래	몰래	MAG	MAG	-	7	AP
-7	비축하아둔	비축하아둔	NNG+XSV+EC+VX+ETM	NNG+하/XSV+아/EC+VX+ᆫ/ETM	-	8	VP_MOD
+7	비축하아둔	비축하아둔	NNG+XSV+EC+VX+ETM	NNG+하/XSV+아/EC+두/VX+ᆫ/ETM	-	8	VP_MOD
 8	데다	데다	NNB+JX	NNB+다/JX	-	11	NP_AJT
 9	욕조에까지	욕조에까지	NNG+JKB+JX	NNG+에/JKB+까지/JX	-	11	NP_AJT
 10	식수를	식수를	NNG+JKO	NNG+를/JKO	-	11	NP_OBJ
-11	받아두어	받아두어	VV+EC+VX+EC	VV+아/EC+VX+어/EC	-	20	VP
+11	받아두어	받아두어	VV+EC+VX+EC	VV+아/EC+두/VX+어/EC	-	20	VP
 12	반찬은	반찬은	NNG+JX	NNG+은/JX	-	14	NP_SBJ
 13	고추장	고추장	NNG	NNG	-	14	NP
 14	하나뿐이었지만	하나뿐이었지만	NR+JX+VCP+EP+EC	NR+뿐/JX+이/VCP+었/EP+지만/EC	-	20	S
 15	그런대로	그런대로	MAG	MAG	-	17	AP
 16	굶지	굶지	VV+EC	VV+지/EC	-	17	VP
-17	않고	않고	VX+EC	VX+고/EC	-	20	VP
+17	않고	않고	VX+EC	않/VX+고/EC	-	20	VP
 18	견딜	견딜	VV+ETM	VV+ᆯ/ETM	-	19	VP_MOD
 19	수	수	NNB	NNB	-	20	NP_SBJ
 20	있었다	있었다	VV+EP+EC	VV+었/EP+다/EC	-	21	S_CMP
 21	"	"	SS	SS	-	22	S_CMP
 22	고	고	JKQ	고/JKQ	-	23	S_CMP
 23	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-24	.	.	.	.	-	23	X
+24	.	.	SF	SF	-	23	X
 
 1	또	또	MAG	MAG	-	33	AP
 2	모든	모든	MM	MM	-	3	DP
@@ -3492,7 +3492,7 @@
 6	지난	지난	VV+ETM	VV+ᆫ/ETM	-	10	VP_MOD
 7	1월	1월	NNG	NNG	-	10	NP
 8	26	26	SN	SN	-	10	NP_CNJ
-9	,	,	,	,	-	8	X
+9	,	,	SP	SP	-	8	X
 10	27일	27일	NNG	NNG	-	22	NP_AJT
 11	KBS	KBS	SL	SL	-	13	NP
 12	해외	해외	NNG	NNG	-	13	NP
@@ -3510,14 +3510,14 @@
 24	고국에서	고국에서	NNG+JKB	NNG+에서/JKB	-	27	NP_AJT
 25	자신들을	자신들을	NNG+JKO	NNG+을/JKO	-	27	NP_OBJ
 26	기억하고	기억하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	27	VP
-27	있다는	있다는	VX+ETM	VX+다는/ETM	-	28	VP_MOD
+27	있다는	있다는	VX+ETM	있/VX+다는/ETM	-	28	VP_MOD
 28	사실이	사실이	NNG+JKS	NNG+이/JKS	-	32	NP_SBJ
 29	큰	큰	VA+ETM	VA+ᆫ/ETM	-	30	VP_MOD
 30	격려가	격려가	NNG+JKC	NNG+가/JKC	-	32	NP_CMP
 31	되기도	되기도	VV+ETN+JX	VV+기/ETN+도/JX	-	32	VP
-32	하았다고	하았다고	VX+EP+EC	VX+았/EP+다고/EC	-	33	S_CMP
+32	하았다고	하았다고	VX+EP+EC	하/VX+았/EP+다고/EC	-	33	S_CMP
 33	하았다	하았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-34	.	.	.	.	-	33	X
+34	.	.	SF	SF	-	33	X
 
 1	지난	지난	VV+ETM	VV+ᆫ/ETM	-	3	VP_MOD
 2	1월	1월	NNG	NNG	-	3	NP
@@ -3532,12 +3532,12 @@
 11	부족한	부족한	NNG+XSA+ETM	NNG+하/XSA+ᆫ/ETM	-	12	S_MOD
 12	교민들에게	교민들에게	NNG+JKB	NNG+에게/JKB	-	14	NP_AJT
 13	쌀을	쌀을	NNG+JKO	NNG+을/JKO	-	14	NP_OBJ
-14	나누어주며	나누어주며	VV+EC+VX+EC	VV+어/EC+VX+며/EC	-	19	VP
+14	나누어주며	나누어주며	VV+EC+VX+EC	VV+어/EC+주/VX+며/EC	-	19	VP
 15	서로	서로	MAG	MAG	-	16	AP
 16	돕는	돕는	VV+ETM	VV+는/ETM	-	17	VP_MOD
 17	동포애를	동포애를	NNG+JKO	NNG+를/JKO	-	19	NP_OBJ
 18	발휘하고	발휘하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	19	VP
-19	있는	있는	VX+ETM	VX+는/ETM	-	20	VP_MOD
+19	있는	있는	VX+ETM	있/VX+는/ETM	-	20	VP_MOD
 20	교민들은	교민들은	NNG+JX	NNG+은/JX	-	34	NP_SBJ
 21	"	"	SS	SS	-	32	L
 22	하루	하루	NNG	NNG	-	23	NP_AJT
@@ -3548,12 +3548,12 @@
 27	각종	각종	NNG	NNG	-	28	NP
 28	대책을	대책을	NNG+JKO	NNG+을/JKO	-	30	NP_OBJ
 29	마련하아	마련하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	30	VP
-30	줄	줄	VX+ETM	VX+ᆯ/ETM	-	31	S_MOD
+30	줄	줄	VX+ETM	주/VX+ᆯ/ETM	-	31	S_MOD
 31	것	것	NNB	NNB	-	32	NP
 32	"	"	SS	SS	-	33	NP
 33	을	을	JKO	을/JKO	-	34	NP_OBJ
 34	바라았다	바라았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-35	.	.	.	.	-	34	X
+35	.	.	SF	SF	-	34	X
 
 1	서울	서울	NNP	NNP	-	2	NP
 2	가족	가족	NNG	NNG	-	8	NP_SBJ
@@ -3572,7 +3572,7 @@
 6	모두	모두	MAG	MAG	-	7	AP
 7	무사하다는	무사하다는	NNG+XSA+ETM	NNG+하/XSA+다는/ETM	-	8	S_MOD
 8	소식이	소식이	NNG+JKS	NNG+이/JKS	-	9	NP_SBJ
-9	전하아진	전하아진	VV+EC+VX+ETM	VV+아/EC+VX+ᆫ/ETM	-	10	S_MOD
+9	전하아진	전하아진	VV+EC+VX+ETM	VV+아/EC+지/VX+ᆫ/ETM	-	10	S_MOD
 10	4일	4일	NNG	NNG	-	33	NP_AJT
 11	쿠웨이트	쿠웨이트	NNP	NNP	-	12	NP
 12	교민	교민	NNG	NNG	-	16	NP
@@ -3581,7 +3581,7 @@
 15	27	27	SN	SN	-	16	NP
 16	명이	명이	NNB+JKS	NNB+이/JKS	-	18	NP_SBJ
 17	머물고	머물고	VV+EC	VV+고/EC	-	18	VP
-18	있는	있는	VX+ETM	VX+는/ETM	-	24	S_MOD
+18	있는	있는	VX+ETM	있/VX+는/ETM	-	24	S_MOD
 19	서울	서울	NNP	NNP	-	20	NP
 20	양천구	양천구	NNP	NNP	-	22	NP
 21	신월	신월	NNP	NNP	-	22	NP
@@ -3597,14 +3597,14 @@
 31	얼싸안고	얼싸안고	VV+EC	VV+고/EC	-	33	VP
 32	기쁨을	기쁨을	NNG+JKO	NNG+을/JKO	-	33	NP_OBJ
 33	나누었다	나누었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-34	.	.	.	.	-	33	X
+34	.	.	SF	SF	-	33	X
 
 1	남편	남편	NNG	NNG	-	3	NP
 2	유재성	유재성	NNP	NNP	-	3	NP
 3	씨(48·건축업)를	씨(48·건축업)를	NNB+SS+NNG+SS+JKO	NNB+SS+NNG+SS+를/JKO	-	6	NP_OBJ
 4	쿠웨이트에	쿠웨이트에	NNP+JKB	NNP+에/JKB	-	6	NP_AJT
 5	남기어	남기어	VV+EC	VV+어/EC	-	6	VP
-6	두고	두고	VX+EC	VX+고/EC	-	10	VP
+6	두고	두고	VX+EC	두/VX+고/EC	-	10	VP
 7	세	세	MM	MM	-	8	DP
 8	남매와	남매와	NNG+JKB	NNG+와/JKB	-	10	NP_AJT
 9	함께	함께	MAG	MAG	-	10	AP
@@ -3614,7 +3614,7 @@
 13	"	"	SS	SS	-	20	L
 14	남편이	남편이	NNG+JKS	NNG+이/JKS	-	16	NP_SBJ
 15	살아	살아	VV+EC	VV+아/EC	-	16	VP
-16	있다니	있다니	VX+EC	VX+다니/EC	-	19	S
+16	있다니	있다니	VX+EC	있/VX+다니/EC	-	19	S
 17	정말	정말	MAG	MAG	-	19	AP
 18	꿈만	꿈만	NNG+JX	NNG+만/JX	-	19	NP_AJT
 19	같다	같다	VA+EF	VA+다/EF	-	20	VP
@@ -3627,16 +3627,16 @@
 26	돌아가아	돌아가아	VV+EC	VV+아/EC	-	29	VP
 27	남편을	남편을	NNG+JKO	NNG+을/JKO	-	29	NP_OBJ
 28	만나고	만나고	VV+EC	VV+고/EC	-	29	VP
-29	싶다	싶다	VX+EF	VX+다/EF	-	30	VP
+29	싶다	싶다	VX+EF	싶/VX+다/EF	-	30	VP
 30	"	"	SS	SS	-	31	VP
 31	고	고	JKQ	고/JKQ	-	32	VP_CMP
 32	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-33	.	.	.	.	-	32	X
+33	.	.	SF	SF	-	32	X
 
 1	교민회	교민회	NNG	NNG	-	2	NP
 2	사무실을	사무실을	NNG+JKO	NNG+을/JKO	-	4	NP_OBJ
 3	지키고	지키고	VV+EC	VV+고/EC	-	4	VP
-4	있던	있던	VX+ETM	VX+던/ETM	-	7	VP_MOD
+4	있던	있던	VX+ETM	있/VX+던/ETM	-	7	VP_MOD
 5	교민회장	교민회장	NNG	NNG	-	7	NP
 6	장정기	장정기	NNP	NNP	-	7	NP
 7	씨(48)는	씨(48)는	NNB+SS+SN+SS+JX	NNB+SS+SN+SS+는/JX	-	26	NP_SBJ
@@ -3659,7 +3659,7 @@
 24	악수를	악수를	NNG+JKO	NNG+를/JKO	-	25	NP_OBJ
 25	나누기에	나누기에	VV+ETN+JKB	VV+기/ETN+에/JKB	-	26	VP_AJT
 26	바쁘았다	바쁘았다	VA+EP+EF	VA+았/EP+다/EF	-	0	ROOT
-27	.	.	.	.	-	26	X
+27	.	.	SF	SF	-	26	X
 
 1	1991/03/05	1991/03/05	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	0	ROOT
 
@@ -3706,22 +3706,22 @@
 
 1	"	"	SS	SS	-	8	L
 2	아빠	아빠	NNG	NNG	-	6	NP_INT
-3	,	,	,	,	-	2	X
+3	,	,	SP	SP	-	2	X
 4	먼저	먼저	MAG	MAG	-	6	AP
 5	배달	배달	NNG	NNG	-	6	NP_OBJ
 6	나갈게요	나갈게요	VV+EF	VV+ᆯ게요/EF	-	8	VP
-7	.	.	.	.	-	6	X
+7	.	.	SF	SF	-	6	X
 8	"	"	SS	SS	-	0	ROOT
 
 1	"	"	SS	SS	-	10	L
 2	그래	그래	IC	IC	-	8	AP
-3	,	,	,	,	-	2	X
+3	,	,	SP	SP	-	2	X
 4	차	차	NNG	NNG	-	5	NP_OBJ
 5	조심하고	조심하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	8	VP
 6	잘	잘	NNG	NNG	-	8	NP
 7	다니어	다니어	VV+EC	VV+어/EC	-	8	VP
 8	오너라	오너라	VV+EF	VV+너라/EF	-	10	VP
-9	.	.	.	.	-	8	X
+9	.	.	SF	SF	-	8	X
 10	"	"	SS	SS	-	0	ROOT
 
 1	동이	동이	NNG+JKS	NNG+이/JKS	-	2	NP_SBJ
@@ -3731,7 +3731,7 @@
 5	새벽	새벽	NNG	NNG	-	7	NP
 6	5시	5시	NNG	NNG	-	7	NP
 7	30분	30분	NNG	NNG	-	0	ROOT
-8	.	.	.	.	-	7	X
+8	.	.	SF	SF	-	7	X
 
 1	가지런히	가지런히	MAG	MAG	-	2	AP
 2	정돈된	정돈된	NNG+XSV+ETM	NNG+되/XSV+ᆫ/ETM	-	3	VP_MOD
@@ -3746,7 +3746,7 @@
 11	어둠	어둠	NNG	NNG	-	12	NP
 12	속으로	속으로	NNG+JKB	NNG+으로/JKB	-	13	NP_AJT
 13	사라지었다	사라지었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	부산시	부산시	NNP	NNP	-	2	NP
 2	부산진구	부산진구	NNP	NNP	-	4	NP
@@ -3762,7 +3762,7 @@
 12	배달원	배달원	NNG	NNG	-	13	NP
 13	'	'	SS	SS	-	14	NP
 14	-	-	SS	SS	-	0	ROOT
-15	.	.	.	.	-	14	X
+15	.	.	SF	SF	-	14	X
 
 1	교육	교육	NNG	NNG	-	2	NP
 2	철학	철학	NNG	NNG	-	3	NP
@@ -3782,11 +3782,11 @@
 16	)	)	SS	SS	-	17	NP
 17	이	이	JKS	이/JKS	-	18	NP_SBJ
 18	그들이다	그들이다	NP+XSN+VCP+EF	NP+XSN+이/VCP+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 
 1	아버지는	아버지는	NNG+JX	NNG+는/JX	-	2	NP_SBJ
 2	5년째	5년째	NNG	NNG	-	16	S
-3	,	,	,	,	-	2	X
+3	,	,	SP	SP	-	2	X
 4	딸은	딸은	NNG+JX	NNG+은/JX	-	16	NP_SBJ
 5	4년째	4년째	NNG	NNG	-	16	NP_AJT
 6	부산지구	부산지구	NNG	NNG	-	7	NP
@@ -3798,9 +3798,9 @@
 12	아침	아침	NNG	NNG	-	13	NP
 13	뉴스를	뉴스를	NNG+JKO	NNG+를/JKO	-	16	NP_OBJ
 14	전달하아	전달하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	15	VP
-15	오고	오고	VX+EC	VX+고/EC	-	16	VP
-16	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-17	.	.	.	.	-	16	X
+15	오고	오고	VX+EC	오/VX+고/EC	-	16	VP
+16	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+17	.	.	SF	SF	-	16	X
 
 1	"Q="2"	"Q="2"	SS+Q"+SS	SS+Q"+SS	-	0	ROOT
 
@@ -3813,7 +3813,7 @@
 7	공기가	공기가	NNG+JKS	NNG+가/JKS	-	9	NP_SBJ
 8	얼마나	얼마나	MAG	MAG	-	9	AP
 9	좋습니까	좋습니까	VA+EF	VA+습니까/EF	-	0	ROOT
-10	.	.	.	.	-	9	X
+10	.	.	SF	SF	-	9	X
 
 1	그리고	그리고	MAJ	MAJ	-	12	AP
 2	간밤의	간밤의	NNG+JKG	NNG+의/JKG	-	4	NP_MOD
@@ -3827,7 +3827,7 @@
 10	신이	신이	NNG+JKS	NNG+이/JKS	-	12	NP_SBJ
 11	나기도	나기도	VV+ETN+JX	VV+기/ETN+도/JX	-	12	VP
 12	한답니다	한답니다	VV+EF	VV+ᆫ답니다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	80여	80여	NNG	NNG	-	2	NP
 2	부의	부의	NNB+JKG	NNB+의/JKG	-	3	NP_MOD
@@ -3838,8 +3838,8 @@
 7	발걸음은	발걸음은	NNG+JX	NNG+은/JX	-	10	NP_SBJ
 8	조금도	조금도	NNG+JX	NNG+도/JX	-	10	NP_AJT
 9	무겁어보이지	무겁어보이지	VA+EC+VV+EC	VA+어/EC+VV+지/EC	-	10	VP
-10	않았다	않았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-11	.	.	.	.	-	10	X
+10	않았다	않았다	VX+EP+EF	않/VX+았/EP+다/EF	-	0	ROOT
+11	.	.	SF	SF	-	10	X
 
 1	오히려	오히려	MAG	MAG	-	7	AP
 2	배달시간	배달시간	NNG	NNG	-	3	NP_AJT
@@ -3848,7 +3848,7 @@
 5	골목길을	골목길을	NNG+JKO	NNG+을/JKO	-	7	NP_OBJ
 6	누비고	누비고	VV+EC	VV+고/EC	-	7	VP
 7	다니었다	다니었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-8	.	.	.	.	-	7	X
+8	.	.	SF	SF	-	7	X
 
 1	그러나	그러나	MAJ	MAJ	-	19	AP
 2	독자의	독자의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
@@ -3857,19 +3857,19 @@
 5	넣을	넣을	VV+ETM	VV+을/ETM	-	6	VP_MOD
 6	때는	때는	NNG+JX	NNG+는/JX	-	19	NP_AJT
 7	혹시	혹시	MAG	MAG	-	13	AP
-8	찢어지지	찢어지지	VV+EC+VX+EC	VV+어/EC+VX+지/EC	-	9	VP
-9	않을까	않을까	VX+EC	VX+을까/EC	-	13	VP
-10	,	,	,	,	-	9	X
+8	찢어지지	찢어지지	VV+EC+VX+EC	VV+어/EC+지/VX+지/EC	-	9	VP
+9	않을까	않을까	VX+EC	않/VX+을까/EC	-	13	VP
+10	,	,	SP	SP	-	9	X
 11	빗물에	빗물에	NNG+JKB	NNG+에/JKB	-	13	NP_AJT
 12	젖지	젖지	VV+EC	VV+지/EC	-	13	VP
-13	않을까	않을까	VX+EC	VX+을까/EC	-	19	VP_SBJ
-14	,	,	,	,	-	13	X
+13	않을까	않을까	VX+EC	않/VX+을까/EC	-	19	VP_SBJ
+14	,	,	SP	SP	-	13	X
 15	그렇게	그렇게	VA+EC	VA+게/EC	-	19	VP
 16	신경이	신경이	NNG+JKS	NNG+이/JKS	-	19	NP_SBJ
 17	쓰일	쓰일	VV+ETM	VV+ᆯ/ETM	-	18	VP_MOD
 18	수가	수가	NNB+JKS	NNB+가/JKS	-	19	NP_SBJ
 19	없었다	없었다	VA+EP+EF	VA+었/EP+다/EF	-	0	ROOT
-20	.	.	.	.	-	19	X
+20	.	.	SF	SF	-	19	X
 
 1	담당	담당	NNG	NNG	-	2	NP
 2	구역은	구역은	NNG+JX	NNG+은/JX	-	8	NP_SBJ
@@ -3877,7 +3877,7 @@
 4	소득	소득	NNG	NNG	-	5	NP
 5	수준이	수준이	NNG+JKS	NNG+이/JKS	-	7	NP_SBJ
 6	고르지	고르지	VA+EC	VA+지/EC	-	7	VP
-7	못한	못한	VX+ETM	VX+ᆫ/ETM	-	8	S_MOD
+7	못한	못한	VX+ETM	못하/VX+ᆫ/ETM	-	8	S_MOD
 8	곳이었고	곳이었고	NNG+VCP+EP+EC	NNG+이/VCP+었/EP+고/EC	-	9	S
 9	그래서	그래서	MAJ	MAJ	-	18	S
 10	독자	독자	NNG	NNG	-	11	NP
@@ -3888,7 +3888,7 @@
 15	떨어진	떨어진	VV+ETM	VV+ᆫ/ETM	-	16	S_MOD
 16	곳도	곳도	NNG+JX	NNG+도/JX	-	18	NP_SBJ
 17	적지	적지	VA+EC	VA+지/EC	-	18	VP
-18	않았지만	않았지만	VX+EP+EC	VX+았/EP+지만/EC	-	25	S
+18	않았지만	않았지만	VX+EP+EC	않/VX+았/EP+지만/EC	-	25	S
 19	바쁘다고	바쁘다고	VA+EC	VA+다고/EC	-	23	VP
 20	신문을	신문을	NNG+JKO	NNG+을/JKO	-	23	NP_OBJ
 21	함부로	함부로	MAG	MAG	-	23	AP
@@ -3896,7 +3896,7 @@
 23	던지는	던지는	VV+ETM	VV+는/ETM	-	24	VP_MOD
 24	법이	법이	NNB+JKS	NNB+이/JKS	-	25	NP_SBJ
 25	없었다	없었다	VA+EP+EF	VA+었/EP+다/EF	-	0	ROOT
-26	.	.	.	.	-	25	X
+26	.	.	SF	SF	-	25	X
 
 1	정성스럽게	정성스럽게	NNG+XSA+EC	NNG+스럽/XSA+게/EC	-	7	VP
 2	대문	대문	NNG	NNG	-	3	NP
@@ -3905,7 +3905,7 @@
 5	꼬박꼬박	꼬박꼬박	MAG	MAG	-	7	AP
 6	집어	집어	VV+EC	VV+어/EC	-	7	VP
 7	넣었다	넣었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-8	.	.	.	.	-	7	X
+8	.	.	SF	SF	-	7	X
 
 1	상가나	상가나	NNG+JC	NNG+나/JC	-	2	NP_CNJ
 2	빌딩에	빌딩에	NNG+JKB	NNG+에/JKB	-	4	NP_AJT
@@ -3921,18 +3921,18 @@
 12	신문을	신문을	NNG+JKO	NNG+을/JKO	-	14	NP_OBJ
 13	밀어	밀어	VV+EC	VV+어/EC	-	14	VP
 14	넣었다	넣었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-15	.	.	.	.	-	14	X
+15	.	.	SF	SF	-	14	X
 
 1	"	"	SS	SS	-	18	L
 2	새벽에	새벽에	NNG+JKB	NNG+에/JKB	-	4	NP_AJT
 3	신문을	신문을	NNG+JKO	NNG+을/JKO	-	4	NP_OBJ
 4	넣자마자	넣자마자	VV+EC	VV+자마자/EC	-	10	VP
-5	,	,	,	,	-	4	X
+5	,	,	SP	SP	-	4	X
 6	안에서	안에서	NNG+JKB	NNG+에서/JKB	-	8	NP_AJT
 7	기다리었다는	기다리었다는	VV+EP+EC+ETM	VV+었/EP+다/EC+는/ETM	-	8	VP_MOD
 8	듯이	듯이	NNB	NNB	-	10	NP_AJT
 9	신문을	신문을	NNG+JKO	NNG+을/JKO	-	10	NP_OBJ
-10	뽑아갈	뽑아갈	VV+EC+VX+ETM	VV+아/EC+VX+ᆯ/ETM	-	11	VP_MOD
+10	뽑아갈	뽑아갈	VV+EC+VX+ETM	VV+아/EC+가/VX+ᆯ/ETM	-	11	VP_MOD
 11	때의	때의	NNG+JKG	NNG+의/JKG	-	12	NP_MOD
 12	기쁨은	기쁨은	NNG+JX	NNG+은/JX	-	17	NP_OBJ
 13	이루	이루	MAG	MAG	-	17	AP
@@ -3952,12 +3952,12 @@
 27	가슴	가슴	NNG	NNG	-	28	NP
 28	뿌듯한	뿌듯한	XR+XSA+ETM	XR+하/XSA+ᆫ/ETM	-	29	VP_MOD
 29	교감이	교감이	NNG+JKS	NNG+이/JKS	-	31	NP_SBJ
-30	이루어지고	이루어지고	VV+EC+VX+EC	VV+어/EC+VX+고/EC	-	31	VP
-31	있다	있다	VX+EF	VX+다/EF	-	32	S
+30	이루어지고	이루어지고	VV+EC+VX+EC	VV+어/EC+지/VX+고/EC	-	31	VP
+31	있다	있다	VX+EF	있/VX+다/EF	-	32	S
 32	"	"	SS	SS	-	33	S
 33	고	고	JKQ	고/JKQ	-	34	S_CMP
 34	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-35	.	.	.	.	-	34	X
+35	.	.	SF	SF	-	34	X
 
 1	최	최	NNP	NNP	-	2	NP
 2	교수가	교수가	NNG+JKS	NNG+가/JKS	-	10	NP_SBJ
@@ -3984,7 +3984,7 @@
 23	3년	3년	NNG	NNG	-	24	NP
 24	)	)	SS	SS	-	25	NP
 25	때문이었다	때문이었다	NNB+VCP+EP+EF	NNB+이/VCP+었/EP+다/EF	-	0	ROOT
-26	.	.	.	.	-	25	X
+26	.	.	SF	SF	-	25	X
 
 1	대학입시를	대학입시를	NNG+JKO	NNG+를/JKO	-	2	NP_OBJ
 2	앞둔	앞둔	VV+ETM	VV+ᆫ/ETM	-	4	VP_MOD
@@ -4007,7 +4007,7 @@
 19	나서게	나서게	VV+EC	VV+게/EC	-	20	VP
 20	된	된	VV+ETM	VV+ᆫ/ETM	-	21	S_MOD
 21	계기이었다	계기이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+22	.	.	SF	SF	-	21	X
 
 1	"Q="2"	"Q="2"	SS+Q"+SS	SS+Q"+SS	-	0	ROOT
 
@@ -4017,24 +4017,24 @@
 4	일어나는	일어나는	VV+ETM	VV+는/ETM	-	5	VP_MOD
 5	일이	일이	NNG+JKS	NNG+이/JKS	-	7	NP_SBJ
 6	쉽지	쉽지	VA+EC	VA+지/EC	-	7	VP
-7	않았습니다	않았습니다	VX+EP+EF	VX+았/EP+습니다/EF	-	0	ROOT
-8	.	.	.	.	-	7	X
+7	않았습니다	않았습니다	VX+EP+EF	않/VX+았/EP+습니다/EF	-	0	ROOT
+8	.	.	SF	SF	-	7	X
 
 1	처음엔	처음엔	NNG+JKB+JX	NNG+에/JKB+ᆫ/JX	-	6	NP_AJT
 2	입술이	입술이	NNG+JKS	NNG+이/JKS	-	3	NP_SBJ
 3	부르트고	부르트고	VV+EC	VV+고/EC	-	6	S
 4	몸살을	몸살을	NNG+JKO	NNG+을/JKO	-	6	NP_OBJ
 5	앓기도	앓기도	VV+ETN+JX	VV+기/ETN+도/JX	-	6	VP
-6	하았으나	하았으나	VX+EP+EC	VX+았/EP+으나/EC	-	14	VP
-7	,	,	,	,	-	6	X
+6	하았으나	하았으나	VX+EP+EC	하/VX+았/EP+으나/EC	-	14	VP
+7	,	,	SP	SP	-	6	X
 8	그	그	MM	MM	-	9	DP
 9	고비를	고비를	NNG+JKO	NNG+를/JKO	-	11	NP_OBJ
 10	넘기고	넘기고	VV+EC	VV+고/EC	-	11	VP
-11	나니까	나니까	VX+EC	VX+니까/EC	-	14	VP
+11	나니까	나니까	VX+EC	나/VX+니까/EC	-	14	VP
 12	오히려	오히려	MAG	MAG	-	14	AP
 13	건강이	건강이	NNG+JKS	NNG+이/JKS	-	14	NP_SBJ
-14	좋아지고	좋아지고	VA+EC+VX+EC	VA+아/EC+VX+고/EC	-	25	S
-15	,	,	,	,	-	14	X
+14	좋아지고	좋아지고	VA+EC+VX+EC	VA+아/EC+지/VX+고/EC	-	25	S
+15	,	,	SP	SP	-	14	X
 16	집의	집의	NNG+JKG	NNG+의/JKG	-	17	NP_MOD
 17	아이들에게	아이들에게	NNG+JKB	NNG+에게/JKB	-	21	NP_AJT
 18	`근면'을	`근면'을	SS+NNG+SS+JKO	SS+NNG+SS+을/JKO	-	21	NP_OBJ
@@ -4045,7 +4045,7 @@
 23	느낄	느낄	VV+ETM	VV+ᆯ/ETM	-	24	VP_MOD
 24	수	수	NNB	NNB	-	25	NP_SBJ
 25	있었습니다	있었습니다	VV+EP+EF	VV+었/EP+습니다/EF	-	0	ROOT
-26	.	.	.	.	-	25	X
+26	.	.	SF	SF	-	25	X
 
 1	최	최	NNP	NNP	-	2	NP
 2	교수는	교수는	NNG+JX	NNG+는/JX	-	17	NP_SBJ
@@ -4063,21 +4063,21 @@
 14	모범	모범	NNG	NNG	-	15	NP
 15	배달원으로	배달원으로	NNG+JKB	NNG+으로/JKB	-	17	NP_AJT
 16	소문나아	소문나아	VV+EC	VV+아/EC	-	17	VP
-17	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-18	.	.	.	.	-	17	X
+17	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+18	.	.	SF	SF	-	17	X
 
 1	주로	주로	MAG	MAG	-	3	AP
 2	서울에서	서울에서	NNP+JKB	NNP+에서/JKB	-	3	NP_AJT
 3	열리는	열리는	VV+ETM	VV+는/ETM	-	10	VP_MOD
 4	교육철학회의	교육철학회의	NNG+JKG	NNG+의/JKG	-	7	NP_MOD
 5	정기회의	정기회의	NNG	NNG	-	7	NP_CNJ
-6	,	,	,	,	-	5	X
+6	,	,	SP	SP	-	5	X
 7	세미나	세미나	NNG	NNG	-	8	NP
 8	등	등	NNB	NNB	-	10	NP
 9	학술	학술	NNG	NNG	-	10	NP
 10	활동이	활동이	NNG+JKS	NNG+이/JKS	-	11	NP_SBJ
 11	빈번하고	빈번하고	XR+XSA+EC	XR+하/XSA+고/EC	-	24	S
-12	,	,	,	,	-	11	X
+12	,	,	SP	SP	-	11	X
 13	방학	방학	NNG	NNG	-	14	NP
 14	때이면	때이면	NNG+VCP+EC	NNG+이/VCP+면/EC	-	24	VNP_AJT
 15	고향인	고향인	NNG+VCP+ETM	NNG+이/VCP+ᆫ/ETM	-	17	VNP_MOD
@@ -4085,7 +4085,7 @@
 17	사천에	사천에	NNP+JKB	NNP+에/JKB	-	20	NP_AJT
 18	자신이	자신이	NNG+JKS	NNG+이/JKS	-	20	NP_SBJ
 19	심어	심어	VV+EC	VV+어/EC	-	20	VP
-20	놓은	놓은	VX+ETM	VX+은/ETM	-	22	S_MOD
+20	놓은	놓은	VX+ETM	놓/VX+은/ETM	-	22	S_MOD
 21	감나무	감나무	NNG	NNG	-	22	NP
 22	1백주를	1백주를	NNG+JKO	NNG+를/JKO	-	24	NP_OBJ
 23	직접	직접	MAG	MAG	-	24	AP
@@ -4101,9 +4101,9 @@
 33	밤차를	밤차를	NNG+JKO	NNG+를/JKO	-	34	NP_OBJ
 34	타고	타고	VV+EC	VV+고/EC	-	36	VP
 35	돌아	돌아	VV+EC	VV+아/EC	-	36	VP
-36	온다고	온다고	VX+EC	VX+ᆫ다고/EC	-	37	VP_CMP
+36	온다고	온다고	VX+EC	오/VX+ᆫ다고/EC	-	37	VP_CMP
 37	하았다	하았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-38	.	.	.	.	-	37	X
+38	.	.	SF	SF	-	37	X
 
 1	어쩌다	어쩌다	MAG	MAG	-	8	AP
 2	장기	장기	NNG	NNG	-	4	NP
@@ -4137,12 +4137,12 @@
 30	자녀들에게	자녀들에게	NNG+JKB	NNG+에게/JKB	-	37	NP_AJT
 31	약도를	약도를	NNG+JKO	NNG+를/JKO	-	33	NP_OBJ
 32	그리어	그리어	VV+EC	VV+어/EC	-	33	VP
-33	주고	주고	VX+EC	VX+고/EC	-	37	VP
+33	주고	주고	VX+EC	주/VX+고/EC	-	37	VP
 34	반드시	반드시	MAG	MAG	-	37	AP
 35	대신	대신	NNG	NNG	-	37	NP_AJT
 36	배달하게	배달하게	NNG+XSV+EC	NNG+하/XSV+게/EC	-	37	VP
-37	하았다	하았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-38	.	.	.	.	-	37	X
+37	하았다	하았다	VX+EP+EF	하/VX+았/EP+다/EF	-	0	ROOT
+38	.	.	SF	SF	-	37	X
 
 1	작년말	작년말	NNG	NNG	-	3	NP_AJT
 2	가야지국이	가야지국이	NNG+JKS	NNG+이/JKS	-	3	NP_SBJ
@@ -4152,7 +4152,7 @@
 6	교수와	교수와	NNG+JKB	NNG+와/JKB	-	9	NP_AJT
 7	같이	같이	MAG	MAG	-	9	AP
 8	일하아	일하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	9	VP
-9	온	온	VX+ETM	VX+ᆫ/ETM	-	13	VP_MOD
+9	온	온	VX+ETM	오/VX+ᆫ/ETM	-	13	VP_MOD
 10	조선일보	조선일보	NNP	NNP	-	11	NP
 11	개금지국장	개금지국장	NNG	NNG	-	13	NP
 12	정삼용	정삼용	NNP	NNP	-	13	NP
@@ -4184,7 +4184,7 @@
 38	"	"	SS	SS	-	39	S
 39	고	고	JKQ	고/JKQ	-	40	S_CMP
 40	하았다	하았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-41	.	.	.	.	-	40	X
+41	.	.	SF	SF	-	40	X
 
 1	그러나	그러나	MAJ	MAJ	-	12	AP
 2	배달	배달	NNG	NNG	-	3	NP
@@ -4198,7 +4198,7 @@
 10	한	한	VV+ETM	VV+ᆫ/ETM	-	11	VP_MOD
 11	적도	적도	NNB+JX	NNB+도/JX	-	12	NP_SBJ
 12	많았다	많았다	VA+EP+EF	VA+았/EP+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	"	"	SS	SS	-	8	L
 2	나이가	나이가	NNG+JKS	NNG+가/JKS	-	3	NP_SBJ
@@ -4210,23 +4210,23 @@
 8	"	"	SS	SS	-	9	S_CMP
 9	하며	하며	VV+EC	VV+며/EC	-	11	VP
 10	의아스럽어	의아스럽어	NNG+XSA+EC	NNG+스럽/XSA+어/EC	-	11	VP
-11	하는	하는	VX+ETM	VX+는/ETM	-	12	VP_MOD
+11	하는	하는	VX+ETM	하/VX+는/ETM	-	12	VP_MOD
 12	주위의	주위의	NNG+JKG	NNG+의/JKG	-	13	NP_MOD
 13	눈총도	눈총도	NNG+JX	NNG+도/JX	-	15	NP_OBJ
 14	자주	자주	MAG	MAG	-	15	AP
 15	받았다	받았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-16	.	.	.	.	-	15	X
+16	.	.	SF	SF	-	15	X
 
 1	그는	그는	NP+JX	NP+는/JX	-	10	NP_SBJ
 2	그	그	MM	MM	-	3	DP
 3	때마다	때마다	NNG+JX	NNG+마다/JX	-	10	NP_AJT
 4	이들의	이들의	NP+XSN+JKG	NP+XSN+의/JKG	-	5	NP_MOD
 5	시각을	시각을	NNG+JKO	NNG+을/JKO	-	6	NP_OBJ
-6	고치어주기	고치어주기	VV+EC+VX+ETN	VV+어/EC+VX+기/ETN	-	7	VP_OBJ
+6	고치어주기	고치어주기	VV+EC+VX+ETN	VV+어/EC+주/VX+기/ETN	-	7	VP_OBJ
 7	위하아	위하아	VV+EC	VV+아/EC	-	10	VP
 8	노력을	노력을	NNG+JKO	NNG+을/JKO	-	10	NP_OBJ
 9	하아	하아	VV+EC	VV+아/EC	-	10	VP
-10	보았지만	보았지만	VX+EP+EC	VX+았/EP+지만/EC	-	18	S
+10	보았지만	보았지만	VX+EP+EC	보/VX+았/EP+지만/EC	-	18	S
 11	사회	사회	NNG	NNG	-	12	NP
 12	통념의	통념의	NNG+JKG	NNG+의/JKG	-	13	NP_MOD
 13	벽은	벽은	NNG+JX	NNG+은/JX	-	15	NP_SBJ
@@ -4235,7 +4235,7 @@
 16	최	최	NNP	NNP	-	17	NP
 17	교수는	교수는	NNG+JX	NNG+는/JX	-	18	NP_SBJ
 18	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 
 1	최	최	NNP	NNP	-	2	NP
 2	교수	교수	NNG	NNG	-	3	NP
@@ -4250,7 +4250,7 @@
 11	8만∼9만원보다	8만∼9만원보다	NNG+JKB	NNG+보다/JKB	-	13	NP_AJT
 12	액수가	액수가	NNG+JKS	NNG+가/JKS	-	13	NP_SBJ
 13	적다	적다	VA+EF	VA+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	더구나	더구나	MAJ	MAJ	-	8	AP
 2	1백만원이	1백만원이	NNG+JKS	NNG+이/JKS	-	3	NP_SBJ
@@ -4260,7 +4260,7 @@
 6	비하면	비하면	NNG+XSV+EC	NNG+하/XSV+면/EC	-	7	VP
 7	빈약한	빈약한	NNG+XSA+ETM	NNG+하/XSA+ᆫ/ETM	-	8	VP_MOD
 8	소득이었지만	소득이었지만	NNG+VCP+EP+EC	NNG+이/VCP+었/EP+지만/EC	-	19	VNP
-9	,	,	,	,	-	8	X
+9	,	,	SP	SP	-	8	X
 10	최	최	NNP	NNP	-	11	NP
 11	교수는	교수는	NNG+JX	NNG+는/JX	-	19	NP_SBJ
 12	딸과	딸과	NNG+JKB	NNG+과/JKB	-	13	NP_AJT
@@ -4270,8 +4270,8 @@
 16	무엇보다	무엇보다	NP+JKB	NP+보다/JKB	-	19	NP_AJT
 17	소중하게	소중하게	XR+XSA+EC	XR+하/XSA+게/EC	-	18	VP
 18	여기고	여기고	VV+EC	VV+고/EC	-	19	VP
-19	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-20	.	.	.	.	-	19	X
+19	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+20	.	.	SF	SF	-	19	X
 
 1	최	최	NNP	NNP	-	2	NP
 2	교수는	교수는	NNG+JX	NNG+는/JX	-	16	NP_SBJ
@@ -4289,16 +4289,16 @@
 14	박사	박사	NNG	NNG	-	15	NP
 15	학위를	학위를	NNG+JKO	NNG+를/JKO	-	16	NP_OBJ
 16	받았다	받았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-17	.	.	.	.	-	16	X
+17	.	.	SF	SF	-	16	X
 
 1	83년	83년	NNG	NNG	-	3	NP_AJT
 2	부산교대에	부산교대에	NNP+JKB	NNP+에/JKB	-	3	NP_AJT
 3	부임	부임	NNG	NNG	-	8	NP
-4	,	,	,	,	-	3	X
+4	,	,	SP	SP	-	3	X
 5	교육철학과	교육철학과	NNG+JC	NNG+과/JC	-	6	NP_CNJ
 6	교육사를	교육사를	NNG+JKO	NNG+를/JKO	-	8	NP_OBJ
 7	담당하고	담당하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	8	VP
-8	있는	있는	VX+ETM	VX+는/ETM	-	10	VP_MOD
+8	있는	있는	VX+ETM	있/VX+는/ETM	-	10	VP_MOD
 9	최	최	NNP	NNP	-	10	NP
 10	교수는	교수는	NNG+JX	NNG+는/JX	-	21	NP_SBJ
 11	`	`	SS	SS	-	14	L
@@ -4316,7 +4316,7 @@
 23	주변	주변	NNG	NNG	-	24	NP
 24	사람들의	사람들의	NNG+JKG	NNG+의/JKG	-	25	NP_MOD
 25	얘기이다	얘기이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-26	.	.	.	.	-	25	X
+26	.	.	SF	SF	-	25	X
 
 1	그는	그는	NP+JX	NP+는/JX	-	22	NP_SBJ
 2	요즘	요즘	NNG	NNG	-	22	NP_AJT
@@ -4339,8 +4339,8 @@
 19	바쁜	바쁜	VA+ETM	VA+ᆫ/ETM	-	20	VP_MOD
 20	시간을	시간을	NNG+JKO	NNG+을/JKO	-	22	NP_OBJ
 21	보내고	보내고	VV+EC	VV+고/EC	-	22	VP
-22	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-23	.	.	.	.	-	22	X
+22	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+23	.	.	SF	SF	-	22	X
 
 1	1991/03/25	1991/03/25	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	0	ROOT
 
@@ -4359,7 +4359,7 @@
 4	복장포국교	복장포국교	NNP	NNP	-	12	NP
 5	서울	서울	NNP	NNP	-	6	NP
 6	구룡장학회	구룡장학회	NNP	NNP	-	12	NP_SBJ
-7	,	,	,	,	-	6	X
+7	,	,	SP	SP	-	6	X
 8	가난	가난	NNG	NNG	-	9	NP
 9	사연	사연	NNG	NNG	-	10	NP_OBJ
 10	듣고	듣고	VV+EC	VV+고/EC	-	12	VP
@@ -4380,21 +4380,21 @@
 2	1백	1백	NR	NR	-	3	NP
 3	2	2	SN	SN	-	4	NP
 4	명	명	NNB	NNB	-	12	S
-5	,	,	,	,	-	4	X
+5	,	,	SP	SP	-	4	X
 6	경춘	경춘	NNP	NNP	-	7	NP
 7	국도에서	국도에서	NNG+JKB	NNG+에서/JKB	-	12	NP_AJT
 8	산길따르아	산길따르아	NNG+VV+EC	NNG+VV+아/EC	-	12	VP
 9	꼬박	꼬박	MAG	MAG	-	12	AP
 10	30리를	30리를	NNG+JKO	NNG+를/JKO	-	12	NP_OBJ
 11	들어가아야	들어가아야	VV+EC	VV+아야/EC	-	12	VP
-12	하는	하는	VX+ETM	VX+는/ETM	-	14	VP_MOD
+12	하는	하는	VX+ETM	하/VX+는/ETM	-	14	VP_MOD
 13	조그맣ᆫ	조그맣ᆫ	VA+ETM	VA+ᆫ/ETM	-	14	VP_MOD
 14	산골학교에	산골학교에	NNG+JKB	NNG+에/JKB	-	18	NP_AJT
 15	16마리의	16마리의	NNG+JKG	NNG+의/JKG	-	16	NP_MOD
 16	꽃사슴이	꽃사슴이	NNG+JKS	NNG+이/JKS	-	18	NP_SBJ
 17	자라고	자라고	VV+EC	VV+고/EC	-	18	VP
-18	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+18	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+19	.	.	SF	SF	-	18	X
 
 1	경기도	경기도	NNP	NNP	-	2	NP
 2	가평읍	가평읍	NNP	NNP	-	3	NP
@@ -4406,7 +4406,7 @@
 8	20평	20평	NNG	NNG	-	9	NP
 9	사슴우리에서	사슴우리에서	NNG+JKB	NNG+에서/JKB	-	11	NP_AJT
 10	크고	크고	VA+EC	VA+고/EC	-	11	VP
-11	있는	있는	VX+ETM	VX+는/ETM	-	13	VP_MOD
+11	있는	있는	VX+ETM	있/VX+는/ETM	-	13	VP_MOD
 12	이	이	MM	MM	-	13	DP
 13	사슴들은	사슴들은	NNG+JX	NNG+은/JX	-	34	NP_SBJ
 14	이	이	MM	MM	-	15	DP
@@ -4415,35 +4415,35 @@
 17	가난때문에	가난때문에	NNG+JKB	NNG+에/JKB	-	20	NP_AJT
 18	상급학교에	상급학교에	NNG+JKB	NNG+에/JKB	-	20	NP_AJT
 19	진학하지	진학하지	NNG+XSV+EC	NNG+하/XSV+지/EC	-	20	VP
-20	못하는	못하는	VX+ETM	VX+는/ETM	-	22	S_MOD
+20	못하는	못하는	VX+ETM	못하/VX+는/ETM	-	22	S_MOD
 21	딱한	딱한	VA+ETM	VA+ᆫ/ETM	-	22	VP_MOD
 22	사정을	사정을	NNG+JKO	NNG+을/JKO	-	24	NP_OBJ
 23	알게	알게	VV+EC	VV+게/EC	-	24	VP
 24	된	된	VV+ETM	VV+ᆫ/ETM	-	26	VP_MOD
 25	서울의	서울의	NNP+JKG	NNP+의/JKG	-	26	NP_MOD
 26	독지가들이	독지가들이	NNG+JKS	NNG+이/JKS	-	27	NP_SBJ
-27	보내어오아	보내어오아	VV+EC+VX+EC	VV+어/EC+VX+아/EC	-	34	S
+27	보내어오아	보내어오아	VV+EC+VX+EC	VV+어/EC+오/VX+아/EC	-	34	S
 28	`	`	SS	SS	-	31	L
 29	장학	장학	NNG	NNG	-	30	NP
 30	사슴	사슴	NNG	NNG	-	31	NP
 31	'	'	SS	SS	-	32	NP
 32	이라	이라	VCP+EC	이/VCP+라/EC	-	34	VNP_CMP
 33	불리고	불리고	VV+EC	VV+고/EC	-	34	VP
-34	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-35	.	.	.	.	-	34	X
+34	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+35	.	.	SF	SF	-	34	X
 
 1	그동안	그동안	NNG	NNG	-	12	NP_AJT
 2	더	더	MAG	MAG	-	4	AP
 3	배우고	배우고	VV+EC	VV+고/EC	-	4	VP
-4	싶어도	싶어도	VX+EC	VX+어도/EC	-	9	VP
+4	싶어도	싶어도	VX+EC	싶/VX+어도/EC	-	9	VP
 5	돈이	돈이	NNG+JKS	NNG+이/JKS	-	6	NP_SBJ
 6	없어	없어	VA+EC	VA+어/EC	-	9	S
 7	학업을	학업을	NNG+JKO	NNG+을/JKO	-	9	NP_OBJ
 8	중단하아야	중단하아야	NNG+XSV+EC	NNG+하/XSV+아야/EC	-	9	VP
-9	하았던	하았던	VX+EP+ETM	VX+았/EP+던/ETM	-	10	VP_MOD
+9	하았던	하았던	VX+EP+ETM	하/VX+았/EP+던/ETM	-	10	VP_MOD
 10	선배들만	선배들만	NNG+JX	NNG+만/JX	-	12	NP_OBJ
 11	보아	보아	VV+EC	VV+아/EC	-	12	VP
-12	온	온	VX+ETM	VX+ᆫ/ETM	-	15	VP_MOD
+12	온	온	VX+ETM	오/VX+ᆫ/ETM	-	15	VP_MOD
 13	이	이	MM	MM	-	14	DP
 14	학교	학교	NNG	NNG	-	15	NP
 15	학생들은	학생들은	NNG+JX	NNG+은/JX	-	32	NP_SBJ
@@ -4455,7 +4455,7 @@
 21	-	-	SS	SS	-	22	NP
 22	대학교는	대학교는	NNG+JX	NNG+는/JX	-	23	NP_SBJ
 23	물론	물론	NNG	NNG	-	29	S
-24	,	,	,	,	-	23	X
+24	,	,	SP	SP	-	23	X
 25	외국	외국	NNG	NNG	-	26	NP
 26	유학까지	유학까지	NNG+JX	NNG+까지/JX	-	29	NP_OBJ
 27	갈	갈	VV+ETM	VV+ᆯ/ETM	-	28	VP_MOD
@@ -4463,13 +4463,13 @@
 29	있다는	있다는	VV+ETM	VV+다는/ETM	-	30	S_MOD
 30	꿈에	꿈에	NNG+JKB	NNG+에/JKB	-	32	NP_AJT
 31	부풀어	부풀어	VV+EC	VV+어/EC	-	32	VP
-32	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-33	.	.	.	.	-	32	X
+32	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+33	.	.	SF	SF	-	32	X
 
 1	학생들은	학생들은	NNG+JX	NNG+은/JX	-	15	NP_SBJ
 2	특활시간은	특활시간은	NNG+JX	NNG+은/JX	-	3	NP_SBJ
 3	물론	물론	NNG	NNG	-	15	S
-4	,	,	,	,	-	3	X
+4	,	,	SP	SP	-	3	X
 5	방과	방과	NNG	NNG	-	6	NP
 6	후에도	후에도	NNG+JKB+JX	NNG+에/JKB+도/JX	-	15	NP_AJT
 7	당번을	당번을	NNG+JKO	NNG+을/JKO	-	8	NP_OBJ
@@ -4480,8 +4480,8 @@
 12	각별한	각별한	NNG+XSA+ETM	NNG+하/XSA+ᆫ/ETM	-	13	VP_MOD
 13	정성을	정성을	NNG+JKO	NNG+을/JKO	-	15	NP_OBJ
 14	기울이고	기울이고	VV+EC	VV+고/EC	-	15	VP
-15	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-16	.	.	.	.	-	15	X
+15	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+16	.	.	SF	SF	-	15	X
 
 1	5	5	SN	SN	-	2	NP
 2	-	-	SS	SS	-	3	NP
@@ -4491,11 +4491,11 @@
 6	만들어	만들어	VV+EC	VV+어/EC	-	7	VP
 7	기록하며	기록하며	NNG+XSV+EC	NNG+하/XSV+며/EC	-	11	VP
 8	사슴이	사슴이	NNG+JKS	NNG+이/JKS	-	9	NP_SBJ
-9	좋아하는	좋아하는	VA+EC+VX+ETM	VA+아/EC+VX+는/ETM	-	10	S_MOD
+9	좋아하는	좋아하는	VA+EC+VX+ETM	VA+아/EC+하/VX+는/ETM	-	10	S_MOD
 10	풀을	풀을	NNG+JKO	NNG+을/JKO	-	11	NP_OBJ
-11	알아내기에	알아내기에	VV+EC+VX+ETN+JKB	VV+아/EC+VX+기/ETN+에/JKB	-	12	VP_AJT
+11	알아내기에	알아내기에	VV+EC+VX+ETN+JKB	VV+아/EC+내/VX+기/ETN+에/JKB	-	12	VP_AJT
 12	바쁘다	바쁘다	VA+EF	VA+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	마을	마을	NNG	NNG	-	2	NP
 2	주민들도	주민들도	NNG+JX	NNG+도/JX	-	11	NP_SBJ
@@ -4506,9 +4506,9 @@
 7	들고	들고	VV+EC	VV+고/EC	-	8	VP
 8	오아	오아	VV+EC	VV+아/EC	-	10	VP
 9	사슴우리에	사슴우리에	NNG+JKB	NNG+에/JKB	-	10	NP_AJT
-10	던지어놓고	던지어놓고	VV+EC+VX+EC	VV+어/EC+VX+고/EC	-	11	VP
+10	던지어놓고	던지어놓고	VV+EC+VX+EC	VV+어/EC+놓/VX+고/EC	-	11	VP
 11	간다	간다	VV+EF	VV+ᆫ다/EF	-	0	ROOT
-12	.	.	.	.	-	11	X
+12	.	.	SF	SF	-	11	X
 
 1	이	이	MM	MM	-	4	DP
 2	작은	작은	VA+ETM	VA+은/ETM	-	4	VP_MOD
@@ -4524,7 +4524,7 @@
 12	학교를	학교를	NNG+JKO	NNG+를/JKO	-	13	NP_OBJ
 13	방문하면서	방문하면서	NNG+XSV+EC	NNG+하/XSV+면서/EC	-	14	S
 14	시작되었다	시작되었다	NNG+XSV+EP+EF	NNG+되/XSV+었/EP+다/EF	-	0	ROOT
-15	.	.	.	.	-	14	X
+15	.	.	SF	SF	-	14	X
 
 1	가평에서	가평에서	NNP+JKB	NNP+에서/JKB	-	4	NP_AJT
 2	군대	군대	NNG	NNG	-	3	NP
@@ -4538,11 +4538,11 @@
 10	승안분교	승안분교	NNG	NNG	-	11	NP
 11	어린이들에게	어린이들에게	NNG+JKB	NNG+에게/JKB	-	17	NP_AJT
 12	학용품을	학용품을	NNG+JKO	NNG+을/JKO	-	13	NP_OBJ
-13	사아주는	사아주는	VV+EC+VX+ETM	VV+아/EC+VX+는/ETM	-	14	VP_MOD
+13	사아주는	사아주는	VV+EC+VX+ETM	VV+아/EC+주/VX+는/ETM	-	14	VP_MOD
 14	등	등	NNB	NNB	-	16	NP
 15	봉사	봉사	NNG	NNG	-	16	NP
 16	활동을	활동을	NNG+JKO	NNG+을/JKO	-	17	NP_OBJ
-17	펴어오던	펴어오던	VV+EC+VX+ETM	VV+어/EC+VX+던/ETM	-	19	VP_MOD
+17	펴어오던	펴어오던	VV+EC+VX+ETM	VV+어/EC+오/VX+던/ETM	-	19	VP_MOD
 18	양희성	양희성	NNP	NNP	-	19	NP
 19	씨(46)가	씨(46)가	NNB+SS+SN+SS+JKS	NNB+SS+SN+SS+가/JKS	-	55	NP_SBJ
 20	승안분교가	승안분교가	NNG+JKS	NNG+가/JKS	-	22	NP_SBJ
@@ -4555,7 +4555,7 @@
 27	장기문	장기문	NNP	NNP	-	28	NP
 28	교장(63)을	교장(63)을	NNG+SS+SN+SS+JKO	NNG+SS+SN+SS+을/JKO	-	29	NP_OBJ
 29	만나러	만나러	VV+EC	VV+러/EC	-	30	VP
-30	오았다가	오았다가	VX+EP+EC	VX+았/EP+다가/EC	-	41	VP
+30	오았다가	오았다가	VX+EP+EC	오/VX+았/EP+다가/EC	-	41	VP
 31	"	"	SS	SS	-	38	L
 32	가난때문에	가난때문에	NNG+JKB	NNG+에/JKB	-	37	NP_AJT
 33	고등학교	고등학교	NNG	NNG	-	34	NP
@@ -4576,12 +4576,12 @@
 48	불우이웃돕기운동을	불우이웃돕기운동을	NNG+JKO	NNG+을/JKO	-	49	NP_OBJ
 49	하면서	하면서	VV+EC	VV+면서/EC	-	51	VP
 50	알고	알고	VV+EC	VV+고/EC	-	51	VP
-51	있던	있던	VX+EC	VX+던/EC	-	53	VP
+51	있던	있던	VX+EC	있/VX+던/EC	-	53	VP
 52	최임	최임	NNP	NNP	-	53	NP
 53	씨(55)에게	씨(55)에게	NNB+SS+SN+SS+JKB	NNB+SS+SN+SS+에게/JKB	-	55	NP_AJT
 54	도움을	도움을	NNG+JKO	NNG+을/JKO	-	55	NP_OBJ
 55	요청하았다	요청하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-56	.	.	.	.	-	55	X
+56	.	.	SF	SF	-	55	X
 
 1	지난해	지난해	VV+ETM+NNG	VV+ᆫ/ETM+NNG	-	2	NP
 2	4월	4월	NNG	NNG	-	7	NP_AJT
@@ -4605,23 +4605,23 @@
 20	운동을	운동을	NNG+JKO	NNG+을/JKO	-	23	NP_OBJ
 21	함께	함께	MAG	MAG	-	23	AP
 22	하아	하아	VV+EC	VV+아/EC	-	23	VP
-23	온	온	VX+ETM	VX+ᆫ/ETM	-	24	VP_MOD
+23	온	온	VX+ETM	오/VX+ᆫ/ETM	-	24	VP_MOD
 24	사람들을	사람들을	NNG+JKO	NNG+을/JKO	-	25	NP_OBJ
 25	만나아	만나아	VV+EC	VV+아/EC	-	28	VP
 26	장학회	장학회	NNG	NNG	-	27	NP
 27	결성에	결성에	NNG+JKB	NNG+에/JKB	-	28	NP_AJT
 28	나서었다	나서었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-29	.	.	.	.	-	28	X
+29	.	.	SF	SF	-	28	X
 
 1	최씨의	최씨의	NNG+JKG	NNG+의/JKG	-	2	NP_MOD
 2	뜻에	뜻에	NNG+JKB	NNG+에/JKB	-	4	NP_AJT
 3	호응하아	호응하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	4	VP
-4	온	온	VX+ETM	VX+ᆫ/ETM	-	5	VP_MOD
+4	온	온	VX+ETM	오/VX+ᆫ/ETM	-	5	VP_MOD
 5	사람은	사람은	NNG+JX	NNG+은/JX	-	8	NP_SBJ
 6	모두	모두	MAG	MAG	-	8	AP
 7	9	9	SN	SN	-	8	NP
 8	명	명	NNB	NNB	-	0	ROOT
-9	.	.	.	.	-	8	X
+9	.	.	SF	SF	-	8	X
 
 1	이들은	이들은	NP+XSN+JX	NP+XSN+은/JX	-	26	NP_SBJ
 2	`	`	SS	SS	-	10	L
@@ -4631,7 +4631,7 @@
 6	용을	용을	NNG+JKO	NNG+을/JKO	-	9	NP_OBJ
 7	한	한	MM	MM	-	8	DP
 8	번	번	NNB	NNB	-	9	NP_OBJ
-9	키우어보자	키우어보자	VV+EC+VX+EC	VV+어/EC+VX+자/EC	-	10	VP_CMP
+9	키우어보자	키우어보자	VV+EC+VX+EC	VV+어/EC+보/VX+자/EC	-	10	VP_CMP
 10	'	'	SS	SS	-	11	VP_CMP
 11	는	는	ETM	는/ETM	-	12	VP_MOD
 12	의미에서	의미에서	NNG+JKB	NNG+에서/JKB	-	16	NP_AJT
@@ -4639,17 +4639,17 @@
 14	이름을	이름을	NNG+JKO	NNG+을/JKO	-	16	NP_OBJ
 15	`구룡장학회'라고	`구룡장학회'라고	SS+NNG+SS+JKQ	SS+NNG+SS+라고/JKQ	-	16	NP_CMP
 16	짓고	짓고	VV+EC	VV+고/EC	-	20	VP
-17	,	,	,	,	-	16	X
+17	,	,	SP	SP	-	16	X
 18	사슴을	사슴을	NNG+JKO	NNG+을/JKO	-	20	NP_OBJ
 19	키우게	키우게	VV+EC	VV+게/EC	-	20	VP
-20	하아	하아	VX+EC	VX+아/EC	-	26	VP
+20	하아	하아	VX+EC	하/VX+아/EC	-	26	VP
 21	그	그	MM	MM	-	22	DP
 22	수익금으로	수익금으로	NNG+JKB	NNG+으로/JKB	-	24	NP_AJT
 23	장학금을	장학금을	NNG+JKO	NNG+을/JKO	-	24	NP_OBJ
 24	만들기로	만들기로	VV+ETN+JKB	VV+기/ETN+로/JKB	-	26	VP_AJT
 25	뜻을	뜻을	NNG+JKO	NNG+을/JKO	-	26	NP_OBJ
 26	모으았다	모으았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-27	.	.	.	.	-	26	X
+27	.	.	SF	SF	-	26	X
 
 1	최씨	최씨	NNG	NNG	-	2	NP
 2	등은	등은	NNB+JX	NNB+은/JX	-	11	NP_SBJ
@@ -4662,12 +4662,12 @@
 9	10마리를	10마리를	NNG+JKO	NNG+를/JKO	-	11	NP_OBJ
 10	복장포국교에	복장포국교에	NNP+JKB	NNP+에/JKB	-	11	NP_AJT
 11	기증하았다	기증하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-12	.	.	.	.	-	11	X
+12	.	.	SF	SF	-	11	X
 
 1	가평군	가평군	NNP	NNP	-	2	NP
 2	교육청에서는	교육청에서는	NNG+JKB+JX	NNG+에서/JKB+는/JX	-	4	NP_AJT
 3	사슴우리를	사슴우리를	NNG+JKO	NNG+를/JKO	-	4	NP_OBJ
-4	짓어주었고	짓어주었고	VV+EC+VX+EP+EC	VV+어/EC+VX+었/EP+고/EC	-	14	VP
+4	짓어주었고	짓어주었고	VV+EC+VX+EP+EC	VV+어/EC+주/VX+었/EP+고/EC	-	14	VP
 5	복장포국교	복장포국교	NNP	NNP	-	6	NP
 6	동문회에선	동문회에선	NNG+JKB+JX	NNG+에서/JKB+ᆫ/JX	-	14	NP_AJT
 7	모금	모금	NNG	NNG	-	8	NP
@@ -4678,7 +4678,7 @@
 12	담을	담을	VV+ETM	VV+을/ETM	-	13	VP_MOD
 13	창고를	창고를	NNG+JKO	NNG+를/JKO	-	14	NP_OBJ
 14	짓었다	짓었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-15	.	.	.	.	-	14	X
+15	.	.	SF	SF	-	14	X
 
 1	장학회원들은	장학회원들은	NNG+JX	NNG+은/JX	-	9	NP_SBJ
 2	지난	지난	VV+ETM	VV+ᆫ/ETM	-	3	VP_MOD
@@ -4693,7 +4693,7 @@
 11	모두	모두	MAG	MAG	-	13	AP
 12	16마리가	16마리가	NNG+JKC	NNG+가/JKC	-	13	NP_CMP
 13	되었다	되었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	장학회원들은	장학회원들은	NNG+JX	NNG+은/JX	-	25	NP_SBJ
 2	앞으로	앞으로	NNG+JKB	NNG+으로/JKB	-	8	NP_AJT
@@ -4719,15 +4719,15 @@
 22	늘어날	늘어날	VV+ETM	VV+ᆯ/ETM	-	23	S_MOD
 23	것으로	것으로	NNB+JKB	NNB+으로/JKB	-	25	NP_AJT
 24	예상하고	예상하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	25	VP
-25	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-26	.	.	.	.	-	25	X
+25	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+26	.	.	SF	SF	-	25	X
 
 1	그리고	그리고	MAJ	MAJ	-	24	AP
 2	이	이	MM	MM	-	3	DP
 3	때부터는	때부터는	NNG+JX+JX	NNG+부터/JX+는/JX	-	23	NP_AJT
 4	수컷에게서는	수컷에게서는	NNG+JKB+JKB+JX	NNG+에게/JKB+서/JKB+는/JX	-	5	NP_AJT
 5	뿔을	뿔을	NNG+JKO	NNG+을/JKO	-	9	VP
-6	,	,	,	,	-	5	X
+6	,	,	SP	SP	-	5	X
 7	암컷에게서는	암컷에게서는	NNG+JKB+JKB+JX	NNG+에게/JKB+서/JKB+는/JX	-	9	NP_AJT
 8	새끼를	새끼를	NNG+JKO	NNG+를/JKO	-	9	NP_OBJ
 9	받아	받아	VV+EC	VV+아/EC	-	17	VP
@@ -4738,7 +4738,7 @@
 14	경영하는	경영하는	NNG+XSV+ETM	NNG+하/XSV+는/ETM	-	15	VP_MOD
 15	최씨가	최씨가	NNG+JKS	NNG+가/JKS	-	17	NP_SBJ
 16	책임지고	책임지고	NNG+VV+EC	NNG+VV+고/EC	-	17	VP
-17	팔아주면	팔아주면	VV+EC+VX+EC	VV+아/EC+VX+면/EC	-	23	S
+17	팔아주면	팔아주면	VV+EC+VX+EC	VV+아/EC+주/VX+면/EC	-	23	S
 18	한해	한해	MM+NNB	MM+NNB	-	19	NP
 19	3천만원	3천만원	NNG	NNG	-	20	NP
 20	이상의	이상의	NNG+JKG	NNG+의/JKG	-	21	NP_MOD
@@ -4746,7 +4746,7 @@
 22	나올	나올	VV+ETM	VV+ᆯ/ETM	-	23	VP_MOD
 23	것이라는	것이라는	NNB+VCP+EC+ETM	NNB+이/VCP+라/EC+는/ETM	-	24	S_MOD
 24	계산이다	계산이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-25	.	.	.	.	-	24	X
+25	.	.	SF	SF	-	24	X
 
 1	장학회에서는	장학회에서는	NNG+JKB+JX	NNG+에서/JKB+는/JX	-	19	NP_AJT
 2	또	또	MAG	MAG	-	19	AP
@@ -4765,9 +4765,9 @@
 15	올리겠다는	올리겠다는	VV+EP+EC+ETM	VV+겠/EP+다/EC+는/ETM	-	16	VP_MOD
 16	계획을	계획을	NNG+JKO	NNG+을/JKO	-	19	NP_OBJ
 17	세우어	세우어	VV+EC	VV+어/EC	-	18	VP
-18	놓고	놓고	VX+EC	VX+고/EC	-	19	VP
-19	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-20	.	.	.	.	-	19	X
+18	놓고	놓고	VX+EC	놓/VX+고/EC	-	19	VP
+19	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+20	.	.	SF	SF	-	19	X
 
 1	이	이	MM	MM	-	2	DP
 2	학교	학교	NNG	NNG	-	4	NP
@@ -4792,7 +4792,7 @@
 21	는	는	ETM	는/ETM	-	22	VP_MOD
 22	희망을	희망을	NNG+JKO	NNG+을/JKO	-	24	NP_OBJ
 23	심어	심어	VV+EC	VV+어/EC	-	24	VP
-24	준	준	VX+ETM	VX+ᆫ/ETM	-	25	VP_MOD
+24	준	준	VX+ETM	주/VX+ᆫ/ETM	-	25	VP_MOD
 25	것이	것이	NNB+JKS	NNB+이/JKS	-	27	NP_SBJ
 26	무엇보다	무엇보다	NP+JKB	NP+보다/JKB	-	27	NP_AJT
 27	고맙다	고맙다	VA+EF	VA+다/EF	-	28	S_CMP
@@ -4803,14 +4803,14 @@
 32	귀한	귀한	VA+ETM	VA+ᆫ/ETM	-	33	VP_MOD
 33	뜻이	뜻이	NNG+JKS	NNG+이/JKS	-	35	NP_SBJ
 34	헛되지	헛되지	VA+EC	VA+지/EC	-	35	VP
-35	않도록	않도록	VX+EC	VX+도록/EC	-	38	S
+35	않도록	않도록	VX+EC	않/VX+도록/EC	-	38	S
 36	학생들을	학생들을	NNG+JKO	NNG+을/JKO	-	38	NP_OBJ
 37	열심히	열심히	MAG	MAG	-	38	AP
 38	가르치겠다	가르치겠다	VV+EP+EC	VV+겠/EP+다/EC	-	39	VP
 39	"	"	SS	SS	-	40	VP
 40	고	고	JKQ	고/JKQ	-	41	VP_CMP
 41	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-42	.	.	.	.	-	41	X
+42	.	.	SF	SF	-	41	X
 
 1	1991/04/05	1991/04/05	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	0	ROOT
 
@@ -4858,8 +4858,8 @@
 23	8	8	SN	SN	-	24	NP
 24	개월째	개월째	NNB+XSN	NNB+XSN	-	26	NP_AJT
 25	계속되고	계속되고	NNG+XSV+EC	NNG+되/XSV+고/EC	-	26	VP
-26	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-27	.	.	.	.	-	26	X
+26	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+27	.	.	SF	SF	-	26	X
 
 1	8	8	SN	SN	-	2	NP
 2	개월째	개월째	NNB+XSN	NNB+XSN	-	4	NP
@@ -4901,13 +4901,13 @@
 38	빠짐없이	빠짐없이	MAG	MAG	-	41	VP
 39	백송	백송	NNG	NNG	-	40	NP
 40	주변을	주변을	NNG+JKO	NNG+을/JKO	-	41	NP_OBJ
-41	쓸어주며	쓸어주며	VV+EC+VX+EC	VV+어/EC+VX+며/EC	-	46	VP
+41	쓸어주며	쓸어주며	VV+EC+VX+EC	VV+어/EC+주/VX+며/EC	-	46	VP
 42	백송살리기에	백송살리기에	NNG+JKB	NNG+에/JKB	-	46	NP_AJT
 43	온	온	MM	MM	-	44	DP
 44	정성을	정성을	NNG+JKO	NNG+을/JKO	-	46	NP_OBJ
 45	다하고	다하고	MAG+XSV+EC	MAG+하/XSV+고/EC	-	46	VP
-46	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-47	.	.	.	.	-	46	X
+46	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+47	.	.	SF	SF	-	46	X
 
 1	쓰러진	쓰러진	VV+ETM	VV+ᆫ/ETM	-	2	VP_MOD
 2	다음날	다음날	NNG	NNG	-	12	NP_AJT
@@ -4939,9 +4939,9 @@
 28	마음을	마음을	NNG+JKO	NNG+을/JKO	-	32	NP_OBJ
 29	더욱	더욱	MAG	MAG	-	32	AP
 30	설레게	설레게	VV+EC	VV+게/EC	-	31	VP
-31	하고	하고	VX+EC	VX+고/EC	-	32	VP
-32	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-33	.	.	.	.	-	32	X
+31	하고	하고	VX+EC	하/VX+고/EC	-	32	VP
+32	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+33	.	.	SF	SF	-	32	X
 
 1	백송이	백송이	NNG+JKS	NNG+이/JKS	-	2	NP_SBJ
 2	쓰러진	쓰러진	VV+ETM	VV+ᆫ/ETM	-	3	S_MOD
@@ -4949,7 +4949,7 @@
 4	작년	작년	NNG	NNG	-	6	NP
 5	7월	7월	NNG	NNG	-	6	NP
 6	17일	17일	NNG	NNG	-	0	ROOT
-7	.	.	.	.	-	6	X
+7	.	.	SF	SF	-	6	X
 
 1	당시	당시	NNG	NNG	-	4	NP
 2	회생	회생	NNG	NNG	-	3	NP
@@ -4962,7 +4962,7 @@
 9	해제를	해제를	NNG+JKO	NNG+를/JKO	-	10	NP_OBJ
 10	결정하고	결정하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	15	VP
 11	나무를	나무를	NNG+JKO	NNG+를/JKO	-	12	NP_OBJ
-12	베어내기	베어내기	VV+EC+VX+ETN	VV+어/EC+VX+기/ETN	-	13	VP_OBJ
+12	베어내기	베어내기	VV+EC+VX+ETN	VV+어/EC+내/VX+기/ETN	-	13	VP_OBJ
 13	위한	위한	VV+ETM	VV+ᆫ/ETM	-	15	VP_MOD
 14	동제를	동제를	NNG+JKO	NNG+를/JKO	-	15	NP_OBJ
 15	열자	열자	VV+EC	VV+자/EC	-	26	S
@@ -4977,7 +4977,7 @@
 24	회생	회생	NNG	NNG	-	25	NP
 25	작업에	작업에	NNG+JKB	NNG+에/JKB	-	26	NP_AJT
 26	나서었다	나서었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-27	.	.	.	.	-	26	X
+27	.	.	SF	SF	-	26	X
 
 1	잇어	잇어	VV+EC	VV+어/EC	-	28	VP
 2	백송의	백송의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
@@ -4993,12 +4993,12 @@
 12	전	전	MM	MM	-	14	DP
 13	서울대	서울대	NNP	NNP	-	14	NP
 14	교수	교수	NNG	NNG	-	23	NP_CNJ
-15	,	,	,	,	-	14	X
+15	,	,	SP	SP	-	14	X
 16	산림청	산림청	NNG	NNG	-	17	NP
 17	임업연구원	임업연구원	NNP	NNP	-	19	NP
 18	이원렬	이원렬	NNP	NNP	-	19	NP
 19	실장	실장	NNG	NNG	-	23	NP_CNJ
-20	,	,	,	,	-	19	X
+20	,	,	SP	SP	-	19	X
 21	나무병원	나무병원	NNG	NNG	-	23	NP
 22	강전유	강전유	NNP	NNP	-	23	NP
 23	원장	원장	NNG	NNG	-	24	NP
@@ -5007,7 +5007,7 @@
 26	회생	회생	NNG	NNG	-	27	NP
 27	대책반이	대책반이	NNG+JKS	NNG+이/JKS	-	28	NP_SBJ
 28	구성되었다	구성되었다	NNG+XSV+EP+EF	NNG+되/XSV+었/EP+다/EF	-	0	ROOT
-29	.	.	.	.	-	28	X
+29	.	.	SF	SF	-	28	X
 
 1	이천	이천	NNP	NNP	-	2	NP
 2	부식토로	부식토로	NNG+JKB	NNG+로/JKB	-	3	NP_AJT
@@ -5019,7 +5019,7 @@
 4	손을	손을	NNG+JKO	NNG+을/JKO	-	5	NP_OBJ
 5	대면	대면	VV+EC	VV+면/EC	-	9	VP
 6	더	더	MAG	MAG	-	9	AP
-7	나쁘아질	나쁘아질	VA+EC+VX+ETM	VA+아/EC+VX+ᆯ/ETM	-	8	VP_MOD
+7	나쁘아질	나쁘아질	VA+EC+VX+ETM	VA+아/EC+지/VX+ᆯ/ETM	-	8	VP_MOD
 8	수	수	NNB	NNB	-	9	NP_SBJ
 9	있다며	있다며	VV+EC	VV+다며/EC	-	32	S
 10	적극적인	적극적인	NNG+VCP+ETM	NNG+이/VCP+ᆫ/ETM	-	12	VNP_MOD
@@ -5033,7 +5033,7 @@
 18	쓰러진	쓰러진	VV+ETM	VV+ᆫ/ETM	-	24	VP_MOD
 19	각각	각각	NNG	NNG	-	22	NP
 20	3.6m	3.6m	SN+SF+SN+SL	SN+SF+SN+SL	-	22	NP_CNJ
-21	,	,	,	,	-	20	X
+21	,	,	SP	SP	-	20	X
 22	3m의	3m의	SN+SL+JKG	SN+SL+의/JKG	-	24	NP_MOD
 23	두	두	MM	MM	-	24	DP
 24	줄기를	줄기를	NNG+JKO	NNG+를/JKO	-	30	NP_OBJ
@@ -5050,12 +5050,12 @@
 35	주민들은	주민들은	NNG+JX	NNG+은/JX	-	42	NP_SBJ
 36	회생추진위원회를	회생추진위원회를	NNP+JKO	NNP+를/JKO	-	37	NP_OBJ
 37	구성	구성	NNG	NNG	-	42	VP
-38	,	,	,	,	-	37	X
+38	,	,	SP	SP	-	37	X
 39	마을의	마을의	NNG+JKG	NNG+의/JKG	-	40	NP_MOD
 40	상징인	상징인	NNG+VCP+ETM	NNG+이/VCP+ᆫ/ETM	-	41	VNP_MOD
 41	백송살리기에	백송살리기에	NNG+VV+ETN+JKB	NNG+VV+기/ETN+에/JKB	-	42	VP_AJT
 42	나서었다	나서었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-43	.	.	.	.	-	42	X
+43	.	.	SF	SF	-	42	X
 
 1	주민들은	주민들은	NNG+JX	NNG+은/JX	-	22	NP_SBJ
 2	반찬값	반찬값	NNG	NNG	-	3	NP
@@ -5068,7 +5068,7 @@
 9	한	한	MM	MM	-	10	DP
 10	여름	여름	NNG	NNG	-	11	NP
 11	차광막을	차광막을	NNG+JKO	NNG+을/JKO	-	12	NP_OBJ
-12	설치하아주고	설치하아주고	NNG+XSV+EC+VX+EC	NNG+하/XSV+아/EC+VX+고/EC	-	22	VP
+12	설치하아주고	설치하아주고	NNG+XSV+EC+VX+EC	NNG+하/XSV+아/EC+주/VX+고/EC	-	22	VP
 13	경기도	경기도	NNP	NNP	-	15	NP
 14	여주와	여주와	NNP+JC	NNP+와/JC	-	15	NP_CNJ
 15	이천	이천	NNP	NNP	-	16	NP
@@ -5078,8 +5078,8 @@
 19	마사부식토	마사부식토	NNG	NNG	-	20	NP
 20	등으로	등으로	NNB+JKB	NNB+으로/JKB	-	22	NP_AJT
 21	흙갈이를	흙갈이를	NNG+JKO	NNG+를/JKO	-	22	NP_OBJ
-22	하아주었다	하아주었다	VV+EC+VX+EP+EF	VV+아/EC+VX+었/EP+다/EF	-	0	ROOT
-23	.	.	.	.	-	22	X
+22	하아주었다	하아주었다	VV+EC+VX+EP+EF	VV+아/EC+주/VX+었/EP+다/EF	-	0	ROOT
+23	.	.	SF	SF	-	22	X
 
 1	주민들이	주민들이	NNG+JKS	NNG+이/JKS	-	4	NP_SBJ
 2	백송	백송	NNG	NNG	-	3	NP
@@ -5089,7 +5089,7 @@
 6	하아도	하아도	VV+EC	VV+아도/EC	-	8	VP
 7	리어카	리어카	NNG	NNG	-	8	NP
 8	48대분	48대분	NNG	NNG	-	0	ROOT
-9	.	.	.	.	-	8	X
+9	.	.	SF	SF	-	8	X
 
 1	청와대	청와대	NNP	NNP	-	2	NP
 2	주변	주변	NNG	NNG	-	3	NP
@@ -5103,7 +5103,7 @@
 10	한나절	한나절	NNG	NNG	-	11	NP
 11	동안	동안	NNG	NNG	-	12	NP_AJT
 12	싣어나르았다	싣어나르았다	VV+EC+VV+EP+EF	VV+어/EC+VV+았/EP+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	또	또	MAG	MAG	-	30	AP
 2	지난	지난	VV+ETM	VV+ᆫ/ETM	-	3	VP_MOD
@@ -5125,7 +5125,7 @@
 18	보온용	보온용	NNG	NNG	-	19	NP
 19	담요를	담요를	NNG+JKO	NNG+를/JKO	-	20	NP_OBJ
 20	구입	구입	NNG	NNG	-	25	VP
-21	,	,	,	,	-	20	X
+21	,	,	SP	SP	-	20	X
 22	백송가지를	백송가지를	NNG+JKO	NNG+를/JKO	-	23	NP_OBJ
 23	감싸아	감싸아	VV+EC	VV+아/EC	-	25	VP
 24	월동준비를	월동준비를	NNG+JKO	NNG+를/JKO	-	25	NP_OBJ
@@ -5134,8 +5134,8 @@
 27	세심한	세심한	XR+XSA+ETM	XR+하/XSA+ᆫ/ETM	-	28	VP_MOD
 28	`간호'를	`간호'를	SS+NNG+SS+JKO	SS+NNG+SS+를/JKO	-	30	NP_OBJ
 29	하아	하아	VV+EC	VV+아/EC	-	30	VP
-30	오았다	오았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-31	.	.	.	.	-	30	X
+30	오았다	오았다	VX+EP+EF	오/VX+았/EP+다/EF	-	0	ROOT
+31	.	.	SF	SF	-	30	X
 
 1	주민	주민	NNG	NNG	-	2	NP
 2	대표	대표	NNG	NNG	-	4	NP
@@ -5160,7 +5160,7 @@
 21	힘만으로	힘만으로	NNG+JX+JKB	NNG+만/JX+으로/JKB	-	24	NP_AJT
 22	월동	월동	NNG	NNG	-	23	NP
 23	준비를	준비를	NNG+JKO	NNG+를/JKO	-	24	NP_OBJ
-24	하아야하던	하아야하던	VV+EC+VX+ETM	VV+아야/EC+VX+던/ETM	-	25	VP_MOD
+24	하아야하던	하아야하던	VV+EC+VX+ETM	VV+아야/EC+하/VX+던/ETM	-	25	VP_MOD
 25	때가	때가	NNG+JKS	NNG+가/JKS	-	26	NP_SBJ
 26	어렵었다	어렵었다	VA+EP+EC	VA+었/EP+다/EC	-	27	S_CMP
 27	"	"	SS	SS	-	28	S_CMP
@@ -5182,7 +5182,7 @@
 43	"	"	SS	SS	-	44	VP
 44	고	고	JKQ	고/JKQ	-	45	VP_CMP
 45	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-46	.	.	.	.	-	45	X
+46	.	.	SF	SF	-	45	X
 
 1	엽록소	엽록소	NNG	NNG	-	2	NP
 2	파괴	파괴	NNG	NNG	-	3	NP
@@ -5213,7 +5213,7 @@
 22	싹이	싹이	NNG+JKS	NNG+이/JKS	-	24	NP_SBJ
 23	모습을	모습을	NNG+JKO	NNG+을/JKO	-	24	NP_OBJ
 24	드러내었다	드러내었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-25	.	.	.	.	-	24	X
+25	.	.	SF	SF	-	24	X
 
 1	주민들은	주민들은	NNG+JX	NNG+은/JX	-	14	NP_SBJ
 2	그러나	그러나	MAJ	MAJ	-	14	AP
@@ -5229,7 +5229,7 @@
 12	없어	없어	VA+EC	VA+어/EC	-	14	S
 13	마음만	마음만	NNG+JX	NNG+만/JX	-	14	NP_SBJ
 14	조급하다	조급하다	XR+XSA+EF	XR+하/XSA+다/EF	-	0	ROOT
-15	.	.	.	.	-	14	X
+15	.	.	SF	SF	-	14	X
 
 1	이날	이날	MM+NNG	MM+NNG	-	2	NP
 2	오전	오전	NNG	NNG	-	47	NP_AJT
@@ -5237,7 +5237,7 @@
 4	전	전	MM	MM	-	6	DP
 5	고려대	고려대	NNP	NNP	-	6	NP
 6	교수	교수	NNG	NNG	-	11	NP_CNJ
-7	,	,	,	,	-	6	X
+7	,	,	SP	SP	-	6	X
 8	김근배	김근배	NNP	NNP	-	11	NP
 9	서울시	서울시	NNP	NNP	-	10	NP
 10	문화재	문화재	NNG	NNG	-	11	NP
@@ -5258,11 +5258,11 @@
 25	회색	회색	NNG	NNG	-	26	NP
 26	반점이	반점이	NNG+JKS	NNG+이/JKS	-	28	NP_SBJ
 27	나타나고	나타나고	VV+EC	VV+고/EC	-	28	VP
-28	있는데	있는데	VX+EC	VX+는데/EC	-	34	S
+28	있는데	있는데	VX+EC	있/VX+는데/EC	-	34	S
 29	이는	이는	NP+JX	NP+는/JX	-	34	NP_SBJ
 30	엽록소가	엽록소가	NNG+JKS	NNG+가/JKS	-	32	NP_SBJ
-31	파괴되어가고	파괴되어가고	NNG+XSV+EC+VX+EC	NNG+되/XSV+어/EC+VX+고/EC	-	32	VP
-32	있는	있는	VX+ETM	VX+는/ETM	-	33	S_MOD
+31	파괴되어가고	파괴되어가고	NNG+XSV+EC+VX+EC	NNG+되/XSV+어/EC+가/VX+고/EC	-	32	VP
+32	있는	있는	VX+ETM	있/VX+는/ETM	-	33	S_MOD
 33	징후로	징후로	NNG+JKB	NNG+로/JKB	-	34	NP_AJT
 34	보인다	보인다	VV+EC	VV+ᆫ다/EC	-	35	S_CMP
 35	"	"	SS	SS	-	36	S_CMP
@@ -5278,7 +5278,7 @@
 45	"	"	SS	SS	-	46	S
 46	고	고	JKQ	고/JKQ	-	47	S_CMP
 47	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-48	.	.	.	.	-	47	X
+48	.	.	SF	SF	-	47	X
 
 1	1991/07/15	1991/07/15	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	0	ROOT
 
@@ -5345,16 +5345,16 @@
 1	50대	50대	NNG	NNG	-	2	NP
 2	중년의	중년의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
 3	인간애가	인간애가	NNG+JKS	NNG+가/JKS	-	8	NP_SBJ
-4	꺼지어가던	꺼지어가던	VV+EC+VX+EC	VV+어/EC+VX+던/EC	-	7	VP
+4	꺼지어가던	꺼지어가던	VV+EC+VX+EC	VV+어/EC+가/VX+던/EC	-	7	VP
 5	소녀	소녀	NNG	NNG	-	6	NP
 6	가장의	가장의	NNG+JKG	NNG+의/JKG	-	7	NP_MOD
 7	목숨을	목숨을	NNG+JKO	NNG+을/JKO	-	8	NP_OBJ
-8	살리어내었다	살리어내었다	VV+EC+VX+EP+EF	VV+어/EC+VX+었/EP+다/EF	-	0	ROOT
-9	.	.	.	.	-	8	X
+8	살리어내었다	살리어내었다	VV+EC+VX+EP+EF	VV+어/EC+내/VX+었/EP+다/EF	-	0	ROOT
+9	.	.	SF	SF	-	8	X
 
 1	콩팥이식수술로	콩팥이식수술로	NNG+JKB	NNG+로/JKB	-	3	NP_AJT
 2	콩팥을	콩팥을	NNG+JKO	NNG+을/JKO	-	3	NP_OBJ
-3	나누어가진	나누어가진	VV+EC+VX+ETM	VV+어/EC+VX+ᆫ/ETM	-	16	VP_MOD
+3	나누어가진	나누어가진	VV+EC+VX+ETM	VV+어/EC+가지/VX+ᆫ/ETM	-	16	VP_MOD
 4	조규창	조규창	NNP	NNP	-	16	NP
 5	씨	씨	NNB	NNB	-	15	NP
 6	(	(	SS	SS	-	15	L
@@ -5389,7 +5389,7 @@
 35	스튜디오에서	스튜디오에서	NNG+JKB	NNG+에서/JKB	-	37	NP_AJT
 36	다시	다시	MAG	MAG	-	37	AP
 37	만나았다	만나았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-38	.	.	.	.	-	37	X
+38	.	.	SF	SF	-	37	X
 
 1	"	"	SS	SS	-	4	L
 2	아저씨	아저씨	NNG	NNG	-	3	NP_INT
@@ -5409,7 +5409,7 @@
 16	말없이	말없이	MAG	MAG	-	18	AP
 17	미소를	미소를	NNG+JKO	NNG+를/JKO	-	18	NP_OBJ
 18	짓었다	짓었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 
 1	이	이	MM	MM	-	2	DP
 2	자리는	자리는	NNG+JX	NNG+는/JX	-	22	NP_SBJ
@@ -5433,11 +5433,11 @@
 20	제작진이	제작진이	NNG+JKS	NNG+이/JKS	-	21	NP_SBJ
 21	마련한	마련한	NNG+XSV+ETM	NNG+하/XSV+ᆫ/ETM	-	22	S_MOD
 22	자리이었다	자리이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
-23	.	.	.	.	-	22	X
+23	.	.	SF	SF	-	22	X
 
 1	조씨는	조씨는	NNG+JX	NNG+는/JX	-	24	NP_SBJ
 2	"	"	SS	SS	-	20	L
-3	야위어가던	야위어가던	VV+EC+VX+ETM	VV+어/EC+VX+던/ETM	-	4	VP_MOD
+3	야위어가던	야위어가던	VV+EC+VX+ETM	VV+어/EC+가/VX+던/ETM	-	4	VP_MOD
 4	연란이가	연란이가	NNP+JKS	NNP+가/JKS	-	7	NP_SBJ
 5	뽀얗게	뽀얗게	VA+EC	VA+게/EC	-	7	VP
 6	살이	살이	NNG+JKS	NNG+이/JKS	-	7	NP_SBJ
@@ -5446,7 +5446,7 @@
 9	보니	보니	VV+EC	VV+니/EC	-	19	VP
 10	가족들에게도	가족들에게도	NNG+JKB+JX	NNG+에게/JKB+도/JX	-	12	NP_AJT
 11	알리지	알리지	VV+EC	VV+지/EC	-	12	VP
-12	않고	않고	VX+EC	VX+고/EC	-	14	VP
+12	않고	않고	VX+EC	않/VX+고/EC	-	14	VP
 13	신장을	신장을	NNG+JKO	NNG+을/JKO	-	14	NP_OBJ
 14	기증하았던	기증하았던	NNG+XSV+EP+ETM	NNG+하/XSV+았/EP+던/ETM	-	15	VP_MOD
 15	것이	것이	NNB+JKS	NNB+이/JKS	-	17	NP_SBJ
@@ -5459,7 +5459,7 @@
 22	시종	시종	MAG	MAG	-	24	AP
 23	즐겁은	즐겁은	VA+ETM	VA+은/ETM	-	24	VP_MOD
 24	표정이었다	표정이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
-25	.	.	.	.	-	24	X
+25	.	.	SF	SF	-	24	X
 
 1	경기도	경기도	NNP	NNP	-	2	NP
 2	이천에서	이천에서	NNP+JKB	NNP+에서/JKB	-	5	NP_AJT
@@ -5481,7 +5481,7 @@
 18	그늘이	그늘이	NNG+JKS	NNG+이/JKS	-	20	NP_SBJ
 19	지기	지기	VV+ETN	VV+기/ETN	-	20	VP
 20	시작하았다	시작하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+21	.	.	SF	SF	-	20	X
 
 1	이	이	NNP	NNP	-	2	NP
 2	양의	양의	NNB+JKG	NNB+의/JKG	-	3	NP_MOD
@@ -5495,7 +5495,7 @@
 10	3딸을	3딸을	NNG+JKO	NNG+을/JKO	-	11	NP_OBJ
 11	두고	두고	VV+EC	VV+고/EC	-	12	VP
 12	가출하았다	가출하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	국민학교	국민학교	NNG	NNG	-	2	NP
 2	5학년이던	5학년이던	NNG+VCP+ETM	NNG+이/VCP+던/ETM	-	4	VNP_MOD
@@ -5524,7 +5524,7 @@
 25	소녀	소녀	NNG	NNG	-	26	NP
 26	가장이	가장이	NNG+JKC	NNG+이/JKC	-	27	NP_CMP
 27	되었다	되었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-28	.	.	.	.	-	27	X
+28	.	.	SF	SF	-	27	X
 
 1	지난해	지난해	VV+ETM+NNG	VV+ᆫ/ETM+NNG	-	2	NP
 2	11월부터	11월부터	NNG+JX	NNG+부터/JX	-	10	NP_AJT
@@ -5536,20 +5536,20 @@
 8	오르내리기가	오르내리기가	VV+ETN+JKS	VV+기/ETN+가/JKS	-	10	VP_SBJ
 9	힘이	힘이	NNG+JKS	NNG+이/JKS	-	10	NP_SBJ
 10	들었다	들었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-11	.	.	.	.	-	10	X
+11	.	.	SF	SF	-	10	X
 
 1	어린	어린	VA+ETM	VA+ᆫ/ETM	-	2	VP_MOD
 2	동생들	동생들	NNG	NNG	-	3	NP
 3	때문에	때문에	NNB+JKB	NNB+에/JKB	-	7	NP_AJT
 4	눕어	눕어	VV+EC	VV+어/EC	-	5	VP
-5	있을	있을	VX+ETM	VX+을/ETM	-	6	VP_MOD
+5	있을	있을	VX+ETM	있/VX+을/ETM	-	6	VP_MOD
 6	수만도	수만도	NNB+JX+JX	NNB+만/JX+도/JX	-	7	NP_SBJ
 7	없어	없어	VA+EC	VA+어/EC	-	11	S
 8	감기약을	감기약을	NNG+JKO	NNG+을/JKO	-	9	NP_OBJ
-9	사아먹으며	사아먹으며	VV+EC+VX+EC	VV+아/EC+VX+으며/EC	-	11	VP
+9	사아먹으며	사아먹으며	VV+EC+VX+EC	VV+아/EC+먹/VX+으며/EC	-	11	VP
 10	참고	참고	VV+EC	VV+고/EC	-	11	VP
 11	지내었다	지내었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-12	.	.	.	.	-	11	X
+12	.	.	SF	SF	-	11	X
 
 1	지난	지난	VV+ETM	VV+ᆫ/ETM	-	3	VP_MOD
 2	3월	3월	NNG	NNG	-	3	NP
@@ -5583,8 +5583,8 @@
 30	서울이	서울이	NNP+JKS	NNP+이/JKS	-	31	NP_SBJ
 31	큰병원으로	큰병원으로	VA+ETM+NNG+JKB	VA+ᆫ/ETM+NNG+으로/JKB	-	32	S_AJT
 32	옮기게	옮기게	VV+EC	VV+게/EC	-	33	VP
-33	하았다	하았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-34	.	.	.	.	-	33	X
+33	하았다	하았다	VX+EP+EF	하/VX+았/EP+다/EF	-	0	ROOT
+34	.	.	SF	SF	-	33	X
 
 1	"	"	SS	SS	-	11	L
 2	신장을	신장을	NNG+JKO	NNG+을/JKO	-	3	NP_OBJ
@@ -5611,8 +5611,8 @@
 23	도움의	도움의	NNG+JKG	NNG+의/JKG	-	24	NP_MOD
 24	손길이	손길이	NNG+JKS	NNG+이/JKS	-	26	NP_SBJ
 25	뻗치어	뻗치어	VV+EC	VV+어/EC	-	26	VP
-26	오았다	오았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-27	.	.	.	.	-	26	X
+26	오았다	오았다	VX+EP+EF	오/VX+았/EP+다/EF	-	0	ROOT
+27	.	.	SF	SF	-	26	X
 
 1	이	이	NNP	NNP	-	2	NP
 2	양의	양의	NNB+JKG	NNB+의/JKG	-	4	NP_MOD
@@ -5635,7 +5635,7 @@
 19	이	이	NNP	NNP	-	20	NP
 20	양에게	양에게	NNB+JKB	NNB+에게/JKB	-	21	NP_AJT
 21	전달하았다	전달하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+22	.	.	SF	SF	-	21	X
 
 1	조씨는	조씨는	NNG+JX	NNG+는/JX	-	13	NP_SBJ
 2	사랑의	사랑의	NNG+JKG	NNG+의/JKG	-	8	NP_MOD
@@ -5649,7 +5649,7 @@
 10	신장을	신장을	NNG+JKO	NNG+을/JKO	-	11	NP_OBJ
 11	제공하겠다고	제공하겠다고	NNG+XSV+EP+EC	NNG+하/XSV+겠/EP+다고/EC	-	13	VP_CMP
 12	알리어	알리어	VV+EC	VV+어/EC	-	13	VP
-13	오았고	오았고	VX+EP+EC	VX+았/EP+고/EC	-	27	S
+13	오았고	오았고	VX+EP+EC	오/VX+았/EP+고/EC	-	27	S
 14	조직	조직	NNG	NNG	-	15	NP
 15	검사	검사	NNG	NNG	-	16	NP
 16	결과	결과	NNG	NNG	-	27	NP_AJT
@@ -5664,7 +5664,7 @@
 25	같다는	같다는	VA+ETM	VA+다는/ETM	-	26	S_MOD
 26	판정을	판정을	NNG+JKO	NNG+을/JKO	-	27	NP_OBJ
 27	받았다	받았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-28	.	.	.	.	-	27	X
+28	.	.	SF	SF	-	27	X
 
 1	지난	지난	VV+ETM	VV+ᆫ/ETM	-	3	VP_MOD
 2	5월	5월	NNG	NNG	-	3	NP
@@ -5674,14 +5674,14 @@
 6	서울중앙병원에	서울중앙병원에	NNP+JKB	NNP+에/JKB	-	8	NP_AJT
 7	함께	함께	MAG	MAG	-	8	AP
 8	입원	입원	NNG	NNG	-	11	NP
-9	,	,	,	,	-	8	X
+9	,	,	SP	SP	-	8	X
 10	수술을	수술을	NNG+JKO	NNG+을/JKO	-	11	NP_OBJ
 11	받았다	받았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-12	.	.	.	.	-	11	X
+12	.	.	SF	SF	-	11	X
 
 1	수술은	수술은	NNG+JX	NNG+은/JX	-	2	NP_SBJ
 2	성공이었다	성공이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
-3	.	.	.	.	-	2	X
+3	.	.	SF	SF	-	2	X
 
 1	이	이	NNP	NNP	-	2	NP
 2	양은	양은	NNB+JX	NNB+은/JX	-	15	NP_SBJ
@@ -5698,11 +5698,11 @@
 13	가득하았다고	가득하았다고	MAG+XSA+EP+EC	MAG+하/XSA+았/EP+다고/EC	-	15	S_CMP
 14	어른스럽게	어른스럽게	NNG+XSA+EC	NNG+스럽/XSA+게/EC	-	15	VP
 15	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-16	.	.	.	.	-	15	X
+16	.	.	SF	SF	-	15	X
 
 1	"	"	SS	SS	-	20	L
 2	회복이	회복이	NNG+JKC	NNG+이/JKC	-	3	NP_CMP
-3	되어가면서는	되어가면서는	VV+EC+VX+EC+JX	VV+어/EC+VX+면서/EC+는/JX	-	18	VP
+3	되어가면서는	되어가면서는	VV+EC+VX+EC+JX	VV+어/EC+가/VX+면서/EC+는/JX	-	18	VP
 4	어서	어서	MAG	MAG	-	15	AP
 5	병원을	병원을	NNG+JKO	NNG+을/JKO	-	6	NP_OBJ
 6	나가아	나가아	VV+EC	VV+아/EC	-	15	VP
@@ -5714,11 +5714,11 @@
 12	두	두	MM	MM	-	13	DP
 13	동생을	동생을	NNG+JKO	NNG+을/JKO	-	15	NP_OBJ
 14	돌보아야	돌보아야	VV+EC	VV+아야/EC	-	15	VP
-15	한다는	한다는	VX+ETM	VX+ᆫ다는/ETM	-	16	VP_MOD
+15	한다는	한다는	VX+ETM	하/VX+ᆫ다는/ETM	-	16	VP_MOD
 16	생각이	생각이	NNG+JKS	NNG+이/JKS	-	18	NP_SBJ
 17	먼저	먼저	MAG	MAG	-	18	AP
 18	떠오르았고이오	떠오르았고이오	VV+EP+EC+VCP+EF	VV+았/EP+고/EC+이/VCP+오/EF	-	20	S
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 20	"	"	SS	SS	-	0	ROOT
 
 1	가족들에게	가족들에게	NNG+JKB	NNG+에게/JKB	-	3	NP_AJT
@@ -5730,7 +5730,7 @@
 7	병원에	병원에	NNG+JKB	NNG+에/JKB	-	8	NP_AJT
 8	입원하아	입원하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	10	VP
 9	신장을	신장을	NNG+JKO	NNG+을/JKO	-	10	NP_OBJ
-10	떼어내어준	떼어내어준	VV+EC+VX+EC+VX+ETM	VV+어/EC+VX+어/EC+VX+ᆫ/ETM	-	11	VP_MOD
+10	떼어내어준	떼어내어준	VV+EC+VX+EC+VX+ETM	VV+어/EC+내/VX+어/EC+주/VX+ᆫ/ETM	-	11	VP_MOD
 11	조씨는	조씨는	NNG+JX	NNG+는/JX	-	21	NP_SBJ
 12	최근	최근	NNG	NNG	-	17	NP_AJT
 13	뒤늦게	뒤늦게	VA+EC	VA+게/EC	-	17	VP
@@ -5742,14 +5742,14 @@
 19	"Q="2"는	"Q="2"는	SS+Q"+SS+ETM	SS+Q"+SS+는/ETM	-	20	Q_MOD
 20	질책을	질책을	NNG+JKO	NNG+을/JKO	-	21	NP_OBJ
 21	듣었다	듣었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+22	.	.	SF	SF	-	21	X
 
 1	좋은	좋은	VA+ETM	VA+은/ETM	-	2	VP_MOD
 2	일이지만	일이지만	NNG+VCP+EC	NNG+이/VCP+지만/EC	-	5	VNP
 3	왜	왜	MAG	MAG	-	5	AP
 4	당신이	당신이	NP+JKS	NP+이/JKS	-	5	NP_SBJ
 5	나서느냐	나서느냐	VV+EF	VV+느냐/EF	-	0	ROOT
-6	.	.	.	.	-	5	X
+6	.	.	SF	SF	-	5	X
 
 1	가장의	가장의	NNG+JKG	NNG+의/JKG	-	2	NP_MOD
 2	몸이	몸이	NNG+JKS	NNG+이/JKS	-	5	NP_SBJ
@@ -5769,7 +5769,7 @@
 10	사실을	사실을	NNG+JKO	NNG+을/JKO	-	11	NP_OBJ
 11	모르는	모르는	VV+ETM	VV+는/ETM	-	12	S_MOD
 12	상태이다	상태이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	"Q="2"	"Q="2"	SS+Q"+SS	SS+Q"+SS	-	0	ROOT
 
@@ -5785,7 +5785,7 @@
 10	하기	하기	VV+ETN	VV+기/ETN	-	12	VP_SBJ
 11	어렵었을	어렵었을	VA+EP+ETM	VA+었/EP+을/ETM	-	12	VP_MOD
 12	것이ᄇ니다	것이ᄇ니다	NNB+VCP+EF	NNB+이/VCP+ᄇ니다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	그러나	그러나	MAJ	MAJ	-	17	AP
 2	불우한	불우한	NNG+XSA+ETM	NNG+하/XSA+ᆫ/ETM	-	4	VP_MOD
@@ -5804,18 +5804,18 @@
 15	일이겠느냐고	일이겠느냐고	NNG+VCP+EP+EC	NNG+이/VCP+겠/EP+느냐고/EC	-	17	S
 16	스스로를	스스로를	NNG+JKO	NNG+를/JKO	-	17	NP_OBJ
 17	격려하았습니다	격려하았습니다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+습니다/EF	-	0	ROOT
-18	.	.	.	.	-	17	X
+18	.	.	SF	SF	-	17	X
 
 1	조씨는	조씨는	NNG+JX	NNG+는/JX	-	9	NP_SBJ
 2	아이들도	아이들도	NNG+JX	NNG+도/JX	-	7	NP_SBJ
 3	아버지의	아버지의	NNG+JKG	NNG+의/JKG	-	4	NP_MOD
 4	마음을	마음을	NNG+JKO	NNG+을/JKO	-	7	NP_OBJ
 5	이해하아	이해하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	6	VP
-6	줄	줄	VX+ETM	VX+ᆯ/ETM	-	7	VP_MOD
+6	줄	줄	VX+ETM	주/VX+ᆯ/ETM	-	7	VP_MOD
 7	것이라며	것이라며	NNB+VCP+EC	NNB+이/VCP+라며/EC	-	9	S
 8	환히	환히	MAG	MAG	-	9	AP
 9	웃었다	웃었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-10	.	.	.	.	-	9	X
+10	.	.	SF	SF	-	9	X
 
 1	1991/08/15	1991/08/15	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	0	ROOT
 
@@ -5868,7 +5868,7 @@
 1	공식	공식	NNG	NNG	-	2	NP_AJT
 2	기록없어	기록없어	NNG+VA+EC	NNG+VA+어/EC	-	4	VP
 3	인정받지	인정받지	VV+EC	VV+지/EC	-	4	VP
-4	못하아	못하아	VX+EC	VX+아/EC	-	5	VP
+4	못하아	못하아	VX+EC	못하/VX+아/EC	-	5	VP
 5	안타깝ᄆ	안타깝ᄆ	VA+ETN	VA+ᄆ/ETN	-	0	ROOT
 
 1	인도네시아에서	인도네시아에서	NNP+JKB	NNP+에서/JKB	-	5	NP_AJT
@@ -5910,7 +5910,7 @@
 37	이야기로	이야기로	NNG+JKB	NNG+로/JKB	-	39	NP_AJT
 38	꽃을	꽃을	NNG+JKO	NNG+을/JKO	-	39	NP_OBJ
 39	피우었다	피우었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-40	.	.	.	.	-	39	X
+40	.	.	SF	SF	-	39	X
 
 1	조선일보	조선일보	NNP	NNP	-	2	NP
 2	주최	주최	NNG	NNG	-	7	NP
@@ -5920,7 +5920,7 @@
 6	한·일	한·일	NP	NP	-	7	NP
 7	학술회의에	학술회의에	NNG+JKB	NNG+에/JKB	-	8	NP_AJT
 8	참석	참석	NNG	NNG	-	24	NP
-9	,	,	,	,	-	8	X
+9	,	,	SP	SP	-	8	X
 10	`	`	SS	SS	-	15	L
 11	왜	왜	MAG	MAG	-	14	AP
 12	한국인이	한국인이	NNG+JKS	NNG+이/JKS	-	14	NP_SBJ
@@ -5949,14 +5949,14 @@
 35	하얗ᆫ	하얗ᆫ	VA+ETM	VA+ᆫ/ETM	-	36	VP_MOD
 36	밤을	밤을	NNG+JKO	NNG+을/JKO	-	38	NP_OBJ
 37	지새곤	지새곤	VV+EC	VV+곤/EC	-	38	VP
-38	한다고	한다고	VX+EC	VX+ᆫ다고/EC	-	39	VP_CMP
+38	한다고	한다고	VX+EC	하/VX+ᆫ다고/EC	-	39	VP_CMP
 39	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-40	.	.	.	.	-	39	X
+40	.	.	SF	SF	-	39	X
 
 1	광복의	광복의	NNP+JKG	NNP+의/JKG	-	2	NP_MOD
 2	날이	날이	NNG+JKS	NNG+이/JKS	-	4	NP_SBJ
 3	멀지	멀지	VA+EC	VA+지/EC	-	4	VP
-4	않았던	않았던	VX+EP+ETM	VX+았/EP+던/ETM	-	6	S_MOD
+4	않았던	않았던	VX+EP+ETM	않/VX+았/EP+던/ETM	-	6	S_MOD
 5	1945년	1945년	NNG	NNG	-	6	NP
 6	1월	1월	NNG	NNG	-	18	NP_AJT
 7	일본군을	일본군을	NNG+JKO	NNG+을/JKO	-	8	NP_OBJ
@@ -5997,19 +5997,19 @@
 42	동지들의	동지들의	NNG+JKG	NNG+의/JKG	-	43	NP_MOD
 43	얼굴이	얼굴이	NNG+JKS	NNG+이/JKS	-	44	NP_SBJ
 44	떠오르고	떠오르고	VV+EC	VV+고/EC	-	52	S
-45	,	,	,	,	-	44	X
+45	,	,	SP	SP	-	44	X
 46	포로	포로	NNG	NNG	-	47	NP
 47	수송선	수송선	NNG	NNG	-	48	NP
 48	탈취의	탈취의	NNG+JKG	NNG+의/JKG	-	49	NP_MOD
 49	거사를	거사를	NNG+JKO	NNG+를/JKO	-	51	NP_OBJ
 50	이루지	이루지	VV+EC	VV+지/EC	-	51	VP
-51	못한	못한	VX+ETM	VX+ᆫ/ETM	-	52	VP_MOD
+51	못한	못한	VX+ETM	못하/VX+ᆫ/ETM	-	52	VP_MOD
 52	회한	회한	NNG	NNG	-	53	NP
 53	때문이다	때문이다	NNB+VCP+EF	NNB+이/VCP+다/EF	-	0	ROOT
-54	.	.	.	.	-	53	X
+54	.	.	SF	SF	-	53	X
 
 1	고려독립청년당	고려독립청년당	NNP	NNP	-	0	ROOT
-2	.	.	.	.	-	1	X
+2	.	.	SF	SF	-	1	X
 
 1	일반인에겐	일반인에겐	NNG+JKB+JX	NNG+에게/JKB+ᆫ/JX	-	4	NP_AJT
 2	아직	아직	MAG	MAG	-	4	AP
@@ -6039,7 +6039,7 @@
 26	항일	항일	NNG	NNG	-	28	NP
 27	비밀	비밀	NNG	NNG	-	28	NP
 28	결사이다	결사이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-29	.	.	.	.	-	28	X
+29	.	.	SF	SF	-	28	X
 
 1	계급도	계급도	NNG+JX	NNG+도/JX	-	2	NP_SBJ
 2	없이	없이	MAG	MAG	-	10	S
@@ -6070,14 +6070,14 @@
 27	이	이	MM	MM	-	28	DP
 28	단체를	단체를	NNG+JKO	NNG+를/JKO	-	29	NP_OBJ
 29	조직하았다	조직하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-30	.	.	.	.	-	29	X
+30	.	.	SF	SF	-	29	X
 
 1	핵심	핵심	NNG	NNG	-	3	NP
 2	혈맹	혈맹	NNG	NNG	-	3	NP
 3	당원	당원	NNG	NNG	-	5	NP
 4	10	10	SN	SN	-	5	NP
 5	명	명	NNB	NNB	-	10	NP_CNJ
-6	,	,	,	,	-	5	X
+6	,	,	SP	SP	-	5	X
 7	조직	조직	NNG	NNG	-	8	NP
 8	당원	당원	NNG	NNG	-	10	NP
 9	16	16	SN	SN	-	10	NP
@@ -6087,7 +6087,7 @@
 13	26	26	SN	SN	-	14	NP
 14	명이	명이	NNB+JKS	NNB+이/JKS	-	15	NP_SBJ
 15	모이었다	모이었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-16	.	.	.	.	-	15	X
+16	.	.	SF	SF	-	15	X
 
 1	당시	당시	NNG	NNG	-	10	NP_AJT
 2	인도네시아	인도네시아	NNP	NNP	-	3	NP
@@ -6099,7 +6099,7 @@
 8	한국인	한국인	NNG	NNG	-	9	NP
 9	군속이	군속이	NNG+JKS	NNG+이/JKS	-	10	NP_SBJ
 10	있었으나	있었으나	VV+EP+EC	VV+었/EP+으나/EC	-	20	S
-11	,	,	,	,	-	10	X
+11	,	,	SP	SP	-	10	X
 12	비밀	비밀	NNG	NNG	-	13	NP
 13	유지를	유지를	NNG+JKO	NNG+를/JKO	-	14	NP_OBJ
 14	위하아	위하아	VV+EC	VV+아/EC	-	18	VP
@@ -6109,17 +6109,17 @@
 18	모인	모인	VV+ETM	VV+ᆫ/ETM	-	20	VP_MOD
 19	정예	정예	NNG	NNG	-	20	NP
 20	당원들이다	당원들이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+21	.	.	SF	SF	-	20	X
 
 1	이들은	이들은	NP+XSN+JX	NP+XSN+은/JX	-	8	NP_SBJ
 2	인원은	인원은	NNG+JX	NNG+은/JX	-	3	NP_SBJ
 3	적지만	적지만	VA+EC	VA+지만/EC	-	8	S
 4	당강령과	당강령과	NNG+JC	NNG+과/JC	-	7	NP_CNJ
 5	당기	당기	NNG	NNG	-	7	NP_CNJ
-6	,	,	,	,	-	5	X
+6	,	,	SP	SP	-	5	X
 7	당가까지	당가까지	NNG+JX	NNG+까지/JX	-	8	NP_OBJ
 8	갖추었다	갖추었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-9	.	.	.	.	-	8	X
+9	.	.	SF	SF	-	8	X
 
 1	주동	주동	NNG	NNG	-	2	NP
 2	인물은	인물은	NNG+JX	NNG+은/JX	-	10	NP_SBJ
@@ -6152,7 +6152,7 @@
 18	위하아	위하아	VV+EC	VV+아/EC	-	20	VP
 19	군속을	군속을	NNG+JKO	NNG+을/JKO	-	20	NP_OBJ
 20	자원하았었다	자원하았었다	NNG+XSV+EP+EF	NNG+하/XSV+았었/EP+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+21	.	.	SF	SF	-	20	X
 
 1	비밀	비밀	NNG	NNG	-	2	NP
 2	결사대는	결사대는	NNG+JX	NNG+는/JX	-	9	NP_SBJ
@@ -6162,8 +6162,8 @@
 6	엄하아	엄하아	VA+EC	VA+아/EC	-	9	S
 7	활동이	활동이	NNG+JKS	NNG+이/JKS	-	9	NP_SBJ
 8	여의하지	여의하지	XR+XSA+EC	XR+하/XSA+지/EC	-	9	VP
-9	않았다	않았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-10	.	.	.	.	-	9	X
+9	않았다	않았다	VX+EP+EF	않/VX+았/EP+다/EF	-	0	ROOT
+10	.	.	SF	SF	-	9	X
 
 1	동지	동지	NNG	NNG	-	3	NP
 2	3	3	SN	SN	-	3	NP
@@ -6189,7 +6189,7 @@
 22	운동을	운동을	NNG+JKO	NNG+을/JKO	-	24	NP_OBJ
 23	펴기로	펴기로	VV+ETN+JKB	VV+기/ETN+로/JKB	-	24	VP_AJT
 24	하았다	하았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-25	.	.	.	.	-	24	X
+25	.	.	SF	SF	-	24	X
 
 1	이들은	이들은	NP+XSN+JX	NP+XSN+은/JX	-	20	NP_SBJ
 2	게릴라전에	게릴라전에	NNG+JKB	NNG+에/JKB	-	3	NP_AJT
@@ -6198,10 +6198,10 @@
 5	화교들로부터	화교들로부터	NNG+JKB	NNG+로부터/JKB	-	16	NP_AJT
 6	통신	통신	NNG	NNG	-	7	NP
 7	장비	장비	NNG	NNG	-	14	NP_CNJ
-8	,	,	,	,	-	7	X
+8	,	,	SP	SP	-	7	X
 9	재정	재정	NNG	NNG	-	10	NP
 10	원조	원조	NNG	NNG	-	14	NP_CNJ
-11	,	,	,	,	-	10	X
+11	,	,	SP	SP	-	10	X
 12	은닉	은닉	NNG	NNG	-	13	NP
 13	장소	장소	NNG	NNG	-	14	NP
 14	제공	제공	NNG	NNG	-	15	NP
@@ -6211,7 +6211,7 @@
 18	연대	연대	NNG	NNG	-	19	NP
 19	공작을	공작을	NNG+JKO	NNG+을/JKO	-	20	NP_OBJ
 20	펴었다	펴었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+21	.	.	SF	SF	-	20	X
 
 1	그러나	그러나	MAJ	MAJ	-	17	AP
 2	이	이	MM	MM	-	4	DP
@@ -6230,7 +6230,7 @@
 15	명이	명이	NNB+JKS	NNB+이/JKS	-	17	NP_SBJ
 16	모두	모두	MAG	MAG	-	17	AP
 17	체포되었다	체포되었다	NNG+XSV+EP+EF	NNG+되/XSV+었/EP+다/EF	-	0	ROOT
-18	.	.	.	.	-	17	X
+18	.	.	SF	SF	-	17	X
 
 1	이들은	이들은	NP+XSN+JX	NP+XSN+은/JX	-	15	NP_SBJ
 2	7월	7월	NNG	NNG	-	3	NP
@@ -6247,7 +6247,7 @@
 13	이국의	이국의	NNG+JKG	NNG+의/JKG	-	14	NP_MOD
 14	구치소에서	구치소에서	NNG+JKB	NNG+에서/JKB	-	15	NP_AJT
 15	맞았다	맞았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-16	.	.	.	.	-	15	X
+16	.	.	SF	SF	-	15	X
 
 1	고려독립청년당원들은	고려독립청년당원들은	NNG+JX	NNG+은/JX	-	21	NP_SBJ
 2	한국인	한국인	NNG	NNG	-	3	NP
@@ -6267,10 +6267,10 @@
 16	후에야	후에야	NNG+JKB+JX	NNG+에/JKB+야/JX	-	21	NP_AJT
 17	고국으로	고국으로	NNG+JKB	NNG+으로/JKB	-	21	NP_AJT
 18	돌아	돌아	VV+EC	VV+아/EC	-	19	VP
-19	올	올	VX+ETM	VX+ᆯ/ETM	-	20	VP_MOD
+19	올	올	VX+ETM	오/VX+ᆯ/ETM	-	20	VP_MOD
 20	수	수	NNB	NNB	-	21	NP_SBJ
 21	있었다	있었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+22	.	.	SF	SF	-	21	X
 
 1	이씨는	이씨는	NNG+JX	NNG+는/JX	-	18	NP_SBJ
 2	혈서로	혈서로	NNG+JKB	NNG+로/JKB	-	5	NP_AJT
@@ -6284,13 +6284,13 @@
 10	현재	현재	NNG	NNG	-	13	NP_AJT
 11	남한에	남한에	NNP+JKB	NNP+에/JKB	-	13	NP_AJT
 12	생존하아	생존하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	13	VP
-13	있는	있는	VX+ETM	VX+는/ETM	-	14	VP_MOD
+13	있는	있는	VX+ETM	있/VX+는/ETM	-	14	VP_MOD
 14	당원은	당원은	NNG+JX	NNG+은/JX	-	17	NP_SBJ
 15	자신과	자신과	NNG+JC	NNG+과/JC	-	16	NP_CNJ
 16	박씨	박씨	NNG	NNG	-	17	NP
 17	두명뿐이라고	두명뿐이라고	MM+NNB+JX+VCP+EC	MM+NNB+뿐/JX+이/VCP+라고/EC	-	18	S_CMP
 18	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 
 1	나머지는	나머지는	NNG+JX	NNG+는/JX	-	6	NP_SBJ
 2	나이가	나이가	NNG+JKS	NNG+가/JKS	-	3	NP_SBJ
@@ -6303,7 +6303,7 @@
 9	수	수	NNB	NNB	-	11	NP_SBJ
 10	없다는	없다는	VA+ETM	VA+다는/ETM	-	11	VP_MOD
 11	것이다	것이다	NNB+VCP+EF	NNB+이/VCP+다/EF	-	0	ROOT
-12	.	.	.	.	-	11	X
+12	.	.	SF	SF	-	11	X
 
 1	주동자이었던	주동자이었던	NNG+VCP+EP+ETM	NNG+이/VCP+었/EP+던/ETM	-	3	VNP_MOD
 2	이활	이활	NNP	NNP	-	3	NP
@@ -6316,7 +6316,7 @@
 9	소식이	소식이	NNG+JKS	NNG+이/JKS	-	10	NP_SBJ
 10	끊긴	끊긴	VV+ETM	VV+ᆫ/ETM	-	11	S_MOD
 11	상태이다	상태이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-12	.	.	.	.	-	11	X
+12	.	.	SF	SF	-	11	X
 
 1	이들은	이들은	NP+XSN+JX	NP+XSN+은/JX	-	13	NP_SBJ
 2	고려독립청년당의	고려독립청년당의	NNP+JKG	NNP+의/JKG	-	3	NP_MOD
@@ -6325,13 +6325,13 @@
 5	운동으로	운동으로	NNG+JKB	NNG+으로/JKB	-	9	NP_AJT
 6	정부에	정부에	NNG+JKB	NNG+에/JKB	-	9	NP_AJT
 7	인정되지	인정되지	NNG+XSV+EC	NNG+되/XSV+지/EC	-	8	VP
-8	않고	않고	VX+EC	VX+고/EC	-	9	VP
-9	있는	있는	VX+ETM	VX+는/ETM	-	10	S_MOD
+8	않고	않고	VX+EC	않/VX+고/EC	-	9	VP
+9	있는	있는	VX+ETM	있/VX+는/ETM	-	10	S_MOD
 10	점이	점이	NNB+JKS	NNB+이/JKS	-	12	NP_SBJ
 11	가장	가장	MAG	MAG	-	12	AP
 12	안타깝다고	안타깝다고	VA+EC	VA+다고/EC	-	13	S_CMP
 13	하았다	하았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	"Q="2"	"Q="2"	SS+Q"+SS	SS+Q"+SS	-	0	ROOT
 
@@ -6340,10 +6340,10 @@
 3	되어	되어	VV+EC	VV+어/EC	-	6	VP
 4	보상을	보상을	NNG+JKO	NNG+을/JKO	-	6	NP_OBJ
 5	받고	받고	VV+EC	VV+고/EC	-	6	VP
-6	싶다는	싶다는	VX+ETM	VX+다는/ETM	-	7	VP_MOD
+6	싶다는	싶다는	VX+ETM	싶/VX+다는/ETM	-	7	VP_MOD
 7	욕심에서가	욕심에서가	NNG+JKB+JKC	NNG+에서/JKB+가/JKC	-	8	NP_CMP
 8	아니ᄇ니다	아니ᄇ니다	VCN+EF	VCN+ᄇ니다/EF	-	0	ROOT
-9	.	.	.	.	-	8	X
+9	.	.	SF	SF	-	8	X
 
 1	목숨을	목숨을	NNG+JKO	NNG+을/JKO	-	2	NP_OBJ
 2	던지어	던지어	VV+EC	VV+어/EC	-	4	VP
@@ -6353,7 +6353,7 @@
 6	죽음이	죽음이	NNG+JKS	NNG+이/JKS	-	8	NP_SBJ
 7	너무나	너무나	MAG	MAG	-	8	AP
 8	아깝습니다	아깝습니다	VA+EF	VA+습니다/EF	-	0	ROOT
-9	.	.	.	.	-	8	X
+9	.	.	SF	SF	-	8	X
 
 1	박씨는	박씨는	NNG+JX	NNG+는/JX	-	35	NP_SBJ
 2	이미	이미	MAG	MAG	-	9	AP
@@ -6380,17 +6380,17 @@
 23	실상을	실상을	NNG+JKO	NNG+을/JKO	-	26	NP_OBJ
 24	상세하게	상세하게	XR+XSA+EC	XR+하/XSA+게/EC	-	26	VP
 25	소개하고	소개하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	26	VP
-26	있는데도	있는데도	VX+EC+JX	VX+는데/EC+도/JX	-	31	S
+26	있는데도	있는데도	VX+EC+JX	있/VX+는데/EC+도/JX	-	31	S
 27	공식	공식	NNG	NNG	-	28	NP
 28	기록이	기록이	NNG+JKS	NNG+이/JKS	-	29	NP_SBJ
 29	없다고	없다고	VA+EC	VA+다고/EC	-	31	S_CMP
 30	무시하기만	무시하기만	NNG+XSV+ETN+JX	NNG+하/XSV+기/ETN+만/JX	-	31	VP
-31	하는	하는	VX+ETM	VX+는/ETM	-	32	VP_MOD
+31	하는	하는	VX+ETM	하/VX+는/ETM	-	32	VP_MOD
 32	정부의	정부의	NNG+JKG	NNG+의/JKG	-	33	NP_MOD
 33	방침이	방침이	NNG+JKS	NNG+이/JKS	-	34	NP_SBJ
 34	야속하다며	야속하다며	NNG+XSA+EC	NNG+하/XSA+다며/EC	-	35	S
 35	한숨짓었다	한숨짓었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-36	.	.	.	.	-	35	X
+36	.	.	SF	SF	-	35	X
 
 1	1991/08/25	1991/08/25	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	0	ROOT
 
@@ -6435,7 +6435,7 @@
 13	처신이	처신이	NNG+JKS	NNG+이/JKS	-	16	NP_SBJ
 14	물의를	물의를	NNG+JKO	NNG+를/JKO	-	16	NP_OBJ
 15	빚고	빚고	VV+EC	VV+고/EC	-	16	VP
-16	있는	있는	VX+ETM	VX+는/ETM	-	17	S_MOD
+16	있는	있는	VX+ETM	있/VX+는/ETM	-	17	S_MOD
 17	가운데	가운데	NNG	NNG	-	27	NP_AJT
 18	30∼50대	30∼50대	NNG	NNG	-	19	NP
 19	주부	주부	NNG	NNG	-	21	NP
@@ -6446,15 +6446,15 @@
 24	활동	활동	NNG	NNG	-	25	NP
 25	감시에	감시에	NNG+JKB	NNG+에/JKB	-	27	NP_AJT
 26	나서고	나서고	VV+EC	VV+고/EC	-	27	VP
-27	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-28	.	.	.	.	-	27	X
+27	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+28	.	.	SF	SF	-	27	X
 
 1	경기도	경기도	NNP	NNP	-	2	NP
 2	부천시	부천시	NNP	NNP	-	3	NP
 3	YMCA	YMCA	SL	SL	-	4	NP
 4	산하	산하	NNG	NNG	-	5	NP
 5	`의정지기단'	`의정지기단'	SS+NNG+SS	SS+NNG+SS	-	0	ROOT
-6	.	.	.	.	-	5	X
+6	.	.	SF	SF	-	5	X
 
 1	의정을	의정을	NNG+JKO	NNG+을/JKO	-	2	NP_OBJ
 2	지키는	지키는	VV+ETM	VV+는/ETM	-	3	VP_MOD
@@ -6469,14 +6469,14 @@
 11	공약에서부터	공약에서부터	NNG+JKB	NNG+에서부터/JKB	-	13	NP_AJT
 12	원내외	원내외	NNG	NNG	-	13	NP
 13	발언	발언	NNG	NNG	-	25	NP_CNJ
-14	,	,	,	,	-	13	X
+14	,	,	SP	SP	-	13	X
 15	의원	의원	NNG	NNG	-	16	NP
 16	개인	개인	NNG	NNG	-	17	NP
 17	사업과	사업과	NNG+JKB	NNG+과/JKB	-	18	NP_AJT
 18	관련한	관련한	NNG+XSV+ETM	NNG+하/XSV+ᆫ/ETM	-	20	VP_MOD
 19	이권	이권	NNG	NNG	-	20	NP
 20	개입	개입	NNG	NNG	-	25	NP_CNJ
-21	,	,	,	,	-	20	X
+21	,	,	SP	SP	-	20	X
 22	의회	의회	NNG	NNG	-	23	NP
 23	활동의	활동의	NNG+JKG	NNG+의/JKG	-	25	NP_MOD
 24	참여도와	참여도와	NNG+JC	NNG+와/JC	-	25	NP_CNJ
@@ -6497,8 +6497,8 @@
 39	등의	등의	NNB+JKG	NNB+의/JKG	-	40	NP_MOD
 40	활동을	활동을	NNG+JKO	NNG+을/JKO	-	42	NP_OBJ
 41	하고	하고	VV+EC	VV+고/EC	-	42	VP
-42	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-43	.	.	.	.	-	42	X
+42	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+43	.	.	SF	SF	-	42	X
 
 1	이들은	이들은	NP+XSN+JX	NP+XSN+은/JX	-	22	NP_SBJ
 2	제	제	MM	MM	-	3	DP
@@ -6511,7 +6511,7 @@
 9	다른	다른	MM	MM	-	10	DP
 10	시민들은	시민들은	NNG+JX	NNG+은/JX	-	12	NP_SBJ
 11	보이지	보이지	VV+EC	VV+지/EC	-	12	VP
-12	않는	않는	VX+ETM	VX+는/ETM	-	15	S_MOD
+12	않는	않는	VX+ETM	않/VX+는/ETM	-	15	S_MOD
 13	부천시의회	부천시의회	NNG	NNG	-	14	NP
 14	본회의장	본회의장	NNG	NNG	-	15	NP
 15	방청석에	방청석에	NNG+JKB	NNG+에/JKB	-	17	NP_AJT
@@ -6522,7 +6522,7 @@
 20	활동	활동	NNG	NNG	-	21	NP
 21	내용을	내용을	NNG+JKO	NNG+을/JKO	-	22	NP_OBJ
 22	지켜보았다	지켜보았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-23	.	.	.	.	-	22	X
+23	.	.	SF	SF	-	22	X
 
 1	`	`	SS	SS	-	8	L
 2	통	통	NNG	NNG	-	3	NP
@@ -6549,14 +6549,14 @@
 23	한	한	MM	MM	-	24	DP
 24	마디도	마디도	NNG+JX	NNG+도/JX	-	26	NP_OBJ
 25	놓치지	놓치지	VV+EC	VV+지/EC	-	26	VP
-26	않으려고	않으려고	VX+EC	VX+으려고/EC	-	32	VP
+26	않으려고	않으려고	VX+EC	않/VX+으려고/EC	-	32	VP
 27	발언	발언	NNG	NNG	-	28	NP
 28	내용을	내용을	NNG+JKO	NNG+을/JKO	-	32	NP_OBJ
 29	노트에	노트에	NNG+JKB	NNG+에/JKB	-	32	NP_AJT
 30	열심히	열심히	MAG	MAG	-	32	AP
 31	메모하고	메모하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	32	VP
-32	있었다	있었다	VX+EP+EF	VX+었/EP+다/EF	-	0	ROOT
-33	.	.	.	.	-	32	X
+32	있었다	있었다	VX+EP+EF	있/VX+었/EP+다/EF	-	0	ROOT
+33	.	.	SF	SF	-	32	X
 
 1	의원들의	의원들의	NNG+JKG	NNG+의/JKG	-	4	NP_MOD
 2	질의	질의	NNG	NNG	-	3	NP
@@ -6574,7 +6574,7 @@
 14	지에	지에	NNG+JKB	NNG+에/JKB	-	15	NP_AJT
 15	싣기	싣기	VV+ETN	VV+기/ETN	-	16	VP_OBJ
 16	위하아서이었다	위하아서이었다	VV+EC+VCP+EP+EF	VV+아서/EC+이/VCP+었/EP+다/EF	-	0	ROOT
-17	.	.	.	.	-	16	X
+17	.	.	SF	SF	-	16	X
 
 1	이날	이날	MM+NNG	MM+NNG	-	2	NP
 2	회의를	회의를	NNG+JKO	NNG+를/JKO	-	4	NP_OBJ
@@ -6611,7 +6611,7 @@
 33	동의	동의	NNG+JKG	NNG+의/JKG	-	35	NP_MOD
 34	역사나	역사나	NNG+JC	NNG+나/JC	-	35	NP_CNJ
 35	내력	내력	NNG	NNG	-	39	NP_CNJ
-36	,	,	,	,	-	35	X
+36	,	,	SP	SP	-	35	X
 37	동네에	동네에	NNG+JKB	NNG+에/JKB	-	38	NP_AJT
 38	대한	대한	VV+ETM	VV+ᆫ/ETM	-	39	VP_MOD
 39	상징성	상징성	NNG	NNG	-	40	NP
@@ -6628,7 +6628,7 @@
 50	고	고	JKQ	고/JKQ	-	52	S_CMP
 51	나름대로	나름대로	NNB+JX	NNB+대로/JX	-	52	NP_AJT
 52	평가하았다	평가하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-53	.	.	.	.	-	52	X
+53	.	.	SF	SF	-	52	X
 
 1	고씨는	고씨는	NNG+JX	NNG+는/JX	-	39	NP_SBJ
 2	또	또	MAG	MAG	-	39	AP
@@ -6660,7 +6660,7 @@
 28	개인별	개인별	NNG	NNG	-	29	NP
 29	카드에	카드에	NNG+JKB	NNG+에/JKB	-	30	NP_AJT
 30	정리	정리	NNG	NNG	-	35	NP
-31	,	,	,	,	-	30	X
+31	,	,	SP	SP	-	30	X
 32	임기가	임기가	NNG+JKS	NNG+가/JKS	-	33	NP_SBJ
 33	끝날	끝날	VV+ETM	VV+ᆯ/ETM	-	34	S_MOD
 34	때	때	NNG	NNG	-	35	NP_AJT
@@ -6669,7 +6669,7 @@
 37	"	"	SS	SS	-	38	NP
 38	이라고	이라고	JKQ	이라고/JKQ	-	39	VNP_CMP
 39	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-40	.	.	.	.	-	39	X
+40	.	.	SF	SF	-	39	X
 
 1	의정지기단이	의정지기단이	NNG+JKS	NNG+이/JKS	-	2	NP_SBJ
 2	발족한	발족한	NNG+XSV+ETM	NNG+하/XSV+ᆫ/ETM	-	3	S_MOD
@@ -6681,7 +6681,7 @@
 8	지난	지난	VV+ETM	VV+ᆫ/ETM	-	10	VP_MOD
 9	4월	4월	NNG	NNG	-	10	NP
 10	15일	15일	NNG	NNG	-	0	ROOT
-11	.	.	.	.	-	10	X
+11	.	.	SF	SF	-	10	X
 
 1	이들은	이들은	NP+XSN+JX	NP+XSN+은/JX	-	21	NP_SBJ
 2	의회개원식이	의회개원식이	NNG+JKS	NNG+이/JKS	-	3	NP_SBJ
@@ -6693,18 +6693,18 @@
 8	의원들에게	의원들에게	NNG+JKB	NNG+에게/JKB	-	11	NP_AJT
 9	난초	난초	NNG	NNG	-	10	NP
 10	한송이씩을	한송이씩을	MM+NNG+JKO	MM+NNG+을/JKO	-	11	NP_OBJ
-11	꽂아주며	꽂아주며	VV+EC+VX+EC	VV+아/EC+VX+며/EC	-	21	VP
+11	꽂아주며	꽂아주며	VV+EC+VX+EC	VV+아/EC+주/VX+며/EC	-	21	VP
 12	"	"	SS	SS	-	19	L
 13	풀뿌리	풀뿌리	NNG	NNG	-	14	NP
 14	민주주의를	민주주의를	NNG+JKO	NNG+를/JKO	-	17	NP_OBJ
 15	이	이	MM	MM	-	16	DP
 16	꽃처럼	꽃처럼	NNG+JKB	NNG+처럼/JKB	-	17	NP_AJT
-17	피우어줄	피우어줄	VV+EC+VX+ETM	VV+어/EC+VX+ᆯ/ETM	-	18	VP_MOD
+17	피우어줄	피우어줄	VV+EC+VX+ETM	VV+어/EC+주/VX+ᆯ/ETM	-	18	VP_MOD
 18	것	것	NNB	NNB	-	19	NP
 19	"	"	SS	SS	-	20	NP
 20	을	을	JKO	을/JKO	-	21	NP_OBJ
 21	부탁하았다	부탁하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+22	.	.	SF	SF	-	21	X
 
 1	의정지기단은	의정지기단은	NNG+JX	NNG+은/JX	-	12	NP_SBJ
 2	첫	첫	MM	MM	-	3	DP
@@ -6718,12 +6718,12 @@
 10	개인별로	개인별로	NNG+JKB	NNG+로/JKB	-	12	NP_AJT
 11	카드를	카드를	NNG+JKO	NNG+를/JKO	-	12	NP_OBJ
 12	만들었다	만들었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-13	.	.	.	.	-	12	X
+13	.	.	SF	SF	-	12	X
 
 1	`실천도'를	`실천도'를	SS+NNG+SS+JKO	SS+NNG+SS+를/JKO	-	2	NP_OBJ
 2	평가하기	평가하기	NNG+XSV+ETN	NNG+하/XSV+기/ETN	-	3	VP_OBJ
 3	위하아서이었다	위하아서이었다	VV+EC+VCP+EP+EF	VV+아서/EC+이/VCP+었/EP+다/EF	-	0	ROOT
-4	.	.	.	.	-	3	X
+4	.	.	SF	SF	-	3	X
 
 1	단장인	단장인	NNG+VCP+ETM	NNG+이/VCP+ᆫ/ETM	-	10	VNP_MOD
 2	홍은정	홍은정	NNP	NNP	-	10	NP
@@ -6738,7 +6738,7 @@
 11	"	"	SS	SS	-	31	L
 12	우리가	우리가	NP+JKS	NP+가/JKS	-	19	NP_SBJ
 13	의원만	의원만	NNG+JX	NNG+만/JX	-	14	NP_OBJ
-14	뽑아놓았지	뽑아놓았지	VV+EC+VX+EP+EC	VV+아/EC+VX+았/EP+지/EC	-	19	VP
+14	뽑아놓았지	뽑아놓았지	VV+EC+VX+EP+EC	VV+아/EC+놓/VX+았/EP+지/EC	-	19	VP
 15	의회에서	의회에서	NNG+JKB	NNG+에서/JKB	-	17	NP_AJT
 16	무엇을	무엇을	NP+JKO	NP+을/JKO	-	17	NP_OBJ
 17	하는지	하는지	VV+EC	VV+는지/EC	-	19	VP_OBJ
@@ -6773,7 +6773,7 @@
 46	고	고	JKQ	고/JKQ	-	48	S_CMP
 47	고충을	고충을	NNG+JKO	NNG+을/JKO	-	48	NP_OBJ
 48	털어놓았다	털어놓았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-49	.	.	.	.	-	48	X
+49	.	.	SF	SF	-	48	X
 
 1	의정지기	의정지기	NNG	NNG	-	2	NP
 2	단원들은	단원들은	NNG+JX	NNG+은/JX	-	20	NP_SBJ
@@ -6794,8 +6794,8 @@
 17	의회를	의회를	NNG+JKO	NNG+를/JKO	-	18	NP_OBJ
 18	연구하고	연구하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	20	VP
 19	토론하고	토론하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	20	VP
-20	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+20	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+21	.	.	SF	SF	-	20	X
 
 1	이들은	이들은	NP+XSN+JX	NP+XSN+은/JX	-	34	NP_SBJ
 2	또	또	MAG	MAG	-	34	AP
@@ -6806,7 +6806,7 @@
 7	의정지기학교를	의정지기학교를	NNG+JKO	NNG+를/JKO	-	8	NP_OBJ
 8	개설하아	개설하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	16	VP
 9	변호사	변호사	NNG	NNG	-	13	NP_CNJ
-10	,	,	,	,	-	9	X
+10	,	,	SP	SP	-	9	X
 11	시청	시청	NNG	NNG	-	12	NP
 12	예산	예산	NNG	NNG	-	13	NP
 13	계장	계장	NNG	NNG	-	14	NP
@@ -6830,8 +6830,8 @@
 31	등의	등의	NNB+JKG	NNB+의/JKG	-	32	NP_MOD
 32	공부를	공부를	NNG+JKO	NNG+를/JKO	-	34	NP_OBJ
 33	하기도	하기도	VV+ETN+JX	VV+기/ETN+도/JX	-	34	VP
-34	하았다	하았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-35	.	.	.	.	-	34	X
+34	하았다	하았다	VX+EP+EF	하/VX+았/EP+다/EF	-	0	ROOT
+35	.	.	SF	SF	-	34	X
 
 1	이들은	이들은	NP+XSN+JX	NP+XSN+은/JX	-	20	NP_SBJ
 2	주요	주요	NNG	NNG	-	3	NP
@@ -6847,13 +6847,13 @@
 12	10일	10일	NNG	NNG	-	17	NP_AJT
 13	5만부를	5만부를	NNG+JKO	NNG+를/JKO	-	14	NP_OBJ
 14	발간	발간	NNG	NNG	-	17	VP
-15	,	,	,	,	-	14	X
+15	,	,	SP	SP	-	14	X
 16	시민들에게	시민들에게	NNG+JKB	NNG+에게/JKB	-	17	NP_AJT
 17	배포하아	배포하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	20	VP
 18	인기를	인기를	NNG+JKO	NNG+를/JKO	-	20	NP_OBJ
 19	끌기도	끌기도	VV+ETN+JX	VV+기/ETN+도/JX	-	20	VP
-20	하았다	하았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+20	하았다	하았다	VX+EP+EF	하/VX+았/EP+다/EF	-	0	ROOT
+21	.	.	SF	SF	-	20	X
 
 1	최근	최근	NNG	NNG	-	2	NP_AJT
 2	잇따른	잇따른	VV+ETM	VV+ᆫ/ETM	-	6	VP_MOD
@@ -6887,7 +6887,7 @@
 30	문제들을	문제들을	NNG+JKO	NNG+을/JKO	-	32	NP_OBJ
 31	집중	집중	NNG	NNG	-	32	NP
 32	연구	연구	NNG	NNG	-	37	VP
-33	,	,	,	,	-	32	X
+33	,	,	SP	SP	-	32	X
 34	시의회	시의회	NNG	NNG	-	35	NP
 35	의정	의정	NNG	NNG	-	36	NP
 36	활동에	활동에	NNG+JKB	NNG+에/JKB	-	37	NP_AJT
@@ -6896,7 +6896,7 @@
 39	"	"	SS	SS	-	40	NP
 40	이라고	이라고	JKQ	이라고/JKQ	-	41	VNP_CMP
 41	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-42	.	.	.	.	-	41	X
+42	.	.	SF	SF	-	41	X
 
 1	부천시의원	부천시의원	NNG	NNG	-	10	NP
 2	김동선	김동선	NNP	NNP	-	10	NP
@@ -6929,7 +6929,7 @@
 29	"	"	SS	SS	-	30	S
 30	고	고	JKQ	고/JKQ	-	31	S_CMP
 31	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-32	.	.	.	.	-	31	X
+32	.	.	SF	SF	-	31	X
 
 1	1991/09/05	1991/09/05	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	0	ROOT
 
@@ -6985,7 +6985,7 @@
 7	'	'	SS	SS	-	8	NP
 8	가	가	JKS	가/JKS	-	9	NP_SBJ
 9	완공되었다	완공되었다	NNG+XSV+EP+EF	NNG+되/XSV+었/EP+다/EF	-	0	ROOT
-10	.	.	.	.	-	9	X
+10	.	.	SF	SF	-	9	X
 
 1	지난해	지난해	VV+ETM+NNG	VV+ᆫ/ETM+NNG	-	2	NP
 2	10월	10월	NNG	NNG	-	5	NP_AJT
@@ -6994,7 +6994,7 @@
 5	신축된	신축된	NNG+XSV+ETM	NNG+되/XSV+ᆫ/ETM	-	6	S_MOD
 6	데	데	NNB	NNB	-	7	NP_AJT
 7	잇어	잇어	VV+EC	VV+어/EC	-	19	VP
-8	,	,	,	,	-	7	X
+8	,	,	SP	SP	-	7	X
 9	대통령	대통령	NNG	NNG	-	10	NP
 10	집무실인	집무실인	NNG+VCP+ETM	NNG+이/VCP+ᆫ/ETM	-	13	VNP_MOD
 11	청와대	청와대	NNP	NNP	-	12	NP
@@ -7006,7 +7006,7 @@
 17	개월만인	개월만인	NNB+NNB+VCP+ETM	NNB+NNB+이/VCP+ᆫ/ETM	-	18	VNP_MOD
 18	4일	4일	NNG	NNG	-	19	NP_AJT
 19	준공되ᄆ으로써	준공되ᄆ으로써	NNG+XSV+ETN+JKB	NNG+되/XSV+ᄆ/ETN+으로써/JKB	-	28	S_AJT
-20	,	,	,	,	-	19	X
+20	,	,	SP	SP	-	19	X
 21	`	`	SS	SS	-	24	L
 22	새	새	MM	MM	-	23	DP
 23	청와대	청와대	NNP	NNP	-	24	NP
@@ -7015,7 +7015,7 @@
 26	막을	막을	NNG+JKO	NNG+을/JKO	-	28	NP_OBJ
 27	올리게	올리게	VV+EC	VV+게/EC	-	28	VP
 28	되었다	되었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-29	.	.	.	.	-	28	X
+29	.	.	SF	SF	-	28	X
 
 1	지난	지난	VV+ETM	VV+ᆫ/ETM	-	2	VP_MOD
 2	39년	39년	NNG	NNG	-	7	NP_AJT
@@ -7024,22 +7024,22 @@
 5	총독의	총독의	NNG+JKG	NNG+의/JKG	-	6	NP_MOD
 6	사택으로	사택으로	NNG+JKB	NNG+으로/JKB	-	7	NP_AJT
 7	건립	건립	NNG	NNG	-	12	NP
-8	,	,	,	,	-	7	X
+8	,	,	SP	SP	-	7	X
 9	하지	하지	NNP	NNP	-	10	NP
 10	미군정장관	미군정장관	NNG	NNG	-	11	NP
 11	숙소를	숙소를	NNG+JKO	NNG+를/JKO	-	12	NP_OBJ
 12	거치어	거치어	VV+EC	VV+어/EC	-	32	VP
-13	,	,	,	,	-	12	X
+13	,	,	SP	SP	-	12	X
 14	이승만	이승만	NNP	NNP	-	22	NP_CNJ
-15	,	,	,	,	-	14	X
+15	,	,	SP	SP	-	14	X
 16	윤보선	윤보선	NNP	NNP	-	22	NP_CNJ
-17	,	,	,	,	-	16	X
+17	,	,	SP	SP	-	16	X
 18	박정희	박정희	NNP	NNP	-	22	NP_CNJ
-19	,	,	,	,	-	18	X
+19	,	,	SP	SP	-	18	X
 20	최규하	최규하	NNP	NNP	-	22	NP_CNJ
-21	,	,	,	,	-	20	X
+21	,	,	SP	SP	-	20	X
 22	전두환	전두환	NNP	NNP	-	25	NP_CNJ
-23	,	,	,	,	-	22	X
+23	,	,	SP	SP	-	22	X
 24	전	전	MM	MM	-	25	DP
 25	대통령과	대통령과	NNG+JC	NNG+과/JC	-	27	NP_CNJ
 26	노태우	노태우	NNP	NNP	-	27	NP
@@ -7048,7 +7048,7 @@
 29	겸	겸	NNB	NNB	-	30	NP
 30	집무실로	집무실로	NNG+JKB	NNG+로/JKB	-	32	NP_AJT
 31	쓰이어	쓰이어	VV+EC	VV+어/EC	-	32	VP
-32	오았던	오았던	VX+EP+ETM	VX+았/EP+던/ETM	-	37	VP_MOD
+32	오았던	오았던	VX+EP+ETM	오/VX+았/EP+던/ETM	-	37	VP_MOD
 33	`	`	SS	SS	-	36	L
 34	옛	옛	MM	MM	-	35	DP
 35	청와대	청와대	NNP	NNP	-	36	NP
@@ -7059,7 +7059,7 @@
 40	마감하게	마감하게	NNG+XSV+EC	NNG+하/XSV+게/EC	-	41	VP
 41	된	된	VV+ETM	VV+ᆫ/ETM	-	42	VP_MOD
 42	것이다	것이다	NNB+VCP+EF	NNB+이/VCP+다/EF	-	0	ROOT
-43	.	.	.	.	-	42	X
+43	.	.	SF	SF	-	42	X
 
 1	당국자들은	당국자들은	NNG+JX	NNG+은/JX	-	28	NP_SBJ
 2	당초	당초	NNG	NNG	-	10	NP_AJT
@@ -7071,7 +7071,7 @@
 8	쓴다는	쓴다는	VV+ETM	VV+ᆫ다는/ETM	-	9	VP_MOD
 9	생각도	생각도	NNG+JX	NNG+도/JX	-	10	NP_OBJ
 10	하았으나	하았으나	VV+EP+EC	VV+았/EP+으나/EC	-	28	VP
-11	,	,	,	,	-	10	X
+11	,	,	SP	SP	-	10	X
 12	이	이	MM	MM	-	13	DP
 13	건물이	건물이	NNG+JKS	NNG+이/JKS	-	18	NP_SBJ
 14	경복궁의	경복궁의	NNP+JKG	NNP+의/JKG	-	15	NP_MOD
@@ -7081,7 +7081,7 @@
 18	있다는	있다는	VV+ETM	VV+다는/ETM	-	19	S_MOD
 19	점을	점을	NNB+JKO	NNB+을/JKO	-	20	NP_OBJ
 20	감안	감안	NNG	NNG	-	28	VP
-21	,	,	,	,	-	20	X
+21	,	,	SP	SP	-	20	X
 22	민족	민족	NNG	NNG	-	23	NP
 23	정기의	정기의	NNG+JKG	NNG+의/JKG	-	24	NP_MOD
 24	재생을	재생을	NNG+JKO	NNG+을/JKO	-	25	NP_OBJ
@@ -7089,7 +7089,7 @@
 26	완전	완전	NNG	NNG	-	27	NP_AJT
 27	철거할	철거할	NNG+XSV+ETM	NNG+하/XSV+ᆯ/ETM	-	28	VP_MOD
 28	방침이다	방침이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-29	.	.	.	.	-	28	X
+29	.	.	SF	SF	-	28	X
 
 1	좁은	좁은	VA+ETM	VA+은/ETM	-	2	VP_MOD
 2	집무실	집무실	NNG	NNG	-	3	NP_SBJ
@@ -7122,7 +7122,7 @@
 23	없다는	없다는	VA+ETM	VA+다는/ETM	-	24	S_MOD
 24	것	것	NNB	NNB	-	25	NP
 25	때문이었다	때문이었다	NNB+VCP+EP+EF	NNB+이/VCP+었/EP+다/EF	-	0	ROOT
-26	.	.	.	.	-	25	X
+26	.	.	SF	SF	-	25	X
 
 1	또	또	MAG	MAG	-	2	AP
 2	하나는	하나는	NR+JX	NR+는/JX	-	18	NP_SBJ
@@ -7131,7 +7131,7 @@
 5	엄청나게	엄청나게	VA+EC	VA+게/EC	-	6	VP
 6	커진	커진	VV+ETM	VV+ᆫ/ETM	-	7	S_MOD
 7	오늘날	오늘날	NNG	NNG	-	17	NP_AJT
-8	,	,	,	,	-	7	X
+8	,	,	SP	SP	-	7	X
 9	50년	50년	NNG	NNG	-	10	NP
 10	이상이나	이상이나	NNG+JX	NNG+이나/JX	-	11	NP_CMP
 11	된	된	VV+ETM	VV+ᆫ/ETM	-	12	VP_MOD
@@ -7142,7 +7142,7 @@
 16	지나치게	지나치게	VV+EC	VV+게/EC	-	17	VP
 17	협소하다는	협소하다는	XR+XSA+ETM	XR+하/XSA+다는/ETM	-	18	VP_MOD
 18	점이었다	점이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
-19	.	.	.	.	-	18	X
+19	.	.	SF	SF	-	18	X
 
 1	청와대	청와대	NNP	NNP	-	2	NP
 2	시절의	시절의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
@@ -7152,16 +7152,16 @@
 6	한결	한결	MAG	MAG	-	7	AP
 7	같이	같이	MAG	MAG	-	9	AP
 8	제기되어	제기되어	NNG+XSV+EC	NNG+되/XSV+어/EC	-	9	VP
-9	오았던	오았던	VX+EP+ETM	VX+았/EP+던/ETM	-	10	VP_MOD
+9	오았던	오았던	VX+EP+ETM	오/VX+았/EP+던/ETM	-	10	VP_MOD
 10	문제	문제	NNG	NNG	-	0	ROOT
-11	.	.	.	.	-	10	X
+11	.	.	SF	SF	-	10	X
 
 1	그러나	그러나	MAJ	MAJ	-	21	AP
 2	새	새	MM	MM	-	3	DP
 3	건물을	건물을	NNG+JKO	NNG+을/JKO	-	4	NP_OBJ
 4	짓을	짓을	VV+ETM	VV+을/ETM	-	5	VP_MOD
 5	경우	경우	NNG	NNG	-	14	NP_AJT
-6	,	,	,	,	-	5	X
+6	,	,	SP	SP	-	5	X
 7	장기	장기	NNG	NNG	-	8	NP
 8	-	-	SS	SS	-	9	NP
 9	영구	영구	NNG	NNG	-	10	NP
@@ -7175,9 +7175,9 @@
 17	상황	상황	NNG	NNG	-	18	NP
 18	때문에	때문에	NNB+JKB	NNB+에/JKB	-	21	NP_AJT
 19	실행에	실행에	NNG+JKB	NNG+에/JKB	-	21	NP_AJT
-20	옮기어지지	옮기어지지	VV+EC+VX+EC	VV+어/EC+VX+지/EC	-	21	VP
-21	못하았다	못하았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+20	옮기어지지	옮기어지지	VV+EC+VX+EC	VV+어/EC+지/VX+지/EC	-	21	VP
+21	못하았다	못하았다	VX+EP+EF	못하/VX+았/EP+다/EF	-	0	ROOT
+22	.	.	SF	SF	-	21	X
 
 1	그러나	그러나	MAJ	MAJ	-	15	AP
 2	89년	89년	NNG	NNG	-	3	NP
@@ -7194,7 +7194,7 @@
 13	내리게	내리게	VV+EC	VV+게/EC	-	14	VP
 14	된	된	VV+ETM	VV+ᆫ/ETM	-	15	VP_MOD
 15	것이다	것이다	NNB+VCP+EF	NNB+이/VCP+다/EF	-	0	ROOT
-16	.	.	.	.	-	15	X
+16	.	.	SF	SF	-	15	X
 
 1	시내서도	시내서도	NNG+JKB+JX	NNG+서/JKB+도/JX	-	4	NP_AJT
 2	한	한	MM	MM	-	3	DP
@@ -7210,7 +7210,7 @@
 5	기맥을	기맥을	NNG+JKO	NNG+을/JKO	-	6	NP_OBJ
 6	되살린다는	되살린다는	VV+ETM	VV+ᆫ다는/ETM	-	7	VP_MOD
 7	뜻에서	뜻에서	NNG+JKB	NNG+에서/JKB	-	17	NP_AJT
-8	,	,	,	,	-	7	X
+8	,	,	SP	SP	-	7	X
 9	북악산정과	북악산정과	NNP+JC	NNP+과/JC	-	12	NP_CNJ
 10	경복궁	경복궁	NNP	NNP	-	11	NP
 11	-	-	SS	SS	-	12	NP_CNJ
@@ -7219,8 +7219,8 @@
 14	관악산을	관악산을	NNP+JKO	NNP+을/JKO	-	15	NP_OBJ
 15	잇는	잇는	VV+ETM	VV+는/ETM	-	16	VP_MOD
 16	축상에	축상에	NNG+JKB	NNG+에/JKB	-	17	NP_AJT
-17	세우어지었다	세우어지었다	VV+EC+VX+EP+EF	VV+어/EC+VX+었/EP+다/EF	-	0	ROOT
-18	.	.	.	.	-	17	X
+17	세우어지었다	세우어지었다	VV+EC+VX+EP+EF	VV+어/EC+지/VX+었/EP+다/EF	-	0	ROOT
+18	.	.	SF	SF	-	17	X
 
 1	옛	옛	MM	MM	-	2	DP
 2	본관의	본관의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
@@ -7244,7 +7244,7 @@
 20	보인다는	보인다는	VV+ETM	VV+ᆫ다는/ETM	-	21	S_MOD
 21	것이	것이	NNB+JKS	NNB+이/JKS	-	22	NP_SBJ
 22	특징	특징	NNG	NNG	-	0	ROOT
-23	.	.	.	.	-	22	X
+23	.	.	SF	SF	-	22	X
 
 1	본관	본관	NNG	NNG	-	2	NP
 2	건물은	건물은	NNG+JX	NNG+은/JX	-	15	NP_SBJ
@@ -7254,29 +7254,29 @@
 6	중심으로	중심으로	NNG+JKB	NNG+으로/JKB	-	9	VP
 7	`ᄃ'자를	`ᄃ'자를	SS+NNG+JKO	SS+NNG+를/JKO	-	9	NP_OBJ
 8	이루고	이루고	VV+EC	VV+고/EC	-	9	VP
-9	있는	있는	VX+ETM	VX+는/ETM	-	13	VP_MOD
+9	있는	있는	VX+ETM	있/VX+는/ETM	-	13	VP_MOD
 10	좌	좌	NNG	NNG	-	11	NP
 11	-	-	SS	SS	-	12	NP
 12	우	우	NNG	NNG	-	13	NP
 13	별채로	별채로	NNG+JKB	NNG+로/JKB	-	15	NP_AJT
-14	이루어지어	이루어지어	VV+EC+VX+EC	VV+어/EC+VX+어/EC	-	15	VP
-15	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-16	.	.	.	.	-	15	X
+14	이루어지어	이루어지어	VV+EC+VX+EC	VV+어/EC+지/VX+어/EC	-	15	VP
+15	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+16	.	.	SF	SF	-	15	X
 
 1	청기와를	청기와를	NNG+JKO	NNG+를/JKO	-	2	NP_OBJ
 2	올린	올린	VV+ETM	VV+ᆫ/ETM	-	4	VP_MOD
 3	팔작	팔작	NNG	NNG	-	4	NP
 4	지붕	지붕	NNG	NNG	-	15	NP_CNJ
-5	,	,	,	,	-	4	X
+5	,	,	SP	SP	-	4	X
 6	다공포	다공포	NNG	NNG	-	7	NP
 7	형식의	형식의	NNG+JKG	NNG+의/JKG	-	8	NP_MOD
 8	처마	처마	NNG	NNG	-	15	NP_CNJ
-9	,	,	,	,	-	8	X
+9	,	,	SP	SP	-	8	X
 10	현관	현관	NNG	NNG	-	11	NP
 11	천장의	천장의	NNG+JKG	NNG+의/JKG	-	13	NP_MOD
 12	녹색	녹색	NNG	NNG	-	13	NP
 13	단청	단청	NNG	NNG	-	15	NP_CNJ
-14	,	,	,	,	-	13	X
+14	,	,	SP	SP	-	13	X
 15	창문살	창문살	NNG	NNG	-	16	NP
 16	등	등	NNB	NNB	-	24	NP_AJT
 17	건물	건물	NNG	NNG	-	18	NP
@@ -7287,7 +7287,7 @@
 22	건축	건축	NNG	NNG	-	23	NP
 23	양식을	양식을	NNG+JKO	NNG+을/JKO	-	24	NP_OBJ
 24	반영하았다	반영하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-25	.	.	.	.	-	24	X
+25	.	.	SF	SF	-	24	X
 
 1	근정전	근정전	NNG	NNG	-	2	NP
 2	등	등	NNB	NNB	-	4	NP
@@ -7295,7 +7295,7 @@
 4	궁전을	궁전을	NNG+JKO	NNG+을/JKO	-	6	NP_OBJ
 5	주로	주로	MAG	MAG	-	6	AP
 6	참고하았다	참고하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-7	.	.	.	.	-	6	X
+7	.	.	SF	SF	-	6	X
 
 1	소요된	소요된	NNG+XSV+ETM	NNG+되/XSV+ᆫ/ETM	-	6	VP_MOD
 2	`	`	SS	SS	-	5	L
@@ -7307,7 +7307,7 @@
 8	줄잡아	줄잡아	VV+EC	VV+아/EC	-	10	VP
 9	15만여	15만여	NNG	NNG	-	10	NP
 10	장	장	NNB	NNB	-	0	ROOT
-11	.	.	.	.	-	10	X
+11	.	.	SF	SF	-	10	X
 
 1	외형상	외형상	NNG	NNG	-	3	NP_AJT
 2	2층으로	2층으로	NNG+JKB	NNG+으로/JKB	-	3	NP_AJT
@@ -7319,7 +7319,7 @@
 8	2천	2천	NR	NR	-	9	NP
 9	5백	5백	NR	NR	-	10	NP
 10	64평	64평	NNG	NNG	-	0	ROOT
-11	.	.	.	.	-	10	X
+11	.	.	SF	SF	-	10	X
 
 1	1천	1천	NR	NR	-	2	NP
 2	2백평	2백평	NNG	NNG	-	3	NP
@@ -7329,12 +7329,12 @@
 6	중심으로	중심으로	NNG+JKB	NNG+으로/JKB	-	12	VP
 7	서편은	서편은	NNG+JX	NNG+은/JX	-	8	NP_SBJ
 8	문	문	NNG	NNG	-	12	S
-9	,	,	,	,	-	8	X
+9	,	,	SP	SP	-	8	X
 10	동편은	동편은	NNG+JX	NNG+은/JX	-	12	NP_SBJ
 11	무를	무를	NNG+JKO	NNG+를/JKO	-	12	NP_OBJ
 12	상징하도록	상징하도록	NNG+XSV+EC	NNG+하/XSV+도록/EC	-	13	S
-13	하았다	하았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+13	하았다	하았다	VX+EP+EF	하/VX+았/EP+다/EF	-	0	ROOT
+14	.	.	SF	SF	-	13	X
 
 1	이에	이에	NP+JKB	NP+에/JKB	-	2	NP_AJT
 2	따르아	따르아	VV+EC	VV+아/EC	-	27	VP
@@ -7345,7 +7345,7 @@
 7	별채인	별채인	NNG+VCP+ETM	NNG+이/VCP+ᆫ/ETM	-	8	VNP_MOD
 8	대회의실은	대회의실은	NNG+JX	NNG+은/JX	-	9	NP_OBJ
 9	세종실로	세종실로	NNG+JKB	NNG+로/JKB	-	20	VP
-10	,	,	,	,	-	9	X
+10	,	,	SP	SP	-	9	X
 11	1백	1백	NR	NR	-	12	NP
 12	50	50	SN	SN	-	13	NP
 13	명	명	NNB	NNB	-	14	NP
@@ -7356,14 +7356,14 @@
 18	별채는	별채는	NNG+JX	NNG+는/JX	-	20	NP_OBJ
 19	충무실로	충무실로	NNG+JKB	NNG+로/JKB	-	20	NP_AJT
 20	명명하고	명명하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	27	VP
-21	,	,	,	,	-	20	X
+21	,	,	SP	SP	-	20	X
 22	그	그	MM	MM	-	23	DP
 23	복도에는	복도에는	NNG+JKB+JX	NNG+에/JKB+는/JX	-	27	NP_AJT
 24	세종대왕과	세종대왕과	NNP+JC	NNP+과/JC	-	25	NP_CNJ
 25	충무공의	충무공의	NNP+JKG	NNP+의/JKG	-	26	NP_MOD
 26	부조를	부조를	NNG+JKO	NNG+를/JKO	-	27	NP_OBJ
 27	걸었다	걸었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-28	.	.	.	.	-	27	X
+28	.	.	SF	SF	-	27	X
 
 1	중앙홀의	중앙홀의	NNG+JKG	NNG+의/JKG	-	2	NP_MOD
 2	서쪽벽은	서쪽벽은	NNG+JX	NNG+은/JX	-	7	NP_SBJ
@@ -7372,7 +7372,7 @@
 5	조선	조선	NNP	NNP	-	6	NP
 6	시대의	시대의	NNG+JKG	NNG+의/JKG	-	7	NP_MOD
 7	행차도를	행차도를	NNG+JKO	NNG+를/JKO	-	21	S
-8	,	,	,	,	-	7	X
+8	,	,	SP	SP	-	7	X
 9	오른쪽	오른쪽	NNG	NNG	-	10	NP
 10	벽은	벽은	NNG+JX	NNG+은/JX	-	21	NP_SBJ
 11	무를	무를	NNG+JKO	NNG+를/JKO	-	12	NP_OBJ
@@ -7386,7 +7386,7 @@
 19	21m의	21m의	SN+SL+JKG	SN+SL+의/JKG	-	20	NP_MOD
 20	초대형으로	초대형으로	NNG+JKB	NNG+으로/JKB	-	21	NP_AJT
 21	재현하았다	재현하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+22	.	.	SF	SF	-	21	X
 
 1	대회의실은	대회의실은	NNG+JX	NNG+은/JX	-	17	NP_SBJ
 2	대통령이	대통령이	NNG+JKS	NNG+이/JKS	-	3	NP_SBJ
@@ -7397,7 +7397,7 @@
 7	현대화	현대화	NNG	NNG	-	8	NP_OBJ
 8	하아	하아	VV+EC	VV+아/EC	-	9	VP
 9	장식하았고	장식하았고	NNG+XSV+EP+EC	NNG+하/XSV+았/EP+고/EC	-	17	VP
-10	,	,	,	,	-	9	X
+10	,	,	SP	SP	-	9	X
 11	그	그	MM	MM	-	13	DP
 12	맞은	맞은	VV+ETM	VV+은/ETM	-	13	VP_MOD
 13	편엔	편엔	NNG+JKB+JX	NNG+에/JKB+ᆫ/JX	-	17	NP_AJT
@@ -7405,7 +7405,7 @@
 15	월인천강지곡체로	월인천강지곡체로	NNG+JKB	NNG+로/JKB	-	17	NP_AJT
 16	그래픽하아	그래픽하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	17	VP
 17	넣었다	넣었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-18	.	.	.	.	-	17	X
+18	.	.	SF	SF	-	17	X
 
 1	국빈	국빈	NNG	NNG	-	2	NP
 2	영접	영접	NNG	NNG	-	4	NP
@@ -7414,7 +7414,7 @@
 5	2층은	2층은	NNG+JX	NNG+은/JX	-	7	NP_SBJ
 6	대통령	대통령	NNG	NNG	-	7	NP
 7	집무공간	집무공간	NNG	NNG	-	0	ROOT
-8	.	.	.	.	-	7	X
+8	.	.	SF	SF	-	7	X
 
 1	서울	서울	NNP	NNP	-	2	NP
 2	시내가	시내가	NNG+JKS	NNG+가/JKS	-	4	NP_SBJ
@@ -7428,7 +7428,7 @@
 10	22평	22평	NNG	NNG	-	11	NP
 11	크기의	크기의	NNG+JKG	NNG+의/JKG	-	12	NP_MOD
 12	소집무실	소집무실	NNG	NNG	-	14	NP_CNJ
-13	,	,	,	,	-	12	X
+13	,	,	SP	SP	-	12	X
 14	부속실	부속실	NNG	NNG	-	15	NP
 15	등이	등이	NNB+JKS	NNB+이/JKS	-	16	NP_SBJ
 16	있고	있고	VA+EC	VA+고/EC	-	39	S
@@ -7438,7 +7438,7 @@
 20	51평	51평	NNG	NNG	-	21	NP
 21	크기의	크기의	NNG+JKG	NNG+의/JKG	-	22	NP_MOD
 22	접견실	접견실	NNG	NNG	-	36	NP_CNJ
-23	,	,	,	,	-	22	X
+23	,	,	SP	SP	-	22	X
 24	확대	확대	NNG	NNG	-	26	NP
 25	정상	정상	NNG	NNG	-	26	NP
 26	회담	회담	NNG	NNG	-	27	NP
@@ -7448,14 +7448,14 @@
 30	장소로도	장소로도	NNG+JKB+JX	NNG+로/JKB+도/JX	-	31	NP_AJT
 31	쓰일	쓰일	VV+ETM	VV+ᆯ/ETM	-	32	VP_MOD
 32	회의실	회의실	NNG	NNG	-	36	NP_CNJ
-33	,	,	,	,	-	32	X
+33	,	,	SP	SP	-	32	X
 34	가족	가족	NNG	NNG	-	35	NP
 35	식당인	식당인	NNG+VCP+ETM	NNG+이/VCP+ᆫ/ETM	-	36	VNP_MOD
 36	백악실	백악실	NNP	NNP	-	37	NP
 37	등이	등이	NNB+JKS	NNB+이/JKS	-	39	NP_SBJ
 38	배치되어	배치되어	NNG+XSV+EC	NNG+되/XSV+어/EC	-	39	VP
-39	있다	있다	VX+EF	VX+다/EF	-	0	ROOT
-40	.	.	.	.	-	39	X
+39	있다	있다	VX+EF	있/VX+다/EF	-	0	ROOT
+40	.	.	SF	SF	-	39	X
 
 1	건물	건물	NNG	NNG	-	2	NP
 2	앞뜰에는	앞뜰에는	NNG+JKB+JX	NNG+에/JKB+는/JX	-	16	NP_AJT
@@ -7473,7 +7473,7 @@
 14	잔디	잔디	NNG	NNG	-	15	NP
 15	광장을	광장을	NNG+JKO	NNG+을/JKO	-	16	NP_OBJ
 16	만들었다	만들었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-17	.	.	.	.	-	16	X
+17	.	.	SF	SF	-	16	X
 
 1	그	그	MM	MM	-	2	DP
 2	주위	주위	NNG	NNG	-	3	NP
@@ -7481,19 +7481,19 @@
 4	갈색	갈색	NNG	NNG	-	5	NP
 5	컬러아스팔트로	컬러아스팔트로	NNG+JKB	NNG+로/JKB	-	6	NP_AJT
 6	포장하았고	포장하았고	NNG+XSV+EP+EC	NNG+하/XSV+았/EP+고/EC	-	13	VP
-7	,	,	,	,	-	6	X
+7	,	,	SP	SP	-	6	X
 8	뜰	뜰	NNG	NNG	-	9	NP
 9	주변에는	주변에는	NNG+JKB+JX	NNG+에/JKB+는/JX	-	13	NP_AJT
 10	무궁화와	무궁화와	NNG+JC	NNG+와/JC	-	11	NP_CNJ
 11	소나무	소나무	NNG	NNG	-	12	NP
 12	등을	등을	NNB+JKO	NNB+을/JKO	-	13	NP_OBJ
 13	심었다	심었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	정림	정림	NNP	NNP	-	2	NP
 2	건축이	건축이	NNG+JKS	NNG+이/JKS	-	3	NP_SBJ
 3	설계	설계	NNG	NNG	-	7	S
-4	,	,	,	,	-	3	X
+4	,	,	SP	SP	-	3	X
 5	현대	현대	NNP	NNP	-	6	NP
 6	건설이	건설이	NNG+JKS	NNG+이/JKS	-	7	NP_SBJ
 7	시공한	시공한	NNG+XSV+ETM	NNG+하/XSV+ᆫ/ETM	-	9	S_MOD
@@ -7504,15 +7504,15 @@
 12	경비는	경비는	NNG+JX	NNG+는/JX	-	14	NP_SBJ
 13	1백	1백	NR	NR	-	14	NP
 14	57억원	57억원	NNG	NNG	-	0	ROOT
-15	.	.	.	.	-	14	X
+15	.	.	SF	SF	-	14	X
 
 1	예산	예산	NNG	NNG	-	2	NP
 2	과용이	과용이	NNG+JKC	NNG+이/JKC	-	3	NP_CMP
 3	아니냐는	아니냐는	VCN+EC+ETM	VCN+냐/EC+는/ETM	-	4	VP_MOD
 4	지적도	지적도	NNG+JX	NNG+도/JX	-	6	NP_SBJ
 5	없지	없지	VA+EC	VA+지/EC	-	6	VP
-6	않다	않다	VX+EF	VX+다/EF	-	0	ROOT
-7	.	.	.	.	-	6	X
+6	않다	않다	VX+EF	않/VX+다/EF	-	0	ROOT
+7	.	.	SF	SF	-	6	X
 
 1	1991/09/05	1991/09/05	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	0	ROOT
 
@@ -7561,14 +7561,14 @@
 4	동안	동안	NNG	NNG	-	7	NP_AJT
 5	신장병을	신장병을	NNG+JKO	NNG+을/JKO	-	7	NP_OBJ
 6	앓아	앓아	VV+EC	VV+아/EC	-	7	VP
-7	온	온	VX+ETM	VX+ᆫ/ETM	-	8	VP_MOD
+7	온	온	VX+ETM	오/VX+ᆫ/ETM	-	8	VP_MOD
 8	사람에게	사람에게	NNG+JKB	NNG+에게/JKB	-	13	NP_AJT
 9	신장	신장	NNG	NNG	-	11	NP
 10	한	한	MM	MM	-	11	DP
 11	쪽을	쪽을	NNG+JKO	NNG+을/JKO	-	13	NP_OBJ
 12	기증하기로	기증하기로	NNG+XSV+ETN+JKB	NNG+하/XSV+기/ETN+로/JKB	-	13	VP_AJT
 13	하았다	하았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	그러자	그러자	VV+EC	VV+자/EC	-	24	VP
 2	새	새	MM	MM	-	3	DP
@@ -7584,7 +7584,7 @@
 12	환자에게	환자에게	NNG+JKB	NNG+에게/JKB	-	14	NP_AJT
 13	주기로	주기로	VV+ETN+JKB	VV+기/ETN+로/JKB	-	14	VP_AJT
 14	하았고	하았고	VV+EP+EC	VV+았/EP+고/EC	-	24	S
-15	,	,	,	,	-	14	X
+15	,	,	SP	SP	-	14	X
 16	이번에는	이번에는	MM+NNB+JKB+JX	MM+NNB+에/JKB+는/JX	-	24	NP_AJT
 17	이	이	MM	MM	-	18	DP
 18	환자의	환자의	NNG+JKG	NNG+의/JKG	-	19	NP_MOD
@@ -7594,7 +7594,7 @@
 22	사람에게	사람에게	NNG+JKB	NNG+에게/JKB	-	23	NP_AJT
 23	주겠다고	주겠다고	VV+EP+EC	VV+겠/EP+다고/EC	-	24	VP_CMP
 24	나서었다	나서었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-25	.	.	.	.	-	24	X
+25	.	.	SF	SF	-	24	X
 
 1	이렇게	이렇게	VA+EC	VA+게/EC	-	2	VP
 2	하아서	하아서	VV+EC	VV+아서/EC	-	7	VP
@@ -7611,8 +7611,8 @@
 13	고리	고리	NNG	NNG	-	14	NP
 14	'	'	SS	SS	-	15	NP
 15	가	가	JKS	가/JKS	-	16	NP_SBJ
-16	엮어지었고	엮어지었고	VV+EC+VX+EP+EC	VV+어/EC+VX+었/EP+고/EC	-	42	S
-17	,	,	,	,	-	16	X
+16	엮어지었고	엮어지었고	VV+EC+VX+EP+EC	VV+어/EC+지/VX+었/EP+고/EC	-	42	S
+17	,	,	SP	SP	-	16	X
 18	그	그	MM	MM	-	19	DP
 19	중	중	NNG	NNG	-	21	NP
 20	5	5	SN	SN	-	21	NP
@@ -7638,7 +7638,7 @@
 40	한	한	MM	MM	-	41	DP
 41	자리에	자리에	NNG+JKB	NNG+에/JKB	-	42	NP_AJT
 42	모이었다	모이었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-43	.	.	.	.	-	42	X
+43	.	.	SF	SF	-	42	X
 
 1	이날	이날	MM+NNG	MM+NNG	-	24	NP_AJT
 2	생명	생명	NNG	NNG	-	3	NP
@@ -7646,7 +7646,7 @@
 4	첫	첫	MM	MM	-	5	DP
 5	고리를	고리를	NNG+JKO	NNG+를/JKO	-	7	NP_OBJ
 6	만들어	만들어	VV+EC	VV+어/EC	-	7	VP
-7	낸	낸	VX+ETM	VX+ᆫ/ETM	-	15	VP_MOD
+7	낸	낸	VX+ETM	내/VX+ᆫ/ETM	-	15	VP_MOD
 8	허정자	허정자	NNP	NNP	-	9	NP
 9	씨	씨	NNB	NNB	-	14	NP
 10	(	(	SS	SS	-	14	L
@@ -7657,10 +7657,10 @@
 15	가	가	JKS	가/JKS	-	16	NP_SBJ
 16	기증한	기증한	NNG+XSV+ETM	NNG+하/XSV+ᆫ/ETM	-	17	S_MOD
 17	신장을	신장을	NNG+JKO	NNG+을/JKO	-	18	NP_OBJ
-18	떼어내기	떼어내기	VV+EC+VX+ETN	VV+어/EC+VX+기/ETN	-	19	VP_OBJ
+18	떼어내기	떼어내기	VV+EC+VX+ETN	VV+어/EC+내/VX+기/ETN	-	19	VP_OBJ
 19	위하아	위하아	VV+EC	VV+아/EC	-	21	VP
 20	입원하아	입원하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	21	VP
-21	있는	있는	VX+ETM	VX+는/ETM	-	23	VP_MOD
+21	있는	있는	VX+ETM	있/VX+는/ETM	-	23	VP_MOD
 22	한양대병원	한양대병원	NNP	NNP	-	23	NP
 23	2105호실을	2105호실을	NNG+JKO	NNG+을/JKO	-	24	NP_OBJ
 24	찾은	찾은	VV+ETM	VV+은/ETM	-	29	VP_MOD
@@ -7669,7 +7669,7 @@
 27	남편	남편	NNG	NNG	-	29	NP
 28	김정회	김정회	NNP	NNP	-	29	NP
 29	씨(42)	씨(42)	NNB+SS+SN+SS	NNB+SS+SN+SS	-	39	NP_CNJ
-30	,	,	,	,	-	29	X
+30	,	,	SP	SP	-	29	X
 31	김씨로부터	김씨로부터	NNG+JKB	NNG+로부터/JKB	-	34	NP_AJT
 32	신장을	신장을	NNG+JKO	NNG+을/JKO	-	34	NP_OBJ
 33	받게	받게	VV+EC	VV+게/EC	-	34	VP
@@ -7684,7 +7684,7 @@
 42	사랑에	사랑에	NNG+JKB	NNG+에/JKB	-	44	NP_AJT
 43	고마움을	고마움을	NNG+JKO	NNG+을/JKO	-	44	NP_OBJ
 44	전하았다	전하았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-45	.	.	.	.	-	44	X
+45	.	.	SF	SF	-	44	X
 
 1	"	"	SS	SS	-	13	L
 2	별로	별로	MAG	MAG	-	5	AP
@@ -7696,14 +7696,14 @@
 8	제가	제가	NP+JKS	NP+가/JKS	-	11	NP_SBJ
 9	오히려	오히려	MAG	MAG	-	11	AP
 10	부끄럽어	부끄럽어	VA+EC	VA+어/EC	-	11	VP
-11	지ᄇ니다	지ᄇ니다	VX+EF	VX+ᄇ니다/EF	-	13	S
-12	.	.	.	.	-	11	X
+11	지ᄇ니다	지ᄇ니다	VX+EF	지/VX+ᄇ니다/EF	-	13	S
+12	.	.	SF	SF	-	11	X
 13	"	"	SS	SS	-	0	ROOT
 
-1	 "Q="3"	 "Q="3"	SS+Q"+SS	SS+Q"+SS	-	0	ROOT
+1	"Q="3"	"Q="3"	SS+Q"+SS	SS+Q"+SS	-	0	ROOT
 
 1	아니ᄇ니다	아니ᄇ니다	VCN+EF	VCN+ᄇ니다/EF	-	0	ROOT
-2	.	.	.	.	-	1	X
+2	.	.	SF	SF	-	1	X
 
 1	아주머니	아주머니	NNG	NNG	-	2	NP
 2	덕분에	덕분에	NNG+JKB	NNG+에/JKB	-	9	NP_AJT
@@ -7714,16 +7714,16 @@
 7	수	수	NNB	NNB	-	8	NP_SBJ
 8	있게	있게	VV+EC	VV+게/EC	-	9	S
 9	되었습니다	되었습니다	VV+EP+EF	VV+었/EP+습니다/EF	-	0	ROOT
-10	.	.	.	.	-	9	X
+10	.	.	SF	SF	-	9	X
 
 1	정말	정말	MAG	MAG	-	2	AP
 2	감사하ᄇ니다	감사하ᄇ니다	NNG+XSV+EF	NNG+하/XSV+ᄇ니다/EF	-	0	ROOT
-3	.	.	.	.	-	2	X
+3	.	.	SF	SF	-	2	X
 
 1	서로의	서로의	NNG+JKG	NNG+의/JKG	-	2	NP_MOD
 2	안부를	안부를	NNG+JKO	NNG+를/JKO	-	4	NP_OBJ
 3	묻고	묻고	VV+EC	VV+고/EC	-	4	VP
-4	난	난	VX+ETM	VX+ᆫ/ETM	-	5	VP_MOD
+4	난	난	VX+ETM	나/VX+ᆫ/ETM	-	5	VP_MOD
 5	뒤	뒤	NNG	NNG	-	17	NP_AJT
 6	이들은	이들은	NP+XSN+JX	NP+XSN+은/JX	-	17	NP_SBJ
 7	손을	손을	NNG+JKO	NNG+을/JKO	-	8	NP_OBJ
@@ -7737,7 +7737,7 @@
 15	수	수	NNB	NNB	-	16	NP_SBJ
 16	있도록	있도록	VA+EC	VA+도록/EC	-	17	S
 17	기도하았다	기도하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-18	.	.	.	.	-	17	X
+18	.	.	SF	SF	-	17	X
 
 1	오랜	오랜	MM	MM	-	3	DP
 2	투병	투병	NNG	NNG	-	3	NP
@@ -7745,7 +7745,7 @@
 4	혈액	혈액	NNG	NNG	-	5	NP
 5	투석을	투석을	NNG+JKO	NNG+을/JKO	-	7	NP_OBJ
 6	받아	받아	VV+EC	VV+아/EC	-	7	VP
-7	온	온	VX+ETM	VX+ᆫ/ETM	-	9	VP_MOD
+7	온	온	VX+ETM	오/VX+ᆫ/ETM	-	9	VP_MOD
 8	안씨와	안씨와	NNG+JC	NNG+와/JC	-	9	NP_CNJ
 9	이씨의	이씨의	NNG+JKG	NNG+의/JKG	-	10	NP_MOD
 10	손목에는	손목에는	NNG+JKB+JX	NNG+에/JKB+는/JX	-	15	NP_AJT
@@ -7753,14 +7753,14 @@
 12	가량의	가량의	NNG+JKG	NNG+의/JKG	-	13	NP_MOD
 13	수술자국이	수술자국이	NNG+JKS	NNG+이/JKS	-	15	NP_SBJ
 14	나아	나아	VV+EC	VV+아/EC	-	15	VP
-15	있어	있어	VX+EC	VX+어/EC	-	21	S
+15	있어	있어	VX+EC	있/VX+어/EC	-	21	S
 16	그	그	MM	MM	-	17	DP
 17	동안의	동안의	NNG+JKG	NNG+의/JKG	-	18	NP_MOD
 18	고통을	고통을	NNG+JKO	NNG+을/JKO	-	21	NP_OBJ
 19	말하아	말하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	20	VP
-20	주고	주고	VX+EC	VX+고/EC	-	21	VP
-21	있었다	있었다	VX+EP+EF	VX+었/EP+다/EF	-	0	ROOT
-22	.	.	.	.	-	21	X
+20	주고	주고	VX+EC	주/VX+고/EC	-	21	VP
+21	있었다	있었다	VX+EP+EF	있/VX+었/EP+다/EF	-	0	ROOT
+22	.	.	SF	SF	-	21	X
 
 1	이들	이들	NP+XSN	NP+XSN	-	2	NP
 2	중	중	NNB+	NNB+	-	7	NP_AJT
@@ -7777,10 +7777,10 @@
 13	것은	것은	NNB+JX	NNB+은/JX	-	15	NP_SBJ
 14	작년	작년	NNG	NNG	-	15	NP
 15	6월	6월	NNG	NNG	-	0	ROOT
-16	.	.	.	.	-	15	X
+16	.	.	SF	SF	-	15	X
 
 1	5년전부터	5년전부터	NNG+JX	NNG+부터/JX	-	2	NP_AJT
-2	앓아오던	앓아오던	VV+EC+VX+ETM	VV+아/EC+VX+던/ETM	-	6	VP_MOD
+2	앓아오던	앓아오던	VV+EC+VX+ETM	VV+아/EC+오/VX+던/ETM	-	6	VP_MOD
 3	갑상선	갑상선	NNG	NNG	-	4	NP
 4	기능	기능	NNG	NNG	-	5	NP
 5	항진이라는	항진이라는	NNG+VCP+EC+ETM	NNG+이/VCP+라/EC+는/ETM	-	6	VNP_MOD
@@ -7793,7 +7793,7 @@
 12	이	이	MM	MM	-	13	DP
 13	때	때	NNG	NNG	-	14	NP_AJT
 14	알았다	알았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-15	.	.	.	.	-	14	X
+15	.	.	SF	SF	-	14	X
 
 1	한	한	MM	MM	-	2	DP
 2	달에	달에	NNB+JKB	NNB+에/JKB	-	4	NP_AJT
@@ -7811,15 +7811,15 @@
 14	말할	말할	NNG+XSV+ETM	NNG+하/XSV+ᆯ/ETM	-	15	VP_MOD
 15	수가	수가	NNB+JKS	NNB+가/JKS	-	16	NP_SBJ
 16	없었다	없었다	VA+EP+EF	VA+었/EP+다/EF	-	0	ROOT
-17	.	.	.	.	-	16	X
+17	.	.	SF	SF	-	16	X
 
 1	보다	보다	VV+EC	VV+다/EC	-	2	VP
-2	못한	못한	VX+ETM	VX+ᆫ/ETM	-	4	VP_MOD
+2	못한	못한	VX+ETM	못하/VX+ᆫ/ETM	-	4	VP_MOD
 3	남편	남편	NNG	NNG	-	4	NP
 4	김씨가	김씨가	NNG+JKS	NNG+가/JKS	-	8	NP_SBJ
 5	콩팥을	콩팥을	NNG+JKO	NNG+을/JKO	-	7	NP_OBJ
 6	떼어	떼어	VV+EC	VV+어/EC	-	7	VP
-7	주겠다고	주겠다고	VX+EP+EC	VX+겠/EP+다고/EC	-	8	VP_CMP
+7	주겠다고	주겠다고	VX+EP+EC	주/VX+겠/EP+다고/EC	-	8	VP_CMP
 8	나서었지만	나서었지만	VV+EP+EC	VV+었/EP+지만/EC	-	14	S
 9	남편은	남편은	NNG+JX	NNG+은/JX	-	14	NP_SBJ
 10	조직형이	조직형이	NNG+JKS	NNG+이/JKS	-	11	NP_SBJ
@@ -7827,7 +7827,7 @@
 12	신장	신장	NNG	NNG	-	13	NP
 13	이식이	이식이	NNG+JKS	NNG+이/JKS	-	14	NP_SBJ
 14	불가능하았다	불가능하았다	NNG+XSA+EP+EF	NNG+하/XSA+았/EP+다/EF	-	0	ROOT
-15	.	.	.	.	-	14	X
+15	.	.	SF	SF	-	14	X
 
 1	이들	이들	NP+XSN	NP+XSN	-	2	NP
 2	부부는	부부는	NNG+JX	NNG+는/JX	-	19	NP_SBJ
@@ -7845,17 +7845,17 @@
 14	찾아	찾아	VV+EC	VV+아/EC	-	19	VP
 15	안씨에게	안씨에게	NNG+JKB	NNG+에게/JKB	-	17	NP_AJT
 16	신장을	신장을	NNG+JKO	NNG+을/JKO	-	17	NP_OBJ
-17	기증하아줄	기증하아줄	NNG+XSV+EC+VX+ETM	NNG+하/XSV+아/EC+VX+ᆯ/ETM	-	18	VP_MOD
+17	기증하아줄	기증하아줄	NNG+XSV+EC+VX+ETM	NNG+하/XSV+아/EC+주/VX+ᆯ/ETM	-	18	VP_MOD
 18	허씨를	허씨를	NNG+JKO	NNG+를/JKO	-	19	NP_OBJ
 19	소개받았다	소개받았다	NNG+VV+EP+EF	NNG+VV+았/EP+다/EF	-	0	ROOT
-20	.	.	.	.	-	19	X
+20	.	.	SF	SF	-	19	X
 
 1	허씨는	허씨는	NNG+JX	NNG+는/JX	-	13	NP_SBJ
 2	"	"	SS	SS	-	8	L
 3	그저	그저	MAG	MAG	-	7	AP
 4	남을	남을	NNG+JKO	NNG+을/JKO	-	7	NP_OBJ
 5	돕고	돕고	VV+EC	VV+고/EC	-	6	VP
-6	싶었을	싶었을	VX+EP+ETM	VX+었/EP+을/ETM	-	7	VP_MOD
+6	싶었을	싶었을	VX+EP+ETM	싶/VX+었/EP+을/ETM	-	7	VP_MOD
 7	뿐	뿐	NNB	NNB	-	8	VP
 8	"	"	SS	SS	-	9	VP
 9	이라고	이라고	JKQ	이라고/JKQ	-	10	VP_CMP
@@ -7863,7 +7863,7 @@
 11	안씨	안씨	NNG	NNG	-	12	NP
 12	부부를	부부를	NNG+JKO	NNG+를/JKO	-	13	NP_OBJ
 13	감동시키었다	감동시키었다	NNG+XSV+EP+EF	NNG+시키/XSV+었/EP+다/EF	-	0	ROOT
-14	.	.	.	.	-	13	X
+14	.	.	SF	SF	-	13	X
 
 1	안씨의	안씨의	NNG+JKG	NNG+의/JKG	-	2	NP_MOD
 2	남편	남편	NNG	NNG	-	4	NP
@@ -7874,8 +7874,8 @@
 7	되찾을	되찾을	VV+ETM	VV+을/ETM	-	8	VP_MOD
 8	수	수	NNB	NNB	-	9	NP_SBJ
 9	있게	있게	VV+EC	VV+게/EC	-	10	S
-10	하아	하아	VX+EC	VX+아/EC	-	11	VP
-11	준	준	VX+ETM	VX+ᆫ/ETM	-	12	VP_MOD
+10	하아	하아	VX+EC	하/VX+아/EC	-	11	VP
+11	준	준	VX+ETM	주/VX+ᆫ/ETM	-	12	VP_MOD
 12	고마움을	고마움을	NNG+JKO	NNG+을/JKO	-	13	NP_OBJ
 13	갚기	갚기	VV+ETN	VV+기/ETN	-	14	VP_OBJ
 14	위하아	위하아	VV+EC	VV+아/EC	-	20	VP
@@ -7885,11 +7885,11 @@
 18	환자에게	환자에게	NNG+JKB	NNG+에게/JKB	-	20	NP_AJT
 19	주기로	주기로	VV+ETN+JKB	VV+기/ETN+로/JKB	-	20	VP_AJT
 20	하았다	하았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+21	.	.	SF	SF	-	20	X
 
 1	조직검사	조직검사	NNG	NNG	-	2	NP
 2	결과	결과	NNG	NNG	-	20	NP_AJT
-3	,	,	,	,	-	2	X
+3	,	,	SP	SP	-	2	X
 4	김씨의	김씨의	NNG+JKG	NNG+의/JKG	-	5	NP_MOD
 5	신장은	신장은	NNG+JX	NNG+은/JX	-	20	NP_SBJ
 6	신장	신장	NNG	NNG	-	7	NP
@@ -7900,14 +7900,14 @@
 11	10년째	10년째	NNG	NNG	-	14	NP_AJT
 12	신장병을	신장병을	NNG+JKO	NNG+을/JKO	-	14	NP_OBJ
 13	앓고	앓고	VV+EC	VV+고/EC	-	14	VP
-14	있는	있는	VX+ETM	VX+는/ETM	-	16	VP_MOD
+14	있는	있는	VX+ETM	있/VX+는/ETM	-	16	VP_MOD
 15	이현태	이현태	NNP	NNP	-	16	NP
 16	씨에게	씨에게	NNB+JKB	NNB+에게/JKB	-	17	NP_AJT
 17	이식하기	이식하기	NNG+XSV+ETN	NNG+하/XSV+기/ETN	-	18	VP_SBJ
 18	적합한	적합한	NNG+XSA+ETM	NNG+하/XSA+ᆫ/ETM	-	19	S_MOD
 19	것으로	것으로	NNB+JKB	NNB+으로/JKB	-	20	NP_AJT
 20	판명되었다	판명되었다	NNG+XSV+EP+EF	NNG+되/XSV+었/EP+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+21	.	.	SF	SF	-	20	X
 
 1	혈압	혈압	NNG	NNG	-	2	NP
 2	강하제와	강하제와	NNG+JC	NNG+와/JC	-	3	NP_CNJ
@@ -7915,15 +7915,15 @@
 4	등의	등의	NNB+JKG	NNB+의/JKG	-	5	NP_MOD
 5	약물	약물	NNG	NNG	-	6	NP
 6	치료를	치료를	NNG+JKO	NNG+를/JKO	-	7	NP_OBJ
-7	하아오면서	하아오면서	VV+EC+VX+EC	VV+아/EC+VX+면서/EC	-	9	VP
+7	하아오면서	하아오면서	VV+EC+VX+EC	VV+아/EC+오/VX+면서/EC	-	9	VP
 8	고통을	고통을	NNG+JKO	NNG+을/JKO	-	9	NP_OBJ
-9	받아오던	받아오던	VV+EC+VX+ETM	VV+아/EC+VX+던/ETM	-	10	VP_MOD
+9	받아오던	받아오던	VV+EC+VX+ETM	VV+아/EC+오/VX+던/ETM	-	10	VP_MOD
 10	이씨에게	이씨에게	NNG+JKB	NNG+에게/JKB	-	25	NP_AJT
 11	김씨는	김씨는	NNG+JX	NNG+는/JX	-	25	NP_SBJ
 12	"	"	SS	SS	-	23	L
 13	나도	나도	NP+JX	NP+도/JX	-	22	NP_SBJ
 14	신장을	신장을	NNG+JKO	NNG+을/JKO	-	15	NP_OBJ
-15	떼어준	떼어준	VV+EC+VX+ETM	VV+어/EC+VX+ᆫ/ETM	-	17	VP_MOD
+15	떼어준	떼어준	VV+EC+VX+ETM	VV+어/EC+주/VX+ᆫ/ETM	-	17	VP_MOD
 16	고맙은	고맙은	VA+ETM	VA+은/ETM	-	17	VP_MOD
 17	사람을	사람을	NNG+JKO	NNG+을/JKO	-	18	NP_OBJ
 18	만나아	만나아	VV+EC	VV+아/EC	-	22	VP
@@ -7934,7 +7934,7 @@
 23	"	"	SS	SS	-	24	S
 24	고	고	JKQ	고/JKQ	-	25	S_CMP
 25	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-26	.	.	.	.	-	25	X
+26	.	.	SF	SF	-	25	X
 
 1	이번에는	이번에는	MM+NNB+JKB+JX	MM+NNB+에/JKB+는/JX	-	9	NP_AJT
 2	이씨의	이씨의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
@@ -7945,7 +7945,7 @@
 7	신장을	신장을	NNG+JKO	NNG+을/JKO	-	8	NP_OBJ
 8	기증하겠다고	기증하겠다고	NNG+XSV+EP+EC	NNG+하/XSV+겠/EP+다고/EC	-	9	VP_CMP
 9	나서었고	나서었고	VV+EP+EC	VV+었/EP+고/EC	-	22	S
-10	,	,	,	,	-	9	X
+10	,	,	SP	SP	-	9	X
 11	장기기증	장기기증	NNG	NNG	-	12	NP
 12	운동본부는	운동본부는	NNG+JX	NNG+는/JX	-	22	NP_SBJ
 13	수소문	수소문	NNG	NNG	-	14	NP
@@ -7956,37 +7956,37 @@
 18	이재화	이재화	NNP	NNP	-	19	NP
 19	양(20)에게	양(20)에게	NNB+SS+SN+SS+JKB	NNB+SS+SN+SS+에게/JKB	-	22	NP_AJT
 20	수술하아	수술하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	21	VP
-21	주기로	주기로	VX+ETN+JKB	VX+기/ETN+로/JKB	-	22	VP_AJT
+21	주기로	주기로	VX+ETN+JKB	주/VX+기/ETN+로/JKB	-	22	VP_AJT
 22	하았다	하았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-23	.	.	.	.	-	22	X
+23	.	.	SF	SF	-	22	X
 
 1	국민학교	국민학교	NNG	NNG	-	2	NP
 2	4학년때부터	4학년때부터	NNG+JX	NNG+부터/JX	-	5	NP_AJT
 3	신장병을	신장병을	NNG+JKO	NNG+을/JKO	-	5	NP_OBJ
 4	앓아	앓아	VV+EC	VV+아/EC	-	5	VP
-5	온	온	VX+ETM	VX+ᆫ/ETM	-	6	VP_MOD
+5	온	온	VX+ETM	오/VX+ᆫ/ETM	-	6	VP_MOD
 6	이양은	이양은	NNG+JX	NNG+은/JX	-	26	NP_SBJ
 7	날품팔는	날품팔는	NNG+VV+ETM	NNG+VV+는/ETM	-	8	VP_MOD
 8	어머니의	어머니의	NNG+JKG	NNG+의/JKG	-	9	NP_MOD
 9	수입에	수입에	NNG+JKB	NNG+에/JKB	-	10	NP_AJT
 10	의존	의존	NNG	NNG	-	14	NP
-11	,	,	,	,	-	10	X
+11	,	,	SP	SP	-	10	X
 12	근근이	근근이	MAG	MAG	-	14	AP
 13	생활을	생활을	NNG+JKO	NNG+을/JKO	-	14	NP_OBJ
-14	하아오다	하아오다	VV+EC+VX+EC	VV+아/EC+VX+다/EC	-	26	VP
+14	하아오다	하아오다	VV+EC+VX+EC	VV+아/EC+오/VX+다/EC	-	26	VP
 15	작년	작년	NNG	NNG	-	16	NP
 16	12월	12월	NNG	NNG	-	26	NP_AJT
-17	,	,	,	,	-	16	X
+17	,	,	SP	SP	-	16	X
 18	새롭은	새롭은	VA+ETM	VA+은/ETM	-	19	VP_MOD
 19	콩팥을	콩팥을	NNG+JKO	NNG+을/JKO	-	21	NP_OBJ
 20	받지	받지	VV+EC	VV+지/EC	-	21	VP
-21	않으면	않으면	VX+EC	VX+으면/EC	-	24	VP
+21	않으면	않으면	VX+EC	않/VX+으면/EC	-	24	VP
 22	생명을	생명을	NNG+JKO	NNG+을/JKO	-	23	NP_OBJ
 23	부지하기	부지하기	NNG+XSV+ETN	NNG+하/XSV+기/ETN	-	24	VP_SBJ
 24	힘들다는	힘들다는	VA+EC+ETM	VA+다/EC+는/ETM	-	25	S_MOD
 25	진단을	진단을	NNG+JKO	NNG+을/JKO	-	26	NP_OBJ
 26	받았었다	받았었다	VV+EP+EF	VV+았었/EP+다/EF	-	0	ROOT
-27	.	.	.	.	-	26	X
+27	.	.	SF	SF	-	26	X
 
 1	이양은	이양은	NNG+JX	NNG+은/JX	-	20	NP_SBJ
 2	영천	영천	NNG	NNG	-	3	NP
@@ -8006,9 +8006,9 @@
 16	수술을	수술을	NNG+JKO	NNG+을/JKO	-	19	NP_OBJ
 17	못	못	MAG	MAG	-	19	AP
 18	받고	받고	VV+EC	VV+고/EC	-	19	VP
-19	있던	있던	VX+ETM	VX+던/ETM	-	20	VP_MOD
+19	있던	있던	VX+ETM	있/VX+던/ETM	-	20	VP_MOD
 20	처지이었다	처지이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
-21	.	.	.	.	-	20	X
+21	.	.	SF	SF	-	20	X
 
 1	5일	5일	NNG	NNG	-	7	NP_AJT
 2	안씨의	안씨의	NNG+JKG	NNG+의/JKG	-	5	NP_MOD
@@ -8016,7 +8016,7 @@
 4	이식	이식	NNG	NNG	-	5	NP
 5	수술이	수술이	NNG+JKS	NNG+이/JKS	-	7	NP_SBJ
 6	끝나고	끝나고	VV+EC	VV+고/EC	-	7	VP
-7	나면	나면	VX+EC	VX+면/EC	-	17	S
+7	나면	나면	VX+EC	나/VX+면/EC	-	17	S
 8	이현태	이현태	NNP	NNP	-	9	NP
 9	씨와	씨와	NNB+JC	NNB+와/JC	-	11	NP_CNJ
 10	이재화	이재화	NNP	NNP	-	11	NP
@@ -8027,12 +8027,12 @@
 15	각각	각각	MAG	MAG	-	16	AP
 16	있을	있을	VA+ETM	VA+을/ETM	-	17	VP_MOD
 17	예정이다	예정이다	NNG+VCP+EF	NNG+이/VCP+다/EF	-	0	ROOT
-18	.	.	.	.	-	17	X
+18	.	.	SF	SF	-	17	X
 
 1	자신의	자신의	NNG+JKG	NNG+의/JKG	-	2	NP_MOD
 2	몸을	몸을	NNG+JKO	NNG+을/JKO	-	4	NP_OBJ
 3	남에게	남에게	NNG+JKB	NNG+에게/JKB	-	4	NP_AJT
-4	내어주는	내어주는	VV+EC+VX+ETM	VV+어/EC+VX+는/ETM	-	9	VP_MOD
+4	내어주는	내어주는	VV+EC+VX+ETM	VV+어/EC+주/VX+는/ETM	-	9	VP_MOD
 5	`	`	SS	SS	-	8	L
 6	큰	큰	VA+ETM	VA+ᆫ/ETM	-	7	VP_MOD
 7	사랑	사랑	NNG	NNG	-	8	NP
@@ -8058,13 +8058,13 @@
 27	되찾는	되찾는	VV+ETM	VV+는/ETM	-	28	VP_MOD
 28	사람들이	사람들이	NNG+JKS	NNG+이/JKS	-	30	NP_SBJ
 29	더	더	MAG	MAG	-	30	AP
-30	늘어나길	늘어나길	VV+EC+VX+ETN+JKO	VV+어/EC+VX+기/ETN+ᆯ/JKO	-	31	S_OBJ
+30	늘어나길	늘어나길	VV+EC+VX+ETN+JKO	VV+어/EC+나/VX+기/ETN+ᆯ/JKO	-	31	S_OBJ
 31	바란다	바란다	VV+EF	VV+ᆫ다/EF	-	32	VP
 32	"	"	SS	SS	-	33	VP
 33	고	고	JKQ	고/JKQ	-	35	VP_CMP
 34	입을	입을	NNG+JKO	NNG+을/JKO	-	35	NP_OBJ
 35	모으았다	모으았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-36	.	.	.	.	-	35	X
+36	.	.	SF	SF	-	35	X
 
 1	1991/09/15	1991/09/15	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	0	ROOT
 
@@ -8110,7 +8110,7 @@
 9	관리	관리	NNG	NNG	-	10	NP
 10	제도를	제도를	NNG+JKO	NNG+를/JKO	-	12	NP_OBJ
 11	강화하고	강화하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	12	VP
-12	있는	있는	VX+ETM	VX+는/ETM	-	13	S_MOD
+12	있는	있는	VX+ETM	있/VX+는/ETM	-	13	S_MOD
 13	가운데	가운데	NNG	NNG	-	39	NP_AJT
 14	박홍	박홍	NNP	NNP	-	15	NP
 15	총장을	총장을	NNG+JKO	NNG+을/JKO	-	16	NP_OBJ
@@ -8138,7 +8138,7 @@
 37	관한	관한	VV+ETM	VV+ᆫ/ETM	-	38	VP_MOD
 38	세미나를	세미나를	NNG+JKO	NNG+를/JKO	-	39	NP_OBJ
 39	가지었다	가지었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-40	.	.	.	.	-	39	X
+40	.	.	SF	SF	-	39	X
 
 1	오전	오전	NNG	NNG	-	2	NP
 2	10시부터	10시부터	NNG+JX	NNG+부터/JX	-	5	NP_AJT
@@ -8158,7 +8158,7 @@
 16	학사	학사	NNG	NNG	-	17	NP
 17	관리가	관리가	NNG+JKS	NNG+가/JKS	-	19	NP_SBJ
 18	상대적으로	상대적으로	NNG+JKB	NNG+으로/JKB	-	19	NP_AJT
-19	느슨하아지어	느슨하아지어	XR+XSA+EC+VX+EC	XR+하/XSA+아/EC+VX+어/EC	-	22	S
+19	느슨하아지어	느슨하아지어	XR+XSA+EC+VX+EC	XR+하/XSA+아/EC+지/VX+어/EC	-	22	S
 20	학내	학내	NNG	NNG	-	21	NP
 21	혼란을	혼란을	NNG+JKO	NNG+을/JKO	-	22	NP_OBJ
 22	초래한다는	초래한다는	NNG+XSV+EC+ETM	NNG+하/XSV+ᆫ다/EC+는/ETM	-	23	VP_MOD
@@ -8171,14 +8171,14 @@
 29	제도를	제도를	NNG+JKO	NNG+를/JKO	-	31	NP_OBJ
 30	엄격히	엄격히	MAG	MAG	-	31	AP
 31	적용	적용	NNG	NNG	-	36	VP
-32	,	,	,	,	-	31	X
+32	,	,	SP	SP	-	31	X
 33	면학	면학	NNG	NNG	-	34	NP
 34	분위기를	분위기를	NNG+JKO	NNG+를/JKO	-	36	NP_OBJ
 35	되찾아야	되찾아야	VV+EC	VV+아야/EC	-	36	VP
-36	한다고	한다고	VX+EC	VX+ᆫ다고/EC	-	38	VP_CMP
+36	한다고	한다고	VX+EC	하/VX+ᆫ다고/EC	-	38	VP_CMP
 37	의견을	의견을	NNG+JKO	NNG+을/JKO	-	38	NP_OBJ
 38	모으았다	모으았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
-39	.	.	.	.	-	38	X
+39	.	.	SF	SF	-	38	X
 
 1	조태근	조태근	NNP	NNP	-	2	NP
 2	교무처장은	교무처장은	NNG+JX	NNG+은/JX	-	43	NP_SBJ
@@ -8201,7 +8201,7 @@
 19	속에서	속에서	NNG+JKB	NNG+에서/JKB	-	22	NP_AJT
 20	학사	학사	NNG	NNG	-	21	NP
 21	관리가	관리가	NNG+JKS	NNG+가/JKS	-	22	NP_SBJ
-22	해이하아지었다	해이하아지었다	NNG+XSA+EC+VX+EP+EC	NNG+하/XSA+아/EC+VX+었/EP+다/EC	-	23	S
+22	해이하아지었다	해이하아지었다	NNG+XSA+EC+VX+EP+EC	NNG+하/XSA+아/EC+지/VX+었/EP+다/EC	-	23	S
 23	"	"	SS	SS	-	24	S
 24	고	고	JKQ	고/JKQ	-	25	S_CMP
 25	평가하고	평가하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	43	VP
@@ -8218,12 +8218,12 @@
 36	학생들에게	학생들에게	NNG+JKB	NNG+에게/JKB	-	40	NP_AJT
 37	경각심을	경각심을	NNG+JKO	NNG+을/JKO	-	40	NP_OBJ
 38	주어야	주어야	VV+EC	VV+어야/EC	-	39	VP
-39	할	할	VX+ETM	VX+ᆯ/ETM	-	40	VP_MOD
+39	할	할	VX+ETM	하/VX+ᆯ/ETM	-	40	VP_MOD
 40	것	것	NNB	NNB	-	41	VP
 41	"	"	SS	SS	-	42	VP
 42	이라고	이라고	JKQ	이라고/JKQ	-	43	VP_CMP
 43	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-44	.	.	.	.	-	43	X
+44	.	.	SF	SF	-	43	X
 
 1	조	조	NNP	NNP	-	2	NP
 2	처장은	처장은	NNG+JX	NNG+은/JX	-	34	NP_SBJ
@@ -8256,10 +8256,10 @@
 29	교수들이	교수들이	NNG+JKS	NNG+이/JKS	-	33	NP_SBJ
 30	앞장	앞장	NNG	NNG	-	33	NP_OBJ
 31	서어야	서어야	VV+EC	VV+어야/EC	-	32	VP
-32	할	할	VX+ETM	VX+ᆯ/ETM	-	33	VP_MOD
+32	할	할	VX+ETM	하/VX+ᆯ/ETM	-	33	VP_MOD
 33	것이라고	것이라고	NNB+VCP+EC	NNB+이/VCP+라고/EC	-	34	S_CMP
 34	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-35	.	.	.	.	-	34	X
+35	.	.	SF	SF	-	34	X
 
 1	전준수	전준수	NNP	NNP	-	2	NP
 2	학생처장도	학생처장도	NNG+JX	NNG+도/JX	-	47	NP_SBJ
@@ -8278,7 +8278,7 @@
 15	적용은	적용은	NNG+JX	NNG+은/JX	-	18	NP_SBJ
 16	거의	거의	MAG	MAG	-	18	AP
 17	되지	되지	VV+EC	VV+지/EC	-	18	VP
-18	않았다	않았다	VX+EP+EF	VX+았/EP+다/EF	-	19	S_CMP
+18	않았다	않았다	VX+EP+EF	않/VX+았/EP+다/EF	-	19	S_CMP
 19	"	"	SS	SS	-	20	S_CMP
 20	며	며	EC	며/EC	-	47	VP
 21	"	"	SS	SS	-	45	L
@@ -8292,7 +8292,7 @@
 29	될	될	VV+ETM	VV+ᆯ/ETM	-	30	VP_MOD
 30	수	수	NNB	NNB	-	31	NP_SBJ
 31	있도록	있도록	VV+EC	VV+도록/EC	-	32	S
-32	하고	하고	VX+EC	VX+고/EC	-	44	VP
+32	하고	하고	VX+EC	하/VX+고/EC	-	44	VP
 33	그동안	그동안	NNG	NNG	-	44	NP_AJT
 34	학생회	학생회	NNG	NNG	-	35	NP
 35	간부들에게	간부들에게	NNG+JKB	NNG+에게/JKB	-	36	NP_AJT
@@ -8304,21 +8304,21 @@
 41	우수한	우수한	NNG+XSA+ETM	NNG+하/XSA+ᆫ/ETM	-	42	S_MOD
 42	학생에게	학생에게	NNG+JKB	NNG+에게/JKB	-	44	NP_AJT
 43	주도록	주도록	VV+EC	VV+도록/EC	-	44	VP
-44	하자	하자	VX+EF	VX+자/EF	-	45	S
+44	하자	하자	VX+EF	하/VX+자/EF	-	45	S
 45	"	"	SS	SS	-	46	S
 46	고	고	JKQ	고/JKQ	-	47	S_CMP
 47	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-48	.	.	.	.	-	47	X
+48	.	.	SF	SF	-	47	X
 
 1	전	전	NNP	NNP	-	2	NP
 2	학생처장은	학생처장은	NNG+JX	NNG+은/JX	-	27	NP_SBJ
 3	또	또	MAG	MAG	-	27	AP
 4	88년부터	88년부터	NNG+JX	NNG+부터/JX	-	6	NP_AJT
 5	학생들이	학생들이	NNG+JKS	NNG+이/JKS	-	6	NP_SBJ
-6	운영하아오던	운영하아오던	NNG+XSV+EC+VX+ETM	NNG+하/XSV+아/EC+VX+던/ETM	-	11	S_MOD
+6	운영하아오던	운영하아오던	NNG+XSV+EC+VX+ETM	NNG+하/XSV+아/EC+오/VX+던/ETM	-	11	S_MOD
 7	교내	교내	NNG	NNG	-	8	NP
 8	매점	매점	NNG	NNG	-	11	NP_CNJ
-9	,	,	,	,	-	8	X
+9	,	,	SP	SP	-	8	X
 10	자판기	자판기	NNG	NNG	-	11	NP
 11	운영	운영	NNG	NNG	-	12	NP
 12	등	등	NNB	NNB	-	14	NP
@@ -8337,12 +8337,12 @@
 25	조치를	조치를	NNG+JKO	NNG+를/JKO	-	26	NP_OBJ
 26	취하았다고	취하았다고	VV+EP+EC	VV+았/EP+다고/EC	-	27	VP_CMP
 27	밝히었다	밝히었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
-28	.	.	.	.	-	27	X
+28	.	.	SF	SF	-	27	X
 
 1	주제	주제	NNG	NNG	-	2	NP
 2	발표에	발표에	NNG+JKB	NNG+에/JKB	-	3	NP_AJT
 3	잇어	잇어	VV+EC	VV+어/EC	-	4	VP
-4	있은	있은	VX+ETM	VX+은/ETM	-	5	VP_MOD
+4	있은	있은	VX+ETM	있/VX+은/ETM	-	5	VP_MOD
 5	토론에서	토론에서	NNG+JKB	NNG+에서/JKB	-	30	NP_AJT
 6	일부	일부	NNG	NNG	-	7	NP
 7	교수들은	교수들은	NNG+JX	NNG+은/JX	-	30	NP_SBJ
@@ -8368,19 +8368,19 @@
 27	없다는	없다는	VA+EC+ETM	VA+다/EC+는/ETM	-	28	S_MOD
 28	의견을	의견을	NNG+JKO	NNG+을/JKO	-	30	NP_OBJ
 29	제시하기도	제시하기도	NNG+XSV+ETN+JX	NNG+하/XSV+기/ETN+도/JX	-	30	VP
-30	하았다	하았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-31	.	.	.	.	-	30	X
+30	하았다	하았다	VX+EP+EF	하/VX+았/EP+다/EF	-	0	ROOT
+31	.	.	SF	SF	-	30	X
 
 1	그러나	그러나	MAJ	MAJ	-	19	AP
 2	대부분의	대부분의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
 3	교수들은	교수들은	NNG+JX	NNG+은/JX	-	19	NP_SBJ
 4	공부를	공부를	NNG+JKO	NNG+를/JKO	-	6	NP_OBJ
 5	하지	하지	VV+EC	VV+지/EC	-	6	VP
-6	않은	않은	VX+ETM	VX+은/ETM	-	7	VP_MOD
+6	않은	않은	VX+ETM	않/VX+은/ETM	-	7	VP_MOD
 7	학생이	학생이	NNG+JKS	NNG+이/JKS	-	12	NP_SBJ
 8	학교에	학교에	NNG+JKB	NNG+에/JKB	-	12	NP_AJT
 9	남아	남아	VV+EC	VV+아/EC	-	10	VP
-10	있을	있을	VX+ETM	VX+을/ETM	-	11	VP_MOD
+10	있을	있을	VX+ETM	있/VX+을/ETM	-	11	VP_MOD
 11	수는	수는	NNB+JX	NNB+는/JX	-	12	NP_SBJ
 12	없다며	없다며	VA+EC	VA+다며/EC	-	19	S
 13	보다	보다	MAG	MAG	-	14	AP
@@ -8390,7 +8390,7 @@
 17	제도의	제도의	NNG+JKG	NNG+의/JKG	-	18	NP_MOD
 18	실시에	실시에	NNG+JKB	NNG+에/JKB	-	19	NP_AJT
 19	찬성하았다	찬성하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-20	.	.	.	.	-	19	X
+20	.	.	SF	SF	-	19	X
 
 1	한	한	MM	MM	-	2	DP
 2	교수는	교수는	NNG+JX	NNG+는/JX	-	35	NP_SBJ
@@ -8421,13 +8421,13 @@
 27	바람직한	바람직한	XR+XSA+ETM	XR+하/XSA+ᆫ/ETM	-	28	VP_MOD
 28	방향으로	방향으로	NNG+JKB	NNG+으로/JKB	-	30	NP_AJT
 29	이끌어	이끌어	VV+EC	VV+어/EC	-	30	VP
-30	줄	줄	VX+ETM	VX+ᆯ/ETM	-	31	VP_MOD
+30	줄	줄	VX+ETM	주/VX+ᆯ/ETM	-	31	VP_MOD
 31	필요가	필요가	NNG+JKS	NNG+가/JKS	-	32	NP_SBJ
 32	있다	있다	VV+EC	VV+다/EC	-	33	S
 33	"	"	SS	SS	-	34	S
 34	고	고	JKQ	고/JKQ	-	35	S_CMP
 35	말하았다	말하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
-36	.	.	.	.	-	35	X
+36	.	.	SF	SF	-	35	X
 
 1	작년	작년	NNG	NNG	-	2	NP
 2	9월부터	9월부터	NNG+JX	NNG+부터/JX	-	7	NP_AJT
@@ -8435,7 +8435,7 @@
 4	교환	교환	NNG	NNG	-	5	NP
 5	교수로	교수로	NNG+JKB	NNG+로/JKB	-	7	NP_AJT
 6	오아	오아	VV+EC	VV+아/EC	-	7	VP
-7	있는	있는	VX+ETM	VX+는/ETM	-	12	VP_MOD
+7	있는	있는	VX+ETM	있/VX+는/ETM	-	12	VP_MOD
 8	중국	중국	NNP	NNP	-	10	NP
 9	하얼빈	하얼빈	NNP	NNP	-	10	NP
 10	과학기술대	과학기술대	NNP	NNP	-	12	NP
@@ -8450,23 +8450,23 @@
 19	"	"	SS	SS	-	42	L
 20	최근	최근	NNG	NNG	-	21	NP
 21	소련	소련	NNP	NNP	-	23	NP_CNJ
-22	,	,	,	,	-	21	X
+22	,	,	SP	SP	-	21	X
 23	동구	동구	NNP	NNP	-	24	NP
 24	사태에서	사태에서	NNG+JKB	NNG+에서/JKB	-	26	NP_AJT
 25	보이어	보이어	VV+EC	VV+어/EC	-	26	VP
-26	주는	주는	VX+ETM	VX+는/ETM	-	27	VP_MOD
+26	주는	주는	VX+ETM	주/VX+는/ETM	-	27	VP_MOD
 27	것처럼	것처럼	NNB+JKB	NNB+처럼/JKB	-	31	NP_AJT
 28	사회주의가	사회주의가	NNG+JKS	NNG+가/JKS	-	31	NP_SBJ
 29	무너지어	무너지어	VV+EC	VV+어/EC	-	30	VP
-30	가고	가고	VX+EC	VX+고/EC	-	31	VP
-31	있는데도	있는데도	VX+EC+JX	VX+는데/EC+도/JX	-	40	S
+30	가고	가고	VX+EC	가/VX+고/EC	-	31	VP
+31	있는데도	있는데도	VX+EC+JX	있/VX+는데/EC+도/JX	-	40	S
 32	한국	한국	NNP	NNP	-	33	NP
 33	대학생들은	대학생들은	NNG+JX	NNG+은/JX	-	40	NP_SBJ
 34	아직도	아직도	MAG+JX	MAG+도/JX	-	40	AP
 35	사회주의	사회주의	NNG	NNG	-	36	NP
 36	이상에	이상에	NNG+JKB	NNG+에/JKB	-	40	NP_AJT
 37	집착하고	집착하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	38	VP
-38	있는	있는	VX+ETM	VX+는/ETM	-	39	VP_MOD
+38	있는	있는	VX+ETM	있/VX+는/ETM	-	39	VP_MOD
 39	것	것	NNB	NNB	-	40	NP
 40	같아	같아	VA+EC	VA+아/EC	-	41	S
 41	안타깝다	안타깝다	VA+EC	VA+다/EC	-	42	VP_CMP
@@ -8484,13 +8484,13 @@
 53	파악할	파악할	NNG+XSV+ETM	NNG+하/XSV+ᆯ/ETM	-	54	VP_MOD
 54	수	수	NNB	NNB	-	55	NP_SBJ
 55	있어야	있어야	VV+EC	VV+어야/EC	-	56	S
-56	할	할	VX+ETM	VX+ᆯ/ETM	-	57	VP_MOD
+56	할	할	VX+ETM	하/VX+ᆯ/ETM	-	57	VP_MOD
 57	것	것	NNB	NNB	-	58	VP
 58	"	"	SS	SS	-	59	VP
 59	이라고	이라고	JKQ	이라고/JKQ	-	61	VP_CMP
 60	말하기도	말하기도	NNG+XSV+ETN+JX	NNG+하/XSV+기/ETN+도/JX	-	61	VP
-61	하았다	하았다	VX+EP+EF	VX+았/EP+다/EF	-	0	ROOT
-62	.	.	.	.	-	61	X
+61	하았다	하았다	VX+EP+EF	하/VX+았/EP+다/EF	-	0	ROOT
+62	.	.	SF	SF	-	61	X
 
 1	1991/09/15	1991/09/15	SN+SP+SN+SP+SN	SN+SP+SN+SP+SN	-	0	ROOT
 
@@ -8539,7 +8539,7 @@
 1	"	"	SS	SS	-	5	L
 2	엄마	엄마	NNG	NNG	-	4	NP_INT
 3	보고	보고	VV+EC	VV+고/EC	-	4	VP
-4	싶어	싶어	VX+EF	VX+어/EF	-	5	VP
+4	싶어	싶어	VX+EF	싶/VX+어/EF	-	5	VP
 5	"	"	SS	SS	-	8	VP
 6	전화받고	전화받고	NNG+VV+EC	NNG+VV+고/EC	-	8	VP
 7	밤샘끝에	밤샘끝에	NNG+JKB	NNG+에/JKB	-	8	NP_AJT
@@ -8553,3 +8553,371 @@
 5	3	3	SN	SN	-	6	NP
 6	개월	개월	NNB	NNB	-	7	NP
 7	뒷바라지	뒷바라지	NNG	NNG	-	0	ROOT
+
+1	불법	불법	NNG	NNG	-	2	NP
+2	시위를	시위를	NNG+JKO	NNG+를/JKO	-	3	NP_OBJ
+3	주도한	주도한	NNG+XSV+EC	NNG+하/XSV+ᆫ/EC	-	4	VP_MOD
+4	혐의로	혐의로	NNG+JKB	NNG+로/JKB	-	8	NP_AJT
+5	경찰의	경찰의	NNG+JKG	NNG+의/JKG	-	6	NP_MOD
+6	수배를	수배를	NNG+JKO	NNG+를/JKO	-	8	NP_OBJ
+7	받고	받고	VV+EC	VV+고/EC	-	8	VP
+8	있는	있는	VA+ETM	VA+는/ETM	-	9	VP_MOD
+9	아들을	아들을	NNG+JKO	NNG+을/JKO	-	10	NP_OBJ
+10	만날	만날	VV+ETM	VV+ᆯ/ETM	-	11	VP_MOD
+11	때마다	때마다	NNG+JX	NNG+마다/JX	-	21	NP_AJT
+12	어머니는	어머니는	NNG+JX	NNG+는/JX	-	21	NP_SBJ
+13	버스를	버스를	NNG+JKO	NNG+를/JKO	-	16	NP_OBJ
+14	서너	서너	MM	MM	-	15	DP
+15	차례	차례	NNG	NNG	-	16	NP_AJT
+16	갈아타며	갈아타며	VV+EC+VV+EC	VV+아/EC+VV+며/EC	-	21	VP
+17	,	,	SP	SP	-	16	X
+18	형사의	형사의	NNG+JKG	NNG+의/JKG	-	19	NP_MOD
+19	미행을	미행을	NNG+JKO	NNG+을/JKO	-	21	NP_OBJ
+20	따돌리어야	따돌리어야	VV+EF	VV+어야/EF	-	21	VP
+21	하았다	하았다	VX+EP+EF	하/VX+았/EP+다/EF	-	0	ROOT
+22	.	.	SF	SF	-	21	X
+
+1	아들이	아들이	NNG+JKS	NNG+이/JKS	-	3	NP_SBJ
+2	무엇때문에	무엇때문에	NP+NNB+JKB	NP+NNB+에/JKB	-	3	NP_AJT
+3	쫓기는	쫓기는	VV+ETM	VV+는/ETM	-	4	S_MOD
+4	지는	지는	NNB+JX	NNB+는/JX	-	5	NP_OBJ
+5	모르아도	모르아도	VV+EC	VV+아도/EC	-	9	VP
+6	차갑은	차갑은	VA+ETM	VA+은/ETM	-	7	VP_MOD
+7	교도소로	교도소로	NNG+JKB	NNG+로/JKB	-	8	NP_AJT
+8	보내기는	보내기는	VV+ETN+JX	VV+기/ETN+는/JX	-	9	VP_SBJ
+9	싫었기	싫었기	VA+EP+ETN	VA+었/EP+기/ETN	-	10	S
+10	때문이다	때문이다	NNB+VCP+EF	NNB+이/VCP+다/EF	-	0	ROOT
+11	.	.	SF	SF	-	10	X
+
+1	그러나	그러나	MAJ	MAJ	-	26	AP
+2	병에	병에	NNG+JKB	NNG+에/JKB	-	3	NP_AJT
+3	걸리어	걸리어	VV+EC	VV+어/EC	-	5	VP
+4	피를	피를	NNG+JKO	NNG+를/JKO	-	5	NP_OBJ
+5	토하는	토하는	VV+ETM	VV+는/ETM	-	6	VP_MOD
+6	아들을	아들을	NNG+JKO	NNG+을/JKO	-	7	NP_OBJ
+7	보고	보고	VV+EC	VV+고/EC	-	15	VP
+8	더	더	MAG	MAG	-	9	AP_MOD
+9	이상	이상	NNG	NNG	-	13	NP_AJT
+10	숨어다니게	숨어다니게	VV+EC+VV+EC	VV+어/EC+VV+게/EC	-	11	VP
+11	하아서는	하아서는	VX+EC+JX	하/VX+아서/EC+는/JX	-	13	VP
+12	안	안	MAG	MAG	-	13	AP
+13	된다는	된다는	VV+EC+ETM	VV+ᆫ다/EC+는/ETM	-	14	VP_MOD
+14	생각이	생각이	NNG+JKS	NNG+이/JKS	-	15	NP_SBJ
+15	들ᆫ	들ᆫ	VV+ETM	VV+ᆫ/ETM	-	16	S_MOD
+16	어머니는	어머니는	NNG+JX	NNG+는/JX	-	26	NP_SBJ
+17	이번에는	이번에는	MM+NNB+JKB+JX	MM+NNB+에/JKB+는/JX	-	23	NP_AJT
+18	경찰에	경찰에	NNG+JKB	NNG+에/JKB	-	23	NP_AJT
+19	아들을	아들을	NNG+JKO	NNG+을/JKO	-	20	NP_OBJ
+20	만나러	만나러	VV+EC	VV+러/EC	-	21	VP
+21	간다는	간다는	VV+EC+ETM	VV+ᆫ다/EC+는/ETM	-	22	VP_MOD
+22	사실을	사실을	NNG+JKO	NNG+을/JKO	-	23	NP_OBJ
+23	알리고는	알리고는	VV+EC+JX	VV+고/EC+는/JX	-	26	VP
+24	버스에서	버스에서	NNG+JKB	NNG+에서/JKB	-	26	NP_AJT
+25	눈물을	눈물을	NNG+JKO	NNG+을/JKO	-	26	NP_OBJ
+26	삼키었다	삼키었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
+27	.	.	SF	SF	-	26	X
+
+1	지난	지난	VV+ETM	VV+ᆫ/ETM	-	2	VP_MOD
+2	6월부터	6월부터	NNG+JX	NNG+부터/JX	-	5	NP_AJT
+3	3	3	SN	SN	-	4	NP
+4	개월	개월	NNB	NNB	-	5	NP
+5	동안	동안	NNG	NNG	-	8	NP_AJT
+6	5백만원의	5백만원의	NNG+JKG	NNG+의/JKG	-	7	NP_MOD
+7	현상금이	현상금이	NNG+JKS	NNG+이/JKS	-	8	NP_SBJ
+8	붙어	붙어	VV+EC	VV+어/EC	-	11	S
+9	경찰의	경찰의	NNG+JKG	NNG+의/JKG	-	10	NP_MOD
+10	수배를	수배를	NNG+JKO	NNG+를/JKO	-	11	NP_OBJ
+11	받아오던	받아오던	VV+EC+VX+ETM	VV+아/EC+오/VX+던/ETM	-	22	VP_MOD
+12	서강대	서강대	NNP	NNP	-	13	NP
+13	총학생회장	총학생회장	MM+NNG	MM+NNG	-	15	NP
+14	표홍철	표홍철	NNP	NNP	-	15	NP
+15	군	군	NNB	NNB	-	21	NP
+16	(	(	SS	SS	-	21	L
+17	23	23	SN	SN	-	18	NP
+18	·	·	SP	SP	-	20	NP
+19	영문	영문	NNG	NNG	-	20	NP
+20	4	4	SN	SN	-	21	NP
+21	)	)	SS	SS	-	22	NP
+22	은	은	JX	은/JX	-	35	NP_SBJ
+23	13일	13일	NNG	NNG	-	24	NP
+24	오후7시	오후7시	NNG	NNG	-	25	NP
+25	30분쯤	30분쯤	NNG	NNG	-	32	NP_AJT
+26	성남시	성남시	NNP	NNP	-	27	NP
+27	중동	중동	NNP	NNP	-	28	NP
+28	음식점에서	음식점에서	NNG+JKB	NNG+에서/JKB	-	32	NP_AJT
+29	어머니	어머니	NNG	NNG	-	31	NP
+30	홍영숙	홍영숙	NNP	NNP	-	31	NP
+31	씨(52)를	씨(52)를	NNB+SS+SN+SS+JKO	NNB+SS+SN+SS+를/JKO	-	32	NP_OBJ
+32	만나다	만나다	VV+EC	VV+다/EC	-	34	VP
+33	경찰에	경찰에	NNG+JKB	NNG+에/JKB	-	34	NP_AJT
+34	붙잡히어	붙잡히어	VV+EC	VV+어/EC	-	35	VP
+35	구속되었다	구속되었다	NNG+XSV+EP+EF	NNG+되/XSV+었/EP+다/EF	-	0	ROOT
+36	.	.	SF	SF	-	35	X
+
+1	"Q="2"	"Q="2"	SS+Q"+SS	SS+Q"+SS	-	0	ROOT
+
+1	철이가	철이가	NNP+JKS	NNP+가/JKS	-	4	NP_SBJ
+2	어떤	어떤	MM	MM	-	3	DP
+3	죄를	죄를	NNG+JKO	NNG+를/JKO	-	4	NP_OBJ
+4	저지르었는지	저지르었는지	VV+EP+EC	VV+었/EP+는지/EC	-	7	S_OBJ
+5	저는	저는	NP+JX	NP+는/JX	-	7	NP_SBJ
+6	잘	잘	MAG	MAG	-	7	AP
+7	모르ᄇ니다	모르ᄇ니다	VV+EF	VV+ᄇ니다/EF	-	0	ROOT
+8	.	.	SF	SF	-	7	X
+
+1	그저	그저	MAG	MAG	-	9	AP
+2	병들ᆫ	병들ᆫ	VV+ETM	VV+ᆫ/ETM	-	3	VP_MOD
+3	몸으로	몸으로	NNG+JKB	NNG+으로/JKB	-	6	NP_AJT
+4	숨어	숨어	VV+EC	VV+어/EC	-	5	VP
+5	지내어야	지내어야	VV+EC	VV+어야/EC	-	6	VP
+6	하는	하는	VX+ETM	하/VX+는/ETM	-	8	VP_MOD
+7	나의	나의	NP+JKG	NP+의/JKG	-	8	NP_MOD
+8	자식이	자식이	NNG+JKS	NNG+이/JKS	-	9	NP_SBJ
+9	안쓰럽었습니다	안쓰럽었습니다	VA+EP+EF	VA+었/EP+습니다/EF	-	0	ROOT
+10	.	.	SF	SF	-	9	X
+
+1	지난	지난	VV+ETM	VV+ᆫ/ETM	-	2	VP_MOD
+2	83년	83년	NNG	NNG	-	3	NP
+3	1월	1월	NNG	NNG	-	9	NP_AJT
+4	표	표	NNP	NNP	-	5	NP
+5	군의	군의	NNB+JKG	NNB+의/JKG	-	6	NP_MOD
+6	아버지가	아버지가	NNG+JKS	NNG+가/JKS	-	9	NP_SBJ
+7	지병으로	지병으로	NNG+JKB	NNG+으로/JKB	-	9	NP_AJT
+8	세상을	세상을	NNG+JKO	NNG+을/JKO	-	9	NP_OBJ
+9	떠난	떠난	VV+ETM	VV+ᆫ/ETM	-	10	S_MOD
+10	뒤로	뒤로	NNG+JKB	NNG+로/JKB	-	24	NP_AJT
+11	어머니	어머니	NNG	NNG	-	12	NP
+12	박씨는	박씨는	NNG+JX	NNG+는/JX	-	24	NP_SBJ
+13	빌딩	빌딩	NNG	NNG	-	14	NP
+14	청소부	청소부	NNG	NNG	-	18	NP_CNJ
+15	,	,	SP	SP	-	14	X
+16	음식점	음식점	NNG	NNG	-	17	NP
+17	주방	주방	NNG	NNG	-	18	NP
+18	아줌마	아줌마	NNG	NNG	-	19	NP
+19	등	등	NNB	NNB	-	24	NP_AJT
+20	닥치는	닥치는	VV+ETM	VV+는/ETM	-	21	VP_MOD
+21	대로	대로	NNB	NNB	-	24	NP_AJT
+22	일을	일을	NNG+JKO	NNG+을/JKO	-	24	NP_OBJ
+23	하아	하아	VV+EC	VV+아/EC	-	24	VP
+24	오았다	오았다	VX+EP+EF	오/VX+았/EP+다/EF	-	0	ROOT
+25	.	.	SF	SF	-	24	X
+
+1	어렵게	어렵게	VA+EC	VA+게/EC	-	2	VP
+2	마련한	마련한	NNG+XSV+ETM	NNG+하/XSV+ᆫ/ETM	-	3	VP_MOD
+3	돈으로	돈으로	NNG+JKB	NNG+으로/JKB	-	8	NP_AJT
+4	큰딸(28)도	큰딸(28)도	NNG+SS+SN+SS+JX	NNG+SS+SN+SS+도/JX	-	6	NP_SBJ
+5	대학까지	대학까지	NNG+JX	NNG+까지/JX	-	6	NP_AJT
+6	다니도록	다니도록	VV+EC	VV+도록/EC	-	8	S
+7	뒷바라지를	뒷바라지를	NNG+JKO	NNG+를/JKO	-	8	NP_OBJ
+8	하았다	하았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
+9	.	.	SF	SF	-	8	X
+
+1	딸이	딸이	NNG+JKS	NNG+이/JKS	-	2	NP_SBJ
+2	출가하아	출가하아	NNG+XSV+EC	NNG+하/XSV+아/EC	-	4	S
+3	미국으로	미국으로	NNP+JKB	NNP+으로/JKB	-	4	NP_AJT
+4	간	간	VV+ETM	VV+ᆫ/ETM	-	5	VP_MOD
+5	뒤	뒤	NNG	NNG	-	8	NP_AJT
+6	아들과	아들과	NNG+JKB	NNG+과/JKB	-	8	NP_AJT
+7	단둘이	단둘이	NNG+JKS	NNG+이/JKS	-	8	NP_SBJ
+8	남은	남은	VV+ETM	VV+은/ETM	-	9	S_MOD
+9	박씨는	박씨는	NNG+JX	NNG+는/JX	-	22	NP_SBJ
+10	아들에게	아들에게	NNG+JKB	NNG+에게/JKB	-	13	NP_AJT
+11	모든	모든	MM	MM	-	12	DP
+12	희망을	희망을	NNG+JKO	NNG+을/JKO	-	13	NP_OBJ
+13	걸고	걸고	VV+EC	VV+고/EC	-	22	VP
+14	새벽에	새벽에	NNG+JKB	NNG+에/JKB	-	16	NP_AJT
+15	집을	집을	NNG+JKO	NNG+을/JKO	-	16	NP_OBJ
+16	나서어	나서어	VV+EC	VV+어/EC	-	19	VP
+17	밤	밤	NNG	NNG	-	18	NP
+18	12시에야	12시에야	NNG+JKB+JX	NNG+에/JKB+야/JX	-	19	NP_AJT
+19	들어오는	들어오는	VV+ETM	VV+는/ETM	-	21	VP_MOD
+20	고된	고된	VA+ETM	VA+ᆫ/ETM	-	21	VP_MOD
+21	생활을	생활을	NNG+JKO	NNG+을/JKO	-	22	NP_OBJ
+22	계속하았다	계속하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
+23	.	.	SF	SF	-	22	X
+
+1	어렵ᆫ	어렵ᆫ	VA+ETM	VA+ᆫ/ETM	-	2	VP_MOD
+2	살림이었지만	살림이었지만	NNG+VCP+EP+EC	NNG+이/VCP+었/EP+지만/EC	-	10	VNP
+3	아들은	아들은	NNG+JX	NNG+은/JX	-	8	NP_SBJ
+4	착실하았고	착실하았고	XR+XSA+EP+EC	XR+하/XSA+았/EP+고/EC	-	8	VP
+5	,	,	SP	SP	-	4	X
+6	주위의	주위의	NNG+JKG	NNG+의/JKG	-	7	NP_MOD
+7	부럽ᄆ을	부럽ᄆ을	VA+ETN+JKO	VA+ᄆ/ETN+을/JKO	-	8	VP_OBJ
+8	받는	받는	VV+ETM	VV+는/ETM	-	10	S_MOD
+9	행복한	행복한	NNG+XSA+ETM	NNG+하/XSA+ᆫ/ETM	-	10	VP_MOD
+10	생활이었다	생활이었다	NNG+VCP+EP+EF	NNG+이/VCP+었/EP+다/EF	-	0	ROOT
+11	.	.	SF	SF	-	10	X
+
+1	그러나	그러나	MAJ	MAJ	-	22	AP
+2	작년	작년	NNG	NNG	-	3	NP
+3	11월	11월	NNG	NNG	-	6	NP_AJT
+4	아들이	아들이	NNG+JKS	NNG+이/JKS	-	6	NP_SBJ
+5	학생회장이	학생회장이	NNG+JKC	NNG+이/JKC	-	6	NP_CMP
+6	되면서	되면서	VV+EC	VV+면서/EC	-	22	S
+7	박씨는	박씨는	NNG+JX	NNG+는/JX	-	22	NP_SBJ
+8	시위가	시위가	NNG+JKS	NNG+가/JKS	-	9	NP_SBJ
+9	있을	있을	VV+ETM	VV+을/ETM	-	10	S_MOD
+10	때마다	때마다	NNG+JX	NNG+마다/JX	-	19	NP_AJT
+11	혹시	혹시	MAG	MAG	-	13	AP
+12	다치지나	다치지나	VV+EC+JX	VV+지/EC+나/JX	-	13	VP
+13	않을까	않을까	VX+EC	않/VX+을까/EC	-	14	VP_CMP
+14	하는	하는	VV+ETM	VV+는/ETM	-	15	VP_MOD
+15	걱정에	걱정에	NNG+JKB	NNG+에/JKB	-	19	NP_AJT
+16	뉴스만	뉴스만	NNG+JX	NNG+만/JX	-	17	NP_SBJ
+17	나오면	나오면	VV+EC	VV+면/EC	-	19	S
+18	귀를	귀를	NNG+JKO	NNG+를/JKO	-	19	NP_OBJ
+19	기울이는	기울이는	VV+ETM	VV+는/ETM	-	21	VP_MOD
+20	초조한	초조한	NNG+XSA+ETM	NNG+하/XSA+ᆫ/ETM	-	21	VP_MOD
+21	생활이	생활이	NNG+JKS	NNG+이/JKS	-	22	NP_SBJ
+22	시작되었다	시작되었다	NNG+XSV+EP+EF	NNG+되/XSV+었/EP+다/EF	-	0	ROOT
+23	.	.	SF	SF	-	22	X
+
+1	하루도	하루도	NNG+JX	NNG+도/JX	-	3	NP_SBJ
+2	빠지ᄆ	빠지ᄆ	VV+ETN	VV+ᄆ/ETN	-	3	VP_SBJ
+3	없이	없이	MAG	MAG	-	11	S
+4	집을	집을	NNG+JKO	NNG+을/JKO	-	5	NP_OBJ
+5	나서기	나서기	VV+ETN	VV+기/ETN	-	6	VP
+6	전에는	전에는	NNG+JKB+JX	NNG+에/JKB+는/JX	-	11	NP_AJT
+7	아들에게	아들에게	NNG+JKB	NNG+에게/JKB	-	10	NP_AJT
+8	아무	아무	MM	MM	-	9	DP
+9	일도	일도	NNG+JX	NNG+도/JX	-	10	NP_SBJ
+10	없기를	없기를	VA+ETN+JKO	VA+기/ETN+를/JKO	-	11	S_OBJ
+11	기원하았다	기원하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
+12	.	.	SF	SF	-	11	X
+
+1	그러나	그러나	MAJ	MAJ	-	20	AP
+2	결국	결국	NNG	NNG	-	9	NP_AJT
+3	아들에게는	아들에게는	NNG+JKB+JX	NNG+에게/JKB+는/JX	-	9	NP_AJT
+4	6월	6월	NNG	NNG	-	5	NP
+5	4일자로	4일자로	NNG+JKB	NNG+로/JKB	-	9	NP_AJT
+6	사전	사전	NNG	NNG	-	7	NP
+7	구속	구속	NNG	NNG	-	8	NP
+8	영장이	영장이	NNG+JKS	NNG+이/JKS	-	9	NP_SBJ
+9	발부되었고	발부되었고	NNG+XSV+EP+EC	NNG+되/XSV+었/EP+고/EC	-	20	S
+10	박씨는	박씨는	NNG+JX	NNG+는/JX	-	20	NP_SBJ
+11	전화를	전화를	NNG+JKO	NNG+를/JKO	-	13	NP_OBJ
+12	걸어	걸어	VV+EC	VV+어/EC	-	13	VP
+13	온	온	VX+ETM	오/VX+ᆫ/ETM	-	14	VP_MOD
+14	아들에게	아들에게	NNG+JKB	NNG+에게/JKB	-	20	NP_AJT
+15	집에	집에	NNG+JKB	NNG+에/JKB	-	17	NP_AJT
+16	들어오지	들어오지	VV+EC	VV+지/EC	-	17	VP
+17	말고	말고	VX+EC	말/VX+고/EC	-	19	VP
+18	몸을	몸을	NNG+JKO	NNG+을/JKO	-	19	NP_OBJ
+19	피하라고	피하라고	VV+EC	VV+라고/EC	-	20	VP_CMP
+20	하았다	하았다	VV+EP+EF	VV+았/EP+다/EF	-	0	ROOT
+21	.	.	SF	SF	-	20	X
+
+1	아들은	아들은	NNG+JX	NNG+은/JX	-	6	NP_SBJ
+2	성남에	성남에	NNP+JKB	NNP+에/JKB	-	4	NP_AJT
+3	방을	방을	NNG+JKO	NNG+을/JKO	-	4	NP_OBJ
+4	얻어	얻어	VV+EC	VV+어/EC	-	6	VP
+5	은신하고	은신하고	NNG+XSV+EC	NNG+하/XSV+고/EC	-	6	VP
+6	있었다	있었다	VX+EP+EF	있/VX+었/EP+다/EF	-	0	ROOT
+7	.	.	SF	SF	-	6	X
+
+1	1시간	1시간	NNG	NNG	-	2	NP
+2	거리에	거리에	NNG+JKB	NNG+에/JKB	-	3	NP_AJT
+3	있는	있는	VA+ETM	VA+는/ETM	-	4	VP_MOD
+4	아들을	아들을	NNG+JKO	NNG+을/JKO	-	5	NP_OBJ
+5	만나기	만나기	VV+ETN	VV+기/ETN	-	6	VP_OBJ
+6	위하아	위하아	VV+EC	VV+아/EC	-	13	VP
+7	버스를	버스를	NNG+JKO	NNG+를/JKO	-	9	NP_OBJ
+8	서너번	서너번	MM+NNB	MM+NNB	-	9	NP_OBJ
+9	갈아타고	갈아타고	VV+EC+VV+EC	VV+아/EC+VV+고/EC	-	11	VP
+10	택시까지	택시까지	NNG+JX	NNG+까지/JX	-	11	NP_OBJ
+11	타면서	타면서	VV+EC	VV+면서/EC	-	13	VP
+12	숨어	숨어	VV+EC	VV+어/EC	-	13	VP
+13	다니었다	다니었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
+14	.	.	SF	SF	-	13	X
+
+1	그렇게	그렇게	VA+EC	VA+게/EC	-	4	VP
+2	두	두	MM	MM	-	3	DP
+3	달이	달이	NNB+JKS	NNB+이/JKS	-	4	NP_SBJ
+4	지난	지난	VV+ETM	VV+ᆫ/ETM	-	6	S_MOD
+5	7월	7월	NNG	NNG	-	6	NP
+6	말	말	NNB	NNB	-	20	NP_AJT
+7	식사를	식사를	NNG+JKO	NNG+를/JKO	-	10	NP_OBJ
+8	제대로	제대로	MAG	MAG	-	10	AP
+9	하지	하지	VV+EC	VV+지/EC	-	10	VP
+10	못하아	못하아	VX+EC	못하/VX+아/EC	-	12	VP
+11	위궤양에	위궤양에	NNG+JKB	NNG+에/JKB	-	12	NP_AJT
+12	걸리었던	걸리었던	VV+EP+ETM	VV+었/EP+던/ETM	-	13	VP_MOD
+13	아들은	아들은	NNG+JX	NNG+은/JX	-	20	NP_SBJ
+14	피를	피를	NNG+JKO	NNG+를/JKO	-	15	NP_OBJ
+15	토하며	토하며	VV+EC	VV+며/EC	-	16	VP
+16	쓰러지어	쓰러지어	VV+EC	VV+어/EC	-	20	VP
+17	1주일간	1주일간	NNG	NNG	-	20	NP_AJT
+18	병원	병원	NNG	NNG	-	19	NP
+19	신세를	신세를	NNG+JKO	NNG+를/JKO	-	20	NP_OBJ
+20	지어야하았다	지어야하았다	VV+EC+VX+EP+EF	VV+어야/EC+하/VX+았/EP+다/EF	-	0	ROOT
+21	.	.	SF	SF	-	20	X
+
+1	수배중인	수배중인	NNG+VCP+ETM	NNG+이/VCP+ᆫ/ETM	-	2	VNP_MOD
+2	몸이었던	몸이었던	NNG+VCP+EP+ETM	NNG+이/VCP+었/EP+던/ETM	-	3	VNP_MOD
+3	아들은	아들은	NNG+JX	NNG+은/JX	-	7	NP_SBJ
+4	입원할	입원할	NNG+XSV+ETM	NNG+하/XSV+ᆯ/ETM	-	5	VP_MOD
+5	때도	때도	NNG+JX	NNG+도/JX	-	7	NP_AJT
+6	가명을	가명을	NNG+JKO	NNG+을/JKO	-	7	NP_OBJ
+7	쓰었다	쓰었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
+8	.	.	SF	SF	-	7	X
+
+1	이대로	이대로	NP+JX	NP+대로/JX	-	2	NP_AJT
+2	지내다간	지내다간	VV+EC+JX	VV+다가/EC+ᆫ/JX	-	7	VP
+3	몸을	몸을	NNG+JKO	NNG+을/JKO	-	7	NP_OBJ
+4	망치고	망치고	VV+EC	VV+고/EC	-	5	VP
+5	말ᆯ	말ᆯ	VX+ETM	말/VX+ᆯ/ETM	-	6	VP_MOD
+6	것	것	NNB	NNB	-	7	NP
+7	같다는	같다는	VA+EC+ETM	VA+다/EC+는/ETM	-	8	VP_MOD
+8	생각에	생각에	NNG+JKB	NNG+에/JKB	-	12	NP_AJT
+9	박씨는	박씨는	NNG+JX	NNG+는/JX	-	12	NP_SBJ
+10	아들에게	아들에게	NNG+JKB	NNG+에게/JKB	-	12	NP_AJT
+11	자수를	자수를	NNG+JKO	NNG+를/JKO	-	12	NP_OBJ
+12	권유하았다	권유하았다	NNG+XSV+EP+EF	NNG+하/XSV+았/EP+다/EF	-	0	ROOT
+13	.	.	SF	SF	-	12	X
+
+1	그러나	그러나	MAJ	MAJ	-	8	AP
+2	아들의	아들의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
+3	마음은	마음은	NNG+JX	NNG+은/JX	-	5	NP_SBJ
+4	변하ᄆ이	변하ᄆ이	VV+ETN+JKS	VV+ᄆ/ETN+이/JKS	-	5	VP_SBJ
+5	없었고	없었고	VA+EP+EC	VA+었/EP+고/EC	-	8	S
+6	박씨는	박씨는	NNG+JX	NNG+는/JX	-	8	NP_SBJ
+7	애만	애만	NNG+JX	NNG+만/JX	-	8	NP_OBJ
+8	태우어야하았다	태우어야하았다	VV+EC+VX+EP+EF	VV+어야/EC+하/VX+았/EP+다/EF	-	0	ROOT
+9	.	.	SF	SF	-	8	X
+
+1	박씨는	박씨는	NNG+JX	NNG+는/JX	-	8	NP_SBJ
+2	지난	지난	VV+ETM	VV+ᆫ/ETM	-	3	VP_MOD
+3	11일	11일	NNG	NNG	-	5	NP_AJT
+4	아들을	아들을	NNG+JKO	NNG+을/JKO	-	5	NP_OBJ
+5	찾아가아	찾아가아	VV+EC	VV+아/EC	-	8	VP
+6	함께	함께	MAG	MAG	-	8	AP
+7	밤을	밤을	NNG+JKO	NNG+을/JKO	-	8	NP_OBJ
+8	보내었다	보내었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
+9	.	.	SF	SF	-	8	X
+
+1	새벽에	새벽에	NNG+JKB	NNG+에/JKB	-	5	NP_AJT
+2	아들의	아들의	NNG+JKG	NNG+의/JKG	-	3	NP_MOD
+3	신음소리에	신음소리에	NNG+JKB	NNG+에/JKB	-	5	NP_AJT
+4	잠을	잠을	NNG+JKO	NNG+을/JKO	-	5	NP_OBJ
+5	깬	깬	VV+ETM	VV+ᆫ/ETM	-	6	VP_MOD
+6	박씨는	박씨는	NNG+JX	NNG+는/JX	-	16	NP_SBJ
+7	식은	식은	VV+ETM	VV+은/ETM	-	8	VP_MOD
+8	땀을	땀을	NNG+JKO	NNG+을/JKO	-	9	NP_OBJ
+9	흘리며	흘리며	VV+EC	VV+며/EC	-	10	VP
+10	괴롭어하는	괴롭어하는	VA+EC+VX+ETM	VA+어/EC+하/VX+는/ETM	-	11	VP_MOD
+11	아들을	아들을	NNG+JKO	NNG+을/JKO	-	12	NP_OBJ
+12	보고	보고	VV+EC	VV+고/EC	-	16	VP
+13	소리	소리	NNG	NNG	-	14	NP_OBJ
+14	죽이어	죽이어	VV+EC	VV+어/EC	-	16	VP
+15	한참을	한참을	NNG+JKO	NNG+을/JKO	-	16	NP_OBJ
+16	울었다	울었다	VV+EP+EF	VV+었/EP+다/EF	-	0	ROOT
+17	.	.	SF	SF	-	16	X
+
+1	다음날	다음날	NNG	NNG	-	2	NP
+2	밤	밤	NNG	NNG	-	7	NP_AJT
+3	박씨에게	박씨에게	NNG+JKB	NNG+에게/JKB	-	7	NP_AJT
+4	아들이	아들이	NNG+JKS	NNG+이/JKS	-	7	NP_SBJ
+5	전화를	전화를	NNG+JKO	NNG+를/JKO	-	7	NP_OBJ
+6	걸어	걸어	VV+EC	VV+어/EC	-	7	VP
+7	오았다	오았다	VX+EP+EF	오/VX+았/EP+다/EF	-	0	ROOT
+8	.	.	SF	SF	-	7	X

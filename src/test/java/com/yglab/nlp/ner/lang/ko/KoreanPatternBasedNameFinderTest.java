@@ -74,9 +74,9 @@ public class KoreanPatternBasedNameFinderTest {
 	 * @throws Exception
 	 */
 	private static KoreanPOSTagger initPOSTagger() throws Exception {
-		MorphemeDictionary dicJosa = new MorphemeDictionary("/lang/ko/ko-pos-josa.dic");
-		MorphemeDictionary dicEomi = new MorphemeDictionary("/lang/ko/ko-pos-eomi.dic");
-		KoreanPOSFeatureGenerator posFeatureGenerator = new KoreanPOSFeatureGenerator(dicJosa, dicEomi);
+		// TODO
+		MorphemeDictionary dic = new MorphemeDictionary("/lang/ko/ko-pos-josa.dic", "/lang/ko/ko-pos-eomi.dic");
+		KoreanPOSFeatureGenerator posFeatureGenerator = new KoreanPOSFeatureGenerator(dic);
 		
 		List<POSSample> posTrainSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt", "_[^,]+", "");
 		
@@ -84,7 +84,8 @@ public class KoreanPatternBasedNameFinderTest {
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 		AbstractModel trainModel = KoreanPOSTagger.train(posTrainSamples, posFeatureGenerator, options);
 
-		KoreanPOSTagger posTagger = new KoreanPOSTagger(trainModel, posFeatureGenerator, dicJosa, dicEomi);
+		// TODO
+		KoreanPOSTagger posTagger = new KoreanPOSTagger(trainModel, posFeatureGenerator, dic);
 		
 		return posTagger;
 	}

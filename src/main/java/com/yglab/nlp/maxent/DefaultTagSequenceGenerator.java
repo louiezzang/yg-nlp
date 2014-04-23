@@ -16,41 +16,47 @@ import com.yglab.nlp.model.Datum;
 public class DefaultTagSequenceGenerator implements TagSequenceGenerator {
 	
 	protected FeatureGenerator<String> featureGenerator;
-	protected String[] labels;
-	protected int prevSequenceLength;
-	protected String[][] prevLabelSequenceCandidates;
+	protected String[] tags;
+	protected final int prevSequenceLength;
+	protected String[][] allPrevTagSequenceCandidates;
 	
 	/**
 	 * Constructor.
 	 * 
 	 * @param featureGenerator The context feature generator
-	 * @param labels The unique labels
+	 * @param tags The unique labels
 	 * @param prevSequenceLength The length of previous labels sequence(bigram, trigram)
 	 */
-	public DefaultTagSequenceGenerator(FeatureGenerator<String> featureGenerator, String[] labels, int prevSequenceLength) {
+	public DefaultTagSequenceGenerator(FeatureGenerator<String> featureGenerator, String[] tags, int prevSequenceLength) {
 		this.featureGenerator = featureGenerator;
-		this.labels = labels;
+		this.tags = tags;
 		this.prevSequenceLength = prevSequenceLength;
 	
-		this.prevLabelSequenceCandidates = generateLabelSequenceCandidates(prevSequenceLength);
-		System.out.println("prevLabelSequenceCandidates size = " + prevLabelSequenceCandidates.length + " * " + prevLabelSequenceCandidates[0].length);
+		if (tags != null) {
+			this.allPrevTagSequenceCandidates = generateAllTagSequenceCandidates(prevSequenceLength);
+			System.out.println("allPrevTagSequenceCandidates size = " + allPrevTagSequenceCandidates.length + " * " + allPrevTagSequenceCandidates[0].length);
+		}
+	}
+	
+	public void setTags(final String[] tags) {
+		this.tags = tags;
 	}
 
-	public String[][] generateLabelSequenceCandidates(int length) {
+	public String[][] generateAllTagSequenceCandidates(int length) {
 		int[] pos = new int[length];
-		int total = (int) Math.pow(labels.length, length);
+		int total = (int) Math.pow(tags.length, length);
 
 		String[][] sequences = new String[total][length];
 
 		for (int i = 0; i < total; i++) {
 			for (int x = 0; x < length; x++) {
-				if (pos[x] == labels.length) {
+				if (pos[x] == tags.length) {
 					pos[x] = 0;
 					if (x + 1 < length) {
 						pos[x + 1]++;
 					}
 				}
-				sequences[i][x] = labels[pos[x]];
+				sequences[i][x] = tags[pos[x]];
 			}
 			pos[0]++;
 		}
@@ -78,41 +84,37 @@ public class DefaultTagSequenceGenerator implements TagSequenceGenerator {
 				candidates.add(datum);
 				instanceCandidates.add(candidates);
 			} 
-			else if (prevSequenceLength > 1 && position > 0 && position < prevSequenceLength ) {
+			else if (prevSequenceLength > 1 && position > 0 && position < prevSequenceLength) {
 				List<Datum> candidates = new ArrayList<Datum>();
-				String[][] tmpLabelSequences = generateLabelSequenceCandidates(position);
+				String[][] tmpTagSequences = generateAllTagSequenceCandidates(position);
 				
-				for (int i = 0; i < tmpLabelSequences.length; i++) {
-					String[] prevLabelSequenceCandidates = new String[prevSequenceLength];
+				for (int i = 0; i < tmpTagSequences.length; i++) {
+					String[] prevTagSequenceCandidates = new String[prevSequenceLength];
 					for (int j = 0; j < prevSequenceLength; j++) {
 						if (j < prevSequenceLength - position) {
-							prevLabelSequenceCandidates[j] = "O";
+							prevTagSequenceCandidates[j] = "O";
 						}
 						else {
-							for (int k = 0; k < tmpLabelSequences[i].length; k++) {
-								prevLabelSequenceCandidates[j] = tmpLabelSequences[i][k];
+							for (int k = 0; k < tmpTagSequences[i].length; k++) {
+								prevTagSequenceCandidates[j] = tmpTagSequences[i][k];
 							}
 						}
 					}
 					Datum datum = new Datum(token, "O");
-					datum.setFeatures(Arrays.asList(featureGenerator.getFeatures(position, tokens, prevLabelSequenceCandidates)));
-					datum.setPreviousLabel(prevLabelSequenceCandidates[prevSequenceLength - 1]);
+					datum.setFeatures(Arrays.asList(featureGenerator.getFeatures(position, tokens, prevTagSequenceCandidates)));
+					datum.setPreviousLabel(prevTagSequenceCandidates[prevSequenceLength - 1]);
 					candidates.add(datum);
 				}
 				instanceCandidates.add(candidates);
 			}
 			else {
 				List<Datum> candidates = new ArrayList<Datum>();
-//				String[][] prevLabelSequenceCandidates = generateLabelSequenceCandidates(prevSequenceLength);
 				
-				// TODO: prevLabelSequenceCandidates를 미리 생성해 놓고 전체 경우의 수에서 후보군을 생성하던 방식에서
-				// token별로 prevLabelSequenceCandidates 후보군을 만들어 내는 방식으로 수정 필요.
-				for (int i = 0; i < prevLabelSequenceCandidates.length; i++) {
+				for (int i = 0; i < allPrevTagSequenceCandidates.length; i++) {
 					Datum datum = new Datum(token, "O");
-					//TODO: featureGenerator 생성시에 token별로 형태소 자질(어미, 조사 등 체크) 후보군을 미리 생성해서 재사용하도록 로직 추가
-					// 그럴러면 featureGenerator의 멤버변수로 token별 형태소 자질을 가지고 있고 input tokens(문장)이 바뀌면 초기화 되어야 함.
-					datum.setFeatures(Arrays.asList(featureGenerator.getFeatures(position, tokens, prevLabelSequenceCandidates[i])));
-					datum.setPreviousLabel(prevLabelSequenceCandidates[i][1]);
+
+					datum.setFeatures(Arrays.asList(featureGenerator.getFeatures(position, tokens, allPrevTagSequenceCandidates[i])));
+					datum.setPreviousLabel(allPrevTagSequenceCandidates[i][prevSequenceLength - 1]);
 					candidates.add(datum);
 				}
 				instanceCandidates.add(candidates);

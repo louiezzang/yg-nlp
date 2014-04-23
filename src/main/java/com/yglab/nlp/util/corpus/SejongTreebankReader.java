@@ -344,10 +344,10 @@ public class SejongTreebankReader implements TreebankReader {
 		String strPostag = simplifyPostag(postag.toString());
 		String strCpostag = simplifyPostag(cpostag.toString());
 		
-		instance.forms[index] = form.toString();
-		instance.lemmas[index] = form.toString();
-		instance.cpostags[index] = strCpostag;
-		instance.postags[index] = strPostag;
+		instance.forms[index] = form.toString().trim();
+		instance.lemmas[index] = form.toString().trim();
+		instance.cpostags[index] = strCpostag.trim();
+		instance.postags[index] = strPostag.trim();
 		
     return instance;
   }
@@ -406,8 +406,10 @@ public class SejongTreebankReader implements TreebankReader {
   			
     		forms.add(i+1, lastChar);
     		lemmas.add(i+1, lastChar);
-    		cpostags.add(i+1, lastChar);
-    		postags.add(i+1, lastChar);
+    		//cpostags.add(i+1, lastChar);
+    		cpostags.add(i+1, cpostag.substring(cpostag.length() - 2));
+    		//postags.add(i+1, lastChar);
+    		postags.add(i+1, postag.substring(postag.length() - 2));
     		heads.add(i+1, i);
     		deprels.add(i+1, "X");
     		feats.add(i+1, null);
@@ -446,7 +448,7 @@ public class SejongTreebankReader implements TreebankReader {
   }
 
   private static String simplifyPostag(String postag) {
-  	postag = postag.replaceAll("(NNG|NNP|XPN|SN|SL).*(NNG|XSN|NNB)", "NNG");
+  	postag = postag.replaceAll("(NNG|NNP|XPN|SN|SL|MM).*(NNG|XSN|NNB)", "NNG");
   	postag = postag.replaceAll("(NNP).*NP", "NP");
   	postag = postag.replaceAll("(SN).*NNB", "NNB");
   	postag = postag.replaceAll("(SN).*NR", "NR");

@@ -3,7 +3,6 @@ package com.yglab.nlp.postag;
 import java.util.List;
 
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.model.AbstractModel;
@@ -22,32 +21,31 @@ public class POSTaggerTest {
 	public static void setUpBeforeClass() throws Exception {
 		featureGenerator = new DefaultPOSFeatureGenerator();
 		
-		//train();
+		train();
 	}
 
 	private static void train() throws Exception {
-		List<POSSample> trainSamples = POSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt", "[^\\+/\\(\\)]*/", "");
+		List<POSSample> trainSamples = POSTagger.loadSamples("/sample/en/pos/en-pos-train.txt", "[^\\+/\\(\\)]*/", "");
 		
 		Options options = new Options();
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 		AbstractModel model = POSTagger.train(trainSamples, featureGenerator, options);
 		
-		POSTagger.saveModel(model, "./target/test-data/ko/pos/ko-pos-default-model.bin", "./target/test-data/ko/pos/ko-pos-default-model.txt");		
+		POSTagger.saveModel(model, "./target/test-data/en/pos/en-pos-default-model.bin", "./target/test-data/en/pos/en-pos-default-model.txt");		
 	}
 	
 	@Test
-	@Ignore
 	public void testTagger() throws Exception {
 		String[] tokens = {
-				"학교에",
-				"열심히",
-				"다닙니다",
+				"anxiety",
+				"is",
+				"rising",
 				"."
 		};
 		
 		System.out.println("tokens to test = " + tokens.length);
 		
-		AbstractModel trainModel = POSTagger.loadModel("./target/test-data/ko/pos/ko-pos-default-model.bin");
+		AbstractModel trainModel = POSTagger.loadModel("./target/test-data/en/pos/en-pos-default-model.bin");
 		POSTagger tagger = new POSTagger(trainModel, featureGenerator);
 		
 		System.out.println("==================================================");
@@ -61,20 +59,12 @@ public class POSTaggerTest {
 	}
 	
 	@Test
-	//@Ignore
 	public void testEvaluator() throws Exception {
-		/*
-		List<POSSample> trainSamples = POSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt");
-		Options options = new Options();
-		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
-		AbstractModel trainModel = POSTagger.train(trainSamples, featureGenerator, options);
-		*/
-		
-		AbstractModel trainModel = POSTagger.loadModel("./target/test-data/ko/pos/ko-pos-default-model.bin");
+		AbstractModel trainModel = POSTagger.loadModel("./target/test-data/en/pos/en-pos-default-model.bin");
 		
 		POSTagger tagger = new POSTagger(trainModel, featureGenerator);
 		
-		List<POSSample> testSamples = POSTagger.loadSamples("/sample/ko/pos/ko-pos-test.txt", "[^\\+/\\(\\)]*/", "");
+		List<POSSample> testSamples = POSTagger.loadSamples("/sample/en/pos/en-pos-test.txt", "[^\\+/\\(\\)]*/", "");
 		POSTaggerEvaluator evaluator = new POSTaggerEvaluator(tagger);
 		evaluator.evaluate(testSamples);
 		
