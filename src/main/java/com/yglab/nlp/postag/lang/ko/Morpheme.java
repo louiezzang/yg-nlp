@@ -9,7 +9,7 @@ package com.yglab.nlp.postag.lang.ko;
 public class Morpheme {
 	
 	private String surface;
-	private String stem;
+	private String lemma;
 	private String tag;
 	private String pos;
 	private String posDescription;
@@ -22,12 +22,12 @@ public class Morpheme {
 		this.surface = surface;
 	}
 	
-	public String getStem() {
-		return stem;
+	public String getLemma() {
+		return lemma;
 	}
 
-	public void setStem(String stem) {
-		this.stem = stem;
+	public void setLemma(String lemma) {
+		this.lemma = lemma;
 	}
 
 	public String getTag() {

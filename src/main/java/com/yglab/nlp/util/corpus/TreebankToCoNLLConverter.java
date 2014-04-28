@@ -57,8 +57,8 @@ public class TreebankToCoNLLConverter {
 
 	public static void main(String[] args) throws Exception {
 		TreebankReader treebankReader = new SejongTreebankReader();
-		TreebankToCoNLLConverter.convert(treebankReader, "./data/ko/parser/ko-sejong.tree", 
-				"./target/test-data/ko/parser/ko-parser-from-sejong.conll");
+		TreebankToCoNLLConverter.convert(treebankReader, "./data/ko/parser/ko-sejong-BGAA0164.tree", 
+				"./target/test-data/ko/parser/ko-parser-sejong-BGAA0164.conll");
 	}
 
 }

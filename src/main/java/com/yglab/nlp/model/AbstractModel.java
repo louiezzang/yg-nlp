@@ -23,6 +23,8 @@ public abstract class AbstractModel implements Model {
 	
 	public abstract double[][] getWeights();
 	
+	public abstract String[] getLabels();
+	
 	public void setOption(String key, String value) {
 		options.put(key, value);
 	}

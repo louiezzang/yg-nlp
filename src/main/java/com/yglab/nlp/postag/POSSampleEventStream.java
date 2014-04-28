@@ -38,6 +38,10 @@ public class POSSampleEventStream implements EventStream<POSSample, Datum> {
 			previousLabel[1] = "*";	// previous label
 			String[] tokens = sample.getSentence();
 			String[] labels = sample.getLabels();
+			
+			// initialize the feature generator with new tokens
+			featureGenerator.initialize(tokens);
+			
 			for (int i = 0; i < tokens.length; i++) {
 				Datum datum = new Datum(tokens[i], labels[i]);
 				datum.setFeatures(Arrays.asList(featureGenerator.getFeatures(i, tokens, previousLabel)));

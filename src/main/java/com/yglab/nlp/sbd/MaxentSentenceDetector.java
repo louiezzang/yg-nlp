@@ -21,7 +21,6 @@ import com.yglab.nlp.maxent.TagSequenceGenerator;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Datum;
 import com.yglab.nlp.model.EventStream;
-import com.yglab.nlp.model.Index;
 import com.yglab.nlp.model.Options;
 import com.yglab.nlp.tokenizer.WhitespaceTokenizer;
 import com.yglab.nlp.util.Span;
@@ -52,12 +51,7 @@ public class MaxentSentenceDetector implements SentenceDetector {
 		//this.featureGenerator = featureGenerator;
 		this.whitespaceTokenizer = new WhitespaceTokenizer();
 		
-		Index labelIndex = model.getLabelIndex();
-		String[] labels = new String[labelIndex.size()];
-		for (int i = 0; i < labelIndex.size(); i++) {
-			labels[i] = labelIndex.get(i).toString();
-		}
-		this.gen = new DefaultTagSequenceGenerator(featureGenerator, labels, 2);
+		this.gen = new DefaultTagSequenceGenerator(featureGenerator, model.getLabels(), 2);
 	}
 	
 	/**

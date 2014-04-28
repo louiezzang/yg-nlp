@@ -18,19 +18,24 @@ public class DefaultSentenceFeatureGenerator implements SentenceFeatureGenerator
 		this.featureDic = featureDic;
 	}
 	
+	@Override
+	public void initialize(String[] tokens) {
+		
+	}
+	
 	/**
 	 * Words is a list of the words in the entire corpus, previousLabel is the label for position-1, position-2 (or O if it's the
 	 * start of a new sentence), and position is the word you are adding features for. PreviousLabel must be the only
 	 * label that is visible to this method.
 	 */
 	@Override
-	public String[] getFeatures(int position, String[] tokens, String[] previousLabelSequence) {
+	public String[] getFeatures(int position, String[] tokens, String[] previousTagSequence) {
 		List<String> features = new ArrayList<String>();
 
-		this.addPrefixFeatures(features, position, tokens, previousLabelSequence);
-		this.addSuffixFeatures(features, position, tokens, previousLabelSequence);
-		this.addRegexPatternFeatures(features, position, tokens, previousLabelSequence);
-		this.addSuffixWithPunctuationFeatures(features, position, tokens, previousLabelSequence);
+		this.addPrefixFeatures(features, position, tokens, previousTagSequence);
+		this.addSuffixFeatures(features, position, tokens, previousTagSequence);
+		this.addRegexPatternFeatures(features, position, tokens, previousTagSequence);
+		this.addSuffixWithPunctuationFeatures(features, position, tokens, previousTagSequence);
 		
 		// TODO: features to add
 		// endsWithEomi?
@@ -39,8 +44,8 @@ public class DefaultSentenceFeatureGenerator implements SentenceFeatureGenerator
 	}
 	
 	@SuppressWarnings("unused")
-	protected void addPrefixFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
-		//int prevLabelLength = previousLabelSequence.length;
+	protected void addPrefixFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
+		//int prevLabelLength = previousTagSequence.length;
 		
 		String currentWord = tokens[position];
 		
@@ -61,8 +66,8 @@ public class DefaultSentenceFeatureGenerator implements SentenceFeatureGenerator
 		features.add("prevPrefix=" + getPrefix(prevWord, 2) + ", nextPrefix=" + getPrefix(nextWord, 2));
 	}
 	
-	protected void addSuffixFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
-		//int prevLabelLength = previousLabelSequence.length;
+	protected void addSuffixFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
+		//int prevLabelLength = previousTagSequence.length;
 		
 		String currentWord = tokens[position];
 		
@@ -113,8 +118,8 @@ public class DefaultSentenceFeatureGenerator implements SentenceFeatureGenerator
 		return suffix;
 	}
 
-	protected void addRegexPatternFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
-		int prevLabelLength = previousLabelSequence.length;
+	protected void addRegexPatternFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
+		int prevLabelLength = previousTagSequence.length;
 		String currentWord = tokens[position];
 		
 		String prevWord = "*";
@@ -126,18 +131,18 @@ public class DefaultSentenceFeatureGenerator implements SentenceFeatureGenerator
 		String[] patternFeatures = featureDic.getFeatures(currentWord);
 		for (String patternFeature : patternFeatures) {
 			features.add("wordPattern=" + patternFeature);
-			features.add("prevLabel=" + previousLabelSequence[prevLabelLength - 1] + ", wordPattern=" + patternFeature);
+			features.add("prevLabel=" + previousTagSequence[prevLabelLength - 1] + ", wordPattern=" + patternFeature);
 		}
 		
 		patternFeatures = featureDic.getFeatures(prevWord);
 		for (String patternFeature : patternFeatures) {
 			features.add("prevWordPattern=" + patternFeature);
-			features.add("prevLabel=" + previousLabelSequence[prevLabelLength - 1] + ", prevWordPattern=" + patternFeature);
-			features.add("prevPrevLabel=" + previousLabelSequence[prevLabelLength - 2] + ", prevWordPattern=" + patternFeature);
+			features.add("prevLabel=" + previousTagSequence[prevLabelLength - 1] + ", prevWordPattern=" + patternFeature);
+			features.add("prevPrevLabel=" + previousTagSequence[prevLabelLength - 2] + ", prevWordPattern=" + patternFeature);
 		}
 	}
 	
-	protected void addSuffixWithPunctuationFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
+	protected void addSuffixWithPunctuationFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
 		String currentWord = tokens[position];
 		
 		if (currentWord.matches("([^\\.]+\\.{2,}$)|([^\\?]+\\?{2,}$)|([^!]+!{2,}$)|(.*[\\?!][\\?!]$)")) {

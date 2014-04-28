@@ -60,7 +60,7 @@ public class KoreanPatternBasedNameFinder extends PatternBasedNameFinder {
 							String postag = morph.getPos();
 							if (!postag.startsWith("J") && !postag.startsWith("E")) {
 							//if (!postag.startsWith("J")) {
-								stemWords.append(morph.getStem());
+								stemWords.append(morph.getLemma());
 							}
 							//else if (j == morphs.size() - 1 && postag.startsWith("E")) {
 							//	stemWords.append("다");

@@ -20,36 +20,41 @@ public class DefaultNameFeatureGenerator implements NameFeatureGenerator {
 		this.featureDic = featureDic;
 	}
 	
+	@Override
+	public void initialize(String[] tokens) {
+		
+	}
+	
 	/**
 	 * Words is a list of the words in the entire corpus, previousLabel is the label for position-1, position-2 (or O if it's the
 	 * start of a new sentence), and position is the word you are adding features for. PreviousLabel must be the only
 	 * label that is visible to this method.
 	 */
 	@Override
-	public String[] getFeatures(int position, String[] tokens, String[] previousLabelSequence) {
+	public String[] getFeatures(int position, String[] tokens, String[] previousTagSequence) {
 		List<String> features = new ArrayList<String>();
 
-		this.addUnigramFeatures(features, position, tokens, previousLabelSequence);
-		this.addBigramFeatures(features, position, tokens, previousLabelSequence);
-		this.addTrigramFeatures(features, position, tokens, previousLabelSequence);
-		this.addContextualFeatures(features, position, tokens, previousLabelSequence);
-		this.addRegexPatternFeatures(features, position, tokens, previousLabelSequence);
+		this.addUnigramFeatures(features, position, tokens, previousTagSequence);
+		this.addBigramFeatures(features, position, tokens, previousTagSequence);
+		this.addTrigramFeatures(features, position, tokens, previousTagSequence);
+		this.addContextualFeatures(features, position, tokens, previousTagSequence);
+		this.addRegexPatternFeatures(features, position, tokens, previousTagSequence);
 
 		return features.toArray(new String[features.size()]);
 	}
 	
-	protected void addUnigramFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
-		int prevLabelLength = previousLabelSequence.length;
+	protected void addUnigramFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
+		int prevLabelLength = previousTagSequence.length;
 		
 		String currentWord = tokens[position];
 		
 		// baseline features
 		features.add("word=" + currentWord);
-		features.add("prevLabel=" + previousLabelSequence[1]);
-		features.add("word=" + currentWord + ", prevLabel=" + previousLabelSequence[prevLabelLength - 1]);		
+		features.add("prevLabel=" + previousTagSequence[1]);
+		features.add("word=" + currentWord + ", prevLabel=" + previousTagSequence[prevLabelLength - 1]);		
 	}
 	
-	protected void addBigramFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
+	protected void addBigramFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
 		String prevWord = "*";
 		if (position > 0) {
 			prevWord = tokens[position - 1];
@@ -59,8 +64,8 @@ public class DefaultNameFeatureGenerator implements NameFeatureGenerator {
 		features.add("prevWord=" + prevWord);
 	}
 	
-	protected void addTrigramFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
-		int prevLabelLength = previousLabelSequence.length;
+	protected void addTrigramFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
+		int prevLabelLength = previousTagSequence.length;
 
 		String prevPrevWord = "*";
 		if (position > 1) {
@@ -69,8 +74,8 @@ public class DefaultNameFeatureGenerator implements NameFeatureGenerator {
 
 		// trigram feature
 		features.add("prevPrevWord=" + prevPrevWord);
-		features.add("prevPrevLabel=" + previousLabelSequence[prevLabelLength - 2]);
-		features.add("prevLabel=" + previousLabelSequence[prevLabelLength - 1] + ", prevPrevLabel=" + previousLabelSequence[prevLabelLength - 2]);
+		features.add("prevPrevLabel=" + previousTagSequence[prevLabelLength - 2]);
+		features.add("prevLabel=" + previousTagSequence[prevLabelLength - 1] + ", prevPrevLabel=" + previousTagSequence[prevLabelLength - 2]);
 	}
 	
 	protected void addContextualFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
@@ -83,8 +88,8 @@ public class DefaultNameFeatureGenerator implements NameFeatureGenerator {
 		features.add("nextWord=" + nextWord);
 	}
 	
-	protected void addRegexPatternFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
-		int prevLabelLength = previousLabelSequence.length;
+	protected void addRegexPatternFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
+		int prevLabelLength = previousTagSequence.length;
 		String currentWord = tokens[position];
 		
 		String prevWord = "*";
@@ -96,14 +101,14 @@ public class DefaultNameFeatureGenerator implements NameFeatureGenerator {
 		String[] patternFeatures = featureDic.getFeatures(currentWord);
 		for (String patternFeature : patternFeatures) {
 			features.add("wordPattern=" + patternFeature);
-			features.add("prevLabel=" + previousLabelSequence[prevLabelLength - 1] + ", wordPattern=" + patternFeature);
+			features.add("prevLabel=" + previousTagSequence[prevLabelLength - 1] + ", wordPattern=" + patternFeature);
 		}
 		
 		patternFeatures = featureDic.getFeatures(prevWord);
 		for (String patternFeature : patternFeatures) {
 			features.add("prevWordPattern=" + patternFeature);
-			features.add("prevLabel=" + previousLabelSequence[prevLabelLength - 1] + ", prevWordPattern=" + patternFeature);
-			features.add("prevPrevLabel=" + previousLabelSequence[prevLabelLength - 2] + ", prevWordPattern=" + patternFeature);
+			features.add("prevLabel=" + previousTagSequence[prevLabelLength - 1] + ", prevWordPattern=" + patternFeature);
+			features.add("prevPrevLabel=" + previousTagSequence[prevLabelLength - 2] + ", prevWordPattern=" + patternFeature);
 		}
 	}
 

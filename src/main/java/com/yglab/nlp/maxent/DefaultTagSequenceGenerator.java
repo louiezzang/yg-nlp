@@ -16,7 +16,7 @@ import com.yglab.nlp.model.Datum;
 public class DefaultTagSequenceGenerator implements TagSequenceGenerator {
 	
 	protected FeatureGenerator<String> featureGenerator;
-	protected String[] tags;
+	protected final String[] tags;
 	protected final int prevSequenceLength;
 	protected String[][] allPrevTagSequenceCandidates;
 	
@@ -36,10 +36,6 @@ public class DefaultTagSequenceGenerator implements TagSequenceGenerator {
 			this.allPrevTagSequenceCandidates = generateAllTagSequenceCandidates(prevSequenceLength);
 			System.out.println("allPrevTagSequenceCandidates size = " + allPrevTagSequenceCandidates.length + " * " + allPrevTagSequenceCandidates[0].length);
 		}
-	}
-	
-	public void setTags(final String[] tags) {
-		this.tags = tags;
 	}
 
 	public String[][] generateAllTagSequenceCandidates(int length) {
@@ -73,14 +69,14 @@ public class DefaultTagSequenceGenerator implements TagSequenceGenerator {
 
 			if (position == 0) {
 				List<Datum> candidates = new ArrayList<Datum>();
-				String[] prevLabelSequence = new String[prevSequenceLength];
+				String[] prevTagSequence = new String[prevSequenceLength];
 				for (int i = 0; i < prevSequenceLength; i++) {
-					prevLabelSequence[i] = "O";
+					prevTagSequence[i] = "O";
 				}
 
 				Datum datum = new Datum(token, "O");
-				datum.setFeatures(Arrays.asList(featureGenerator.getFeatures(position, tokens, prevLabelSequence)));
-				datum.setPreviousLabel(prevLabelSequence[prevSequenceLength - 1]);
+				datum.setFeatures(Arrays.asList(featureGenerator.getFeatures(position, tokens, prevTagSequence)));
+				datum.setPreviousLabel(prevTagSequence[prevSequenceLength - 1]);
 				candidates.add(datum);
 				instanceCandidates.add(candidates);
 			} 

@@ -20,6 +20,11 @@ public class PatternBasedNameFeatureGenerator implements NameFeatureGenerator {
 	}
 	
 	@Override
+	public void initialize(String[] tokens) {
+		
+	}
+	
+	@Override
 	public String[] getFeatures(int position, String[] tokens, String[] previousLabelSequence) {
 		List<String> features = new ArrayList<String>();
 

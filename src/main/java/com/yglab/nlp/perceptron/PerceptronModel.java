@@ -79,5 +79,15 @@ public class PerceptronModel extends AbstractModel {
 	public boolean isLabeled() {
 		return this.labeled;
 	}
+	
+	@Override
+	public String[] getLabels() {
+		String[] labels = new String[labelIndex.size()];
+		for (int i = 0; i < labelIndex.size(); i++) {
+			labels[i] = labelIndex.get(i).toString();
+		}
+		
+		return labels;
+	}
 
 }

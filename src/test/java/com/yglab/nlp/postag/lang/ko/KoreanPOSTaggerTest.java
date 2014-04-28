@@ -24,21 +24,26 @@ public class KoreanPOSTaggerTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		// TODO
-		dic = new MorphemeDictionary("/lang/ko/ko-pos-josa.dic", "/lang/ko/ko-pos-eomi.dic");
-		featureGenerator = new KoreanPOSFeatureGenerator(dic);
+		MorphemeDictionary dic = new MorphemeDictionary(
+				"/lang/ko/ko-pos-josa.dic",
+				"/lang/ko/ko-pos-eomi.dic", 
+				"/lang/ko/ko-pos-bojo.dic");
+
+		String[] labels = KoreanPOSTagger.getLabels("/sample/ko/pos/ko-pos-train-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
+		MorphemeAnalyzer analyzer = new MorphemeAnalyzer(dic, labels);
+		featureGenerator = new KoreanPOSFeatureGenerator(analyzer);
 		
 		//train();
 	}
 
 	private static void train() throws Exception {
-		List<POSSample> trainSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt", "[^\\+/\\(\\)]*/", "");
+		List<POSSample> trainSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-train-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
 		
 		Options options = new Options();
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 		AbstractModel model = KoreanPOSTagger.train(trainSamples, featureGenerator, options);
 		
-		KoreanPOSTagger.saveModel(model, "./target/test-data/ko/pos/ko-pos-model.bin", "./target/test-data/ko/pos/ko-pos-model.txt");
+		KoreanPOSTagger.saveModel(model, "./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin", "./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.txt");
 	}
 	
 	@Test
@@ -47,9 +52,12 @@ public class KoreanPOSTaggerTest {
 		String[] tokens = {
 				"당신은",
 				"학교를",
+				"앞길을", 
 				"열심히",
 				"다닙니다",
-				"."
+				".",
+				"부각되기도",
+				"전반적인",
 		};
 		
 //		String[] tokens = {
@@ -59,10 +67,17 @@ public class KoreanPOSTaggerTest {
 //				"짜리인가요",
 //				"?"
 //		};
+		
+//		String[] tokens = {
+//				"운행",
+//				"지연",
+//				"사고",
+//				"기준",
+//		};
 
-		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model.bin"); 
+		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
 
-		KoreanPOSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator, dic);
+		KoreanPOSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator);
 		
 		System.out.println("==================================================");
 		
@@ -84,12 +99,13 @@ public class KoreanPOSTaggerTest {
 	}
 	
 	@Test
+	//@Ignore
 	public void testEvaluator() throws Exception {
-		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model.bin");
+		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin");
 		
-		POSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator, dic);
+		POSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator);
 		
-		List<POSSample> testSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-test.txt", "[^\\+/\\(\\)]*/", "");
+		List<POSSample> testSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-test-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
 		POSTaggerEvaluator evaluator = new POSTaggerEvaluator(tagger);
 		evaluator.evaluate(testSamples);
 		

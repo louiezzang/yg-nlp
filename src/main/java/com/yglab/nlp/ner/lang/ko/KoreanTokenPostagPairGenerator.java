@@ -47,7 +47,7 @@ public class KoreanTokenPostagPairGenerator implements TokenPostagPairGenerator 
 						Morpheme morph = morphs.get(j);
 						String postag = morph.getPos();
 						if (postag.startsWith("J") || postag.startsWith("E")) {
-							sbTag.append(postag + "_" + morph.getStem());
+							sbTag.append(postag + "_" + morph.getLemma());
 							if (j < morphs.size() - 1) {
 								sbTag.append("+");
 							}

@@ -39,7 +39,7 @@ public class KoreanDependencyParserEvaluatorTest {
 	
 	private static void train() throws Exception {
 		CoNLLReader reader = new CoNLLReader(featureDic);
-		reader.startReading("./data/ko/parser/ko-parser-train-from-sejong.conll");
+		reader.startReading("./data/ko/parser/ko-parser-train-sejong-BGAA0164.conll");
 		List<ParseSample> trainSamples = DependencyParser.loadSamples(reader);
 		String[] labels = reader.getLabels();
 		
@@ -48,17 +48,17 @@ public class KoreanDependencyParserEvaluatorTest {
 		options.put(Options.ITERATIONS, "5");
 		
 		AbstractModel model = DependencyParser.train(trainSamples, labels, featureGenerator, options);
-		DependencyParser.saveModel(model, "./target/test-data/ko/parser/ko-parser-model-from-sejong.bin", "./target/test-data/ko/parser/ko-parser-model-from-sejong.txt");	
+		DependencyParser.saveModel(model, "./target/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.bin", "./target/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.txt");	
 	}
 	
 	@Test
 	public void testEvaluator() throws Exception {
 		CoNLLReader reader = new CoNLLReader(featureDic);
 
-		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/ko/parser/ko-parser-model-from-sejong.bin");
+		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.bin");
 		DependencyParser parser = new DependencyParser(trainedModel, featureGenerator);
 		
-		reader.startReading("./data/ko/parser/ko-parser-test-from-sejong.conll");
+		reader.startReading("./data/ko/parser/ko-parser-test-sejong-BGAA0164.conll");
 		List<ParseSample> testSamples = DependencyParser.loadSamples(reader);
 		
 		boolean labeled = ((PerceptronModel) trainedModel).isLabeled();

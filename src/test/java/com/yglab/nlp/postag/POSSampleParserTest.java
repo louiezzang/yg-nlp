@@ -29,7 +29,7 @@ public class POSSampleParserTest {
 		System.out.println("parsePos = " + POSSampleParser.parsePos("VV(+ㅂ)"));
 		System.out.println("parsePos = " + POSSampleParser.parsePos("ㅂ니다/EF"));
 		System.out.println("parsePos = " + POSSampleParser.parsePos("가다/VV(+ㅂ)"));
-		System.out.println("parseMorpheme = " + POSSampleParser.parseMorpheme("ㅂ니다/EF"));
+		System.out.println("parseMorpheme = " + POSSampleParser.parseMorpheme("EF"));
 		System.out.println("parseRule = " + POSSampleParser.parseRule("가다/VV(+ㅂ)"));
 	}
 }

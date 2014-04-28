@@ -110,7 +110,7 @@ public class Eojeol {
 					.append(morpheme.getPosDescription()).append("]");
 			}
 			else {
-				sb.append(morpheme.getSurface()).append("[").append(morpheme.getStem()).append(":")
+				sb.append(morpheme.getSurface()).append("[").append(morpheme.getLemma()).append(":")
 					.append(morpheme.getTag()).append(":").append(morpheme.getPosDescription()).append("]");
 			}
 			

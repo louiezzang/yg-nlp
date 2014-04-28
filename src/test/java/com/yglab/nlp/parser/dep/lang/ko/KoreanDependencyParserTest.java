@@ -59,7 +59,7 @@ public class KoreanDependencyParserTest {
 		options.put(Options.ITERATIONS, "5");
 		
 		AbstractModel model = DependencyParser.train(trainSamples, labels, featureGenerator, options);
-		DependencyParser.saveModel(model, "./target/test-data/ko/parser/ko-parser-model.bin", "./target/test-data/ko/parser/ko-parser-model.txt");
+		DependencyParser.saveModel(model, "./target/test-data/ko/parser/ko-parser-model-sample.bin", "./target/test-data/ko/parser/ko-parser-model-sample.txt");
 	}
 	
 	/**

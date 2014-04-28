@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.yglab.nlp.io.AbstractModelReader;
 import com.yglab.nlp.io.AbstractModelWriter;
@@ -21,7 +23,6 @@ import com.yglab.nlp.maxent.TagSequenceGenerator;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Datum;
 import com.yglab.nlp.model.EventStream;
-import com.yglab.nlp.model.Index;
 import com.yglab.nlp.model.Options;
 
 
@@ -46,13 +47,8 @@ public class POSTagger {
 	public POSTagger(AbstractModel model, POSFeatureGenerator featureGenerator) {
 		this.model = model;
 		this.featureGenerator = featureGenerator;
-		
-		Index labelIndex = model.getLabelIndex();
-		String[] labels = new String[labelIndex.size()];
-		for (int i = 0; i < labelIndex.size(); i++) {
-			labels[i] = labelIndex.get(i).toString();
-		}
-		this.gen = new DefaultTagSequenceGenerator(featureGenerator, labels, 2);
+
+		this.gen = new DefaultTagSequenceGenerator(featureGenerator, model.getLabels(), 2);
 	}
 	
 	/**
@@ -109,7 +105,7 @@ public class POSTagger {
 	 * @param tokens The tokens sequence of a sentence
 	 * @return
 	 */
-	public String[] tag(String[] tokens) {
+	public String[] tag(String[] tokens) {		
 		if (this.model.algorithm().equals(Options.MAXENT_ALGORITHM)) {
 			return this.tagMaxent(tokens);
 		}
@@ -123,6 +119,9 @@ public class POSTagger {
 
 
 	public String[] tagMaxent(String[] tokens) {
+		// initialize the feature generator with new tokens
+		featureGenerator.initialize(tokens);
+			
 		List<List<Datum>> candidates = gen.getCandidates(tokens);
 		List<Datum> bestSequence = MEMM.decode(model, candidates);
 
@@ -167,6 +166,20 @@ public class POSTagger {
 		in.close();
 
 		return samples;
+	}
+	
+	public static final String[] getLabels(String filename, String tagReplaceRegex, String tagReplacement) throws IOException {
+		Set<String> labelSet = new HashSet<String>();
+		List<POSSample> samples = loadSamples(filename, tagReplaceRegex, tagReplacement);
+		
+		for (POSSample sample : samples) {
+			String[] labels = sample.getLabels();
+			for (String label : labels) {
+				labelSet.add(label);
+			}
+		}
+		
+		return labelSet.toArray(new String[labelSet.size()]);
 	}
 
 	/**

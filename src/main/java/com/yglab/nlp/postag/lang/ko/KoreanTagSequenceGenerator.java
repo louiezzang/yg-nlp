@@ -2,11 +2,7 @@ package com.yglab.nlp.postag.lang.ko;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import com.yglab.nlp.maxent.DefaultTagSequenceGenerator;
 import com.yglab.nlp.maxent.FeatureGenerator;
@@ -22,49 +18,27 @@ import com.yglab.nlp.model.Datum;
  */
 public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 	
-	private static final Pattern MORPH_POS_PATTERN = Pattern.compile("([^/\\+\\(\\)]*)/([^/\\+\\(\\)]*)?");
-	
-	private Map<String, List<String>> suffixTagMap = new HashMap<String, List<String>>();
+	private List<String> defaultTags = new ArrayList<String>();
 	
 	/**
 	 * Constructor.
 	 * 
 	 * @param featureGenerator The context feature generator
-	 */
-	public KoreanTagSequenceGenerator(FeatureGenerator<String> featureGenerator) {
-		this(featureGenerator, null);
-	}
-	
-	/**
-	 * Constructor.
-	 * 
-	 * @param featureGenerator The context feature generator
-	 * @param tags The unique tag labels
+	 * @param tags	The valid tags
 	 */
 	public KoreanTagSequenceGenerator(FeatureGenerator<String> featureGenerator, String[] tags) {
 		super(featureGenerator, tags, 2);
 		
-		// set default tag list
-		this.setDefaultTagList(tags);
-	}
-	
-	@Override
-	public void setTags(final String[] tags) {
-		this.tags = tags;
-		
-		// set default tag list
 		this.setDefaultTagList(tags);
 	}
 	
 	private void setDefaultTagList(final String[] tags) {
 		if (tags != null) {
-			List<String> tagList = new ArrayList<String>();
 			for (String tag : tags) {
 				if (tag.indexOf("+") < 0) {
-					tagList.add(tag);
+					defaultTags.add(tag);
 				}
 			}
-			suffixTagMap.put("default", tagList);
 		}		
 	}
 	
@@ -73,77 +47,69 @@ public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 		
 		for (int position = 0; position < tokens.length; position++) {
 			String token = tokens[position];
-			List<String> matchSuffixList = ((KoreanPOSFeatureGenerator) featureGenerator).findTokenSuffix(token);
+			List<Tail> matchTailList = ((KoreanPOSFeatureGenerator) featureGenerator).getCurrentTokenTailCandidates(position);
 			
-			if (matchSuffixList.size() == 0) {
+			if (matchTailList.size() == 0) {
 				if (token.equals(".") || token.equals("!") || token.equals("?")) {
 					String[] sf = { "SF" };
 					tokensTagCandidates.add(Arrays.asList(sf));
-					
 					//System.out.println(position + ": " + Arrays.asList(sf));
 				}
 				else if (token.equals(",")) {
 					String[] sp = { "SP" };
 					tokensTagCandidates.add(Arrays.asList(sp));
-					
 					//System.out.println(position + ": " + Arrays.asList(sp));
 				}
 				else {
-					tokensTagCandidates.add(suffixTagMap.get("default"));
-					//System.out.println(position + ": " + suffixTagMap.get("default"));
+					tokensTagCandidates.add(defaultTags);
+					//System.out.println(position + ": " + defaultTags);
 				}
 				continue;
 			}
 			
 			List<String> tagList = new ArrayList<String>();
-			for (String matchSuffix : matchSuffixList) {
-				//System.out.println(token + ", matchSuffix = " + matchSuffix);
+			for (Tail matchTail : matchTailList) {
+				// for debugging
+				System.out.println(token + ", matchTail=" + matchTail.getTag() + ", size=" + matchTail.size());
 				
-				String[] fields = matchSuffix.split("\t"); 
-				//String tail = fields[0];
-				String tag = fields[1];
-				
-				StringBuilder sbSuffixTag = new StringBuilder();
-				Matcher matcher = MORPH_POS_PATTERN.matcher(tag);
-				while (matcher.find()) {
-					String pos = matcher.group(2);
-					sbSuffixTag.append(pos).append("+");
-				}
-				
-				String suffixTag = sbSuffixTag.toString();
-				if (suffixTag.endsWith("+")) {
-					suffixTag = suffixTag.substring(0, suffixTag.length() - 1);
-					//System.out.println(token + ", suffixTag = " + suffixTag);
-				}
-				
-				if (suffixTagMap.containsKey(suffixTag)) {
-					tagList.addAll(suffixTagMap.get(suffixTag));
-				}
-				else {
-					// TODO: 매칭되는(endsWith) 어미가 E**(어미)가 하나인 경우에는 uniqueTag의 "+"로 split되는 수가 2개인 경우에만 
-					// tagList에 넣어줌.
-					for (String uniqueTag : tags) {
-						if (uniqueTag.endsWith(suffixTag)) {
-							tagList.add(uniqueTag);
+				String postag = matchTail.getPos();
+				if (matchTail.size() == 1 && matchTail.getHead().equals("")) {
+					for (String validTag : tags) {
+						if (validTag.equals(postag)) {
+							tagList.add(postag);
 						}
 					}
-					
-					if (tagList.size() == 0) {
-						throw new IllegalArgumentException("'" + suffixTag + "' tag doesn't exist in the unique tag label set.");
+				}
+				else if (postag.split("\\+").length >= 3) {
+					for (String validTag : tags) {
+						if (validTag.endsWith(postag)) {
+							if (!tagList.contains(validTag)) {
+								tagList.add(validTag);
+							}
+						}				
 					}
-					
-					// TODO: "ㄴ, ㄹ"으로 끝나는 어미로 인식했거나, 매칭되는(endsWith) 어미가 E**(어미)가 하나인 경우,
-					// 태깅 분석오류를 줄이기 위해 디폴트 품사인 NNG를 후보군에 추가해줌.
-					// add the default tag
-//					if () {
-//						tagList.add("NNG");
-//					}
-					
-					suffixTagMap.put(suffixTag, tagList);
+				}
+				else {	
+					for (String validTag : tags) {
+						int validTagLength = validTag.split("\\+").length;
+						int maxLength = postag.split("\\+").length + 1;
+						if (validTagLength == maxLength && validTag.endsWith(postag)) {
+							if (!tagList.contains(validTag)) {
+								tagList.add(validTag);
+							}
+						}
+					}
 				}
 			}
 			
-			//System.out.println(position + ": " + tagList);
+			if (tagList.size() == 0) {
+				//throw new IllegalArgumentException("'" + postag + "' tag doesn't exist in the valid tag label set.");
+				if (!tagList.contains("NNG")) {
+					tagList.add("NNG");
+				}
+			}
+			
+			System.out.println(position + ": " + tagList);
 
 			tokensTagCandidates.add(tagList);
 		}
@@ -187,14 +153,14 @@ public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 
 			if (position == 0) {
 				List<Datum> candidates = new ArrayList<Datum>();
-				String[] prevLabelSequence = new String[prevSequenceLength];
+				String[] prevTagSequence = new String[prevSequenceLength];
 				for (int i = 0; i < prevSequenceLength; i++) {
-					prevLabelSequence[i] = "O";
+					prevTagSequence[i] = "O";
 				}
 
 				Datum datum = new Datum(token, "O");
-				datum.setFeatures(Arrays.asList(featureGenerator.getFeatures(position, tokens, prevLabelSequence)));
-				datum.setPreviousLabel(prevLabelSequence[prevSequenceLength - 1]);
+				datum.setFeatures(Arrays.asList(featureGenerator.getFeatures(position, tokens, prevTagSequence)));
+				datum.setPreviousLabel(prevTagSequence[prevSequenceLength - 1]);
 				candidates.add(datum);
 				instanceCandidates.add(candidates);
 			} 

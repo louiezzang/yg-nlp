@@ -54,5 +54,14 @@ public class MaxentModel extends AbstractModel {
 	public void setWeights(double[][] weights) {
 		this.weights = weights;
 	}
-
+	
+	@Override
+	public String[] getLabels() {
+		String[] labels = new String[labelIndex.size()];
+		for (int i = 0; i < labelIndex.size(); i++) {
+			labels[i] = labelIndex.get(i).toString();
+		}
+		
+		return labels;
+	}
 }

@@ -16,29 +16,34 @@ public class DefaultPOSFeatureGenerator implements POSFeatureGenerator {
 	}
 	
 	@Override
-	public String[] getFeatures(int position, String[] tokens, String[] previousLabelSequence) {
+	public void initialize(String[] tokens) {
+		
+	}
+	
+	@Override
+	public String[] getFeatures(int position, String[] tokens, String[] previousTagSequence) {
 		List<String> features = new ArrayList<String>();
 
-		this.addUnigramFeatures(features, position, tokens, previousLabelSequence);
-		this.addBigramFeatures(features, position, tokens, previousLabelSequence);
-		this.addTrigramFeatures(features, position, tokens, previousLabelSequence);
-		this.addContextualFeatures(features, position, tokens, previousLabelSequence);
-		this.addEnglishPatternFeatures(features, position, tokens, previousLabelSequence);
+		this.addUnigramFeatures(features, position, tokens, previousTagSequence);
+		this.addBigramFeatures(features, position, tokens, previousTagSequence);
+		this.addTrigramFeatures(features, position, tokens, previousTagSequence);
+		this.addContextualFeatures(features, position, tokens, previousTagSequence);
+		this.addWordPatternFeatures(features, position, tokens, previousTagSequence);
 		
 		return features.toArray(new String[features.size()]);
 	}
 	
-	protected void addUnigramFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
-		int prevLabelLength = previousLabelSequence.length;
+	protected void addUnigramFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
+		int prevLabelLength = previousTagSequence.length;
 
 		String currentWord = tokens[position];
 
 		features.add("word=" + currentWord);
-		features.add("prevLabel=" + previousLabelSequence[1]);
-		features.add("word=" + currentWord + ", prevLabel=" + previousLabelSequence[prevLabelLength - 1]);
+		features.add("prevLabel=" + previousTagSequence[1]);
+		features.add("word=" + currentWord + ", prevLabel=" + previousTagSequence[prevLabelLength - 1]);
 	}
 	
-	protected void addBigramFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
+	protected void addBigramFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
 		String prevWord = "*";
 		if (position > 0) {
 			prevWord = tokens[position - 1];
@@ -48,8 +53,8 @@ public class DefaultPOSFeatureGenerator implements POSFeatureGenerator {
 		features.add("prevWord=" + prevWord);
 	}
 	
-	protected void addTrigramFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
-		int prevLabelLength = previousLabelSequence.length;
+	protected void addTrigramFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
+		int prevLabelLength = previousTagSequence.length;
 
 		String prevPrevWord = "*";
 		if (position > 1) {
@@ -58,11 +63,11 @@ public class DefaultPOSFeatureGenerator implements POSFeatureGenerator {
 		
 		// trigram feature
 		features.add("prevPrevWord=" + prevPrevWord);
-		features.add("prevPrevLabel=" + previousLabelSequence[prevLabelLength - 2]);
-		features.add("prevLabel=" + previousLabelSequence[prevLabelLength - 1] + ", prevPrevLabel=" + previousLabelSequence[prevLabelLength - 2]);
+		features.add("prevPrevLabel=" + previousTagSequence[prevLabelLength - 2]);
+		features.add("prevLabel=" + previousTagSequence[prevLabelLength - 1] + ", prevPrevLabel=" + previousTagSequence[prevLabelLength - 2]);
 	}
 	
-	protected void addContextualFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
+	protected void addContextualFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
 		String nextWord = "STOP";
 		if (position < tokens.length - 1) {
 			nextWord = tokens[position + 1];
@@ -72,11 +77,14 @@ public class DefaultPOSFeatureGenerator implements POSFeatureGenerator {
 		features.add("nextWord=" + nextWord);
 	}
 	
-	protected void addEnglishPatternFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
+	protected void addWordPatternFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
 		String currentWord = tokens[position];
 
 		StringPattern pattern = StringPattern.recognize(currentWord);
 		if (pattern.isAllDigit()) {
+			features.add("pattern=" + "digit");
+		}
+		else if (currentWord.matches("[0-9]+[,\\.]+[0-9]+")) {
 			features.add("pattern=" + "digit");
 		}
 		else if (pattern.containsComma()) {
@@ -92,9 +100,7 @@ public class DefaultPOSFeatureGenerator implements POSFeatureGenerator {
 			features.add("pattern=" + "containsHyphen");
 		}
 		
-		if (currentWord.matches("[0-9]+[,\\.]+[0-9]+")) {
-			features.add("pattern=" + "digit");
-		}
+		
 		
 		if (currentWord.endsWith("ly")) {
 			features.add("suffix=" + "ly");

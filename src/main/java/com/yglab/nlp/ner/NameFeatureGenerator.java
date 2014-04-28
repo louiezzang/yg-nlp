@@ -11,6 +11,9 @@ import com.yglab.nlp.maxent.FeatureGenerator;
 public interface NameFeatureGenerator extends FeatureGenerator<String> {
 	
 	@Override
-	public String[] getFeatures(int position, String[] tokens, String[] previousLabelSequence);
+	public void initialize(String[] tokens);
+	
+	@Override
+	public String[] getFeatures(int position, String[] tokens, String[] previousTagSequence);
 	
 }

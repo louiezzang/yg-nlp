@@ -25,21 +25,21 @@ public class DefaultNLUFeatureGenerator extends DefaultNameFeatureGenerator {
 	 * label that is visible to this method.
 	 */
 	@Override
-	public String[] getFeatures(int position, String[] tokens, String[] previousLabelSequence) {
+	public String[] getFeatures(int position, String[] tokens, String[] previousTagSequence) {
 		List<String> features = new ArrayList<String>();
 
-		super.addUnigramFeatures(features, position, tokens, previousLabelSequence);
-		super.addBigramFeatures(features, position, tokens, previousLabelSequence);
-		super.addTrigramFeatures(features, position, tokens, previousLabelSequence);
-		super.addContextualFeatures(features, position, tokens, previousLabelSequence);
-		super.addRegexPatternFeatures(features, position, tokens, previousLabelSequence);
+		super.addUnigramFeatures(features, position, tokens, previousTagSequence);
+		super.addBigramFeatures(features, position, tokens, previousTagSequence);
+		super.addTrigramFeatures(features, position, tokens, previousTagSequence);
+		super.addContextualFeatures(features, position, tokens, previousTagSequence);
+		super.addRegexPatternFeatures(features, position, tokens, previousTagSequence);
 		
-		this.addCooccurrentNLURegexPatternFeatures(features, position, tokens, previousLabelSequence);
+		this.addCooccurrentNLURegexPatternFeatures(features, position, tokens, previousTagSequence);
 
 		return features.toArray(new String[features.size()]);
 	}
 
-	protected void addCooccurrentNLURegexPatternFeatures(List<String> features, int position, String[] tokens, String[] previousLabelSequence) {
+	protected void addCooccurrentNLURegexPatternFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
 		for (int i = 0; i < tokens.length; i++) {
 			if (i != position) {
 				String[] patternFeatures = featureDic.getFeatures(tokens[i]);
