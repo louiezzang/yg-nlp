@@ -8,7 +8,7 @@ import org.junit.Test;
  * 
  * @author Younggue Bae
  */
-public class KoreanStemmerTest {
+public class KoreanLemmatizerTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -16,10 +16,11 @@ public class KoreanStemmerTest {
 	}
 
 	@Test
-	public void testStemmer() throws Exception {
-		KoreanStemmer stemmer = new KoreanStemmer();
+	public void testLemmatizer() throws Exception {
+		/*
+		KoreanLemmatizer lemmatizer = new KoreanLemmatizer();
 		String word = "갑";
-		CharSequence stem = stemmer.stem(word, "-ㅂ+ㄹ");
+		CharSequence stem = lemmatizer.lemmatize(word, "-ㅂ+ㄹ");
 		System.out.println("stem == " + stem);
 		
 		word = "“12시지금까지";
@@ -57,5 +58,6 @@ public class KoreanStemmerTest {
 		word = "막혀";
 		stem = stemmer.stem(word, "-여+이");
 		System.out.println("stem == " + stem);
+		*/
 	}
 }

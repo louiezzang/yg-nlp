@@ -11,7 +11,7 @@ import com.yglab.nlp.parser.dep.DependencyParser;
 import com.yglab.nlp.postag.POSTagger;
 import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
-import com.yglab.nlp.postag.lang.ko.Morpheme;
+import com.yglab.nlp.postag.morph.Morpheme;
 import com.yglab.nlp.tokenizer.Tokenizer;
 
 /**

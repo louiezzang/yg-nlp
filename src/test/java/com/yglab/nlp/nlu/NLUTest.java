@@ -8,8 +8,8 @@ import org.junit.Test;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Options;
 import com.yglab.nlp.ner.NameFeatureGenerator;
-import com.yglab.nlp.ner.NameSample;
 import com.yglab.nlp.ner.NameFinder;
+import com.yglab.nlp.ner.NameSample;
 import com.yglab.nlp.util.RegexFeatureDictionary;
 import com.yglab.nlp.util.Span;
 

@@ -17,7 +17,7 @@ import com.yglab.nlp.postag.POSSample;
 import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSFeatureGenerator;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
-import com.yglab.nlp.postag.lang.ko.MorphemeDictionary;
+import com.yglab.nlp.postag.morph.MorphemeDictionary;
 import com.yglab.nlp.tokenizer.DefaultTokenFeatureGenerator;
 import com.yglab.nlp.tokenizer.MaxentTokenizer;
 import com.yglab.nlp.tokenizer.TokenFeatureGenerator;

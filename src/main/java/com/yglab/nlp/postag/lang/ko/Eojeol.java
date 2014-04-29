@@ -3,6 +3,8 @@ package com.yglab.nlp.postag.lang.ko;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.yglab.nlp.postag.morph.Morpheme;
+
 public class Eojeol {
 
 	private boolean analyzed = false;

@@ -7,6 +7,7 @@ import java.util.List;
 import com.yglab.nlp.maxent.DefaultTagSequenceGenerator;
 import com.yglab.nlp.maxent.FeatureGenerator;
 import com.yglab.nlp.model.Datum;
+import com.yglab.nlp.postag.morph.Token;
 
 
 /**
@@ -42,45 +43,42 @@ public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 		}		
 	}
 	
-	private List<List<String>> getTokensTagCandidates(String[] tokens) {
+	private List<List<String>> getTagCandidates(String[] tokens) {
 		List<List<String>> tokensTagCandidates = new ArrayList<List<String>>(tokens.length);
 		
 		for (int position = 0; position < tokens.length; position++) {
 			String token = tokens[position];
-			List<Tail> matchTailList = ((KoreanPOSFeatureGenerator) featureGenerator).getCurrentTokenTailCandidates(position);
+			List<Token> tailCandidates = ((KoreanPOSFeatureGenerator) featureGenerator).getCurrentTokenTailCandidates(position);
 			
-			if (matchTailList.size() == 0) {
+			if (tailCandidates.size() == 0) {
 				if (token.equals(".") || token.equals("!") || token.equals("?")) {
 					String[] sf = { "SF" };
 					tokensTagCandidates.add(Arrays.asList(sf));
-					//System.out.println(position + ": " + Arrays.asList(sf));
 				}
 				else if (token.equals(",")) {
 					String[] sp = { "SP" };
 					tokensTagCandidates.add(Arrays.asList(sp));
-					//System.out.println(position + ": " + Arrays.asList(sp));
 				}
 				else {
 					tokensTagCandidates.add(defaultTags);
-					//System.out.println(position + ": " + defaultTags);
 				}
 				continue;
 			}
 			
 			List<String> tagList = new ArrayList<String>();
-			for (Tail matchTail : matchTailList) {
+			for (Token tail : tailCandidates) {
 				// for debugging
-				System.out.println(token + ", matchTail=" + matchTail.getTag() + ", size=" + matchTail.size());
+				System.out.println(token + ", tail=" + tail.getTag() + ", size=" + tail.size());
 				
-				String postag = matchTail.getPos();
-				if (matchTail.size() == 1 && matchTail.getHead().equals("")) {
+				String postag = tail.getPos();
+				if (tail.size() == 1 && tail.getHead().equals("")) {
 					for (String validTag : tags) {
 						if (validTag.equals(postag)) {
 							tagList.add(postag);
 						}
 					}
 				}
-				else if (postag.split("\\+").length >= 3) {
+				else if (tail.getNumTag() >= 3) {
 					for (String validTag : tags) {
 						if (validTag.endsWith(postag)) {
 							if (!tagList.contains(validTag)) {
@@ -91,9 +89,9 @@ public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 				}
 				else {	
 					for (String validTag : tags) {
-						int validTagLength = validTag.split("\\+").length;
-						int maxLength = postag.split("\\+").length + 1;
-						if (validTagLength == maxLength && validTag.endsWith(postag)) {
+						int validTagNum = validTag.split("\\+").length;
+						int maxTagNum = tail.getNumTag() + 1;
+						if (validTagNum == maxTagNum && validTag.endsWith(postag)) {
 							if (!tagList.contains(validTag)) {
 								tagList.add(validTag);
 							}
@@ -104,9 +102,7 @@ public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 			
 			if (tagList.size() == 0) {
 				//throw new IllegalArgumentException("'" + postag + "' tag doesn't exist in the valid tag label set.");
-				if (!tagList.contains("NNG")) {
-					tagList.add("NNG");
-				}
+				tagList.add("NNG");
 			}
 			
 			System.out.println(position + ": " + tagList);
@@ -146,7 +142,8 @@ public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 	public List<List<Datum>> getCandidates(String[] tokens) {
 		List<List<Datum>> instanceCandidates = new ArrayList<List<Datum>>();
 		
-		List<List<String>> tokensTagCandidates = this.getTokensTagCandidates(tokens);
+		List<List<String>> tokensTagCandidates = this.getTagCandidates(tokens);
+		//List<List<String>> tokensTagCandidates = ((KoreanPOSFeatureGenerator) featureGenerator).getCurrentTokensTagCandidates();
 		
 		for (int position = 0; position < tokens.length; position++) {
 			String token = tokens[position];

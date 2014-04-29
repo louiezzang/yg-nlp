@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yglab.nlp.postag.DefaultPOSFeatureGenerator;
+import com.yglab.nlp.postag.morph.Token;
 import com.yglab.nlp.util.StringPattern;
 import com.yglab.nlp.util.StringUtil;
 import com.yglab.nlp.util.lang.ko.MorphemeUtil;
@@ -18,22 +19,25 @@ import com.yglab.nlp.util.lang.ko.MorphemeUtil;
  */
 public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 	
-	private MorphemeAnalyzer morphAnalyzer;
+	private KoreanMorphemeAnalyzer morphAnalyzer;
 
-	public KoreanPOSFeatureGenerator(MorphemeAnalyzer morphAnalyzer) {
+	public KoreanPOSFeatureGenerator(KoreanMorphemeAnalyzer morphAnalyzer) {
 		super();
 		this.morphAnalyzer = morphAnalyzer;
 	}
 	
-	public List<Tail> getCurrentTokenTailCandidates(int position) {
-		List<Tail> matchTailList = morphAnalyzer.getCurrentTokenTailCandidates(position);
-		
-		return matchTailList;
+	public List<Token> getCurrentTokenTailCandidates(int position) {
+		return morphAnalyzer.getCurrentTokenTailCandidates(position);
+	}
+	
+	public List<List<String>> getCurrentTokensTagCandidates() {
+		return morphAnalyzer.getCurrentTokensTagCandidates();
 	}
 	
 	@Override
 	public void initialize(String[] tokens) {
 		morphAnalyzer.findTailCandidates(tokens);
+		morphAnalyzer.findTagCandidates(tokens);
 	}
 	
 	@Override
@@ -86,9 +90,9 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 	 */
 	protected void addMorphoFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
 		//String currentWord = tokens[position];
-		List<Tail> matchTailList = this.getCurrentTokenTailCandidates(position);
+		List<Token> matchTailList = this.getCurrentTokenTailCandidates(position);
 
-		for (Tail matchTail : matchTailList) {
+		for (Token matchTail : matchTailList) {
 			//if (tail.getSurface().equals(currentWord)) {
 			//	return;
 			//}

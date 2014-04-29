@@ -8,7 +8,7 @@ import com.yglab.nlp.ner.PatternBasedNameFeatureGenerator;
 import com.yglab.nlp.ner.PatternBasedNameFinder;
 import com.yglab.nlp.ner.TokenPostagPairGenerator;
 import com.yglab.nlp.postag.lang.ko.Eojeol;
-import com.yglab.nlp.postag.lang.ko.Morpheme;
+import com.yglab.nlp.postag.morph.Morpheme;
 import com.yglab.nlp.tokenizer.Tokenizer;
 import com.yglab.nlp.util.Span;
 

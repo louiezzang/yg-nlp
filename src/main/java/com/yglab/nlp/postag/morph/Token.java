@@ -1,39 +1,40 @@
-package com.yglab.nlp.postag.lang.ko;
+package com.yglab.nlp.postag.morph;
 
 import java.util.LinkedList;
 
 import com.yglab.nlp.util.lang.ko.MorphemeUtil;
 
 /**
- * This class defines the tail of token.
- * A tail consists of one or more morphemes.
+ * This class defines the token.
+ * A token consists of one or more morphemes which are head and tail.
  * 
  * @author Younggue Bae
  */
-public class Tail extends LinkedList<Morpheme> implements Comparable<Tail> {
+public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 
-	private static final long serialVersionUID = 9068900849187143423L;
-
+	private static final long serialVersionUID = 1L;
+	
 	private String token;
 	private String head;
+	private int numValidTag;
 
 	/**
-	 * Creates a tail.
+	 * Creates a token.
 	 * 
 	 */
-	public Tail(String token) {
+	public Token(String token) {
 		this.token = token;
 	}
 	
 	/**
-	 * Creates a cloned tail.
+	 * Creates a cloned token.
 	 * 
-	 * @param tail	The tail to clone
+	 * @param token	The token to clone
 	 */
-	public Tail(Tail tail) {
-		super(tail);
-		this.token = tail.token;
-		this.head = tail.getHead();
+	public Token(Token token) {
+		super(token);
+		this.token = token.getToken();
+		this.head = token.getHead();
 	}
 	
 	@Override
@@ -105,8 +106,8 @@ public class Tail extends LinkedList<Morpheme> implements Comparable<Tail> {
 		return sb.toString();		
 	}
 	
-	public Tail getSubTail(int index) {
-		Tail tail = new Tail(token);
+	public Token getSubTail(int index) {
+		Token tail = new Token(token);
 		String head = tail.token;
 		for (int i = 0; i <= index; i++) {
 			Morpheme morph = this.get(i);
@@ -119,16 +120,30 @@ public class Tail extends LinkedList<Morpheme> implements Comparable<Tail> {
 		return tail;
 	}
 	
-	public int getTagSize() {
+	public int getNumTag() {
 		return this.getPos().split("\\+").length;
 	}
 	
+	public int getNumValidTag() {
+		return this.numValidTag;
+	}
+	
+	public void setNumValidTag(int numValidTag) {
+		this.numValidTag = numValidTag;
+	}
+	
 	@Override
-	public int compareTo(Tail other) {
-		int otherSize = ((Tail) other).getTagSize(); 
- 
+	public int compareTo(Token other) {
+		int otherNumValidTag = ((Token) other).getNumValidTag();
+		if (numValidTag > 0 || otherNumValidTag > 0) {
+			//System.out.println(this.getTag() + ":" + numValidTag + ", " + other.getTag() + ":" + otherNumValidTag);
+			//descending order
+			return otherNumValidTag - this.numValidTag;
+		}
+
+		int otherNumTag = ((Token) other).getNumTag(); 
 		//descending order
-		return this.getTagSize() - otherSize;
+		return otherNumTag - this.getNumTag();
 	}
 
 }

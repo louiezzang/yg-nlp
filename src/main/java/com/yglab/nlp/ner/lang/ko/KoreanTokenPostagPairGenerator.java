@@ -6,7 +6,7 @@ import java.util.List;
 import com.yglab.nlp.ner.TokenPostagPairGenerator;
 import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
-import com.yglab.nlp.postag.lang.ko.Morpheme;
+import com.yglab.nlp.postag.morph.Morpheme;
 
 
 /**

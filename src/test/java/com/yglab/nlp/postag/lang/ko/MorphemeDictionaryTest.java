@@ -3,6 +3,8 @@ package com.yglab.nlp.postag.lang.ko;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.yglab.nlp.postag.morph.MorphemeDictionary;
+
 /**
  * Test case.
  * 

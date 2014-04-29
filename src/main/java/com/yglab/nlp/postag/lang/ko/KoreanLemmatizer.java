@@ -1,23 +1,23 @@
 package com.yglab.nlp.postag.lang.ko;
 
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import com.yglab.nlp.postag.Stemmer;
-import com.yglab.nlp.util.lang.ko.MorphemeUtil;
-
-
+import com.yglab.nlp.postag.morph.Lemmatizer;
+import com.yglab.nlp.postag.morph.Token;
 
 /**
- * The Korean stemmer extracts its stem from the surface word.
+ * The Korean lemmatizer extracts the lemma from the surface word.
  * 
  * @author Younggue Bae
  */
-public class KoreanStemmer implements Stemmer {
+public class KoreanLemmatizer implements Lemmatizer {
 
-	private static final Pattern RULE_PATTERN = Pattern.compile("([-\\+_])([^-\\+_]+)");
+	//private static final Pattern RULE_PATTERN = Pattern.compile("([-\\+_])([^-\\+_]+)");
+
+	@Override
+	public CharSequence lemmatize(Token token) {
+		return null;
+	}
 	
+	/*
 	@Override
 	public CharSequence stem(CharSequence word, String rule) {
 		Matcher m = RULE_PATTERN.matcher(rule);
@@ -49,5 +49,6 @@ public class KoreanStemmer implements Stemmer {
 		
 		return word;
 	}
+	*/
 
 }

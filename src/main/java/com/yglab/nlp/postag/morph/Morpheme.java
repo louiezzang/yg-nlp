@@ -1,4 +1,4 @@
-package com.yglab.nlp.postag.lang.ko;
+package com.yglab.nlp.postag.morph;
 
 
 /**

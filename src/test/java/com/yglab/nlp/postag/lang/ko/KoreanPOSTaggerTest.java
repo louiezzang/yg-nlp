@@ -3,7 +3,6 @@ package com.yglab.nlp.postag.lang.ko;
 import java.util.List;
 
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.model.AbstractModel;
@@ -11,6 +10,7 @@ import com.yglab.nlp.model.Options;
 import com.yglab.nlp.postag.POSSample;
 import com.yglab.nlp.postag.POSTagger;
 import com.yglab.nlp.postag.POSTaggerEvaluator;
+import com.yglab.nlp.postag.morph.MorphemeDictionary;
 
 /**
  * Test case.
@@ -30,7 +30,7 @@ public class KoreanPOSTaggerTest {
 				"/lang/ko/ko-pos-bojo.dic");
 
 		String[] labels = KoreanPOSTagger.getLabels("/sample/ko/pos/ko-pos-train-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
-		MorphemeAnalyzer analyzer = new MorphemeAnalyzer(dic, labels);
+		KoreanMorphemeAnalyzer analyzer = new KoreanMorphemeAnalyzer(dic, labels);
 		featureGenerator = new KoreanPOSFeatureGenerator(analyzer);
 		
 		//train();
@@ -56,8 +56,6 @@ public class KoreanPOSTaggerTest {
 				"열심히",
 				"다닙니다",
 				".",
-				"부각되기도",
-				"전반적인",
 		};
 		
 //		String[] tokens = {
