@@ -59,7 +59,7 @@ public class Viterbi {
 
 		int prevLabel = labelIndex.indexOf(candidates.get(0).get(0).getPreviousLabel());
 		double[] localScores = computeScores(candidates.get(0).get(0).getFeatures(), weights);
-
+		
 		int position = 0;
 		for (int currLabel = 0; currLabel < localScores.length; currLabel++) {
 			backpointers[position][currLabel] = prevLabel;
@@ -79,9 +79,18 @@ public class Viterbi {
 				localScores = computeScores(datum.getFeatures(), weights);
 				for (int currLabel = 0; currLabel < localScores.length; currLabel++) {
 					double score = localScores[currLabel] + scores[position - 1][prevLabel];
-					if (prevLabel == 0 || score > scores[position][currLabel]) {
+					
+					//if (prevLabel == 0 || score > scores[position][currLabel]) {
+					if (score > scores[position][currLabel]) {
+						//if (prevLabel != 0 && datum.getWord().equals("해줄수")) {
+						//	System.out.println(datum.getWord() + ": " + labelIndex.get(currLabel) + " = " + score + ", " + scores[position][currLabel]);
+						//}
+						
 						backpointers[position][currLabel] = prevLabel;
 						scores[position][currLabel] = score;
+						//if (datum.getWord().equals("해줄수")) {
+						//	System.out.println("prevLabel=" + labelIndex.get(prevLabel));
+						//}
 					}
 				}
 			}
@@ -100,6 +109,7 @@ public class Viterbi {
 		for (position = bestSequence.size() - 1; position >= 0; position--) {
 			Datum datum = bestSequence.get(position);
 			datum.setGuessLabel((String) labelIndex.get(bestLabel));
+			//System.out.println(position + ": " + labelIndex.get(bestLabel) + " = " + scores[position][bestLabel]);
 			bestLabel = backpointers[position][bestLabel];
 		}
 		
