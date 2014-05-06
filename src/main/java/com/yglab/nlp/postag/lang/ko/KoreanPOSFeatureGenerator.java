@@ -30,14 +30,13 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 		return morphAnalyzer.getCurrentTokenTailCandidates(position);
 	}
 	
-	public List<List<String>> getCurrentTokensTagCandidates() {
-		return morphAnalyzer.getCurrentTokensTagCandidates();
+	public List<Token> getTokenSuffix(String token) {
+		return morphAnalyzer.findSuffix(token);
 	}
 	
 	@Override
 	public void initialize(String[] tokens) {
 		morphAnalyzer.findTailCandidates(tokens);
-		morphAnalyzer.findTagCandidates(tokens);
 	}
 	
 	@Override
@@ -50,6 +49,11 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 		this.addContextualFeatures(features, position, tokens, previousLabelSequence);
 		this.addMorphoFeatures(features, position, tokens, previousLabelSequence);
 		this.addWordPatternFeatures(features, position, tokens, previousLabelSequence);
+		
+//		System.err.println(tokens[position]);
+//		for (String feature : features) {
+//			System.out.println(" " + feature);
+//		}
 		
 		return features.toArray(new String[features.size()]);
 	}
@@ -78,7 +82,10 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 			features.add("pattern=" + "containsHyphen");
 		}
 		
-		if (StringUtil.containsAlphabet(currentWord)) {
+		if (pattern.isAllLetter()) {
+			features.add("pattern=" + "alphabet");
+		}
+		else if (StringUtil.containsAlphabet(currentWord)) {
 			features.add("pattern=" + "containsAlphabet");
 		}
 	}
@@ -89,16 +96,42 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 	 * and the consonant of jongseong in last header character.
 	 */
 	protected void addMorphoFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
-		//String currentWord = tokens[position];
 		List<Token> matchTailList = this.getCurrentTokenTailCandidates(position);
 
-		for (Token matchTail : matchTailList) {
+		StringBuilder sbBigramFeature = new StringBuilder();
+		
+		boolean hasPrevTail = false;
+		if (position > 0) {
+			List<Token> prevMatchTailList = this.getCurrentTokenTailCandidates(position - 1);
+
+			for (int i = 0; i < prevMatchTailList.size(); i++) {
+				Token matchTail = prevMatchTailList.get(i);
+				features.add("prevTailTag=" + matchTail.getTag());
+				if (i == 0) {
+					sbBigramFeature.append(matchTail.getTag());
+					hasPrevTail = true;
+				}
+			}
+		}
+		
+		boolean hasCurrentTail = false;
+		for (int i = 0; i < matchTailList.size(); i++) {
+			Token matchTail = matchTailList.get(i);
 			//if (tail.getSurface().equals(currentWord)) {
 			//	return;
 			//}
 			
 			// TODO: 조사 또는 어미로 끝나는 경우에만 아래 피쳐 추가
 			features.add("tailTag=" + matchTail.getTag());
+			if (i == 0 && hasPrevTail) {
+				sbBigramFeature.append("," + matchTail.getTag());
+				features.add("prevCurrentTailTag=" + sbBigramFeature.toString());
+				hasCurrentTail = true;
+			}
+			else if (i == 0 && !hasPrevTail) {
+				sbBigramFeature.append(matchTail.getTag());
+				hasCurrentTail = true;
+			}
 			
 			// phonological type(positive or negative vowel) of jungseong in last head character.
 			String head = matchTail.getHead();
@@ -123,6 +156,27 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 				// TODO: 어미로 끝나는 경우에만 아래 피쳐 추가
 				// consonant of jongseong in last head character.
 				features.add("headLastJongseong=" + MorphemeUtil.containsJongseongConsonant(lastHeadChar));
+			}
+		}
+		
+		if (position < tokens.length - 1) {
+			List<Token> nextMatchTailList = this.getCurrentTokenTailCandidates(position + 1);
+
+			for (int i = 0; i < nextMatchTailList.size(); i++) {
+				Token matchTail = nextMatchTailList.get(i);
+				//features.add("nextTailTag=" + matchTail.getTag());
+				if (i == 0 && hasPrevTail && hasCurrentTail) {
+					sbBigramFeature.append("," + matchTail.getTag());
+					features.add("prevCurrentNextTailTag=" + sbBigramFeature.toString());
+				}
+				else if (i == 0 && hasPrevTail && !hasCurrentTail) {
+					sbBigramFeature.append("," + matchTail.getTag());
+					features.add("prevNextTailTag=" + sbBigramFeature.toString());
+				}
+				else if (i == 0 && !hasPrevTail && hasCurrentTail) {
+					sbBigramFeature.append("," + matchTail.getTag());
+					features.add("currentNextTailTag=" + sbBigramFeature.toString());
+				}
 			}
 		}
 	}

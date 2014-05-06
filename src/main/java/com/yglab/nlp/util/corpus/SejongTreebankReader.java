@@ -262,6 +262,10 @@ public class SejongTreebankReader implements TreebankReader {
       	token = token.replaceAll("^[\\s]*[\\+][\\s]+", "");	
       }
       
+      if (token.endsWith("+")) {
+      	token = token.substring(0, token.length() - 1);
+      }
+      
       if (!token.trim().equals("")) {
       	return token;
       }

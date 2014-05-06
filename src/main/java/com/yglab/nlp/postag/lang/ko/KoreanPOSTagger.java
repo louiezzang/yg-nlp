@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import com.yglab.nlp.maxent.DefaultTagSequenceGenerator;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.postag.POSFeatureGenerator;
 import com.yglab.nlp.postag.POSTagger;
@@ -30,6 +31,7 @@ public class KoreanPOSTagger extends POSTagger {
 	 */
 	public KoreanPOSTagger(AbstractModel model, POSFeatureGenerator featureGenerator) throws IOException {
 		super(model, featureGenerator, new KoreanTagSequenceGenerator(featureGenerator, model.getLabels()));
+		//super(model, featureGenerator, new DefaultTagSequenceGenerator(featureGenerator, model.getLabels(), 2));
 
 		InputStream is = getClass().getResourceAsStream("/lang/ko/postag_ko.properties");
 		this.posDescriptions = new Properties();

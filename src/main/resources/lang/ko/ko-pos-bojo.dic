@@ -1,26 +1,28 @@
 #음절	형태소/POS	음운제약조건	형태제약조건	품사제약조건	불규칙조건
+건	건/NNB				
+것	것/NNB				
+꼴	꼴/XSN				
 나	나/VX				
 내	내/VX				
-됐	되/VV+었/EP				
 되	되/XSV				
 들	들/XSN				
+듯	듯/NNB				
 등	등/NNB				
+만큼	만큼/NNB				
 못	못/MAG				
 못	못/VX				
-봐	보/VX+아/EC				
+뿐	뿐/NNB				
 수	수/NNB				
+시키	시키/XSV				
 싶	싶/VX				
+아니	아니/VCN				
 안	안/MAG				
 않	않/VX				
 여	여/XSN				
 오	오/VX				
 이	이/VCP				
-여서	이/VCP+어서/EC			NN	
 적	적/VCP				
 적	적/XSN				
 주	주/VX				
 지	지/VX				
 하	하/XSV				
-해	하/XSV+아/EC				
-했	하/XSV+았/EP				
-함께	함께/MAG				

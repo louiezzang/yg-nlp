@@ -1,7 +1,6 @@
 package com.yglab.nlp.postag.lang.ko;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,12 +19,10 @@ import com.yglab.nlp.util.trie.TrieSuffixMatcher;
 public class KoreanMorphemeAnalyzer {
 
 	private MorphemeDictionary dic;
+	private MorphemeDictionary suffixDic;
 	private final String[] validTags;
 	private TrieSuffixMatcher<Integer> validTagTrie;
-	
-	private List<String> defaultTagCandidates = new ArrayList<String>();
 	private List<List<Token>> tokensTailCandidates = new ArrayList<List<Token>>();
-	private List<List<String>> tokensTagCandidates = new ArrayList<List<String>>();
 
 	/**
 	 * Constructor.
@@ -34,34 +31,28 @@ public class KoreanMorphemeAnalyzer {
 	 * @param tags	The valid unique tags or labels
 	 */
 	public KoreanMorphemeAnalyzer(MorphemeDictionary dic, String[] tags) {
+		this(dic, null, tags);
+	}
+	
+	/**
+	 * Constructor.
+	 * 
+	 * @param dic	The morpheme dictionary
+	 * @param suffixDic	The suffix dictionary
+	 * @param tags	The valid unique tags or labels
+	 */
+	public KoreanMorphemeAnalyzer(MorphemeDictionary dic, MorphemeDictionary suffixDic, String[] tags) {
 		this.dic = dic;
+		this.suffixDic = suffixDic;
 		this.validTags = tags;
 		this.validTagTrie = new TrieSuffixMatcher<Integer>();
 		
 		if (tags == null || tags.length == 0) {
 			return;
 		}
-		
-		// make default tag candidates
-		this.makeDefaultTagCandidates(tags);
-		
+
 		// make trie of valid tags
-		this.makeValidTagTrie(tags);
-	}
-	
-	/**
-	 * Makes the default tag candidates which consist of single tag.
-	 * 
-	 * @param tags
-	 */
-	private void makeDefaultTagCandidates(final String[] tags) {
-		if (tags != null) {
-			for (String tag : tags) {
-				if (tag.indexOf("+") < 0) {
-					defaultTagCandidates.add(tag);
-				}
-			}
-		}		
+		this.makeValidTagTrie(tags);		
 	}
 	
 	/**
@@ -108,25 +99,6 @@ public class KoreanMorphemeAnalyzer {
 	}
 	
 	/**
-	 * Gets the tag candidates for the current all tokens.
-	 * 
-	 * @return
-	 */
-	public List<List<String>> getCurrentTokensTagCandidates() {
-		return this.tokensTagCandidates;
-	}
-	
-	/**
-	 * Gets the tag candidates for the token at the specific position of the tokens.
-	 * 
-	 * @param position
-	 * @return
-	 */
-	public List<String> getCurrentTokenTagCandidates(int position) {
-		return this.tokensTagCandidates.get(position);
-	}
-	
-	/**
 	 * Finds the tail candidates for the each token.
 	 * 
 	 * @param tokens The tokens' array
@@ -137,96 +109,39 @@ public class KoreanMorphemeAnalyzer {
 		// initializes the current tail candidates for tokens
 		tokensTailCandidates.clear();
 		
-		for (int i = 0; i < tokens.length; i++) {
-			String token = tokens[i];
+		for (int position = 0; position < tokens.length; position++) {
+			String token = tokens[position];
 			List<Token> tailValidCandidates = new ArrayList<Token>();
 			List<Token> tailCandidates = this.findTailCandidates(token);
-			
+			 
+			boolean findSuffix = true;
+			//outerloop:
 			for (Token tail : tailCandidates) {
-				System.out.println("*" + tokens[i] + ": " + tail.getTag() + ", " + tail.getNumTag());
+				System.out.println("*" + token + ": " + tail.getTag() + ", " + tail.getNumTag());
 
 				for (int ti = tail.size() - 1; ti >= 0; ti--) {
 					Token subTail = tail.getSubTail(ti);
 					if (isValidTail(subTail)) {
 						if (!tailValidCandidates.contains(subTail)) {
 							tailValidCandidates.add(subTail);
-							System.out.println("**" + tokens[i] + ": " + subTail.getTag() + ", " + subTail.getNumTag());
+							System.out.println("**" + token + ": " + subTail.getTag() + ", " + subTail.getNumTag());
 						}
-						if (subTail.getNumTag() >= 3) {
-							break;	// exit this 'for' loop
+						if (subTail.getNumTag() == 3) {
+						//if (subTail.getNumTag() >= 3) {
+							findSuffix = false;
+							break;	// exit this innter 'for' loop
+							// TODO: 이 경우 현재 'for' loop를 break했을 때보다 이상하게 precision이 더 낮아짐. 좀 더 테스트 필요.
+							//break outerloop;	// exit outer 'for' loop 
 						}
 					}
 				}
 			}
+			
+			if (findSuffix && suffixDic != null) {
+				tailValidCandidates.addAll(this.findSuffix(token));
+			}
+			
 			tokensTailCandidates.add(tailValidCandidates);
-		}
-	}
-	
-	public void findTagCandidates(String[] tokens) {
-		// initializes the current tag candidates for tokens
-		tokensTagCandidates.clear();
-		
-		for (int position = 0; position < tokens.length; position++) {
-			String token = tokens[position];
-			List<Token> tailCandidates = tokensTailCandidates.get(position);
-			
-			if (tailCandidates.size() == 0) {
-				if (token.equals(".") || token.equals("!") || token.equals("?")) {
-					String[] sf = { "SF" };
-					tokensTagCandidates.add(Arrays.asList(sf));
-				}
-				else if (token.equals(",")) {
-					String[] sp = { "SP" };
-					tokensTagCandidates.add(Arrays.asList(sp));
-				}
-				else {
-					tokensTagCandidates.add(defaultTagCandidates);
-				}
-				continue;
-			}
-			
-			List<String> tagList = new ArrayList<String>();
-			for (Token tailCandidate : tailCandidates) {
-				// for debugging
-				System.out.println(token + ", tail=" + tailCandidate.getTag() + ", size=" + tailCandidate.size());
-				
-				String postag = tailCandidate.getPos();
-				if (tailCandidate.size() == 1 && tailCandidate.getHead().equals("")) {
-					for (String validTag : validTags) {
-						if (validTag.equals(validTag)) {
-							tagList.add(validTag);
-						}
-					}
-				}
-				else if (tailCandidate.getNumTag() >= 3) {
-					for (String validTag : validTags) {
-						if (validTag.endsWith(postag)) {
-							if (!tagList.contains(validTag)) {
-								tagList.add(validTag);
-							}
-						}				
-					}
-				}
-				else {	
-					for (String validTag : validTags) {
-						int validTagNum = validTag.split("\\+").length;
-						int maxTagNum = tailCandidate.getNumTag() + 1;
-						if (validTagNum == maxTagNum && validTag.endsWith(postag)) {
-							if (!tagList.contains(validTag)) {
-								tagList.add(validTag);
-							}
-						}
-					}
-				}
-			}
-			
-			if (tagList.size() == 0) {
-				tagList.add("NNG");
-			}
-			
-			System.out.println(position + ": " + tagList);
-
-			tokensTagCandidates.add(tagList);
 		}
 	}
 	
@@ -280,6 +195,40 @@ public class KoreanMorphemeAnalyzer {
 		
 		return tailCandidates;
 	}
+	
+	/**
+	 * Finds the suffix for the specified token.
+	 * 
+	 * @param token
+	 * @return
+	 */
+	public List<Token> findSuffix(String token) {
+		List<Token> tailCandidates = new ArrayList<Token>();
+		
+		// find the longest matched suffix in the dictionary
+		String matchMorphDic = suffixDic.findSuffix(token);
+
+		if (matchMorphDic == null) {
+			return tailCandidates;
+		}
+
+		//System.out.println("matched suffix = " + matchMorphDic);
+
+		String[] morphItems = matchMorphDic.split("\\|");
+
+		for (String morphItem : morphItems) {
+			Token tail = new Token(token);
+			tail.add(dictionaryToMorpheme(morphItem));
+			tail.setHead("");
+			tail.setNumValidTag(1);
+
+			if (!tailCandidates.contains(tail)) {
+				tailCandidates.add(tail);
+			}
+		}
+		
+		return tailCandidates;
+	}	
 	
 	/**
 	 * Finds the tail candidates for the specified surface.

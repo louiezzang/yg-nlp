@@ -3,6 +3,7 @@ package com.yglab.nlp.postag.lang.ko;
 import java.util.List;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.model.AbstractModel;
@@ -28,12 +29,18 @@ public class KoreanPOSTaggerTest {
 				"/lang/ko/ko-pos-josa.dic",
 				"/lang/ko/ko-pos-eomi.dic", 
 				"/lang/ko/ko-pos-bojo.dic");
+		
+		MorphemeDictionary suffixDic = new MorphemeDictionary(
+				"/lang/ko/ko-pos-suffix.dic");
 
 		String[] labels = KoreanPOSTagger.getLabels("/sample/ko/pos/ko-pos-train-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
-		KoreanMorphemeAnalyzer analyzer = new KoreanMorphemeAnalyzer(dic, labels);
+		KoreanMorphemeAnalyzer analyzer = new KoreanMorphemeAnalyzer(dic, suffixDic, labels);
 		featureGenerator = new KoreanPOSFeatureGenerator(analyzer);
 		
+		long startTime = System.currentTimeMillis();
 		//train();
+		long elapsedTime = System.currentTimeMillis() - startTime;
+		System.out.println("elapsed time for trainning = " + elapsedTime);
 	}
 
 	private static void train() throws Exception {
@@ -49,14 +56,14 @@ public class KoreanPOSTaggerTest {
 	@Test
 	public void testTagger() throws Exception {
 
-		String[] tokens = {
-				"당신은",
-				"학교를",
-				"앞길을", 
-				"열심히",
-				"다닙니다",
-				".",
-		};
+//		String[] tokens = {
+//				"당신은",
+//				"학교를",
+//				"앞길을", 
+//				"열심히",
+//				"다닙니다",
+//				".",
+//		};
 		
 //		String[] tokens = {
 //				"이",
@@ -73,6 +80,14 @@ public class KoreanPOSTaggerTest {
 //				"기준",
 //		};
 
+			String[] tokens = {
+				"나를",
+				"위해",
+				"해줄수",
+				"있다",
+				"."
+			};
+		
 		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
 
 		KoreanPOSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator);
@@ -105,9 +120,15 @@ public class KoreanPOSTaggerTest {
 		
 		List<POSSample> testSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-test-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
 		POSTaggerEvaluator evaluator = new POSTaggerEvaluator(tagger);
+		
+		long startTime = System.currentTimeMillis();
+		
 		evaluator.evaluate(testSamples);
 		
 		evaluator.print();
+		
+		long elapsedTime = System.currentTimeMillis() - startTime;
+		System.out.println("elapsed time for testing = " + elapsedTime);
 	}
 
 }

@@ -1,29 +1,40 @@
-#음절	형태소/POS	음운제약조건	형태제약조건	품사제약조건	불규칙조건
+#음절	까지	음운제약조건	형태제약조건	품사제약조건	불규칙조건
 가	가/JKS				
-계	계/XSN				
 고	고/JKQ				
 과	과/JC				
 과	과/JKB				
+길	기/ETN+ㄹ/JKO				
+까지	까지/JX				
 는	는/JX	모음			
+다간	다가/EC+ㄴ/JX				
+대로	대로/JX				
 데다	데다/JX				
 도	도/JX				
 등	등/NNB				
+땐	때/NNG+ㄴ/JX				
 로	로/JKB				
 를	를/JKO				
+마다	마다/JX				
 만	만/JX				
+보다	보다/JKB				
 씩	씩/XSN				
 에	에/JKB				
+에겐	에게/JKB+ㄴ/JX				
 에서	에서/JKB				
+에선	에서/JKB+ㄴ/JX				
 엔	에/JKB+는/JX				
 와	와/JC				
 와	와/JKB				
 으로	으로/JKB				
 으로써	으로써/JKB				
+으론	으로/JKB+는/JX				
 은	은/JX	자음			
 을	을/JKO				
 의	의/JKG				
-이	이/JKS				
 이	이/JKC				
+이	이/JKS				
+이나	이나/JX				
 이라고	이라고/JKQ				
 이라고	이라고/JKQ				
+진	지/EC+는/JX				
 처럼	처럼/JKB				
