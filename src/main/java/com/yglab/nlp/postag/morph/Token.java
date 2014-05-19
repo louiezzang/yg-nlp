@@ -2,7 +2,7 @@ package com.yglab.nlp.postag.morph;
 
 import java.util.LinkedList;
 
-import com.yglab.nlp.util.lang.ko.MorphemeUtil;
+import com.yglab.nlp.util.lang.ko.KoreanMorphemeUtil;
 
 /**
  * This class defines the token.
@@ -15,8 +15,9 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 	private static final long serialVersionUID = 1L;
 	
 	private String token;
-	private String head;
+	private String head;	// TODO: head? stem?
 	private int numValidTag;
+	private boolean analyzed;
 
 	/**
 	 * Creates a token.
@@ -56,6 +57,14 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 	
 	public void setHead(String head) {
 		this.head = head;
+	}
+	
+	public boolean isAnalyzed() {
+		return analyzed;
+	}
+
+	public void setAnalyzed(boolean analyzed) {
+		this.analyzed = analyzed;
 	}
 
 	public String getPos() {
@@ -112,7 +121,7 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 		for (int i = 0; i <= index; i++) {
 			Morpheme morph = this.get(i);
 			tail.add(morph);
-			head = MorphemeUtil.truncateRight(head, morph.getSurface());
+			head = KoreanMorphemeUtil.truncateRight(head, morph.getSurface());
 		}
 		
 		tail.setHead(head);

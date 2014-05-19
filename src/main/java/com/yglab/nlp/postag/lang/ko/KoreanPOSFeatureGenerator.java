@@ -8,7 +8,7 @@ import com.yglab.nlp.postag.DefaultPOSFeatureGenerator;
 import com.yglab.nlp.postag.morph.Token;
 import com.yglab.nlp.util.StringPattern;
 import com.yglab.nlp.util.StringUtil;
-import com.yglab.nlp.util.lang.ko.MorphemeUtil;
+import com.yglab.nlp.util.lang.ko.KoreanMorphemeUtil;
 
 
 
@@ -30,13 +30,13 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 		return morphAnalyzer.getCurrentTokenTailCandidates(position);
 	}
 	
-	public List<Token> getTokenSuffix(String token) {
-		return morphAnalyzer.findSuffix(token);
-	}
-	
 	@Override
 	public void initialize(String[] tokens) {
 		morphAnalyzer.findTailCandidates(tokens);
+	}
+	
+	public KoreanMorphemeAnalyzer getKoreanMorphemeAnalyzer() {
+		return this.morphAnalyzer;
 	}
 	
 	@Override
@@ -137,7 +137,7 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 			String head = matchTail.getHead();
 			if (!head.equals("")) {
 				char lastHeadChar = head.charAt(head.length() - 1);
-				boolean positiveVowel = MorphemeUtil.containsPositiveVowel(lastHeadChar);
+				boolean positiveVowel = KoreanMorphemeUtil.containsPositiveVowel(lastHeadChar);
 				if (positiveVowel) {
 					features.add("headLastJungseong=" + "positiveVowel");
 				}
@@ -146,16 +146,16 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 				}
 				
 				// consonant of jongseong in last head character.
-				features.add("headLastJongseong=" + MorphemeUtil.containsJongseongConsonant(lastHeadChar));
+				features.add("headLastJongseong=" + KoreanMorphemeUtil.containsJongseongConsonant(lastHeadChar));
 				
 				// TODO: 어미로 끝나는 경우에만 아래 피쳐 추가
 				// consonant of jongseong eomi in last head character.
-				char jongseongEomi = MorphemeUtil.getJongseongEomiConsonant(lastHeadChar);
+				char jongseongEomi = KoreanMorphemeUtil.getJongseongEomiConsonant(lastHeadChar);
 				features.add("headLastJongseongEomi=" + jongseongEomi);
 				
 				// TODO: 어미로 끝나는 경우에만 아래 피쳐 추가
 				// consonant of jongseong in last head character.
-				features.add("headLastJongseong=" + MorphemeUtil.containsJongseongConsonant(lastHeadChar));
+				features.add("headLastJongseong=" + KoreanMorphemeUtil.containsJongseongConsonant(lastHeadChar));
 			}
 		}
 		

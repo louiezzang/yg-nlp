@@ -12,6 +12,7 @@ import com.yglab.nlp.postag.POSSample;
 import com.yglab.nlp.postag.POSTagger;
 import com.yglab.nlp.postag.POSTaggerEvaluator;
 import com.yglab.nlp.postag.morph.MorphemeDictionary;
+import com.yglab.nlp.postag.morph.Token;
 
 /**
  * Test case.
@@ -20,21 +21,21 @@ import com.yglab.nlp.postag.morph.MorphemeDictionary;
  */
 public class KoreanPOSTaggerTest {
 	
-	private static MorphemeDictionary dic;
 	private static KoreanPOSFeatureGenerator featureGenerator;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		MorphemeDictionary dic = new MorphemeDictionary(
+		MorphemeDictionary baseDic = new MorphemeDictionary(
 				"/lang/ko/ko-pos-josa.dic",
 				"/lang/ko/ko-pos-eomi.dic", 
 				"/lang/ko/ko-pos-bojo.dic");
 		
-		MorphemeDictionary suffixDic = new MorphemeDictionary(
-				"/lang/ko/ko-pos-suffix.dic");
+		MorphemeDictionary extendedDic = new MorphemeDictionary(
+				"/lang/ko/ko-pos-suffix.dic",
+				"/lang/ko/ko-pos-word.dic");
 
 		String[] labels = KoreanPOSTagger.getLabels("/sample/ko/pos/ko-pos-train-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
-		KoreanMorphemeAnalyzer analyzer = new KoreanMorphemeAnalyzer(dic, suffixDic, labels);
+		KoreanMorphemeAnalyzer analyzer = new KoreanMorphemeAnalyzer(baseDic, extendedDic, labels);
 		featureGenerator = new KoreanPOSFeatureGenerator(analyzer);
 		
 		long startTime = System.currentTimeMillis();
@@ -104,7 +105,7 @@ public class KoreanPOSTaggerTest {
 		System.out.println("==================================================");
 
 		// TODO
-//		List<Eojeol> eojeols = tagger.analyze(tokens);
+		List<Token> eojeols = tagger.analyze(tokens);
 //		
 //		for (int i = 0; i < eojeols.size(); i++) {
 //			System.out.println(i + ": " + eojeols.get(i).toString());
@@ -112,7 +113,7 @@ public class KoreanPOSTaggerTest {
 	}
 	
 	@Test
-	//@Ignore
+	@Ignore
 	public void testEvaluator() throws Exception {
 		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin");
 		

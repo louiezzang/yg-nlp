@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.yglab.nlp.maxent.DefaultTagSequenceGenerator;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.postag.POSFeatureGenerator;
 import com.yglab.nlp.postag.POSTagger;
+import com.yglab.nlp.postag.morph.Token;
 
 /**
  * Korean POS and morpheme tagger based on maximum-entropy markov model or perceptron algorithm.
@@ -44,14 +44,15 @@ public class KoreanPOSTagger extends POSTagger {
 	 * @param tokens
 	 * @return
 	 */
-	public List<Eojeol> analyze(String[] tokens) {
-		List<Eojeol> eojeols = new ArrayList<Eojeol>();
+	public List<Token> analyze(String[] tokens) {
+		List<Token> eojeols = new ArrayList<Token>();
 		
 		String[] tags = this.tag(tokens);
-		for (int position = 0; position < tokens.length; position++) {
-			String token = tokens[position];
-			String tag = tags[position];
-		}
+		((KoreanPOSFeatureGenerator) featureGenerator).getKoreanMorphemeAnalyzer().analyze(tags);
+//		for (int position = 0; position < tokens.length; position++) {
+//			String token = tokens[position];
+//			String tag = tags[position];
+//		}
 		
 		return eojeols;
 	}

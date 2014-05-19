@@ -1,15 +1,14 @@
 package com.yglab.nlp.postag.morph;
 
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 
 import com.yglab.nlp.util.lang.ko.KoreanUnicode;
 import com.yglab.nlp.util.trie.TrieSuffixMatcher;
-
 
 
 /**
@@ -19,16 +18,29 @@ import com.yglab.nlp.util.trie.TrieSuffixMatcher;
  */
 public class MorphemeDictionary {
 	
-	private TrieSuffixMatcher<String> trie;
+	private TrieSuffixMatcher<String> trieSuffix;
 	private int keyColumnIndex = 0;
 	
+	/**
+	 * Creates the morpheme dictionary.
+	 * 
+	 * @param files	The index of key column to match
+	 * @throws IOException
+	 */
 	public MorphemeDictionary(String... files) throws IOException {
 		this(0, files);
 	}
 	
+	/**
+	 * Creates the morpheme dictionary.
+	 * 
+	 * @param keyColumnIndex	The index of key column to match
+	 * @param files	The dictionary files
+	 * @throws IOException
+	 */
 	public MorphemeDictionary(int keyColumnIndex, String... files) throws IOException {
 		this.keyColumnIndex = keyColumnIndex;
-		this.trie = new TrieSuffixMatcher<String>();
+		this.trieSuffix = new TrieSuffixMatcher<String>();
 		
 		for (String file : files) {
 			this.load(file);
@@ -54,71 +66,54 @@ public class MorphemeDictionary {
 			
 			String[] field = line.split("\t");
 			String morph = field[keyColumnIndex].trim();
-			//String postag = field[1].trim();
 			char[] ch = KoreanUnicode.decompose(morph);
 			String strCh = String.valueOf(ch);
-			//trie.add(strCh, postag + "_" + morph);
 			
-			String match = trie.longestMatch(strCh);
+			String match = trieSuffix.longestMatch(strCh);
 			if (match != null) {
 				String existMorph = match.split("\t")[keyColumnIndex].trim();
 				// if duplicate morpheme, concatenate new one to the exist dictionary
 				if (existMorph.equals(morph)) {
-					trie.add(strCh, match + "|" + line);	// "|" == "OR"
+					trieSuffix.add(strCh, match + "|" + line);	// "|" == "OR"
 				}
 				else {
-					trie.add(strCh, line);
+					trieSuffix.add(strCh, line);
 				}
 			}
 			else {
-				trie.add(strCh, line);
+				trieSuffix.add(strCh, line);
 			}
 		}
 
 		in.close();
 	}
 	
-	public String findLongestMatch(String str) {
-		char[] ch = KoreanUnicode.decompose(str);
-
-		return trie.longestMatch(String.valueOf(ch));
-	}
-	
-	public String findShortestMatch(String str) {
-		char[] ch = KoreanUnicode.decompose(str);
-
-		return trie.shortestMatch(String.valueOf(ch));
-	}
-	
-	
 	/**
 	 * Finds the longest suffix in the input string.
 	 */
-	public String findSuffix(String str) {
-		/*
+	public String findLongestSuffix(String str) {
+		char[] ch = KoreanUnicode.decompose(str);
+
+		return trieSuffix.longestMatch(String.valueOf(ch));
+	}
+
+	/**
+	 * Finds the shortest suffix in the input string.
+	 */
+	public String findShortestSuffix(String str) {
+		char[] ch = KoreanUnicode.decompose(str);
+
+		return trieSuffix.shortestMatch(String.valueOf(ch));
+	}
+	
+	/**
+	 * Finds all the matched suffix list in the input string.
+	 */
+	public List<String> findAllSuffix(String str) {
 		char[] ch = KoreanUnicode.decompose(str);
 		
-		List<String> allMatches = trie.allMatches(String.valueOf(ch));
-		if (allMatches == null) {
-			return null;
-		}
-		
-		String result = null;
-		String maxlenSuffix = "";
-		for (String suffix : allMatches) {
-			String strSuffix = suffix.split("_")[1];
-			if (String.valueOf(ch).endsWith(String.valueOf(KoreanUnicode.decompose(strSuffix)))) {
-				if (strSuffix.length() > maxlenSuffix.length()) {
-					maxlenSuffix = strSuffix;
-					result = suffix;
-				}
-			}
-		}
-		
-		return result;
-		*/
-		
-		return this.findLongestMatch(str);
+		return trieSuffix.allMatches(String.valueOf(ch));
 	}
+	
 
 }

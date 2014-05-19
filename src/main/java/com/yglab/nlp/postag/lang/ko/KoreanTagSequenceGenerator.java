@@ -105,12 +105,6 @@ public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 				}
 			}	
 			
-			// TODO: 새로 추가함....테스트중...
-			//List<Token> suffixList = ((KoreanPOSFeatureGenerator) featureGenerator).getTokenSuffix(token);
-			//for (Token suffix : suffixList) {
-			//	tagList.add(suffix.getPos());
-			//}
-			
 			if (tagList.size() == 0) {
 				//throw new IllegalArgumentException("'" + postag + "' tag doesn't exist in the valid tag label set.");
 				tagList.add("NNG");

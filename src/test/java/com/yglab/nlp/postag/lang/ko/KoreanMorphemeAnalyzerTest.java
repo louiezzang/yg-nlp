@@ -19,16 +19,17 @@ public class KoreanMorphemeAnalyzerTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		MorphemeDictionary dic = new MorphemeDictionary(
+		MorphemeDictionary baseDic = new MorphemeDictionary(
 				"/lang/ko/ko-pos-josa.dic",
 				"/lang/ko/ko-pos-eomi.dic", 
 				"/lang/ko/ko-pos-bojo.dic");
 		
-		MorphemeDictionary suffixDic = new MorphemeDictionary(
-				"/lang/ko/ko-pos-suffix.dic");
+		MorphemeDictionary extendedDic = new MorphemeDictionary(
+				"/lang/ko/ko-pos-suffix.dic",
+				"/lang/ko/ko-pos-word.dic");
 
-		//analyzer = new KoreanMorphemeAnalyzer(dic, null);
-		analyzer = new KoreanMorphemeAnalyzer(dic, suffixDic, null);
+		//analyzer = new KoreanMorphemeAnalyzer(baseDic, null);
+		analyzer = new KoreanMorphemeAnalyzer(baseDic, extendedDic, null);
 	}
 
 	@Test

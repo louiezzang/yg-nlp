@@ -1,10 +1,8 @@
-#음절	형태소/POS	음운제약조건	형태제약조건	품사제약조건	불규칙조건
-각	MM				
+#표층어(surface)	형태소/POS(morpheme)	음운(phoneme)제약조건	형태(morpheme)제약조건	품사(pos)제약조건	불규칙(irregular)조건
 간	NNG				
 관	NNG				
 군	NNG				
 군	NNP				
-그	MM				
 기준	NNG				
 날	NNG				
 년	NNG				
@@ -17,7 +15,6 @@
 면	NNP				
 문	NNG				
 물	NNG				
-반드시	MAG				
 발	NNG				
 방면	NNG				
 부도	NNG				
@@ -30,15 +27,11 @@
 신	NNG				
 연	NNG				
 원	NNG				
-이	MM				
 이름	NNG				
 잡지	NNG				
 적	NNG				
 주민	NNG				
+진	NNG				
 쯤	NNG				
 천	NR				
-총	MM				
-한	MM				
-함께	MAG				
 해	NNG				
-너무	MAG				

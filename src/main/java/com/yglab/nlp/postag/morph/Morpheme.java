@@ -1,5 +1,8 @@
 package com.yglab.nlp.postag.morph;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 /**
  * This class defines a morpheme.
@@ -13,6 +16,7 @@ public class Morpheme {
 	private String tag;
 	private String pos;
 	private String posDescription;
+	private Map<String, Object> attributes = new HashMap<String, Object>();
 
 	public String getSurface() {
 		return surface;
@@ -52,6 +56,14 @@ public class Morpheme {
 
 	public void setPosDescription(String posDescription) {
 		this.posDescription = posDescription;
+	}
+	
+	public void setAttribute(String name, Object value) {
+		this.attributes.put(name, value);
+	}
+	
+	public Object getAttribute(String name) {
+		return this.attributes.get(name);
 	}
 
 }

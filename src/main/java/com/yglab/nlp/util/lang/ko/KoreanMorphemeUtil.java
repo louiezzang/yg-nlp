@@ -8,7 +8,7 @@ import java.util.List;
  * 
  * @author Younggue Bae
  */
-public class MorphemeUtil {
+public class KoreanMorphemeUtil {
 	
 	/** 중성에 들어갈수 있는 양성모음 */
 	private static final char[] POSITIVE_VOWEL = {

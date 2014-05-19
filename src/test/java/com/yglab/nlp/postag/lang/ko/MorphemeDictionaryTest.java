@@ -23,21 +23,20 @@ public class MorphemeDictionaryTest {
 		
 		String token = "몰라";
 
-		System.out.println("shortest match = " + dic.findShortestMatch(token));
+		System.out.println("shortest suffix = " + dic.findShortestSuffix(token));
 		
-		System.out.println("longest match = " + dic.findLongestMatch(token));
+		System.out.println("longest suffix = " + dic.findLongestSuffix(token));
 		
-		System.out.println("suffix match = " + dic.findSuffix(token));
-		
+		System.out.println("all suffix = " + dic.findAllSuffix(token));
 		
 		dic = new MorphemeDictionary(1, "/lang/ko/ko-pos-eomi.dic", "/lang/ko/ko-pos-bojo.dic");
 		
 		token = "위하/VV+아/EC";
 
-		System.out.println("shortest match = " + dic.findShortestMatch(token));
+		System.out.println("shortest suffix = " + dic.findShortestSuffix(token));
 		
-		System.out.println("longest match = " + dic.findLongestMatch(token));
+		System.out.println("longest suffix = " + dic.findLongestSuffix(token));
 		
-		System.out.println("suffix match = " + dic.findSuffix(token));
+		System.out.println("all suffix = " + dic.findAllSuffix(token));
 	}
 }

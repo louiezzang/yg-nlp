@@ -1,0 +1,9 @@
+#표층어(surface)	형태소/POS(morpheme)	음운(phoneme)제약조건	형태(morpheme)제약조건	품사(pos)제약조건	불규칙(irregular)조건
+각	MM		word		
+그	MM		word		
+반드시	MAG		word		
+이	MM		word		
+총	MM		word		
+한	MM		word		
+함께	MAG		word		
+너무	MAG		word		
