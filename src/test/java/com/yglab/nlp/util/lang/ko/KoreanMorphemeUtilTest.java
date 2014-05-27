@@ -8,7 +8,7 @@ import org.junit.Test;
  * 
  * @author Younggue Bae
  */
-public class MorphemeUtilTest {
+public class KoreanMorphemeUtilTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -30,5 +30,9 @@ public class MorphemeUtilTest {
 		System.out.println(String.valueOf(KoreanMorphemeUtil.containsJongseongConsonant('가')));
 		
 		System.out.println(String.valueOf(KoreanMorphemeUtil.appendRight("갑니", "ㄹ다")));
+		
+		System.out.println(String.valueOf(KoreanMorphemeUtil.getJongseongConsonant('갔')));
+		
+		System.out.println(String.valueOf(KoreanMorphemeUtil.getJongseongConsonant('었')));
 	}
 }

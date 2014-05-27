@@ -1,6 +1,6 @@
 package com.yglab.nlp.util.lang.ko;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,15 +11,19 @@ import java.util.List;
 public class KoreanMorphemeUtil {
 	
 	/** 중성에 들어갈수 있는 양성모음 */
-	private static final char[] POSITIVE_VOWEL = {
+	private static final Character[] POSITIVE_VOWEL = {
 		'ㅏ', 'ㅐ', 'ㅑ', 'ㅒ', 'ㅗ', 'ㅘ',
 		'ㅙ', 'ㅛ', 'ㅜ', 'ㅠ',
 	};
 	
 	/** 어미중에 포함되어 용언 어간의 마지막 음절과 결할할 수 있는 자소 */
-	private static final char[] JONGSEONG_EOMI_CONSONANT = {
+	private static final Character[] JONGSEONG_EOMI_CONSONANT = {
 		'ㄴ', 'ㄹ', 'ㅂ', 'ㅆ'
 	};
+	
+	private static final List<Character> jongseongEomis = Arrays.asList(POSITIVE_VOWEL);
+	private static final List<Character> positiveVowels = Arrays.asList(JONGSEONG_EOMI_CONSONANT);
+
 
 	/**
 	 * Truncates the specified jaso in the right hand from the source jaso.
@@ -201,15 +205,24 @@ public class KoreanMorphemeUtil {
 		char[] jaso = KoreanUnicode.decomposeTriple(ch);
 		char jungseong = jaso[1];
 		
-		List<Character> positiveVowels = new ArrayList<Character>();
-		for (char posiviteVowel : POSITIVE_VOWEL) {
-			positiveVowels.add(posiviteVowel);
-		}
 		if (positiveVowels.contains(jungseong)) {
 			return true;
 		}
 		
 		return false;
+	}
+	
+	/**
+	 * Returns the jongseong consonant.
+	 * 
+	 * @param ch	The one letter character
+	 * @return
+	 */
+	public static char getJongseongConsonant(char ch) {
+		char[] jaso = KoreanUnicode.decomposeTriple(ch);
+		char jongseong = jaso[2];
+		
+		return jongseong;
 	}
 	
 	/**
@@ -219,13 +232,8 @@ public class KoreanMorphemeUtil {
 	 * @return
 	 */
 	public static boolean containsJongseongEomiConsonant(char ch) {
-		char[] jaso = KoreanUnicode.decomposeTriple(ch);
-		char jongseong = jaso[2];
+		char jongseong =getJongseongConsonant(ch);
 		
-		List<Character> jongseongEomis = new ArrayList<Character>();
-		for (char jongseongEomi : JONGSEONG_EOMI_CONSONANT) {
-			jongseongEomis.add(jongseongEomi);
-		}
 		if (jongseongEomis.contains(jongseong)) {
 			return true;
 		}
@@ -241,13 +249,8 @@ public class KoreanMorphemeUtil {
 	 * @return
 	 */
 	public static char getJongseongEomiConsonant(char ch) {
-		char[] jaso = KoreanUnicode.decomposeTriple(ch);
-		char jongseong = jaso[2];
+		char jongseong =getJongseongConsonant(ch);
 		
-		List<Character> jongseongEomis = new ArrayList<Character>();
-		for (char jongseongEomi : JONGSEONG_EOMI_CONSONANT) {
-			jongseongEomis.add(jongseongEomi);
-		}
 		if (jongseongEomis.contains(jongseong)) {
 			return jongseong;
 		}
@@ -262,8 +265,7 @@ public class KoreanMorphemeUtil {
 	 * @return
 	 */
 	public static boolean containsJongseongConsonant(char ch) {
-		char[] jaso = KoreanUnicode.decomposeTriple(ch);
-		char jongseong = jaso[2];
+		char jongseong =getJongseongConsonant(ch);
 		
 		if (jongseong != '\0') {
 			return true;

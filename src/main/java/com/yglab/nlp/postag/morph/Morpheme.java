@@ -12,7 +12,6 @@ import java.util.Map;
 public class Morpheme {
 	
 	private String surface;
-	private String lemma;
 	private String tag;
 	private String pos;
 	private String posDescription;
@@ -24,14 +23,6 @@ public class Morpheme {
 
 	public void setSurface(String surface) {
 		this.surface = surface;
-	}
-	
-	public String getLemma() {
-		return lemma;
-	}
-
-	public void setLemma(String lemma) {
-		this.lemma = lemma;
 	}
 
 	public String getTag() {

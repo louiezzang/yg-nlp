@@ -1,119 +1,105 @@
 package com.yglab.nlp.postag.morph;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 
+import com.yglab.nlp.postag.POSSampleParser;
 import com.yglab.nlp.util.lang.ko.KoreanUnicode;
-import com.yglab.nlp.util.trie.TrieSuffixMatcher;
 
 
 /**
- * Dictionary for Korean morphemes based on suffix(backward direction) trie structure.
+ * Dictionary for morphemes based on suffix(backward direction) trie structure.
  * 
  * @author Younggue Bae
  */
-public class MorphemeDictionary {
+public class MorphemeDictionary extends AbstractDictionary<List<Morpheme>>{
 	
-	private TrieSuffixMatcher<String> trieSuffix;
-	private int keyColumnIndex = 0;
-	
-	/**
-	 * Creates the morpheme dictionary.
-	 * 
-	 * @param files	The index of key column to match
-	 * @throws IOException
-	 */
 	public MorphemeDictionary(String... files) throws IOException {
-		this(0, files);
+		super(files);
 	}
 	
-	/**
-	 * Creates the morpheme dictionary.
-	 * 
-	 * @param keyColumnIndex	The index of key column to match
-	 * @param files	The dictionary files
-	 * @throws IOException
-	 */
 	public MorphemeDictionary(int keyColumnIndex, String... files) throws IOException {
-		this.keyColumnIndex = keyColumnIndex;
-		this.trieSuffix = new TrieSuffixMatcher<String>();
-		
-		for (String file : files) {
-			this.load(file);
-		}
+		super(keyColumnIndex, files);
 	}
 	
-	private void load(String filename) throws IOException {
-		BufferedReader in = null;
-		InputStream is = getClass().getResourceAsStream(filename);
+	@Override
+	public void addDictionary(String item) {
+		String[] field = item.split("\t");
+		String morphSurface = field[keyColumnIndex].trim();
+		char[] ch = KoreanUnicode.decompose(morphSurface);
+		String key = String.valueOf(ch);
 		
-		if (is != null) {
-			in = new BufferedReader( new InputStreamReader(is, "utf-8"));
-		}
-		else {
-			in = new BufferedReader(new InputStreamReader(new FileInputStream(filename), "utf-8"));
-		}
-
-		String line;
-		while ((line = in.readLine()) != null) {
-			if (line.startsWith("#") || line.startsWith("//") || line.trim().equals("")) {
-				continue;
-			}
-			
-			String[] field = line.split("\t");
-			String morph = field[keyColumnIndex].trim();
-			char[] ch = KoreanUnicode.decompose(morph);
-			String strCh = String.valueOf(ch);
-			
-			String match = trieSuffix.longestMatch(strCh);
-			if (match != null) {
-				String existMorph = match.split("\t")[keyColumnIndex].trim();
-				// if duplicate morpheme, concatenate new one to the exist dictionary
-				if (existMorph.equals(morph)) {
-					trieSuffix.add(strCh, match + "|" + line);	// "|" == "OR"
-				}
-				else {
-					trieSuffix.add(strCh, line);
-				}
+		Morpheme morpheme = this.toMorpheme(item);
+		
+		List<Morpheme> match = trieSuffix.longestMatch(key);
+		if (match != null && match.size() > 0) {
+			String existMorphSurface = match.get(0).getSurface();
+			// if duplicate morpheme, add new one to the exist dictionary
+			if (existMorphSurface.equals(morphSurface)) {
+				match.add(morpheme);
 			}
 			else {
-				trieSuffix.add(strCh, line);
+				List<Morpheme> morphemes = new ArrayList<Morpheme>();
+				morphemes.add(morpheme);
+				trieSuffix.add(key, morphemes);
+			}
+		}
+		else {
+			List<Morpheme> morphemes = new ArrayList<Morpheme>();
+			morphemes.add(morpheme);
+			trieSuffix.add(key, morphemes);
+		}
+	}
+	
+	@Override
+	public String decompose(String str) {
+		char[] ch = KoreanUnicode.decompose(str);
+
+		return String.valueOf(ch);
+	}
+	
+	/**
+	 * Converts the dictionary text to {@link Morpheme} object. 
+	 * 
+	 * @param str
+	 * @return
+	 */
+	private Morpheme toMorpheme(String str) {
+		Morpheme morph = new Morpheme();
+		String[] fields = str.split("\t", -1);
+
+		String surface = fields[0];
+		String tag = fields[1];
+		String type = fields[2];
+		String[] tagItems = tag.split("\\+");
+
+		StringBuilder sbPos = new StringBuilder();
+		for (int i = 0; i < tagItems.length; i++) {
+			String tagItem = tagItems[i];
+			String pos = POSSampleParser.parsePos(tagItem);
+			sbPos.append(pos);
+
+			if (i < tagItems.length - 1) {
+				sbPos.append("+");
 			}
 		}
 
-		in.close();
-	}
-	
-	/**
-	 * Finds the longest suffix in the input string.
-	 */
-	public String findLongestSuffix(String str) {
-		char[] ch = KoreanUnicode.decompose(str);
+		morph.setSurface(surface);
+		morph.setTag(tag);
+		morph.setPos(sbPos.toString());
+		//morph.setPosDescription();
 
-		return trieSuffix.longestMatch(String.valueOf(ch));
-	}
+		morph.setAttribute("type", type);
+		morph.setAttribute("leftMorphemeCondition", fields[3]);
+		morph.setAttribute("leftMorphemeBondCondition", fields[4]);
+		morph.setAttribute("leftPhonemeBondCondition", fields[5]);
+		morph.setAttribute("leftPosBondCondition", fields[6]);
+		morph.setAttribute("leftLemmatizationCondition", fields[7]);
+		morph.setAttribute("morphemProperty", fields[8]);
+		morph.setAttribute("phonemeProperty", fields[9]);
 
-	/**
-	 * Finds the shortest suffix in the input string.
-	 */
-	public String findShortestSuffix(String str) {
-		char[] ch = KoreanUnicode.decompose(str);
-
-		return trieSuffix.shortestMatch(String.valueOf(ch));
+		return morph;
 	}
-	
-	/**
-	 * Finds all the matched suffix list in the input string.
-	 */
-	public List<String> findAllSuffix(String str) {
-		char[] ch = KoreanUnicode.decompose(str);
-		
-		return trieSuffix.allMatches(String.valueOf(ch));
-	}
-	
 
 }

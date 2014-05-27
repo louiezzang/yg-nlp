@@ -1,187 +1,172 @@
-#표층어(surface)	형태소/POS(morpheme)	음운(phoneme)제약조건	형태(morpheme)제약조건	품사(pos)제약조건	불규칙(irregular)조건
-#ㄴ	ㄴ/ETM		으		+ㄹ
-#ㄴ	ㄴ/ETM		-워		
-#ㄹ	ㄹ/ETM				
-#ㅁ	ㅁ/ETN				
-#ㅆ다	았/EP+다/EF		-하,-해,-라,-어		
-가진	가지/VV+ㄴ/ETM				
-갈	가/VV+ㄹ/ETM				
-갈	갈/VV(+ㄹ)+ㄹ/ETM				
-게	게/EC				
-게	게/EC				
-겠	겠/EP				
-고	고/EC				
-기	기/ETN				
-긴	VV+ㄴ/ETM				+기
-긴	VV+ㄴ/ETM				+기
-길	VV+ㄹ/ETM				+기
-깬	깨/VV+ㄴ/ETM				
-낀	VV+ㄴ/ETM				+끼
-낄	VV+ㄹ/ETM				+끼
-ㄴ가	ㄴ가/EC				+ㅎ
-ㄴ다	ㄴ다/EF				
-ㄴ다고	ㄴ다고/EC				
-ㄴ다는	ㄴ다는/ETM				
-ㄴ다며	ㄴ다며/EC				
-ㄴ답니다	ㄴ답니다/EF				
-ㄴ데	ㄴ데/EC				
-ㄴ데다	ㄴ데다/EC		드		+ㄹ
-ㄴ데다	ㄴ데다/EC				
-나빠	나쁘/VA+아/EC				
-난	VV+ㄴ/ETM				+나
-난	VA+ㄴ/ETM				
-난	나/VX+ㄴ/ETM				
-날	VV+ㄹ/ETM				+나
-남	VV+ㅁ/ETN				+나
-내밀	내밀/VV+ㄹ/ETM				
-낸	VV+ㄴ/ETM				+내
-낸	내/VX+ㄴ/ETM				
-냐	냐/EC				
-냐는	냐는/ETM				
-놀란	놀라/VV+ㄴ/ETM				
-는	는/ETM				
-는지	는지/EC				
-다	다/EF				
-다가	다가/EC				
-다는	다/EC+는/ETM				
-다룬	다루/VV+ㄴ/ETM				
-단	달/V+ㄴ/ETM				
-던	던/ETM				
-도	아도/EC				
-됐	되/VV+었/EP				
-되는	되/XSV+는/ETM				
-된	되/XSV+ㄴ/ETM				
-된	VV+ㄴ/ETM				+되
-된다	되/XSV+ㄴ다/EF				
-될	되/XSV+ㄹ/ETM				
-됨	되/XSV+ㅁ/ETN				
-둔	VV+ㄴ/ETM				+두
-둔	두/VX+ㄴ/ETM				
-든	VA+ㄴ/ETM				+들
-든	VV+ㄴ/ETM				+들
-들	VA+ㄹ/ETM				+들
-딜	VV+ㄹ/ETM				
-ㄹ게요	ㄹ게요/EF				
-ㄹ까	ㄹ까/EC				
-ㄹ까	ㄹ까/EC				
-ㄹ라	아/EC	양성			+르
-ㄹ랐	았/EP	양성			+르
-ㄹ러	ㄹ러/EC				+르
-ㄹ지	ㄹ지/EC				
-라	라/EF				
-라도	라도/EC				
-라며	라며/EC				
-러움	VA+ㅁ/ETN				+럽
-렀	었/EP				+러
-려면	려면/EC				
-룬	VV+ㄴ/ETM				+루
-른	VV+ㄴ/ETM				+르
-른	VA+ㄴ/ETM				+르
-른	VV+ㄴ/ETM				+르
-린	VV+ㄴ/ETM				+리
-린	VA+ㄴ/ETM				+리
-릴	VV+ㄹ/ETM				
-말	말/VX+ㄹ/ETM				
-멘	VV+ㄴ/ETM				+메
-며	며/EC				
-면	면/EC				
-면서	면서/EC				
-모신	모시/V+ㄴ/ETM				
-모은	모으/VV+ㄴ/ETM				
-ㅂ니까	ㅂ니까/EF				
-ㅂ니다	ㅂ니다/EF				
-버린	버리/VX+ㄴ/ETM				
-번	VV+ㄴ/ETM				+벌
-벌	벌/VV+ㄹ/ETM				
-본	보/VV+ㄴ/ETM				
-본	보/VX+ㄴ/ETM				
-볼	보/VX+ㄹ/ETM				
-봐	보/VX+아/EC				
-부친	붙이/VV+ㄴ/ETM				
-부푼	부풀/VV+ㄴ/ETM				
-쁜	VA+ㄴ/ETM				+쁘
-쁨	VA+ㅁ/ETN				+쁘
-산	살/VV+ㄴ/ETM				
-산	사/VV+ㄴ/ETM				
-살	사/VV+ㄹ/ETM				
-살	살/VV+ㄹ/ETM				
-선	VV+ㄴ/ETM				+서
-설	서/VV+ㄹ/ETM				
-스런	스럽/XSA+ㄴ/ETM				
-습니다	습니다/EF				
-시킨	시키/XSV+ㄴ/ETM				
-신	시/EP+ㄴ/ETM				
-ㅆ고	았/EP+고/EC				
-싼	싸/VA+ㄴ/ETM				
-쓰일	쓰이/VV+ㄹ/ETM				
-아	아/EC				
-아도	아도/EC				
-아서	아서/EC				
-알	알/VV+ㄹ/ETM				
-았	았/EP				
-어	어/EC				
-어도	어도/EC	음성			
-어서	어서/EC				
-었	었/EP				
-었었	었었/EP				
-여	VV+어/EC				+이
-여서	이/VCP+어서/EC			NN	
-온	VV+ㄴ/ETM				+오
-온	오/VX+ㄴ/ETM				
-올	VV+ㄹ/ETM				
-와	오/VV+아/EC				
-왔	오/VX+았/EP				
-운	은/ETM		마,미,더,추,러,가,겨,거,벼		+ㅂ
-운	VV+ㄴ/ETM				+우
-움	VV+ㅁ/ETN				+우
-움	VA+ㅁ/ETN				+ㅂ
-워준	어/EC+주VX+ㄴ/ETM				+우
-으나	으나/EC				
-으며	으며/EC				
-은	은/ETM				
-은	은/ETM				
-이라는	이/VCP+라/EC+는/ETM				
-이를	이르/VV+ㄹ/ETM				
-인	이/VCP+ㄴ/ETM				
-인데	이/VCP+ㄴ데/EC				
-져	VV+어/EC				+지
-조그만	조그맣/VA+ㄴ/ETM				
-준	주/VX+ㄴ/ETM				
-준	주/VV+ㄴ/ETM				
-줄	주/VV+ㄹ/ETM				
-줄	주/VX+ㄹ/ETM				
-줬	주/VX+었/EP				
-줬	주/VV+었/EP				
-지	지/EC				
-지만	지만/EC				
-진	진/ETM				
-진	VV+ㄴ/ETM				+지
-질	지/VX+ㄹ/ETM				
-짐	VV+ㅁ/ETN				+지
-찐	찌/VV+ㄴ/ETM				
-찬	VA+ㄴ/ETM				+차
-친	VV+ㄴ/ETM				+치
-칠	VV+ㄹ/ETM				
-큰	크/VA+ㄴ/ETM				
-탄	VV+ㄴ/ETM				+타
-팔	팔/VV+ㄹ/ETM				+팔
-푸른	푸르/VA+ㄴ/ETM				
-하얀	하얗/VA+ㄴ/ETM				
-한	VA+ㄴ/ETM				+하
-한	하/VX+ㄴ/ETM				
-한	하/XSA+ㄴ/ETM				
-한	VV+ㄴ/ETM				+하
-할	하/XSV+ㄹ/ETM				
-함	하/XSV+ㅁ/ETN				
-함	VV+ㅁ/ETN				+하
-해	아/EC				+하
-해	하/XSV+아/EC				
-해선	하/XSV+아서/EC+ㄴ/JX				
-했	았/EP				+하
-했	하/XSV+았/EP				
-했	하/XSA+았/EP				
-ㅓ도	어도/EC				
-ㅓ야	어야/EC				
-ㅕ도	어도/EC				+이
-ㅕ서	어서/EC				+이
-ㅕㅆ	었/EP				+이
+#표층어	형태소	분류	좌측형태(마지막음절)제약조건	좌측형태결합조건	좌측음운결합조건	좌측품사결합조건	좌측원형복원룰	형태정보	음운정보
+가	ㄴ가/EC	eomi	+ㄴ	+ㄴ			-ㄴ		
+거나	거나/EC	eomi	+어간 +ㅆ	+어간 +ㅆ		VV VA EP			
+게	게/EC	eomi		+어간					
+게요	ㄹ게요/EF	eomi	+ㄹ	+ㄹ			-ㄹ		
+겠	겠/EP	eomi		+어간					+ㅆ
+고	고/EC	eomi	+어간 +ㅆ	+어간 +ㅆ		VV VA EP			
+군요	군요/EF	eomi	+어간 +ㅆ	+어간 +ㅆ		VV VA			
+기	기/ETN	eomi				VV VA			
+긴	ㄴ/ETM	eomi				VV	+기		
+길	ㄹ/ETM	eomi				VV	+기		
+까	ㄹ까/EC	eomi	+ㄹ	+ㄹ			-ㄹ		
+깬	ㄴ/ETM	eomi				VV	+깨		
+껴도	어도/EC	eomi				VV	+끼		
+껴서	어서/EC	eomi				VV	+끼		
+꼈	었/EP	eomi				VV	+끼		
+낀	ㄴ/ETM	eomi				VV	+끼		
+낄	ㄹ/ETM	eomi				VV	+끼		
+난	나/VX+ㄴ/ETM	eomi							
+난	ㄴ/ETM	eomi				VV VA	+나		
+날	ㄹ/ETM	eomi				VV	+나		
+남	ㅁ/ETN	eomi				VV	+나		
+낸	내/VX+ㄴ/ETM	eomi							
+낸	ㄴ/ETM	eomi				VV	+내		
+는	는/ETM	eomi		+어간		VV VX			
+는군요	는군요/EF	eomi		+어간		VV VX			
+는데	는데/EC	eomi	+어간 +ㅆ	+어간 +ㅆ					
+는데다	는데다/EC	eomi	+어간 +ㅆ	+어간 +ㅆ					
+는지	는지/EC	eomi	+어간 +ㅆ	+어간 +ㅆ					
+니까	ㅂ니까/EF	eomi	+ㅂ	+ㅂ		VV VA	-ㅂ		
+니다	ㅂ니다/EF	eomi	+ㅂ	+ㅂ		VV VA	-ㅂ		
+다	ㄴ다/EF	eomi	+ㄴ	+ㄴ					
+다	다/EF	eomi	+어간 +ㅆ	+어간 +ㅆ					
+다가	다가/EC	eomi	+어간 +ㅆ	+어간 +ㅆ					
+다고	ㄴ다고/EC	eomi	+ㄴ	+ㄴ					
+다는	ㄴ다는/ETM	eomi	+ㄴ	+ㄴ					
+다는	다/EC+는/ETM	eomi	+어간 +ㅆ	+어간 +ㅆ					
+다며	ㄴ다며/EC	eomi	+ㄴ	+ㄴ			-ㄴ		
+답니다	ㄴ답니다/EF	eomi	+ㄴ	+ㄴ			-ㄴ		
+던	던/ETM	eomi							
+데	ㄴ데/EC	eomi	+ㄴ -는 -은	+ㄴ		VV VA	-ㄴ		
+도	아도/EC	eomi		-아	+양성				
+도	어도/EC	eomi		-아	+음성				
+된	되/XSV+ㄴ/ETM	eomi							
+될	되/XSV+ㄹ/ETM	eomi							
+됨	되/XSV+ㅁ/ETN	eomi							
+둔	두/VX+ㄴ/ETM	eomi							
+둔	ㄴ/ETM	eomi				VV	+두		
+든	ㄴ/ETM	eomi				VV(ㄹ) VA(ㄹ)	+들		
+든데	ㄴ데/EC	eomi				VV(ㄹ)	+들		
+든데다	ㄴ데다/EC	eomi				VV(ㄹ)	+들		
+들	ㄹ/ETM	eomi				VV(ㄹ) VA(ㄹ)	+들		
+딜	ㄹ/ETM	eomi				VV	+디		
+라	아/EC	eomi	+ㄹ		+양성	VV	+르		
+라	라/EF	eomi							
+라	아/EC	eomi	+ㄹ		+양성	VV	-ㄹ +르		
+라도	아도/EC	eomi	+ㄹ		+양성	VV	-ㄹ +르		
+라며	라며/EC	eomi							
+라서	아서EC	eomi	+ㄹ		+양성	VV	-ㄹ +르		
+랐	았/EP	eomi	+ㄹ		+양성	VV	+르	+ㅆ	
+러	ㄹ러/EC	eomi	+ㄹ		+음성	VV	+르		
+러도	어도/EC	eomi	+ㄹ		+음성	VV	-ㄹ +르		
+러서	어서/EC	eomi	+ㄹ		+음성	VV	-ㄹ +르		
+렀	었/EP	eomi			+음성			+ㅆ	
+려도	어도/EC	eomi				VV	+리		
+려면	려면/EC	eomi							
+려서	어서/EC	eomi				VV	+리		
+렸	었/EP	eomi				VV	+리		
+렸	었/EP	eomi				VV	+리		
+룬	ㄴ/ETM	eomi				VV	+루		
+른	ㄴ/ETM	eomi				VV VA	+르		
+린	ㄴ/ETM	eomi				VV VA	+리		
+릴	ㄹ/ETM	eomi	+ㄹ			VV	+리		
+말	말/VX+ㄹ/ETM	eomi							
+멘	ㄴ/ETM	eomi				VV	+메		
+며	며/EC	eomi		+어간					
+면	면/EC	eomi		+어간					
+면서	면서/EC	eomi		+어간					
+버린	버리/VX+ㄴ/ETM	eomi							
+본	ㄴ/ETM	eomi				VV	+보		
+본	보/VX+ㄴ/ETM	eomi							
+볼	보/VX+ㄹ/ETM	eomi							
+봐	보/VX+아/EC	eomi							
+봐	아/EC	eomi				VV	+보		
+봤	보/VX+았/EP	eomi				VV	+보		
+봤	았/EP	eomi				VV	+보		
+쁜	ㄴ/ETM	eomi				VA	+쁘		
+쁨	ㅁ/ETN	eomi				VA	+쁘		
+선	ㄴ/ETM	eomi				VV	+서		
+설	ㄹ/ETM	eomi				VV	+서		
+셨	시/EP+었/EP	eomi		+어간	+모음	VV VX VA		+ㅆ	
+스런	스럽/XSA+ㄴ/ETM	eomi							
+습니까	습니까/EF	eomi							
+습니다	습니다/EF	eomi							
+시	시/EP	eomi		+어간	+모음	VV VX VA		+어간	
+시킨	시키/XSV+ㄴ/ETM	eomi							
+신	시/EP+ㄴ/ETM	eomi							
+실	시/EP+ㄹ/ETM	eomi							
+아	아/EC	eomi		+아	+양성				
+아도	아도/EC	eomi		+아	+양성				
+아라	아라/EF	eomi		+아	+양성				
+아서	아서/EC	eomi		+아	+양성				
+았	았/EP	eomi			+양성				
+어	어/EC	eomi		+아	+음성				
+어도	어도/EC	eomi		+아	+음성				
+어라	어라/EF	eomi		+아	+음성				
+어서	어서/EC	eomi		+아	+음성				
+었	었/EP	eomi			+음성				
+었었	었었/EP	eomi							
+여	어/EC	eomi				VV	+이		
+여서	어서/EC	eomi				VV	+이		
+여서	이/VCP+어서/EC	eomi				NN			
+온	오/VX+ㄴ/ETM	eomi							
+온	ㄴ/ETM	eomi				VV	+오		
+올	ㄹ/ETM	eomi				VV	+오		
+와도	아도/EC	eomi		+와	+양성	VV(ㅂ)	+ㅂ		
+왔	오/VX+았/EP	eomi						+ㅆ	
+운	ㄴ/ETM	eomi		+ㄴ		VV	+우		
+운	ㄴ/ETM	eomi		+운		VV(ㅂ)	+ㅂ		
+움	ㅁ/ETN	eomi		+ㅁ		VV	+우		
+움	ㅁ/ETN	eomi		+움		VA(ㅂ)	+ㅂ		
+워도	어도/EC	eomi		+와	+음성	VV(ㅂ)	+ㅂ		
+워도	어도/EC	eomi				VV	+우		
+워서	어서/EC	eomi				VV	+우		
+워야	어야/EC	eomi				VV	+우		
+워준	어/EC+주VX+ㄴ/ETM	eomi				VV	+우		
+웠	었/EP	eomi				VV	+우		
+으나	으나/EC	eomi	+어간 +ㅆ	+어간 +ㅆ		VV VA EP			
+으며	으며/EC	eomi	+어간 +ㅆ	+어간 +ㅆ		VV VA EP			
+은	은/ETM	eomi		+어간		VV VA			
+은데	은데/EC	eomi		+어간		VA			
+이라는	이/VCP+라/EC+는/ETM	eomi							
+인	이/VCP+ㄴ/ETM	eomi							
+인데	이/VCP+ㄴ데/EC	eomi							
+져	어/EC	eomi				VV	+지		
+준	주/VX+ㄴ/ETM	eomi							
+줄	주/VX+ㄹ/ETM	eomi							
+줬	주/VX+었/EP	eomi						+ㅆ	
+지	ㄹ지/EC	eomi	+ㄹ	+ㄹ		VV	-ㄹ		
+지	지/EC	eomi		+어간					
+지만	지만/EC	eomi		+어간					
+진	ㄴ/ETM	eomi				VV VA	+지		
+진	진/ETM	eomi		+어간					
+진	ㄴ/ETM	eomi				VV VA	+지		
+질	지/VX+ㄹ/ETM	eomi							
+질	ㄹ/ETM	eomi				VV VA	+지		
+짐	ㅁ/ETN	eomi				VV VA	+지		
+찬	ㄴ/ETM	eomi				VV VA	+차		
+쳤	었/EP	eomi				VV	+치		
+춰도	어도/EC	eomi				VV	+추		
+춰서	어서/EC	eomi				VV	+추		
+췄	었/EP	eomi				VV	+추		
+친	ㄴ/ETM	eomi				VV	+치		
+칠	ㄹ/ETM	eomi				VV	+치		
+켜도	어도/EC	eomi				VV	+키		
+켜서	어서/EC	eomi				VV	+키		
+켰	었/EP	eomi				VV	+키		
+한	하/VX+ㄴ/ETM	eomi							
+한	하/XSA+ㄴ/ETM	eomi							
+한	ㄴ/ETM	eomi				VV VA	+하		
+할	하/XSV+ㄹ/ETM	eomi							
+함	하/XSV+ㅁ/ETN	eomi							
+함	ㅁ/ETN	eomi				VV VA	+하		
+해	아/EC	eomi				VV VA	+하		
+해	하/XSV+아/EC	eomi							
+해선	하/XSV+아서/EC+ㄴ/JX	eomi							
+했	았/EP	eomi					+하		
+했	하/XSA+았/EP	eomi							
+했	하/XSV+았/EP	eomi							
+혀도	어도/EC	eomi				VV	+히		
+혀서	어서/EC	eomi				VV	+히		
+혔	었/EP	eomi				VV	+히		

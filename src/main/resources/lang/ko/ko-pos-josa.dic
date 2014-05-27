@@ -1,44 +1,44 @@
-#표층어(surface)	형태소/POS(morpheme)	음운(phoneme)제약조건	형태(morpheme)제약조건	품사(pos)제약조건	불규칙(irregular)조건
-가	가/JKS				
-고	고/JKQ				
-과	과/JC				
-과	과/JKB				
-기도	기/ETN+도/JX				
-길	기/ETN+ㄹ/JKO				
-까지	까지/JX				
-는	는/JX	모음			
-다간	다가/EC+ㄴ/JX				
-대로	대로/JX				
-데다	데다/JX				
-도	도/JX				
-등	등/NNB				
-땐	때/NNG+ㄴ/JX				
-로	로/JKB				
-로부터	로부터/JKB				
-를	를/JKO				
-마다	마다/JX				
-만	만/JX				
-보다	보다/JKB				
-부터	부터/JX				
-씩	씩/XSN				
-에	에/JKB				
-에게	에게/JKB				
-에겐	에게/JKB+ㄴ/JX				
-에서	에서/JKB				
-에선	에서/JKB+ㄴ/JX				
-엔	에/JKB+는/JX				
-와	와/JC				
-와	와/JKB				
-으로	으로/JKB				
-으로써	으로써/JKB				
-으론	으로/JKB+는/JX				
-은	은/JX	자음			
-을	을/JKO				
-의	의/JKG				
-이	이/JKC				
-이	이/JKS				
-이나	이나/JX				
-이라고	이라고/JKQ				
-이라고	이라고/JKQ				
-진	지/EC+는/JX				
-처럼	처럼/JKB				
+#표층어	형태소	분류	좌측형태(마지막음절)제약조건	좌측형태결합조건	좌측음운결합조건	좌측품사결합조건	좌측원형복원룰	형태정보	음운정보
+가	가/JKS	josa							
+고	고/JKQ	josa							
+과	과/JC	josa							
+과	과/JKB	josa							
+기도	기/ETN+도/JX	josa							
+길	기/ETN+ㄹ/JKO	josa							
+까지	까지/JX	josa							
+는	는/JX	josa			+모음				
+다간	다가/EC+ㄴ/JX	josa							
+대로	대로/JX	josa							
+데다	데다/JX	josa							
+도	도/JX	josa							
+등	등/NNB	josa							
+땐	때/NNG+ㄴ/JX	josa							
+로	로/JKB	josa							
+로부터	로부터/JKB	josa							
+를	를/JKO	josa							
+마다	마다/JX	josa							
+만	만/JX	josa							
+보다	보다/JKB	josa							
+부터	부터/JX	josa							
+씩	씩/XSN	josa							
+에	에/JKB	josa							
+에게	에게/JKB	josa							
+에겐	에게/JKB+ㄴ/JX	josa							
+에서	에서/JKB	josa							
+에선	에서/JKB+ㄴ/JX	josa							
+엔	에/JKB+는/JX	josa							
+와	와/JC	josa							
+와	와/JKB	josa							
+으로	으로/JKB	josa							
+으로써	으로써/JKB	josa							
+으론	으로/JKB+는/JX	josa							
+은	은/JX	josa			+자음				
+을	을/JKO	josa							
+의	의/JKG	josa							
+이	이/JKC	josa							
+이	이/JKS	josa							
+이나	이나/JX	josa							
+이라고	이라고/JKQ	josa							
+이라고	이라고/JKQ	josa							
+진	지/EC+는/JX	josa							
+처럼	처럼/JKB	josa							

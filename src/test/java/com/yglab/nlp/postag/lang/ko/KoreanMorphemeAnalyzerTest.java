@@ -19,17 +19,17 @@ public class KoreanMorphemeAnalyzerTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		MorphemeDictionary baseDic = new MorphemeDictionary(
+		MorphemeDictionary dic = new MorphemeDictionary(
 				"/lang/ko/ko-pos-josa.dic",
 				"/lang/ko/ko-pos-eomi.dic", 
-				"/lang/ko/ko-pos-bojo.dic");
-		
-		MorphemeDictionary extendedDic = new MorphemeDictionary(
-				"/lang/ko/ko-pos-suffix.dic",
-				"/lang/ko/ko-pos-word.dic");
+				"/lang/ko/ko-pos-bojo.dic",
+				"/lang/ko/ko-pos-head.dic",
+				"/lang/ko/ko-pos-word.dic",
+				"/lang/ko/ko-pos-suffix.dic");
 
-		//analyzer = new KoreanMorphemeAnalyzer(baseDic, null);
-		analyzer = new KoreanMorphemeAnalyzer(baseDic, extendedDic, null);
+		//String[] labels = KoreanPOSTagger.getLabels("/sample/ko/pos/ko-pos-train-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
+		//analyzer = new KoreanMorphemeAnalyzer(dic, labels);
+		analyzer = new KoreanMorphemeAnalyzer(dic);
 	}
 
 	@Test
@@ -37,22 +37,27 @@ public class KoreanMorphemeAnalyzerTest {
 
 		String[] tokens = {
 				"이",
+				"불만",
+				"반드시",
 				"자아내었고",
 				"부각되기도",
-				"올해에ㄴ",
+				"올해에는",
 				"전반적인",
 				"등에서의",
-				"사건이었다"
+				"부푼듯",
+				"사건이었다",
+				"빠른데",
+				"가는데"
 		};
 		
-		analyzer.findTailCandidates(tokens); 
-		List<List<Token>> tailCandidates = analyzer.getCurrentTokensTailCandidates();
+		analyzer.generateCandidates(tokens); 
+		List<List<Token>> candidates = analyzer.getCurrentTokensCandidates();
 		
-		for (int position = 0; position < tailCandidates.size(); position++) {
-			List<Token> tokenTailCandidates = tailCandidates.get(position);
-			System.out.println(position + ": " + tokens[position] + " (" + tokenTailCandidates.size() + " tail candidates)");
-			for (Token tail : tokenTailCandidates) {
-				System.out.println("  " + tail.getTag());
+		for (int position = 0; position < candidates.size(); position++) {
+			List<Token> tokenCandidates = candidates.get(position);
+			System.out.println(position + ": " + tokens[position] + " (" + tokenCandidates.size() + " candidates)");
+			for (Token token : tokenCandidates) {
+				System.out.println("  " + token.getTag());
 			}
 		}
 	}

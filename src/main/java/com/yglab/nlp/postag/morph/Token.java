@@ -15,8 +15,9 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 	private static final long serialVersionUID = 1L;
 	
 	private String token;
-	private String head;	// TODO: head? stem?
-	private int numValidTag;
+	private String stem;
+	private String lemma;
+	private String head;
 	private boolean analyzed;
 
 	/**
@@ -49,6 +50,22 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 	
 	public String getToken() {
 		return this.token;
+	}
+	
+	public String getStem() {
+		return this.stem;
+	}
+	
+	public void setStem(String stem) {
+		this.stem = stem;
+	}
+	
+	public String getLemma() {
+		return this.lemma;
+	}
+	
+	public void setLemma(String lemma) {
+		this.lemma = lemma;
 	}
 	
 	public String getHead() {
@@ -115,7 +132,7 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 		return sb.toString();		
 	}
 	
-	public Token getSubTail(int index) {
+	public Token getTail(int index) {
 		Token tail = new Token(token);
 		String head = tail.token;
 		for (int i = 0; i <= index; i++) {
@@ -133,23 +150,8 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 		return this.getPos().split("\\+").length;
 	}
 	
-	public int getNumValidTag() {
-		return this.numValidTag;
-	}
-	
-	public void setNumValidTag(int numValidTag) {
-		this.numValidTag = numValidTag;
-	}
-	
 	@Override
 	public int compareTo(Token other) {
-		int otherNumValidTag = ((Token) other).getNumValidTag();
-		if (numValidTag > 0 || otherNumValidTag > 0) {
-			//System.out.println(this.getTag() + ":" + numValidTag + ", " + other.getTag() + ":" + otherNumValidTag);
-			//descending order
-			return otherNumValidTag - this.numValidTag;
-		}
-
 		int otherNumTag = ((Token) other).getNumTag(); 
 		//descending order
 		return otherNumTag - this.getNumTag();

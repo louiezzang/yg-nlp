@@ -3,14 +3,14 @@ package com.yglab.nlp.postag.lang.ko;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.yglab.nlp.postag.morph.MorphemeDictionary;
+import com.yglab.nlp.postag.morph.PlainDictionary;
 
 /**
  * Test case.
  * 
  * @author Younggue Bae
  */
-public class MorphemeDictionaryTest {
+public class PlainDictionaryTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -19,7 +19,7 @@ public class MorphemeDictionaryTest {
 	
 	@Test
 	public void testDictionary() throws Exception {
-		MorphemeDictionary dic = new MorphemeDictionary("/lang/ko/ko-pos-eomi.dic", "/lang/ko/ko-pos-josa.dic");
+		PlainDictionary dic = new PlainDictionary("/lang/ko/ko-pos-eomi.dic", "/lang/ko/ko-pos-josa.dic");
 		
 		String token = "몰라";
 
@@ -27,9 +27,9 @@ public class MorphemeDictionaryTest {
 		
 		System.out.println("longest suffix = " + dic.findLongestSuffix(token));
 		
-		System.out.println("all suffix = " + dic.findAllSuffix(token));
+		System.out.println("all suffix = " + dic.findSuffixes(token));
 		
-		dic = new MorphemeDictionary(1, "/lang/ko/ko-pos-eomi.dic", "/lang/ko/ko-pos-bojo.dic");
+		dic = new PlainDictionary(1, "/lang/ko/ko-pos-eomi.dic", "/lang/ko/ko-pos-bojo.dic");
 		
 		token = "위하/VV+아/EC";
 
@@ -37,6 +37,6 @@ public class MorphemeDictionaryTest {
 		
 		System.out.println("longest suffix = " + dic.findLongestSuffix(token));
 		
-		System.out.println("all suffix = " + dic.findAllSuffix(token));
+		System.out.println("all suffix = " + dic.findSuffixes(token));
 	}
 }

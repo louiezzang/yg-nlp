@@ -10,7 +10,7 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ 
-	MorphemeDictionaryTest.class,
+	PlainDictionaryTest.class,
 	KoreanLemmatizerTest.class,
 	KoreanPOSTaggerTest.class
 })

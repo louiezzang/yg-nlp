@@ -1,37 +1,37 @@
-#표층어(surface)	형태소/POS(morpheme)	음운(phoneme)제약조건	형태(morpheme)제약조건	품사(pos)제약조건	불규칙(irregular)조건
-간	NNG				
-관	NNG				
-군	NNG				
-군	NNP				
-기준	NNG				
-날	NNG				
-년	NNG				
-대기	NNG				
-도로	NNG				
-동남아	NNP				
-만	NR				
-말	NNG				
-면	NNG				
-면	NNP				
-문	NNG				
-물	NNG				
-발	NNG				
-방면	NNG				
-부도	NNG				
-분	NNG				
-사건	NNG				
-사고	NNG				
-살	NNG				
-설	NNG				
-손	NNG				
-신	NNG				
-연	NNG				
-원	NNG				
-이름	NNG				
-잡지	NNG				
-적	NNG				
-주민	NNG				
-진	NNG				
-쯤	NNG				
-천	NR				
-해	NNG				
+#표층어	형태소	분류	좌측형태(마지막음절)제약조건	좌측형태결합조건	좌측음운결합조건	좌측품사결합조건	좌측원형복원룰	형태정보	음운정보
+간	NNG	suffix							
+관	NNG	suffix							
+군	NNG	suffix							
+군	NNP	suffix							
+기준	NNG	suffix							
+날	NNG	suffix							
+년	NNG	suffix							
+대기	NNG	suffix							
+도로	NNG	suffix							
+동남아	NNP	suffix							
+만	NR	suffix							
+말	NNG	suffix							
+면	NNG	suffix							
+면	NNP	suffix							
+문	NNG	suffix							
+물	NNG	suffix							
+발	NNG	suffix							
+방면	NNG	suffix							
+부도	NNG	suffix							
+분	NNG	suffix							
+사건	NNG	suffix							
+사고	NNG	suffix							
+살	NNG	suffix							
+설	NNG	suffix							
+손	NNG	suffix							
+신	NNG	suffix							
+연	NNG	suffix							
+원	NNG	suffix							
+이름	NNG	suffix							
+잡지	NNG	suffix							
+적	NNG	suffix							
+주민	NNG	suffix							
+진	NNG	suffix							
+쯤	NNG	suffix							
+천	NR	suffix							
+해	NNG	suffix							

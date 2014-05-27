@@ -18,41 +18,38 @@ import com.yglab.nlp.util.trie.TrieSuffixMatcher;
  */
 public class KoreanMorphemeAnalyzer {
 
-	private MorphemeDictionary baseDic;
-	private MorphemeDictionary extendedDic;
+	private MorphemeDictionary dic;
 	private final String[] validTags;
-	private TrieSuffixMatcher<Integer> validTagTrie;
-	private List<List<Token>> tokensTailCandidates = new ArrayList<List<Token>>();
-
-	/**
-	 * Constructor.
-	 * 
-	 * @param baseDic	The base morpheme dictionary
-	 * @param tags	The valid unique tags or labels
-	 */
-	public KoreanMorphemeAnalyzer(MorphemeDictionary baseDic, String[] tags) {
-		this(baseDic, null, tags);
-	}
+	//private TrieSuffixMatcher<Integer> validTagTrie;
+	private List<List<Token>> tokensCandidates = new ArrayList<List<Token>>();
 	
 	/**
 	 * Constructor.
 	 * 
-	 * @param baseDic	The base morpheme dictionary
-	 * @param extendedDic	The extended dictionary such as suffix or word
+	 * @param dic	The morpheme dictionary
+	 */
+	public KoreanMorphemeAnalyzer(MorphemeDictionary dic) {
+		this(dic, null);
+	}
+
+	/**
+	 * Constructor.
+	 * 
+	 * @param dic	The morpheme dictionary
 	 * @param tags	The valid unique tags or labels
 	 */
-	public KoreanMorphemeAnalyzer(MorphemeDictionary baseDic, MorphemeDictionary extendedDic, String[] tags) {
-		this.baseDic = baseDic;
-		this.extendedDic = extendedDic;
+	public KoreanMorphemeAnalyzer(MorphemeDictionary dic, String[] tags) {
+		this.dic = dic;
 		this.validTags = tags;
-		this.validTagTrie = new TrieSuffixMatcher<Integer>();
+		//this.validTagTrie = new TrieSuffixMatcher<Integer>();
 		
 		if (tags == null || tags.length == 0) {
+			System.err.println("The valid tags are null or empty!");
 			return;
 		}
 
 		// make trie of valid tags
-		this.makeValidTagTrie(tags);		
+		//this.makeValidTagTrie(tags);	
 	}
 	
 	/**
@@ -67,17 +64,15 @@ public class KoreanMorphemeAnalyzer {
 		for (int position = 0; position < predictedTags.length; position++) {
 			String predictedTag = predictedTags[position];
 			
-			List<Token> tailCandidates = this.getCurrentTokenTailCandidates(position);
+			List<Token> tailCandidates = this.getCurrentTokenCandidates(position);
 			for (Token token : tailCandidates) {
 				if (predictedTag.endsWith(token.getPos())) {
 					System.out.println(token.getPos());
 					Morpheme head = new Morpheme();
 					head.setSurface(token.getHead());
-					head.setLemma(token.getHead());
 					head.setTag(predictedTag.substring(0, predictedTag.lastIndexOf(token.getPos())));
 					
 					System.out.print("surface = " + head.getSurface());
-					System.out.print(", lemma = " + head.getLemma());
 					System.out.print(", tag = " + head.getTag());
 					System.out.println();
 					
@@ -91,225 +86,175 @@ public class KoreanMorphemeAnalyzer {
 	}
 	
 	/**
-	 * Gets the tail candidates for the current all tokens.
+	 * Gets the analyzed morpheme candidates for the current all tokens.
 	 * 
 	 * @return
 	 */
-	public List<List<Token>> getCurrentTokensTailCandidates() {
-		return this.tokensTailCandidates;
+	public List<List<Token>> getCurrentTokensCandidates() {
+		return this.tokensCandidates;
 	}
 	
 	/**
-	 * Gets the tail candidates for the token at the specific position of the tokens.
+	 * Gets the analyzed morpheme candidates for the token at the specific position of the tokens.
 	 * 
 	 * @param position
 	 * @return
 	 */
-	public List<Token> getCurrentTokenTailCandidates(int position) {
-		return this.tokensTailCandidates.get(position);
+	public List<Token> getCurrentTokenCandidates(int position) {
+		return this.tokensCandidates.get(position);
 	}
 	
 	/**
-	 * Finds the tail candidates for the each token.
+	 * Generates the possible candidates of morpheme for the each token.
 	 * 
 	 * @param tokens The tokens' array
 	 * @return
 	 */
-	//TODO: 형태소 사전에 정의된 제약조건을 만족하는지 체크해서 리스트에 추가할 것.
-	public void findTailCandidates(String[] tokens) {
-		// initializes the current tail candidates for tokens
-		tokensTailCandidates.clear();
+	public void generateCandidates(String[] tokens) {
+		// initializes the candidates for the current tokens
+		tokensCandidates.clear();
 		
 		for (int position = 0; position < tokens.length; position++) {
-			String token = tokens[position];
-			List<Token> tailValidCandidates = new ArrayList<Token>();
-			List<Token> tailCandidates = this.findTailCandidates(token);
+			String strToken = tokens[position];
+			List<Token> validCandidates = new ArrayList<Token>();
+			
+			List<Token> candidates = new ArrayList<Token>();
+			this.identifyMorphemeCandidates(candidates, new Token(strToken), strToken);
+			
+			// sort descending by the number of tag of the token
+			Collections.sort(candidates);
 			 
-			boolean findExtendedDic = true;
-			//outerloop:
-			for (Token tail : tailCandidates) {
-				System.out.println("*" + token + ": " + tail.getTag() + ", " + tail.getNumTag());
+			for (Token candidate : candidates) {
+				System.out.println(candidate.getToken() + ": " + candidate.getTag() + ", " + candidate.getPos() + ", " + candidate.getNumTag());
+				
+				if (isValid(candidate)) {
+					if (!validCandidates.contains(candidate)) {
+						validCandidates.add(candidate);
+					}
+				}
 
-				for (int ti = tail.size() - 1; ti >= 0; ti--) {
-					Token subTail = tail.getSubTail(ti);
-					if (isValidTail(subTail)) {
-						if (!tailValidCandidates.contains(subTail)) {
-							tailValidCandidates.add(subTail);
-							System.out.println("**" + token + ": " + subTail.getTag() + ", " + subTail.getNumTag());
+				for (int mi = candidate.size() - 2; mi >= 0; mi--) {
+					Token tail = candidate.getTail(mi);
+					if (isValid(tail)) {
+						if (!validCandidates.contains(tail)) {
+							validCandidates.add(tail);
+							System.out.println(" -> " + tail.getToken() + ": " + tail.getTag() + ", " + candidate.getPos() + ", " + tail.getNumTag());
 						}
-						if (subTail.getNumTag() == 3) {
-						//if (subTail.getNumTag() >= 3) {
-							findExtendedDic = false;
+						if (tail.getNumTag() == 2) {
 							break;	// exit this inner 'for' loop
-							// TODO: 이 경우 현재 'for' loop를 break했을 때보다 이상하게 precision이 더 낮아짐. 좀 더 테스트 필요.
-							//break outerloop;	// exit outer 'for' loop 
 						}
 					}
 				}
 			}
-			
-			if (findExtendedDic && extendedDic != null) {
-				tailValidCandidates.addAll(this.findExtendedDictionary(token));
-			}
-			
-			tokensTailCandidates.add(tailValidCandidates);
+			tokensCandidates.add(validCandidates);
 		}
 	}
 	
 	/**
-	 * Finds the tail candidates for the specified token.
+	 * Identifies the morpheme candidates for the specified surface.
 	 * 
-	 * @param token
-	 * @return
+	 * @param candidates	The candidate list to store
+	 * @param token	The token
+	 * @param surface	The surface text to find the morpheme in it
 	 */
-	private List<Token> findTailCandidates(String token) {
-		List<Token> tailCandidates = new ArrayList<Token>();
-		
-		// find the longest matched suffix in the dictionary
-		String matchMorphDic = baseDic.findLongestSuffix(token);
+	private void identifyMorphemeCandidates(List<Token> candidates, Token token, String surface) {
+		// find the all suffixes matched with the dictionary
+		List<String> matchMorphDics = dic.findSuffixes(surface);
 
-		if (matchMorphDic == null) {
-			return tailCandidates;
-		}
-
-		//System.out.println("match = " + matchMorphDic);
-
-		String[] morphItems = matchMorphDic.split("\\|");
-		String tailSurface = matchMorphDic.split("\t")[0];
-		String head = KoreanMorphemeUtil.truncateRight(token, tailSurface);
-
-		for (String morphItem : morphItems) {
-			Token tail = new Token(token);
-			tail.add(dictionaryToMorpheme(morphItem));
-
-			if (!tailCandidates.contains(tail)) {
-				tailCandidates.add(tail);
-			}
-		}
-		
-		findTailCandidates(tailCandidates, token, head);
-		
-		for (Token tail : tailCandidates) {
-			Integer matchNumTag = validTagTrie.longestMatch(tail.getPos());
-			if (matchNumTag != null) {
-				tail.setNumValidTag(matchNumTag);
-			}
-		}
-		
-		// sort descending by the number of tag of the tail
-		Collections.sort(tailCandidates);
-		
-		// for debugging
-		//for (Tail t : tailCandidates) {
-		//	System.out.println(t.getToken() + " : " + t.getNumTag());
-		//}
-		
-		return tailCandidates;
-	}
-	
-	/**
-	 * Finds the tail candidates for the specified surface.
-	 * 
-	 * @param tailCandidates	The tail candidate list to store
-	 * @param token	The source token text
-	 * @param surface	The surface text to find tail in it
-	 */
-	private void findTailCandidates(List<Token> tailCandidates, String token, String surface) {
-		// find the longest matched suffix in the dictionary
-		String matchMorphDic = baseDic.findLongestSuffix(surface);
-
-		if (matchMorphDic == null) {
+		if (matchMorphDics == null || matchMorphDics.size() == 0) {
+			candidates.add(token);
 			return;
 		}
 
-		String[] morphItems = matchMorphDic.split("\\|");
-		String tailSurface = matchMorphDic.split("\t")[0];
-		String head = KoreanMorphemeUtil.truncateRight(surface, tailSurface);
+		for (String matchMorphDic : matchMorphDics) {
+			String[] morphItems = matchMorphDic.split("\\|");
+			String tail = matchMorphDic.split("\t")[0];
+			String head = KoreanMorphemeUtil.truncateRight(surface, tail);
 
-		List<Token> prevTails = new ArrayList<Token>(tailCandidates);
-		int index = 0;
-		for (String morphItem : morphItems) {
-			if (prevTails.size() > 0) {
-				for (int i = 0; i < prevTails.size(); i++) {
-					Token clonedTail = new Token(prevTails.get(i));
-
-					clonedTail.add(dictionaryToMorpheme(morphItem));
-					clonedTail.setHead(head);
-	
-					if (index < prevTails.size()) {
-						tailCandidates.set(index, clonedTail);
-					} else {
-						if (!tailCandidates.contains(clonedTail)) {
-							tailCandidates.add(clonedTail);
+			for (String morphItem : morphItems) {
+				// clone the exist token to new token
+				Token clonedToken = new Token(token);
+				
+				Morpheme morph = dictionaryToMorpheme(morphItem);
+				String type = (String) morph.getAttribute("type");
+				
+				if (checkCondition(morph, clonedToken)) {
+					if (type.equals("suffix")) {
+						if (token.getToken().endsWith(morph.getSurface())) {
+							clonedToken.add(morph);
+							clonedToken.setHead(surface);
+							candidates.add(clonedToken);
+						}
+						return;
+					}
+					else if (type.equals("word-ind")) {
+						if (token.getToken().equals(morph.getSurface())) {
+							clonedToken.add(morph);
+							clonedToken.setHead(head);
+							candidates.add(clonedToken);
+						}
+						return;
+					}
+					else if (type.startsWith("head")) {
+						if (head.equals("")) {
+							clonedToken.add(morph);
+							clonedToken.setHead(head);
+							candidates.add(clonedToken);
+							return;
 						}
 					}
-					index++;
-				}
-			} else {
-				Token tail = new Token(token);
-				tail.add(dictionaryToMorpheme(morphItem));
-				tail.setHead(head);
-
-				if (!tailCandidates.contains(tail)) {
-					tailCandidates.add(tail);
-				}
-			}
-		}
-
-		findTailCandidates(tailCandidates, token, head);
-	}
-	
-	/**
-	 * Finds the extended dictionary for the specified token.
-	 * 
-	 * @param token
-	 * @return
-	 */
-	private List<Token> findExtendedDictionary(String token) {
-		List<Token> tailCandidates = new ArrayList<Token>();
-		
-		// find the longest matched suffix or word in the dictionary
-		String matchMorphDic = extendedDic.findLongestSuffix(token);
-
-		if (matchMorphDic == null) {
-			return tailCandidates;
-		}
-
-		//System.out.println("matched extended dic = " + matchMorphDic);
-
-		String[] morphItems = matchMorphDic.split("\\|");
-
-		for (String morphItem : morphItems) {
-			Token tail = new Token(token);
-			Morpheme morph = dictionaryToMorpheme(morphItem);
-			String morphemeCondition = (String) morph.getAttribute("morphemeCondition");
-			if (morphemeCondition.equals("word")) {
-				if (morph.getSurface().equals(token)) {
-					tail.add(morph);
-					tail.setHead("");	// TODO: 자체 단어를 헤드로?
-					tail.setNumValidTag(1);
-	
-					if (!tailCandidates.contains(tail)) {
-						tailCandidates.add(tail);
+					else {
+						clonedToken.add(morph);
+						clonedToken.setHead(head);
+						
+						this.identifyMorphemeCandidates(candidates, clonedToken, head);					
 					}
 				}
 			}
-			else {
-				tail.add(morph);
-				tail.setHead("");	// TODO: 자체 단어를 헤드로?
-				tail.setNumValidTag(1);
-				
-				if (!tailCandidates.contains(tail)) {
-					tailCandidates.add(tail);
+		}
+	}
+	
+	// (?=.*a)(?=^[^b]+$)
+	// (?=[ㄴ])(?=[^는은])
+	private boolean checkCondition(Morpheme left, Token token) {
+		if (token.size() < 1) {
+			return true;
+		}
+		Morpheme right = token.getLast();
+		
+		String leftMorphemeCondition = (String) right.getAttribute("leftMorphemeCondition");
+		String[] conds = leftMorphemeCondition.split("\\s");
+		
+		String strHead = left.getSurface();
+		char chHeadLast = strHead.charAt(strHead.length() - 1);
+		char chHeadLastJongseong = KoreanMorphemeUtil.getJongseongConsonant(chHeadLast);
+		
+		for (String cond : conds) {
+			if (cond.equals("+어간")) {
+				return true;
+			}
+			else if (cond.startsWith("+")) {
+				char condCh = cond.charAt(1);
+				if (chHeadLastJongseong == condCh || chHeadLast == condCh) {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+			else if (cond.startsWith("-")) {
+				char condCh = cond.charAt(1);
+				if (chHeadLastJongseong == condCh || chHeadLast == condCh) {
+					return false;
 				}
 			}
 		}
 		
-		return tailCandidates;
-	}	
+		return true;
+	}
 
 	/**
-	 * Converts the dictionary string to {@link Morpheme} object. 
+	 * Converts the dictionary text to {@link Morpheme} object. 
 	 * 
 	 * @param str
 	 * @return
@@ -320,50 +265,50 @@ public class KoreanMorphemeAnalyzer {
 
 		String surface = fields[0];
 		String tag = fields[1];
+		String type = fields[2];
 		String[] tagItems = tag.split("\\+");
 
 		StringBuilder sbPos = new StringBuilder();
-		StringBuilder sbMorph = new StringBuilder();
 		for (int i = 0; i < tagItems.length; i++) {
 			String tagItem = tagItems[i];
 			String pos = POSSampleParser.parsePos(tagItem);
-			String strMorph = POSSampleParser.parseMorpheme(tagItem);
-
 			sbPos.append(pos);
-			sbMorph.append(strMorph);
+
 			if (i < tagItems.length - 1) {
 				sbPos.append("+");
 			}
 		}
 
 		morph.setSurface(surface);
-		morph.setLemma(sbMorph.toString());
 		morph.setTag(tag);
 		morph.setPos(sbPos.toString());
 		//morph.setPosDescription();
 
-		morph.setAttribute("phonemeCondition", fields[2]);
-		morph.setAttribute("morphemeCondition", fields[3]);
-		morph.setAttribute("posCondition", fields[4]);
-		morph.setAttribute("irregularCondition", fields[5]);
+		morph.setAttribute("type", type);
+		morph.setAttribute("leftMorphemeCondition", fields[3]);
+		morph.setAttribute("leftMorphemeBondCondition", fields[4]);
+		morph.setAttribute("leftPhonemeBondCondition", fields[5]);
+		morph.setAttribute("leftPosBondCondition", fields[6]);
+		morph.setAttribute("leftLemmatizationCondition", fields[7]);
+		morph.setAttribute("morphemProperty", fields[8]);
+		morph.setAttribute("phonemeProperty", fields[9]);
 
 		return morph;
 	}
 	
 	/**
-	 * Checks if the specified tail is valid or not.
+	 * Checks if the morphemes of a token is valid or not.
 	 * 
-	 * @param tail	The tail of token
+	 * @param token	The morphemes of token
 	 * @return
 	 */
-	private boolean isValidTail(Token tail) {
+	private boolean isValid(Token token) {
 		if (validTags == null || validTags.length == 0) {
-			System.err.println("The valid tags are null!");
 			return true;
 		}
 
 		for (String validTag : validTags) {
-			if (validTag.endsWith(tail.getPos())) {
+			if (validTag.endsWith(token.getPos())) {
 				return true;
 			}
 		}
@@ -376,6 +321,7 @@ public class KoreanMorphemeAnalyzer {
 	 * 
 	 * @param tags
 	 */
+	/*
 	private void makeValidTagTrie(final String[] tags) {
 		for (String tag : tags) {
 			String[] arrTag = tag.split("\\+");
@@ -394,5 +340,6 @@ public class KoreanMorphemeAnalyzer {
 			}
 		}
 	}
+	*/
 
 }
