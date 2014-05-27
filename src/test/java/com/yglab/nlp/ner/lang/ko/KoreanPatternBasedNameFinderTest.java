@@ -11,9 +11,9 @@ import com.yglab.nlp.ner.NameSample;
 import com.yglab.nlp.ner.PatternBasedNameFeatureGenerator;
 import com.yglab.nlp.ner.TokenPostagPairGenerator;
 import com.yglab.nlp.postag.POSSample;
+import com.yglab.nlp.postag.lang.ko.KoreanMorphemeDictionary;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSFeatureGenerator;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
-import com.yglab.nlp.postag.morph.MorphemeDictionary;
 import com.yglab.nlp.tokenizer.DefaultTokenFeatureGenerator;
 import com.yglab.nlp.tokenizer.MaxentTokenizer;
 import com.yglab.nlp.tokenizer.TokenFeatureGenerator;
@@ -75,7 +75,7 @@ public class KoreanPatternBasedNameFinderTest {
 	 */
 	private static KoreanPOSTagger initPOSTagger() throws Exception {
 		// TODO
-		MorphemeDictionary dic = new MorphemeDictionary("/lang/ko/ko-pos-josa.dic", "/lang/ko/ko-pos-eomi.dic");
+		KoreanMorphemeDictionary dic = new KoreanMorphemeDictionary("/lang/ko/ko-pos-josa.dic", "/lang/ko/ko-pos-eomi.dic");
 		KoreanPOSFeatureGenerator posFeatureGenerator = new KoreanPOSFeatureGenerator(dic);
 		
 		List<POSSample> posTrainSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt", "_[^,]+", "");

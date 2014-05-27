@@ -11,7 +11,6 @@ import com.yglab.nlp.model.Options;
 import com.yglab.nlp.postag.POSSample;
 import com.yglab.nlp.postag.POSTagger;
 import com.yglab.nlp.postag.POSTaggerEvaluator;
-import com.yglab.nlp.postag.morph.MorphemeDictionary;
 import com.yglab.nlp.postag.morph.Token;
 
 /**
@@ -25,12 +24,12 @@ public class KoreanPOSTaggerTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		MorphemeDictionary baseDic = new MorphemeDictionary(
+		KoreanMorphemeDictionary baseDic = new KoreanMorphemeDictionary(
 				"/lang/ko/ko-pos-josa.dic",
 				"/lang/ko/ko-pos-eomi.dic", 
 				"/lang/ko/ko-pos-bojo.dic");
 		
-		MorphemeDictionary extendedDic = new MorphemeDictionary(
+		KoreanMorphemeDictionary extendedDic = new KoreanMorphemeDictionary(
 				"/lang/ko/ko-pos-suffix.dic",
 				"/lang/ko/ko-pos-word.dic");
 

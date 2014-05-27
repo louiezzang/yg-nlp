@@ -5,7 +5,6 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.yglab.nlp.postag.morph.MorphemeDictionary;
 import com.yglab.nlp.postag.morph.Token;
 
 /**
@@ -19,7 +18,7 @@ public class KoreanMorphemeAnalyzerTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		MorphemeDictionary dic = new MorphemeDictionary(
+		KoreanMorphemeDictionary dic = new KoreanMorphemeDictionary(
 				"/lang/ko/ko-pos-josa.dic",
 				"/lang/ko/ko-pos-eomi.dic", 
 				"/lang/ko/ko-pos-bojo.dic",

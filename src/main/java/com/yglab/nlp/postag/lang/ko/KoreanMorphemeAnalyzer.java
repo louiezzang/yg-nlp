@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.yglab.nlp.postag.POSSampleParser;
 import com.yglab.nlp.postag.morph.Morpheme;
-import com.yglab.nlp.postag.morph.MorphemeDictionary;
 import com.yglab.nlp.postag.morph.Token;
 import com.yglab.nlp.util.lang.ko.KoreanMorphemeUtil;
 import com.yglab.nlp.util.trie.TrieSuffixMatcher;
@@ -18,7 +17,7 @@ import com.yglab.nlp.util.trie.TrieSuffixMatcher;
  */
 public class KoreanMorphemeAnalyzer {
 
-	private MorphemeDictionary dic;
+	private KoreanMorphemeDictionary dic;
 	private final String[] validTags;
 	//private TrieSuffixMatcher<Integer> validTagTrie;
 	private List<List<Token>> tokensCandidates = new ArrayList<List<Token>>();
@@ -28,7 +27,7 @@ public class KoreanMorphemeAnalyzer {
 	 * 
 	 * @param dic	The morpheme dictionary
 	 */
-	public KoreanMorphemeAnalyzer(MorphemeDictionary dic) {
+	public KoreanMorphemeAnalyzer(KoreanMorphemeDictionary dic) {
 		this(dic, null);
 	}
 
@@ -38,7 +37,7 @@ public class KoreanMorphemeAnalyzer {
 	 * @param dic	The morpheme dictionary
 	 * @param tags	The valid unique tags or labels
 	 */
-	public KoreanMorphemeAnalyzer(MorphemeDictionary dic, String[] tags) {
+	public KoreanMorphemeAnalyzer(KoreanMorphemeDictionary dic, String[] tags) {
 		this.dic = dic;
 		this.validTags = tags;
 		//this.validTagTrie = new TrieSuffixMatcher<Integer>();

@@ -1,10 +1,12 @@
-package com.yglab.nlp.postag.morph;
+package com.yglab.nlp.postag.lang.ko;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.yglab.nlp.postag.POSSampleParser;
+import com.yglab.nlp.postag.morph.AbstractDictionary;
+import com.yglab.nlp.postag.morph.Morpheme;
 import com.yglab.nlp.util.lang.ko.KoreanUnicode;
 
 
@@ -13,30 +15,30 @@ import com.yglab.nlp.util.lang.ko.KoreanUnicode;
  * 
  * @author Younggue Bae
  */
-public class MorphemeDictionary extends AbstractDictionary<List<Morpheme>>{
+public class KoreanMorphemeDictionary extends AbstractDictionary<List<Morpheme>>{
 	
-	public MorphemeDictionary(String... files) throws IOException {
+	public KoreanMorphemeDictionary(String... files) throws IOException {
 		super(files);
 	}
 	
-	public MorphemeDictionary(int keyColumnIndex, String... files) throws IOException {
+	public KoreanMorphemeDictionary(int keyColumnIndex, String... files) throws IOException {
 		super(keyColumnIndex, files);
 	}
 	
 	@Override
 	public void addDictionary(String item) {
 		String[] field = item.split("\t");
-		String morphSurface = field[keyColumnIndex].trim();
-		char[] ch = KoreanUnicode.decompose(morphSurface);
+		String dic = field[keyColumnIndex].trim();
+		char[] ch = KoreanUnicode.decompose(dic);
 		String key = String.valueOf(ch);
 		
 		Morpheme morpheme = this.toMorpheme(item);
 		
 		List<Morpheme> match = trieSuffix.longestMatch(key);
 		if (match != null && match.size() > 0) {
-			String existMorphSurface = match.get(0).getSurface();
-			// if duplicate morpheme, add new one to the exist dictionary
-			if (existMorphSurface.equals(morphSurface)) {
+			String existDic = match.get(0).getSurface();
+			// if duplicate morpheme surface, add new one to the exist dictionary
+			if (existDic.equals(dic)) {
 				match.add(morpheme);
 			}
 			else {

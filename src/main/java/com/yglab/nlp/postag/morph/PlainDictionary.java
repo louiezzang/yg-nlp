@@ -21,16 +21,14 @@ public class PlainDictionary extends AbstractDictionary<String> {
 	@Override
 	public void addDictionary(String item) {
 		String[] field = item.split("\t");
-		String morphSurface = field[keyColumnIndex].trim();
-		//char[] ch = KoreanUnicode.decompose(morphSurface);
-		//String key = String.valueOf(ch);
-		String key = morphSurface;
+		String dic = field[keyColumnIndex].trim();
+		String key = dic;
 		
 		String match = trieSuffix.longestMatch(key);
 		if (match != null) {
-			String existMorphSurface = match.split("\t")[keyColumnIndex].trim();
-			// if duplicate morpheme, concatenate new one to the exist dictionary
-			if (existMorphSurface.equals(morphSurface)) {
+			String existDic = match.split("\t")[keyColumnIndex].trim();
+			// if duplicate dictionary item, concatenate new one to the exist dictionary
+			if (existDic.equals(dic)) {
 				trieSuffix.add(key, match + "|" + item);	// "|" == "OR"
 			}
 			else {
