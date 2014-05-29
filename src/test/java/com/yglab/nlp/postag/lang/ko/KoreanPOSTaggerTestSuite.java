@@ -3,6 +3,8 @@ package com.yglab.nlp.postag.lang.ko;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
+import com.yglab.nlp.postag.morph.PlainDictionaryTest;
+
 /**
  * Test suite.
  * 
@@ -10,7 +12,6 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ 
-	PlainDictionaryTest.class,
 	KoreanLemmatizerTest.class,
 	KoreanPOSTaggerTest.class
 })

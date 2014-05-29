@@ -11,11 +11,19 @@ import java.util.Map;
  */
 public class Morpheme {
 	
+	private String key;
 	private String surface;
 	private String tag;
 	private String pos;
-	private String posDescription;
 	private Map<String, Object> attributes = new HashMap<String, Object>();
+	
+	public String getKey() {
+		return key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+	}
 
 	public String getSurface() {
 		return surface;
@@ -41,20 +49,18 @@ public class Morpheme {
 		this.pos = pos;
 	}
 
-	public String getPosDescription() {
-		return posDescription;
-	}
-
-	public void setPosDescription(String posDescription) {
-		this.posDescription = posDescription;
-	}
-	
 	public void setAttribute(String name, Object value) {
 		this.attributes.put(name, value);
 	}
 	
 	public Object getAttribute(String name) {
 		return this.attributes.get(name);
+	}
+
+	@Override
+	public String toString() {
+		return "Morpheme [key=" + key + ", surface=" + surface + ", tag=" + tag + ", pos=" + pos
+				+ ", attributes=" + attributes + "]";
 	}
 
 }

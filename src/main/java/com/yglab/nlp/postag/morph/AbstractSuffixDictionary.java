@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
 
-import com.yglab.nlp.util.lang.ko.KoreanUnicode;
 import com.yglab.nlp.util.trie.TrieSuffixMatcher;
 
 
@@ -16,7 +15,7 @@ import com.yglab.nlp.util.trie.TrieSuffixMatcher;
  * 
  * @author Younggue Bae
  */
-public abstract class AbstractDictionary<T> {
+public abstract class AbstractSuffixDictionary<T> {
 	
 	protected TrieSuffixMatcher<T> trieSuffix;
 	protected int keyColumnIndex = 0;
@@ -27,7 +26,7 @@ public abstract class AbstractDictionary<T> {
 	 * @param files	The index of key column to match
 	 * @throws IOException
 	 */
-	public AbstractDictionary(String... files) throws IOException {
+	public AbstractSuffixDictionary(String... files) throws IOException {
 		this(0, files);
 	}
 	
@@ -38,7 +37,7 @@ public abstract class AbstractDictionary<T> {
 	 * @param files	The dictionary files
 	 * @throws IOException
 	 */
-	public AbstractDictionary(int keyColumnIndex, String... files) throws IOException {
+	public AbstractSuffixDictionary(int keyColumnIndex, String... files) throws IOException {
 		this.keyColumnIndex = keyColumnIndex;
 		this.trieSuffix = new TrieSuffixMatcher<T>();
 		
@@ -73,9 +72,9 @@ public abstract class AbstractDictionary<T> {
 	/**
 	 * Add an item line in the dictionary file into the trie storage.
 	 * 
-	 * @param source The item line text in the dictionary file
+	 * @param str The line text in the dictionary file
 	 */
-	protected abstract void addDictionary(String item);
+	protected abstract void addDictionary(String str);
 	
 	/**
 	 * Decomposes the source string.
