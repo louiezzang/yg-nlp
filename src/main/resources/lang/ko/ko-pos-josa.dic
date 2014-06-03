@@ -1,8 +1,8 @@
 #표층어	형태소	분류	좌측형태(마지막음절)제약조건	좌측형태결합조건	좌측음운결합조건	좌측품사결합조건	좌측원형복원룰	형태정보	음운정보
 가	가/JKS	josa							
 고	고/JKQ	josa							
-과	과/JC	josa							
-과	과/JKB	josa							
+과	과/JC	josa			+자음				
+과	과/JKB	josa			+자음				
 기도	기/ETN+도/JX	josa							
 길	기/ETN+ㄹ/JKO	josa							
 까지	까지/JX	josa							
@@ -11,7 +11,6 @@
 대로	대로/JX	josa							
 데다	데다/JX	josa							
 도	도/JX	josa							
-등	등/NNB	josa							
 땐	때/NNG+ㄴ/JX	josa							
 로	로/JKB	josa							
 로부터	로부터/JKB	josa							
@@ -24,11 +23,12 @@
 에	에/JKB	josa							
 에게	에게/JKB	josa							
 에겐	에게/JKB+ㄴ/JX	josa							
+에는	에/JKB+는/JX	josa							
 에서	에서/JKB	josa							
 에선	에서/JKB+ㄴ/JX	josa							
 엔	에/JKB+는/JX	josa							
-와	와/JC	josa							
-와	와/JKB	josa							
+와	와/JC	josa			+모음				
+와	와/JKB	josa			+모음				
 으로	으로/JKB	josa							
 으로써	으로써/JKB	josa							
 으론	으로/JKB+는/JX	josa							

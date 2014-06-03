@@ -51,9 +51,9 @@ public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 		
 		for (int position = 0; position < tokens.length; position++) {
 			String token = tokens[position];
-			List<Token> tailCandidates = ((KoreanPOSFeatureGenerator) featureGenerator).getCurrentTokenTailCandidates(position);
+			List<Token> tokenCandidates = ((KoreanPOSFeatureGenerator) featureGenerator).getCurrentTokenCandidates(position);
 			
-			if (tailCandidates.size() == 0) {
+			if (tokenCandidates.size() == 0) {
 				if (token.equals(".") || token.equals("!") || token.equals("?")) {
 					String[] sf = { "SF" };
 					tokensTagCandidates.add(Arrays.asList(sf));
@@ -70,38 +70,13 @@ public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 			
 			List<String> tagList = new ArrayList<String>();
 			
-			for (Token tail : tailCandidates) {
+			for (Token tokenCandidate : tokenCandidates) {
 				// for debugging
-				//System.out.println(token + ", tail=" + tail.getTag() + ", size=" + tail.size());
+				//System.out.println(token + ", tokenCandidate=" + tokenCandidate.getTag() + ", size=" + tokenCandidate.size());
 				
-				String postag = tail.getPos();
-				if (tail.size() == 1 && tail.getHead().equals("")) {
-					for (String validTag : tags) {
-						if (validTag.equals(postag)) {
-							if (!tagList.contains(postag)) {
-								tagList.add(postag);
-							}
-						}
-					}
-				}
-				else if (tail.getNumTag() >= 3) {
-					for (String validTag : tags) {
-						if (validTag.endsWith(postag)) {
-							if (!tagList.contains(validTag)) {
-								tagList.add(validTag);
-							}
-						}	
-					}
-				}
-				else {	
-					for (String validTag : tags) {
-						int validTagNum = validTag.split("\\+").length;
-						int maxTagNum = tail.getNumTag() + 1;
-						if (validTagNum <= maxTagNum && validTag.endsWith(postag)) {
-						//if (validTagNum == maxTagNum && validTag.endsWith(postag)) {
-							tagList.add(validTag);
-						}
-					}
+				String postag = tokenCandidate.getPos();
+				if (tokenCandidate.isValidated()) {
+					tagList.add(postag);
 				}
 			}	
 			

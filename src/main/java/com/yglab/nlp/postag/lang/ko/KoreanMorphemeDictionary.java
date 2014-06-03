@@ -100,9 +100,6 @@ public class KoreanMorphemeDictionary extends AbstractSuffixDictionary<List<Morp
 		morpheme.setPos(sbPos.toString());
 		morpheme.setAttribute("type", type);
 
-		String morphemProp = field[8];
-		String phonemeProp = field[9];
-		
 		this.addLeftLetterCondition(morpheme, field[3]);
 		this.addLeftMorphemeCondition(morpheme, field[4]);
 		this.addLeftPhonemeCondition(morpheme, field[5]);
@@ -114,6 +111,12 @@ public class KoreanMorphemeDictionary extends AbstractSuffixDictionary<List<Morp
 		return morpheme;
 	}
 	
+	/**
+	 * Adds a left letter condition.
+	 * 
+	 * @param morpheme
+	 * @param condition
+	 */
 	private void addLeftLetterCondition(Morpheme morpheme, String condition) {
 		String[] arrCondition = condition.split("\\s");
 		
@@ -159,6 +162,12 @@ public class KoreanMorphemeDictionary extends AbstractSuffixDictionary<List<Morp
 		}
 	}
 	
+	/**
+	 * Adds a left morpheme condition.
+	 * 
+	 * @param morpheme
+	 * @param condition
+	 */
 	private void addLeftMorphemeCondition(Morpheme morpheme, String condition) {
 		String[] arrCondition = condition.split("\\s");
 		
@@ -185,6 +194,12 @@ public class KoreanMorphemeDictionary extends AbstractSuffixDictionary<List<Morp
 		}
 	}
 	
+	/**
+	 * Adds a left phoneme condition.
+	 * 
+	 * @param morpheme
+	 * @param condition
+	 */
 	private void addLeftPhonemeCondition(Morpheme morpheme, String condition) {
 		String[] arrCondition = condition.split("\\s");
 		
@@ -211,37 +226,102 @@ public class KoreanMorphemeDictionary extends AbstractSuffixDictionary<List<Morp
 		}
 	}
 	
+	/**
+	 * Adds a left POS condition.
+	 * 
+	 * @param morpheme
+	 * @param condition
+	 */
 	private void addLeftPosCondition(Morpheme morpheme, String condition) {
 		String[] arrCondition = condition.split("\\s");
+		List<String> posList = new ArrayList<String>();
 		
-		StringBuilder sbRegex = new StringBuilder();
+		StringBuilder sbIncludeRegex = new StringBuilder();
+		StringBuilder sbExcludeRegex = new StringBuilder();
 		for (String cond : arrCondition) {
-			if (cond.trim().length() > 0) {
-				if (sbRegex.length() > 0) {
-					sbRegex.append("|");
+			cond = cond.trim();
+			if (cond.length() > 0) {
+				if (!cond.startsWith("-")) {
+					if (sbIncludeRegex.length() > 0) {
+						sbIncludeRegex.append("|");
+					}
+					//cond = cond.replaceAll("\\(", "\\\\(").replaceAll("\\)", "\\\\)");
+					sbIncludeRegex.append(cond + "$");
+					
+					if (!posList.contains(cond)) {
+						posList.add(cond);
+					}
 				}
-				cond = cond.trim().replaceAll("\\(", "\\\\(").replaceAll("\\)", "\\\\)");
-				sbRegex.append(cond + "$");
+				else {
+					sbExcludeRegex.append("(?=");
+					for (int i = 1; i < cond.length(); i++) {
+						sbExcludeRegex.append("[^").append(cond.charAt(i)).append("]");
+					}
+					sbExcludeRegex.append("$)");
+				}
 			}
 		}
 		
-		if (sbRegex.length() > 0) {
+		if (sbIncludeRegex.length() > 0 && sbExcludeRegex.length() == 0) {
 			Pattern pattern = null;
-			if (mapPattern.containsKey(sbRegex.toString())) {
-				pattern = mapPattern.get(sbRegex.toString());
+			String strPattern = sbIncludeRegex.toString();
+			if (mapPattern.containsKey(strPattern)) {
+				pattern = mapPattern.get(strPattern);
 			}
 			else {
-				pattern = Pattern.compile(sbRegex.toString());
-				mapPattern.put(sbRegex.toString(), pattern);
+				pattern = Pattern.compile(strPattern);
+				mapPattern.put(strPattern, pattern);
 			}
 			morpheme.setAttribute("leftPosCondition", pattern);
 		}
+		else if (sbIncludeRegex.length() > 0 && sbExcludeRegex.length() > 0) {
+			Pattern pattern = null;
+			String strPattern = "(?=" + sbIncludeRegex.toString() + ")" + sbExcludeRegex.toString();
+			if (mapPattern.containsKey(strPattern)) {
+				pattern = mapPattern.get(strPattern);
+			}
+			else {
+				pattern = Pattern.compile(strPattern);
+				mapPattern.put(strPattern, pattern);
+			}
+			morpheme.setAttribute("leftPosCondition", pattern);
+		}
+		else if (sbIncludeRegex.length() == 0 && sbExcludeRegex.length() > 0) {
+			Pattern pattern = null;
+			String strPattern = sbExcludeRegex.toString();
+			if (mapPattern.containsKey(strPattern)) {
+				pattern = mapPattern.get(strPattern);
+			}
+			else {
+				pattern = Pattern.compile(strPattern);
+				mapPattern.put(strPattern, pattern);
+			}
+			morpheme.setAttribute("leftPosCondition", pattern);
+		}
+		
+		if (posList.size() > 0) {
+			morpheme.setAttribute("leftPosList", posList);
+		}
 	}
 	
+	/**
+	 * Adds a left lemmatization rule.
+	 * 
+	 * @param morpheme
+	 * @param rule
+	 */
 	private void addLeftLemmatizationRule(Morpheme morpheme, String rule) {
-		morpheme.setAttribute("leftLemmatizationRule", rule);
+		if (rule.trim().length() > 0) {
+			morpheme.setAttribute("leftLemmatizationRule", rule);
+		}
 	}
 	
+	/**
+	 * Adds a morpheme property.
+	 * 
+	 * @param morpheme
+	 * @param property
+	 */
 	private void addMorphemeProperty(Morpheme morpheme, String property) {
 		String[] arrProp = property.split("\\s");
 		
@@ -271,7 +351,7 @@ public class KoreanMorphemeDictionary extends AbstractSuffixDictionary<List<Morp
 			String[] arrTag = morpheme.getTag().split("\\+");
 			if (arrTag.length == 1) {
 				String lemma = arrTag[0].split("/")[0];
-				if (surface.equals(lemma)) {
+				if (surface.equals(lemma) && !sbProp.toString().contains("+어간")) {
 					if (sbProp.length() > 0) {
 						sbProp.append(" ");
 					}
@@ -285,10 +365,64 @@ public class KoreanMorphemeDictionary extends AbstractSuffixDictionary<List<Morp
 		}
 	}
 	
-	// TODO: type = eomi-ep, bojo, bojo-verb, bojo-verb-space, head, word
-	// +양성(중성이 양성모음) + 음성(중성이 음성모음), +자음(종성자음있으면) +모음(종성자음없이 모음으로)
+	/**
+	 * Adds a phoneme property.
+	 * 
+	 * @param morpheme
+	 * @param property
+	 */
 	private void addPhonemeProperty(Morpheme morpheme, String property) {
-		morpheme.setAttribute("phonemeProperty", property);
+		String[] arrProp = property.split("\\s");
+		
+		String surface = morpheme.getSurface();
+		String type = (String) morpheme.getAttribute("type");
+		
+		StringBuilder sbProp = new StringBuilder();
+		for (String prop : arrProp) {
+			if (prop.trim().length() > 0) {
+				if (sbProp.length() > 0) {
+					sbProp.append(" ");
+				}
+				sbProp.append(prop);
+			}
+		}
+		
+		if (type.equals("eomi-ep") || type.equals("head") || type.equals("word") || 
+				type.equals("bojo") || type.equals("bojo-verb") || type.equals("bojo-verb-space")) {
+			char lastCh = surface.charAt(surface.length() - 1);
+			boolean containsJonseongConsonant = KoreanMorphemeUtil.containsJongseongConsonant(lastCh);
+			boolean containsPositiveVowel = KoreanMorphemeUtil.containsPositiveVowel(lastCh);
+			
+			if (containsJonseongConsonant && !sbProp.toString().contains("+자음")) {
+				if (sbProp.length() > 0) {
+					sbProp.append(" ");
+				}
+				sbProp.append("+자음");
+			}
+			else if (!containsJonseongConsonant && !sbProp.toString().contains("+모음")){
+				if (sbProp.length() > 0) {
+					sbProp.append(" ");
+				}
+				sbProp.append("+모음");
+			}
+			
+			if (containsPositiveVowel && !sbProp.toString().contains("+양성")) {
+				if (sbProp.length() > 0) {
+					sbProp.append(" ");
+				}
+				sbProp.append("+양성");
+			}
+			else if (!containsPositiveVowel && !sbProp.toString().contains("+음성")){
+				if (sbProp.length() > 0) {
+					sbProp.append(" ");
+				}
+				sbProp.append("+음성");
+			}
+		}
+		
+		if (sbProp.length() > 0) {
+			morpheme.setAttribute("phonemeProperty", sbProp.toString());
+		}
 	}
 
 }

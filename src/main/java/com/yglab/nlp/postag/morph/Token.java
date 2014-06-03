@@ -19,6 +19,7 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 	private String lemma;
 	private String head;
 	private boolean analyzed;
+	private boolean validated;
 
 	/**
 	 * Creates a token.
@@ -82,6 +83,14 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 
 	public void setAnalyzed(boolean analyzed) {
 		this.analyzed = analyzed;
+	}
+
+	public boolean isValidated() {
+		return validated;
+	}
+
+	public void setValidated(boolean validated) {
+		this.validated = validated;
 	}
 
 	public String getPos() {

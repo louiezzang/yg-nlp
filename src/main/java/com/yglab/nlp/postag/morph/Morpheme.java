@@ -15,6 +15,7 @@ public class Morpheme {
 	private String surface;
 	private String tag;
 	private String pos;
+	private boolean analyzed;
 	private Map<String, Object> attributes = new HashMap<String, Object>();
 	
 	public String getKey() {
@@ -49,12 +50,24 @@ public class Morpheme {
 		this.pos = pos;
 	}
 
-	public void setAttribute(String name, Object value) {
-		this.attributes.put(name, value);
+	public boolean isAnalyzed() {
+		return analyzed;
+	}
+
+	public void setAnalyzed(boolean analyzed) {
+		this.analyzed = analyzed;
+	}
+
+	public void setAttribute(String key, Object value) {
+		this.attributes.put(key, value);
 	}
 	
-	public Object getAttribute(String name) {
-		return this.attributes.get(name);
+	public Object getAttribute(String key) {
+		return this.attributes.get(key);
+	}
+	
+	public boolean containsAttributeKey(String key) {
+		return attributes.containsKey(key);
 	}
 
 	@Override

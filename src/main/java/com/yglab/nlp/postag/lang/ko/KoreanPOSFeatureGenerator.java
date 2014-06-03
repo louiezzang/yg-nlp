@@ -8,8 +8,6 @@ import com.yglab.nlp.postag.DefaultPOSFeatureGenerator;
 import com.yglab.nlp.postag.morph.Token;
 import com.yglab.nlp.util.StringPattern;
 import com.yglab.nlp.util.StringUtil;
-import com.yglab.nlp.util.lang.ko.KoreanMorphemeUtil;
-
 
 
 /**
@@ -26,13 +24,17 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 		this.morphAnalyzer = morphAnalyzer;
 	}
 	
-	public List<Token> getCurrentTokenTailCandidates(int position) {
-		return morphAnalyzer.getCurrentTokenTailCandidates(position);
-	}
-	
 	@Override
 	public void initialize(String[] tokens) {
-		morphAnalyzer.findTailCandidates(tokens);
+		morphAnalyzer.generateCandidates(tokens);
+	}
+	
+	public List<Token> getCurrentTokenTailCandidates(int position) {
+		return morphAnalyzer.getCurrentTailCandidates(position);
+	}
+	
+	public List<Token> getCurrentTokenCandidates(int position) {
+		return morphAnalyzer.getCurrentCandidates(position);
 	}
 	
 	public KoreanMorphemeAnalyzer getKoreanMorphemeAnalyzer() {
@@ -105,6 +107,8 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 			List<Token> prevMatchTailList = this.getCurrentTokenTailCandidates(position - 1);
 
 			for (int i = 0; i < prevMatchTailList.size(); i++) {
+				//if (i > 0) break;
+				
 				Token matchTail = prevMatchTailList.get(i);
 				features.add("prevTailTag=" + matchTail.getTag());
 				if (i == 0) {
@@ -116,12 +120,10 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 		
 		boolean hasCurrentTail = false;
 		for (int i = 0; i < matchTailList.size(); i++) {
-			Token matchTail = matchTailList.get(i);
-			//if (tail.getSurface().equals(currentWord)) {
-			//	return;
-			//}
+			//if (i > 0) break;
 			
-			// TODO: 조사 또는 어미로 끝나는 경우에만 아래 피쳐 추가
+			Token matchTail = matchTailList.get(i);
+
 			features.add("tailTag=" + matchTail.getTag());
 			if (i == 0 && hasPrevTail) {
 				sbBigramFeature.append("," + matchTail.getTag());
@@ -132,7 +134,8 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 				sbBigramFeature.append(matchTail.getTag());
 				hasCurrentTail = true;
 			}
-			
+
+			/*
 			// phonological type(positive or negative vowel) of jungseong in last head character.
 			String head = matchTail.getHead();
 			if (!head.equals("")) {
@@ -148,21 +151,22 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 				// consonant of jongseong in last head character.
 				features.add("headLastJongseong=" + KoreanMorphemeUtil.containsJongseongConsonant(lastHeadChar));
 				
-				// TODO: 어미로 끝나는 경우에만 아래 피쳐 추가
 				// consonant of jongseong eomi in last head character.
 				char jongseongEomi = KoreanMorphemeUtil.getJongseongEomiConsonant(lastHeadChar);
 				features.add("headLastJongseongEomi=" + jongseongEomi);
 				
-				// TODO: 어미로 끝나는 경우에만 아래 피쳐 추가
 				// consonant of jongseong in last head character.
 				features.add("headLastJongseong=" + KoreanMorphemeUtil.containsJongseongConsonant(lastHeadChar));
 			}
+			*/
 		}
 		
 		if (position < tokens.length - 1) {
 			List<Token> nextMatchTailList = this.getCurrentTokenTailCandidates(position + 1);
 
 			for (int i = 0; i < nextMatchTailList.size(); i++) {
+				//if (i > 0)	break;
+				
 				Token matchTail = nextMatchTailList.get(i);
 				//features.add("nextTailTag=" + matchTail.getTag());
 				if (i == 0 && hasPrevTail && hasCurrentTail) {

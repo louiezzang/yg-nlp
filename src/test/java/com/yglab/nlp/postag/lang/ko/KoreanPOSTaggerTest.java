@@ -3,7 +3,6 @@ package com.yglab.nlp.postag.lang.ko;
 import java.util.List;
 
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.model.AbstractModel;
@@ -11,7 +10,6 @@ import com.yglab.nlp.model.Options;
 import com.yglab.nlp.postag.POSSample;
 import com.yglab.nlp.postag.POSTagger;
 import com.yglab.nlp.postag.POSTaggerEvaluator;
-import com.yglab.nlp.postag.morph.Token;
 
 /**
  * Test case.
@@ -24,23 +22,22 @@ public class KoreanPOSTaggerTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		KoreanMorphemeDictionary baseDic = new KoreanMorphemeDictionary(
+		KoreanMorphemeDictionary dic = new KoreanMorphemeDictionary(
 				"/lang/ko/ko-pos-josa.dic",
 				"/lang/ko/ko-pos-eomi.dic", 
-				"/lang/ko/ko-pos-bojo.dic");
-		
-		KoreanMorphemeDictionary extendedDic = new KoreanMorphemeDictionary(
-				"/lang/ko/ko-pos-suffix.dic",
-				"/lang/ko/ko-pos-word.dic");
+				"/lang/ko/ko-pos-bojo.dic",
+				"/lang/ko/ko-pos-head.dic",
+				"/lang/ko/ko-pos-word.dic",
+				"/lang/ko/ko-pos-suffix.dic");
 
 		String[] labels = KoreanPOSTagger.getLabels("/sample/ko/pos/ko-pos-train-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
-		KoreanMorphemeAnalyzer analyzer = new KoreanMorphemeAnalyzer(baseDic, extendedDic, labels);
+		KoreanMorphemeAnalyzer analyzer = new KoreanMorphemeAnalyzer(dic, labels);
 		featureGenerator = new KoreanPOSFeatureGenerator(analyzer);
 		
 		long startTime = System.currentTimeMillis();
-		//train();
+		train();
 		long elapsedTime = System.currentTimeMillis() - startTime;
-		System.out.println("elapsed time for trainning = " + elapsedTime);
+		System.out.println("elapsed time to train = " + elapsedTime);
 	}
 
 	private static void train() throws Exception {
@@ -80,13 +77,13 @@ public class KoreanPOSTaggerTest {
 //				"기준",
 //		};
 
-			String[] tokens = {
-				"나를",
-				"위해",
-				"해줄수",
-				"있다",
-				"."
-			};
+		String[] tokens = {
+			"나를",
+			"위해",
+			"해줄수",
+			"있다",
+			"."
+		};
 		
 		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
 
@@ -104,7 +101,7 @@ public class KoreanPOSTaggerTest {
 		System.out.println("==================================================");
 
 		// TODO
-		List<Token> eojeols = tagger.analyze(tokens);
+//		List<Token> eojeols = tagger.analyze(tokens);
 //		
 //		for (int i = 0; i < eojeols.size(); i++) {
 //			System.out.println(i + ": " + eojeols.get(i).toString());
@@ -112,7 +109,7 @@ public class KoreanPOSTaggerTest {
 	}
 	
 	@Test
-	@Ignore
+	//@Ignore
 	public void testEvaluator() throws Exception {
 		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin");
 		

@@ -18,7 +18,8 @@ public class POSSampleParser implements SampleParser<POSSample> {
 
 	private static final Pattern TAG_PATTERN = Pattern.compile("<([^<>\\s]*)?>");
 	private static final Pattern POS_PATTERN = Pattern.compile("([^/\\+\\(\\)]*)?");
-	private static final Pattern MORPH_POS_PATTERN = Pattern.compile("([^/\\+\\(\\)]*)/([^/\\+\\(\\)]*)?");
+	//private static final Pattern MORPH_POS_PATTERN = Pattern.compile("([^/\\+\\(\\)]*)/([^/\\+\\(\\)]*)?");
+	private static final Pattern MORPH_POS_PATTERN = Pattern.compile("([^/\\+\\(\\)]*)/([^/\\+]*)?");
 	private static final Pattern RULE_PATTERN = Pattern.compile("([\\(])([^/\\(\\)]*)([\\)])?");
 
 	private WhitespaceTokenizer tokenizer;
@@ -94,7 +95,7 @@ public class POSSampleParser implements SampleParser<POSSample> {
 	}
 	
 	/**
-	 * Parses rule from a single tag(eg. "VV(+ㅂ)" -> "+ㅂ").
+	 * Parses rule from a single tag(eg. "VV(ㅂ)" -> "ㅂ").
 	 * 
 	 * @param tag
 	 * @return

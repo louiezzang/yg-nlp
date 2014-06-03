@@ -21,8 +21,8 @@ public class KoreanMorphemeUtil {
 		'ㄴ', 'ㄹ', 'ㅂ', 'ㅆ'
 	};
 	
-	private static final List<Character> jongseongEomis = Arrays.asList(POSITIVE_VOWEL);
-	private static final List<Character> positiveVowels = Arrays.asList(JONGSEONG_EOMI_CONSONANT);
+	private static final List<Character> positiveVowels = Arrays.asList(POSITIVE_VOWEL);
+	private static final List<Character> jongseongEomis = Arrays.asList(JONGSEONG_EOMI_CONSONANT);
 
 
 	/**

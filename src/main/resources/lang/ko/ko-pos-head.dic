@@ -1,15 +1,19 @@
 #표층어	형태소	분류	좌측형태(마지막음절)제약조건	좌측형태결합조건	좌측음운결합조건	좌측품사결합조건	좌측원형복원룰	형태정보	음운정보
-가	가/VV	head						+어간 +ㄹ	+양성 +모음
-갈	갈/VV	head						+어간	+양성 +자음
+가	가/VV	head						+어간	+양성 +모음
+가는	가늘/VV(가늘)+ㄴ/ETM	head-tail							
+가는데	가늘/VV(가늘)+ㄴ데/EC	head-tail							
+가는데다	가늘/VV(가늘)+ㄴ데다/EC	head-tail							
+가	갈/VV(갈)	head						-ㄹ	+양성 +자음
+갈	갈/VV(갈)	head						+어간 +ㄹ	+양성 +자음
 갈	가/VV+ㄹ/ETM	head-tail							
-갈	갈/VV(ㄹ)+ㄹ/ETM	head-tail							
+갈	갈/VV(갈)+ㄹ/ETM	head-tail							
 갑	가/VV	head						+ㅂ	
-갑	갈/VV(ㄹ)	head						+ㅂ	
+갑	갈/VV(갈)	head						+ㅂ	
 갔	가/VV+았/EP	head						+ㅆ -아	
 계신	계시/VV+ㄴ/ETM	head-tail							
-고마	고맙/VV(ㅂ)	head						+운 +와	+양성
-그	긋/VV(ㅅ)	head						+아	+음성
-그런	그렇/VV(ㅎ)	head						+ㄴ	
+고마	고맙/VV	head						+운 +와	+양성
+그	긋/VV	head						+아	+음성
+그런	그렇/VV	head						+ㄴ	
 긋	긋/VV	head						+어간	+음성
 나빠	나쁘/VA+아/EC	head						-아	
 내밀	내밀/VV+ㄹ/ETM	head-tail							
@@ -17,20 +21,22 @@
 놀란	놀라/VV+ㄴ/ETM	head-tail							
 다룬	다루/VV+ㄴ/ETM	head-tail							
 단	달/VV+ㄴ/ETM	head-tail							
-도	돕/VV(ㅂ)	head						+와	+양성
+도	돕/VV	head						+와	+양성
 돌봤	돌보/VV+았/EP	head						+ㅆ	
 돕	돕/VV	head						+어간	+양성
 됐	되/VV+었/EP	head						+ㅆ	
 된	되/VV+ㄴ/ETM	head-tail							
 된	되/VV	head						+ㄴ	
-든	들/VV(ㄹ)+ㄴ/ETM	head-tail							
+든	들/VV+ㄴ/ETM	head-tail							
 듣	듣/VV	head						+어간	+음성
-들	듣/VV	head						+아	+음성
+들	듣/VV(듣)	head						+아	+음성
 마셨	마시/VV+었/EP	head						+ㅆ	
 먹	먹/VV	head						+어간 +아	+음성 +자음
+모	모으/VV	head						+었 +아	
 모신	모시/VV+ㄴ/ETM	head-tail							
+모왔	모으/VV+았/EP	head							
 모은	모으/VV+ㄴ/ETM	head-tail							
-미	밉/VA(ㅂ)	head						+운 +와	+음성
+미	밉/VA	head						+운 +와	+음성
 번	벌/VV+ㄴ/ETM	head-tail							
 벌	벌/VV+ㄹ/ETM	head-tail							
 보	보/VV	head						+어간 +아	+양성 +모음
@@ -39,9 +45,9 @@
 부푼	부풀/VV+ㄴ/ETM	head-tail							
 사	사/VV	head						+어간 -아	+양성 +모음
 산	사/VV+ㄴ/ETM	head-tail							
-산	살/VV(ㄹ)+ㄴ/ETM	head-tail							
+산	살/VV(살)+ㄴ/ETM	head-tail							
 살	사/VV+ㄹ/ETM	head-tail							
-살	살/VV(ㄹ)+ㄹ/ETM	head-tail							
+살	살/VV(살)+ㄹ/ETM	head-tail							
 싼	싸/VA+ㄴ/ETM	head-tail							
 쓰일	쓰이/VV+ㄹ/ETM	head-tail							
 알	알/VV+ㄹ/ETM	head-tail							
@@ -50,11 +56,13 @@
 조그만	조그맣/VA+ㄴ/ETM	head-tail							
 준	주/VV+ㄴ/ETM	head-tail							
 줄	주/VV+ㄹ/ETM	head-tail							
-줬	주/VV+었/EP	head							
+줘도	주/VV+어도/EC	head-tail							
+줬	주/VV+었/EP	head						+ㅆ	
+지	짓/VV	head						+었 +아	
 찐	찌/VV+ㄴ/ETM	head-tail							
 큰	크/VA+ㄴ/ETM	head-tail							
 탄	타/VV+ㄴ/ETM	head-tail							
 팔	팔/VV+ㄹ/ETM	head-tail							
 푸른	푸르/VA+ㄴ/ETM	head-tail							
 하얀	하얗/VA+ㄴ/ETM	head-tail							
-줘도	주/VV+어도/EC	head-tail							
+한숨지	한숨짓/VV	head						+었 +아	

@@ -108,12 +108,11 @@ public class Eojeol {
 			}
 			Morpheme morpheme = morphemes.get(i);
 			if (morpheme.getPos().equals(morpheme.getTag())) {
-				sb.append(morpheme.getSurface()).append("[").append(morpheme.getPos()).append(":")
-					.append(morpheme.getPosDescription()).append("]");
+				sb.append(morpheme.getSurface()).append("[").append(morpheme.getPos()).append(":").append("]");
 			}
 			else {
-				sb.append(morpheme.getSurface()).append("[").append(morpheme.getLemma()).append(":")
-					.append(morpheme.getTag()).append(":").append(morpheme.getPosDescription()).append("]");
+				sb.append(morpheme.getSurface()).append("[")
+					.append(morpheme.getTag()).append(":").append("]");
 			}
 			
 			if (i < morphemes.size() - 1) {
