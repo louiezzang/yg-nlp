@@ -3,7 +3,7 @@ package com.yglab.nlp.sbd;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.yglab.nlp.util.RegexFeatureDictionary;
+import com.yglab.nlp.dictionary.RegexFeatureDictionary;
 
 /**
  * This class generates the contextual features for sentence detector.

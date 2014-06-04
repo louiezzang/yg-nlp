@@ -3,6 +3,8 @@ package com.yglab.nlp.util;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.yglab.nlp.dictionary.RegexFeatureDictionary;
+
 /**
  * Test case.
  * 

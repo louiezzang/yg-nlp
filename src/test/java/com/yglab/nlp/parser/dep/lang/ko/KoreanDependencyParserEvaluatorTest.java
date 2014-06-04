@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.yglab.nlp.dictionary.RegexFeatureDictionary;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Options;
 import com.yglab.nlp.parser.ParseSample;
@@ -14,7 +15,6 @@ import com.yglab.nlp.parser.dep.DependencyParser;
 import com.yglab.nlp.parser.dep.DependencyParserEvaluator;
 import com.yglab.nlp.parser.io.CoNLLReader;
 import com.yglab.nlp.perceptron.PerceptronModel;
-import com.yglab.nlp.util.RegexFeatureDictionary;
 
 /**
  * Test case.

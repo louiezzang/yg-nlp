@@ -27,8 +27,8 @@ import java.util.regex.Pattern;
 
 public class StringUtil {
 
-	public static final String URL_PATTERN = "\\b(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
-	public static final String HTML_TAG_PATTERN = "<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>";
+	public static final Pattern URL_PATTERN = Pattern.compile("\\b(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]");
+	public static final Pattern HTML_TAG_PATTERN = Pattern.compile("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>");
 	
 	/**
 	 * Determines if the specified character is a whitespace.
@@ -398,9 +398,7 @@ public class StringUtil {
 	public static String[] extractURLs(String s) {
 		List<String> urls = new ArrayList<String>();
 		
-		Pattern pattern = Pattern.compile(URL_PATTERN);
-
-		Matcher matcher = pattern.matcher(s);
+		Matcher matcher = URL_PATTERN.matcher(s);
 		while (matcher.find()) {
 			urls.add(matcher.group());
 		}

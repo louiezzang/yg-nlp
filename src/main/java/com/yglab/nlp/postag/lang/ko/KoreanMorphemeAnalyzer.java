@@ -20,6 +20,10 @@ import com.yglab.nlp.util.lang.ko.KoreanUnicode;
  */
 public class KoreanMorphemeAnalyzer {
 
+	private static final Pattern COLLOCATE_PATTERN = Pattern.compile(
+			"((XSA|XSV|VX)\\+(EP|ETN|ETM|EC|EF))" + "|" +
+			"((EP|EC)\\+(EF|EC|ETM))"
+			);
 	private KoreanMorphemeDictionary dic;
 	//private final String[] validTags;
 	private Map<String, List<String>> validTagMap = new HashMap<String, List<String>>();
@@ -155,6 +159,14 @@ public class KoreanMorphemeAnalyzer {
 					}
 				}
 				
+				if (maxNumTag >= 2) {
+					Matcher m = COLLOCATE_PATTERN.matcher(candidate.getPos());
+					if (m.find()) {
+						System.out.println("**continue: " + candidate.getTag());
+						continue;
+					}
+				}
+				
 				for (int mi = candidate.size() - 2; mi >= 0; mi--) {
 					Token tail = candidate.getTail(mi);
 					
@@ -163,11 +175,13 @@ public class KoreanMorphemeAnalyzer {
 						if (tailNumTag > maxNumTag) {
 							maxNumTag = tailNumTag;
 						}
-						System.out.println(" ->> " + tail.getToken() + ": " + tail.getTag() + ", " + tail.getPos() + ", " + tail.getNumTag());
-						if (maxNumTag >= 3 && tailNumTag == 2) {
+						System.out.println(" ->> " + tail.getToken() + ": " + tail.getTag() + ", " + tail.getPos() + ", numTag=" + tail.getNumTag() + ", maxNumTag=" + maxNumTag);
+						if (maxNumTag >= 3 && (tailNumTag == 2 || tailNumTag == 3)) {
+							System.out.println("**exit outer loop");
 							break outerLoop;
 						}
 						else if (tail.getNumTag() == 2) {
+							System.out.println("**exit inner loop");
 							break;
 						}
 					}
@@ -250,8 +264,6 @@ public class KoreanMorphemeAnalyzer {
 	private void identifyMorphemeCandidates(List<Token> candidates, Token token, String surface) {
 		// find the all suffixes matched with the dictionary
 		List<List<Morpheme>> matchMorphemes = dic.findSuffixes(surface);
-		
-		System.err.println(surface + ": " + matchMorphemes);
 
 		if (matchMorphemes == null || matchMorphemes.size() == 0) {
 			if (token == null || token.size() == 0) {
@@ -263,6 +275,8 @@ public class KoreanMorphemeAnalyzer {
 			candidates.add(token);
 			return;
 		}
+		
+		System.err.println(surface + ": " + matchMorphemes);
 
 		for (List<Morpheme> morphemeList : matchMorphemes) {
 			String tail = null;
@@ -490,7 +504,9 @@ public class KoreanMorphemeAnalyzer {
 			
 			if (validTagMap.containsKey(tail)) {
 				List<String> tags = validTagMap.get(tail);
-				tags.add(validTag);
+				if (!tags.contains(validTag)) {
+					tags.add(validTag);
+				}
 			}
 			else {
 				List<String> tags = new ArrayList<String>();
@@ -500,7 +516,9 @@ public class KoreanMorphemeAnalyzer {
 			
 			if (validTagMap.containsKey(validTag)) {
 				List<String> tags = validTagMap.get(validTag);
-				tags.add(validTag);
+				if (!tags.contains(validTag)) {
+					tags.add(validTag);
+				}
 			}
 			else {
 				List<String> tags = new ArrayList<String>();

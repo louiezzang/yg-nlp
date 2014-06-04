@@ -3,6 +3,8 @@ package com.yglab.nlp.postag.lang.ko;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.yglab.nlp.maxent.DefaultTagSequenceGenerator;
 import com.yglab.nlp.maxent.FeatureGenerator;
@@ -19,6 +21,7 @@ import com.yglab.nlp.postag.morph.Token;
  */
 public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 	
+	private static final Pattern ALPHABET_PATTERN = Pattern.compile("^[a-zA-Z]+$");
 	private final List<String> defaultTagCandidates = new ArrayList<String>();
 	
 	/**
@@ -63,7 +66,14 @@ public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 					tokensTagCandidates.add(Arrays.asList(sp));
 				}
 				else {
-					tokensTagCandidates.add(defaultTagCandidates);
+					Matcher m = ALPHABET_PATTERN.matcher(token);
+					if (m.find()) {
+						String[] sp = { "SL" };
+						tokensTagCandidates.add(Arrays.asList(sp));
+					}
+					else {
+						tokensTagCandidates.add(defaultTagCandidates);
+					}
 				}
 				continue;
 			}

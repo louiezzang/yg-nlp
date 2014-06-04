@@ -20,7 +20,7 @@ package com.yglab.nlp.tokenizer;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.yglab.nlp.util.Span;
+import com.yglab.nlp.model.Span;
 import com.yglab.nlp.util.StringUtil;
 
 /**

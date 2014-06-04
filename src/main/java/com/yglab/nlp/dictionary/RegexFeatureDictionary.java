@@ -1,4 +1,4 @@
-package com.yglab.nlp.util;
+package com.yglab.nlp.dictionary;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

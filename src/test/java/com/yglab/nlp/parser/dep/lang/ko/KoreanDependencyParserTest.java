@@ -6,6 +6,7 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.yglab.nlp.dictionary.RegexFeatureDictionary;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Options;
 import com.yglab.nlp.parser.Parse;
@@ -23,7 +24,6 @@ import com.yglab.nlp.tokenizer.MaxentTokenizer;
 import com.yglab.nlp.tokenizer.TokenFeatureGenerator;
 import com.yglab.nlp.tokenizer.TokenSample;
 import com.yglab.nlp.tokenizer.Tokenizer;
-import com.yglab.nlp.util.RegexFeatureDictionary;
 
 /**
  * Test case.

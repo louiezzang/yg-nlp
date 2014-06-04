@@ -1,6 +1,6 @@
 package com.yglab.nlp.ner;
 
-import com.yglab.nlp.util.Span;
+import com.yglab.nlp.model.Span;
 import com.yglab.nlp.util.eval.AbstractEvaluator;
 
 /**

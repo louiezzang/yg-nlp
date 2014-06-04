@@ -1,9 +1,9 @@
 #표층어	형태소	분류	좌측형태(마지막음절)제약조건	좌측형태결합조건	좌측음운결합조건	좌측품사결합조건	좌측원형복원룰	형태정보	음운정보
 가	가/VV	head						+어간	+양성 +모음
+가	갈/VV(갈)	head						-ㄹ	+양성 +자음
 가는	가늘/VV(가늘)+ㄴ/ETM	head-tail							
 가는데	가늘/VV(가늘)+ㄴ데/EC	head-tail							
 가는데다	가늘/VV(가늘)+ㄴ데다/EC	head-tail							
-가	갈/VV(갈)	head						-ㄹ	+양성 +자음
 갈	갈/VV(갈)	head						+어간 +ㄹ	+양성 +자음
 갈	가/VV+ㄹ/ETM	head-tail							
 갈	갈/VV(갈)+ㄹ/ETM	head-tail							
@@ -36,6 +36,7 @@
 모신	모시/VV+ㄴ/ETM	head-tail							
 모왔	모으/VV+았/EP	head							
 모은	모으/VV+ㄴ/ETM	head-tail							
+못했	못하/VX+았/EP	head						+ㅆ	
 미	밉/VA	head						+운 +와	+음성
 번	벌/VV+ㄴ/ETM	head-tail							
 벌	벌/VV+ㄹ/ETM	head-tail							
@@ -53,6 +54,10 @@
 알	알/VV+ㄹ/ETM	head-tail							
 와	오/VV+아/EC	head-tail							
 이를	이르/VV+ㄹ/ETM	head-tail							
+일어난	일어나/VV+ㄴ/ETM	head-tail							
+일어났	일어나/VV+았/EP	head						+ㅆ	
+자아내	자아내/VV	head						+어간	
+자아냈	자아내/VV+었/EP	head						+ㅆ	
 조그만	조그맣/VA+ㄴ/ETM	head-tail							
 준	주/VV+ㄴ/ETM	head-tail							
 줄	주/VV+ㄹ/ETM	head-tail							
@@ -65,4 +70,8 @@
 팔	팔/VV+ㄹ/ETM	head-tail							
 푸른	푸르/VA+ㄴ/ETM	head-tail							
 하얀	하얗/VA+ㄴ/ETM	head-tail							
+한	하/VV+ㄴ/ETM	head							
 한숨지	한숨짓/VV	head						+었 +아	
+함	하/VV+ㅁ/ETN	head							
+해	하/VV+아/EC	head							
+했	하/VV+았/EP	head						+ㅆ	

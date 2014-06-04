@@ -6,9 +6,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.yglab.nlp.io.SampleParser;
+import com.yglab.nlp.model.Span;
 import com.yglab.nlp.tokenizer.WhitespaceTokenizer;
 import com.yglab.nlp.util.InvalidFormatException;
-import com.yglab.nlp.util.Span;
 
 /**
  * The parser for NER sample.

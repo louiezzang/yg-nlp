@@ -1,6 +1,6 @@
 package com.yglab.nlp.util.corpus;
 
-import com.yglab.nlp.util.Span;
+import com.yglab.nlp.model.Span;
 
 /**
  * Class used to hold constituents when reading parses.

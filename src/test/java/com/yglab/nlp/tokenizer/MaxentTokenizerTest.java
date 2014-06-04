@@ -8,7 +8,7 @@ import org.junit.Test;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Datum;
 import com.yglab.nlp.model.Options;
-import com.yglab.nlp.util.Span;
+import com.yglab.nlp.model.Span;
 
 /**
  * Test case.

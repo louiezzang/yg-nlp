@@ -3,7 +3,7 @@ package com.yglab.nlp.ner;
 import java.util.Arrays;
 import java.util.List;
 
-import com.yglab.nlp.util.Span;
+import com.yglab.nlp.model.Span;
 
 
 

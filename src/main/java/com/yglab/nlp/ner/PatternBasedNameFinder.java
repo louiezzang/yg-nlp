@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yglab.nlp.model.AbstractModel;
+import com.yglab.nlp.model.Span;
 import com.yglab.nlp.tokenizer.Tokenizer;
-import com.yglab.nlp.util.Span;
 
 /**
  * This class trains the pattern based name finder and finds the named entity.

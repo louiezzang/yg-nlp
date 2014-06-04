@@ -35,7 +35,7 @@ public class KoreanPOSTaggerTest {
 		featureGenerator = new KoreanPOSFeatureGenerator(analyzer);
 		
 		long startTime = System.currentTimeMillis();
-		train();
+		//train();
 		long elapsedTime = System.currentTimeMillis() - startTime;
 		System.out.println("elapsed time to train = " + elapsedTime);
 	}

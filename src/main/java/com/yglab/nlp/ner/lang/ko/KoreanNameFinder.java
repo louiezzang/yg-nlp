@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yglab.nlp.model.AbstractModel;
+import com.yglab.nlp.model.Span;
 import com.yglab.nlp.ner.NameFeatureGenerator;
 import com.yglab.nlp.ner.NameFinder;
 import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
 import com.yglab.nlp.postag.morph.Morpheme;
 import com.yglab.nlp.tokenizer.Tokenizer;
-import com.yglab.nlp.util.Span;
 
 /**
  * The named entity recognizer for Korean language.

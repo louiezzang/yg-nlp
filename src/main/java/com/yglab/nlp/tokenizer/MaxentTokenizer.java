@@ -22,8 +22,8 @@ import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Datum;
 import com.yglab.nlp.model.EventStream;
 import com.yglab.nlp.model.Options;
+import com.yglab.nlp.model.Span;
 import com.yglab.nlp.ner.NameFinder;
-import com.yglab.nlp.util.Span;
 
 /**
  * This tokenizer uses maxent to tokenize the input text.

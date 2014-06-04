@@ -13,9 +13,9 @@ import java.util.Stack;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.yglab.nlp.model.Span;
 import com.yglab.nlp.parser.Parse;
 import com.yglab.nlp.parser.ParseSample;
-import com.yglab.nlp.util.Span;
 
 
 /**

@@ -55,7 +55,11 @@ public class KoreanMorphemeAnalyzerTest {
 				"올해",
 				"가셨습니다",
 				"갑니다",
-				"결성했지만"
+				"결성했지만",
+				"했다",
+				"일어난",
+				"것이",
+				"듯했으나"
 		};
 		
 		analyzer.generateCandidates(tokens); 

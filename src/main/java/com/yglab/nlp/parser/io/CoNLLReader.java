@@ -8,8 +8,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.yglab.nlp.dictionary.RegexFeatureDictionary;
 import com.yglab.nlp.parser.ParseSample;
-import com.yglab.nlp.util.RegexFeatureDictionary;
 import com.yglab.nlp.util.StringPattern;
 
 

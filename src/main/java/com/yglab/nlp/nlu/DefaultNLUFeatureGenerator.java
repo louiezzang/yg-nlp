@@ -3,8 +3,8 @@ package com.yglab.nlp.nlu;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.yglab.nlp.dictionary.RegexFeatureDictionary;
 import com.yglab.nlp.ner.DefaultNameFeatureGenerator;
-import com.yglab.nlp.util.RegexFeatureDictionary;
 
 
 

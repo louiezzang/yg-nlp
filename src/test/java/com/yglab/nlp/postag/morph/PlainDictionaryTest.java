@@ -3,7 +3,7 @@ package com.yglab.nlp.postag.morph;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import com.yglab.nlp.postag.morph.PlainSuffixDictionary;
+import com.yglab.nlp.dictionary.PlainSuffixDictionary;
 
 /**
  * Test case.

@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.yglab.nlp.model.Datum;
 import com.yglab.nlp.model.EventStream;
-import com.yglab.nlp.util.Span;
+import com.yglab.nlp.model.Span;
 
 /**
  * This class handles sentence detector sample events stream.

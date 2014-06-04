@@ -3,7 +3,6 @@ package com.yglab.nlp.postag.lang.ko;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -45,15 +44,9 @@ public class KoreanPOSTagger extends POSTagger {
 	 * @return
 	 */
 	public List<Token> analyze(String[] tokens) {
-		List<Token> eojeols = new ArrayList<Token>();
-		
 		String[] tags = this.tag(tokens);
-		((KoreanPOSFeatureGenerator) featureGenerator).getKoreanMorphemeAnalyzer().analyze(tags);
-//		for (int position = 0; position < tokens.length; position++) {
-//			String token = tokens[position];
-//			String tag = tags[position];
-//		}
-		
+		List<Token> eojeols = ((KoreanPOSFeatureGenerator) featureGenerator).getKoreanMorphemeAnalyzer().analyze(tags);
+
 		return eojeols;
 	}
 	
@@ -63,6 +56,7 @@ public class KoreanPOSTagger extends POSTagger {
 	 * @param pos
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private String getPosDescription(String pos) {
 		String description = this.posDescriptions.getProperty(pos);
 		if (description == null) {

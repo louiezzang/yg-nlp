@@ -3,7 +3,7 @@ package com.yglab.nlp.ner;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.yglab.nlp.util.RegexFeatureDictionary;
+import com.yglab.nlp.dictionary.RegexFeatureDictionary;
 
 
 

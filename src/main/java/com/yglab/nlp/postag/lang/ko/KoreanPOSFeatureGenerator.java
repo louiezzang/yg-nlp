@@ -107,12 +107,15 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 			List<Token> prevMatchTailList = this.getCurrentTokenTailCandidates(position - 1);
 
 			for (int i = 0; i < prevMatchTailList.size(); i++) {
-				//if (i > 0) break;
-				
 				Token matchTail = prevMatchTailList.get(i);
 				features.add("prevTailTag=" + matchTail.getTag());
+				features.add("prevTail=" + matchTail.getSurface());
+				// TODO: 첫번째 후보 tail만 사용을 했는데, 전체 후보 tail에 대한 조합을 추가하도록 수정 필요.
+				// 조사, 어미인 경우에만 조사, 어미에 해당하는 surface tail을 추가하고 독립언(부사 등)인 경우 품사를 표시하고
+				// 단독명사인 경우에는 "공백"등으로 표시함. 
 				if (i == 0) {
 					sbBigramFeature.append(matchTail.getTag());
+					//sbBigramFeature.append(matchTail.getSurface());
 					hasPrevTail = true;
 				}
 			}
@@ -120,18 +123,21 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 		
 		boolean hasCurrentTail = false;
 		for (int i = 0; i < matchTailList.size(); i++) {
-			//if (i > 0) break;
-			
 			Token matchTail = matchTailList.get(i);
 
 			features.add("tailTag=" + matchTail.getTag());
+			features.add("tail=" + matchTail.getSurface());
+			// TODO: 첫번째 후보 tail만 사용을 했는데, 전체 후보 tail에 대한 조합을 추가하도록 수정 필요.
 			if (i == 0 && hasPrevTail) {
 				sbBigramFeature.append("," + matchTail.getTag());
+				//sbBigramFeature.append("," + matchTail.getSurface());
 				features.add("prevCurrentTailTag=" + sbBigramFeature.toString());
 				hasCurrentTail = true;
 			}
+			// TODO: 첫번째 후보 tail만 사용을 했는데, 전체 후보 tail에 대한 조합을 추가하도록 수정 필요.
 			else if (i == 0 && !hasPrevTail) {
 				sbBigramFeature.append(matchTail.getTag());
+				//sbBigramFeature.append(matchTail.getSurface());
 				hasCurrentTail = true;
 			}
 
@@ -165,20 +171,24 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 			List<Token> nextMatchTailList = this.getCurrentTokenTailCandidates(position + 1);
 
 			for (int i = 0; i < nextMatchTailList.size(); i++) {
-				//if (i > 0)	break;
-				
 				Token matchTail = nextMatchTailList.get(i);
 				//features.add("nextTailTag=" + matchTail.getTag());
+				// TODO: 첫번째 후보 tail만 사용을 했는데, 전체 후보 tail에 대한 조합을 추가하도록 수정 필요.
 				if (i == 0 && hasPrevTail && hasCurrentTail) {
 					sbBigramFeature.append("," + matchTail.getTag());
+					//sbBigramFeature.append("," + matchTail.getSurface());
 					features.add("prevCurrentNextTailTag=" + sbBigramFeature.toString());
 				}
+				// TODO: 첫번째 후보 tail만 사용을 했는데, 전체 후보 tail에 대한 조합을 추가하도록 수정 필요.
 				else if (i == 0 && hasPrevTail && !hasCurrentTail) {
 					sbBigramFeature.append("," + matchTail.getTag());
+					//sbBigramFeature.append("," + matchTail.getSurface());
 					features.add("prevNextTailTag=" + sbBigramFeature.toString());
 				}
+				// TODO: 첫번째 후보 tail만 사용을 했는데, 전체 후보 tail에 대한 조합을 추가하도록 수정 필요.
 				else if (i == 0 && !hasPrevTail && hasCurrentTail) {
 					sbBigramFeature.append("," + matchTail.getTag());
+					//sbBigramFeature.append("," + matchTail.getSurface());
 					features.add("currentNextTailTag=" + sbBigramFeature.toString());
 				}
 			}

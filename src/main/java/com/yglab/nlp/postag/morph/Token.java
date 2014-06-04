@@ -159,6 +159,15 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 		return this.getPos().split("\\+").length;
 	}
 	
+	public String getSurface() {
+		StringBuilder sb = new StringBuilder();
+		for (int i = this.size() - 1; i >= 0; i--) {
+			Morpheme morph = this.get(i);
+			sb.append(morph.getSurface());
+		}
+		return sb.toString();
+	}
+	
 	@Override
 	public int compareTo(Token other) {
 		int otherNumTag = ((Token) other).getNumTag(); 

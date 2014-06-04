@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import com.yglab.nlp.dictionary.AbstractSuffixDictionary;
 import com.yglab.nlp.postag.POSSampleParser;
-import com.yglab.nlp.postag.morph.AbstractSuffixDictionary;
 import com.yglab.nlp.postag.morph.Morpheme;
 import com.yglab.nlp.util.lang.ko.KoreanMorphemeUtil;
 import com.yglab.nlp.util.lang.ko.KoreanUnicode;

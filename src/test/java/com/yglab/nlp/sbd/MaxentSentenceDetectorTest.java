@@ -5,11 +5,11 @@ import java.util.List;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.yglab.nlp.dictionary.RegexFeatureDictionary;
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Options;
+import com.yglab.nlp.model.Span;
 import com.yglab.nlp.tokenizer.WhitespaceTokenizer;
-import com.yglab.nlp.util.RegexFeatureDictionary;
-import com.yglab.nlp.util.Span;
 
 /**
  * Test case.

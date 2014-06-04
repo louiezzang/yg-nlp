@@ -1,23 +1,22 @@
 #표층어	형태소	분류	좌측형태(마지막음절)제약조건	좌측형태결합조건	좌측음운결합조건	좌측품사결합조건	좌측원형복원룰	형태정보	음운정보
 건	건/NNB	bojo				-VV -VA			
-것	것/NNB	bojo	+ㄴ +는 +ㄹ			EC			
+것	것/NNB	bojo							
 게되	게/EC+되/VX	bojo-verb-space							
 과같	과/JKB+같/VA	bojo-verb-space			+자음				
 꼴	꼴/XSN	bojo							
 나	나/VX	bojo-verb							
-내	내/VX	bojo-verb							
-되	되/XSV	bojo-verb							
+내	내/VX	bojo-verb						+아	
+되	되/XSV	bojo-verb						+아	
 된	되/XSV	bojo-verb						+ㄴ	
 들	들/XSN	bojo							
 듯	듯/NNB	bojo							
 등	등/NNB	bojo							
 만큼	만큼/NNB	bojo							
-못	못/MAG	bojo							
-못	못/VX	bojo-verb							
 뿐	뿐/NNB	bojo							
-수	수/NNB	bojo	+는 +ㄹ			EC			
+수	수/NNB	bojo							
 시키	시키/XSV	bojo-verb							
 싶	싶/VX	bojo-verb							
+씨	씨/NNB	bojo							
 아니	아니/VCN	bojo-verb							
 안	안/MAG	bojo							
 않	않/VX	bojo-verb							
@@ -26,10 +25,10 @@
 와같	와/JKB+같/VA	bojo-verb-space			+모음				
 이	이/VCP	bojo-verb						+었 +아	
 있	있/VX	bojo-verb							
-적	적/VCP	bojo-verb							
+적	적/VCP	bojo-verb						+아	
 적	적/XSN	bojo							
-주	주/VX	bojo-verb							
+주	주/VX	bojo-verb						+아	
 준	주/VX	bojo-verb						+ㄴ	
 줍	주/VX	bojo-verb						+ㅂ	
-지	지/VX	bojo-verb							
+지	지/VX	bojo-verb						+아	
 하	하/XSV	bojo-verb							

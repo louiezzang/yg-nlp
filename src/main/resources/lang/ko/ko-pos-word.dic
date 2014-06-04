@@ -1,8 +1,10 @@
 #표층어	형태소	분류	좌측형태(마지막음절)제약조건	좌측형태결합조건	좌측음운결합조건	좌측품사결합조건	좌측원형복원룰	형태정보	음운정보
 각	각/MM	word-ind							
 그	그/MM	word-ind							
+급기야	급기야/MAG	word							
 너무	너무/MAG	word							
 마당	마당/NNG	word							+자음
+못	못/MAG	word							
 반드시	반드시/MAG	word-ind							
 이	이/MM	word-ind							
 총	총/MM	word-ind							

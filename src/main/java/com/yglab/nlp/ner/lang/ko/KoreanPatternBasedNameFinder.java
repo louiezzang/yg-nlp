@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.yglab.nlp.model.AbstractModel;
+import com.yglab.nlp.model.Span;
 import com.yglab.nlp.ner.PatternBasedNameFeatureGenerator;
 import com.yglab.nlp.ner.PatternBasedNameFinder;
 import com.yglab.nlp.ner.TokenPostagPairGenerator;
 import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.morph.Morpheme;
 import com.yglab.nlp.tokenizer.Tokenizer;
-import com.yglab.nlp.util.Span;
 
 /**
  * This class trains the pattern based name finder and finds the named entity.

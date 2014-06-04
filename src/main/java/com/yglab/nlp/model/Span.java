@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.yglab.nlp.util;
+package com.yglab.nlp.model;
 
 import java.util.HashMap;
 import java.util.Map;

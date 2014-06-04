@@ -17,7 +17,7 @@
 
 package com.yglab.nlp.tokenizer;
 
-import com.yglab.nlp.util.Span;
+import com.yglab.nlp.model.Span;
 
 abstract class AbstractTokenizer implements Tokenizer {
 
