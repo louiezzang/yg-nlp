@@ -12,6 +12,17 @@ public class POSTaggerEvaluator extends AbstractEvaluator<POSSample> {
 	private POSTagger tagger;
 	
 	public POSTaggerEvaluator(POSTagger tagger) {
+		super();
+		this.tagger = tagger;
+	}
+	
+	public POSTaggerEvaluator(POSTagger tagger, String outputFile) {
+		super(outputFile);
+		this.tagger = tagger;
+	}
+	
+	public POSTaggerEvaluator(POSTagger tagger, String outputFile, boolean append) {
+		super(outputFile, append);
 		this.tagger = tagger;
 	}
 
@@ -23,19 +34,21 @@ public class POSTaggerEvaluator extends AbstractEvaluator<POSSample> {
 		addPredictedSize(predictedTags.length);
 		addActualTrueSize(actualTags.length);
 		
-		System.out.println("");
+		output.println("");
 		
 		for (int i = 0; i < predictedTags.length; i++) {
-			System.out.print(i + ": " + sample.getSentence()[i] + " [" + actualTags[i] + "] -> [" + predictedTags[i] + "]");
+			output.print(i + ": " + sample.getSentence()[i] + " [" + actualTags[i] + "] -> [" + predictedTags[i] + "]");
 			if (predictedTags[i].equals(actualTags[i])) {
 				addTruePositiveSize(1);
-				System.out.println(" = true");
+				output.println(" = true");
 			}
 			else {
-				System.out.println(" = false");
+				output.println(" = false");
 			}
 		}
-		
 	}
 
+	@Override
+	protected void printCustomResult() {
+	}
 }

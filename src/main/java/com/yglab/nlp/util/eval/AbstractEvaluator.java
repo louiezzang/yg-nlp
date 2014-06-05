@@ -1,5 +1,10 @@
 package com.yglab.nlp.util.eval;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,6 +22,28 @@ public abstract class AbstractEvaluator<T> implements Evaluator<T> {
 	
 	protected int truePositiveSize = 0;
 	
+	protected int sampelSize = 0;
+	
+	protected PrintStream output;
+	
+	public AbstractEvaluator() {
+		this.output = System.out;
+	}
+	
+	public AbstractEvaluator(String outputFile) {
+		this(outputFile, false);
+	}
+	
+	public AbstractEvaluator(String outputFile, boolean append) {
+		try {
+			OutputStream os = new FileOutputStream(outputFile, append);
+			this.output = new PrintStream(os);
+		} catch (IOException e) {
+			System.err.println(e);
+			System.exit(1);
+		}
+	}
+	
 	protected void addPredictedSize(int size) {
 		predictedSize += size;
 	}
@@ -32,9 +59,14 @@ public abstract class AbstractEvaluator<T> implements Evaluator<T> {
 	abstract public void evaluateSample(T sample);
 	
 	public void evaluate(List<T> samples) {
+		long startTime = System.currentTimeMillis();
+		sampelSize = samples.size();
 		for (T sample : samples) {
 			evaluateSample(sample);
 		}
+
+		printResult(startTime);
+		output.close();
 	}
 	
 	public double getPrecision() {
@@ -68,15 +100,23 @@ public abstract class AbstractEvaluator<T> implements Evaluator<T> {
 		return fmeasure;
 	}
 	
-	public void print() {
-		System.out.println("===================================================");
-		System.out.println(" Evaluation");
-		System.out.println("---------------------------------------------------");
-		System.out.println(" Precision = " + getPrecision());
-		System.out.println(" Recall = " + getRecall());
-		System.out.println(" F-Measure = " + getFMeasure());
-		System.out.println("===================================================");
+	protected void printResult(long start) {
+		long elapsedTime = System.currentTimeMillis() - start;
 		
+		output.println("");
+		output.println("===================================================");
+		output.println(" Evaluation");
+		output.println("---------------------------------------------------");
+		output.println(" Size = " + sampelSize);
+		output.println(" Precision = " + getPrecision());
+		output.println(" Recall = " + getRecall());
+		output.println(" F-Measure = " + getFMeasure());
+		printCustomResult();
+		output.println(" Elapsed time = " + elapsedTime + " ms");
+		output.println(" Execution date = " + new Date());
+		output.println("===================================================");
 	}
+	
+	abstract protected void printCustomResult();
 
 }

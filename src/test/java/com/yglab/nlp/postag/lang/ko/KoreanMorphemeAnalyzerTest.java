@@ -48,6 +48,7 @@ public class KoreanMorphemeAnalyzerTest {
 				"올해에는",
 				"전반적인",
 				"등에서의",
+				"등에서는",
 				"부푼듯",
 				"사건이었다",
 				"빠른데",
@@ -59,7 +60,11 @@ public class KoreanMorphemeAnalyzerTest {
 				"했다",
 				"일어난",
 				"것이",
-				"듯했으나"
+				"듯했으나",
+				"대응함으로써",
+				"울려주었다",
+				"이어졌다",
+				"올해는"
 		};
 		
 		analyzer.generateCandidates(tokens); 
@@ -67,7 +72,8 @@ public class KoreanMorphemeAnalyzerTest {
 		
 		for (int position = 0; position < candidates.size(); position++) {
 			List<Token> tokenCandidates = candidates.get(position);
-			System.out.println(position + ": " + tokens[position] + " (" + tokenCandidates.size() + " candidates)");
+			System.out.print(position + ": " + tokens[position] + " (" + tokenCandidates.size() + " candidates)");
+			System.out.println(" -> tail: " + analyzer.getCurrentTailCandidates(position));
 			for (Token token : tokenCandidates) {
 				System.out.println("  " + token.getTag() + "\t" + token.isAnalyzed() + "\t" + token.isValidated());
 			}

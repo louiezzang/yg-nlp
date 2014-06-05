@@ -39,5 +39,9 @@ public class NameFinderEvaluator extends AbstractEvaluator<NameSample> {
 		}
 		return false;
 	}
+	
+	@Override
+	protected void printCustomResult() {
+	}
 
 }

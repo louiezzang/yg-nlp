@@ -29,7 +29,7 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 		morphAnalyzer.generateCandidates(tokens);
 	}
 	
-	public List<Token> getCurrentTokenTailCandidates(int position) {
+	public List<String> getCurrentTokenTailCandidates(int position) {
 		return morphAnalyzer.getCurrentTailCandidates(position);
 	}
 	
@@ -98,98 +98,65 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 	 * and the consonant of jongseong in last header character.
 	 */
 	protected void addMorphoFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
-		List<Token> matchTailList = this.getCurrentTokenTailCandidates(position);
+		List<String> tailList = this.getCurrentTokenTailCandidates(position);
 
 		StringBuilder sbBigramFeature = new StringBuilder();
 		
 		boolean hasPrevTail = false;
 		if (position > 0) {
-			List<Token> prevMatchTailList = this.getCurrentTokenTailCandidates(position - 1);
+			List<String> prevTailList = this.getCurrentTokenTailCandidates(position - 1);
 
-			for (int i = 0; i < prevMatchTailList.size(); i++) {
-				Token matchTail = prevMatchTailList.get(i);
-				features.add("prevTailTag=" + matchTail.getTag());
-				features.add("prevTail=" + matchTail.getSurface());
-				// TODO: 첫번째 후보 tail만 사용을 했는데, 전체 후보 tail에 대한 조합을 추가하도록 수정 필요.
-				// 조사, 어미인 경우에만 조사, 어미에 해당하는 surface tail을 추가하고 독립언(부사 등)인 경우 품사를 표시하고
-				// 단독명사인 경우에는 "공백"등으로 표시함. 
+			for (int i = 0; i < prevTailList.size(); i++) {
+				String prevTail = prevTailList.get(i);
+				features.add("prevTailTag=" + prevTail);
+
 				if (i == 0) {
-					sbBigramFeature.append(matchTail.getTag());
-					//sbBigramFeature.append(matchTail.getSurface());
+					sbBigramFeature.append(prevTail);
 					hasPrevTail = true;
+					break;
 				}
 			}
 		}
 		
 		boolean hasCurrentTail = false;
-		for (int i = 0; i < matchTailList.size(); i++) {
-			Token matchTail = matchTailList.get(i);
+		for (int i = 0; i < tailList.size(); i++) {
+			String tail = tailList.get(i);
 
-			features.add("tailTag=" + matchTail.getTag());
-			features.add("tail=" + matchTail.getSurface());
-			// TODO: 첫번째 후보 tail만 사용을 했는데, 전체 후보 tail에 대한 조합을 추가하도록 수정 필요.
+			features.add("tailTag=" + tail);
+			
 			if (i == 0 && hasPrevTail) {
-				sbBigramFeature.append("," + matchTail.getTag());
-				//sbBigramFeature.append("," + matchTail.getSurface());
+				sbBigramFeature.append("," + tail);
 				features.add("prevCurrentTailTag=" + sbBigramFeature.toString());
 				hasCurrentTail = true;
+				break;
 			}
-			// TODO: 첫번째 후보 tail만 사용을 했는데, 전체 후보 tail에 대한 조합을 추가하도록 수정 필요.
 			else if (i == 0 && !hasPrevTail) {
-				sbBigramFeature.append(matchTail.getTag());
-				//sbBigramFeature.append(matchTail.getSurface());
+				sbBigramFeature.append(tail);
 				hasCurrentTail = true;
+				break;
 			}
-
-			/*
-			// phonological type(positive or negative vowel) of jungseong in last head character.
-			String head = matchTail.getHead();
-			if (!head.equals("")) {
-				char lastHeadChar = head.charAt(head.length() - 1);
-				boolean positiveVowel = KoreanMorphemeUtil.containsPositiveVowel(lastHeadChar);
-				if (positiveVowel) {
-					features.add("headLastJungseong=" + "positiveVowel");
-				}
-				else {
-					features.add("headLastJungseong=" + "negativeVowel");
-				}
-				
-				// consonant of jongseong in last head character.
-				features.add("headLastJongseong=" + KoreanMorphemeUtil.containsJongseongConsonant(lastHeadChar));
-				
-				// consonant of jongseong eomi in last head character.
-				char jongseongEomi = KoreanMorphemeUtil.getJongseongEomiConsonant(lastHeadChar);
-				features.add("headLastJongseongEomi=" + jongseongEomi);
-				
-				// consonant of jongseong in last head character.
-				features.add("headLastJongseong=" + KoreanMorphemeUtil.containsJongseongConsonant(lastHeadChar));
-			}
-			*/
 		}
 		
 		if (position < tokens.length - 1) {
-			List<Token> nextMatchTailList = this.getCurrentTokenTailCandidates(position + 1);
+			List<String> nextTailList = this.getCurrentTokenTailCandidates(position + 1);
 
-			for (int i = 0; i < nextMatchTailList.size(); i++) {
-				Token matchTail = nextMatchTailList.get(i);
-				//features.add("nextTailTag=" + matchTail.getTag());
-				// TODO: 첫번째 후보 tail만 사용을 했는데, 전체 후보 tail에 대한 조합을 추가하도록 수정 필요.
+			for (int i = 0; i < nextTailList.size(); i++) {
+				String nextTail = nextTailList.get(i);
+
 				if (i == 0 && hasPrevTail && hasCurrentTail) {
-					sbBigramFeature.append("," + matchTail.getTag());
-					//sbBigramFeature.append("," + matchTail.getSurface());
+					sbBigramFeature.append("," + nextTail);
 					features.add("prevCurrentNextTailTag=" + sbBigramFeature.toString());
+					break;
 				}
-				// TODO: 첫번째 후보 tail만 사용을 했는데, 전체 후보 tail에 대한 조합을 추가하도록 수정 필요.
 				else if (i == 0 && hasPrevTail && !hasCurrentTail) {
-					sbBigramFeature.append("," + matchTail.getTag());
-					//sbBigramFeature.append("," + matchTail.getSurface());
+					sbBigramFeature.append("," + nextTail);
 					features.add("prevNextTailTag=" + sbBigramFeature.toString());
+					break;
 				}
-				// TODO: 첫번째 후보 tail만 사용을 했는데, 전체 후보 tail에 대한 조합을 추가하도록 수정 필요.
 				else if (i == 0 && !hasPrevTail && hasCurrentTail) {
-					sbBigramFeature.append("," + matchTail.getTag());
-					//sbBigramFeature.append("," + matchTail.getSurface());
+					sbBigramFeature.append("," + nextTail);
 					features.add("currentNextTailTag=" + sbBigramFeature.toString());
+					break;
 				}
 			}
 		}

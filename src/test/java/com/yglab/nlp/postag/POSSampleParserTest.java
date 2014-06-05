@@ -25,11 +25,11 @@ public class POSSampleParserTest {
 			System.out.println(i + ": " + sample.getSentence()[i] + "\t" + sample.getLabels()[i]);
 		}
 		
-		System.out.println("parsePos = " + POSSampleParser.parsePos("VV"));
-		System.out.println("parsePos = " + POSSampleParser.parsePos("VV(+ㅂ)"));
-		System.out.println("parsePos = " + POSSampleParser.parsePos("ㅂ니다/EF"));
-		System.out.println("parsePos = " + POSSampleParser.parsePos("가다/VV(+ㅂ)"));
-		System.out.println("parseMorpheme = " + POSSampleParser.parseMorpheme("EF"));
-		System.out.println("parseRule = " + POSSampleParser.parseRule("가다/VV(+ㅂ)"));
+		System.out.println("parsePos = " + TagPattern.parsePos("VV"));
+		System.out.println("parsePos = " + TagPattern.parsePos("VV(+ㅂ)"));
+		System.out.println("parsePos = " + TagPattern.parsePos("ㅂ니다/EF"));
+		System.out.println("parsePos = " + TagPattern.parsePos("가다/VV(+ㅂ)"));
+		System.out.println("parseMorpheme = " + TagPattern.parseMorpheme("EF"));
+		System.out.println("parseRule = " + TagPattern.parsePosInfo("가다/VV(+ㅂ)"));
 	}
 }

@@ -115,17 +115,16 @@ public class KoreanPOSTaggerTest {
 		
 		POSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator);
 		
-		List<POSSample> testSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-test-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
-		POSTaggerEvaluator evaluator = new POSTaggerEvaluator(tagger);
+		List<POSSample> testSamples = KoreanPOSTagger.loadSamples(
+				"/sample/ko/pos/ko-pos-test-sejong-BGAA0164.txt", 
+				"[^\\+/\\(\\)]*/", "");
 		
-		long startTime = System.currentTimeMillis();
-		
+		POSTaggerEvaluator evaluator = new POSTaggerEvaluator(
+				tagger, 
+				"./target/test-data/ko/pos/ko-pos-test-result-sejong-BGAA0164.txt", 
+				true);
+
 		evaluator.evaluate(testSamples);
-		
-		evaluator.print();
-		
-		long elapsedTime = System.currentTimeMillis() - startTime;
-		System.out.println("elapsed time for testing = " + elapsedTime);
 	}
 
 }

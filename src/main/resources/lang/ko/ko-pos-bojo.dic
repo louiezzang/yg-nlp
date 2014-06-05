@@ -6,6 +6,7 @@
 꼴	꼴/XSN	bojo							
 나	나/VX	bojo-verb							
 내	내/VX	bojo-verb						+아	
+데	데/NNB	bojo							
 되	되/XSV	bojo-verb						+아	
 된	되/XSV	bojo-verb						+ㄴ	
 들	들/XSN	bojo							
@@ -31,4 +32,5 @@
 준	주/VX	bojo-verb						+ㄴ	
 줍	주/VX	bojo-verb						+ㅂ	
 지	지/VX	bojo-verb						+아	
+척	척/NNB	bojo							
 하	하/XSV	bojo-verb							

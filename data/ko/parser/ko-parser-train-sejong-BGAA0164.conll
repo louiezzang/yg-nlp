@@ -3334,7 +3334,7 @@
 13	씨는	씨는	NNB+JX	NNB+는/JX	-	43	NP_SBJ
 14	"	"	SS	SS	-	33	L	
 15	지상전을	지상전을	NNG+JKO	NNG+을/JKO	-	16	NP_OBJ
-16	전후해선	전후해서ㄴ	NNG+XSV+EC+JX	NNG+하/XSV+아서/EC+ㄴ/JX	-	32	VP
+16	전후해선	전후해서ㄴ	NNG+XSV+EC+ETM	NNG+하/XSV+아서/EC+ㄴ/ETM	-	32	VP
 17	이라크군들이	이라크군들이	NNG+JKS	NNG+이/JKS	-	32	NP_SBJ
 18	안방에까지	안방에까지	NNG+JKB+JX	NNG+에/JKB+까지/JX	-	19	NP_AJT
 19	들어와	들어와	VV+EC	VV+아/EC	-	32	VP

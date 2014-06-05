@@ -1,6 +1,8 @@
 package com.yglab.nlp.postag.morph;
 
 import java.util.LinkedList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.yglab.nlp.util.lang.ko.KoreanMorphemeUtil;
 
@@ -139,6 +141,27 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 			}
 		}
 		return sb.toString();		
+	}
+	
+	public String getTagStartsWith(Pattern prefix) {
+		StringBuilder sb = new StringBuilder();
+		boolean found = false;
+		for (int i = this.size() - 1; i >= 0; i--) {
+			Morpheme morph = this.get(i);
+			Matcher m = prefix.matcher(morph.getTag());
+			if (!found && m.find()) {
+				sb.append(m.group());
+				found = true;
+				continue;
+			}
+			if (found) {
+				if (sb.length() > 0) {
+					sb.append("+");
+				}
+				sb.append(morph.getTag());
+			}
+		}
+		return sb.toString();
 	}
 	
 	public Token getTail(int index) {

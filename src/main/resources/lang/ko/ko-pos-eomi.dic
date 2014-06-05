@@ -23,7 +23,8 @@
 낸	내/VX+ㄴ/ETM	eomi							
 낸	ㄴ/ETM	eomi				VV	+내		
 냐	냐/EC	eomi						+냐	
-는	는/ETM	eomi		+어간 -ㄹ +냐		VV VX EC			
+는	는/ETM	eomi		+어간 -ㄹ +냐		VV VX EC XSV			
+는가	는가/EF	eomi		+어간 +ㅆ					
 는군요	는군요/EF	eomi		+어간 -ㄹ		VV VX			
 는데	는데/EC	eomi		+어간 +ㅆ -ㄹ		-JKS			
 는데다	는데다/EC	eomi		+어간 +ㅆ -ㄹ					
@@ -31,6 +32,7 @@
 니까	ㅂ니까/EF	eomi	+ㅂ	+ㅂ		VV VA	-ㅂ		
 니다	ㅂ니다/EF	eomi	+ㅂ	+ㅂ		VV VA	-ㅂ		
 다	ㄴ다/EF	eomi	+ㄴ	+ㄴ					
+#다	다/EC	eomi	-된	+어간 +ㅆ					
 다	다/EF	eomi	-된	+어간 +ㅆ					
 다가	다가/EC	eomi		+어간 +ㅆ					
 다고	ㄴ다고/EC	eomi	+ㄴ	+ㄴ					
@@ -53,6 +55,7 @@
 들	ㄹ/ETM	eomi				VV VA	+들		
 딜	ㄹ/ETM	eomi				VV	+디		
 라	아/EC	eomi	+ㄹ		+양성	VV	-ㄹ +르		
+라	아/EC	eomi			+양성 +모음	VV	+르		
 라	라/EF	eomi							
 라도	아도/EC	eomi	+ㄹ		+양성	VV	-ㄹ +르		
 라며	라며/EC	eomi							
@@ -62,6 +65,7 @@
 러도	어도/EC	eomi	+ㄹ		+음성	VV	-ㄹ +르		
 러서	어서/EC	eomi	+ㄹ		+음성	VV	-ㄹ +르		
 렀	었/EP	eomi-ep			+음성	VV		+ㅆ	
+려	어/EC	eomi				VV VA	+리		
 려도	어도/EC	eomi				VV	+리		
 려면	려면/EC	eomi							
 려서	어서/EC	eomi				VV	+리		
@@ -88,6 +92,7 @@
 쁨	ㅁ/ETN	eomi				VA	+쁘		
 선	ㄴ/ETM	eomi				VV	+서		
 설	ㄹ/ETM	eomi				VV	+서		
+섰	었/EP	eomi-ep				VV VA		+ㅆ	
 셨	시/EP+었/EP	eomi-ep		+어간	+모음	VV VX VA		+ㅆ	
 스런	스럽/XSA+ㄴ/ETM	eomi							
 습니까	습니까/EF	eomi							
@@ -109,7 +114,8 @@
 었었	었었/EP	eomi-ep							
 여	어/EC	eomi				VV	+이		
 여서	어서/EC	eomi				VV	+이		
-여서	이/VCP+어서/EC	eomi				NN			
+여서	이/VCP+어서/EC	eomi				NNG			
+였	이/VCP+었/EP	eomi-ep				NNG	+이		
 온	오/VX+ㄴ/ETM	eomi							
 온	ㄴ/ETM	eomi				VV	+오		
 올	ㄹ/ETM	eomi				VV	+오		
@@ -119,6 +125,7 @@
 운	ㄴ/ETM	eomi		+운		VV	+ㅂ		
 움	ㅁ/ETN	eomi				VV	+우		
 움	ㅁ/ETN	eomi		+움		VV	+ㅂ		
+워	어/EC	eomi			+음성	VV VA	+우		
 워도	어도/EC	eomi		+와	+음성	VV	+ㅂ		
 워도	어도/EC	eomi				VV	+우		
 워서	어서/EC	eomi				VV	+우		
@@ -127,12 +134,13 @@
 웠	었/EP	eomi				VV	+우		
 으나	으나/EC	eomi		+어간 +ㅆ		VV VA EP			
 으며	으며/EC	eomi		+어간 +ㅆ		VV VA EP			
-은	은/ETM	eomi		+어간		VV VA			
+은	은/ETM	eomi	-권	+어간		VV VA			
 은데	은데/EC	eomi		+어간		VA			
 이라는	이/VCP+라/EC+는/ETM	eomi							
 인	이/VCP+ㄴ/ETM	eomi							
 인데	이/VCP+ㄴ데/EC	eomi							
-져	어/EC	eomi				VV	+지		
+져	어/EC	eomi			+음성	VV VA	+지		
+졌	었/EP	eomi-ep			+음성	VV VA	+지	+ㅆ	
 준	주/VX+ㄴ/ETM	eomi							
 줄	주/VX+ㄹ/ETM	eomi							
 줬	주/VX+었/EP	eomi-ep						+ㅆ	
@@ -156,18 +164,18 @@
 켜도	어도/EC	eomi				VV	+키		
 켜서	어서/EC	eomi				VV	+키		
 켰	었/EP	eomi-ep				VV	+키	+ㅆ	
-한	하/VX+ㄴ/ETM	eomi				-MAG			
+한	하/VX+ㄴ/ETM	eomi							
 한	하/XSA+ㄴ/ETM	eomi							
 한	ㄴ/ETM	eomi				VV VA	+하		
-할	하/XSV+ㄹ/ETM	eomi				-MAG			
-함	하/XSV+ㅁ/ETN	eomi				-MAG			
+할	하/XSV+ㄹ/ETM	eomi							
+함	하/XSV+ㅁ/ETN	eomi							
 함	ㅁ/ETN	eomi				VV VA	+하		
-해	하/XSV+아/EC	eomi				-MAG			
+해	하/XSV+아/EC	eomi							
 해	아/EC	eomi				VV VA	+하		
-해선	하/XSV+아서/EC+ㄴ/JX	eomi				-MAG			
-했	하/XSA+았/EP	eomi-ep				-MAG		+ㅆ	
-했	하/XSV+았/EP	eomi-ep				-MAG		+ㅆ	
-했	하/VX+았/EP	eomi-ep				-MAG		+ㅆ	
+해선	하/XSV+아서/EC+ㄴ/JX	eomi							
+했	하/XSA+았/EP	eomi-ep						+ㅆ	
+했	하/XSV+았/EP	eomi-ep						+ㅆ	
+했	하/VX+았/EP	eomi-ep						+ㅆ	
 했	았/EP	eomi-ep					+하	+ㅆ	
 혀도	어도/EC	eomi				VV	+히		
 혀서	어서/EC	eomi				VV	+히		

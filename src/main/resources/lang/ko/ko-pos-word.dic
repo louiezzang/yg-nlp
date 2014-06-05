@@ -1,13 +1,26 @@
 #표층어	형태소	분류	좌측형태(마지막음절)제약조건	좌측형태결합조건	좌측음운결합조건	좌측품사결합조건	좌측원형복원룰	형태정보	음운정보
+가운데	가운데/NNG	word							
 각	각/MM	word-ind							
 그	그/MM	word-ind							
+그	그/NP	word							
+그녀	그녀/NP	word							
 급기야	급기야/MAG	word							
+내	내/NP	word							
 너무	너무/MAG	word							
+다른	다른/MM	word-ind							
+더욱	더욱/MAG	word-ind							
+또	또/MAG	word-ind							
 마당	마당/NNG	word							+자음
 못	못/MAG	word							
 반드시	반드시/MAG	word-ind							
+아들	아들/NNG	word							
+올해	올해/NNG	word							
 이	이/MM	word-ind							
+이	이/NP	word							
+저	저/NP	word							
+지난해	지난해/NNG	word							
 총	총/MM	word-ind							
 학교	학교/NNG	word							+모음
 한	한MM	word-ind							
+한해	한해/NNG	word							
 함께	함께/MAG	word							

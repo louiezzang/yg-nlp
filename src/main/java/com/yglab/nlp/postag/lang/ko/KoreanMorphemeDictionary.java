@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.yglab.nlp.dictionary.AbstractSuffixDictionary;
-import com.yglab.nlp.postag.POSSampleParser;
+import com.yglab.nlp.postag.TagPattern;
 import com.yglab.nlp.postag.morph.Morpheme;
 import com.yglab.nlp.util.lang.ko.KoreanMorphemeUtil;
 import com.yglab.nlp.util.lang.ko.KoreanUnicode;
@@ -86,7 +86,7 @@ public class KoreanMorphemeDictionary extends AbstractSuffixDictionary<List<Morp
 		StringBuilder sbPos = new StringBuilder();
 		for (int i = 0; i < tagItems.length; i++) {
 			String tagItem = tagItems[i];
-			String pos = POSSampleParser.parsePos(tagItem);
+			String pos = TagPattern.parsePos(tagItem);
 			sbPos.append(pos);
 
 			if (i < tagItems.length - 1) {

@@ -2,12 +2,14 @@ package com.yglab.nlp.postag.lang.ko;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.yglab.nlp.postag.TagPattern;
 import com.yglab.nlp.postag.morph.Morpheme;
 import com.yglab.nlp.postag.morph.Token;
 import com.yglab.nlp.util.lang.ko.KoreanMorphemeUtil;
@@ -20,15 +22,37 @@ import com.yglab.nlp.util.lang.ko.KoreanUnicode;
  */
 public class KoreanMorphemeAnalyzer {
 
+	/** the pattern for finding collocated pos tags */
 	private static final Pattern COLLOCATE_PATTERN = Pattern.compile(
 			"((XSA|XSV|VX)\\+(EP|ETN|ETM|EC|EF))" + "|" +
 			"((EP|EC)\\+(EF|EC|ETM))"
 			);
+	
+	/** the pattern for finding tail tag */
+	private static final Pattern TAILTAG_PATTERN = Pattern.compile(
+			"([^/\\+\\(\\)]*)/([XEJ][A-Z]+|VX|VCP).*");
+	
 	private KoreanMorphemeDictionary dic;
 	//private final String[] validTags;
 	private Map<String, List<String>> validTagMap = new HashMap<String, List<String>>();
 	private List<List<Token>> tokensCandidates = new ArrayList<List<Token>>();
-	private List<List<Token>> tokensTailCandidates = new ArrayList<List<Token>>();
+	private List<List<String>> tokensTailCandidates = new ArrayList<List<String>>();
+	
+	/** comparator for sort tail descending by length */
+	private static final Comparator<String> tailComparator = new Comparator<String>() {
+		public int compare(String o1, String o2) {
+			int numTag1 = o1.split("\\+").length;
+			int numTag2 = o1.split("\\+").length;
+			if (numTag1 == numTag2) {
+				int len1 = o1.replaceAll("\\+", "").length();
+				int len2 = o2.replaceAll("\\+", "").length();
+				return Integer.valueOf(len2).compareTo(Integer.valueOf(len1));
+			}
+			else {
+				return Integer.valueOf(numTag2).compareTo(Integer.valueOf(numTag1));
+			}
+		}
+	};
 
 	/**
 	 * Constructor.
@@ -75,7 +99,7 @@ public class KoreanMorphemeAnalyzer {
 	 * @param position
 	 * @return
 	 */
-	public List<Token> getCurrentTailCandidates(int position) {
+	public List<String> getCurrentTailCandidates(int position) {
 		return this.tokensTailCandidates.get(position);
 	}
 	
@@ -120,20 +144,20 @@ public class KoreanMorphemeAnalyzer {
 	 * @return
 	 */
 	public void generateCandidates(String[] tokens) {
-		// initializes the candidates for the current tokens
+		/* initializes the candidates for the current tokens */
 		tokensCandidates.clear();
 		tokensTailCandidates.clear();
 		
 		for (int position = 0; position < tokens.length; position++) {
 			String strToken = tokens[position];
 			Map<String, Token> validCandidates = new HashMap<String, Token>();
-			Map<String, Token> validTailCandidates = new HashMap<String, Token>();
+			List<String> validTailCandidates = new ArrayList<String>();
 			
-			// identify morpheme candidates for a token
+			/* identify morpheme candidates for a token */
 			List<Token> candidates = new ArrayList<Token>();
 			this.identifyMorphemeCandidates(candidates, new Token(strToken), strToken);
 			
-			// sort descending by the number of tag of the token
+			/* sort descending by the number of tag of the token */
 			Collections.sort(candidates);
 			
 			int maxNumTag = 0;
@@ -149,8 +173,10 @@ public class KoreanMorphemeAnalyzer {
 						maxNumTag = numTag;
 					}
 				}
-				// if the candidate has been full analyzed but doesn't match with valid tag, 
-				// it is added into the valid candidates though.
+				/*
+				 * if the candidate has been full analyzed but doesn't match with valid tag, 
+				 * it is added into the valid candidates though.
+				 */
 				else if (candidate.isAnalyzed()) {
 					if (!candidate.getPos().startsWith("E")) {
 						System.out.println(" (+) " + candidate.getToken() + ": " + candidate.getTag() + ", " + candidate.getPos() + ", " + candidate.getNumTag());
@@ -188,7 +214,10 @@ public class KoreanMorphemeAnalyzer {
 				}    
 			}
 			tokensCandidates.add(new ArrayList<Token>(validCandidates.values()));
-			tokensTailCandidates.add(new ArrayList<Token>(validTailCandidates.values()));
+			
+			/* sort the valid tail candidates descending by length */
+			Collections.sort(validTailCandidates, tailComparator);
+			tokensTailCandidates.add(validTailCandidates);
 		}
 	}
 	
@@ -196,11 +225,11 @@ public class KoreanMorphemeAnalyzer {
 	 * Adds a valid candidate.
 	 * 
 	 * @param candidates
-	 * @param tailCandidates
+	 * @param tailtagCandidates
 	 * @param candidate
 	 * @return
 	 */
-	private boolean addValidCandidate(Map<String, Token> candidates, Map<String, Token> tailCandidates, Token candidate) {
+	private boolean addValidCandidate(Map<String, Token> candidates, List<String> tailCandidates, Token candidate) {
 		if (!isValid(candidate)) {
 			return false;
 		}
@@ -208,15 +237,17 @@ public class KoreanMorphemeAnalyzer {
 		if (candidate.isAnalyzed()) {
 			if (!candidates.containsKey(candidate.getTag())) {
 				List<String> validTags = validTagMap.get(candidate.getPos());
-				// this condition is important!!!
+				/* this condition is important!!! */
 				if (validTags.contains(candidate.getPos())) {
 					candidate.setValidated(true);
 				}
 				candidates.put(candidate.getTag(), candidate);
 			}
 			
-			if (!tailCandidates.containsKey(candidate.getTag())) {
-				tailCandidates.put(candidate.getTag(), candidate);
+			String tailtag = candidate.getTagStartsWith(TAILTAG_PATTERN);
+			String tail = extractTailMorphemes(tailtag);
+			if (tail != null && !tail.equals("") && !tailCandidates.contains(tail)) {
+				tailCandidates.add(tail);
 			}
 			return true;
 		}
@@ -242,13 +273,20 @@ public class KoreanMorphemeAnalyzer {
 					candidates.put(clonedCandidate.getTag(), clonedCandidate);
 				}
 			}
+			else {
+				if (!candidates.containsKey(candidate.getTag())) {
+					candidate.setValidated(true);
+					candidates.put(candidate.getTag(), candidate);
+				}
+			}
 		}
 		
 		if (validTagList.size() > 0) {
-			if (!tailCandidates.containsKey(candidate.getTag())) {
-				candidate.setValidated(true);
-				tailCandidates.put(candidate.getTag(), candidate);
-			}			
+			String tailtag = candidate.getTagStartsWith(TAILTAG_PATTERN);
+			String tail = extractTailMorphemes(tailtag);
+			if (tail != null && !tail.equals("") && !tailCandidates.contains(tail)) {
+				tailCandidates.add(tail);
+			}	
 		}
 		
 		return true;
@@ -262,7 +300,7 @@ public class KoreanMorphemeAnalyzer {
 	 * @param surface	The surface text to find the morpheme in it
 	 */
 	private void identifyMorphemeCandidates(List<Token> candidates, Token token, String surface) {
-		// find the all suffixes matched with the dictionary
+		/* find the all suffixes matched with the dictionary */
 		List<List<Morpheme>> matchMorphemes = dic.findSuffixes(surface);
 
 		if (matchMorphemes == null || matchMorphemes.size() == 0) {
@@ -276,7 +314,7 @@ public class KoreanMorphemeAnalyzer {
 			return;
 		}
 		
-		System.err.println(surface + ": " + matchMorphemes);
+		//System.err.println(surface + ": " + matchMorphemes);
 
 		for (List<Morpheme> morphemeList : matchMorphemes) {
 			String tail = null;
@@ -286,13 +324,13 @@ public class KoreanMorphemeAnalyzer {
 				Morpheme morpheme = morphemeList.get(i);
 				morpheme.setAnalyzed(true);
 				
-				// split head and tail
+				/* split head and tail */
 				if (i == 0) {
 					tail = morpheme.getSurface();
 					head = KoreanMorphemeUtil.truncateRight(surface, tail);
 				}
 				
-				// clone the exist token to new token
+				/* clone the exist token to new token */
 				Token clonedToken = new Token(token);
 				
 				String type = (String) morpheme.getAttribute("type");
@@ -340,7 +378,7 @@ public class KoreanMorphemeAnalyzer {
 						else {
 							if (token.size() > 0) candidates.add(token);
 						}
-						// do not return!!!
+						/* do not return!!! */
 						//return;
 					}
 					else {
@@ -392,7 +430,7 @@ public class KoreanMorphemeAnalyzer {
 		
 		//System.err.println("*leftLetterCondition(+)");
 		
-		// left letter condition
+		/* left letter condition */
 		if (right.containsAttributeKey("leftLetterCondition(+)")) {
 			String decomposedSurface = String.valueOf(KoreanUnicode.decompose(left.getSurface()));
 			Pattern pattern = (Pattern) right.getAttribute("leftLetterCondition(+)");
@@ -423,7 +461,7 @@ public class KoreanMorphemeAnalyzer {
 		
 		//System.err.println("*leftPhonemeCondition");
 		
-		// left phoneme condition
+		/* left phoneme condition */
 		if (right.containsAttributeKey("leftPhonemeCondition") && left.containsAttributeKey("phonemeProperty")) {
 			Pattern pattern = (Pattern) right.getAttribute("leftPhonemeCondition");
 			String leftProperty = (String) left.getAttribute("phonemeProperty");
@@ -453,7 +491,7 @@ public class KoreanMorphemeAnalyzer {
 
 		//System.err.println("*leftMorphemeCondition");
 		
-		// left morpheme condition
+		/* left morpheme condition */
 		if (right.containsAttributeKey("leftMorphemeCondition") && left.containsAttributeKey("morphemeProperty")) {
 			Pattern pattern = (Pattern) right.getAttribute("leftMorphemeCondition");
 			String leftProperty = (String) left.getAttribute("morphemeProperty");
@@ -466,7 +504,7 @@ public class KoreanMorphemeAnalyzer {
 		
 		//System.err.println("*leftPosCondition");
 		
-		// left POS condition
+		/* left POS condition */
 		if (right.containsAttributeKey("leftPosCondition")) {
 			Pattern pattern = (Pattern) right.getAttribute("leftPosCondition");
 			String leftTag = left.getTag();
@@ -540,8 +578,23 @@ public class KoreanMorphemeAnalyzer {
 		if (validTagMap.containsKey(token.getPos())) {
 			return true;
 		}
-		
 		return false;
+	}
+	
+	private static String extractTailMorphemes(String tailtag) {
+		if (tailtag == null || tailtag.trim().equals("")) {
+			return null;
+		}
+		StringBuilder sb = new StringBuilder();
+		Matcher m = TagPattern.MORPH_POS_PATTERN.matcher(tailtag);
+		while (m.find()) {
+			if (sb.length() > 0) {
+				sb.append("+");
+			}
+			sb.append(m.group(1));
+		}
+		
+		return sb.toString();
 	}
 
 }

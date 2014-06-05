@@ -56,11 +56,6 @@ public class DependencyParserEvaluatorTest {
 		//labeled = false;	// force to un-check if the predicted label is correct or not
 		DependencyParserEvaluator evaluator = new DependencyParserEvaluator(parser, labeled);
 		evaluator.evaluate(testSamples);
-		
-		evaluator.print();
-		System.out.println("LAS(Labeled Attachment Score) = " + evaluator.getLAS());
-		System.out.println("UAS(Unlabeled Attachment Score) = " + evaluator.getUAS());
-		System.out.println("LA(Label Accuracy) = " + evaluator.getLA());
 	}
 
 }

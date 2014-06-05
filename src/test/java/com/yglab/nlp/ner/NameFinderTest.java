@@ -87,7 +87,5 @@ public class NameFinderTest {
 		List<NameSample> testSamples = NameFinder.loadSamples("/sample/ko/ner/ko-ner-test.txt");
 		NameFinderEvaluator evaluator = new NameFinderEvaluator(ner);
 		evaluator.evaluate(testSamples);
-		
-		evaluator.print();
 	}
 }

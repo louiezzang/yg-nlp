@@ -40,8 +40,8 @@ public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 		if (tags != null) {
 			for (String tag : tags) {
 				if (tag.split("\\+").length == 1 
-						//&& 	(tag.startsWith("N") || tag.startsWith("V") || tag.startsWith("M") || 
-						//		tag.startsWith("S") || tag.startsWith("I"))
+						&& 	(tag.startsWith("N") || tag.startsWith("V") || 
+								tag.startsWith("S") || tag.startsWith("M") || tag.startsWith("I"))
 						) {
 					defaultTagCandidates.add(tag);
 				}
@@ -75,6 +75,7 @@ public class KoreanTagSequenceGenerator extends DefaultTagSequenceGenerator {
 						tokensTagCandidates.add(defaultTagCandidates);
 					}
 				}
+				System.out.println(position + ": " + tokensTagCandidates.get(position));
 				continue;
 			}
 			

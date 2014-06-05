@@ -66,8 +66,7 @@ public class POSTaggerTest {
 		
 		List<POSSample> testSamples = POSTagger.loadSamples("/sample/en/pos/en-pos-test.txt", "[^\\+/\\(\\)]*/", "");
 		POSTaggerEvaluator evaluator = new POSTaggerEvaluator(tagger);
-		evaluator.evaluate(testSamples);
 		
-		evaluator.print();
+		evaluator.evaluate(testSamples);
 	}
 }
