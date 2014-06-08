@@ -18,6 +18,27 @@ public class Morpheme {
 	private boolean analyzed;
 	private Map<String, Object> attributes = new HashMap<String, Object>();
 	
+	/**
+	 * Default constructor.
+	 */
+	public Morpheme() {
+		
+	}
+	
+	/**
+	 * Deep copies the given morpheme.
+	 * 
+	 * @param morpheme
+	 */
+	public Morpheme(Morpheme morpheme) {
+		this.key = morpheme.getKey();
+		this.surface = morpheme.getSurface();
+		this.tag = morpheme.getTag();
+		this.pos = morpheme.getPos();
+		this.analyzed = morpheme.isAnalyzed();
+		this.attributes.putAll(morpheme.getAttributes());
+	}
+	
 	public String getKey() {
 		return key;
 	}
@@ -57,7 +78,11 @@ public class Morpheme {
 	public void setAnalyzed(boolean analyzed) {
 		this.analyzed = analyzed;
 	}
-
+	
+	public Map<String, Object> getAttributes() {
+		return this.attributes;
+	}
+	
 	public void setAttribute(String key, Object value) {
 		this.attributes.put(key, value);
 	}
@@ -69,7 +94,7 @@ public class Morpheme {
 	public boolean containsAttributeKey(String key) {
 		return attributes.containsKey(key);
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Morpheme [key=" + key + ", surface=" + surface + ", tag=" + tag + ", pos=" + pos

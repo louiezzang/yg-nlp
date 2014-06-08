@@ -46,7 +46,6 @@ public class KoreanPOSTagger extends POSTagger {
 	public List<Token> analyze(String[] tokens) {
 		String[] tags = this.tag(tokens);
 		List<Token> eojeols = ((KoreanPOSFeatureGenerator) featureGenerator).getKoreanMorphemeAnalyzer().analyze(tags);
-
 		return eojeols;
 	}
 	

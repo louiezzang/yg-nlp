@@ -1,6 +1,8 @@
 package com.yglab.nlp.postag.morph;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,10 +20,10 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 	
 	private String token;
 	private String stem;
-	private String lemma;
 	private String head;
 	private boolean analyzed;
 	private boolean validated;
+	private Map<String, Object> attributes = new HashMap<String, Object>();
 
 	/**
 	 * Creates a token.
@@ -63,14 +65,6 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 		this.stem = stem;
 	}
 	
-	public String getLemma() {
-		return this.lemma;
-	}
-	
-	public void setLemma(String lemma) {
-		this.lemma = lemma;
-	}
-	
 	public String getHead() {
 		return this.head;
 	}
@@ -93,6 +87,22 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 
 	public void setValidated(boolean validated) {
 		this.validated = validated;
+	}
+	
+	public Map<String, Object> getAttributes() {
+		return this.attributes;
+	}
+	
+	public void setAttribute(String key, Object value) {
+		this.attributes.put(key, value);
+	}
+	
+	public Object getAttribute(String key) {
+		return this.attributes.get(key);
+	}
+	
+	public boolean containsAttributeKey(String key) {
+		return attributes.containsKey(key);
 	}
 
 	public String getPos() {

@@ -5,7 +5,7 @@ package com.yglab.nlp.postag.morph;
  * 
  * @author Younggue Bae
  */
-public interface Lemmatizer {
+public interface Lemmatizer<V> {
   
-  public CharSequence lemmatize(Token token);
+  public V lemmatize(V value);
 }

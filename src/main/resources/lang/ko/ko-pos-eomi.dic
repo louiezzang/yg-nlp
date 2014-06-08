@@ -1,5 +1,5 @@
 #표층어	형태소	분류	좌측형태(마지막음절)제약조건	좌측형태결합조건	좌측음운결합조건	좌측품사결합조건	좌측원형복원룰	형태정보	음운정보
-가	ㄴ가/EC	eomi	+ㄴ	+ㄴ			-ㄴ		
+가	ㄴ가/EC	eomi	+ㄴ -는	+ㄴ			-ㄴ		
 거나	거나/EC	eomi		+어간 +ㅆ		VV VA EP			
 게	게/EC	eomi		+어간					
 게요	ㄹ게요/EF	eomi	+ㄹ	+ㄹ			-ㄹ		
@@ -29,8 +29,8 @@
 는데	는데/EC	eomi		+어간 +ㅆ -ㄹ		-JKS			
 는데다	는데다/EC	eomi		+어간 +ㅆ -ㄹ					
 는지	는지/EC	eomi		+어간 +ㅆ -ㄹ					
-니까	ㅂ니까/EF	eomi	+ㅂ	+ㅂ		VV VA	-ㅂ		
-니다	ㅂ니다/EF	eomi	+ㅂ	+ㅂ		VV VA	-ㅂ		
+니까	ㅂ니까/EF	eomi	+ㅂ -습	+ㅂ		VV VA	-ㅂ		
+니다	ㅂ니다/EF	eomi	+ㅂ -습	+ㅂ		VV VA	-ㅂ		
 다	ㄴ다/EF	eomi	+ㄴ	+ㄴ					
 #다	다/EC	eomi	-된	+어간 +ㅆ					
 다	다/EF	eomi	-된	+어간 +ㅆ					
@@ -65,7 +65,7 @@
 러도	어도/EC	eomi	+ㄹ		+음성	VV	-ㄹ +르		
 러서	어서/EC	eomi	+ㄹ		+음성	VV	-ㄹ +르		
 렀	었/EP	eomi-ep			+음성	VV		+ㅆ	
-려	어/EC	eomi				VV VA	+리		
+려	어/EC	eomi	-하			VV VA	+리		
 려도	어도/EC	eomi				VV	+리		
 려면	려면/EC	eomi							
 려서	어서/EC	eomi				VV	+리		
@@ -92,7 +92,7 @@
 쁨	ㅁ/ETN	eomi				VA	+쁘		
 선	ㄴ/ETM	eomi				VV	+서		
 설	ㄹ/ETM	eomi				VV	+서		
-섰	었/EP	eomi-ep				VV VA		+ㅆ	
+섰	었/EP	eomi-ep				VV VA	+서	+ㅆ	
 셨	시/EP+었/EP	eomi-ep		+어간	+모음	VV VX VA		+ㅆ	
 스런	스럽/XSA+ㄴ/ETM	eomi							
 습니까	습니까/EF	eomi							

@@ -64,7 +64,9 @@ public class KoreanMorphemeAnalyzerTest {
 				"대응함으로써",
 				"울려주었다",
 				"이어졌다",
-				"올해는"
+				"올해는",
+				"고속도로",
+				"못하겠습니까"
 		};
 		
 		analyzer.generateCandidates(tokens); 

@@ -66,6 +66,57 @@ public class KoreanMorphemeDictionary extends AbstractSuffixDictionary<List<Morp
 	}
 	
 	/**
+	 * Finds the longest suffix in the input string.
+	 * The matched object should not be referenced with those of dictionary!!!
+	 * Therefore, this method returns the cloned object.
+	 */
+	@Override
+	public List<Morpheme> findLongestSuffix(String str) {
+		List<Morpheme> list = trieSuffix.longestMatch(this.decompose(str));
+		List<Morpheme> clonedList = new ArrayList<Morpheme>(list.size());
+		for (Morpheme morpheme : list) {
+			clonedList.add(new Morpheme(morpheme));
+		}
+		return clonedList;
+	}
+
+	/**
+	 * Finds the shortest suffix in the input string.
+	 * The matched object should not be referenced with those of dictionary!!!
+	 * Therefore, this method returns the cloned object.
+	 */
+	@Override
+	public List<Morpheme> findShortestSuffix(String str) {
+		List<Morpheme> list = trieSuffix.shortestMatch(this.decompose(str));
+		List<Morpheme> clonedList = new ArrayList<Morpheme>(list.size());
+		for (Morpheme morpheme : list) {
+			clonedList.add(new Morpheme(morpheme));
+		}
+		return clonedList;
+	}
+	
+	/**
+	 * Finds all the matched suffixes in the input string.
+	 * The matched object should not be referenced with those of dictionary!!!
+	 * Therefore, this method returns the cloned object.
+	 */
+	@Override
+	public List<List<Morpheme>> findSuffixes(String str) {
+		List<List<Morpheme>> list = trieSuffix.allMatches(this.decompose(str));
+		List<List<Morpheme>> clonedList = new ArrayList<List<Morpheme>>(list.size());
+		
+		for (List<Morpheme> morphemes : list) {
+			List<Morpheme> clonedMorphemes = new ArrayList<Morpheme>(morphemes.size());
+			for (Morpheme morpheme : morphemes) {
+				clonedMorphemes.add(new Morpheme(morpheme));
+			}
+			clonedList.add(clonedMorphemes);
+		}
+		
+		return clonedList;
+	}
+	
+	/**
 	 * Parses the dictionary text to {@link Morpheme} object. 
 	 * 
 	 * @param str

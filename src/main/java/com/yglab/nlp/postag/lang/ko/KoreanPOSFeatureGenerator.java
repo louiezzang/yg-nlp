@@ -37,6 +37,10 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 		return morphAnalyzer.getCurrentCandidates(position);
 	}
 	
+	public List<String> getCurrentTokenMorphemeFeatures(int position) {
+		return morphAnalyzer.getCurrentFeatures(position);
+	}
+	
 	public KoreanMorphemeAnalyzer getKoreanMorphemeAnalyzer() {
 		return this.morphAnalyzer;
 	}
@@ -99,6 +103,10 @@ public class KoreanPOSFeatureGenerator extends DefaultPOSFeatureGenerator {
 	 */
 	protected void addMorphoFeatures(List<String> features, int position, String[] tokens, String[] previousTagSequence) {
 		List<String> tailList = this.getCurrentTokenTailCandidates(position);
+		List<String> morphFeatureList = this.getCurrentTokenMorphemeFeatures(position);
+		for (String morphFeature : morphFeatureList) {
+			features.add("morph=" + morphFeature);
+		}
 
 		StringBuilder sbBigramFeature = new StringBuilder();
 		

@@ -3,13 +3,14 @@ package com.yglab.nlp.postag.lang.ko;
 import java.util.List;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Options;
 import com.yglab.nlp.postag.POSSample;
 import com.yglab.nlp.postag.POSTagger;
-import com.yglab.nlp.postag.POSTaggerEvaluator;
+import com.yglab.nlp.postag.morph.Token;
 
 /**
  * Test case.
@@ -78,10 +79,13 @@ public class KoreanPOSTaggerTest {
 //		};
 
 		String[] tokens = {
+			"그는",
 			"나를",
 			"위해",
-			"해줄수",
-			"있다",
+			"지내는",			
+			"해줄",
+			"수",
+			"있다",		
 			"."
 		};
 		
@@ -91,21 +95,11 @@ public class KoreanPOSTaggerTest {
 		
 		System.out.println("==================================================");
 		
-		String[] result = tagger.tag(tokens);
+		List<Token> eojeols = tagger.analyze(tokens);
 		
-		for (int i = 0; i < result.length; i++) {
-			String tag = result[i];
-			System.out.println(i + ": " + tokens[i] + "\t[" + tag + "]");
+		for (int i = 0; i < eojeols.size(); i++) {
+			System.out.println(i + ": " + eojeols.get(i));
 		}
-		
-		System.out.println("==================================================");
-
-		// TODO
-//		List<Token> eojeols = tagger.analyze(tokens);
-//		
-//		for (int i = 0; i < eojeols.size(); i++) {
-//			System.out.println(i + ": " + eojeols.get(i).toString());
-//		}
 	}
 	
 	@Test
@@ -119,7 +113,7 @@ public class KoreanPOSTaggerTest {
 				"/sample/ko/pos/ko-pos-test-sejong-BGAA0164.txt", 
 				"[^\\+/\\(\\)]*/", "");
 		
-		POSTaggerEvaluator evaluator = new POSTaggerEvaluator(
+		KoreanPOSTaggerEvaluator evaluator = new KoreanPOSTaggerEvaluator(
 				tagger, 
 				"./target/test-data/ko/pos/ko-pos-test-result-sejong-BGAA0164.txt", 
 				true);

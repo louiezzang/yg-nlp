@@ -32,13 +32,20 @@ public class KoreanMorphemeAnalyzer {
 	private static final Pattern TAILTAG_PATTERN = Pattern.compile(
 			"([^/\\+\\(\\)]*)/([XEJ][A-Z]+|VX|VCP).*");
 	
+	/** the pattern for finding extra feature from tag */
+	private static final Pattern TAG_FEATURE_PATTERN = Pattern.compile(
+			"([^/\\+\\(\\)]*)/(NNB)");
+	
 	private KoreanMorphemeDictionary dic;
+	private KoreanLemmatizer lemmatizer;
 	//private final String[] validTags;
 	private Map<String, List<String>> validTagMap = new HashMap<String, List<String>>();
+	private String[] tokensArray;
 	private List<List<Token>> tokensCandidates = new ArrayList<List<Token>>();
 	private List<List<String>> tokensTailCandidates = new ArrayList<List<String>>();
+	private List<List<String>> tokensFeatures = new ArrayList<List<String>>();
 	
-	/** comparator for sort tail descending by length */
+	/** comparator for sorting tail descending by length */
 	private static final Comparator<String> tailComparator = new Comparator<String>() {
 		public int compare(String o1, String o2) {
 			int numTag1 = o1.split("\\+").length;
@@ -65,6 +72,7 @@ public class KoreanMorphemeAnalyzer {
 		//this.validTags = validTags;
 		
 		this.validTagMap = indexingValidTags(validTags);
+		this.lemmatizer = new KoreanLemmatizer();
 		
 		System.out.println("--------------------------");
 		System.out.println("valid tags map: " + validTagMap.size());
@@ -104,33 +112,70 @@ public class KoreanMorphemeAnalyzer {
 	}
 	
 	/**
+	 * Gets the features for the token at the specific position of the tokens.
+	 * 
+	 * @param position
+	 * @return
+	 */
+	public List<String> getCurrentFeatures(int position) {
+		return this.tokensFeatures.get(position);
+	}
+	
+	/**
 	 * Analyzes the morphemes for the current tokens.
 	 * 
 	 * @param predictedTags	The predicted tags for tokens
 	 * @return
 	 */
-	//TODO
 	public List<Token> analyze(String[] predictedTags) {
 		List<Token> tokens = new ArrayList<Token>();
 		
 		for (int position = 0; position < predictedTags.length; position++) {
 			String predictedTag = predictedTags[position];
 			
-			List<Token> tailCandidates = this.getCurrentCandidates(position);
-			for (Token token : tailCandidates) {
-				if (predictedTag.endsWith(token.getPos())) {
-					System.out.println(token.getPos());
-					Morpheme head = new Morpheme();
-					head.setSurface(token.getHead());
-					head.setTag(predictedTag.substring(0, predictedTag.lastIndexOf(token.getPos())));
-					
-					System.out.print("surface = " + head.getSurface());
-					System.out.print(", tag = " + head.getTag());
-					System.out.println();
-					
-					token.add(head);
+			List<Token> candidates = this.getCurrentCandidates(position);
+			
+			if (candidates.size() == 0) {
+				String strToken = tokensArray[position];
+				Token token = new Token(strToken);
+				Morpheme morpheme = new Morpheme();
+				morpheme.setSurface(strToken);
+				morpheme.setTag(strToken + "/" + predictedTag);
+				morpheme.setPos(predictedTag);
+				token.add(morpheme);
+				token = lemmatizer.lemmatize(token);
+				tokens.add(token);
+				System.out.println(position + "*: " + token.getToken() + "[" +  token.getTag() + "], analyzed=" + token.isAnalyzed() + ", head=" + token.getHead());
+				continue;
+			}
+			
+			boolean matchWithCandidate = false;
+			for (Token token : candidates) {
+				if (predictedTag.equals(token.getPos())) {
+					token = lemmatizer.lemmatize(token);
+					System.out.println(position + ": " + token.getToken() + "[" +  token.getTag() + "], analyzed=" + token.isAnalyzed() + ", head=" + token.getHead());
+					tokens.add(token);
+					matchWithCandidate = true;
 					break;
 				}
+			}
+			
+			if (!matchWithCandidate) {
+				String strToken = tokensArray[position];
+				Token token = new Token(strToken);
+				Morpheme morpheme = new Morpheme();
+				morpheme.setSurface(strToken);
+				if (predictedTag.split("\\+").length == 1) {
+					morpheme.setTag(strToken + "/" + predictedTag);
+				}
+				else {
+					morpheme.setTag(predictedTag);
+				}
+				morpheme.setPos(predictedTag);
+				token.add(morpheme);
+				token = lemmatizer.lemmatize(token);
+				tokens.add(token);
+				System.out.println(position + "**: " + token.getToken() + "[" +  token.getTag() + "], analyzed=" + token.isAnalyzed() + ", head=" + token.getHead());
 			}
 		}
 		
@@ -145,13 +190,16 @@ public class KoreanMorphemeAnalyzer {
 	 */
 	public void generateCandidates(String[] tokens) {
 		/* initializes the candidates for the current tokens */
-		tokensCandidates.clear();
-		tokensTailCandidates.clear();
+		this.tokensArray = tokens;
+		this.tokensCandidates.clear();
+		this.tokensTailCandidates.clear();
+		this.tokensFeatures.clear();
 		
 		for (int position = 0; position < tokens.length; position++) {
 			String strToken = tokens[position];
 			Map<String, Token> validCandidates = new HashMap<String, Token>();
 			List<String> validTailCandidates = new ArrayList<String>();
+			List<String> tokenFeatures = new ArrayList<String>();
 			
 			/* identify morpheme candidates for a token */
 			List<Token> candidates = new ArrayList<Token>();
@@ -166,7 +214,7 @@ public class KoreanMorphemeAnalyzer {
 				Token candidate = candidates.get(ci);
 				System.out.println(candidate.getToken() + ": " + candidate.getTag() + ", " + candidate.getPos() + ", " + candidate.getNumTag());
 				
-				if (this.addValidCandidate(validCandidates, validTailCandidates, candidate)) {
+				if (this.addValidCandidate(candidate, validCandidates, validTailCandidates, tokenFeatures)) {
 					System.out.println(" -> " + candidate.getToken() + ": " + candidate.getTag() + ", " + candidate.getPos() + ", " + candidate.getNumTag());
 					int numTag = candidate.getNumTag();
 					if (numTag > maxNumTag) {
@@ -196,7 +244,7 @@ public class KoreanMorphemeAnalyzer {
 				for (int mi = candidate.size() - 2; mi >= 0; mi--) {
 					Token tail = candidate.getTail(mi);
 					
-					if (this.addValidCandidate(validCandidates, validTailCandidates, tail)) {
+					if (this.addValidCandidate(tail, validCandidates, validTailCandidates, tokenFeatures)) {
 						int tailNumTag = tail.getNumTag();
 						if (tailNumTag > maxNumTag) {
 							maxNumTag = tailNumTag;
@@ -218,47 +266,61 @@ public class KoreanMorphemeAnalyzer {
 			/* sort the valid tail candidates descending by length */
 			Collections.sort(validTailCandidates, tailComparator);
 			tokensTailCandidates.add(validTailCandidates);
+			
+			tokensFeatures.add(tokenFeatures);
 		}
 	}
 	
 	/**
 	 * Adds a valid candidate.
 	 * 
-	 * @param candidates
-	 * @param tailtagCandidates
-	 * @param candidate
+	 * @param candidate	The token candidate
+	 * @param candidates	The token candidates
+	 * @param tailCandidates	The tail candidates
+	 * @param tokenFeatures	The token features
 	 * @return
 	 */
-	private boolean addValidCandidate(Map<String, Token> candidates, List<String> tailCandidates, Token candidate) {
+	private boolean addValidCandidate(Token candidate, Map<String, Token> candidates, List<String> tailCandidates, List<String> tokenFeatures) {
 		if (!isValid(candidate)) {
 			return false;
 		}
 
+		String tag = candidate.getTag();
+		String pos = candidate.getPos();
+		
 		if (candidate.isAnalyzed()) {
-			if (!candidates.containsKey(candidate.getTag())) {
-				List<String> validTags = validTagMap.get(candidate.getPos());
+			/* add valid token candidate */
+			if (!candidates.containsKey(tag)) {
+				List<String> validTags = validTagMap.get(pos);
 				/* this condition is important!!! */
-				if (validTags.contains(candidate.getPos())) {
+				if (validTags.contains(pos)) {
 					candidate.setValidated(true);
 				}
-				candidates.put(candidate.getTag(), candidate);
+				candidates.put(tag, candidate);
 			}
 			
+			/* add tail candidate */
 			String tailtag = candidate.getTagStartsWith(TAILTAG_PATTERN);
 			String tail = extractTailMorphemes(tailtag);
 			if (tail != null && !tail.equals("") && !tailCandidates.contains(tail)) {
 				tailCandidates.add(tail);
 			}
+			
+			/* add token features */
+			String feature = extractFeature(tag);
+			if (!tokenFeatures.contains(feature)) {
+				tokenFeatures.add(feature);
+			}
+			
 			return true;
 		}
 
-		String pos = candidate.getPos();
 		List<String> validTagList = validTagMap.get(pos);
 		
 		for (String validTag : validTagList) {
 			String left = validTag.substring(0, validTag.lastIndexOf(pos));
 			String leftPos = left.split("\\+")[0];
-			
+
 			if (leftPos.length() > 0) {
 				Morpheme morpheme = new Morpheme();
 				morpheme.setSurface(candidate.getHead());
@@ -268,25 +330,36 @@ public class KoreanMorphemeAnalyzer {
 				
 				Token clonedCandidate = new Token(candidate);
 				clonedCandidate.add(morpheme);
+				/* add valid token candidate */
 				if (!candidates.containsKey(clonedCandidate.getTag())) {
 					clonedCandidate.setValidated(true);
 					candidates.put(clonedCandidate.getTag(), clonedCandidate);
 				}
 			}
 			else {
-				if (!candidates.containsKey(candidate.getTag())) {
+				/* add valid token candidate */
+				if (!candidates.containsKey(tag)) {
 					candidate.setValidated(true);
-					candidates.put(candidate.getTag(), candidate);
+					candidates.put(tag, candidate);
 				}
 			}
 		}
 		
+		/* add tail candidate */
 		if (validTagList.size() > 0) {
 			String tailtag = candidate.getTagStartsWith(TAILTAG_PATTERN);
 			String tail = extractTailMorphemes(tailtag);
 			if (tail != null && !tail.equals("") && !tailCandidates.contains(tail)) {
 				tailCandidates.add(tail);
 			}	
+		}
+		
+		/* add token features */
+		if (validTagList.size() > 0) {
+			String feature = extractFeature(tag);
+			if (!tokenFeatures.contains(feature)) {
+				tokenFeatures.add(feature);
+			}
 		}
 		
 		return true;
@@ -300,8 +373,11 @@ public class KoreanMorphemeAnalyzer {
 	 * @param surface	The surface text to find the morpheme in it
 	 */
 	private void identifyMorphemeCandidates(List<Token> candidates, Token token, String surface) {
-		/* find the all suffixes matched with the dictionary */
-		List<List<Morpheme>> matchMorphemes = dic.findSuffixes(surface);
+		/* 
+		 * find the all suffixes matched with the dictionary.
+		 * the matched morphemes should not be referenced with those of morpheme dictionary!!!
+		 */
+		List<List<Morpheme>> matchMorphemes = new ArrayList<List<Morpheme>>(dic.findSuffixes(surface));
 
 		if (matchMorphemes == null || matchMorphemes.size() == 0) {
 			if (token == null || token.size() == 0) {
@@ -337,7 +413,10 @@ public class KoreanMorphemeAnalyzer {
 				
 				if (!checkPrimaryCombineCondition(morpheme, clonedToken)) {
 					if (token.size() > 1) {
+						String revivedHead = clonedToken.getHead() + clonedToken.get(clonedToken.size() - 1).getSurface();
 						clonedToken.remove(clonedToken.size() - 1);
+						/* revive head */
+						clonedToken.setHead(revivedHead);
 						candidates.add(clonedToken);
 					}
 					continue;
@@ -346,8 +425,10 @@ public class KoreanMorphemeAnalyzer {
 				if (checkSecondaryCombineCondition(morpheme, clonedToken)) {
 					if (type.equals("suffix")) {
 						if (token.getToken().endsWith(morpheme.getSurface())) {
+							morpheme.setSurface(token.getToken());
+							morpheme.setTag(token.getToken() + "/" + morpheme.getPos());
 							clonedToken.add(morpheme);
-							clonedToken.setHead(surface);
+							clonedToken.setHead("");
 							clonedToken.setAnalyzed(true);
 							candidates.add(clonedToken);
 						}
@@ -367,6 +448,17 @@ public class KoreanMorphemeAnalyzer {
 							if (token.size() > 0) candidates.add(token);
 						}
 						//return;
+					}
+					else if (type.equals("word-prefix")) {
+						if (head.equals("")) {
+							clonedToken.add(morpheme);
+							clonedToken.setHead(head);
+							clonedToken.setAnalyzed(true);
+							candidates.add(clonedToken);
+						}
+						else {
+							if (token.size() > 0) candidates.add(token);
+						}
 					}
 					else if (type.startsWith("head")) {
 						if (head.equals("")) {
@@ -592,6 +684,22 @@ public class KoreanMorphemeAnalyzer {
 				sb.append("+");
 			}
 			sb.append(m.group(1));
+		}
+		
+		return sb.toString();
+	}
+	
+	private static String extractFeature(String tag) {
+		if (tag == null || tag.trim().equals("")) {
+			return null;
+		}
+		StringBuilder sb = new StringBuilder();
+		Matcher m = TAG_FEATURE_PATTERN.matcher(tag);
+		while (m.find()) {
+			if (sb.length() > 0) {
+				sb.append(",");
+			}
+			sb.append(m.group(1) + "/" + m.group(2));
 		}
 		
 		return sb.toString();

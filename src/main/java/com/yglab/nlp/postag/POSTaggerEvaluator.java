@@ -9,7 +9,7 @@ import com.yglab.nlp.util.eval.AbstractEvaluator;
  */
 public class POSTaggerEvaluator extends AbstractEvaluator<POSSample> {
 	
-	private POSTagger tagger;
+	protected POSTagger tagger;
 	
 	public POSTaggerEvaluator(POSTagger tagger) {
 		super();
@@ -37,13 +37,13 @@ public class POSTaggerEvaluator extends AbstractEvaluator<POSSample> {
 		output.println("");
 		
 		for (int i = 0; i < predictedTags.length; i++) {
-			output.print(i + ": " + sample.getSentence()[i] + " [" + actualTags[i] + "] -> [" + predictedTags[i] + "]");
+			output.print(i + "\t" + sample.getSentence()[i] + "\t" + actualTags[i] + "\t" + predictedTags[i] + "\t");
 			if (predictedTags[i].equals(actualTags[i])) {
 				addTruePositiveSize(1);
-				output.println(" = true");
+				output.println("true");
 			}
 			else {
-				output.println(" = false");
+				output.println("false");
 			}
 		}
 	}
