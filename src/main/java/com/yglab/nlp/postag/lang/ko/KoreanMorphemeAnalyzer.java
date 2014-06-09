@@ -29,12 +29,12 @@ public class KoreanMorphemeAnalyzer {
 			);
 	
 	/** the pattern for finding tail tag */
-	private static final Pattern TAILTAG_PATTERN = Pattern.compile(
+	private static final Pattern TAIL_TAG_PATTERN = Pattern.compile(
 			"([^/\\+\\(\\)]*)/([XEJ][A-Z]+|VX|VCP).*");
 	
 	/** the pattern for finding extra feature from tag */
 	private static final Pattern TAG_FEATURE_PATTERN = Pattern.compile(
-			"([^/\\+\\(\\)]*)/(NNB)");
+			"([^/\\+\\(\\)]*)/(NNB|JKB|EP)");
 	
 	private KoreanMorphemeDictionary dic;
 	private KoreanLemmatizer lemmatizer;
@@ -300,7 +300,7 @@ public class KoreanMorphemeAnalyzer {
 			}
 			
 			/* add tail candidate */
-			String tailtag = candidate.getTagStartsWith(TAILTAG_PATTERN);
+			String tailtag = candidate.getTagStartsWith(TAIL_TAG_PATTERN);
 			String tail = extractTailMorphemes(tailtag);
 			if (tail != null && !tail.equals("") && !tailCandidates.contains(tail)) {
 				tailCandidates.add(tail);
@@ -308,7 +308,7 @@ public class KoreanMorphemeAnalyzer {
 			
 			/* add token features */
 			String feature = extractFeature(tag);
-			if (!tokenFeatures.contains(feature)) {
+			if (feature != null && !feature.equals("") && !tokenFeatures.contains(feature)) {
 				tokenFeatures.add(feature);
 			}
 			
@@ -329,6 +329,7 @@ public class KoreanMorphemeAnalyzer {
 				morpheme.setAnalyzed(false);
 				
 				Token clonedCandidate = new Token(candidate);
+				/* add leftmost morpheme candidate from valid tag */
 				clonedCandidate.add(morpheme);
 				/* add valid token candidate */
 				if (!candidates.containsKey(clonedCandidate.getTag())) {
@@ -347,7 +348,7 @@ public class KoreanMorphemeAnalyzer {
 		
 		/* add tail candidate */
 		if (validTagList.size() > 0) {
-			String tailtag = candidate.getTagStartsWith(TAILTAG_PATTERN);
+			String tailtag = candidate.getTagStartsWith(TAIL_TAG_PATTERN);
 			String tail = extractTailMorphemes(tailtag);
 			if (tail != null && !tail.equals("") && !tailCandidates.contains(tail)) {
 				tailCandidates.add(tail);
@@ -357,7 +358,7 @@ public class KoreanMorphemeAnalyzer {
 		/* add token features */
 		if (validTagList.size() > 0) {
 			String feature = extractFeature(tag);
-			if (!tokenFeatures.contains(feature)) {
+			if (feature != null && !feature.equals("") && !tokenFeatures.contains(feature)) {
 				tokenFeatures.add(feature);
 			}
 		}

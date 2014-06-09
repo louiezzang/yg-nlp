@@ -36,7 +36,7 @@ public class KoreanPOSTaggerTest {
 		featureGenerator = new KoreanPOSFeatureGenerator(analyzer);
 		
 		long startTime = System.currentTimeMillis();
-		//train();
+		train();
 		long elapsedTime = System.currentTimeMillis() - startTime;
 		System.out.println("elapsed time to train = " + elapsedTime);
 	}
@@ -85,7 +85,7 @@ public class KoreanPOSTaggerTest {
 			"지내는",			
 			"해줄",
 			"수",
-			"있다",		
+			"있다",
 			"."
 		};
 		
@@ -95,10 +95,13 @@ public class KoreanPOSTaggerTest {
 		
 		System.out.println("==================================================");
 		
-		List<Token> eojeols = tagger.analyze(tokens);
+		List<Token> analTokens = tagger.analyze(tokens);
 		
-		for (int i = 0; i < eojeols.size(); i++) {
-			System.out.println(i + ": " + eojeols.get(i));
+		System.out.println("");
+		
+		for (int i = 0; i < analTokens.size(); i++) {
+			Token analToken = analTokens.get(i);
+			System.out.println(i + ": " + analToken.getToken() + "[" +  analToken.getTag() + "], " + analToken.getAttributes());
 		}
 	}
 	

@@ -9,8 +9,8 @@
 대기	NNG	suffix							
 도로	NNG	suffix							
 동남아	NNP	suffix							
-만	NR	suffix							
-만	NNG	suffix							
+#만	NR	suffix							
+#만	NNG	suffix							
 말	NNG	suffix							
 면	NNG	suffix							
 면	NNP	suffix							

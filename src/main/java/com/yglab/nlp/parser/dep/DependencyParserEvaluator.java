@@ -129,9 +129,9 @@ public class DependencyParserEvaluator extends AbstractEvaluator<ParseSample> {
 	
 	@Override
 	protected void printCustomResult() {
-		output.println("LAS(Labeled Attachment Score) = " + getLAS());
-		output.println("UAS(Unlabeled Attachment Score) = " + getUAS());
-		output.println("LA(Label Accuracy) = " + getLA());
+		output.println(" LAS(Labeled Attachment Score) = " + getLAS());
+		output.println(" UAS(Unlabeled Attachment Score) = " + getUAS());
+		output.println(" LA(Label Accuracy) = " + getLA());
 	}
 
 }

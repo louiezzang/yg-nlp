@@ -192,7 +192,12 @@ public class Token extends LinkedList<Morpheme> implements Comparable<Token> {
 		return this.getPos().split("\\+").length;
 	}
 	
-	public String getSurface() {
+	/**
+	 * This does not always returns the original token string!
+	 * 
+	 * @return
+	 */
+	public String getAnalyzedSurface() {
 		StringBuilder sb = new StringBuilder();
 		for (int i = this.size() - 1; i >= 0; i--) {
 			Morpheme morph = this.get(i);

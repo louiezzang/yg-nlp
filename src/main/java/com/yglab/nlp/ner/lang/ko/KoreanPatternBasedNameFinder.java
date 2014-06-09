@@ -8,8 +8,7 @@ import com.yglab.nlp.model.Span;
 import com.yglab.nlp.ner.PatternBasedNameFeatureGenerator;
 import com.yglab.nlp.ner.PatternBasedNameFinder;
 import com.yglab.nlp.ner.TokenPostagPairGenerator;
-import com.yglab.nlp.postag.lang.ko.Eojeol;
-import com.yglab.nlp.postag.morph.Morpheme;
+import com.yglab.nlp.postag.morph.Token;
 import com.yglab.nlp.tokenizer.Tokenizer;
 
 /**
@@ -39,9 +38,9 @@ public class KoreanPatternBasedNameFinder extends PatternBasedNameFinder {
 		
 		Span[] tokenSpans = this.tokenize(s);
 		String[] tokens = Span.spansToStrings(tokenSpans, s);
-		List<Eojeol> eojeols = koTokenGenerator.getEojeols(tokens);
 		
 		tokens = koTokenGenerator.generate(tokens);
+		List<Token> analTokens = koTokenGenerator.getCurrentAnalyzedTokens();
 		Span[] nameTokenSpans = this.findMaxent(tokens);
 		
 		for (Span nameTokenSpan : nameTokenSpans) {
@@ -49,34 +48,16 @@ public class KoreanPatternBasedNameFinder extends PatternBasedNameFinder {
 			int end = nameTokenSpan.getEnd();
 			String type = nameTokenSpan.getType();
 			
-			StringBuilder stemWords = new StringBuilder();
+			List<Token> nameTokens = new ArrayList<Token>();
 			for (int i = start; i < end; i++) {
-				Eojeol eojeol = eojeols.get(i);
-				if (i == end - 1 && (eojeol.containsPos("J") || eojeol.containsPos("E"))) {
-					List<Morpheme> morphs = eojeol.getMorphemes();
-					if (morphs.size() > 0) {
-						for (int j = 0; j < morphs.size(); j++) {
-							Morpheme morph = morphs.get(j);
-							String postag = morph.getPos();
-							if (!postag.startsWith("J") && !postag.startsWith("E")) {
-							//if (!postag.startsWith("J")) {
-								stemWords.append(morph.getLemma());
-							}
-							//else if (j == morphs.size() - 1 && postag.startsWith("E")) {
-							//	stemWords.append("다");
-							//}
-						}
-					}
-				}
-				else {
-					stemWords.append(eojeol.getSurface()).append(" ");
-				}
+				Token analToken = analTokens.get(i);
+				nameTokens.add(analToken);
 			}
 
 			int origNameStart = tokenSpans[start].getStart();
 			int origNameEnd = tokenSpans[end - 1].getEnd();
 			Span nameSpan = new Span(origNameStart, origNameEnd, type);
-			nameSpan.setAttribute("stemWords", stemWords.toString().trim());
+			nameSpan.setAttribute("tokens", nameTokens);
 			nameSpans.add(nameSpan);			
 		}
 		

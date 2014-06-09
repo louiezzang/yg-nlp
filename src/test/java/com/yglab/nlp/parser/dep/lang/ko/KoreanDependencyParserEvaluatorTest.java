@@ -34,7 +34,7 @@ public class KoreanDependencyParserEvaluatorTest {
 		
 		featureGenerator = new DefaultDependencyFeatureGenerator();
 		
-		train();
+		//train();
 	}
 	
 	private static void train() throws Exception {

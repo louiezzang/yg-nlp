@@ -7,9 +7,9 @@ import com.yglab.nlp.model.AbstractModel;
 import com.yglab.nlp.model.Span;
 import com.yglab.nlp.ner.NameFeatureGenerator;
 import com.yglab.nlp.ner.NameFinder;
-import com.yglab.nlp.postag.lang.ko.Eojeol;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
 import com.yglab.nlp.postag.morph.Morpheme;
+import com.yglab.nlp.postag.morph.Token;
 import com.yglab.nlp.tokenizer.Tokenizer;
 
 /**
@@ -51,41 +51,35 @@ public class KoreanNameFinder extends NameFinder {
 		Span[] origSpans = tokenizer.tokenizePos(s);
 		String[] tokens = tokenizer.tokenize(s);
 		
-		/* The size of eojeols is same as that of tokens. */
-		List<Eojeol> eojeols = posTagger.analyze(tokens);
+		/* The size of analyzed tokens is same as that of tokens. */
+		List<Token> analTokens = posTagger.analyze(tokens);
 
 		List<Span> analSpans = new ArrayList<Span>();
 
 		int position = 0;
 		int origSpanIndex = 0;
-		for (int i = 0; i < eojeols.size(); i++) {
-			Eojeol eojeol = eojeols.get(i);
+		for (int ti = 0; ti < analTokens.size(); ti++) {
+			Token analToken = analTokens.get(ti);
 			Span origSpan = origSpans[origSpanIndex];
 
-			System.out.println(i + ": " + eojeols.get(i).toString());
+			System.out.println(ti + ": " + analToken);
 
-			/* If the eojeol contains josa. */
-			if (eojeol.containsPos("J")) {
-				List<Morpheme> morphs = eojeol.getMorphemes();
-				/* If the eojeol consists of the analyzed morphemes in it. */
-				if (morphs.size() > 0) {
-					for (int j = 0; j < morphs.size(); j++) {
-						String morph = morphs.get(j).getSurface();
-						int length = morph.length();
-						Span span = new Span(position, position + length);
-						analSpans.add(span);
-						if (j < morphs.size() - 1) {
-							position += length;
-						}
-						else {
-							position += (length + 1);
-							origSpanIndex++;
-						}
+			/* If the analyzed token contains josa. */
+			if (analToken.getPos().contains("+J")) {
+				for (int mi = analToken.size() - 1; mi >= 0; mi--) {
+					Morpheme morpheme = analToken.get(mi);
+					String surface = morpheme.getSurface();
+					//System.out.println("surface=" + surface);
+					int length = surface.length();
+					Span span = new Span(position, position + length);
+					analSpans.add(span);
+					if (mi > 0) {
+						position += length;
 					}
-				} else {
-					analSpans.add(origSpan);
-					position = origSpan.getEnd() + 1;
-					origSpanIndex++;
+					else {
+						position += (length + 1);
+						origSpanIndex++;
+					}
 				}
 			} else {
 				analSpans.add(origSpan);
@@ -93,6 +87,8 @@ public class KoreanNameFinder extends NameFinder {
 				origSpanIndex++;
 			}
 		}
+		
+		System.out.println(analSpans);
 
 		return analSpans.toArray(new Span[analSpans.size()]);
 	}

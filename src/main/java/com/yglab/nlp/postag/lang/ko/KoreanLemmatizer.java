@@ -1,5 +1,7 @@
 package com.yglab.nlp.postag.lang.ko;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,7 +19,7 @@ public class KoreanLemmatizer implements Lemmatizer<Token> {
 	
 	/** the pattern for finding tag to lemmatize */
 	private static final Pattern LEMMA_TAG_PATTERN = Pattern.compile(
-			"([^/\\+\\(\\)]*)/([VN][A-Z]+|XSV|XSA|NNB)");
+			"([^E][^C]\\+|^)([^/\\+\\(\\)]*)/([VN][A-Z]+|XSV|XSA|NNB)");
 	
 	/** the pattern for finding noun term */
 	private static final Pattern NOUN_TAG_PATTERN = Pattern.compile(
@@ -25,13 +27,14 @@ public class KoreanLemmatizer implements Lemmatizer<Token> {
 	
 	/** the pattern for finding verb term */
 	private static final Pattern VERB_TAG_PATTERN = Pattern.compile(
-			"([^/\\+\\(\\)]*)/(VV|VA|VX|XSV|XSA)");
+			"([^/\\+\\(\\)]*)/(VV|VA|VX|XSV|XSA|VCP|VCN)");
 
 	@Override
 	public Token lemmatize(Token token) {
 		String head = token.getHead();
 		String lemma = head;
 		
+		Morpheme leftMorpheme = null;
 		for (int i = token.size() - 1; i >= 0; i--) {
 			Morpheme morpheme = token.get(i);
 			String tag = morpheme.getTag();
@@ -44,12 +47,17 @@ public class KoreanLemmatizer implements Lemmatizer<Token> {
 						/* insertion */
 						if (rule.startsWith("+")) {
 							lemma = KoreanMorphemeUtil.appendRight(lemma, rule.substring(1));
+							//System.err.println("lemma(+)=" + lemma);
 						}
 						/* deletion */
 						else if (rule.startsWith("-")) {
 							lemma = KoreanMorphemeUtil.truncateRight(lemma, rule.substring(1));
+							//System.err.println("lemma(-)=" + lemma);
 						}
 					}
+					/* add lemma */
+					addLemma(token, tag, lemma);
+					//System.err.println("lemma(+-)=" + lemma);
 				}
 				
 				if (i == token.size() - 1) {
@@ -59,45 +67,67 @@ public class KoreanLemmatizer implements Lemmatizer<Token> {
 					}
 				}
 				else if (i == token.size() - 2) {
-					Morpheme leftMorpheme = token.get(i + 1);
-					if (!leftMorpheme.isAnalyzed()) {
+					if (leftMorpheme != null && !leftMorpheme.isAnalyzed()) {
 						leftMorpheme.setTag(lemma + "/" + leftMorpheme.getTag());
 						leftMorpheme.setSurface(lemma);
-						
-						Matcher noun = NOUN_TAG_PATTERN.matcher(leftMorpheme.getTag());
-						if (noun.find()) {
-							token.setAttribute("noun", lemma);
-						}
-						Matcher verb = VERB_TAG_PATTERN.matcher(leftMorpheme.getTag());
-						if (verb.find()) {
-							token.setAttribute("verb", lemma);
-						}
+						/* add lemma */
+						addLemma(token, leftMorpheme.getTag(), lemma);
+						//System.err.println("lemma(1)=" + lemma);
 					}
 				}
 			}
 			
-			Matcher lemmaMatcher = LEMMA_TAG_PATTERN.matcher(tag);
-			while (lemmaMatcher.find()) {
-				if (lemma == null) {
-					lemma = lemmaMatcher.group(1);
+			if (leftMorpheme == null || !leftMorpheme.getTag().endsWith("EC")) {
+				Matcher lemmaMatcher = LEMMA_TAG_PATTERN.matcher(tag);
+				while (lemmaMatcher.find()) {
+					if (lemma == null) {
+						lemma = lemmaMatcher.group(2);
+					}
+					else {
+						lemma += lemmaMatcher.group(2);
+					}
+					//System.err.println("lemma(2)=" + lemma);
 				}
-				else {
-					lemma += lemmaMatcher.group(1);
-				}
+				/* add lemma */
+				addLemma(token, tag, lemma);
 			}
-			
-			Matcher nounMatcher = NOUN_TAG_PATTERN.matcher(tag);
-			if (nounMatcher.find()) {
-				token.setAttribute("noun", lemma);
-			}
-			
-			Matcher verbMatcher = VERB_TAG_PATTERN.matcher(tag);
-			if (verbMatcher.find()) {
-				token.setAttribute("verb", lemma);
-			}
+			leftMorpheme = morpheme;
 		}
 		
 		return token;
+	}
+	
+	@SuppressWarnings("unchecked")
+	private static void addLemma(Token token, String tag, String lemma) {
+		Matcher nounMatcher = NOUN_TAG_PATTERN.matcher(tag);
+		if (nounMatcher.find()) {
+			if (token.containsAttributeKey("noun")) {
+				List<String> nouns = (List<String>) token.getAttribute("noun");
+				if (!nouns.contains(lemma)) {
+					nouns.add(lemma);
+				}
+			}
+			else {
+				List<String> nouns = new ArrayList<String>();
+				nouns.add(lemma);
+				token.setAttribute("noun", nouns);
+			}
+		}
+		
+		Matcher verbMatcher = VERB_TAG_PATTERN.matcher(tag);
+		if (verbMatcher.find()) {
+			if (token.containsAttributeKey("verb")) {
+				List<String> verbs = (List<String>) token.getAttribute("verb");
+				if (!verbs.contains(lemma)) {
+					verbs.add(lemma);
+				}
+			}
+			else {
+				List<String> verbs = new ArrayList<String>();
+				verbs.add(lemma);
+				token.setAttribute("verb", verbs);
+			}
+		}
 	}
 
 }

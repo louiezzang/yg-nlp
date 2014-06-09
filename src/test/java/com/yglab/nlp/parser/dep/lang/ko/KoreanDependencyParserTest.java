@@ -14,11 +14,11 @@ import com.yglab.nlp.parser.ParseSample;
 import com.yglab.nlp.parser.dep.DefaultDependencyFeatureGenerator;
 import com.yglab.nlp.parser.dep.DependencyParser;
 import com.yglab.nlp.parser.io.CoNLLReader;
-import com.yglab.nlp.postag.POSSample;
-import com.yglab.nlp.postag.lang.ko.Eojeol;
+import com.yglab.nlp.postag.lang.ko.KoreanMorphemeAnalyzer;
 import com.yglab.nlp.postag.lang.ko.KoreanMorphemeDictionary;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSFeatureGenerator;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
+import com.yglab.nlp.postag.morph.Token;
 import com.yglab.nlp.tokenizer.DefaultTokenFeatureGenerator;
 import com.yglab.nlp.tokenizer.MaxentTokenizer;
 import com.yglab.nlp.tokenizer.TokenFeatureGenerator;
@@ -45,12 +45,12 @@ public class KoreanDependencyParserTest {
 		tokenizer = initTokenizer();
 		posTagger = initPOSTagger();
 		
-		train();
+		//train();
 	}
 	
 	private static void train() throws Exception {
 		CoNLLReader reader = new CoNLLReader();
-		reader.startReading("/sample/ko/parser/ko-parser-train.conll");
+		reader.startReading("./data/ko/parser/ko-parser-train-sejong-BGAA0164.conll");
 		List<ParseSample> trainSamples = DependencyParser.loadSamples(reader);
 		String[] labels = reader.getLabels();
 		
@@ -59,7 +59,7 @@ public class KoreanDependencyParserTest {
 		options.put(Options.ITERATIONS, "5");
 		
 		AbstractModel model = DependencyParser.train(trainSamples, labels, featureGenerator, options);
-		DependencyParser.saveModel(model, "./target/test-data/ko/parser/ko-parser-model-sample.bin", "./target/test-data/ko/parser/ko-parser-model-sample.txt");
+		DependencyParser.saveModel(model, "./target/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.bin", "./target/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.txt");
 	}
 	
 	/**
@@ -88,18 +88,27 @@ public class KoreanDependencyParserTest {
 	 * @throws Exception
 	 */
 	private static KoreanPOSTagger initPOSTagger() throws Exception {
-		// TODO
-		KoreanMorphemeDictionary dic = new KoreanMorphemeDictionary("/lang/ko/ko-pos-josa.dic", "/lang/ko/ko-pos-eomi.dic");
-		KoreanPOSFeatureGenerator posFeatureGenerator = new KoreanPOSFeatureGenerator(dic);
-		
-		List<POSSample> posTrainSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt", "_[^,]+", "");
-		
-		Options options = new Options();
-		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
-		AbstractModel trainModel = KoreanPOSTagger.train(posTrainSamples, posFeatureGenerator, options);
+		KoreanMorphemeDictionary dic = new KoreanMorphemeDictionary(
+				"/lang/ko/ko-pos-josa.dic",
+				"/lang/ko/ko-pos-eomi.dic", 
+				"/lang/ko/ko-pos-bojo.dic",
+				"/lang/ko/ko-pos-head.dic",
+				"/lang/ko/ko-pos-word.dic",
+				"/lang/ko/ko-pos-suffix.dic");
 
-		// TODO
-		KoreanPOSTagger posTagger = new KoreanPOSTagger(trainModel, posFeatureGenerator, dic);
+		String[] labels = KoreanPOSTagger.getLabels("/sample/ko/pos/ko-pos-train-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
+		KoreanMorphemeAnalyzer morphAnalyzer = new KoreanMorphemeAnalyzer(dic, labels);
+		KoreanPOSFeatureGenerator posFeatureGenerator = new KoreanPOSFeatureGenerator(morphAnalyzer);
+		
+//		List<POSSample> posTrainSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-train-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
+//		
+//		Options options = new Options();
+//		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
+//		AbstractModel trainModel = KoreanPOSTagger.train(posTrainSamples, posFeatureGenerator, options);
+		
+		AbstractModel trainedPosModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
+		
+		KoreanPOSTagger posTagger = new KoreanPOSTagger(trainedPosModel, posFeatureGenerator);
 		
 		return posTagger;
 	}
@@ -108,7 +117,7 @@ public class KoreanDependencyParserTest {
 	public void testParser() throws Exception {
 		System.out.println("====================================================");
 
-		AbstractModel trainedModel = KoreanDependencyParser.loadModel("./target/test-data/ko/parser/ko-parser-model.bin");
+		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.bin");
 		KoreanDependencyParser parser = new KoreanDependencyParser(trainedModel, featureGenerator, tokenizer, posTagger);
 		
 		String s = "나는 도서관에 열심히 다닙니다.";
@@ -122,9 +131,9 @@ public class KoreanDependencyParserTest {
 		System.out.println("====================================================");
 		
 		for (Parse parse : parses) {
-			Eojeol eojeol = (Eojeol) parse.getAttribute("eojeol");
+			Token token = (Token) parse.getAttribute("token");
 			System.out.println(parse.getIndex() + "\t" + parse.getHead() + "\t" + parse.getLabel() + 
-					"\t" + parse.getScore() + "\t" + parse.getWord() + "\t" + eojeol);
+					"\t" + parse.getScore() + "\t" + parse.getWord() + "\t" + token.getTag());
 		}
 	}
 

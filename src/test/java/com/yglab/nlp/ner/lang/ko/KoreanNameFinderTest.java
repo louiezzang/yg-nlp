@@ -13,7 +13,7 @@ import com.yglab.nlp.ner.DefaultNameFeatureGenerator;
 import com.yglab.nlp.ner.NameFeatureGenerator;
 import com.yglab.nlp.ner.NameFinder;
 import com.yglab.nlp.ner.NameSample;
-import com.yglab.nlp.postag.POSSample;
+import com.yglab.nlp.postag.lang.ko.KoreanMorphemeAnalyzer;
 import com.yglab.nlp.postag.lang.ko.KoreanMorphemeDictionary;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSFeatureGenerator;
 import com.yglab.nlp.postag.lang.ko.KoreanPOSTagger;
@@ -70,18 +70,27 @@ public class KoreanNameFinderTest {
 	 * @throws Exception
 	 */
 	private static KoreanPOSTagger initPOSTagger() throws Exception {
-		// TODO
-		KoreanMorphemeDictionary dic = new KoreanMorphemeDictionary("/lang/ko/ko-pos-josa.dic", "/lang/ko/ko-pos-eomi.dic");
-		KoreanPOSFeatureGenerator posFeatureGenerator = new KoreanPOSFeatureGenerator(dic);
-		
-		List<POSSample> posTrainSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-train.txt", "_[^,]+", "");
-		
-		Options options = new Options();
-		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
-		AbstractModel trainModel = KoreanPOSTagger.train(posTrainSamples, posFeatureGenerator, options);
+		KoreanMorphemeDictionary dic = new KoreanMorphemeDictionary(
+				"/lang/ko/ko-pos-josa.dic",
+				"/lang/ko/ko-pos-eomi.dic", 
+				"/lang/ko/ko-pos-bojo.dic",
+				"/lang/ko/ko-pos-head.dic",
+				"/lang/ko/ko-pos-word.dic",
+				"/lang/ko/ko-pos-suffix.dic");
 
-		// TODO
-		KoreanPOSTagger posTagger = new KoreanPOSTagger(trainModel, posFeatureGenerator, dic);
+		String[] labels = KoreanPOSTagger.getLabels("/sample/ko/pos/ko-pos-train-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
+		KoreanMorphemeAnalyzer morphAnalyzer = new KoreanMorphemeAnalyzer(dic, labels);
+		KoreanPOSFeatureGenerator posFeatureGenerator = new KoreanPOSFeatureGenerator(morphAnalyzer);
+		
+//		List<POSSample> posTrainSamples = KoreanPOSTagger.loadSamples("/sample/ko/pos/ko-pos-train-sejong-BGAA0164.txt", "[^\\+/\\(\\)]*/", "");
+//		
+//		Options options = new Options();
+//		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
+//		AbstractModel trainModel = KoreanPOSTagger.train(posTrainSamples, posFeatureGenerator, options);
+		
+		AbstractModel trainedPosModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
+		
+		KoreanPOSTagger posTagger = new KoreanPOSTagger(trainedPosModel, posFeatureGenerator);
 		
 		return posTagger;
 	}
