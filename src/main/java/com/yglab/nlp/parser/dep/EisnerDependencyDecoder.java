@@ -225,6 +225,7 @@ public class EisnerDependencyDecoder implements PerceptronDecoder<ParseSample, P
 	 * @param instance
 	 * @return
 	 */
+	// TODO: 성능개선을 위해 매번 재생성하는 방식에서 이미 생성된 오브젝트는 특정키로 해쉬맵에 저장해 놓고 재사용하도록 개선 필요
 	private Parse getParse(int s, int t, int direction, ParseSample instance) {
 		Parse maxParse = null;
 
