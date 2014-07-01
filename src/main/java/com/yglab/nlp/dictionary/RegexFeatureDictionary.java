@@ -38,7 +38,7 @@ public class RegexFeatureDictionary {
 				e.printStackTrace();
 				throw e;
 			} catch (NullPointerException e) {
-				System.err.println("Error: feature dicitonary file " + filename + " doesn't have the right format");
+				System.err.println("Error: feature dictionary file " + filename + " doesn't have the right format");
 				e.printStackTrace();
 				throw e;
 			}
