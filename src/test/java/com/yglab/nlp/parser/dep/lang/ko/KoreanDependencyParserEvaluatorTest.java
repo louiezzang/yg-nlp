@@ -3,6 +3,7 @@ package com.yglab.nlp.parser.dep.lang.ko;
 import java.util.List;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.dictionary.RegexFeatureDictionary;
@@ -21,7 +22,7 @@ import com.yglab.nlp.perceptron.PerceptronModel;
  * 
  * @author Younggue Bae
  */
-//@Ignore
+@Ignore
 public class KoreanDependencyParserEvaluatorTest {
 	
 	private static RegexFeatureDictionary featureDic;

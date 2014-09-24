@@ -3,6 +3,7 @@ package com.yglab.nlp.parser.dep;
 import java.util.List;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.model.AbstractModel;
@@ -16,7 +17,7 @@ import com.yglab.nlp.perceptron.PerceptronModel;
  * 
  * @author Younggue Bae
  */
-//@Ignore
+@Ignore
 public class DependencyParserEvaluatorTest {
 	
 	private static DependencyFeatureGenerator<ParseSample> featureGenerator;

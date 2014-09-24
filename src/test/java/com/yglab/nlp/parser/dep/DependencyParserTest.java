@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.model.AbstractModel;
@@ -18,7 +19,7 @@ import com.yglab.nlp.parser.io.CoNLLReader;
  * 
  * @author Younggue Bae
  */
-//@Ignore
+@Ignore
 public class DependencyParserTest {
 	
 	private static DefaultDependencyFeatureGenerator featureGenerator;

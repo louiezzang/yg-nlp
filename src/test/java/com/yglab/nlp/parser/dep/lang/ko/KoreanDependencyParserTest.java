@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.yglab.nlp.dictionary.RegexFeatureDictionary;
@@ -30,6 +31,7 @@ import com.yglab.nlp.tokenizer.Tokenizer;
  * 
  * @author Younggue Bae
  */
+@Ignore
 public class KoreanDependencyParserTest {
 	
 	private static DefaultDependencyFeatureGenerator featureGenerator;
