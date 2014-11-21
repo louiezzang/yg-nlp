@@ -73,7 +73,7 @@ public class MaxentTokenizerTest {
 		options.put("useSkipPattern", "true");
 		AbstractModel model = MaxentTokenizer.train(trainSamples, featureGenerator, options);
 
-		MaxentTokenizer.saveModel(model, "./target/test-data/en/tokenizer/en-tokenizer-model.bin", "./target/test-data/en/tokenizer/en-tokenizer-model.txt");
+		MaxentTokenizer.saveModel(model, "./build/test-data/en/tokenizer/en-tokenizer-model.bin", "./build/test-data/en/tokenizer/en-tokenizer-model.txt");
 	}
 	
 	private static void train_ko() throws Exception {
@@ -84,12 +84,12 @@ public class MaxentTokenizerTest {
 		options.put("useSkipPattern", "true");
 		AbstractModel model = MaxentTokenizer.train(trainSamples, featureGenerator, options);
 
-		MaxentTokenizer.saveModel(model, "./target/test-data/ko/tokenizer/ko-tokenizer-model.bin", "./target/test-data/ko/tokenizer/ko-tokenizer-model.txt");
+		MaxentTokenizer.saveModel(model, "./build/test-data/ko/tokenizer/ko-tokenizer-model.bin", "./build/test-data/ko/tokenizer/ko-tokenizer-model.txt");
 	}
 	
 	@Test
 	public void testTokenizer_en() throws Exception {
-		AbstractModel trainModel = MaxentTokenizer.loadModel("./target/test-data/en/tokenizer/en-tokenizer-model.bin");
+		AbstractModel trainModel = MaxentTokenizer.loadModel("./build/test-data/en/tokenizer/en-tokenizer-model.bin");
 		MaxentTokenizer tokenizer = new MaxentTokenizer(trainModel, featureGenerator);
 		
 		String s = "I've five minutes away from the underground station \"Westbad\".";
@@ -103,7 +103,7 @@ public class MaxentTokenizerTest {
 	
 	@Test
 	public void testTokenizer_ko() throws Exception {
-		AbstractModel trainModel = MaxentTokenizer.loadModel("./target/test-data/ko/tokenizer/ko-tokenizer-model.bin");
+		AbstractModel trainModel = MaxentTokenizer.loadModel("./build/test-data/ko/tokenizer/ko-tokenizer-model.bin");
 		MaxentTokenizer tokenizer = new MaxentTokenizer(trainModel, featureGenerator);
 		
 		String s = "행사 관계자는 \"이민호의 인기가 상상을 초월할 정도다\"라며 이민호의 싱가포르 인기를 밝혔다.";

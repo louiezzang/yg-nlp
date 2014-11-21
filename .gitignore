@@ -1,1 +1,16 @@
-/target
+/bin/
+/build/
+
+# Java class files
+*.class
+
+# Eclipse project files
+.classpath
+.project
+.settings
+
+# Gradle
+.gradle
+
+# etc.
+.DS_Store

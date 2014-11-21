@@ -31,7 +31,7 @@ public class POSTaggerTest {
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 		AbstractModel model = POSTagger.train(trainSamples, featureGenerator, options);
 		
-		POSTagger.saveModel(model, "./target/test-data/en/pos/en-pos-default-model.bin", "./target/test-data/en/pos/en-pos-default-model.txt");		
+		POSTagger.saveModel(model, "./build/test-data/en/pos/en-pos-default-model.bin", "./build/test-data/en/pos/en-pos-default-model.txt");		
 	}
 	
 	@Test
@@ -45,7 +45,7 @@ public class POSTaggerTest {
 		
 		System.out.println("tokens to test = " + tokens.length);
 		
-		AbstractModel trainModel = POSTagger.loadModel("./target/test-data/en/pos/en-pos-default-model.bin");
+		AbstractModel trainModel = POSTagger.loadModel("./build/test-data/en/pos/en-pos-default-model.bin");
 		POSTagger tagger = new POSTagger(trainModel, featureGenerator);
 		
 		System.out.println("==================================================");
@@ -60,7 +60,7 @@ public class POSTaggerTest {
 	
 	@Test
 	public void testEvaluator() throws Exception {
-		AbstractModel trainModel = POSTagger.loadModel("./target/test-data/en/pos/en-pos-default-model.bin");
+		AbstractModel trainModel = POSTagger.loadModel("./build/test-data/en/pos/en-pos-default-model.bin");
 		
 		POSTagger tagger = new POSTagger(trainModel, featureGenerator);
 		

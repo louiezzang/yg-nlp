@@ -36,7 +36,7 @@ public class KoreanPOSTaggerTest {
 		featureGenerator = new KoreanPOSFeatureGenerator(analyzer);
 		
 		long startTime = System.currentTimeMillis();
-		train();
+//		train();
 		long elapsedTime = System.currentTimeMillis() - startTime;
 		System.out.println("elapsed time to train = " + elapsedTime);
 	}
@@ -48,7 +48,7 @@ public class KoreanPOSTaggerTest {
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 		AbstractModel model = KoreanPOSTagger.train(trainSamples, featureGenerator, options);
 		
-		KoreanPOSTagger.saveModel(model, "./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin", "./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.txt");
+		KoreanPOSTagger.saveModel(model, "./build/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin", "./build/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.txt");
 	}
 	
 	@Test
@@ -89,7 +89,7 @@ public class KoreanPOSTaggerTest {
 			"."
 		};
 		
-		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
+		AbstractModel trainModel = KoreanPOSTagger.loadModel("./build/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
 
 		KoreanPOSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator);
 		
@@ -108,7 +108,7 @@ public class KoreanPOSTaggerTest {
 	@Test
 	//@Ignore
 	public void testEvaluator() throws Exception {
-		AbstractModel trainModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin");
+		AbstractModel trainModel = KoreanPOSTagger.loadModel("./build/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin");
 		
 		POSTagger tagger = new KoreanPOSTagger(trainModel, featureGenerator);
 		
@@ -118,7 +118,7 @@ public class KoreanPOSTaggerTest {
 		
 		KoreanPOSTaggerEvaluator evaluator = new KoreanPOSTaggerEvaluator(
 				tagger, 
-				"./target/test-data/ko/pos/ko-pos-test-result-sejong-BGAA0164.txt", 
+				"./build/test-data/ko/pos/ko-pos-test-result-sejong-BGAA0164.txt", 
 				true);
 
 		evaluator.evaluate(testSamples);

@@ -40,7 +40,7 @@ public class NLUTest {
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 		AbstractModel model = NameFinder.train(trainSamples, featureGenerator, options);
 
-		NameFinder.saveModel(model, "./target/test-data/ko/nlu/ko-nlu-model.bin", "./target/test-data/ko/nlu/ko-nlu-model.txt");
+		NameFinder.saveModel(model, "./build/test-data/ko/nlu/ko-nlu-model.bin", "./build/test-data/ko/nlu/ko-nlu-model.txt");
 	}
 	
 	@Test
@@ -61,7 +61,7 @@ public class NLUTest {
 			System.out.println(i + ": " + tokens[i]);
 		}
 		
-		AbstractModel trainModel = NameFinder.loadModel("./target/test-data/ko/nlu/ko-nlu-model.bin");
+		AbstractModel trainModel = NameFinder.loadModel("./build/test-data/ko/nlu/ko-nlu-model.bin");
 		NameFinder finder = new NameFinder(trainModel, featureGenerator);
 
 		Span[] result = finder.find(tokens);

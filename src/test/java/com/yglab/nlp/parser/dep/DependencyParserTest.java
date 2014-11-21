@@ -65,14 +65,14 @@ public class DependencyParserTest {
 		
 		//AbstractModel model = DependencyParser.train(trainSamples1, labels1, featureGenerator, options);
 		AbstractModel model = DependencyParser.train(trainSamples2, labels2, featureGenerator, options);
-		DependencyParser.saveModel(model, "./target/test-data/en/parser/en-parser-test-model.bin", "./target/test-data/en/parser/en-parser-test-model.txt");
+		DependencyParser.saveModel(model, "./build/test-data/en/parser/en-parser-test-model.bin", "./build/test-data/en/parser/en-parser-test-model.txt");
 	}
 	
 	@Test
 	public void testParser() throws Exception {
 		System.out.println("===============================================");
 
-		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/en/parser/en-parser-test-model.bin");
+		AbstractModel trainedModel = DependencyParser.loadModel("./build/test-data/en/parser/en-parser-test-model.bin");
 		DependencyParser parser = new DependencyParser(trainedModel, featureGenerator);
 		
 		CoNLLReader reader = new CoNLLReader();

@@ -34,7 +34,7 @@ public class NameFinderTest {
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 		AbstractModel model = NameFinder.train(trainSamples, featureGenerator, options);
 
-		NameFinder.saveModel(model, "./target/test-data/ko/ner/ko-ner-default-model.bin", "./target/test-data/ko/ner/ko-ner-default-model.txt");
+		NameFinder.saveModel(model, "./build/test-data/ko/ner/ko-ner-default-model.bin", "./build/test-data/ko/ner/ko-ner-default-model.txt");
 	}
 	
 	@Test
@@ -64,7 +64,7 @@ public class NameFinderTest {
 			System.out.println(i + ": " + tokens[i]);
 		}
 
-		AbstractModel trainModel = NameFinder.loadModel("./target/test-data/ko/ner/ko-ner-default-model.bin");
+		AbstractModel trainModel = NameFinder.loadModel("./build/test-data/ko/ner/ko-ner-default-model.bin");
 		NameFinder finder = new NameFinder(trainModel, featureGenerator);
 		Span[] result = finder.find(tokens);
 
@@ -81,7 +81,7 @@ public class NameFinderTest {
 		//options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 		//AbstractModel trainModel = NameFinder.train(trainSamples, featureGenerator, options);
 		
-		AbstractModel trainModel = NameFinder.loadModel("./target/test-data/ko/ner/ko-ner-default-model.bin");
+		AbstractModel trainModel = NameFinder.loadModel("./build/test-data/ko/ner/ko-ner-default-model.bin");
 		NameFinder ner = new NameFinder(trainModel, featureGenerator);
 		
 		List<NameSample> testSamples = NameFinder.loadSamples("/sample/ko/ner/ko-ner-test.txt");

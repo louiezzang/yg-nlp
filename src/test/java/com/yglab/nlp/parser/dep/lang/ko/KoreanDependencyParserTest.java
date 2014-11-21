@@ -61,7 +61,7 @@ public class KoreanDependencyParserTest {
 		options.put(Options.ITERATIONS, "5");
 		
 		AbstractModel model = DependencyParser.train(trainSamples, labels, featureGenerator, options);
-		DependencyParser.saveModel(model, "./target/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.bin", "./target/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.txt");
+		DependencyParser.saveModel(model, "./build/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.bin", "./build/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.txt");
 	}
 	
 	/**
@@ -108,7 +108,7 @@ public class KoreanDependencyParserTest {
 //		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 //		AbstractModel trainModel = KoreanPOSTagger.train(posTrainSamples, posFeatureGenerator, options);
 		
-		AbstractModel trainedPosModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
+		AbstractModel trainedPosModel = KoreanPOSTagger.loadModel("./build/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
 		
 		KoreanPOSTagger posTagger = new KoreanPOSTagger(trainedPosModel, posFeatureGenerator);
 		
@@ -119,7 +119,7 @@ public class KoreanDependencyParserTest {
 	public void testParser() throws Exception {
 		System.out.println("====================================================");
 
-		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.bin");
+		AbstractModel trainedModel = DependencyParser.loadModel("./build/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.bin");
 		KoreanDependencyParser parser = new KoreanDependencyParser(trainedModel, featureGenerator, tokenizer, posTagger);
 		
 		String s = "나는 도서관에 열심히 다닙니다.";

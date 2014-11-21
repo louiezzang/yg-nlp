@@ -40,14 +40,14 @@ public class DependencyParserEvaluatorTest {
 		options.put(Options.ITERATIONS, "5");
 		
 		AbstractModel model = DependencyParser.train(trainSamples, labels, featureGenerator, options);
-		DependencyParser.saveModel(model, "./target/test-data/en/parser/en-parser-model-1.bin", "./target/test-data/en/parser/en-parser-model-1.txt");	
+		DependencyParser.saveModel(model, "./build/test-data/en/parser/en-parser-model-1.bin", "./build/test-data/en/parser/en-parser-model-1.txt");	
 	}
 	
 	@Test
 	public void testEvaluator() throws Exception {
 		CoNLLReader reader = new CoNLLReader();
 
-		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/en/parser/en-parser-model-1.bin");
+		AbstractModel trainedModel = DependencyParser.loadModel("./build/test-data/en/parser/en-parser-model-1.bin");
 		DependencyParser parser = new DependencyParser(trainedModel, featureGenerator);
 		
 		reader.startReading("./data/en/parser/en-parser-1-test.conll");

@@ -88,7 +88,7 @@ public class KoreanNameFinderTest {
 //		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 //		AbstractModel trainModel = KoreanPOSTagger.train(posTrainSamples, posFeatureGenerator, options);
 		
-		AbstractModel trainedPosModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
+		AbstractModel trainedPosModel = KoreanPOSTagger.loadModel("./build/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
 		
 		KoreanPOSTagger posTagger = new KoreanPOSTagger(trainedPosModel, posFeatureGenerator);
 		
@@ -102,7 +102,7 @@ public class KoreanNameFinderTest {
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 		AbstractModel model = NameFinder.train(trainSamples, featureGenerator, options);
 
-		NameFinder.saveModel(model, "./target/test-data/ko/ner/ko-ner-model.bin", "./target/test-data/ko/ner/ko-ner-model.txt");
+		NameFinder.saveModel(model, "./build/test-data/ko/ner/ko-ner-model.bin", "./build/test-data/ko/ner/ko-ner-model.txt");
 	}
 	
 	@Test
@@ -129,7 +129,7 @@ public class KoreanNameFinderTest {
 				"됐다", 
 				"." };
 		
-		AbstractModel trainModel = NameFinder.loadModel("./target/test-data/ko/ner/ko-ner-model.bin");
+		AbstractModel trainModel = NameFinder.loadModel("./build/test-data/ko/ner/ko-ner-model.bin");
 		KoreanNameFinder finder = new KoreanNameFinder(trainModel, featureGenerator, tokenizer, posTagger);
 
 		Span[] spans = finder.find(tokens);

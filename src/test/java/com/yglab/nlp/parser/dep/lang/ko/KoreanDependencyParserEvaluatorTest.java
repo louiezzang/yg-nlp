@@ -49,14 +49,14 @@ public class KoreanDependencyParserEvaluatorTest {
 		options.put(Options.ITERATIONS, "5");
 		
 		AbstractModel model = DependencyParser.train(trainSamples, labels, featureGenerator, options);
-		DependencyParser.saveModel(model, "./target/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.bin", "./target/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.txt");	
+		DependencyParser.saveModel(model, "./build/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.bin", "./build/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.txt");	
 	}
 	
 	@Test
 	public void testEvaluator() throws Exception {
 		CoNLLReader reader = new CoNLLReader(featureDic);
 
-		AbstractModel trainedModel = DependencyParser.loadModel("./target/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.bin");
+		AbstractModel trainedModel = DependencyParser.loadModel("./build/test-data/ko/parser/ko-parser-model-sejong-BGAA0164.bin");
 		DependencyParser parser = new DependencyParser(trainedModel, featureGenerator);
 		
 		reader.startReading("./data/ko/parser/ko-parser-test-sejong-BGAA0164.conll");

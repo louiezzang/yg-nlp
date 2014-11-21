@@ -93,7 +93,7 @@ public class KoreanPatternBasedNameFinderTest {
 //		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 //		AbstractModel trainModel = KoreanPOSTagger.train(posTrainSamples, posFeatureGenerator, options);
 		
-		AbstractModel trainedPosModel = KoreanPOSTagger.loadModel("./target/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
+		AbstractModel trainedPosModel = KoreanPOSTagger.loadModel("./build/test-data/ko/pos/ko-pos-model-sejong-BGAA0164.bin"); 
 		
 		KoreanPOSTagger posTagger = new KoreanPOSTagger(trainedPosModel, posFeatureGenerator);
 		
@@ -107,13 +107,13 @@ public class KoreanPatternBasedNameFinderTest {
 		options.put(Options.ALGORITHM, Options.MAXENT_ALGORITHM);
 		AbstractModel model = KoreanPatternBasedNameFinder.train(trainSamples, featureGenerator, options);
 
-		KoreanPatternBasedNameFinder.saveModel(model, "./target/test-data/ko/ner/ko-ner-opinion-model.bin", "./target/test-data/ko/ner/ko-ner-opinion-model.txt");
+		KoreanPatternBasedNameFinder.saveModel(model, "./build/test-data/ko/ner/ko-ner-opinion-model.bin", "./build/test-data/ko/ner/ko-ner-opinion-model.txt");
 	}
 	
 	@SuppressWarnings("unchecked")
 	@Test
 	public void testFinder() throws Exception {
-		AbstractModel trainModel = KoreanPatternBasedNameFinder.loadModel("./target/test-data/ko/ner/ko-ner-opinion-model.bin");
+		AbstractModel trainModel = KoreanPatternBasedNameFinder.loadModel("./build/test-data/ko/ner/ko-ner-opinion-model.bin");
 		KoreanPatternBasedNameFinder opinionFinder = new KoreanPatternBasedNameFinder(trainModel, featureGenerator, tokenizer, tokenPairGenerator);
 
 		String s = "안철수가 새정치를 보여준적이 있었는가?";
